@@ -1,0 +1,217 @@
+{
+  "format": "cc-switch-korean-review/v1",
+  "base": "e5b04221",
+  "locale": "ko",
+  "exportedAt": "2026-10-23T16:05:54.431Z",
+  "entries": [
+    {
+      "key": "jsonEditor.mustBeObject",
+      "zh": "配置必须是JSON对象，不能是数组或其他类型",
+      "ko": "설정은 배열이나 다른 유형이 아닌 JSON 객체여야 합니다.",
+      "en": "Configuration must be a JSON object, not an array or other type",
+      "note": "第四轮审查：保留。现译明确要求设置为 JSON 对象，并排除数组及其他类型，与中文一致；设置用 설정，JSON 对象用 객체。",
+      "pending": false,
+      "reviewed": true,
+      "updatedAt": "2026-10-23T16:05:54.431Z",
+      "beforeKo": "설정은 배열이나 다른 유형이 아닌 JSON 객체여야 합니다."
+    },
+    {
+      "key": "provider.tabUniversal",
+      "zh": "统一供应商",
+      "ko": "범용 공급자",
+      "en": "Universal",
+      "note": "범용공급자\n第四轮审查：修改为 범용 공급자，补全中文“供应商”的含义，避免仅跟随英文 Universal 而省略名词；与其他统一供应商条目一致，韩语词间保留空格。",
+      "pending": false,
+      "reviewed": true,
+      "updatedAt": "2026-10-23T16:05:54.431Z",
+      "beforeKo": "범용"
+    },
+    {
+      "key": "provider.directProvider",
+      "zh": "直连",
+      "ko": "직접 연결",
+      "en": "Direct",
+      "note": "직접?다이렉트?\n第四轮审查：保留 직접 연결。这里指客户端直接连接供应商，与路由模式相对；直接连接比只写 직접 或音译 다이렉트 更完整、明确。",
+      "pending": false,
+      "reviewed": true,
+      "updatedAt": "2026-10-23T16:05:54.431Z",
+      "beforeKo": "직접 연결"
+    },
+    {
+      "key": "provider.stackBadgeHint",
+      "zh": "在 {{client}} 的模型选择器里选择：{{models}}",
+      "ko": "{{client}}의 모델 선택 메뉴에서 선택: {{models}}",
+      "en": "Pick in {{client}}'s model picker: {{models}}",
+      "note": "선택기？\n第四轮审查：将模型选择器统一为 모델 선택 메뉴。这里是客户端里选择模型的菜单，不需要机械翻译成选择器；并同步所有同类条目。",
+      "pending": false,
+      "reviewed": true,
+      "updatedAt": "2026-10-23T16:05:54.431Z",
+      "beforeKo": "{{client}}의 모델 선택기에서 선택: {{models}}"
+    },
+    {
+      "key": "provider.stackBadgeNoModels",
+      "zh": "这家没有配置模型，不会出现在模型选择器里",
+      "ko": "이 공급자에는 설정된 모델이 없어 해당 모델이 모델 선택 메뉴에 표시되지 않습니다.",
+      "en": "This provider has no models configured, so nothing shows up in the model picker",
+      "note": "선택기？\n第四轮审查：修正主语及范围：这家供应商没有设置模型，所以它的模型不会显示；不是整个模型选择菜单都不显示任何内容。",
+      "pending": false,
+      "reviewed": true,
+      "updatedAt": "2026-10-23T16:05:54.431Z",
+      "beforeKo": "이 공급자에는 설정된 모델이 없으므로 모델 선택기에 아무 것도 표시되지 않습니다."
+    },
+    {
+      "key": "provider.stackSaved",
+      "zh": "已保存，重启 {{client}} 后生效",
+      "ko": "저장되었습니다. {{client}}을(를) 다시 시작하면 적용됩니다.",
+      "en": "Saved. Restart {{client}} to apply",
+      "note": "를(을)\n第四轮审查：修改为 {{client}}을(를)，兼容动态名称不同的收音；明确重启后生效，而非保存后立即生效。",
+      "pending": false,
+      "reviewed": true,
+      "updatedAt": "2026-10-23T16:05:54.431Z",
+      "beforeKo": "저장되었습니다. 적용하려면 {{client}}를 다시 시작하세요."
+    },
+    {
+      "key": "provider.stackReselectHint",
+      "zh": "CC Switch 每次改写客户端配置后，如果模型选择器里选的是聚合的模型，需要重新选一次",
+      "ko": "CC Switch가 클라이언트 설정을 변경할 때마다, 모델 선택 메뉴에서 통합 모델을 선택해 둔 경우 해당 모델을 다시 선택해야 합니다.",
+      "en": "Whenever CC Switch rewrites the client config, pick the aggregated model again in the model picker",
+      "note": "쓸때?这不对吧\n第四轮审查：补回中文条件“如果选择了聚合模型”，明确每次 CC Switch 更改客户端配置之后，需要重新选择该模型。原译省略了条件，范围过大；用 변경 避免“写字”的联想。",
+      "pending": false,
+      "reviewed": true,
+      "updatedAt": "2026-10-23T16:05:54.431Z",
+      "beforeKo": "CC Switch가 클라이언트 설정을 다시 쓸 때마다 모델 선택기에서 통합된 모델을 다시 선택하세요"
+    },
+    {
+      "key": "provider.stackPartial",
+      "zh": "已部分写入，将在下次操作或重启 CC Switch 时补完",
+      "ko": "설정이 일부만 저장되었습니다. 다음 작업을 수행하거나 CC Switch를 다시 시작하면 나머지 설정이 저장됩니다.",
+      "en": "Partly written; it will be finished on the next change or when CC Switch restarts",
+      "note": "기록?写配置文件的翻译是不是得统一一下？\n第四轮审查：改用 설정이 일부만 저장되었습니다。这里是配置写入，统一用保存 설정 저장，保留“下次操作或重启时补完”；日志记录才用 기록，缓存写入仍用 쓰기。",
+      "pending": false,
+      "reviewed": true,
+      "updatedAt": "2026-10-23T16:05:54.431Z",
+      "beforeKo": "일부만 기록되었습니다. 다음 변경 시 또는 CC Switch를 다시 시작할 때 나머지 기록을 완료합니다"
+    },
+    {
+      "key": "provider.stackDefaultHint",
+      "zh": "它是默认供应商：列表里的第一个模型负责 Claude Code 启动和后台任务",
+      "ko": "기본 공급자입니다. 이 공급자의 모델 목록에서 첫 번째 모델이 Claude Code의 시작 및 백그라운드 작업을 처리합니다.",
+      "en": "This is the default provider: the first model in its list handles Claude Code's startup and background tasks",
+      "note": "이것이?感觉不太通顺\n第四轮审查：去掉指代生硬的 이것이，直接说明“是默认供应商”，并明确是这家供应商模型列表里的第一项负责启动及后台任务。",
+      "pending": false,
+      "reviewed": true,
+      "updatedAt": "2026-10-23T16:05:54.431Z",
+      "beforeKo": "이것이 기본 공급자입니다. 목록의 첫 번째 모델이 Claude Code의 시작 및 백그라운드 작업을 처리합니다."
+    },
+    {
+      "key": "provider.officialModelsBundled",
+      "zh": "官方模型列表暂未取到，暂用 Codex 内置列表，可能缺少账号专属模型",
+      "ko": "공식 모델 목록을 아직 가져오지 못해 임시로 Codex 내장 목록을 사용합니다. 해당 계정에서만 제공되는 모델이 누락될 수 있습니다.",
+      "en": "The official model list isn't available yet, so Codex's built-in list is used for now and account-specific models may be missing",
+      "note": "专属模型能翻译成这个？\n第四轮审查：修正“尚未取到”为 아직 가져오지 못해，而非“尚未提供”；账号专属模型写为 해당 계정에서만 제공되는 모델，保留专属含义。",
+      "pending": false,
+      "reviewed": true,
+      "updatedAt": "2026-10-23T16:05:54.431Z",
+      "beforeKo": "공식 모델 목록은 아직 제공되지 않으므로 현재 Codex에 내장된 목록이 사용되며 계정별 모델이 누락될 수 있습니다."
+    },
+    {
+      "key": "provider.officialModelsOutdated",
+      "zh": "本机 Codex 版本过旧，拿不到完整的官方模型列表：请把 Codex（包括命令行）升级到最新版",
+      "ko": "이 컴퓨터에 설치된 Codex 버전이 오래되어 전체 공식 모델 목록을 가져올 수 없습니다. Codex(CLI 포함)를 최신 버전으로 업데이트하세요.",
+      "en": "Codex on this computer is too old to get the full official model list: update Codex (including the CLI) to the latest version",
+      "note": "版本旧版本低能这么翻译？\n第四轮审查：补明 Codex 버전이 오래되어，明确是软件版本旧，不是电脑或 Codex 本身年代久；保留完整列表和升级要求。",
+      "pending": false,
+      "reviewed": true,
+      "updatedAt": "2026-10-23T16:05:54.431Z",
+      "beforeKo": "이 컴퓨터의 Codex는 너무 오래되어 전체 공식 모델 목록을 얻을 수 없습니다. Codex(CLI 포함)를 최신 버전으로 업데이트하세요."
+    },
+    {
+      "key": "provider.addProviderHint",
+      "zh": "填写信息后即可在列表中快速切换供应商。",
+      "ko": "정보를 입력하면 목록에서 공급자를 빠르게 전환할 수 있습니다.",
+      "en": "Fill in the information to quickly switch providers in the list.",
+      "note": "这语法不对吧\n第四轮审查：原译语法并非错误，但改为“输入信息后即可在列表里快速切换”，更忠实表达中文的先后关系和结果。",
+      "pending": false,
+      "reviewed": true,
+      "updatedAt": "2026-10-23T16:05:54.431Z",
+      "beforeKo": "목록에서 공급자를 빠르게 전환하려면 정보를 입력하세요."
+    },
+    {
+      "key": "provider.sortUpdateFailed",
+      "zh": "排序更新失败",
+      "ko": "정렬 순서를 업데이트하지 못했습니다.",
+      "en": "Failed to update sort order",
+      "note": "这是排序没生效的意思吧\n第四轮审查：保留。这里是调整顺序后的保存／更新失败提示（useDragSort.ts、App.tsx），정렬 순서를 업데이트하지 못했습니다 准确；不应扩大成“排序功能不可用”。",
+      "pending": false,
+      "reviewed": true,
+      "updatedAt": "2026-10-23T16:05:54.431Z",
+      "beforeKo": "정렬 순서를 업데이트하지 못했습니다."
+    },
+    {
+      "key": "provider.openTerminalDialog.agySwitchTitle",
+      "zh": "会切换 agy 的登录",
+      "ko": "agy 로그인 계정이 변경됩니다",
+      "en": "This switches agy's sign-in",
+      "note": "怪怪的，看看这个语句的使用场景\n第四轮审查：结合 OpenTerminalDialog 的 Notice 场景，标题改为“agy 登录账号将改变”，去掉没有前文指代的 그러면。",
+      "pending": false,
+      "reviewed": true,
+      "updatedAt": "2026-10-23T16:05:54.431Z",
+      "beforeKo": "그러면 agy의 로그인이 전환됩니다."
+    },
+    {
+      "key": "provider.openTerminalDialog.agySwitchBody",
+      "zh": "打开前把 agy 的登录切换到 {{account}}，之后新开的 agy 都用这个号。",
+      "ko": "터미널을 열기 전에 agy 로그인 계정을 {{account}}(으)로 변경합니다. 이후 새로 실행하는 모든 agy는 이 계정을 사용합니다.",
+      "en": "Before opening, agy's sign-in switches to {{account}}, and agy sessions started afterwards use this account.",
+      "note": "这个中文的意思不一样啊\n第四轮审查：明确是在“打开终端之前”把 agy 登录账号切换至 {{account}}，后续新启动的所有 agy 都使用该账号，避免只写不明确的“打开前”。",
+      "pending": false,
+      "reviewed": true,
+      "updatedAt": "2026-10-23T16:05:54.431Z",
+      "beforeKo": "열기 전에 agy의 로그인은 {{account}}로 전환되고 이후 시작된 agy 세션은 이 계정을 사용합니다."
+    },
+    {
+      "key": "provider.openTerminalDialog.agySwitchRunning",
+      "zh": "检测到 agy 正在运行：已打开的 agy 仍用原账号，还可能把原账号写回去，最好先退出它们。",
+      "ko": "실행 중인 agy가 감지되었습니다. 이미 실행 중인 agy는 기존 계정을 계속 사용하며, 기존 계정 정보를 로그인 설정에 다시 저장할 수도 있습니다. 먼저 해당 agy를 모두 종료하는 것이 좋습니다.",
+      "en": "agy is running: open agy sessions keep the previous account and may write it back. Quit them first if you can.",
+      "note": "跟中文意思不一样，他说的是可能会把配置写回原来的账号\n第四轮审查：按中文及 agy_account 的实现，明确旧 agy 可能将旧账号信息重新保存到登录设置，覆盖刚切换的登录状态；不是把配置写入某个旧账号。保留“最好先退出”的建议语气。",
+      "pending": false,
+      "reviewed": true,
+      "updatedAt": "2026-10-23T16:05:54.431Z",
+      "beforeKo": "agy가 실행 중입니다. 열려 있는 agy 세션은 이전 계정을 계속 사용하며 해당 계정을 다시 기록할 수 있습니다. 가능하면 먼저 해당 세션을 종료하세요."
+    },
+    {
+      "key": "provider.usageSaved",
+      "zh": "用量查询配置已保存",
+      "ko": "사용량 조회 설정이 저장되었습니다.",
+      "en": "Usage query configuration saved",
+      "note": "这跟前面的翻译不一样\n第四轮审查：统一“用量查询”为 사용량 조회，与 provider.configureUsage 和 usageScript.title 保持一致，配置用 설정。",
+      "pending": false,
+      "reviewed": true,
+      "updatedAt": "2026-10-23T16:05:54.431Z",
+      "beforeKo": "사용량 쿼리 설정이 저장되었습니다."
+    },
+    {
+      "key": "provider.usageSaveFailed",
+      "zh": "用量查询配置保存失败",
+      "ko": "사용량 조회 설정을 저장하지 못했습니다.",
+      "en": "Failed to save usage query configuration",
+      "note": "这跟前面的翻译不一样\n第四轮审查：同上一条统一 사용량 조회 설정，失败句沿用“无法保存”，不因中文出现“失败”就机械改成名词句。",
+      "pending": false,
+      "reviewed": true,
+      "updatedAt": "2026-10-23T16:05:54.431Z",
+      "beforeKo": "사용량 쿼리 설정을 저장하지 못했습니다."
+    },
+    {
+      "key": "provider.form.agy.endpointHelp",
+      "zh": "留空用 Google 默认 API。第三方地址须兼容 Gemini API，并支持 agy 内置的 Gemini 模型。",
+      "ko": "비워 두면 Google 기본 API를 사용합니다. 타사 엔드포인트는 Gemini API와 호환되어야 하며 agy에 내장된 Gemini 모델을 지원해야 합니다.",
+      "en": "Leave empty for Google's default API. Third-party endpoints must support the Gemini API and agy's built-in Gemini models.",
+      "note": "跟中文翻译不一样，说的是如果留空就用的google的api\n第四轮审查：修正条件关系：留空时使用 Google 默认 API，而不是“把 Google 默认 API 留空”；保留第三方端点须兼容 Gemini API 并支持 agy 内置 Gemini 模型两个条件。",
+      "pending": false,
+      "reviewed": true,
+      "updatedAt": "2026-10-23T16:05:54.431Z",
+      "beforeKo": "Google의 기본 API는 비워 두세요. 타사 엔드포인트는 Gemini API 및 agy의 내장 Gemini 모델을 지원해야 합니다."
+    }
+  ]
+}

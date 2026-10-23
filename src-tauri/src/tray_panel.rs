@@ -124,10 +124,10 @@ impl PanelTexts {
                 reset_credits: "{count} resets available",
             },
             "ko" => Self {
-                switch_provider: "제공업체 전환",
-                search_placeholder: "제공업체 검색…",
+                switch_provider: "공급자 전환",
+                search_placeholder: "공급자 검색…",
                 in_use: "사용 중",
-                no_match: "일치하는 제공업체 없음",
+                no_match: "일치하는 공급자 없음",
                 open_main: "메인 창 열기",
                 quit: "종료",
                 settings: "설정",

@@ -32,6 +32,7 @@
   toolbar.setAttribute("aria-label", "复审标记工具");
   toolbar.innerHTML = `<label><input type="checkbox" id="pending-only">只看待复审</label>
     <label><input type="checkbox" id="reviewed-only">只看已审查</label>
+    <label><input type="checkbox" id="unmarked-only">只看未标记</label>
     <button type="button" id="export-review">导出待复审 JSON</button>
     <button type="button" id="export-all-review">导出全部审查状态</button>
     <button type="button" id="import-review">导入标记 JSON</button>
@@ -41,6 +42,7 @@
   count.before(toolbar);
   const pendingOnly = toolbar.querySelector("#pending-only");
   const reviewedOnly = toolbar.querySelector("#reviewed-only");
+  const unmarkedOnly = toolbar.querySelector("#unmarked-only");
   const exportButton = toolbar.querySelector("#export-review");
   const exportAllButton = toolbar.querySelector("#export-all-review");
   const importButton = toolbar.querySelector("#import-review");
@@ -96,6 +98,9 @@
     area.addEventListener("input", () => {
       update(entry, area.value.trim() ? true : entry.checkbox.checked, area.value, area.value.trim() ? false : entry.reviewedCheckbox.checked);
     });
+    // Apply status filtering after editing ends, without interrupting the click
+    // that moved focus away from the note.
+    area.addEventListener("blur", () => setTimeout(filter, 0));
     entry.cell.append(area);
     entry.textarea = area;
     entry.noteButton.textContent = "备注";
@@ -142,10 +147,12 @@
       const saved = annotations[entry.key];
       if (saved?.pending) pending++;
       if (saved?.reviewed) reviewed++;
+      const editingNote = entry.textarea === document.activeElement;
       entry.row.hidden = (query && !`${entry.searchText}\n${saved?.note || ""}`.toLowerCase().includes(query)) ||
         (changed.checked && entry.row.dataset.changed !== "true") ||
-        (pendingOnly.checked && !saved?.pending) ||
-        (reviewedOnly.checked && !saved?.reviewed);
+        (!editingNote && ((pendingOnly.checked && !saved?.pending) ||
+        (reviewedOnly.checked && !saved?.reviewed) ||
+        (unmarkedOnly.checked && (saved?.pending || saved?.reviewed))));
       if (!entry.row.hidden) visible++;
     }
     count.textContent = `显示 ${visible} / ${entries.length} 条 · 未审查 ${entries.length - pending - reviewed} 条 · 待复审 ${pending} 条 · 已审查 ${reviewed} 条`;
@@ -246,7 +253,16 @@
   }
   search.addEventListener("input", filter);
   changed.addEventListener("change", filter);
-  pendingOnly.addEventListener("change", () => { if (pendingOnly.checked) reviewedOnly.checked = false; filter(); });
-  reviewedOnly.addEventListener("change", () => { if (reviewedOnly.checked) pendingOnly.checked = false; filter(); });
+  const statusFilters = [pendingOnly, reviewedOnly, unmarkedOnly];
+  for (const selected of statusFilters) {
+    selected.addEventListener("change", () => {
+      if (selected.checked) {
+        for (const other of statusFilters) {
+          if (other !== selected) other.checked = false;
+        }
+      }
+      filter();
+    });
+  }
   filter();
 })();
