@@ -24,6 +24,10 @@ import {
 } from "@/components/usage/format";
 
 describe("usage format helpers", () => {
+  it("resolves Korean date locales", () => {
+    expect(getLocaleFromLanguage("ko")).toBe("ko-KR");
+    expect(getLocaleFromLanguage("ko-KR")).toBe("ko-KR");
+  });
   it("formats Traditional Chinese token units with Traditional characters", () => {
     expect(formatTokensShort(12_345, "zh-TW")).toBe("1.2 萬");
     expect(formatTokensShort(123_456_789, "zh-Hant", 2)).toBe("1.23 億");

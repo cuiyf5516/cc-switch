@@ -244,6 +244,8 @@ The CC Switch UI supports four languages: Simplified Chinese, Traditional Chines
 2. Use the `t()` function from i18next for all UI text.
 3. Never hardcode user-facing strings.
 
+Korean (`ko.json`) is also a community translation with English fallback; contributors are not required to update it.
+
 Turkish (`tr.json`) is a community translation and is optional: you do not need to add Turkish strings, and missing ones fall back to English. If you do edit `tr.json`, keep `{{variables}}`, file names, commands, and other technical literals unchanged. The tray's Turkish texts in `src-tauri/src/tray.rs` start from English in the same way.
 
 > Forgetting to update a locale file does not fail the build: the missing strings fall back to English, and if the English file lacks them too, the UI shows the raw key.
@@ -500,6 +502,8 @@ CC Switch 的界面支持简体中文、繁体中文、英文和日文四种语�
    - `src/i18n/locales/ja.json`
 2. 所有 UI 文本使用 i18next 的 `t()` 函数。
 3. 不要硬编码用户可见的字符串。
+
+韩语（`ko.json`）同样属于社区翻译，缺失文案回退到英文，不要求其他贡献者同步更新。
 
 土耳其语（`tr.json`）是社区翻译，可以不改：新增文案不必补土耳其语，缺少的会回退显示英文。如果改了 `tr.json`，请保留 `{{变量}}`、文件名、命令等技术字面量不翻译。`src-tauri/src/tray.rs` 里托盘的土耳其语文案同样从英文起步。
 
