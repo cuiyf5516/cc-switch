@@ -5,8 +5,8 @@
     "reviewer": "LLM（本对话主代理）",
     "uiReviewed": 4292,
     "nativeReviewed": 71,
-    "revised": 948,
-    "retained": 3415,
+    "revised": 955,
+    "retained": 3408,
     "scope": "逐条核对中英文来源与韩文；非母语者审校，未做桌面布局验收"
   },
   "entries": [
@@ -19,30 +19,30 @@
     },
     {
       "key": "app.description",
-      "status": "保留",
+      "status": "已修订",
       "before": "Claude Code, Codex 및 Gemini CLI용 올인원 어시스턴트",
-      "after": "Claude Code, Codex 및 Gemini CLI용 올인원 어시스턴트",
+      "after": "Claude Code, Codex 및 Gemini CLI용 통합 관리 도구",
       "englishSourceSha256": "8593125c7766bad56efb68c2c782fb622abe201d9e38b911c30822d9ab818a35"
     },
     {
       "key": "common.unsavedLeaveTitle",
-      "status": "保留",
+      "status": "已修订",
       "before": "저장되지 않은 변경사항",
-      "after": "저장되지 않은 변경사항",
+      "after": "저장되지 않은 변경 사항",
       "englishSourceSha256": "a710c2b90913b5375ca6ac865341e49dd6daa42f6d95182e6ed1a7b1b650ff4c"
     },
     {
       "key": "common.unsavedLeaveMessage",
-      "status": "保留",
+      "status": "已修订",
       "before": "나가면 이 편집기 페이지의 변경사항이 저장되지 않습니다.",
-      "after": "나가면 이 편집기 페이지의 변경사항이 저장되지 않습니다.",
+      "after": "이 페이지를 나가면 변경 사항이 저장되지 않습니다.",
       "englishSourceSha256": "a890a51e897484dd168a0dae73626fbcbd7e44b611ed86363daa9efc77327378"
     },
     {
       "key": "common.unsavedLeaveConfirm",
-      "status": "保留",
+      "status": "已修订",
       "before": "변경 사항 버리고 나가기",
-      "after": "변경 사항 버리고 나가기",
+      "after": "저장하지 않고 나가기",
       "englishSourceSha256": "07e5b9156de3452c195f6573cc93eeea0a70ad2a8a2ead8ad34f8201c13bb8af"
     },
     {
@@ -145,9 +145,9 @@
     },
     {
       "key": "common.notInstalled",
-      "status": "保留",
+      "status": "已修订",
       "before": "설치되지 않음",
-      "after": "설치되지 않음",
+      "after": "미설치",
       "englishSourceSha256": "d177cdc09a4ea3f377e5b336e9ff52184be0dc032f29af2e5d346bc7390340a6"
     },
     {
@@ -187,23 +187,23 @@
     },
     {
       "key": "common.format",
-      "status": "保留",
+      "status": "已修订",
       "before": "서식 정리",
-      "after": "서식 정리",
+      "after": "서식 지정",
       "englishSourceSha256": "2f343666aaa88c44430b12e6ab8a29591a069de76541125e83ff1b5acc367bf2"
     },
     {
       "key": "common.formatSuccess",
       "status": "已修订",
       "before": "성공적으로 포맷되었습니다",
-      "after": "서식을 정리했습니다",
+      "after": "서식을 지정했습니다",
       "englishSourceSha256": "230d694bf172e9df3b02b41b12324570c0ce2390262acf3f69d062578c610d28"
     },
     {
       "key": "common.formatError",
       "status": "已修订",
       "before": "포맷 실패: {{error}}",
-      "after": "서식 정리 실패: {{error}}",
+      "after": "서식 지정 실패: {{error}}",
       "englishSourceSha256": "3ee30bf76db1dcaa92c566efa706022950407003552388d2b3677d029dcbf870"
     },
     {
@@ -16245,9 +16245,9 @@
     },
     {
       "key": "usageScript.format",
-      "status": "保留",
+      "status": "已修订",
       "before": "서식 정리",
-      "after": "서식 정리",
+      "after": "서식 지정",
       "englishSourceSha256": "2f343666aaa88c44430b12e6ab8a29591a069de76541125e83ff1b5acc367bf2"
     },
     {
@@ -16289,14 +16289,14 @@
       "key": "usageScript.formatSuccess",
       "status": "已修订",
       "before": "포맷 성공",
-      "after": "서식을 정리했습니다",
+      "after": "서식을 지정했습니다",
       "englishSourceSha256": "d9f4faf595e37b56f9289b2fae0daa15e5ae82d5ed6c5d8f7a066b68dfaea4c0"
     },
     {
       "key": "usageScript.formatFailed",
       "status": "已修订",
       "before": "포맷 실패",
-      "after": "서식 정리 실패",
+      "after": "서식 지정 실패",
       "englishSourceSha256": "13ae5fa2e998513dc52f6bd9bb1a1182838c34491a80579e88b426cba208f7aa"
     },
     {

@@ -1,14 +1,14 @@
 # 韩语逐条审查：中韩对照
 
-基于 upstream/main `e5b04221`。已由 LLM 逐条审查 4292 条界面文案和 71 条原生文案，共修订 948 条，其余保留。尚未进行韩语母语者审校或桌面布局验收。
+基于 upstream/main `e5b04221`。已由 LLM 逐条审查 4292 条界面文案和 71 条原生文案，共修订 955 条，其余保留。尚未进行韩语母语者审校或桌面布局验收。
 
 | 翻译键 | 中文 | 审查后韩文 | 英文原文 | 审查结果 |
 |---|---|---|---|---|
 | app.title | CC Switch | CC Switch | CC Switch | 保留 |
-| app.description | Claude Code / Codex / Gemini CLI 全方位辅助工具 | Claude Code, Codex 및 Gemini CLI용 올인원 어시스턴트 | All-in-One Assistant for Claude Code, Codex & Gemini CLI | 保留 |
-| common.unsavedLeaveTitle | 有未保存的修改 | 저장되지 않은 변경사항 | Unsaved changes | 保留 |
-| common.unsavedLeaveMessage | 离开后，当前编辑页里的修改不会保存。 | 나가면 이 편집기 페이지의 변경사항이 저장되지 않습니다. | If you leave, the changes on this editor page will not be saved. | 保留 |
-| common.unsavedLeaveConfirm | 放弃修改并离开 | 변경 사항 버리고 나가기 | Discard and leave | 保留 |
+| app.description | Claude Code / Codex / Gemini CLI 全方位辅助工具 | Claude Code, Codex 및 Gemini CLI용 통합 관리 도구 | All-in-One Assistant for Claude Code, Codex & Gemini CLI | 已修订 |
+| common.unsavedLeaveTitle | 有未保存的修改 | 저장되지 않은 변경 사항 | Unsaved changes | 已修订 |
+| common.unsavedLeaveMessage | 离开后，当前编辑页里的修改不会保存。 | 이 페이지를 나가면 변경 사항이 저장되지 않습니다. | If you leave, the changes on this editor page will not be saved. | 已修订 |
+| common.unsavedLeaveConfirm | 放弃修改并离开 | 저장하지 않고 나가기 | Discard and leave | 已修订 |
 | common.unsavedLeaveCancel | 继续编辑 | 계속 편집 | Keep editing | 保留 |
 | common.add | 添加 | 추가 | Add | 保留 |
 | common.edit | 编辑 | 편집 | Edit | 保留 |
@@ -23,15 +23,15 @@
 | common.about | 关于 | 정보 | About | 保留 |
 | common.version | 版本 | 버전 | Version | 保留 |
 | common.loading | 加载中... | 불러오는 중... | Loading... | 保留 |
-| common.notInstalled | 未安装 | 설치되지 않음 | Not installed | 保留 |
+| common.notInstalled | 未安装 | 미설치 | Not installed | 已修订 |
 | common.success | 成功 | 성공 | Success | 保留 |
 | common.error | 错误 | 오류 | Error | 保留 |
 | common.unknown | 未知 | 알 수 없음 | Unknown | 保留 |
 | common.enterValidValue | 请输入有效的内容 | 유효한 값을 입력하세요. | Please enter a valid value | 保留 |
 | common.clear | 清除 | 지우기 | Clear | 保留 |
-| common.format | 格式化 | 서식 정리 | Format | 保留 |
-| common.formatSuccess | 格式化成功 | 서식을 정리했습니다 | Formatted successfully | 已修订 |
-| common.formatError | 格式化失败：{{error}} | 서식 정리 실패: {{error}} | Format failed: {{error}} | 已修订 |
+| common.format | 格式化 | 서식 지정 | Format | 已修订 |
+| common.formatSuccess | 格式化成功 | 서식을 지정했습니다 | Formatted successfully | 已修订 |
+| common.formatError | 格式化失败：{{error}} | 서식 지정 실패: {{error}} | Format failed: {{error}} | 已修订 |
 | common.copy | 复制 | 복사 | Copy | 保留 |
 | common.view | 查看 | 보기 | View | 保留 |
 | common.back | 返回 | 뒤로 | Back | 保留 |
@@ -2323,14 +2323,14 @@
 | usageScript.tips | 💡 提示： | 💡 팁: | 💡 Tips: | 保留 |
 | usageScript.testing | 测试中... | 테스트 중... | Testing... | 保留 |
 | usageScript.testScript | 测试脚本 | 테스트 스크립트 | Test script | 保留 |
-| usageScript.format | 格式化 | 서식 정리 | Format | 保留 |
+| usageScript.format | 格式化 | 서식 지정 | Format | 已修订 |
 | usageScript.saveConfig | 保存配置 | 구성 저장 | Save config | 保留 |
 | usageScript.scriptEmpty | 脚本配置不能为空 | 스크립트 구성은 비워둘 수 없습니다. | Script configuration cannot be empty | 保留 |
 | usageScript.mustHaveReturn | 脚本必须包含 return 语句 | 스크립트에는 return 문이 포함되어야 합니다. | Script must contain return statement | 保留 |
 | usageScript.testSuccess | 测试成功！ | 테스트 성공! | Test successful! | 保留 |
 | usageScript.testFailed | 测试失败 | 테스트 실패 | Test failed | 保留 |
-| usageScript.formatSuccess | 格式化成功 | 서식을 정리했습니다 | Format successful | 已修订 |
-| usageScript.formatFailed | 格式化失败 | 서식 정리 실패 | Format failed | 已修订 |
+| usageScript.formatSuccess | 格式化成功 | 서식을 지정했습니다 | Format successful | 已修订 |
+| usageScript.formatFailed | 格式化失败 | 서식 지정 실패 | Format failed | 已修订 |
 | usageScript.supportedVariables | 支持的变量 | 지원되는 변수 | Supported Variables | 保留 |
 | usageScript.variablesHint | 支持变量: {{apiKey}}, {{baseUrl}} \| extractor 函数接收 API 响应的 JSON 对象 | 지원 변수: {{apiKey}}, {{baseUrl}} \| extractor 함수는 API 응답 JSON 객체를 받습니다 | Supported variables: {{apiKey}}, {{baseUrl}} \| extractor function receives API response JSON object | 已修订 |
 | usageScript.scriptConfig | 请求配置 | 요청 설정 | Request configuration | 已修订 |

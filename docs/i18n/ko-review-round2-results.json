@@ -1,0 +1,108 @@
+{
+  "format": "cc-switch-korean-review/v1",
+  "base": "e5b04221",
+  "locale": "ko",
+  "entries": [
+    {
+      "key": "app.description",
+      "zh": "Claude Code / Codex / Gemini CLI 全方位辅助工具",
+      "ko": "Claude Code, Codex 및 Gemini CLI용 통합 관리 도구",
+      "en": "All-in-One Assistant for Claude Code, Codex & Gemini CLI",
+      "note": "올인원 어시스턴트是不是得加个工具语义？\n二次审查：已改为“综合管理工具”，明确工具及管理功能。",
+      "pending": false,
+      "updatedAt": "2026-10-23T11:47:26.804Z",
+      "beforeKo": "Claude Code, Codex 및 Gemini CLI용 올인원 어시스턴트",
+      "reviewed": true
+    },
+    {
+      "key": "common.unsavedLeaveTitle",
+      "zh": "有未保存的修改",
+      "ko": "저장되지 않은 변경 사항",
+      "en": "Unsaved changes",
+      "note": "修改翻译成변경사항合适吗？\n二次审查：保留 변경 사항 的术语，统一分词。",
+      "pending": false,
+      "updatedAt": "2026-10-23T11:45:37.983Z",
+      "beforeKo": "저장되지 않은 변경사항",
+      "reviewed": true
+    },
+    {
+      "key": "common.unsavedLeaveMessage",
+      "zh": "离开后，当前编辑页里的修改不会保存。",
+      "ko": "이 페이지를 나가면 변경 사항이 저장되지 않습니다.",
+      "en": "If you leave, the changes on this editor page will not be saved.",
+      "note": "编辑页翻译为편집기 페이지常见吗？\n二次审查：改为“离开此页面”，避免 편집기 페이지 的生硬表达。",
+      "pending": false,
+      "updatedAt": "2026-10-23T11:46:00.221Z",
+      "beforeKo": "나가면 이 편집기 페이지의 변경사항이 저장되지 않습니다.",
+      "reviewed": true
+    },
+    {
+      "key": "common.unsavedLeaveConfirm",
+      "zh": "放弃修改并离开",
+      "ko": "저장하지 않고 나가기",
+      "en": "Discard and leave",
+      "note": "放弃修改会说成버리고？\n二次审查：改为“不要保存，直接离开”，明确此按钮的行为。",
+      "pending": false,
+      "updatedAt": "2026-10-23T11:46:44.592Z",
+      "beforeKo": "변경 사항 버리고 나가기",
+      "reviewed": true
+    },
+    {
+      "key": "common.unsavedLeaveCancel",
+      "zh": "继续编辑",
+      "ko": "계속 편집",
+      "en": "Keep editing",
+      "note": "使用场景？\n二次审查：保留 계속 편집；按钮取消离开，留在原编辑页，不会自动保存。",
+      "pending": false,
+      "updatedAt": "2026-10-23T11:48:31.993Z",
+      "beforeKo": "계속 편집",
+      "reviewed": true
+    },
+    {
+      "key": "common.notInstalled",
+      "zh": "未安装",
+      "ko": "미설치",
+      "en": "Not installed",
+      "note": "미설치还是설치되지 않음常用？\n二次审查：按应用列表中简短状态标签的实际用法，改为 미설치。",
+      "pending": false,
+      "updatedAt": "2026-10-23T11:52:02.740Z",
+      "beforeKo": "설치되지 않음",
+      "reviewed": true
+    },
+    {
+      "key": "common.format",
+      "zh": "格式化",
+      "ko": "서식 지정",
+      "en": "Format",
+      "note": "서식常用还是포맷\n二次审查：按 JSON 编辑器的格式化操作，统一使用 서식 지정。",
+      "pending": false,
+      "updatedAt": "2026-10-23T11:52:56.042Z",
+      "beforeKo": "서식 정리",
+      "reviewed": true
+    },
+    {
+      "key": "common.formatSuccess",
+      "zh": "格式化成功",
+      "ko": "서식을 지정했습니다",
+      "en": "Formatted successfully",
+      "note": "同上\n二次审查：与格式化按钮统一术语。",
+      "pending": false,
+      "updatedAt": "2026-10-23T11:53:24.732Z",
+      "beforeKo": "서식을 정리했습니다",
+      "reviewed": true
+    },
+    {
+      "key": "common.formatError",
+      "zh": "格式化失败：{{error}}",
+      "ko": "서식 지정 실패: {{error}}",
+      "en": "Format failed: {{error}}",
+      "note": "同上\n二次审查：与格式化按钮统一术语，保留 {{error}} 占位符。",
+      "pending": false,
+      "updatedAt": "2026-10-23T11:53:29.827Z",
+      "beforeKo": "서식 정리 실패: {{error}}",
+      "reviewed": true
+    }
+  ],
+  "reviewRound": 2,
+  "description": "二次审查完成。导入审查页可将这9条标记为已审查；将按当前译文核验。"
+}
