@@ -467,20 +467,22 @@
     },
     {
       "id": "hardcoded:src/config/piProviderPresets.ts:piProviderPresetDefinitions:d4c50f95774cffbd:002",
-      "status": "确认遗漏",
+      "status": "无需国际化",
       "content_fingerprint": "d4c50f95774cffbdd6d3e0c9322cabbe28c48e1300e327260432b52186917a32",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T15:42:42.747752+00:00",
       "reviewer": "primary",
       "source_file": "src/config/piProviderPresets.ts",
       "line": 3221,
       "function": "piProviderPresetDefinitions",
       "expression": "模力方舟",
-      "reason": "该预设字段可能展示给用户，但仍是硬编码中文。",
-      "suggested_action": "核实展示位置后迁入 i18n 资源。",
+      "reason": "产品决定：单语或双语硬编码前端文案不纳入本次韩语国际化遗漏项。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "中",
+      "severity": "低",
       "review_batch": "hardcoded:0170:src-config-piProviderPresets.ts",
-      "round": 1
+      "round": 1,
+      "excluded_from_missing": true,
+      "exclusion_rule_id": "frontend-hardcoded-string"
     },
     {
       "id": "hardcoded:src/config/piProviderPresets.ts:piProviderPresetDefinitions:22004d7e79879d6d:001",

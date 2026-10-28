@@ -49,6 +49,71 @@
         "确认遗漏",
         "待核实"
       ]
+    },
+    {
+      "id": "frontend-hardcoded-string",
+      "source_file_prefix": "src/",
+      "source_kind": "string",
+      "status": "无需国际化",
+      "reason": "产品决定：单语或双语硬编码前端文案不纳入本次韩语国际化遗漏项。",
+      "severity": "低",
+      "apply_to_statuses": [
+        "确认遗漏",
+        "待核实"
+      ]
+    },
+    {
+      "id": "frontend-hardcoded-template",
+      "source_file_prefix": "src/",
+      "source_kind": "template",
+      "status": "无需国际化",
+      "reason": "产品决定：单语或双语硬编码前端文案不纳入本次韩语国际化遗漏项。",
+      "severity": "低",
+      "apply_to_statuses": [
+        "确认遗漏",
+        "待核实"
+      ]
+    },
+    {
+      "id": "frontend-hardcoded-jsx_text",
+      "source_file_prefix": "src/",
+      "source_kind": "jsx_text",
+      "status": "无需国际化",
+      "reason": "产品决定：单语或双语硬编码前端文案不纳入本次韩语国际化遗漏项。",
+      "severity": "低",
+      "apply_to_statuses": [
+        "确认遗漏",
+        "待核实"
+      ]
+    },
+    {
+      "id": "frontend-hardcoded-html_text",
+      "source_file_prefix": "src/",
+      "source_kind": "html_text",
+      "status": "无需国际化",
+      "reason": "产品决定：单语或双语硬编码前端文案不纳入本次韩语国际化遗漏项。",
+      "severity": "低",
+      "apply_to_statuses": [
+        "确认遗漏",
+        "待核实"
+      ]
+    }
+  ],
+  "false_positive_translation_refs": [
+    {
+      "source_file": "src/components/sessions/reader/exportMarkdown.ts",
+      "key": "exitCode",
+      "reason": "该 t() 使用会话阅读器自己的本地词典，不是根 i18n 资源键。"
+    },
+    {
+      "source_file": "src/components/sessions/reader/exportMarkdown.ts",
+      "key": "summaryTokens",
+      "reason": "该 t() 使用会话阅读器自己的本地词典，不是根 i18n 资源键。"
+    },
+    {
+      "source_file": "src/components/sessions/reader/exportMarkdown.ts",
+      "key": "image.alt",
+      "reason": "该 t() 使用会话阅读器自己的本地词典，不是根 i18n 资源键。"
     }
   ]
 }

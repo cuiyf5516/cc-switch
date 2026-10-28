@@ -8,20 +8,22 @@
   "records": [
     {
       "id": "hardcoded:src/config/geminiProviderPresets.ts:geminiProviderPresets:adc217dd32753992:001",
-      "status": "确认遗漏",
+      "status": "无需国际化",
       "content_fingerprint": "adc217dd3275399254b3aba37faa7150ec4e752f85dfe37af80fccbe4685bb7f",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T15:42:42.747752+00:00",
       "reviewer": "primary",
       "source_file": "src/config/geminiProviderPresets.ts",
       "line": 44,
       "function": "geminiProviderPresets",
       "expression": "Google 官方 Gemini API (OAuth)",
-      "reason": "该预设字段可能展示给用户，但仍是硬编码中文。",
-      "suggested_action": "核实展示位置后迁入 i18n 资源。",
+      "reason": "产品决定：单语或双语硬编码前端文案不纳入本次韩语国际化遗漏项。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "中",
+      "severity": "低",
       "review_batch": "hardcoded:0154:src-config-geminiProviderPresets.ts",
-      "round": 1
+      "round": 1,
+      "excluded_from_missing": true,
+      "exclusion_rule_id": "frontend-hardcoded-string"
     }
   ]
 }

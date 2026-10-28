@@ -8,20 +8,22 @@
   "records": [
     {
       "id": "hardcoded:src/components/common/AppToggleGroup.tsx:AppToggleGroup:9082376c2ee7a698:001",
-      "status": "待核实",
+      "status": "无需国际化",
       "content_fingerprint": "9082376c2ee7a698eb414ed4c59f91d2af4863761c909f4023e5bd149f86d814",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T15:42:42.747752+00:00",
       "reviewer": "primary",
       "source_file": "src/components/common/AppToggleGroup.tsx",
       "line": 27,
       "function": "AppToggleGroup",
       "expression": "`${label}${enabled ? \" ✓\" : \"\"}`",
-      "reason": "该英文字符串“`${label}${enabled ? \" ✓\" : \"\"}`”可能作为提示或错误展示，但静态上下文不足以确认展示链路。",
-      "suggested_action": "追踪调用方并确认是否需要本地化。",
+      "reason": "产品决定：单语或双语硬编码前端文案不纳入本次韩语国际化遗漏项。",
+      "suggested_action": null,
       "suggested_ko": null,
       "severity": "低",
       "review_batch": "hardcoded:0112:src-components-common",
-      "round": 1
+      "round": 1,
+      "excluded_from_missing": true,
+      "exclusion_rule_id": "frontend-hardcoded-template"
     }
   ]
 }

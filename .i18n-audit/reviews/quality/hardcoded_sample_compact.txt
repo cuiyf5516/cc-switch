@@ -570,3 +570,71 @@
 570	src-tauri/src/services/provider/agy_direct.rs:53	rust_string	Antigravity credentials, endpoint and model must be single-line values
 571	src-tauri/src/session_manager/providers/codex.rs:1884	rust_string	Failed to delete Codex session file {}: {e}
 572	src-tauri/src/usage_script.rs:85	rust_string	Failed to parse config: {e}
+573	src/components/usage/RequestDetailPanel.tsx:266	template	`${(firstToken / 1000).toFixed(1)}s`
+574	src/components/skills/UnifiedSkillsPanel.tsx:1061	string	app:
+575	src/components/openclaw/ToolsPanel.tsx:170	template	`${unsupportedProfile} (${t( /                 "openclaw.tools.unsupportedProfileLabel", /                 { /                   defaultValue: "unsupported", /                 }, /               )})`
+576	src/components/apps/useToolManagement.ts:133	string	irm https://antigravity.google/cli/install.ps1 | iex
+577	src/lib/localCache.ts:5	string	cc-switch-cache:
+578	src/tray-panel/UsageTab.tsx:306	template	`${t("usage.cacheWrite")} ${formatTokensCompact(summary.totalCacheCreationTokens, locale)} · ${t("usage.cacheRead")} ${formatTokensCompact(summary.totalCacheReadTokens, locale)}`
+579	src/components/sessions/reader/exportMarkdown.ts:117	template	`[${image.alt || t("image.alt", { index: index + 1 })}]`
+580	src/config/opencodeProviderPresets.ts:1619	string	火山 Agent Plan
+581	src/config/piProviderPresets.ts:1534	string	千问AI平台 Token Plan
+582	src/components/sessions/reader/SessionCodeBlock.tsx:15	string	rounded-[4px] px-1 py-px font-mono text-[0.92em] text-fg-1
+583	src/components/providers/OpenTerminalDialog.tsx:169	template	`: ${message}`
+584	src/lib/schemas/provider.ts:33	string	预期
+585	src/components/workspace/DailyMemoryPanel.tsx:331	template	`# ${editingFile}\n\n...`
+586	src/components/quota/QuotaLines.tsx:619	string	flex h-[18px] items-center gap-2 text-caption
+587	src/components/apps/useToolManagement.ts:124	template	`powershell -NoProfile -ExecutionPolicy Bypass -EncodedCommand ${powershellEncodedCommand( /   "irm https://filecdn.minimax.chat/public/install.ps1 | iex", / )}`
+588	src/components/sessions/reader/SessionDiff.tsx:72	string	*** Move to:
+589	src/hooks/usePromptActions.ts:199	template	`Prompt ${id} does not exist`
+590	src/lib/requestOverrides.ts:143	template	`Header "${name}" is managed by the local proxy and cannot be overridden`
+591	src/components/usage/providerLabel.ts:16	string	MiniMax Code (Session)
+592	src/components/settings/auth/AccountQuota.tsx:216	template	`${label}: ${value}`
+593	src/components/MarkdownEditor.tsx:45	string	ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace
+594	src/components/providers/mode/ModeDialog.tsx:45	string	路由
+595	src/components/UsageFooter.tsx:66	template	` ${data.unit}`
+596	src-tauri/src/proxy/forwarder.rs:2930	rust_string	Anthropic upstream returned a 2xx error envelope: {message}
+597	src/lib/requestOverrides.ts:124	string	Header name must not be empty
+598	src-tauri/src/services/session_usage_pi.rs:392	rust_string	无法校验 Pi 会话追加边界: {error}
+599	src-tauri/src/services/session_usage_gemini.rs:363	rust_string	插入 Gemini 会话日志失败: {e}
+600	src/components/usage/PricingConfigPanel.tsx:260	template	`${ /           group.source === "response" /             ? t("usage.pricing.byResponse") /             : t("usage.pricing.byRequest") /         } · ${joinNames(group.apps, lang)}`
+601	src-tauri/src/session_manager/providers/hermes.rs:473	rust_string	Failed to prepare messages query: {e}
+602	src/components/usage/UsageDateRangePicker.tsx:62	template	`${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`
+603	src/components/sessions/reader/exportMarkdown.ts:88	template	`${pad}  `
+604	src-tauri/src/services/subscription.rs:1463	rust_string	Failed to parse loadCodeAssist response: {e}
+605	src/components/usage/format.ts:464	template	`${(value / 1e8).toFixed(2)} 億`
+606	src/config/presetFamilies.ts:34	string	千问AI平台
+607	src-tauri/src/services/provider/mod.rs:6768	rust_string	Manage Kimi official accounts in the Authorization Center
+608	src-tauri/src/commands/settings.rs:371	rust_string	检查更新失败: {e}
+609	src/components/DeepLinkImportDialog.tsx:936	template	`${request.usageAccessToken.substring(0, 4)}${"*".repeat(12)}`
+610	src-tauri/src/services/model_pricing.rs:301	rust_string	模型定价文件锁失败: {error}
+611	src/hooks/useProviderActions.ts:257	string	切换成功，请重启客户端以生效
+612	src/components/usage/RequestLogTable.tsx:283	template	`, ${own}`
+613	src/App.tsx:1120	template	`${provider.name} copy`
+614	src-tauri/src/services/coding_plan.rs:1018	rust_string	API error (HTTP {status}): {body}
+615	src/components/usage/PricingEditModal.tsx:96	template	`${t("usage.editPricing", "编辑定价")} - ${model.modelId}`
+616	src/components/sessions/reader/SessionMarkdown.tsx:724	template	`${loadLabel}: ${label}`
+617	src-tauri/src/services/env_manager.rs:155	rust_string	读取备份文件失败: {e}
+618	src/components/providers/forms/OmoFormFields.tsx:744	template	`${display}: ${recommended}`
+619	src-tauri/src/mcode_config.rs:203	rust_string	MCode configuration is busy; retry after MCode finishes saving
+620	src-tauri/src/services/balance.rs:255	rust_string	Failed to parse response: {e}
+621	src-tauri/src/database/schema.rs:1048	rust_string	创建新 skills 表失败: {e}
+622	src-tauri/src/session_manager/mod.rs:275	rust_string	Failed to resolve {label} {}: {e}
+623	src/components/apps/useToolManagement.ts:128	template	`powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -EncodedCommand ${powershellEncodedCommand( /   "irm https://code.kimi.com/kimi-code/install.ps1 | iex", / )}`
+624	src-tauri/src/services/model_fetch.rs:214	rust_string	Invalid API Key header value: {error}
+625	src/components/UsageFooter.tsx:69	template	`${t("usage.total")} ${amount(data.total)}`
+626	src/components/prompts/PromptPageFrame.tsx:36	string	min-h-8 rounded-control px-2.5 py-1.5 text-body text-fg-1 focus:bg-subtle focus:text-fg-1 data-[disabled]:opacity-100
+627	src-tauri/src/mcp/grokbuild.rs:149	rust_string	解析 Grok Build config.toml 失败: {e}
+628	src-tauri/src/database/dao/settings.rs:295	rust_string	解析 Copilot 优化器配置失败: {e}
+629	src/components/providers/forms/helpers/requestHeaders.ts:1	string	draft-header:
+630	src-tauri/src/proxy/hyper_client.rs:724	rust_string	Response parse failed: {e}
+631	src-tauri/src/database/schema.rs:1132	rust_string	读取旧 skills 快照失败: {e}
+632	src/components/usage/usageTable.ts:17	string	h-9 bg-subtle text-caption text-fg-2 [&>th]:border-b [&>th]:border-border
+633	src-tauri/src/commands/misc.rs:5833	rust_string	启动 {app_name} 失败: {e}
+634	src-tauri/src/mcp/opencode.rs:172	rust_string	Unknown OpenCode MCP type: {typ}
+635	src-tauri/src/commands/misc.rs:4890	rust_string	probe task join error: {e}
+636	src-tauri/src/database/schema.rs:3871	rust_string	查询表结构失败: {e}
+637	src-tauri/src/services/balance.rs:491	rust_string	Failed to parse response: {e}
+638	src-tauri/src/commands/sync_support.rs:28	rust_string	runtime log level: {error}
+639	src-tauri/src/services/session_usage_pi.rs:910	rust_string	查询 Pi 用量去重账本失败: {error}
+640	src/components/providers/forms/presetGroups.ts:388	string	阿八嚓哒妸发旮哈讥咔垃痳拏噢妑七呥扨它穵夕丫帀

@@ -10,7 +10,7 @@
       "id": "hardcoded:src-tauri/src/gemini_mcp.rs:set_mcp_servers_map:3aa384326118160d:001",
       "status": "无需国际化",
       "content_fingerprint": "3aa384326118160db083930c94cc7a4e99bfe08756a531a17bcd013c81b07b3a",
-      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
+      "reviewed_at": "2026-10-28T15:42:42.747752+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/gemini_mcp.rs",
       "line": 93,

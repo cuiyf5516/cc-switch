@@ -30,11 +30,11 @@ All generated state is under `.i18n-audit/`. `verify.py` exits non-zero while re
 - Translation batches: 158 / 158 complete.
 - Translation outcomes: 3 must-fix, 79 suggested changes, 4 pending verification, 4,362 keep.
 - Production source files: 801 scanned, 0 failed, 27 excluded (26 test/non-production files plus the Chinese-only `deplink.html` scope exclusion).
-- Hardcoded candidates: 4,426 reviewed; 60 confirmed omissions, 557 pending verification, 3,809 no-i18n.
+- Hardcoded candidates: 4,426 reviewed; 0 confirmed omissions, 162 pending verification, 4,264 no-i18n.
 - Dynamic translation keys: 162 registered and reviewed as pending runtime-key risks.
-- Second round: 655 keep samples plus all 86 translation issues; 60 confirmed and 557 pending hardcoded candidates rechecked; 572 no-i18n samples checked.
+- Second round: 655 keep samples plus all 86 translation issues; 0 confirmed and 162 pending hardcoded candidates rechecked; 640 no-i18n samples checked.
 - Scope exclusion: `deplink.html` is intentionally excluded from Korean i18n review because it is a standalone Simplified-Chinese-only page by product decision.
-- Candidate-category exclusion: all 1,436 backend error candidates are excluded from the frontend Korean i18n gap review: 262 bilingual `backend_localized_error` items plus 1,174 other hardcoded backend errors.
+- Candidate-category exclusion: 1,891 candidates are excluded from the Korean i18n gap review: 1,436 backend errors plus 455 frontend single-/bilingual hardcoded items. Three reader-local dictionary keys match four static refs and are classified as false positives.
 
 ## Human review and repair handoff
 

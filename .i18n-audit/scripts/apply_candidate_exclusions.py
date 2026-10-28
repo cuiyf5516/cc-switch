@@ -132,9 +132,37 @@ def main() -> int:
         for rule in rules
     ]
     quality["candidate_scope_exclusion_unique_count"] = len(target_ids)
-    note = "按产品决定，后端硬编码错误不纳入前端韩语国际化遗漏项。"
+    note = "按产品决定，后端错误及单语/双语前端硬编码文案不纳入韩语国际化遗漏项。"
     if note not in hard_quality.setdefault("findings", []):
         hard_quality["findings"].append(note)
+
+    resources = load(OUT / "manifest/resources.json")
+    resource_keys = {
+        record["key"]
+        for record in resources["records"]
+        if record.get("source_kind") == "json-locale"
+    }
+    false_positive_rules = CONFIG.get("false_positive_translation_refs", [])
+    missing_refs: list[dict[str, Any]] = []
+    false_positive_refs: list[dict[str, Any]] = []
+    for ref in manifest.get("translation_refs", []):
+        if ref.get("key") in resource_keys:
+            continue
+        rule = next(
+            (
+                item for item in false_positive_rules
+                if item.get("source_file") == ref.get("source_file") and item.get("key") == ref.get("key")
+            ),
+            None,
+        )
+        if rule:
+            false_positive_refs.append({**ref, "false_positive": True, "reason": rule.get("reason", "")})
+        else:
+            missing_refs.append(ref)
+    manifest["missing_translation_keys"] = missing_refs
+    manifest["false_positive_translation_refs"] = false_positive_refs
+    quality["false_positive_translation_ref_count"] = len(false_positive_refs)
+
     atomic_json(quality_path, quality)
     atomic_json(manifest_path, manifest)
 
@@ -145,6 +173,8 @@ def main() -> int:
         "status_counts": dict(Counter(item["status"] for item in candidates)),
         "no_i18n_sample_count": len(sample),
         "no_i18n_sample_required": required,
+        "false_positive_translation_ref_count": len(false_positive_refs),
+        "remaining_missing_translation_keys": len(missing_refs),
     }, ensure_ascii=False, indent=2))
     return 0
 

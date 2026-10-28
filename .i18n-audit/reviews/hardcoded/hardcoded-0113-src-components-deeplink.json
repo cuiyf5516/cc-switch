@@ -25,20 +25,22 @@
     },
     {
       "id": "hardcoded:src/components/deeplink/McpConfirmation.tsx:McpConfirmation:35da9ae11afebfb5:001",
-      "status": "待核实",
+      "status": "无需国际化",
       "content_fingerprint": "35da9ae11afebfb5323b8f89fd223456af591e09fdced2e0c311353a1b51c09a",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T15:42:42.747752+00:00",
       "reviewer": "primary",
       "source_file": "src/components/deeplink/McpConfirmation.tsx",
       "line": 142,
       "function": "McpConfirmation",
       "expression": "`${key}=${maskValue(key, String(value))}`",
-      "reason": "该英文字符串“`${key}=${maskValue(key, String(value))}`”可能作为提示或错误展示，但静态上下文不足以确认展示链路。",
-      "suggested_action": "追踪调用方并确认是否需要本地化。",
+      "reason": "产品决定：单语或双语硬编码前端文案不纳入本次韩语国际化遗漏项。",
+      "suggested_action": null,
       "suggested_ko": null,
       "severity": "低",
       "review_batch": "hardcoded:0113:src-components-deeplink",
-      "round": 1
+      "round": 1,
+      "excluded_from_missing": true,
+      "exclusion_rule_id": "frontend-hardcoded-template"
     },
     {
       "id": "dynamic-i18n:src/components/deeplink/McpConfirmation.tsx:McpConfirmation:d7f7b8d4887c79a0:001",

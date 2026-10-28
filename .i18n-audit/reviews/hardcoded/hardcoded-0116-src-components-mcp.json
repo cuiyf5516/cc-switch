@@ -93,20 +93,22 @@
     },
     {
       "id": "hardcoded:src/components/mcp/McpFormModal.tsx:McpFormModal:c28bf4f117f283bc:001",
-      "status": "待核实",
+      "status": "无需国际化",
       "content_fingerprint": "c28bf4f117f283bc46f5f3191dcfb6b042496e5792e0e94ef05c2ccb8bf3d300",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T15:42:42.747752+00:00",
       "reviewer": "primary",
       "source_file": "src/components/mcp/McpFormModal.tsx",
       "line": 1177,
       "function": "McpFormModal",
       "expression": "` ${t(\"mcpPage.drawer.jsonBlocksForm\")}`",
-      "reason": "该英文字符串“` ${t(\"mcpPage.drawer.jsonBlocksForm\")}`”可能作为提示或错误展示，但静态上下文不足以确认展示链路。",
-      "suggested_action": "追踪调用方并确认是否需要本地化。",
+      "reason": "产品决定：单语或双语硬编码前端文案不纳入本次韩语国际化遗漏项。",
+      "suggested_action": null,
       "suggested_ko": null,
       "severity": "低",
       "review_batch": "hardcoded:0116:src-components-mcp",
-      "round": 1
+      "round": 1,
+      "excluded_from_missing": true,
+      "exclusion_rule_id": "frontend-hardcoded-template"
     },
     {
       "id": "hardcoded:src/components/mcp/McpFormModal.tsx:McpFormModal:66dfeeedabf1f022:001",
@@ -195,20 +197,22 @@
     },
     {
       "id": "hardcoded:src/components/mcp/formBits.tsx:FIELD_CLASS:21e107b21a425660:001",
-      "status": "待核实",
+      "status": "无需国际化",
       "content_fingerprint": "21e107b21a42566023fb33d9df9d107493980ae700928a8119d3e05fae24d070",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T15:42:42.747752+00:00",
       "reviewer": "primary",
       "source_file": "src/components/mcp/formBits.tsx",
       "line": 124,
       "function": "FIELD_CLASS",
       "expression": "h-8 min-w-0 read-only:bg-subtle read-only:text-fg-2 dark:[color-scheme:dark]",
-      "reason": "该英文字符串“h-8 min-w-0 read-only:bg-subtle read-only:text-fg-2 dark:[color-scheme:dark]”可能作为提示或错误展示，但静态上下文不足以确认展示链路。",
-      "suggested_action": "追踪调用方并确认是否需要本地化。",
+      "reason": "产品决定：单语或双语硬编码前端文案不纳入本次韩语国际化遗漏项。",
+      "suggested_action": null,
       "suggested_ko": null,
       "severity": "低",
       "review_batch": "hardcoded:0116:src-components-mcp",
-      "round": 1
+      "round": 1,
+      "excluded_from_missing": true,
+      "exclusion_rule_id": "frontend-hardcoded-string"
     },
     {
       "id": "hardcoded:src/components/mcp/formBits.tsx:LABEL_CLASS:c87b37dfe56ae9fe:001",
@@ -229,20 +233,22 @@
     },
     {
       "id": "hardcoded:src/components/mcp/mcpDraft.ts:recognizePaste:7a24c8c64468bead:001",
-      "status": "待核实",
+      "status": "无需国际化",
       "content_fingerprint": "7a24c8c64468beadb562f97001f3f5d728260d1f954ef1e10c2125003c2f1e40",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T15:42:42.747752+00:00",
       "reviewer": "primary",
       "source_file": "src/components/mcp/mcpDraft.ts",
       "line": 290,
       "function": "recognizePaste",
       "expression": "`{${trimmed.replace(/,\\s*$/, \"\")}}`",
-      "reason": "该英文字符串“`{${trimmed.replace(/,\\s*$/, \"\")}}`”可能作为提示或错误展示，但静态上下文不足以确认展示链路。",
-      "suggested_action": "追踪调用方并确认是否需要本地化。",
+      "reason": "产品决定：单语或双语硬编码前端文案不纳入本次韩语国际化遗漏项。",
+      "suggested_action": null,
       "suggested_ko": null,
       "severity": "低",
       "review_batch": "hardcoded:0116:src-components-mcp",
-      "round": 1
+      "round": 1,
+      "excluded_from_missing": true,
+      "exclusion_rule_id": "frontend-hardcoded-template"
     }
   ]
 }
