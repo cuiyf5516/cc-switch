@@ -46,7 +46,7 @@
       "id": "dynamic-i18n:src/hooks/usePromptActions.ts:toggleEnabled:0a592ddbd2de0f49:001",
       "status": "无需国际化",
       "content_fingerprint": "0a592ddbd2de0f4975252f9cdbe2dbe113aabd4c0d6efee015027c3922676cc9",
-      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
+      "reviewed_at": "2026-10-28T16:30:05.803541+00:00",
       "reviewer": "primary",
       "source_file": "src/hooks/usePromptActions.ts",
       "line": 210,

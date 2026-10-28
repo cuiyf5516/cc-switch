@@ -33,8 +33,7 @@
     "valid_review_count": 4426,
     "unreviewed_count": 0,
     "status_counts": {
-      "无需国际化": 4425,
-      "确认遗漏": 1
+      "无需国际化": 4426
     },
     "scan_coverage_pct": 100.0,
     "candidate_review_coverage_pct": 100.0,
@@ -47,7 +46,7 @@
     "translation_keep_sample_required": 655,
     "translation_keep_sample_reviewed": 655,
     "translation_issue_recheck_count": 86,
-    "hardcoded_confirmed_recheck_count": 1,
+    "hardcoded_confirmed_recheck_count": 0,
     "hardcoded_pending_recheck_count": 0,
     "hardcoded_no_i18n_sample_required": 664,
     "hardcoded_no_i18n_sample_reviewed": 664

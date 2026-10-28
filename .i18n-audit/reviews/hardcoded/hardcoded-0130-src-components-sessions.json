@@ -29,7 +29,7 @@
       "id": "dynamic-i18n:src/components/sessions/reader/exportMarkdown.ts:label:741390bbafe0c1e5:001",
       "status": "无需国际化",
       "content_fingerprint": "741390bbafe0c1e585378ac0ca539a88bc64feaaf4716b3d5cfd23aa308d3d3e",
-      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
+      "reviewed_at": "2026-10-28T16:30:05.803541+00:00",
       "reviewer": "primary",
       "source_file": "src/components/sessions/reader/exportMarkdown.ts",
       "line": 80,

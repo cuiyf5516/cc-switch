@@ -32,9 +32,9 @@ All generated state is under `.i18n-audit/`. `verify.py` exits non-zero while re
 - Translation batches: 158 / 158 complete.
 - Translation outcomes: 3 must-fix, 79 suggested changes, 4 pending verification, 4,362 keep.
 - Production source files: 801 scanned, 0 failed, 27 excluded (26 test/non-production files plus the Chinese-only `deplink.html` scope exclusion).
-- Hardcoded candidates: 4,426 reviewed; 1 confirmed omission, 0 pending verification, 4,425 no-i18n.
-- Dynamic translation keys: 162 verified; 161 are finite/local/optional false positives and 1 is a confirmed gap (`apps.kimi` / `apps.dsh`). Decisions and evidence: `.i18n-audit/reviews/quality/dynamic_key_verification.json`.
-- Second round: 655 keep samples plus all 86 translation issues; 1 confirmed and 0 pending hardcoded candidates rechecked; 664 no-i18n samples checked.
+- Hardcoded candidates: 4,426 reviewed; 0 confirmed omissions, 0 pending verification, 4,426 no-i18n.
+- Dynamic translation keys: 162 verified; 161 are finite/local/optional false positives and 1 is an all-language missing-key defect (`apps.kimi` / `apps.dsh`) excluded from Korean-specific gaps. Decisions and evidence: `.i18n-audit/reviews/quality/dynamic_key_verification.json`.
+- Second round: 655 keep samples plus all 86 translation issues; 0 confirmed and 0 pending hardcoded candidates rechecked; 664 no-i18n samples checked.
 - Scope exclusion: `deplink.html` is intentionally excluded from Korean i18n review because it is a standalone Simplified-Chinese-only page by product decision.
 - Candidate-category exclusion: 1,891 candidates are excluded from the Korean i18n gap review: 1,436 backend errors plus 455 frontend single-/bilingual hardcoded items. Three reader-local dictionary keys match four static refs and are classified as false positives.
 

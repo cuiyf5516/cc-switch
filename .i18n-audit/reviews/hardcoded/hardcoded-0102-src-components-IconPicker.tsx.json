@@ -61,7 +61,7 @@
       "id": "dynamic-i18n:src/components/IconPicker.tsx:handleFileChange:16fefef2206f4fc1:001",
       "status": "无需国际化",
       "content_fingerprint": "16fefef2206f4fc17164e7f45bdfee2456257b2d9e91e15a66dc0b147119a614",
-      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
+      "reviewed_at": "2026-10-28T16:30:05.803541+00:00",
       "reviewer": "primary",
       "source_file": "src/components/IconPicker.tsx",
       "line": 116,

@@ -151,10 +151,10 @@ def main() -> int:
         key = f"{file}:{line}"
         if file == "src/components/providers/presentation.ts" and line == 957:
             return {
-                "status": "确认遗漏",
-                "reason": "`apps.${app}` 会为 kimi/dsh 生成 `apps.kimi` / `apps.dsh`，这三个键在 zh/en/ko 均不存在；无 defaultValue，界面会显示原始资源键。",
+                "status": "无需国际化",
+                "reason": "`apps.${app}` 会为 kimi/dsh 生成 `apps.kimi` / `apps.dsh`，但这些键在 zh/en/ko 中均不存在。它是所有语言共有的通用 i18n 缺键问题，不是韩语相对中文的专项遗漏；无 defaultValue，界面仍会显示原始资源键，需作为独立缺陷处理。",
                 "evidence": ["apps.kimi", "apps.dsh"],
-                "resolution": "missing-runtime-keys",
+                "resolution": "all-language-missing",
                 "suggested_ko": "apps.kimi: Kimi\napps.dsh: DSH",
             }
         if (file, line) in optional:

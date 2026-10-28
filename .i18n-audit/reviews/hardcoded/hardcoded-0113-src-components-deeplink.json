@@ -46,7 +46,7 @@
       "id": "dynamic-i18n:src/components/deeplink/McpConfirmation.tsx:McpConfirmation:d7f7b8d4887c79a0:001",
       "status": "无需国际化",
       "content_fingerprint": "d7f7b8d4887c79a0de17ef5158c37ad4cf32609e660350c71f01326dd264af1d",
-      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
+      "reviewed_at": "2026-10-28T16:30:05.803541+00:00",
       "reviewer": "primary",
       "source_file": "src/components/deeplink/McpConfirmation.tsx",
       "line": 161,

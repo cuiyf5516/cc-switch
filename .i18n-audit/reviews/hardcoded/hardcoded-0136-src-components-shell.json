@@ -133,7 +133,7 @@
       "id": "dynamic-i18n:src/components/shell/Sidebar.tsx:SettingsDirectory:73080ad588a22bcf:001",
       "status": "无需国际化",
       "content_fingerprint": "73080ad588a22bcf793b9900af2a25a37aa84db57382a48713b1575b878c240e",
-      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
+      "reviewed_at": "2026-10-28T16:30:05.803541+00:00",
       "reviewer": "primary",
       "source_file": "src/components/shell/Sidebar.tsx",
       "line": 754,

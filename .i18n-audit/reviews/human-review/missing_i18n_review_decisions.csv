@@ -1,3 +1,1 @@
 ﻿问题ID,状态,严重程度,文件,位置,功能上下文,原文或表达式,问题说明,建议处理方式,建议韩文,人工决定,最终韩文/修复要求,修复范围,备注
-dynamic-i18n:src/components/providers/presentation.ts:buildAdditiveSections:2eb4a51baae54d37:001,确认遗漏,中,src/components/providers/presentation.ts,第 957 行，第 16 列,buildAdditiveSections,`apps.${app}`,`apps.${app}` 会为 kimi/dsh 生成 `apps.kimi` / `apps.dsh`，这三个键在 zh/en/ko 均不存在；无 defaultValue，界面会显示原始资源键。,为 `apps.kimi`、`apps.dsh` 增加 zh/en/ko 资源键，或对不支持的应用不渲染该帮助文案。,"apps.kimi: Kimi
-apps.dsh: DSH",,,dynamic-key,

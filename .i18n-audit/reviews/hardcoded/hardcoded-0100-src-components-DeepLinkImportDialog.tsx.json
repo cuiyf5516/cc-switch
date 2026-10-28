@@ -148,7 +148,7 @@
       "id": "dynamic-i18n:src/components/DeepLinkImportDialog.tsx:DeepLinkImportDialog:dfdad65bcce899e6:001",
       "status": "无需国际化",
       "content_fingerprint": "dfdad65bcce899e6341ac9fb04a16b9a165a38c0c0a5341e9df1076f6d4bac0f",
-      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
+      "reviewed_at": "2026-10-28T16:30:05.803541+00:00",
       "reviewer": "primary",
       "source_file": "src/components/DeepLinkImportDialog.tsx",
       "line": 575,

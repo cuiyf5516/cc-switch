@@ -10,7 +10,7 @@
       "id": "dynamic-i18n:src/hooks/useModeActions.ts:enter:883829e896b1bc8a:001",
       "status": "无需国际化",
       "content_fingerprint": "883829e896b1bc8aef277f4a21d15d6836060d521592f467337d15a69965bd90",
-      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
+      "reviewed_at": "2026-10-28T16:30:05.803541+00:00",
       "reviewer": "primary",
       "source_file": "src/hooks/useModeActions.ts",
       "line": 62,

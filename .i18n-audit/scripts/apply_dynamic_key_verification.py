@@ -108,13 +108,28 @@ def main() -> int:
     hard_quality["no_i18n_sample_ids"] = sample
     hard_quality["no_i18n_sample_count"] = len(sample)
     hard_quality["required_no_i18n_sample_count"] = required
+    all_language_defects = [
+        {
+            "id": rid,
+            "source_file": decisions[rid]["source_file"],
+            "line": decisions[rid]["line"],
+            "expression": decisions[rid]["expression"],
+            "reason": decisions[rid]["reason"],
+            "resolution": decisions[rid]["resolution"],
+            "suggested_ko": decisions[rid].get("suggested_ko"),
+        }
+        for rid in dynamic_ids
+        if decisions[rid].get("resolution") == "all-language-missing"
+    ]
     quality["dynamic_key_verification"] = {
         "total": len(dynamic_ids),
         "confirmed_missing": len(confirmed_ids),
-        "safe_or_false_positive": len(dynamic_ids) - len(confirmed_ids),
+        "safe_or_false_positive": len(dynamic_ids) - len(confirmed_ids) - len(all_language_defects),
         "pending": len(pending_ids),
+        "all_language_missing": len(all_language_defects),
         "result_file": str(RESULT_PATH.relative_to(ROOT)),
     }
+    quality["all_language_i18n_defects"] = all_language_defects
     note = "动态翻译键已逐项核实：161 条解析为有限枚举、本地词典或有意回退；1 条确认缺少 apps.kimi/apps.dsh。"
     if note not in hard_quality.setdefault("findings", []):
         hard_quality["findings"].append(note)
@@ -124,7 +139,7 @@ def main() -> int:
     print(json.dumps({
         "confirmed": confirmed_ids,
         "pending": len(pending_ids),
-        "safe_or_false_positive": len(dynamic_ids) - len(confirmed_ids),
+        "safe_or_false_positive": len(dynamic_ids) - len(confirmed_ids) - len(all_language_defects),
         "status_counts": dict(Counter(item["status"] for item in candidates)),
         "no_i18n_sample_count": len(sample),
         "no_i18n_sample_required": required,

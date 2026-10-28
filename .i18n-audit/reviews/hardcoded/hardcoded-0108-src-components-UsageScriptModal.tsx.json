@@ -367,7 +367,7 @@
       "id": "dynamic-i18n:src/components/UsageScriptModal.tsx:UsageScriptModal:f52cef484535047b:001",
       "status": "无需国际化",
       "content_fingerprint": "f52cef484535047b84076cc20d0d6ab8a036bf7c19ac95a1e96bd959dce84ce0",
-      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
+      "reviewed_at": "2026-10-28T16:30:05.803541+00:00",
       "reviewer": "primary",
       "source_file": "src/components/UsageScriptModal.tsx",
       "line": 988,

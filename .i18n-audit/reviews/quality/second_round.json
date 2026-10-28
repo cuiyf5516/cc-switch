@@ -757,10 +757,8 @@
     ]
   },
   "hardcoded": {
-    "confirmed_recheck_ids": [
-      "dynamic-i18n:src/components/providers/presentation.ts:buildAdditiveSections:2eb4a51baae54d37:001"
-    ],
-    "confirmed_recheck_count": 1,
+    "confirmed_recheck_ids": [],
+    "confirmed_recheck_count": 0,
     "pending_recheck_ids": [],
     "pending_recheck_count": 0,
     "dynamic_key_recheck_ids": [
@@ -3568,9 +3566,21 @@
   "false_positive_translation_ref_count": 4,
   "dynamic_key_verification": {
     "total": 162,
-    "confirmed_missing": 1,
+    "confirmed_missing": 0,
     "safe_or_false_positive": 161,
     "pending": 0,
+    "all_language_missing": 1,
     "result_file": ".i18n-audit\\reviews\\quality\\dynamic_key_verification.json"
-  }
+  },
+  "all_language_i18n_defects": [
+    {
+      "id": "dynamic-i18n:src/components/providers/presentation.ts:buildAdditiveSections:2eb4a51baae54d37:001",
+      "source_file": "src/components/providers/presentation.ts",
+      "line": 957,
+      "expression": "`apps.${app}`",
+      "reason": "`apps.${app}` 会为 kimi/dsh 生成 `apps.kimi` / `apps.dsh`，但这些键在 zh/en/ko 中均不存在。它是所有语言共有的通用 i18n 缺键问题，不是韩语相对中文的专项遗漏；无 defaultValue，界面仍会显示原始资源键，需作为独立缺陷处理。",
+      "resolution": "all-language-missing",
+      "suggested_ko": "apps.kimi: Kimi\napps.dsh: DSH"
+    }
+  ]
 }

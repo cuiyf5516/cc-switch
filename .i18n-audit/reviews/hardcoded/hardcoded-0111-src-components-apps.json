@@ -345,7 +345,7 @@
       "id": "dynamic-i18n:src/components/apps/useToolManagement.ts:executeRun:fa889cec796591ae:001",
       "status": "无需国际化",
       "content_fingerprint": "fa889cec796591ae640bbcb93cd3e84c8957360cf229a01204a9f6db6f6cce7e",
-      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
+      "reviewed_at": "2026-10-28T16:30:05.803541+00:00",
       "reviewer": "primary",
       "source_file": "src/components/apps/useToolManagement.ts",
       "line": 866,

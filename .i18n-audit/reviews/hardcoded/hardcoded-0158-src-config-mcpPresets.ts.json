@@ -10,7 +10,7 @@
       "id": "dynamic-i18n:src/config/mcpPresets.ts:getMcpPresetWithDescription:0c1d1c92eda0e772:001",
       "status": "无需国际化",
       "content_fingerprint": "0c1d1c92eda0e772769c808027e639ef98b15ace47087dabe50c20f4036b633e",
-      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
+      "reviewed_at": "2026-10-28T16:30:05.803541+00:00",
       "reviewer": "primary",
       "source_file": "src/config/mcpPresets.ts",
       "line": 102,
