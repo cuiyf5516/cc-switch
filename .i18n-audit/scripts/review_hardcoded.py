@@ -5,6 +5,8 @@ from pathlib import Path
 from typing import Any
 ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/'.i18n-audit'
+CONFIG=json.loads((OUT/'config.json').read_text(encoding='utf-8'))
+CANDIDATE_EXCLUSIONS={item['source_kind']:item for item in CONFIG.get('candidate_scope_exclusions',[]) if item.get('source_kind')}
 
 def atomic(path:Path,data:Any)->None:
  path.parent.mkdir(parents=True,exist_ok=True); tmp=path.with_suffix(path.suffix+'.tmp'); tmp.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8'); tmp.replace(path)
@@ -40,10 +42,11 @@ def classify(c:dict[str,Any])->dict[str,Any]:
   status='待核实'; severity='中'
   reason=f'翻译键由运行时表达式“{expr}”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。'
   action='核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。'
- elif kind=='backend_localized_error':
-  status='确认遗漏'; severity='高'
-  reason='后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。'
-  action='将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。'
+ elif kind in CANDIDATE_EXCLUSIONS:
+  rule=CANDIDATE_EXCLUSIONS[kind]
+  status=rule.get('status','无需国际化'); severity=rule.get('severity','低')
+  reason=rule.get('reason') or '该候选类别按产品决定不纳入国际化遗漏项。'
+  action=None
  elif path.startswith('src/icons/'):
   reason='图标元数据中的中文是搜索别名，不直接渲染为界面文案；保留有助于中文品牌检索。'
  elif path.startswith('src/config/'):

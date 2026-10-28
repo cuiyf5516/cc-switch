@@ -4,59 +4,24 @@
 - 成功扫描：801
 - 扫描失败：0
 - 候选总数：4426
-- 确认遗漏：797
+- 确认遗漏：535
 - 待核实：1256
-- 无需国际化：2373
+- 无需国际化：2635
 - 范围排除文件：1
+- 候选类别排除：262（中英双语后端错误）
 
 > 本报告不展示已确认无需国际化的候选项。候选详情保留在 `.i18n-audit/reviews/hardcoded/`。
 
 ## 系统性结论
 
-- 后端 `AppError::localized` 只接收中文和英文，显示层没有韩语分支；相关错误在韩语界面会回退为中英混合文本。
+- `AppError::localized` 的 262 条中英双语错误按产品决定归为无需国际化，不计入韩语遗漏项。
 - 多个前端校验器和工具函数直接抛出中文/英文错误，绕过 i18n。
 - 多处可见 JSX 标签（如 `Auth:`、`TOML Config:`、`Reasoning Effort`、`API Key`）仍未使用翻译函数。
 - 162 个动态翻译键已逐一登记为待核实，不能仅因运行时未崩溃视为安全。
 
-## 确认遗漏明细（797）
+## 确认遗漏明细（535）
 
-### 1. `hardcoded:src-tauri/src/agy_config.rs:read_live_settings:87722d8042d6cd5a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/agy_config.rs:84`
-- 结构：`read_live_settings` / `backend_localized_error`
-- 原文/表达式：agy.config.missing
-- 后端载荷：{"zh": "Antigravity 配置文件不存在", "en": "Antigravity configuration files are missing", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`87722d8042d6cd5abb0abaf354ee137028411ca1f4fb8d71c3d718e38ccb96fe`
-
-### 2. `hardcoded:src-tauri/src/app_config.rs:from_str:106c194e215cd0d0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/app_config.rs:583`
-- 结构：`from_str` / `backend_localized_error`
-- 原文/表达式：unsupported_app
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`106c194e215cd0d0b9595e2305e2a9983296656ef7faa0205569a48dba8b597a`
-
-### 3. `hardcoded:src-tauri/src/app_config.rs:load:66201917674952d5:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/app_config.rs:740`
-- 结构：`load` / `backend_localized_error`
-- 原文/表达式：config.unsupported_v1
-- 后端载荷：{"zh": "检测到旧版 v1 配置格式。当前版本已不再支持运行时自动迁移。\n\n解决方案：\n1. 安装 v3.2.x 版本进行一次性自动迁移\n2. 或手动编辑 ~/.cc-switch/config.json，将顶层结构调整为：\n   {\"version\": 2, \"claude\": {...}, \"codex\": {...}, \"mcp\": {...}}\n\n", "en": "Detected legacy v1 config. Runtime auto-migration is no longer supported.\n\nSolutions:\n1. Install v3.2.x for one-time auto-migration\n2. Or manually edit ~/.cc-switch/config.json to adjust the top-level structure:\n   {\"version\": 2, \"claude\": {...}, \"codex\": {...}, \"mcp\": {...}}\n\n", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`66201917674952d5ce5c90960532bc1bb7667cb01048a868c53b233da9758a00`
-
-### 4. `hardcoded:src-tauri/src/auto_launch.rs:get_auto_launch:07a4b2b03712a79b:001`
+### 1. `hardcoded:src-tauri/src/auto_launch.rs:get_auto_launch:07a4b2b03712a79b:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/auto_launch.rs:22`
@@ -67,7 +32,7 @@
 - 严重程度：高
 - 指纹：`07a4b2b03712a79b1989b42266ec4e4f2df3a157bbc4adc9152a487f3881fcac`
 
-### 5. `hardcoded:src-tauri/src/auto_launch.rs:get_auto_launch:82c71eeea906f9a4:001`
+### 2. `hardcoded:src-tauri/src/auto_launch.rs:get_auto_launch:82c71eeea906f9a4:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/auto_launch.rs:38`
@@ -78,7 +43,7 @@
 - 严重程度：高
 - 指纹：`82c71eeea906f9a4a5cada7fe8222e41e3963a231748c53418d74d2601d4efa4`
 
-### 6. `hardcoded:src-tauri/src/auto_launch.rs:enable_auto_launch:d307952c56a1c4d5:001`
+### 3. `hardcoded:src-tauri/src/auto_launch.rs:enable_auto_launch:d307952c56a1c4d5:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/auto_launch.rs:48`
@@ -89,7 +54,7 @@
 - 严重程度：高
 - 指纹：`d307952c56a1c4d5886807e2104b6b66edf2a47c84c378e2d4fed6b18640733e`
 
-### 7. `hardcoded:src-tauri/src/auto_launch.rs:disable_auto_launch:c19144dbe2f390e9:001`
+### 4. `hardcoded:src-tauri/src/auto_launch.rs:disable_auto_launch:c19144dbe2f390e9:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/auto_launch.rs:58`
@@ -100,7 +65,7 @@
 - 严重程度：高
 - 指纹：`c19144dbe2f390e9097d1ffd4542bdb28d790360e181acb6d2ad1bb1524c859a`
 
-### 8. `hardcoded:src-tauri/src/auto_launch.rs:is_auto_launch_enabled:6692dc0f7647d368:001`
+### 5. `hardcoded:src-tauri/src/auto_launch.rs:is_auto_launch_enabled:6692dc0f7647d368:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/auto_launch.rs:68`
@@ -111,235 +76,7 @@
 - 严重程度：高
 - 指纹：`6692dc0f7647d3685325a8483715359f923ec04ec8ce1b98936994440aac297c`
 
-### 9. `hardcoded:src-tauri/src/claude_desktop_config.rs:direct_gateway_credentials:580fb3ec8fbe15c6:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_desktop_config.rs:416`
-- 结构：`direct_gateway_credentials` / `backend_localized_error`
-- 原文/表达式：claude_desktop.provider.env_missing
-- 后端载荷：{"zh": "Claude Desktop 直连供应商缺少 env 配置", "en": "Claude Desktop direct provider is missing env configuration", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`580fb3ec8fbe15c69cfb500137e0cf7a6281aeeea07f35b5ded2e8503cb2ca02`
-
-### 10. `hardcoded:src-tauri/src/claude_desktop_config.rs:direct_gateway_credentials:0effa2fa19729ab6:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_desktop_config.rs:429`
-- 结构：`direct_gateway_credentials` / `backend_localized_error`
-- 原文/表达式：claude_desktop.provider.base_url_missing
-- 后端载荷：{"zh": "Claude Desktop 直连供应商缺少 ANTHROPIC_BASE_URL", "en": "Claude Desktop direct provider is missing ANTHROPIC_BASE_URL", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`0effa2fa19729ab6f816da6f7dd39995fbd3906b31e6da0dc51dea9b79a90cef`
-
-### 11. `hardcoded:src-tauri/src/claude_desktop_config.rs:direct_gateway_credentials:901d824189bb074f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_desktop_config.rs:443`
-- 结构：`direct_gateway_credentials` / `backend_localized_error`
-- 原文/表达式：claude_desktop.provider.auth_token_missing
-- 后端载荷：{"zh": "Claude Desktop 直连供应商缺少 ANTHROPIC_AUTH_TOKEN（Bearer Token）", "en": "Claude Desktop direct provider is missing ANTHROPIC_AUTH_TOKEN (Bearer Token)", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`901d824189bb074fe9a2131ff5865bbf07ff106911032e2ca7cc5be3e942d7e7`
-
-### 12. `hardcoded:src-tauri/src/claude_desktop_config.rs:validate_direct_provider:fed17c73e8d01fec:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_desktop_config.rs:460`
-- 结构：`validate_direct_provider` / `backend_localized_error`
-- 原文/表达式：claude_desktop.provider.settings_not_object
-- 后端载荷：{"zh": "Claude Desktop 直连供应商配置必须是 JSON 对象", "en": "Claude Desktop direct provider configuration must be a JSON object", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`fed17c73e8d01fec70b1c41ee8179088c8e7932542fd76cd5c9a7579480539ea`
-
-### 13. `hardcoded:src-tauri/src/claude_desktop_config.rs:validate_direct_provider:e9b8ce98687c0106:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_desktop_config.rs:470`
-- 结构：`validate_direct_provider` / `backend_localized_error`
-- 原文/表达式：claude_desktop.provider.api_format_unsupported
-- 后端载荷：{"zh": "Claude Desktop 第一阶段只支持原生 Anthropic Messages API", "en": "Claude Desktop phase 1 only supports native Anthropic Messages API", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`e9b8ce98687c0106f14a53ca21f9c2b1291af054f847c8527f4284558140f9dc`
-
-### 14. `hardcoded:src-tauri/src/claude_desktop_config.rs:validate_direct_provider:3fe2e48572e6b3c0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_desktop_config.rs:482`
-- 结构：`validate_direct_provider` / `backend_localized_error`
-- 原文/表达式：claude_desktop.provider.mode_unsupported
-- 后端载荷：{"zh": "该供应商是 Claude Desktop 本地路由模式，不能按直连模式写入", "en": "This Claude Desktop provider uses proxy mode and cannot be written as direct mode", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`3fe2e48572e6b3c0dead9dcc5d6a7cd8bbc1d11cfd94929fa1e70f35a653afc5`
-
-### 15. `hardcoded:src-tauri/src/claude_desktop_config.rs:validate_direct_provider:73dde7ec03d20af5:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_desktop_config.rs:493`
-- 结构：`validate_direct_provider` / `backend_localized_error`
-- 原文/表达式：claude_desktop.provider.type_unsupported
-- 后端载荷：{"zh": "Claude Desktop 直连模式不支持需要本地代理转换的供应商", "en": "Claude Desktop direct mode does not support providers that require local proxy conversion", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`73dde7ec03d20af522f07dcdfc0a4adaaff89d40b9689adc1e53ebbf84f2dbdc`
-
-### 16. `hardcoded:src-tauri/src/claude_desktop_config.rs:validate_direct_provider:856bafe2644c7da0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_desktop_config.rs:501`
-- 结构：`validate_direct_provider` / `backend_localized_error`
-- 原文/表达式：claude_desktop.provider.full_url_unsupported
-- 后端载荷：{"zh": "Claude Desktop 直连模式不支持完整 URL 端点配置", "en": "Claude Desktop direct mode does not support full URL endpoint configuration", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`856bafe2644c7da03e6a4837e274d6d3e035531c200802849c66396b759fd725`
-
-### 17. `hardcoded:src-tauri/src/claude_desktop_config.rs:validate_proxy_provider:503c0588ddffb0dd:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_desktop_config.rs:520`
-- 结构：`validate_proxy_provider` / `backend_localized_error`
-- 原文/表达式：claude_desktop.provider.settings_not_object
-- 后端载荷：{"zh": "Claude Desktop 本地路由供应商配置必须是 JSON 对象", "en": "Claude Desktop proxy provider configuration must be a JSON object", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`503c0588ddffb0dd14ee9f8f95b86bd36bfff7cfe32d4c49f0cd50ab51239d73`
-
-### 18. `hardcoded:src-tauri/src/claude_desktop_config.rs:validate_proxy_provider:dd1af5c1f34fba13:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_desktop_config.rs:533`
-- 结构：`validate_proxy_provider` / `backend_localized_error`
-- 原文/表达式：claude_desktop.provider.api_format_unsupported
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`dd1af5c1f34fba13452720243b5311ac8c844b03f8d6f3134e5ff547df6cc27e`
-
-### 19. `hardcoded:src-tauri/src/claude_desktop_config.rs:validate_proxy_provider:5b43ec50f3ebfcff:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_desktop_config.rs:545`
-- 结构：`validate_proxy_provider` / `backend_localized_error`
-- 原文/表达式：claude_desktop.provider.credentials_missing
-- 后端载荷：{"zh": "Claude Desktop 本地路由供应商缺少 Base URL 或 API Key", "en": "Claude Desktop proxy provider is missing Base URL or API key", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`5b43ec50f3ebfcffe8a0b5108c0c768e4383873dc231c3a3190346e1d41035ef`
-
-### 20. `hardcoded:src-tauri/src/claude_desktop_config.rs:direct_inference_model_specs:372897edad25f769:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_desktop_config.rs:632`
-- 结构：`direct_inference_model_specs` / `backend_localized_error`
-- 原文/表达式：claude_desktop.provider.route_invalid
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`372897edad25f769c5e6462c9356639a8a5b0f5b1c520502e0ad4bd03f96dfbf`
-
-### 21. `hardcoded:src-tauri/src/claude_desktop_config.rs:direct_inference_model_specs:f431af84656cfeb4:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_desktop_config.rs:644`
-- 结构：`direct_inference_model_specs` / `backend_localized_error`
-- 原文/表达式：claude_desktop.provider.direct_mapping_unsupported
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`f431af84656cfeb40694dd8682cec11072356007342a949340e2641b2c83f617`
-
-### 22. `hardcoded:src-tauri/src/claude_desktop_config.rs:configured_proxy_model_routes:2d0830f82f0d086d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_desktop_config.rs:717`
-- 结构：`configured_proxy_model_routes` / `backend_localized_error`
-- 原文/表达式：claude_desktop.provider.routes_missing
-- 后端载荷：{"zh": "Claude Desktop 本地路由模式缺少模型路由映射", "en": "Claude Desktop proxy mode is missing model route mappings", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`2d0830f82f0d086d409b03cb14f499140e838b32fa8da09dd54d2a0992716c93`
-
-### 23. `hardcoded:src-tauri/src/claude_desktop_config.rs:configured_proxy_model_routes:48953d992d92988d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_desktop_config.rs:769`
-- 结构：`configured_proxy_model_routes` / `backend_localized_error`
-- 原文/表达式：claude_desktop.provider.routes_missing
-- 后端载荷：{"zh": "Claude Desktop 本地路由模式至少需要一个模型路由映射", "en": "Claude Desktop proxy mode requires at least one model route mapping", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`48953d992d92988dbd50d818c82d438abe63d2a26d44e9b9548b5780ab1f6c23`
-
-### 24. `hardcoded:src-tauri/src/claude_desktop_config.rs:map_proxy_request_model:f3588b54dc6afcd5:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_desktop_config.rs:864`
-- 结构：`map_proxy_request_model` / `backend_localized_error`
-- 原文/表达式：claude_desktop.provider.model_missing
-- 后端载荷：{"zh": "Claude Desktop 请求缺少 model 字段", "en": "Claude Desktop request is missing the model field", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`f3588b54dc6afcd539463c496043c9e2b69e1a785ad90b0ffe4357e3102223ac`
-
-### 25. `hardcoded:src-tauri/src/claude_desktop_config.rs:map_proxy_request_model:7905b77636ffcbb5:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_desktop_config.rs:917`
-- 结构：`map_proxy_request_model` / `backend_localized_error`
-- 原文/表达式：claude_desktop.provider.route_unknown
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`7905b77636ffcbb580fe3d98b24bd66f9b11f11b37648772284c38fc0b44bfc9`
-
-### 26. `hardcoded:src-tauri/src/claude_desktop_config.rs:route_profile:6e0661f299e72a58:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_desktop_config.rs:1168`
-- 结构：`route_profile` / `backend_localized_error`
-- 原文/表达式：claude_desktop.provider.official_not_routable
-- 后端载荷：{"zh": "Claude Desktop 官方账号不经过本地路由", "en": "The Claude Desktop official account does not go through local routing", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`6e0661f299e72a5857c166439895139fa98c1d64c21ca7861fcc2629e1cf5dc0`
-
-### 27. `hardcoded:src-tauri/src/claude_desktop_config.rs:unsupported_platform_error:8e8b215483f9a89e:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_desktop_config.rs:1641`
-- 结构：`unsupported_platform_error` / `backend_localized_error`
-- 原文/表达式：claude_desktop.unsupported_platform
-- 后端载荷：{"zh": "当前平台暂不支持 Claude Desktop 3P 配置。支持的平台：macOS、Windows 和 Linux。", "en": "Claude Desktop 3P configuration is not supported on this platform yet. Supported platforms: macOS, Windows, and Linux.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`8e8b215483f9a89e4bdf2e169c997d81b71fa77d4b4ac2144d5f71832391685e`
-
-### 28. `hardcoded:src-tauri/src/claude_mcp.rs:upsert_mcp_server:38efc7942c69ef3f:001`
+### 6. `hardcoded:src-tauri/src/claude_mcp.rs:upsert_mcp_server:38efc7942c69ef3f:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/claude_mcp.rs:175`
@@ -350,7 +87,7 @@
 - 严重程度：高
 - 指纹：`38efc7942c69ef3fdcd68f13843ad37fb987f72b22d612906c9374e35012791e`
 
-### 29. `hardcoded:src-tauri/src/claude_mcp.rs:upsert_mcp_server:7cf9f81c56bc20db:001`
+### 7. `hardcoded:src-tauri/src/claude_mcp.rs:upsert_mcp_server:7cf9f81c56bc20db:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/claude_mcp.rs:180`
@@ -361,7 +98,7 @@
 - 严重程度：高
 - 指纹：`7cf9f81c56bc20db2aa15a7d8089b589da40e88c4ca705393e53207bb3f5f2b8`
 
-### 30. `hardcoded:src-tauri/src/claude_mcp.rs:upsert_mcp_server:cd5a094f235d66b4:001`
+### 8. `hardcoded:src-tauri/src/claude_mcp.rs:upsert_mcp_server:cd5a094f235d66b4:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/claude_mcp.rs:189`
@@ -372,7 +109,7 @@
 - 严重程度：高
 - 指纹：`cd5a094f235d66b4cf6566c25dcb9ed35fe743e280598098df5bb16653675a0d`
 
-### 31. `hardcoded:src-tauri/src/claude_mcp.rs:upsert_mcp_server:eef74f394f855bdc:001`
+### 9. `hardcoded:src-tauri/src/claude_mcp.rs:upsert_mcp_server:eef74f394f855bdc:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/claude_mcp.rs:198`
@@ -383,7 +120,7 @@
 - 严重程度：高
 - 指纹：`eef74f394f855bdce3934e002ceb8228529e2586070551475c26643134adda16`
 
-### 32. `hardcoded:src-tauri/src/claude_mcp.rs:upsert_mcp_server:d03a3105c36ee824:001`
+### 10. `hardcoded:src-tauri/src/claude_mcp.rs:upsert_mcp_server:d03a3105c36ee824:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/claude_mcp.rs:208`
@@ -394,7 +131,7 @@
 - 严重程度：高
 - 指纹：`d03a3105c36ee824dcbd4460255906117b32f93051192a203b03ff1bbb68b861`
 
-### 33. `hardcoded:src-tauri/src/claude_mcp.rs:upsert_mcp_server:f96daad60691836a:001`
+### 11. `hardcoded:src-tauri/src/claude_mcp.rs:upsert_mcp_server:f96daad60691836a:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/claude_mcp.rs:210`
@@ -405,7 +142,7 @@
 - 严重程度：高
 - 指纹：`f96daad60691836af3e060d9c06581238dd36d4cc210ac3a753449e5a77e7979`
 
-### 34. `hardcoded:src-tauri/src/claude_mcp.rs:delete_mcp_server:38efc7942c69ef3f:001`
+### 12. `hardcoded:src-tauri/src/claude_mcp.rs:delete_mcp_server:38efc7942c69ef3f:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/claude_mcp.rs:247`
@@ -416,7 +153,7 @@
 - 严重程度：高
 - 指纹：`38efc7942c69ef3fdcd68f13843ad37fb987f72b22d612906c9374e35012791e`
 
-### 35. `hardcoded:src-tauri/src/claude_mcp.rs:set_mcp_servers_map:3aa384326118160d:001`
+### 13. `hardcoded:src-tauri/src/claude_mcp.rs:set_mcp_servers_map:3aa384326118160d:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/claude_mcp.rs:343`
@@ -427,7 +164,7 @@
 - 严重程度：高
 - 指纹：`3aa384326118160db083930c94cc7a4e99bfe08756a531a17bcd013c81b07b3a`
 
-### 36. `hardcoded:src-tauri/src/codex_config.rs:codex_managed_oauth_marker_bytes:f0fe94dd6b4b04be:001`
+### 14. `hardcoded:src-tauri/src/codex_config.rs:codex_managed_oauth_marker_bytes:f0fe94dd6b4b04be:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/codex_config.rs:453`
@@ -438,7 +175,7 @@
 - 严重程度：高
 - 指纹：`f0fe94dd6b4b04bef4e3ef0d6501cb264924361ed211d0ec3c4b4dd4294aba65`
 
-### 37. `hardcoded:src-tauri/src/codex_config.rs:migrate_legacy_codex_managed_oauth_live_auth_marker:b2115bf591d83caa:001`
+### 15. `hardcoded:src-tauri/src/codex_config.rs:migrate_legacy_codex_managed_oauth_live_auth_marker:b2115bf591d83caa:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/codex_config.rs:505`
@@ -449,7 +186,7 @@
 - 严重程度：高
 - 指纹：`b2115bf591d83caa8e926acb670a9a377674b49096256b45207470a93557d7fb`
 
-### 38. `hardcoded:src-tauri/src/codex_config.rs:ensure_codex_live_auth_unchanged_for_managed_account:cb561175ef36d876:001`
+### 16. `hardcoded:src-tauri/src/codex_config.rs:ensure_codex_live_auth_unchanged_for_managed_account:cb561175ef36d876:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/codex_config.rs:644`
@@ -460,7 +197,7 @@
 - 严重程度：高
 - 指纹：`cb561175ef36d8761241f9ff7a605ad9108324175155fac3f88e41a0cd55b51d`
 
-### 39. `hardcoded:src-tauri/src/codex_config.rs:ensure_codex_live_auth_unchanged_for_managed_account:978e8417a4fc459b:001`
+### 17. `hardcoded:src-tauri/src/codex_config.rs:ensure_codex_live_auth_unchanged_for_managed_account:978e8417a4fc459b:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/codex_config.rs:656`
@@ -471,7 +208,7 @@
 - 严重程度：高
 - 指纹：`978e8417a4fc459be2be0115288265a6c8117a17afcefe1a9314673c796dddb8`
 
-### 40. `hardcoded:src-tauri/src/codex_config.rs:clear_codex_live_auth_for_managed_account_if_unchanged:88c926df5719cf84:001`
+### 18. `hardcoded:src-tauri/src/codex_config.rs:clear_codex_live_auth_for_managed_account_if_unchanged:88c926df5719cf84:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/codex_config.rs:679`
@@ -482,7 +219,7 @@
 - 严重程度：高
 - 指纹：`88c926df5719cf848ec89dc63e65662a4dc72f2c11b86fc456f41585ca6be6d0`
 
-### 41. `hardcoded:src-tauri/src/codex_config.rs:read_limited_string:a5f18a7832980399:001`
+### 19. `hardcoded:src-tauri/src/codex_config.rs:read_limited_string:a5f18a7832980399:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/codex_config.rs:2787`
@@ -493,19 +230,7 @@
 - 严重程度：高
 - 指纹：`a5f18a7832980399ce031d0396f8f399b7633b6298d816d24ead740d734cad40`
 
-### 42. `hardcoded:src-tauri/src/codex_config.rs:read_codex_live_settings:5a33146b27789640:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/codex_config.rs:3065`
-- 结构：`read_codex_live_settings` / `backend_localized_error`
-- 原文/表达式：codex.live.missing
-- 后端载荷：{"zh": "Codex 配置文件不存在", "en": "Codex configuration is missing", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`5a33146b27789640d23ad8d05bd8f214e360a40c5efb9a3f63be53754e900fb2`
-
-### 43. `hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:bda73b874802c8cd:001`
+### 20. `hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:bda73b874802c8cd:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/codex_history_migration.rs:708`
@@ -516,7 +241,7 @@
 - 严重程度：高
 - 指纹：`bda73b874802c8cdc552ac681bfebee35fde2ccfc76fbd7d2c2f0acd4ee351ee`
 
-### 44. `hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:806823400909fcb4:001`
+### 21. `hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:806823400909fcb4:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/codex_history_migration.rs:710`
@@ -527,7 +252,7 @@
 - 严重程度：高
 - 指纹：`806823400909fcb46f85494971baf04598e700620065b5d4c4117ad7cc9d0775`
 
-### 45. `hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:b71f3e1795a52210:001`
+### 22. `hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:b71f3e1795a52210:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/codex_history_migration.rs:732`
@@ -538,7 +263,7 @@
 - 严重程度：高
 - 指纹：`b71f3e1795a52210ff15edfbfb15bf0b799c3abefe3041ff016ff0bc767c669f`
 
-### 46. `hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:d47c129040dde6e9:001`
+### 23. `hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:d47c129040dde6e9:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/codex_history_migration.rs:743`
@@ -549,7 +274,7 @@
 - 严重程度：高
 - 指纹：`d47c129040dde6e9981f163ac324313afa5e3346df47a2323fb9c2bf68749703`
 
-### 47. `hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:22a83e7d9706ee08:001`
+### 24. `hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:22a83e7d9706ee08:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/codex_history_migration.rs:756`
@@ -560,7 +285,7 @@
 - 严重程度：高
 - 指纹：`22a83e7d9706ee08d31bfeb142ae978aca40031af677cca7b9910ea137a39d4b`
 
-### 48. `hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:0295eef4f8df24e1:001`
+### 25. `hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:0295eef4f8df24e1:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/codex_history_migration.rs:759`
@@ -571,7 +296,7 @@
 - 严重程度：高
 - 指纹：`0295eef4f8df24e12ecc15ad349964558edf418454293c1d26ce94ec09dc7c73`
 
-### 49. `hardcoded:src-tauri/src/commands/auth.rs:remove_codex_oauth_account_with_switch_lock:b58747ef3c709ebc:001`
+### 26. `hardcoded:src-tauri/src/commands/auth.rs:remove_codex_oauth_account_with_switch_lock:b58747ef3c709ebc:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/auth.rs:612`
@@ -582,7 +307,7 @@
 - 严重程度：高
 - 指纹：`b58747ef3c709ebce4ea034ad8b2b98d3bd44ffe68e7ca03b91839ca5a529866`
 
-### 50. `hardcoded:src-tauri/src/commands/auth.rs:logout_codex_oauth_with_switch_lock:11edb17dafc2d97a:001`
+### 27. `hardcoded:src-tauri/src/commands/auth.rs:logout_codex_oauth_with_switch_lock:11edb17dafc2d97a:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/auth.rs:730`
@@ -593,7 +318,7 @@
 - 严重程度：高
 - 指纹：`11edb17dafc2d97adbd3e2ab0ed9d7417ed49f6cacbc906760dd100f4df45a19`
 
-### 51. `hardcoded:src-tauri/src/commands/failover.rs:require_failover_app:29690757b8477744:001`
+### 28. `hardcoded:src-tauri/src/commands/failover.rs:require_failover_app:29690757b8477744:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/failover.rs:13`
@@ -604,7 +329,7 @@
 - 严重程度：高
 - 指纹：`29690757b8477744f02b605b856acb15566e6d29397a9120e8445f27b70c0841`
 
-### 52. `hardcoded:src-tauri/src/commands/failover.rs:require_failover_app:cf12df272bce127f:001`
+### 29. `hardcoded:src-tauri/src/commands/failover.rs:require_failover_app:cf12df272bce127f:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/failover.rs:15`
@@ -615,7 +340,7 @@
 - 严重程度：高
 - 指纹：`cf12df272bce127f93b830b235d9bcbfb281e1a0b045575fc5c67d5b257e6ff8`
 
-### 53. `hardcoded:src-tauri/src/commands/failover.rs:require_failover_provider:e805ed523d37d944:001`
+### 30. `hardcoded:src-tauri/src/commands/failover.rs:require_failover_provider:e805ed523d37d944:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/failover.rs:28`
@@ -626,7 +351,7 @@
 - 严重程度：高
 - 指纹：`e805ed523d37d944cba37d7729d8334f5a35c279dd9d0fb654a5febb9b236b95`
 
-### 54. `hardcoded:src-tauri/src/commands/failover.rs:require_failover_provider:d41ef1ea1ae9e042:001`
+### 31. `hardcoded:src-tauri/src/commands/failover.rs:require_failover_provider:d41ef1ea1ae9e042:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/failover.rs:30`
@@ -637,7 +362,7 @@
 - 严重程度：高
 - 指纹：`d41ef1ea1ae9e04252c0776cfbecbf85a6357f188ead0175949f6f055853c556`
 
-### 55. `hardcoded:src-tauri/src/commands/failover.rs:set_auto_failover_enabled:430f258a52b35970:001`
+### 32. `hardcoded:src-tauri/src/commands/failover.rs:set_auto_failover_enabled:430f258a52b35970:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/failover.rs:181`
@@ -648,7 +373,7 @@
 - 严重程度：高
 - 指纹：`430f258a52b359706aa8f6d1e850db228842235a7f49dcde47026fb2130de535`
 
-### 56. `hardcoded:src-tauri/src/commands/failover.rs:set_auto_failover_enabled:033de08e14d5d588:001`
+### 33. `hardcoded:src-tauri/src/commands/failover.rs:set_auto_failover_enabled:033de08e14d5d588:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/failover.rs:194`
@@ -659,7 +384,7 @@
 - 严重程度：高
 - 指纹：`033de08e14d5d588eec5b3afaf6f49127702ccce5e0a7767faf50be312d9d6fb`
 
-### 57. `hardcoded:src-tauri/src/commands/failover.rs:set_auto_failover_enabled:d642367646693548:001`
+### 34. `hardcoded:src-tauri/src/commands/failover.rs:set_auto_failover_enabled:d642367646693548:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/failover.rs:229`
@@ -670,7 +395,7 @@
 - 严重程度：高
 - 指纹：`d642367646693548f125a9dde44956e25b664ff28cd320fb3bd89af5822eff20`
 
-### 58. `hardcoded:src-tauri/src/commands/import_export.rs:import_config_from_file:268e8fb5c8c98c8e:001`
+### 35. `hardcoded:src-tauri/src/commands/import_export.rs:import_config_from_file:268e8fb5c8c98c8e:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/import_export.rs:77`
@@ -681,7 +406,7 @@
 - 严重程度：高
 - 指纹：`268e8fb5c8c98c8eccfe6789fef40235678da6a269047178bfbf5a152dd5c27e`
 
-### 59. `hardcoded:src-tauri/src/commands/misc.rs:validate_external_url:651be54e0e5440df:001`
+### 36. `hardcoded:src-tauri/src/commands/misc.rs:validate_external_url:651be54e0e5440df:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:37`
@@ -692,7 +417,7 @@
 - 严重程度：高
 - 指纹：`651be54e0e5440df1b208fab43cf0836ad1121ff829797c8dd724425b9b4fa6a`
 
-### 60. `hardcoded:src-tauri/src/commands/misc.rs:validate_external_url:651be54e0e5440df:002`
+### 37. `hardcoded:src-tauri/src/commands/misc.rs:validate_external_url:651be54e0e5440df:002`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:39`
@@ -703,7 +428,7 @@
 - 严重程度：高
 - 指纹：`651be54e0e5440df1b208fab43cf0836ad1121ff829797c8dd724425b9b4fa6a`
 
-### 61. `hardcoded:src-tauri/src/commands/misc.rs:validate_external_url:651be54e0e5440df:003`
+### 38. `hardcoded:src-tauri/src/commands/misc.rs:validate_external_url:651be54e0e5440df:003`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:44`
@@ -714,7 +439,7 @@
 - 严重程度：高
 - 指纹：`651be54e0e5440df1b208fab43cf0836ad1121ff829797c8dd724425b9b4fa6a`
 
-### 62. `hardcoded:src-tauri/src/commands/misc.rs:validate_external_url:7bfaf66ec07f5207:001`
+### 39. `hardcoded:src-tauri/src/commands/misc.rs:validate_external_url:7bfaf66ec07f5207:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:45`
@@ -725,7 +450,7 @@
 - 严重程度：高
 - 指纹：`7bfaf66ec07f520769cd18fc4a45a5f847d1825fc4e2454ca404c1c49b5f5938`
 
-### 63. `hardcoded:src-tauri/src/commands/misc.rs:open_external:7f653c432ccd64cc:001`
+### 40. `hardcoded:src-tauri/src/commands/misc.rs:open_external:7f653c432ccd64cc:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:55`
@@ -736,7 +461,7 @@
 - 严重程度：高
 - 指纹：`7f653c432ccd64ccd310eaed4b3cba5cfcb3ed767b73c30fc8f4872e64f6742b`
 
-### 64. `hardcoded:src-tauri/src/commands/misc.rs:copy_text_to_clipboard:2953b4ce4ae194e9:001`
+### 41. `hardcoded:src-tauri/src/commands/misc.rs:copy_text_to_clipboard:2953b4ce4ae194e9:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:66`
@@ -747,7 +472,7 @@
 - 严重程度：高
 - 指纹：`2953b4ce4ae194e99644ece5b4efea12794141a0ee50748b3401aef567dc7391`
 
-### 65. `hardcoded:src-tauri/src/commands/misc.rs:copy_text_to_clipboard:be7c2668fff6e961:001`
+### 42. `hardcoded:src-tauri/src/commands/misc.rs:copy_text_to_clipboard:be7c2668fff6e961:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:69`
@@ -758,7 +483,7 @@
 - 严重程度：高
 - 指纹：`be7c2668fff6e9616df491096109163147b35a4fd4512eeaf03ee35fb622cdb1`
 
-### 66. `hardcoded:src-tauri/src/commands/misc.rs:copy_text_to_clipboard:b4009db0f63d06e0:001`
+### 43. `hardcoded:src-tauri/src/commands/misc.rs:copy_text_to_clipboard:b4009db0f63d06e0:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:73`
@@ -769,7 +494,7 @@
 - 严重程度：高
 - 指纹：`b4009db0f63d06e04c1d6e26a4c82fd2dd7298a31bc5175a1e13f50cb428b298`
 
-### 67. `hardcoded:src-tauri/src/commands/misc.rs:check_for_updates:a84dd4930ae1e39d:001`
+### 44. `hardcoded:src-tauri/src/commands/misc.rs:check_for_updates:a84dd4930ae1e39d:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:85`
@@ -780,7 +505,7 @@
 - 严重程度：高
 - 指纹：`a84dd4930ae1e39d290d6101199ab9e78941dfc207fb1c962cd391c65b3574b5`
 
-### 68. `hardcoded:src-tauri/src/commands/misc.rs:open_portable_update_download:a84dd4930ae1e39d:001`
+### 45. `hardcoded:src-tauri/src/commands/misc.rs:open_portable_update_download:a84dd4930ae1e39d:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:119`
@@ -791,7 +516,7 @@
 - 严重程度：高
 - 指纹：`a84dd4930ae1e39d290d6101199ab9e78941dfc207fb1c962cd391c65b3574b5`
 
-### 69. `hardcoded:src-tauri/src/commands/misc.rs:is_portable_mode:140ea1b2666d67ca:001`
+### 46. `hardcoded:src-tauri/src/commands/misc.rs:is_portable_mode:140ea1b2666d67ca:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:127`
@@ -802,7 +527,7 @@
 - 严重程度：高
 - 指纹：`140ea1b2666d67ca3ba9389ce61dc16acb6adfd59a361e232237c8ac9e180d98`
 
-### 70. `hardcoded:src-tauri/src/commands/misc.rs:run_tool_lifecycle_silently:789a7b3791b137f2:001`
+### 47. `hardcoded:src-tauri/src/commands/misc.rs:run_tool_lifecycle_silently:789a7b3791b137f2:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:402`
@@ -813,7 +538,7 @@
 - 严重程度：高
 - 指纹：`789a7b3791b137f2c839bad77d73307b6c74525fd8ee2eedb2b27b6fb0d326c0`
 
-### 71. `hardcoded:src-tauri/src/commands/misc.rs:run_tool_lifecycle_silently:bb4e53c4d3ace305:001`
+### 48. `hardcoded:src-tauri/src/commands/misc.rs:run_tool_lifecycle_silently:bb4e53c4d3ace305:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:414`
@@ -824,7 +549,7 @@
 - 严重程度：高
 - 指纹：`bb4e53c4d3ace305162ff3ecd7b7d1717467801520d009a26fc4c222a2812152`
 
-### 72. `hardcoded:src-tauri/src/commands/misc.rs:run_tool_lifecycle_silently:8eb17ed322bc641a:001`
+### 49. `hardcoded:src-tauri/src/commands/misc.rs:run_tool_lifecycle_silently:8eb17ed322bc641a:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:416`
@@ -835,7 +560,7 @@
 - 严重程度：高
 - 指纹：`8eb17ed322bc641a09ab6d0f55e52381ccb1e790e7ab084924700c719383da1c`
 
-### 73. `hardcoded:src-tauri/src/commands/misc.rs:run_tool_lifecycle_silently:789a7b3791b137f2:002`
+### 50. `hardcoded:src-tauri/src/commands/misc.rs:run_tool_lifecycle_silently:789a7b3791b137f2:002`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:420`
@@ -846,7 +571,7 @@
 - 严重程度：高
 - 指纹：`789a7b3791b137f2c839bad77d73307b6c74525fd8ee2eedb2b27b6fb0d326c0`
 
-### 74. `hardcoded:src-tauri/src/commands/misc.rs:finish_lifecycle_output:eafab31ae4b152c1:001`
+### 51. `hardcoded:src-tauri/src/commands/misc.rs:finish_lifecycle_output:eafab31ae4b152c1:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:451`
@@ -857,7 +582,7 @@
 - 严重程度：高
 - 指纹：`eafab31ae4b152c1dd5ae80a283f39be1e38ca462b0a13dcb91d4c64848869e7`
 
-### 75. `hardcoded:src-tauri/src/commands/misc.rs:open_provider_terminal:c86bc5d89e49dd3c:001`
+### 52. `hardcoded:src-tauri/src/commands/misc.rs:open_provider_terminal:c86bc5d89e49dd3c:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:5006`
@@ -868,7 +593,7 @@
 - 严重程度：高
 - 指纹：`c86bc5d89e49dd3c9c7eed5088c9d77547bf359139d73dcf8c29c32049b9ef64`
 
-### 76. `hardcoded:src-tauri/src/commands/misc.rs:open_provider_terminal:ae4a12f27b4dc05b:001`
+### 53. `hardcoded:src-tauri/src/commands/misc.rs:open_provider_terminal:ae4a12f27b4dc05b:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:5045`
@@ -879,7 +604,7 @@
 - 严重程度：高
 - 指纹：`ae4a12f27b4dc05b30fa9d0806aa267230608d6bd25ea71da1ba6f0ea69e10ba`
 
-### 77. `hardcoded:src-tauri/src/commands/misc.rs:resolve_launch_cwd:7ad70a366201365e:001`
+### 54. `hardcoded:src-tauri/src/commands/misc.rs:resolve_launch_cwd:7ad70a366201365e:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:5106`
@@ -890,7 +615,7 @@
 - 严重程度：高
 - 指纹：`7ad70a366201365efa55deb15326acf6e1e0e2fe7711be087c41c8ca01d156db`
 
-### 78. `hardcoded:src-tauri/src/commands/misc.rs:resolve_launch_cwd:10747d1fe2c3acc5:001`
+### 55. `hardcoded:src-tauri/src/commands/misc.rs:resolve_launch_cwd:10747d1fe2c3acc5:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:5111`
@@ -901,7 +626,7 @@
 - 严重程度：高
 - 指纹：`10747d1fe2c3acc502c612da5abdcadaf7c7d13ed8d56a9b4043e14c5378ac38`
 
-### 79. `hardcoded:src-tauri/src/commands/misc.rs:resolve_launch_cwd:063d79ef7f66815e:001`
+### 56. `hardcoded:src-tauri/src/commands/misc.rs:resolve_launch_cwd:063d79ef7f66815e:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:5114`
@@ -912,7 +637,7 @@
 - 严重程度：高
 - 指纹：`063d79ef7f66815e57cd21dc824ef6b262a64b0e54ceec8cdf0bd8be2be46794`
 
-### 80. `hardcoded:src-tauri/src/commands/misc.rs:resolve_launch_cwd:37f46a8d1c89254d:001`
+### 57. `hardcoded:src-tauri/src/commands/misc.rs:resolve_launch_cwd:37f46a8d1c89254d:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:5116`
@@ -923,19 +648,7 @@
 - 严重程度：高
 - 指纹：`37f46a8d1c89254debbe6a9c187dd5eebf72643d14d91528c5f9d2d9dd458ac5`
 
-### 81. `hardcoded:src-tauri/src/commands/misc.rs:switch_agy_to_bound_account:35904b067b5c49f1:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:5242`
-- 结构：`switch_agy_to_bound_account` / `backend_localized_error`
-- 原文/表达式：agy.account.bound_missing
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`35904b067b5c49f1851deb8dc89031464e967c286c8e94695a64bbc334d18020`
-
-### 82. `hardcoded:src-tauri/src/commands/misc.rs:open_agy_resume_terminal:c92b3d533d6de828:001`
+### 58. `hardcoded:src-tauri/src/commands/misc.rs:open_agy_resume_terminal:c92b3d533d6de828:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:5309`
@@ -946,7 +659,7 @@
 - 严重程度：高
 - 指纹：`c92b3d533d6de8282cb6b0171166aa5c039f268a1ce1ba3239d1df6aa3f42360`
 
-### 83. `hardcoded:src-tauri/src/commands/misc.rs:open_agy_resume_terminal:ae4a12f27b4dc05b:001`
+### 59. `hardcoded:src-tauri/src/commands/misc.rs:open_agy_resume_terminal:ae4a12f27b4dc05b:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:5317`
@@ -957,7 +670,7 @@
 - 严重程度：高
 - 指纹：`ae4a12f27b4dc05b30fa9d0806aa267230608d6bd25ea71da1ba6f0ea69e10ba`
 
-### 84. `hardcoded:src-tauri/src/commands/misc.rs:launch_provider_terminal:8f5ccc47bc2fa8e9:001`
+### 60. `hardcoded:src-tauri/src/commands/misc.rs:launch_provider_terminal:8f5ccc47bc2fa8e9:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:5376`
@@ -968,7 +681,7 @@
 - 严重程度：高
 - 指纹：`8f5ccc47bc2fa8e9baac2dcde1089fb86589a33aaecee1f473526b89cd701316`
 
-### 85. `hardcoded:src-tauri/src/commands/misc.rs:write_unix_launcher:7329b1ba03655c4c:001`
+### 61. `hardcoded:src-tauri/src/commands/misc.rs:write_unix_launcher:7329b1ba03655c4c:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:5505`
@@ -979,7 +692,7 @@
 - 严重程度：高
 - 指纹：`7329b1ba03655c4c635f4704fab06c13ca8578c1c8718ca1528d4cfc94de0315`
 
-### 86. `hardcoded:src-tauri/src/commands/misc.rs:write_unix_launcher:588ffa6579c95b03:001`
+### 62. `hardcoded:src-tauri/src/commands/misc.rs:write_unix_launcher:588ffa6579c95b03:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:5514`
@@ -990,7 +703,7 @@
 - 严重程度：高
 - 指纹：`588ffa6579c95b03b53db429d2aa5599d9154636d2d3199beec5ef21ddbeee46`
 
-### 87. `hardcoded:src-tauri/src/commands/misc.rs:write_unix_launcher:b345164409bc8c98:001`
+### 63. `hardcoded:src-tauri/src/commands/misc.rs:write_unix_launcher:b345164409bc8c98:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:5516`
@@ -1001,7 +714,7 @@
 - 严重程度：高
 - 指纹：`b345164409bc8c98e4a2ddfe795fc21f40dd12ccde38bf2d8d296da33baf0180`
 
-### 88. `hardcoded:src-tauri/src/commands/misc.rs:write_claude_config:4ded31d52b88d7e2:001`
+### 64. `hardcoded:src-tauri/src/commands/misc.rs:write_claude_config:4ded31d52b88d7e2:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:5535`
@@ -1012,7 +725,7 @@
 - 严重程度：高
 - 指纹：`4ded31d52b88d7e2abd4cebd8d7c793e8fa0d0f6f1ea2b91221b8cffec7a68c3`
 
-### 89. `hardcoded:src-tauri/src/commands/misc.rs:write_claude_config:13949944b4078cb3:001`
+### 65. `hardcoded:src-tauri/src/commands/misc.rs:write_claude_config:13949944b4078cb3:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:5538`
@@ -1023,7 +736,7 @@
 - 严重程度：高
 - 指纹：`13949944b4078cb393fe2cfafdf0503b930ad53b446a4affa06e7a552be667a6`
 
-### 90. `hardcoded:src-tauri/src/commands/misc.rs:run_terminal_osascript:a105515d76784029:001`
+### 66. `hardcoded:src-tauri/src/commands/misc.rs:run_terminal_osascript:a105515d76784029:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:5630`
@@ -1034,7 +747,7 @@
 - 严重程度：高
 - 指纹：`a105515d767840298ad25939c21159429f77f154914f63456d9846e75e278b1e`
 
-### 91. `hardcoded:src-tauri/src/commands/misc.rs:run_terminal_osascript:a58dbff6a6c4e862:001`
+### 67. `hardcoded:src-tauri/src/commands/misc.rs:run_terminal_osascript:a58dbff6a6c4e862:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:5635`
@@ -1045,7 +758,7 @@
 - 严重程度：高
 - 指纹：`a58dbff6a6c4e862aeda139ef333e7717ae7e1e0999a346cb86cfd255d8c5b15`
 
-### 92. `hardcoded:src-tauri/src/commands/misc.rs:launch_macos_otty:65cb59a525ed8c4a:001`
+### 68. `hardcoded:src-tauri/src/commands/misc.rs:launch_macos_otty:65cb59a525ed8c4a:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:5665`
@@ -1056,7 +769,7 @@
 - 严重程度：高
 - 指纹：`65cb59a525ed8c4acb76361e3cb76f414f6a7c9446be0a6a8305c5d779655ed2`
 
-### 93. `hardcoded:src-tauri/src/commands/misc.rs:launch_macos_otty:65cb59a525ed8c4a:002`
+### 69. `hardcoded:src-tauri/src/commands/misc.rs:launch_macos_otty:65cb59a525ed8c4a:002`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:5679`
@@ -1067,7 +780,7 @@
 - 严重程度：高
 - 指纹：`65cb59a525ed8c4acb76361e3cb76f414f6a7c9446be0a6a8305c5d779655ed2`
 
-### 94. `hardcoded:src-tauri/src/commands/misc.rs:launch_macos_otty:96cebe36dd6cecf8:001`
+### 70. `hardcoded:src-tauri/src/commands/misc.rs:launch_macos_otty:96cebe36dd6cecf8:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:5685`
@@ -1078,7 +791,7 @@
 - 严重程度：高
 - 指纹：`96cebe36dd6cecf847c5d273676d454369f910de1b726267cd4404742186b43c`
 
-### 95. `hardcoded:src-tauri/src/commands/misc.rs:launch_macos_open_app:5f6a5c6f7dffbe1d:001`
+### 71. `hardcoded:src-tauri/src/commands/misc.rs:launch_macos_open_app:5f6a5c6f7dffbe1d:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:5833`
@@ -1089,7 +802,7 @@
 - 严重程度：高
 - 指纹：`5f6a5c6f7dffbe1d1ffb039fd481d08fc2a2aac16a7b5bfc3d79c9023a1c7002`
 
-### 96. `hardcoded:src-tauri/src/commands/misc.rs:launch_macos_open_app:b6d3d568966d4447:001`
+### 72. `hardcoded:src-tauri/src/commands/misc.rs:launch_macos_open_app:b6d3d568966d4447:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:5838`
@@ -1100,7 +813,7 @@
 - 严重程度：高
 - 指纹：`b6d3d568966d44471f0ad0814e475532f5d24a01b4f50908c4dc9ee2b25d1824`
 
-### 97. `hardcoded:src-tauri/src/commands/misc.rs:launch_macos_warp:0aced10b0452cfd6:001`
+### 73. `hardcoded:src-tauri/src/commands/misc.rs:launch_macos_warp:0aced10b0452cfd6:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:5886`
@@ -1111,7 +824,7 @@
 - 严重程度：高
 - 指纹：`0aced10b0452cfd6ba8eb081b612965152ed3c81026f2e2caa649f39e9fcdf58`
 
-### 98. `hardcoded:src-tauri/src/commands/misc.rs:launch_macos_warp:ae5d75fa23093809:001`
+### 74. `hardcoded:src-tauri/src/commands/misc.rs:launch_macos_warp:ae5d75fa23093809:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:5890`
@@ -1122,7 +835,7 @@
 - 严重程度：高
 - 指纹：`ae5d75fa230938092c7622b11f270999168b2ceb2658bdca39fcd899f37eba45`
 
-### 99. `hardcoded:src-tauri/src/commands/misc.rs:launch_linux_terminal:31be9ea03ef58eb8:001`
+### 75. `hardcoded:src-tauri/src/commands/misc.rs:launch_linux_terminal:31be9ea03ef58eb8:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:5961`
@@ -1133,7 +846,7 @@
 - 严重程度：高
 - 指纹：`31be9ea03ef58eb8fc16add95f8825a8fa96bff488869e3bf30a2bb24464f613`
 
-### 100. `hardcoded:src-tauri/src/commands/misc.rs:launch_windows_terminal:8eb17ed322bc641a:001`
+### 76. `hardcoded:src-tauri/src/commands/misc.rs:launch_windows_terminal:8eb17ed322bc641a:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:6018`
@@ -1144,7 +857,7 @@
 - 严重程度：高
 - 指纹：`8eb17ed322bc641a09ab6d0f55e52381ccb1e790e7ab084924700c719383da1c`
 
-### 101. `hardcoded:src-tauri/src/commands/misc.rs:run_windows_start_command_with_env:7ec9787163f9aa55:001`
+### 77. `hardcoded:src-tauri/src/commands/misc.rs:run_windows_start_command_with_env:7ec9787163f9aa55:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:6190`
@@ -1155,7 +868,7 @@
 - 严重程度：高
 - 指纹：`7ec9787163f9aa55f4c10426e04b3bbfa2ad63e2e2afaac1d0eaa3eb7d7ecba5`
 
-### 102. `hardcoded:src-tauri/src/commands/misc.rs:run_windows_start_command_with_env:4c3282160895dfad:001`
+### 78. `hardcoded:src-tauri/src/commands/misc.rs:run_windows_start_command_with_env:4c3282160895dfad:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:6194`
@@ -1166,7 +879,7 @@
 - 严重程度：高
 - 指纹：`4c3282160895dfad47aa2d2b9449e0c16d2d862bcefc5dab21635f10ca2eae02`
 
-### 103. `hardcoded:src-tauri/src/commands/misc.rs:launch_terminal_running:588ffa6579c95b03:001`
+### 79. `hardcoded:src-tauri/src/commands/misc.rs:launch_terminal_running:588ffa6579c95b03:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:6238`
@@ -1177,7 +890,7 @@
 - 严重程度：高
 - 指纹：`588ffa6579c95b03b53db429d2aa5599d9154636d2d3199beec5ef21ddbeee46`
 
-### 104. `hardcoded:src-tauri/src/commands/misc.rs:launch_terminal_running:b345164409bc8c98:001`
+### 80. `hardcoded:src-tauri/src/commands/misc.rs:launch_terminal_running:b345164409bc8c98:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:6240`
@@ -1188,7 +901,7 @@
 - 严重程度：高
 - 指纹：`b345164409bc8c98e4a2ddfe795fc21f40dd12ccde38bf2d8d296da33baf0180`
 
-### 105. `hardcoded:src-tauri/src/commands/misc.rs:launch_terminal_running:588ffa6579c95b03:002`
+### 81. `hardcoded:src-tauri/src/commands/misc.rs:launch_terminal_running:588ffa6579c95b03:002`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:6274`
@@ -1199,7 +912,7 @@
 - 严重程度：高
 - 指纹：`588ffa6579c95b03b53db429d2aa5599d9154636d2d3199beec5ef21ddbeee46`
 
-### 106. `hardcoded:src-tauri/src/commands/misc.rs:launch_terminal_running:b345164409bc8c98:002`
+### 82. `hardcoded:src-tauri/src/commands/misc.rs:launch_terminal_running:b345164409bc8c98:002`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:6276`
@@ -1210,7 +923,7 @@
 - 严重程度：高
 - 指纹：`b345164409bc8c98e4a2ddfe795fc21f40dd12ccde38bf2d8d296da33baf0180`
 
-### 107. `hardcoded:src-tauri/src/commands/misc.rs:launch_terminal_running:31be9ea03ef58eb8:001`
+### 83. `hardcoded:src-tauri/src/commands/misc.rs:launch_terminal_running:31be9ea03ef58eb8:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:6327`
@@ -1221,7 +934,7 @@
 - 严重程度：高
 - 指纹：`31be9ea03ef58eb8fc16add95f8825a8fa96bff488869e3bf30a2bb24464f613`
 
-### 108. `hardcoded:src-tauri/src/commands/misc.rs:launch_terminal_running:8eb17ed322bc641a:001`
+### 84. `hardcoded:src-tauri/src/commands/misc.rs:launch_terminal_running:8eb17ed322bc641a:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:6348`
@@ -1232,7 +945,7 @@
 - 严重程度：高
 - 指纹：`8eb17ed322bc641a09ab6d0f55e52381ccb1e790e7ab084924700c719383da1c`
 
-### 109. `hardcoded:src-tauri/src/commands/misc.rs:launch_terminal_running:8f5ccc47bc2fa8e9:001`
+### 85. `hardcoded:src-tauri/src/commands/misc.rs:launch_terminal_running:8f5ccc47bc2fa8e9:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/misc.rs:6385`
@@ -1243,7 +956,7 @@
 - 严重程度：高
 - 指纹：`8f5ccc47bc2fa8e9baac2dcde1089fb86589a33aaecee1f473526b89cd701316`
 
-### 110. `hardcoded:src-tauri/src/commands/provider.rs:add_provider:247d4417bc7e7546:001`
+### 86. `hardcoded:src-tauri/src/commands/provider.rs:add_provider:247d4417bc7e7546:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/provider.rs:57`
@@ -1254,7 +967,7 @@
 - 严重程度：高
 - 指纹：`247d4417bc7e75460cf2003ea37eb12f6c9d309ca3785920882721acbfef9f86`
 
-### 111. `hardcoded:src-tauri/src/commands/provider.rs:update_provider:4110d68cb11527c0:001`
+### 87. `hardcoded:src-tauri/src/commands/provider.rs:update_provider:4110d68cb11527c0:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/provider.rs:83`
@@ -1265,7 +978,7 @@
 - 严重程度：高
 - 指纹：`4110d68cb11527c0a334e32c8e3bc96cf720a20aefb8426d42bb33c81092994c`
 
-### 112. `hardcoded:src-tauri/src/commands/provider.rs:get_provider_editor_view:3c4374b9e97c0f65:001`
+### 88. `hardcoded:src-tauri/src/commands/provider.rs:get_provider_editor_view:3c4374b9e97c0f65:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/provider.rs:121`
@@ -1276,7 +989,7 @@
 - 严重程度：高
 - 指纹：`3c4374b9e97c0f6518b723c21985955d351a04e2dbbe0f830aada42af604c05c`
 
-### 113. `hardcoded:src-tauri/src/commands/provider.rs:update_providers_sort_order:295c689ae921d848:001`
+### 89. `hardcoded:src-tauri/src/commands/provider.rs:update_providers_sort_order:295c689ae921d848:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/provider.rs:953`
@@ -1287,7 +1000,7 @@
 - 严重程度：高
 - 指纹：`295c689ae921d848004892224f9284d46528f8bee03bb26cc7ddec17a6bea080`
 
-### 114. `hardcoded:src-tauri/src/commands/proxy.rs:require_proxy_app:29690757b8477744:001`
+### 90. `hardcoded:src-tauri/src/commands/proxy.rs:require_proxy_app:29690757b8477744:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/proxy.rs:14`
@@ -1298,7 +1011,7 @@
 - 严重程度：高
 - 指纹：`29690757b8477744f02b605b856acb15566e6d29397a9120e8445f27b70c0841`
 
-### 115. `hardcoded:src-tauri/src/commands/proxy.rs:require_proxy_app:ffc9b443461f4fe3:001`
+### 91. `hardcoded:src-tauri/src/commands/proxy.rs:require_proxy_app:ffc9b443461f4fe3:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/proxy.rs:16`
@@ -1309,7 +1022,7 @@
 - 严重程度：高
 - 指纹：`ffc9b443461f4fe3ae50c8b6f26320b207c20700cf3a9cbaf759408bfb5173a7`
 
-### 116. `hardcoded:src-tauri/src/commands/proxy.rs:require_mode_app:29690757b8477744:001`
+### 92. `hardcoded:src-tauri/src/commands/proxy.rs:require_mode_app:29690757b8477744:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/proxy.rs:24`
@@ -1320,7 +1033,7 @@
 - 严重程度：高
 - 指纹：`29690757b8477744f02b605b856acb15566e6d29397a9120e8445f27b70c0841`
 
-### 117. `hardcoded:src-tauri/src/commands/proxy.rs:require_mode_app:ffc9b443461f4fe3:001`
+### 93. `hardcoded:src-tauri/src/commands/proxy.rs:require_mode_app:ffc9b443461f4fe3:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/proxy.rs:26`
@@ -1331,7 +1044,7 @@
 - 严重程度：高
 - 指纹：`ffc9b443461f4fe3ae50c8b6f26320b207c20700cf3a9cbaf759408bfb5173a7`
 
-### 118. `hardcoded:src-tauri/src/commands/proxy.rs:stop_proxy_server:061dfd22bbb99b3d:001`
+### 94. `hardcoded:src-tauri/src/commands/proxy.rs:stop_proxy_server:061dfd22bbb99b3d:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/proxy.rs:52`
@@ -1342,31 +1055,7 @@
 - 严重程度：高
 - 指纹：`061dfd22bbb99b3d08dce94244f58941d4e659fa9d18cebab567308238656d23`
 
-### 119. `hardcoded:src-tauri/src/commands/s3_sync.rs:s3_not_configured_error:71bd715c6588f2ef:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/s3_sync.rs:21`
-- 结构：`s3_not_configured_error` / `backend_localized_error`
-- 原文/表达式：s3.sync.not_configured
-- 后端载荷：{"zh": "未配置 S3 同步", "en": "S3 sync is not configured.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`71bd715c6588f2efbb15e141bd8b0ea78ebf03d43ef2d7aca70accb67f8912a7`
-
-### 120. `hardcoded:src-tauri/src/commands/s3_sync.rs:s3_sync_disabled_error:45452890506efb1f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/s3_sync.rs:30`
-- 结构：`s3_sync_disabled_error` / `backend_localized_error`
-- 原文/表达式：s3.sync.disabled
-- 后端载荷：{"zh": "S3 同步未启用", "en": "S3 sync is disabled.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`45452890506efb1f47720d36c8922c16b1a9eb07110839764ebc3e030459dd74`
-
-### 121. `hardcoded:src-tauri/src/commands/session_manager.rs:reveal_session_path:68e69b6ebe939112:001`
+### 95. `hardcoded:src-tauri/src/commands/session_manager.rs:reveal_session_path:68e69b6ebe939112:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/session_manager.rs:118`
@@ -1377,7 +1066,7 @@
 - 严重程度：高
 - 指纹：`68e69b6ebe939112ada8ad0c88f4aecba47afc577b31b7bdf3944a6f56e7aaa8`
 
-### 122. `hardcoded:src-tauri/src/commands/settings.rs:install_update_and_restart:61c19695fd4ed8b9:001`
+### 96. `hardcoded:src-tauri/src/commands/settings.rs:install_update_and_restart:61c19695fd4ed8b9:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/settings.rs:290`
@@ -1388,7 +1077,7 @@
 - 严重程度：高
 - 指纹：`61c19695fd4ed8b9aef16da25018d5599a7e52834881343f6383a9930b9e7702`
 
-### 123. `hardcoded:src-tauri/src/commands/settings.rs:install_update_and_restart:bf02c261a5a756b7:001`
+### 97. `hardcoded:src-tauri/src/commands/settings.rs:install_update_and_restart:bf02c261a5a756b7:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/settings.rs:295`
@@ -1399,7 +1088,7 @@
 - 严重程度：高
 - 指纹：`bf02c261a5a756b716cf938af2825cb217e06efb55e3eb6f335a8c0cf2af75c0`
 
-### 124. `hardcoded:src-tauri/src/commands/settings.rs:install_update_and_restart:3cf38c8d083b5b76:001`
+### 98. `hardcoded:src-tauri/src/commands/settings.rs:install_update_and_restart:3cf38c8d083b5b76:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/settings.rs:318`
@@ -1410,7 +1099,7 @@
 - 严重程度：高
 - 指纹：`3cf38c8d083b5b764e68df6dcb83850dba60df5df6e57f41740ce07b3c278d14`
 
-### 125. `hardcoded:src-tauri/src/commands/settings.rs:install_update_and_restart:886d5febc4c77b1d:001`
+### 99. `hardcoded:src-tauri/src/commands/settings.rs:install_update_and_restart:886d5febc4c77b1d:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/settings.rs:335`
@@ -1421,7 +1110,7 @@
 - 严重程度：高
 - 指纹：`886d5febc4c77b1d73b6c0433425e2234da7d59c9ad284366718a894153ae13e`
 
-### 126. `hardcoded:src-tauri/src/commands/settings.rs:install_update_and_restart:ce72dd9d276acaf9:001`
+### 100. `hardcoded:src-tauri/src/commands/settings.rs:install_update_and_restart:ce72dd9d276acaf9:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/settings.rs:346`
@@ -1432,7 +1121,7 @@
 - 严重程度：高
 - 指纹：`ce72dd9d276acaf978b8dccf347479a141171665425a04b580d308f9f73bea40`
 
-### 127. `hardcoded:src-tauri/src/commands/settings.rs:check_app_update_available:61c19695fd4ed8b9:001`
+### 101. `hardcoded:src-tauri/src/commands/settings.rs:check_app_update_available:61c19695fd4ed8b9:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/settings.rs:367`
@@ -1443,7 +1132,7 @@
 - 严重程度：高
 - 指纹：`61c19695fd4ed8b9aef16da25018d5599a7e52834881343f6383a9930b9e7702`
 
-### 128. `hardcoded:src-tauri/src/commands/settings.rs:check_app_update_available:bf02c261a5a756b7:001`
+### 102. `hardcoded:src-tauri/src/commands/settings.rs:check_app_update_available:bf02c261a5a756b7:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/settings.rs:371`
@@ -1454,7 +1143,7 @@
 - 严重程度：高
 - 指纹：`bf02c261a5a756b716cf938af2825cb217e06efb55e3eb6f335a8c0cf2af75c0`
 
-### 129. `hardcoded:src-tauri/src/commands/settings.rs:set_auto_launch:d307952c56a1c4d5:001`
+### 103. `hardcoded:src-tauri/src/commands/settings.rs:set_auto_launch:d307952c56a1c4d5:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/settings.rs:396`
@@ -1465,7 +1154,7 @@
 - 严重程度：高
 - 指纹：`d307952c56a1c4d5886807e2104b6b66edf2a47c84c378e2d4fed6b18640733e`
 
-### 130. `hardcoded:src-tauri/src/commands/settings.rs:set_auto_launch:c19144dbe2f390e9:001`
+### 104. `hardcoded:src-tauri/src/commands/settings.rs:set_auto_launch:c19144dbe2f390e9:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/settings.rs:398`
@@ -1476,7 +1165,7 @@
 - 严重程度：高
 - 指纹：`c19144dbe2f390e9097d1ffd4542bdb28d790360e181acb6d2ad1bb1524c859a`
 
-### 131. `hardcoded:src-tauri/src/commands/settings.rs:get_auto_launch_status:7d2f21979f67d782:001`
+### 105. `hardcoded:src-tauri/src/commands/settings.rs:get_auto_launch_status:7d2f21979f67d782:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/settings.rs:740`
@@ -1487,7 +1176,7 @@
 - 严重程度：高
 - 指纹：`7d2f21979f67d78254b2547b424a25069cc88eaf9bddf5d3cd73090a2f2faa13`
 
-### 132. `hardcoded:src-tauri/src/commands/skill.rs:open_cc_switch_skills_dir:7bf7ed648bda544b:001`
+### 106. `hardcoded:src-tauri/src/commands/skill.rs:open_cc_switch_skills_dir:7bf7ed648bda544b:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/skill.rs:198`
@@ -1498,7 +1187,7 @@
 - 严重程度：高
 - 指纹：`7bf7ed648bda544bf4ddfada1e3c81dee35a8186eaa3cb1319e618e3fae4fed2`
 
-### 133. `hardcoded:src-tauri/src/commands/skill.rs:open_cc_switch_skills_dir:755b05b71eaf61c6:001`
+### 107. `hardcoded:src-tauri/src/commands/skill.rs:open_cc_switch_skills_dir:755b05b71eaf61c6:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/skill.rs:203`
@@ -1509,7 +1198,7 @@
 - 严重程度：高
 - 指纹：`755b05b71eaf61c68d117a3cdf34595589b0c362dd7024cd84fccbde3cce4822`
 
-### 134. `hardcoded:src-tauri/src/commands/skill.rs:open_skill_dir:afd8bf6d4b87ab0b:001`
+### 108. `hardcoded:src-tauri/src/commands/skill.rs:open_skill_dir:afd8bf6d4b87ab0b:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/skill.rs:212`
@@ -1520,7 +1209,7 @@
 - 严重程度：高
 - 指纹：`afd8bf6d4b87ab0b49d78e61f0c0b4f6e6dbd7ced88f76cb5661045a01761b8c`
 
-### 135. `hardcoded:src-tauri/src/commands/skill.rs:open_skill_dir:755b05b71eaf61c6:001`
+### 109. `hardcoded:src-tauri/src/commands/skill.rs:open_skill_dir:755b05b71eaf61c6:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/skill.rs:217`
@@ -1531,7 +1220,7 @@
 - 严重程度：高
 - 指纹：`755b05b71eaf61c68d117a3cdf34595589b0c362dd7024cd84fccbde3cce4822`
 
-### 136. `hardcoded:src-tauri/src/commands/sync_support.rs:run_post_import_sync:7fff4094fcfe8c27:001`
+### 110. `hardcoded:src-tauri/src/commands/sync_support.rs:run_post_import_sync:7fff4094fcfe8c27:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/sync_support.rs:37`
@@ -1542,19 +1231,7 @@
 - 严重程度：高
 - 指纹：`7fff4094fcfe8c27666ecf1971cbb877056480b7e2f63a2b352b471def69b120`
 
-### 137. `hardcoded:src-tauri/src/commands/sync_support.rs:post_sync_warning:e8ddb66fa7cd0f09:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/sync_support.rs:44`
-- 结构：`post_sync_warning` / `backend_localized_error`
-- 原文/表达式：sync.post_operation_sync_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`e8ddb66fa7cd0f0933fed01c4870145b1478f87941677387cb174e83afe7c2df`
-
-### 138. `hardcoded:src-tauri/src/commands/usage.rs:rebuild_codex_usage:9a7abd153f440909:001`
+### 111. `hardcoded:src-tauri/src/commands/usage.rs:rebuild_codex_usage:9a7abd153f440909:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/commands/usage.rs:360`
@@ -1565,31 +1242,7 @@
 - 严重程度：高
 - 指纹：`9a7abd153f440909d4636d1b8883be708412ec0ff73a2e7e88c60250d438b453`
 
-### 139. `hardcoded:src-tauri/src/commands/webdav_sync.rs:webdav_not_configured_error:f06e570e2a236792:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/webdav_sync.rs:21`
-- 结构：`webdav_not_configured_error` / `backend_localized_error`
-- 原文/表达式：webdav.sync.not_configured
-- 后端载荷：{"zh": "未配置 WebDAV 同步", "en": "WebDAV sync is not configured.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`f06e570e2a2367922e6f5ac4db7475d8b9afd9946868f3444631fb146acf2877`
-
-### 140. `hardcoded:src-tauri/src/commands/webdav_sync.rs:webdav_sync_disabled_error:62bb040e06e2fb76:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/webdav_sync.rs:30`
-- 结构：`webdav_sync_disabled_error` / `backend_localized_error`
-- 原文/表达式：webdav.sync.disabled
-- 后端载荷：{"zh": "WebDAV 同步未启用", "en": "WebDAV sync is disabled.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`62bb040e06e2fb76e4dd673370e64065b9e2e113ca7643a45e8fde365d27edfd`
-
-### 141. `hardcoded:src-tauri/src/config.rs:read_json_file:aee7bf36cefac7fc:001`
+### 112. `hardcoded:src-tauri/src/config.rs:read_json_file:aee7bf36cefac7fc:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/config.rs:388`
@@ -1600,7 +1253,7 @@
 - 严重程度：高
 - 指纹：`aee7bf36cefac7fcbf31d3346085ae58b72b2729bafa46f3a9f76e6bd1d689ad`
 
-### 142. `hardcoded:src-tauri/src/config.rs:commit_staged:1f28398f78f50eb4:001`
+### 113. `hardcoded:src-tauri/src/config.rs:commit_staged:1f28398f78f50eb4:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/config.rs:674`
@@ -1611,7 +1264,7 @@
 - 严重程度：高
 - 指纹：`1f28398f78f50eb45b5c959e2ba68f3ceeec1c37a8bcaa6210d7f4a4c544e621`
 
-### 143. `hardcoded:src-tauri/src/config.rs:commit_staged:1f28398f78f50eb4:002`
+### 114. `hardcoded:src-tauri/src/config.rs:commit_staged:1f28398f78f50eb4:002`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/config.rs:684`
@@ -1622,7 +1275,7 @@
 - 严重程度：高
 - 指纹：`1f28398f78f50eb45b5c959e2ba68f3ceeec1c37a8bcaa6210d7f4a4c544e621`
 
-### 144. `hardcoded:src-tauri/src/database/backup.rs:import_sql:3257aefb21a94184:001`
+### 115. `hardcoded:src-tauri/src/database/backup.rs:import_sql:3257aefb21a94184:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/backup.rs:144`
@@ -1633,7 +1286,7 @@
 - 严重程度：高
 - 指纹：`3257aefb21a94184b1209cff24c46e901cca4638dc7d8d43bfbe59467f4e20b6`
 
-### 145. `hardcoded:src-tauri/src/database/backup.rs:import_sql_string_inner_with_hook:b6f42342f3f0600f:001`
+### 116. `hardcoded:src-tauri/src/database/backup.rs:import_sql_string_inner_with_hook:b6f42342f3f0600f:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/backup.rs:187`
@@ -1644,7 +1297,7 @@
 - 严重程度：高
 - 指纹：`b6f42342f3f0600f9cb489ce19f81d745499f1fece195d8bb644dcd6405421d8`
 
-### 146. `hardcoded:src-tauri/src/database/backup.rs:import_sql_string_inner_with_hook:74667e8132ec711f:001`
+### 117. `hardcoded:src-tauri/src/database/backup.rs:import_sql_string_inner_with_hook:74667e8132ec711f:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/backup.rs:198`
@@ -1655,55 +1308,7 @@
 - 严重程度：高
 - 指纹：`74667e8132ec711f120b3f831276174653f9874896a1571844dd80255f5e395f`
 
-### 147. `hardcoded:src-tauri/src/database/backup.rs:import_sql_string_inner_with_hook:82ffedbf4613a03b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/backup.rs:211`
-- 结构：`import_sql_string_inner_with_hook` / `backend_localized_error`
-- 原文/表达式：backup.sql.incomplete_transaction
-- 后端载荷：{"zh": "SQL 备份事务未完成，文件可能已截断。", "en": "The SQL backup transaction is incomplete; the file may be truncated.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`82ffedbf4613a03b471f122789468a3a4a525e36aeaf21e512427d9c7e3a4399`
-
-### 148. `hardcoded:src-tauri/src/database/backup.rs:validate_cc_switch_sql_export:20f5f0fbfb8c5fb6:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/backup.rs:289`
-- 结构：`validate_cc_switch_sql_export` / `backend_localized_error`
-- 原文/表达式：backup.sql.invalid_format
-- 后端载荷：{"zh": "仅支持导入由 CC Switch 导出的 SQL 备份文件。", "en": "Only SQL backups exported by CC Switch are supported.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`20f5f0fbfb8c5fb6c5157dc1be709725d96973e22272e8f276127d49c7ca06f7`
-
-### 149. `hardcoded:src-tauri/src/database/backup.rs:validate_sqlite_integrity:eeac2fc3f43e3776:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/backup.rs:664`
-- 结构：`validate_sqlite_integrity` / `backend_localized_error`
-- 原文/表达式：backup.db.integrity_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`eeac2fc3f43e37766abc4182b2f77988d03f9067324491cc9193e586af6f143a`
-
-### 150. `hardcoded:src-tauri/src/database/backup.rs:validate_imported_schema:aad0410bd5e54993:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/backup.rs:699`
-- 结构：`validate_imported_schema` / `backend_localized_error`
-- 原文/表达式：backup.sql.invalid_schema
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`aad0410bd5e549937825344a662f8b0c14a23f0b9c8bf0920301c3779b078143`
-
-### 151. `hardcoded:src-tauri/src/database/backup.rs:restore_from_backup_with_hook:681f57efe7da2535:001`
+### 118. `hardcoded:src-tauri/src/database/backup.rs:restore_from_backup_with_hook:681f57efe7da2535:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/backup.rs:1049`
@@ -1714,7 +1319,7 @@
 - 严重程度：高
 - 指纹：`681f57efe7da2535133284ae384ff87db9bc5a5fc4acedf7793e8c0d1e394a8f`
 
-### 152. `hardcoded:src-tauri/src/database/backup.rs:restore_from_backup_with_hook:54f3a8d74befab62:001`
+### 119. `hardcoded:src-tauri/src/database/backup.rs:restore_from_backup_with_hook:54f3a8d74befab62:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/backup.rs:1057`
@@ -1725,7 +1330,7 @@
 - 严重程度：高
 - 指纹：`54f3a8d74befab627857c2a0a14a45fee40a8589b92fb7447a8345e8323b4986`
 
-### 153. `hardcoded:src-tauri/src/database/backup.rs:restore_from_backup_with_hook:bbf951b3c7499c3b:001`
+### 120. `hardcoded:src-tauri/src/database/backup.rs:restore_from_backup_with_hook:bbf951b3c7499c3b:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/backup.rs:1081`
@@ -1736,19 +1341,7 @@
 - 严重程度：高
 - 指纹：`bbf951b3c7499c3b8b9cd85e7bfb7499d93e90a3697561ad879b724a4966baf8`
 
-### 154. `hardcoded:src-tauri/src/database/dao/proxy.rs:validate_pricing_source:504a5ff37eea0844:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/dao/proxy.rs:18`
-- 结构：`validate_pricing_source` / `backend_localized_error`
-- 原文/表达式：error.invalidPricingMode
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`504a5ff37eea08441cc0d2ee3e488528165e3ef17f5e190cebd64235ea864084`
-
-### 155. `hardcoded:src-tauri/src/database/dao/settings.rs:get_rectifier_config:62a256df6ab35bdc:001`
+### 121. `hardcoded:src-tauri/src/database/dao/settings.rs:get_rectifier_config:62a256df6ab35bdc:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/dao/settings.rs:247`
@@ -1759,7 +1352,7 @@
 - 严重程度：高
 - 指纹：`62a256df6ab35bdcc645fa4e5ca9ba8930ce53afe44f45acd365c7b0ee175d84`
 
-### 156. `hardcoded:src-tauri/src/database/dao/settings.rs:set_rectifier_config:3014f82983e744ef:001`
+### 122. `hardcoded:src-tauri/src/database/dao/settings.rs:set_rectifier_config:3014f82983e744ef:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/dao/settings.rs:258`
@@ -1770,7 +1363,7 @@
 - 严重程度：高
 - 指纹：`3014f82983e744efecd098e6c964035f1783f5aaa1c8d153a006f7cfa57afe10`
 
-### 157. `hardcoded:src-tauri/src/database/dao/settings.rs:get_optimizer_config:ac2299fbb889a76e:001`
+### 123. `hardcoded:src-tauri/src/database/dao/settings.rs:get_optimizer_config:ac2299fbb889a76e:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/dao/settings.rs:270`
@@ -1781,7 +1374,7 @@
 - 严重程度：高
 - 指纹：`ac2299fbb889a76ed20938543cf680f94082279ff0fd815041cd80d43ef8bc3a`
 
-### 158. `hardcoded:src-tauri/src/database/dao/settings.rs:set_optimizer_config:a1f99e9333e15fa7:001`
+### 124. `hardcoded:src-tauri/src/database/dao/settings.rs:set_optimizer_config:a1f99e9333e15fa7:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/dao/settings.rs:281`
@@ -1792,7 +1385,7 @@
 - 严重程度：高
 - 指纹：`a1f99e9333e15fa72d423bd38b5214763e77031b55b6580c664235e7eb3b2aa9`
 
-### 159. `hardcoded:src-tauri/src/database/dao/settings.rs:get_copilot_optimizer_config:49ca09735cca8c73:001`
+### 125. `hardcoded:src-tauri/src/database/dao/settings.rs:get_copilot_optimizer_config:49ca09735cca8c73:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/dao/settings.rs:295`
@@ -1803,7 +1396,7 @@
 - 严重程度：高
 - 指纹：`49ca09735cca8c732da8ffee427e3b123b20f20b33e0a98e69f53b614e789295`
 
-### 160. `hardcoded:src-tauri/src/database/dao/settings.rs:set_copilot_optimizer_config:6d9e53f06584cd3d:001`
+### 126. `hardcoded:src-tauri/src/database/dao/settings.rs:set_copilot_optimizer_config:6d9e53f06584cd3d:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/dao/settings.rs:306`
@@ -1814,7 +1407,7 @@
 - 严重程度：高
 - 指纹：`6d9e53f06584cd3d6c584b5d1638c8ee1774b3354110d5e0e40d4d3d3a9f7a89`
 
-### 161. `hardcoded:src-tauri/src/database/dao/settings.rs:get_log_config:744c1f645f719234:001`
+### 127. `hardcoded:src-tauri/src/database/dao/settings.rs:get_log_config:744c1f645f719234:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/dao/settings.rs:316`
@@ -1825,7 +1418,7 @@
 - 严重程度：高
 - 指纹：`744c1f645f719234d5de0c21e33b8d795d7942860b60a3a67396a5d76eba62c1`
 
-### 162. `hardcoded:src-tauri/src/database/dao/settings.rs:set_log_config:24d05f337742dce4:001`
+### 128. `hardcoded:src-tauri/src/database/dao/settings.rs:set_log_config:24d05f337742dce4:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/dao/settings.rs:324`
@@ -1836,7 +1429,7 @@
 - 严重程度：高
 - 指纹：`24d05f337742dce46614c1b21a8bda507142aeeaec3721b7751ad9e9a5d5c9c7`
 
-### 163. `hardcoded:src-tauri/src/database/dao/universal_providers.rs:get_all_universal_providers:c4825cae19e644bc:001`
+### 129. `hardcoded:src-tauri/src/database/dao/universal_providers.rs:get_all_universal_providers:c4825cae19e644bc:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/dao/universal_providers.rs:30`
@@ -1847,7 +1440,7 @@
 - 严重程度：高
 - 指纹：`c4825cae19e644bc462dd68644ca848380828bfd2084ee0a79c0dee35bb03af9`
 
-### 164. `hardcoded:src-tauri/src/database/mod.rs:get_auto_vacuum_mode:ddc85abe32b466c9:001`
+### 130. `hardcoded:src-tauri/src/database/mod.rs:get_auto_vacuum_mode:ddc85abe32b466c9:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/mod.rs:209`
@@ -1858,7 +1451,7 @@
 - 严重程度：高
 - 指纹：`ddc85abe32b466c962bdd9905e6e3a38fb509f55614771b827bd9a55b6bbcd1c`
 
-### 165. `hardcoded:src-tauri/src/database/mod.rs:incremental_vacuum_on_conn:a8ac074a6df61e6f:001`
+### 131. `hardcoded:src-tauri/src/database/mod.rs:incremental_vacuum_on_conn:a8ac074a6df61e6f:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/mod.rs:217`
@@ -1869,7 +1462,7 @@
 - 严重程度：高
 - 指纹：`a8ac074a6df61e6f69474f85f7a1dc0ed68448b07ac3402ee6801fcc7610babd`
 
-### 166. `hardcoded:src-tauri/src/database/mod.rs:incremental_vacuum_on_conn:a8ac074a6df61e6f:002`
+### 132. `hardcoded:src-tauri/src/database/mod.rs:incremental_vacuum_on_conn:a8ac074a6df61e6f:002`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/mod.rs:220`
@@ -1880,7 +1473,7 @@
 - 严重程度：高
 - 指纹：`a8ac074a6df61e6f69474f85f7a1dc0ed68448b07ac3402ee6801fcc7610babd`
 
-### 167. `hardcoded:src-tauri/src/database/mod.rs:incremental_vacuum_on_conn:a8ac074a6df61e6f:003`
+### 133. `hardcoded:src-tauri/src/database/mod.rs:incremental_vacuum_on_conn:a8ac074a6df61e6f:003`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/mod.rs:223`
@@ -1891,7 +1484,7 @@
 - 严重程度：高
 - 指纹：`a8ac074a6df61e6f69474f85f7a1dc0ed68448b07ac3402ee6801fcc7610babd`
 
-### 168. `hardcoded:src-tauri/src/database/mod.rs:has_user_tables:171b9c45f853b626:001`
+### 134. `hardcoded:src-tauri/src/database/mod.rs:has_user_tables:171b9c45f853b626:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/mod.rs:236`
@@ -1902,7 +1495,7 @@
 - 严重程度：高
 - 指纹：`171b9c45f853b62672b004c2086c33d41b971b8f836f7bc31fad226c9a717beb`
 
-### 169. `hardcoded:src-tauri/src/database/mod.rs:ensure_incremental_auto_vacuum_on_conn:a7f811c1d855b20f:001`
+### 135. `hardcoded:src-tauri/src/database/mod.rs:ensure_incremental_auto_vacuum_on_conn:a7f811c1d855b20f:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/mod.rs:250`
@@ -1913,7 +1506,7 @@
 - 严重程度：高
 - 指纹：`a7f811c1d855b20fb7ecd3f53934aea190a240de6a6e8d597067f1e4531188f7`
 
-### 170. `hardcoded:src-tauri/src/database/mod.rs:ensure_incremental_auto_vacuum_on_conn:07ff9c9c9c2ef182:001`
+### 136. `hardcoded:src-tauri/src/database/mod.rs:ensure_incremental_auto_vacuum_on_conn:07ff9c9c9c2ef182:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/mod.rs:257`
@@ -1924,7 +1517,7 @@
 - 严重程度：高
 - 指纹：`07ff9c9c9c2ef182c1b1b7980c4f2c61446670355406aae3348c7c10ff64367c`
 
-### 171. `hardcoded:src-tauri/src/database/mod.rs:ensure_incremental_auto_vacuum_on_conn:eff3735bba057c47:001`
+### 137. `hardcoded:src-tauri/src/database/mod.rs:ensure_incremental_auto_vacuum_on_conn:eff3735bba057c47:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/mod.rs:259`
@@ -1935,7 +1528,7 @@
 - 严重程度：高
 - 指纹：`eff3735bba057c47f1310e9536b9a0f3b782981cddd34fad5e2e877461ffa8f3`
 
-### 172. `hardcoded:src-tauri/src/database/schema.rs:apply_schema_migrations_on_conn:17fba5292e346e8b:001`
+### 138. `hardcoded:src-tauri/src/database/schema.rs:apply_schema_migrations_on_conn:17fba5292e346e8b:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:455`
@@ -1946,7 +1539,7 @@
 - 严重程度：高
 - 指纹：`17fba5292e346e8bf4bc52efb96d0fcd6e8858bae7da4b6381a9aa72feece33c`
 
-### 173. `hardcoded:src-tauri/src/database/schema.rs:apply_schema_migrations_on_conn:1532984b41370439:001`
+### 139. `hardcoded:src-tauri/src/database/schema.rs:apply_schema_migrations_on_conn:1532984b41370439:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:463`
@@ -1957,7 +1550,7 @@
 - 严重程度：高
 - 指纹：`1532984b413704393fbfb8959e255b4c32dc94cb8814cf146373e425d879bb7b`
 
-### 174. `hardcoded:src-tauri/src/database/schema.rs:apply_schema_migrations_on_conn:24c2f069812875f1:001`
+### 140. `hardcoded:src-tauri/src/database/schema.rs:apply_schema_migrations_on_conn:24c2f069812875f1:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:640`
@@ -1968,7 +1561,7 @@
 - 严重程度：高
 - 指纹：`24c2f069812875f13b548579ba6f2434723d64d2221e645a3fc6f45ae0a9c2ae`
 
-### 175. `hardcoded:src-tauri/src/database/schema.rs:apply_schema_migrations_on_conn:42fa73ee86db5553:001`
+### 141. `hardcoded:src-tauri/src/database/schema.rs:apply_schema_migrations_on_conn:42fa73ee86db5553:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:652`
@@ -1979,7 +1572,7 @@
 - 严重程度：高
 - 指纹：`42fa73ee86db5553796e7f883e0def8fe2e8da599beea35d0e15370855693110`
 
-### 176. `hardcoded:src-tauri/src/database/schema.rs:migrate_v1_to_v2:bbebde623b34316d:001`
+### 142. `hardcoded:src-tauri/src/database/schema.rs:migrate_v1_to_v2:bbebde623b34316d:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:792`
@@ -1990,7 +1583,7 @@
 - 严重程度：高
 - 指纹：`bbebde623b34316d3d47bff831a85a6a2721864c5287c670c64719ae66ad624a`
 
-### 177. `hardcoded:src-tauri/src/database/schema.rs:migrate_v1_to_v2:21bbdb02d5ce8e90:001`
+### 143. `hardcoded:src-tauri/src/database/schema.rs:migrate_v1_to_v2:21bbdb02d5ce8e90:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:794`
@@ -2001,7 +1594,7 @@
 - 严重程度：高
 - 指纹：`21bbdb02d5ce8e90c0575fc0bdc504e52687820ebe1d73c96922663b5ab2eca9`
 
-### 178. `hardcoded:src-tauri/src/database/schema.rs:migrate_v1_to_v2:be0d614bc74ee55f:001`
+### 144. `hardcoded:src-tauri/src/database/schema.rs:migrate_v1_to_v2:be0d614bc74ee55f:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:802`
@@ -2012,7 +1605,7 @@
 - 严重程度：高
 - 指纹：`be0d614bc74ee55f75aaf4b63c717774aeaba61ed004559bf0c68313eeb7465e`
 
-### 179. `hardcoded:src-tauri/src/database/schema.rs:migrate_v1_to_v2:334430af7eaa8175:001`
+### 145. `hardcoded:src-tauri/src/database/schema.rs:migrate_v1_to_v2:334430af7eaa8175:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:849`
@@ -2023,7 +1616,7 @@
 - 严重程度：高
 - 指纹：`334430af7eaa8175c76901fb8f57434f64d2f65d85b36bb51951c3d62d7d2c78`
 
-### 180. `hardcoded:src-tauri/src/database/schema.rs:migrate_proxy_config_to_per_app:9b43b0a47fa8f127:001`
+### 146. `hardcoded:src-tauri/src/database/schema.rs:migrate_proxy_config_to_per_app:9b43b0a47fa8f127:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:995`
@@ -2034,7 +1627,7 @@
 - 严重程度：高
 - 指纹：`9b43b0a47fa8f127d3aa87d5eb6678721106fc71bfd57675d61a37f82594b42e`
 
-### 181. `hardcoded:src-tauri/src/database/schema.rs:migrate_skills_table:34e8d69a495f8f75:001`
+### 147. `hardcoded:src-tauri/src/database/schema.rs:migrate_skills_table:34e8d69a495f8f75:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:1048`
@@ -2045,7 +1638,7 @@
 - 严重程度：高
 - 指纹：`34e8d69a495f8f7597a620ceda80ceb877ed11f85734975e15e15e9f7b54131b`
 
-### 182. `hardcoded:src-tauri/src/database/schema.rs:migrate_skills_table:ffcbfb19adf81263:001`
+### 148. `hardcoded:src-tauri/src/database/schema.rs:migrate_skills_table:ffcbfb19adf81263:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:1054`
@@ -2056,7 +1649,7 @@
 - 严重程度：高
 - 指纹：`ffcbfb19adf8126349630e886b58fc3714ee576b38ec413b060dc610cfd980cf`
 
-### 183. `hardcoded:src-tauri/src/database/schema.rs:migrate_skills_table:fdc62643ae161f9f:001`
+### 149. `hardcoded:src-tauri/src/database/schema.rs:migrate_skills_table:fdc62643ae161f9f:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:1064`
@@ -2067,7 +1660,7 @@
 - 严重程度：高
 - 指纹：`fdc62643ae161f9f99e365a7970654f5217a1bce5a8af60990bdefbe204d08c5`
 
-### 184. `hardcoded:src-tauri/src/database/schema.rs:migrate_skills_table:08828b79c37befd2:001`
+### 150. `hardcoded:src-tauri/src/database/schema.rs:migrate_skills_table:08828b79c37befd2:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:1066`
@@ -2078,7 +1671,7 @@
 - 严重程度：高
 - 指纹：`08828b79c37befd24213eb1936d8003b38980f5e15f34323cf0993638fe990e6`
 
-### 185. `hardcoded:src-tauri/src/database/schema.rs:migrate_skills_table:ebf80a3bfa51d13f:001`
+### 151. `hardcoded:src-tauri/src/database/schema.rs:migrate_skills_table:ebf80a3bfa51d13f:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:1084`
@@ -2089,7 +1682,7 @@
 - 严重程度：高
 - 指纹：`ebf80a3bfa51d13f5a24b69ba6476a97564c6f0037691ef5f945dd4e4e300d9b`
 
-### 186. `hardcoded:src-tauri/src/database/schema.rs:migrate_skills_table:095caa47cd9498d3:001`
+### 152. `hardcoded:src-tauri/src/database/schema.rs:migrate_skills_table:095caa47cd9498d3:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:1090`
@@ -2100,7 +1693,7 @@
 - 严重程度：高
 - 指纹：`095caa47cd9498d37a09ab97a365f36ec474b0a9e645de53f2f70b2990dd73fd`
 
-### 187. `hardcoded:src-tauri/src/database/schema.rs:migrate_v2_to_v3:668466cd4841ce02:001`
+### 153. `hardcoded:src-tauri/src/database/schema.rs:migrate_v2_to_v3:668466cd4841ce02:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:1124`
@@ -2111,7 +1704,7 @@
 - 严重程度：高
 - 指纹：`668466cd4841ce026b9f22e2b7b9c79f70126876832ae1c34dccb0bc89a14c42`
 
-### 188. `hardcoded:src-tauri/src/database/schema.rs:migrate_v2_to_v3:52dfc20b134131e2:001`
+### 154. `hardcoded:src-tauri/src/database/schema.rs:migrate_v2_to_v3:52dfc20b134131e2:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:1132`
@@ -2122,7 +1715,7 @@
 - 严重程度：高
 - 指纹：`52dfc20b134131e2eecbce5fe737216beb72b81a8cc49963d3a7fd0201743c01`
 
-### 189. `hardcoded:src-tauri/src/database/schema.rs:migrate_v2_to_v3:7be1c9b79ecb5eed:001`
+### 155. `hardcoded:src-tauri/src/database/schema.rs:migrate_v2_to_v3:7be1c9b79ecb5eed:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:1134`
@@ -2133,7 +1726,7 @@
 - 严重程度：高
 - 指纹：`7be1c9b79ecb5eed6a98386507fb1aa47320d4a801aaa7996a0f142ec965c59d`
 
-### 190. `hardcoded:src-tauri/src/database/schema.rs:migrate_v2_to_v3:e852a1abad01001d:001`
+### 156. `hardcoded:src-tauri/src/database/schema.rs:migrate_v2_to_v3:e852a1abad01001d:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:1136`
@@ -2144,7 +1737,7 @@
 - 严重程度：高
 - 指纹：`e852a1abad01001ddbafaf8aff7bab0972094efb62460bc2a07f967d5f47dba0`
 
-### 191. `hardcoded:src-tauri/src/database/schema.rs:migrate_v2_to_v3:095caa47cd9498d3:001`
+### 157. `hardcoded:src-tauri/src/database/schema.rs:migrate_v2_to_v3:095caa47cd9498d3:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:1152`
@@ -2155,7 +1748,7 @@
 - 严重程度：高
 - 指纹：`095caa47cd9498d37a09ab97a365f36ec474b0a9e645de53f2f70b2990dd73fd`
 
-### 192. `hardcoded:src-tauri/src/database/schema.rs:migrate_v2_to_v3:34e8d69a495f8f75:001`
+### 158. `hardcoded:src-tauri/src/database/schema.rs:migrate_v2_to_v3:34e8d69a495f8f75:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:1172`
@@ -2166,7 +1759,7 @@
 - 严重程度：高
 - 指纹：`34e8d69a495f8f7597a620ceda80ceb877ed11f85734975e15e15e9f7b54131b`
 
-### 193. `hardcoded:src-tauri/src/database/schema.rs:migrate_v5_to_v6:d7def629bcd53db4:001`
+### 159. `hardcoded:src-tauri/src/database/schema.rs:migrate_v5_to_v6:d7def629bcd53db4:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:1251`
@@ -2177,7 +1770,7 @@
 - 严重程度：高
 - 指纹：`d7def629bcd53db45ce5ea162eb28025fd1261693bc721c93e929754eb0f418b`
 
-### 194. `hardcoded:src-tauri/src/database/schema.rs:migrate_v7_to_v8:02d3963c114ebeee:001`
+### 160. `hardcoded:src-tauri/src/database/schema.rs:migrate_v7_to_v8:02d3963c114ebeee:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:1343`
@@ -2188,7 +1781,7 @@
 - 严重程度：高
 - 指纹：`02d3963c114ebeeeab17c45e93c2c4909b6a6930d091278c0194006d4ccff60d`
 
-### 195. `hardcoded:src-tauri/src/database/schema.rs:migrate_v7_to_v8:c4523da139e2e990:001`
+### 161. `hardcoded:src-tauri/src/database/schema.rs:migrate_v7_to_v8:c4523da139e2e990:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:1372`
@@ -2199,7 +1792,7 @@
 - 严重程度：高
 - 指纹：`c4523da139e2e990f0ec8573a1c05f8bf8400cd8cd308e2f86022ba20cab6cf9`
 
-### 196. `hardcoded:src-tauri/src/database/schema.rs:migrate_v8_to_v9:19850babb9232f45:001`
+### 162. `hardcoded:src-tauri/src/database/schema.rs:migrate_v8_to_v9:19850babb9232f45:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:1391`
@@ -2210,7 +1803,7 @@
 - 严重程度：高
 - 指纹：`19850babb9232f45017d205dcc38a43c46e329b9ece3e71b239e17a37ae9cc42`
 
-### 197. `hardcoded:src-tauri/src/database/schema.rs:migrate_v8_to_v9:334430af7eaa8175:001`
+### 163. `hardcoded:src-tauri/src/database/schema.rs:migrate_v8_to_v9:334430af7eaa8175:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:1393`
@@ -2221,7 +1814,7 @@
 - 严重程度：高
 - 指纹：`334430af7eaa8175c76901fb8f57434f64d2f65d85b36bb51951c3d62d7d2c78`
 
-### 198. `hardcoded:src-tauri/src/database/schema.rs:migrate_v10_to_v11:9c3b2613b525c4df:001`
+### 164. `hardcoded:src-tauri/src/database/schema.rs:migrate_v10_to_v11:9c3b2613b525c4df:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:1470`
@@ -2232,7 +1825,7 @@
 - 严重程度：高
 - 指纹：`9c3b2613b525c4df18f8c5c53c515645be98784d29c074fbb82d7229aa09e490`
 
-### 199. `hardcoded:src-tauri/src/database/schema.rs:migrate_v11_to_v12:eeaea330e467a7c4:001`
+### 165. `hardcoded:src-tauri/src/database/schema.rs:migrate_v11_to_v12:eeaea330e467a7c4:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:1493`
@@ -2243,7 +1836,7 @@
 - 严重程度：高
 - 指纹：`eeaea330e467a7c4fd9fde10b64f0380ef71fe1c22a3f65b213bb8052e3f4e21`
 
-### 200. `hardcoded:src-tauri/src/database/schema.rs:migrate_v16_to_v17:a89c5d3405069e61:001`
+### 166. `hardcoded:src-tauri/src/database/schema.rs:migrate_v16_to_v17:a89c5d3405069e61:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:1663`
@@ -2254,7 +1847,7 @@
 - 严重程度：高
 - 指纹：`a89c5d3405069e614ab88e574b2ab5314e516f0e9f66a6075956bdf72b79c070`
 
-### 201. `hardcoded:src-tauri/src/database/schema.rs:seed_model_pricing:01a596785e9c0e80:001`
+### 167. `hardcoded:src-tauri/src/database/schema.rs:seed_model_pricing:01a596785e9c0e80:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:2976`
@@ -2265,7 +1858,7 @@
 - 严重程度：高
 - 指纹：`01a596785e9c0e808b704fe563395b4780ed982b491ad5e8767708c697270f26`
 
-### 202. `hardcoded:src-tauri/src/database/schema.rs:seed_model_pricing:1cbb5b6c2633e149:001`
+### 168. `hardcoded:src-tauri/src/database/schema.rs:seed_model_pricing:1cbb5b6c2633e149:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:2986`
@@ -2276,7 +1869,7 @@
 - 严重程度：高
 - 指纹：`1cbb5b6c2633e149c8243f996024d9d1e7511519fc7b9aa037653cc318b232c3`
 
-### 203. `hardcoded:src-tauri/src/database/schema.rs:repair_current_model_pricing:2dd583bb1899afa0:001`
+### 169. `hardcoded:src-tauri/src/database/schema.rs:repair_current_model_pricing:2dd583bb1899afa0:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:3742`
@@ -2287,7 +1880,7 @@
 - 严重程度：高
 - 指纹：`2dd583bb1899afa093f848a2111b56fbf86121b87be119bd5138e076ae75b61a`
 
-### 204. `hardcoded:src-tauri/src/database/schema.rs:get_user_version:36bba3e296167b2f:001`
+### 170. `hardcoded:src-tauri/src/database/schema.rs:get_user_version:36bba3e296167b2f:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:3764`
@@ -2298,7 +1891,7 @@
 - 严重程度：高
 - 指纹：`36bba3e296167b2f7f2cea7f0468145a0c792583dfdfcbdd0ffbb902b1731a75`
 
-### 205. `hardcoded:src-tauri/src/database/schema.rs:set_user_version:2ed92a7931da8a62:001`
+### 171. `hardcoded:src-tauri/src/database/schema.rs:set_user_version:2ed92a7931da8a62:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:3769`
@@ -2309,7 +1902,7 @@
 - 严重程度：高
 - 指纹：`2ed92a7931da8a620350f9d2b129398aa9f17819fe7f7e11c28651f1dca4c43a`
 
-### 206. `hardcoded:src-tauri/src/database/schema.rs:set_user_version:9be2d503a5f8d5e3:001`
+### 172. `hardcoded:src-tauri/src/database/schema.rs:set_user_version:9be2d503a5f8d5e3:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:3773`
@@ -2320,7 +1913,7 @@
 - 严重程度：高
 - 指纹：`9be2d503a5f8d5e392d639bc957b2d79ba895bb672cd00c8104cf1b453f45fd2`
 
-### 207. `hardcoded:src-tauri/src/database/schema.rs:create_request_logs_usage_indexes_if_supported:3453a31fad9e30c4:001`
+### 173. `hardcoded:src-tauri/src/database/schema.rs:create_request_logs_usage_indexes_if_supported:3453a31fad9e30c4:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:3790`
@@ -2331,7 +1924,7 @@
 - 严重程度：高
 - 指纹：`3453a31fad9e30c467bf8cbdbc532517229c179c84818b36ac685bed3ec1d716`
 
-### 208. `hardcoded:src-tauri/src/database/schema.rs:create_request_logs_usage_indexes_if_supported:77f9e426b5b978b3:001`
+### 174. `hardcoded:src-tauri/src/database/schema.rs:create_request_logs_usage_indexes_if_supported:77f9e426b5b978b3:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:3809`
@@ -2342,7 +1935,7 @@
 - 严重程度：高
 - 指纹：`77f9e426b5b978b3b44cb1c2e4414f63ebbb0ad9b0c7aaaccdb2189267fa9b79`
 
-### 209. `hardcoded:src-tauri/src/database/schema.rs:create_request_logs_usage_indexes_if_supported:048ec36a8184d4dd:001`
+### 175. `hardcoded:src-tauri/src/database/schema.rs:create_request_logs_usage_indexes_if_supported:048ec36a8184d4dd:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:3821`
@@ -2353,7 +1946,7 @@
 - 严重程度：高
 - 指纹：`048ec36a8184d4dd749beb6546856a118c27669f49a070e80ee4396b45e78cfa`
 
-### 210. `hardcoded:src-tauri/src/database/schema.rs:validate_identifier:7d650a94fe9a59b3:001`
+### 176. `hardcoded:src-tauri/src/database/schema.rs:validate_identifier:7d650a94fe9a59b3:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:3827`
@@ -2364,7 +1957,7 @@
 - 严重程度：高
 - 指纹：`7d650a94fe9a59b3e77a59e2647f3071756ebcb5358ce111964fb8483adb3d25`
 
-### 211. `hardcoded:src-tauri/src/database/schema.rs:validate_identifier:90b31c400be95b57:001`
+### 177. `hardcoded:src-tauri/src/database/schema.rs:validate_identifier:90b31c400be95b57:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:3831`
@@ -2375,7 +1968,7 @@
 - 严重程度：高
 - 指纹：`90b31c400be95b57ff530b2b16380bb27921d844c8908312880421bb3657ef22`
 
-### 212. `hardcoded:src-tauri/src/database/schema.rs:table_exists:f5db9346ca1b5561:001`
+### 178. `hardcoded:src-tauri/src/database/schema.rs:table_exists:f5db9346ca1b5561:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:3842`
@@ -2386,7 +1979,7 @@
 - 严重程度：高
 - 指纹：`f5db9346ca1b5561ebcf92922a6703da68139b135a06044dba65a70512edd9e7`
 
-### 213. `hardcoded:src-tauri/src/database/schema.rs:table_exists:f20347ae9498d426:001`
+### 179. `hardcoded:src-tauri/src/database/schema.rs:table_exists:f20347ae9498d426:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:3845`
@@ -2397,7 +1990,7 @@
 - 严重程度：高
 - 指纹：`f20347ae9498d426dacf6cc00ebf210347c1ae5689cb80a5027a2ebc8edffbd9`
 
-### 214. `hardcoded:src-tauri/src/database/schema.rs:table_exists:eeb123ff5b01929d:001`
+### 180. `hardcoded:src-tauri/src/database/schema.rs:table_exists:eeb123ff5b01929d:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:3849`
@@ -2408,7 +2001,7 @@
 - 严重程度：高
 - 指纹：`eeb123ff5b01929dec90e712a5b58cfa6b2b93020b6315db5c1a121a1d9d213d`
 
-### 215. `hardcoded:src-tauri/src/database/schema.rs:has_column:599add9d925e7de1:001`
+### 181. `hardcoded:src-tauri/src/database/schema.rs:has_column:599add9d925e7de1:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:3868`
@@ -2419,7 +2012,7 @@
 - 严重程度：高
 - 指纹：`599add9d925e7de188d08425bcc93ecb762d941dbda2561e79b1bc72fb62bb3d`
 
-### 216. `hardcoded:src-tauri/src/database/schema.rs:has_column:669f93117b39737d:001`
+### 182. `hardcoded:src-tauri/src/database/schema.rs:has_column:669f93117b39737d:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:3871`
@@ -2430,7 +2023,7 @@
 - 严重程度：高
 - 指纹：`669f93117b39737da61276d1601517f746da80d9378c527a64a84ed282b41dcf`
 
-### 217. `hardcoded:src-tauri/src/database/schema.rs:has_column:c948c80c6073cb98:001`
+### 183. `hardcoded:src-tauri/src/database/schema.rs:has_column:c948c80c6073cb98:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:3875`
@@ -2441,7 +2034,7 @@
 - 严重程度：高
 - 指纹：`c948c80c6073cb98bd2a3a0dcfb67eb55c52b0888665122500e1972fa57a6b6d`
 
-### 218. `hardcoded:src-tauri/src/database/schema.rs:add_column_if_missing:43d3d2a1999f56e1:001`
+### 184. `hardcoded:src-tauri/src/database/schema.rs:add_column_if_missing:43d3d2a1999f56e1:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:3894`
@@ -2452,7 +2045,7 @@
 - 严重程度：高
 - 指纹：`43d3d2a1999f56e1f9dd63c6750aceb6bc67753fc175991d9a899a40d0f95036`
 
-### 219. `hardcoded:src-tauri/src/database/schema.rs:add_column_if_missing:714f10b1f55e9d79:001`
+### 185. `hardcoded:src-tauri/src/database/schema.rs:add_column_if_missing:714f10b1f55e9d79:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/database/schema.rs:3903`
@@ -2463,7 +2056,7 @@
 - 严重程度：高
 - 指纹：`714f10b1f55e9d79fc64636fc06504970e97f253324e4d71bf74930e763e73e3`
 
-### 220. `hardcoded:src-tauri/src/deeplink/provider.rs:build_provider_meta:a2851dc689ca6a94:001`
+### 186. `hardcoded:src-tauri/src/deeplink/provider.rs:build_provider_meta:a2851dc689ca6a94:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/deeplink/provider.rs:498`
@@ -2474,7 +2067,7 @@
 - 严重程度：高
 - 指纹：`a2851dc689ca6a949b2f28abc634a168783ccda5198e5591f13dc73a52e536b6`
 
-### 221. `hardcoded:src-tauri/src/deeplink/utils.rs:decode_base64_param:1f323b6ffe31885f:001`
+### 187. `hardcoded:src-tauri/src/deeplink/utils.rs:decode_base64_param:1f323b6ffe31885f:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/deeplink/utils.rs:77`
@@ -2485,7 +2078,7 @@
 - 严重程度：高
 - 指纹：`1f323b6ffe31885f2df1230cffcad70ef8bf38d542a7a932d4f2745028c4ece0`
 
-### 222. `hardcoded:src-tauri/src/deeplink/utils.rs:decode_base64_param:13a46616e16fe5e6:001`
+### 188. `hardcoded:src-tauri/src/deeplink/utils.rs:decode_base64_param:13a46616e16fe5e6:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/deeplink/utils.rs:78`
@@ -2496,79 +2089,7 @@
 - 严重程度：高
 - 指纹：`13a46616e16fe5e684349b2088bd2de5ba310d1469542b69ac355b09c8210c97`
 
-### 223. `hardcoded:src-tauri/src/gemini_config.rs:parse_env_file_strict:3efc1f5418e2f6db:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/gemini_config.rs:91`
-- 结构：`parse_env_file_strict` / `backend_localized_error`
-- 原文/表达式：gemini.env.parse_error.no_equals
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`3efc1f5418e2f6dbfe8757a971edd78d2970bcaa8f591e63333603241e85171a`
-
-### 224. `hardcoded:src-tauri/src/gemini_config.rs:parse_env_file_strict:8d7c7fea370ebb06:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/gemini_config.rs:105`
-- 结构：`parse_env_file_strict` / `backend_localized_error`
-- 原文/表达式：gemini.env.parse_error.empty_key
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`8d7c7fea370ebb06c8e4c2298a7ce7c4fae17b8c498309edf3d33296d12cfc0f`
-
-### 225. `hardcoded:src-tauri/src/gemini_config.rs:parse_env_file_strict:6d275283ed8b9b98:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/gemini_config.rs:114`
-- 结构：`parse_env_file_strict` / `backend_localized_error`
-- 原文/表达式：gemini.env.parse_error.invalid_key
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`6d275283ed8b9b98ca3e4b56111e3ec6a5088b3881d5357b4750c1985deff6f4`
-
-### 226. `hardcoded:src-tauri/src/gemini_config.rs:validate_gemini_settings:172762c866ea005b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/gemini_config.rs:272`
-- 结构：`validate_gemini_settings` / `backend_localized_error`
-- 原文/表达式：gemini.validation.invalid_env
-- 后端载荷：{"zh": "Gemini 配置格式错误: env 必须是对象", "en": "Gemini config invalid: env must be an object", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`172762c866ea005ba23dff9447b387dc2c8d04dbfb9d57912cc7e63f97c7e4e0`
-
-### 227. `hardcoded:src-tauri/src/gemini_config.rs:validate_gemini_settings:6da394ed387065ef:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/gemini_config.rs:283`
-- 结构：`validate_gemini_settings` / `backend_localized_error`
-- 原文/表达式：gemini.validation.invalid_config
-- 后端载荷：{"zh": "Gemini 配置格式错误: config 必须是对象", "en": "Gemini config invalid: config must be an object", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`6da394ed387065efe500dd6bfa11cd25bfca2aa5c4a96372531f64e55ce2f252`
-
-### 228. `hardcoded:src-tauri/src/gemini_config.rs:validate_gemini_settings_strict:a7398b03cc2502d0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/gemini_config.rs:319`
-- 结构：`validate_gemini_settings_strict` / `backend_localized_error`
-- 原文/表达式：gemini.validation.missing_api_key
-- 后端载荷：{"zh": "Gemini 配置缺少必需字段: GEMINI_API_KEY", "en": "Gemini config missing required field: GEMINI_API_KEY", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`a7398b03cc2502d00b394af7f92d086357da95b7ba904be9ec1dbcab4d30ffc4`
-
-### 229. `hardcoded:src-tauri/src/gemini_mcp.rs:set_mcp_servers_map:3aa384326118160d:001`
+### 189. `hardcoded:src-tauri/src/gemini_mcp.rs:set_mcp_servers_map:3aa384326118160d:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/gemini_mcp.rs:93`
@@ -2579,139 +2100,7 @@
 - 严重程度：高
 - 指纹：`3aa384326118160db083930c94cc7a4e99bfe08756a531a17bcd013c81b07b3a`
 
-### 230. `hardcoded:src-tauri/src/grok_config.rs:required_non_empty_string:9a24d1090f0ca37f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/grok_config.rs:44`
-- 结构：`required_non_empty_string` / `backend_localized_error`
-- 原文/表达式：provider.grokbuild.field.missing
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`9a24d1090f0ca37fba5bd713e9b65ad2f0255e6461afb5585c6c42e36faffb06`
-
-### 231. `hardcoded:src-tauri/src/grok_config.rs:validate_config_toml_syntax:feae00b110175255:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/grok_config.rs:74`
-- 结构：`validate_config_toml_syntax` / `backend_localized_error`
-- 原文/表达式：provider.grokbuild.config.invalid_toml
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`feae00b110175255d002e5ab36171c57984dcdea31e12f36b412f141dfeb4fd5`
-
-### 232. `hardcoded:src-tauri/src/grok_config.rs:validate_config_toml:feae00b110175255:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/grok_config.rs:100`
-- 结构：`validate_config_toml` / `backend_localized_error`
-- 原文/表达式：provider.grokbuild.config.invalid_toml
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`feae00b110175255d002e5ab36171c57984dcdea31e12f36b412f141dfeb4fd5`
-
-### 233. `hardcoded:src-tauri/src/grok_config.rs:validate_config_toml:33ae686fa42efc34:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/grok_config.rs:108`
-- 结构：`validate_config_toml` / `backend_localized_error`
-- 原文/表达式：provider.grokbuild.config.not_table
-- 后端载荷：{"zh": "Grok Build 配置必须是 TOML 表结构", "en": "Grok Build configuration must be a TOML table", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`33ae686fa42efc343f28398a7a76d20c077aa418894beee59c36079d2b6e699b`
-
-### 234. `hardcoded:src-tauri/src/grok_config.rs:validate_config_toml:b1c836960d96634b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/grok_config.rs:118`
-- 结构：`validate_config_toml` / `backend_localized_error`
-- 原文/表达式：provider.grokbuild.models.missing
-- 后端载荷：{"zh": "Grok Build 配置缺少 [models]", "en": "Grok Build configuration is missing [models]", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`b1c836960d96634b29efbcd648f65a07f0a7f88d556ac256d5d7f002d96adbc8`
-
-### 235. `hardcoded:src-tauri/src/grok_config.rs:validate_config_toml:4d408ee2d9607ed4:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/grok_config.rs:129`
-- 结构：`validate_config_toml` / `backend_localized_error`
-- 原文/表达式：provider.grokbuild.model.missing
-- 后端载荷：{"zh": "Grok Build 配置缺少 [model.<name>]", "en": "Grok Build configuration is missing [model.<name>]", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`4d408ee2d9607ed469a6e9b309758481134072908eec9642a90b5c8151fdaddb`
-
-### 236. `hardcoded:src-tauri/src/grok_config.rs:validate_config_toml:eefec5b67e20802b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/grok_config.rs:139`
-- 结构：`validate_config_toml` / `backend_localized_error`
-- 原文/表达式：provider.grokbuild.default_model.missing
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`eefec5b67e20802bbacd2e1976bee9139b2552ab45d1a334b3b44dcca6c09d45`
-
-### 237. `hardcoded:src-tauri/src/grok_config.rs:validate_config_toml:49bfe959cc2ec930:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/grok_config.rs:152`
-- 结构：`validate_config_toml` / `backend_localized_error`
-- 原文/表达式：provider.grokbuild.credentials.missing
-- 后端载荷：{"zh": "Grok Build 配置缺少有效的 api_key 或 env_key 字段", "en": "Grok Build configuration is missing a valid api_key or env_key field", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`49bfe959cc2ec9308ba1fb6d9e27935538f5c4227ff58a22bfb6f4dca3bdd664`
-
-### 238. `hardcoded:src-tauri/src/grok_config.rs:validate_config_toml:4c5891d922289619:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/grok_config.rs:165`
-- 结构：`validate_config_toml` / `backend_localized_error`
-- 原文/表达式：provider.grokbuild.context_window.invalid
-- 后端载荷：{"zh": "Grok Build context_window 必须是正整数", "en": "Grok Build context_window must be a positive integer", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`4c5891d9222896198540f0ba012b045d95d4ca723c8e72beca35dec56b8a91b9`
-
-### 239. `hardcoded:src-tauri/src/grok_config.rs:read_grok_live_settings:843afb01f8e29217:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/grok_config.rs:287`
-- 结构：`read_grok_live_settings` / `backend_localized_error`
-- 原文/表达式：grokbuild.config.missing
-- 后端载荷：{"zh": "Grok Build 配置文件不存在", "en": "Grok Build configuration file not found", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`843afb01f8e292177744f3c4e4b7b55936b7547974d80751b08ac24a4ea81185`
-
-### 240. `hardcoded:src-tauri/src/kimi_config.rs:remove_oauth_account:ce0f2a7dc799e0bc:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/kimi_config.rs:637`
-- 结构：`remove_oauth_account` / `backend_localized_error`
-- 原文/表达式：kimi.account.remove_current
-- 后端载荷：{"zh": "这个账号正在使用，请先切换到其他账号再删除", "en": "This account is in use; switch to another account before removing it", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`ce0f2a7dc799e0bc00a5dbb548f39d0be38516cd42c1a34566d83b7bd5491f8f`
-
-### 241. `hardcoded:src-tauri/src/lightweight.rs:enter_lightweight_mode:2405fe2aec78ac25:001`
+### 190. `hardcoded:src-tauri/src/lightweight.rs:enter_lightweight_mode:2405fe2aec78ac25:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/lightweight.rs:23`
@@ -2722,7 +2111,7 @@
 - 严重程度：高
 - 指纹：`2405fe2aec78ac25659b23baf23e586eb327de09370b7184ad2a7ee4f21e8703`
 
-### 242. `hardcoded:src-tauri/src/lightweight.rs:exit_lightweight_mode:9253bb74ed46475f:001`
+### 191. `hardcoded:src-tauri/src/lightweight.rs:exit_lightweight_mode:9253bb74ed46475f:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/lightweight.rs:71`
@@ -2733,7 +2122,7 @@
 - 严重程度：高
 - 指纹：`9253bb74ed46475fd4bfaf9351eb441cdd874d89d89ec54300641d017c492745`
 
-### 243. `hardcoded:src-tauri/src/lightweight.rs:exit_lightweight_mode:0117ee43954a9116:001`
+### 192. `hardcoded:src-tauri/src/lightweight.rs:exit_lightweight_mode:0117ee43954a9116:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/lightweight.rs:73`
@@ -2744,151 +2133,7 @@
 - 严重程度：高
 - 指纹：`0117ee43954a911644e4777a2e7654f492df07086bbee177338ae16de59a0c3e`
 
-### 244. `hardcoded:src-tauri/src/live/patch/mod.rs:from:54de1b333957750b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/live/patch/mod.rs:162`
-- 结构：`from` / `backend_localized_error`
-- 原文/表达式：live.parse_error
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`54de1b333957750b0a287639c387483298b811a13093bd9bf291a01c7f16cff4`
-
-### 245. `hardcoded:src-tauri/src/live/patch/mod.rs:from:eb41dd21e80a611e:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/live/patch/mod.rs:177`
-- 结构：`from` / `backend_localized_error`
-- 原文/表达式：live.shape_error
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`eb41dd21e80a611e81de34924497a9a56fb4759bd2d588f23aed750645434f11`
-
-### 246. `hardcoded:src-tauri/src/live/patch/mod.rs:from:7828ebe04dd658c5:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/live/patch/mod.rs:194`
-- 结构：`from` / `backend_localized_error`
-- 原文/表达式：provider.codex.config.profile_overrides_route
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`7828ebe04dd658c51d4c75851896da7ddb2503cff6cf8d3a3b5fbe9525ae59dc`
-
-### 247. `hardcoded:src-tauri/src/live/project/codex.rs:config_error:1dd6abf6bf9aa0cc:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/live/project/codex.rs:129`
-- 结构：`config_error` / `backend_localized_error`
-- 原文/表达式：provider.codex.config.invalid
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`1dd6abf6bf9aa0cca3579824796c1481683c894135d16ad66176608c76255fd5`
-
-### 248. `hardcoded:src-tauri/src/live/project/codex.rs:third_party_route:cd7498a5901772aa:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/live/project/codex.rs:286`
-- 结构：`third_party_route` / `backend_localized_error`
-- 原文/表达式：provider.codex.config.missing
-- 后端载荷：{"zh": "Codex 第三方供应商缺少 config.toml 配置，无法写入 bearer token", "en": "Codex third-party provider is missing config.toml, cannot write bearer token", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`cd7498a5901772aa3b255afb7ec603cee52908335b33b18f20ffb02f645c4ce0`
-
-### 249. `hardcoded:src-tauri/src/live/project/codex.rs:third_party_route:a15e64778d759bff:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/live/project/codex.rs:300`
-- 结构：`third_party_route` / `backend_localized_error`
-- 原文/表达式：provider.codex.config.no_custom_provider
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`a15e64778d759bff6522a775b58c25f900fbdf9149da267e714d6da65f3d706f`
-
-### 250. `hardcoded:src-tauri/src/live/project/codex.rs:no_token_slot_error:bb08f4febebb0d23:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/live/project/codex.rs:436`
-- 结构：`no_token_slot_error` / `backend_localized_error`
-- 原文/表达式：provider.codex.config.no_custom_provider
-- 后端载荷：{"zh": "Codex 第三方配置必须包含自定义 model_providers 条目以承载 API 密钥（Codex 不识别顶层 experimental_bearer_token）", "en": "A Codex third-party config must define a custom model_providers entry to carry the API key (Codex ignores a top-level experimental_bearer_token)", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`bb08f4febebb0d23cc68a91bb2cf367a1caf6729c9d864c13747e611909ff984`
-
-### 251. `hardcoded:src-tauri/src/live/project/grok.rs:of:7c902e7d1ecb5042:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/live/project/grok.rs:46`
-- 结构：`of` / `backend_localized_error`
-- 原文/表达式：provider.grokbuild.config.missing
-- 后端载荷：{"zh": "Grok Build 配置缺少 config 字段", "en": "Grok Build configuration is missing the config field", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`7c902e7d1ecb50422d32e46f3ad8346b195bd9b55aadc8a0ee548644b436e83a`
-
-### 252. `hardcoded:src-tauri/src/live/project/grok.rs:of:feae00b110175255:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/live/project/grok.rs:53`
-- 结构：`of` / `backend_localized_error`
-- 原文/表达式：provider.grokbuild.config.invalid_toml
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`feae00b110175255d002e5ab36171c57984dcdea31e12f36b412f141dfeb4fd5`
-
-### 253. `hardcoded:src-tauri/src/live/project/grok.rs:proxy_contract:b02a752e7a5da7b3:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/live/project/grok.rs:88`
-- 结构：`proxy_contract` / `backend_localized_error`
-- 原文/表达式：provider.grokbuild.proxy.official
-- 后端载荷：{"zh": "Grok Build 官方账号不能经本地路由使用", "en": "The official Grok Build account cannot be used through local routing", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`b02a752e7a5da7b39a108ddc86ee4b178c19073cd867890a087a04bd6cba31b0`
-
-### 254. `hardcoded:src-tauri/src/live/project/grok.rs:resolve_table_name:4d408ee2d9607ed4:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/live/project/grok.rs:143`
-- 结构：`resolve_table_name` / `backend_localized_error`
-- 原文/表达式：provider.grokbuild.model.missing
-- 后端载荷：{"zh": "Grok Build 配置缺少 [model.<name>]", "en": "Grok Build configuration is missing [model.<name>]", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`4d408ee2d9607ed469a6e9b309758481134072908eec9642a90b5c8151fdaddb`
-
-### 255. `hardcoded:src-tauri/src/live/project/grok.rs:resolve_table_name:d30adb2c8bd1310e:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/live/project/grok.rs:148`
-- 结构：`resolve_table_name` / `backend_localized_error`
-- 原文/表达式：provider.grokbuild.default_model.ambiguous
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`d30adb2c8bd1310eca5fc0bf77c4f7774d22bbbd92abda8992d69cc0ffdf68cf`
-
-### 256. `hardcoded:src-tauri/src/mcp/claude.rs:import_from_claude:cefbe57db6b6a28c:001`
+### 193. `hardcoded:src-tauri/src/mcp/claude.rs:import_from_claude:cefbe57db6b6a28c:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/mcp/claude.rs:56`
@@ -2899,7 +2144,7 @@
 - 严重程度：高
 - 指纹：`cefbe57db6b6a28cd7d5f9b1c271e01672748db7ba6bcd45a0e7048c8a0bcc51`
 
-### 257. `hardcoded:src-tauri/src/mcp/codex.rs:import_from_codex:fdf3caf1e6b419a6:001`
+### 194. `hardcoded:src-tauri/src/mcp/codex.rs:import_from_codex:fdf3caf1e6b419a6:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/mcp/codex.rs:76`
@@ -2910,7 +2155,7 @@
 - 严重程度：高
 - 指纹：`fdf3caf1e6b419a652a724ba8e4ea21f3cfacd98d08069262c5d1f06f476efc3`
 
-### 258. `hardcoded:src-tauri/src/mcp/codex.rs:sync_enabled_to_codex:875df7d39cc8dbb7:001`
+### 195. `hardcoded:src-tauri/src/mcp/codex.rs:sync_enabled_to_codex:875df7d39cc8dbb7:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/mcp/codex.rs:324`
@@ -2921,7 +2166,7 @@
 - 严重程度：高
 - 指纹：`875df7d39cc8dbb72909a5239a709a76c89059efb6cdc5538abe7ae4eb988b65`
 
-### 259. `hardcoded:src-tauri/src/mcp/codex.rs:sync_single_server_to_codex:875df7d39cc8dbb7:001`
+### 196. `hardcoded:src-tauri/src/mcp/codex.rs:sync_single_server_to_codex:875df7d39cc8dbb7:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/mcp/codex.rs:458`
@@ -2932,7 +2177,7 @@
 - 严重程度：高
 - 指纹：`875df7d39cc8dbb72909a5239a709a76c89059efb6cdc5538abe7ae4eb988b65`
 
-### 260. `hardcoded:src-tauri/src/mcp/grokbuild.rs:import_from_grokbuild:963f605cc8a586b2:001`
+### 197. `hardcoded:src-tauri/src/mcp/grokbuild.rs:import_from_grokbuild:963f605cc8a586b2:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/mcp/grokbuild.rs:85`
@@ -2943,7 +2188,7 @@
 - 严重程度：高
 - 指纹：`963f605cc8a586b25a248da2edcdd31bcb07b03c2992af1d15a0c9d5d56c5667`
 
-### 261. `hardcoded:src-tauri/src/mcp/grokbuild.rs:sync_single_server_to_grokbuild:08c1aaecaab69c20:001`
+### 198. `hardcoded:src-tauri/src/mcp/grokbuild.rs:sync_single_server_to_grokbuild:08c1aaecaab69c20:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/mcp/grokbuild.rs:149`
@@ -2954,7 +2199,7 @@
 - 严重程度：高
 - 指纹：`08c1aaecaab69c2057ae69afe11504b5356a5182546840666cdfc872b669149b`
 
-### 262. `hardcoded:src-tauri/src/mcp/validation.rs:validate_server_spec:6d5e61b8271a027f:001`
+### 199. `hardcoded:src-tauri/src/mcp/validation.rs:validate_server_spec:6d5e61b8271a027f:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/mcp/validation.rs:11`
@@ -2965,7 +2210,7 @@
 - 严重程度：高
 - 指纹：`6d5e61b8271a027ffb9b8c4cfcfac0107c0667b38a3f501e8eefb7cc43ef3f77`
 
-### 263. `hardcoded:src-tauri/src/mcp/validation.rs:validate_server_spec:cd5a094f235d66b4:001`
+### 200. `hardcoded:src-tauri/src/mcp/validation.rs:validate_server_spec:cd5a094f235d66b4:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/mcp/validation.rs:22`
@@ -2976,7 +2221,7 @@
 - 严重程度：高
 - 指纹：`cd5a094f235d66b4cf6566c25dcb9ed35fe743e280598098df5bb16653675a0d`
 
-### 264. `hardcoded:src-tauri/src/mcp/validation.rs:validate_server_spec:eef74f394f855bdc:001`
+### 201. `hardcoded:src-tauri/src/mcp/validation.rs:validate_server_spec:eef74f394f855bdc:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/mcp/validation.rs:30`
@@ -2987,7 +2232,7 @@
 - 严重程度：高
 - 指纹：`eef74f394f855bdce3934e002ceb8228529e2586070551475c26643134adda16`
 
-### 265. `hardcoded:src-tauri/src/mcp/validation.rs:validate_server_spec:d03a3105c36ee824:001`
+### 202. `hardcoded:src-tauri/src/mcp/validation.rs:validate_server_spec:d03a3105c36ee824:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/mcp/validation.rs:38`
@@ -2998,7 +2243,7 @@
 - 严重程度：高
 - 指纹：`d03a3105c36ee824dcbd4460255906117b32f93051192a203b03ff1bbb68b861`
 
-### 266. `hardcoded:src-tauri/src/mcp/validation.rs:validate_server_spec:f96daad60691836a:001`
+### 203. `hardcoded:src-tauri/src/mcp/validation.rs:validate_server_spec:f96daad60691836a:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/mcp/validation.rs:46`
@@ -3009,7 +2254,7 @@
 - 严重程度：高
 - 指纹：`f96daad60691836af3e060d9c06581238dd36d4cc210ac3a753449e5a77e7979`
 
-### 267. `hardcoded:src-tauri/src/mcp/validation.rs:extract_server_spec:cb78bcb3a7223587:001`
+### 204. `hardcoded:src-tauri/src/mcp/validation.rs:extract_server_spec:cb78bcb3a7223587:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/mcp/validation.rs:83`
@@ -3020,7 +2265,7 @@
 - 严重程度：高
 - 指纹：`cb78bcb3a7223587cab71a4f32e9be01a9df6e549e5d1a7cc78851095b2118ae`
 
-### 268. `hardcoded:src-tauri/src/mode/controller.rs:require_proxy_app:ffc9b443461f4fe3:001`
+### 205. `hardcoded:src-tauri/src/mode/controller.rs:require_proxy_app:ffc9b443461f4fe3:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/mode/controller.rs:672`
@@ -3031,19 +2276,7 @@
 - 严重程度：高
 - 指纹：`ffc9b443461f4fe3ae50c8b6f26320b207c20700cf3a9cbaf759408bfb5173a7`
 
-### 269. `hardcoded:src-tauri/src/mode/controller.rs:lock_settled:4cd95ce8419a1977:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/mode/controller.rs:689`
-- 结构：`lock_settled` / `backend_localized_error`
-- 原文/表达式：mode.unsettled
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`4cd95ce8419a197781fab922cf5385a417f195780c697e2fbfc2650e431c3e04`
-
-### 270. `hardcoded:src-tauri/src/mode/controller.rs:try_enter_with_route:cbe04bae6f87107d:001`
+### 206. `hardcoded:src-tauri/src/mode/controller.rs:try_enter_with_route:cbe04bae6f87107d:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/mode/controller.rs:753`
@@ -3054,7 +2287,7 @@
 - 严重程度：高
 - 指纹：`cbe04bae6f87107d7a1a4b6b48bfe89844c630ce268fa9fc39b408aa9be808e3`
 
-### 271. `hardcoded:src-tauri/src/mode/controller.rs:switch_route_locked:f48a2fb5d8e415d2:001`
+### 207. `hardcoded:src-tauri/src/mode/controller.rs:switch_route_locked:f48a2fb5d8e415d2:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/mode/controller.rs:1052`
@@ -3065,7 +2298,7 @@
 - 严重程度：高
 - 指纹：`f48a2fb5d8e415d24b6b04e7df021cef7923ca34424d05f5372eb70201ca5820`
 
-### 272. `hardcoded:src-tauri/src/mode/controller.rs:switch_route_checked:78f7c64912be2ab6:001`
+### 208. `hardcoded:src-tauri/src/mode/controller.rs:switch_route_checked:78f7c64912be2ab6:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/mode/controller.rs:1146`
@@ -3076,7 +2309,7 @@
 - 严重程度：高
 - 指纹：`78f7c64912be2ab69efe13bcd7bd3c154bee25037288e9dd2c595cd0f7143fc8`
 
-### 273. `hardcoded:src-tauri/src/mode/controller.rs:reject_unsupported_official:5281d9220ffbccdb:001`
+### 209. `hardcoded:src-tauri/src/mode/controller.rs:reject_unsupported_official:5281d9220ffbccdb:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/mode/controller.rs:1205`
@@ -3087,7 +2320,7 @@
 - 严重程度：高
 - 指纹：`5281d9220ffbccdbadf695be6390b453e339c0668392683a31ea2ecc54c63cbf`
 
-### 274. `hardcoded:src-tauri/src/mode/controller.rs:check_stack_member:e00cdcc5424ff1e7:001`
+### 210. `hardcoded:src-tauri/src/mode/controller.rs:check_stack_member:e00cdcc5424ff1e7:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/mode/controller.rs:1241`
@@ -3098,7 +2331,7 @@
 - 严重程度：高
 - 指纹：`e00cdcc5424ff1e7fdb22186e41ea352059d1aa5b8298431807a834bbe65d399`
 
-### 275. `hardcoded:src-tauri/src/mode/operation.rs:run:6e5eaedfc250581c:001`
+### 211. `hardcoded:src-tauri/src/mode/operation.rs:run:6e5eaedfc250581c:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/mode/operation.rs:199`
@@ -3109,103 +2342,7 @@
 - 严重程度：高
 - 指纹：`6e5eaedfc250581ca5b54c6aee1495ad0a0d5904750c4a092ac41402fe484e40`
 
-### 276. `hardcoded:src-tauri/src/mode/operation.rs:recover_before_write:7ea182674022e78a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/mode/operation.rs:337`
-- 结构：`recover_before_write` / `backend_localized_error`
-- 原文/表达式：live.recovered_before_write
-- 后端载荷：{"zh": "上一次没做完的写入刚刚补完，当前状态已经变了。这次什么都没改，请重新操作一次", "en": "An unfinished write from last time was just completed, so the current state has changed. Nothing was changed this time; please try again", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`7ea182674022e78a61cbea95c0008744375cb835b0eb3a779f673138c694b4eb`
-
-### 277. `hardcoded:src-tauri/src/opencode_config.rs:provider_fragment:a9049ee09c525ccd:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/opencode_config.rs:484`
-- 结构：`provider_fragment` / `backend_localized_error`
-- 原文/表达式：provider.opencode.fragment_missing
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`a9049ee09c525ccd48b3361368febbbc41f2c7a1aa0624c8d66cbc032d71702e`
-
-### 278. `hardcoded:src-tauri/src/opencode_config.rs:validate_native_provider:ace2c4f995ffc920:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/opencode_config.rs:498`
-- 结构：`validate_native_provider` / `backend_localized_error`
-- 原文/表达式：provider.opencode.native_not_object
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`ace2c4f995ffc920cb5248cee6e83d2cdb3ea3d095f35ebc8d26ae21cb259456`
-
-### 279. `hardcoded:src-tauri/src/opencode_config.rs:validate_native_provider:fbb590dee71b1731:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/opencode_config.rs:503`
-- 结构：`validate_native_provider` / `backend_localized_error`
-- 原文/表达式：provider.opencode.native_invalid_field
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`fbb590dee71b17315c018f1ca5081d48caf08fcbeb1f63deebb26b356d3865e6`
-
-### 280. `hardcoded:src-tauri/src/opencode_config.rs:set_provider_with_format:bdaa19c09cfecc2d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/opencode_config.rs:531`
-- 结构：`set_provider_with_format` / `backend_localized_error`
-- 原文/表达式：provider.opencode.native_shadows_legacy
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`bdaa19c09cfecc2df745d8a21fd3ff0d119e13cfd199d99f65820e8122dceff8`
-
-### 281. `hardcoded:src-tauri/src/opencode_config.rs:set_provider_with_format:5cf499416b128a84:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/opencode_config.rs:553`
-- 结构：`set_provider_with_format` / `backend_localized_error`
-- 原文/表达式：provider.opencode.providers_not_object
-- 后端载荷：{"zh": "OpenCode 配置中的 providers 必须是 JSON 对象", "en": "OpenCode providers must be a JSON object", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`5cf499416b128a84a225d97195e66d95c963157f37c9f5f0f57c51cb9b179a86`
-
-### 282. `hardcoded:src-tauri/src/prompt_files.rs:prompt_file_path:270a6eaf162ceb81:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/prompt_files.rs:23`
-- 结构：`prompt_file_path` / `backend_localized_error`
-- 原文/表达式：app.prompts_unsupported
-- 后端载荷：{"zh": "当前应用暂不支持 Prompts", "en": "This app does not support Prompts", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`270a6eaf162ceb81963589e88bdf792c47831415fd472bfeb2eb12862abd6adc`
-
-### 283. `hardcoded:src-tauri/src/prompt_files.rs:get_base_dir_with_fallback:4ba692aafee48fa6:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/prompt_files.rs:90`
-- 结构：`get_base_dir_with_fallback` / `backend_localized_error`
-- 原文/表达式：home_dir_not_found
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`4ba692aafee48fa634b7c82034a0e438ab83252d0ec3e15ebb9e917cd31f35cb`
-
-### 284. `hardcoded:src-tauri/src/proxy/forwarder.rs:forward:063136a9e60ed655:001`
+### 212. `hardcoded:src-tauri/src/proxy/forwarder.rs:forward:063136a9e60ed655:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/forwarder.rs:1433`
@@ -3216,7 +2353,7 @@
 - 严重程度：高
 - 指纹：`063136a9e60ed655086a9ba4ed72978b09f3165bf4e18634fb4c0d87240613d5`
 
-### 285. `hardcoded:src-tauri/src/proxy/forwarder.rs:forward:ad39fed0f5c2e07c:001`
+### 213. `hardcoded:src-tauri/src/proxy/forwarder.rs:forward:ad39fed0f5c2e07c:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/forwarder.rs:1442`
@@ -3227,7 +2364,7 @@
 - 严重程度：高
 - 指纹：`ad39fed0f5c2e07c8f48c2b5ad43efd4c033210dfb21c87c237251156e1db97f`
 
-### 286. `hardcoded:src-tauri/src/proxy/forwarder.rs:forward:2775c9889f1e129a:001`
+### 214. `hardcoded:src-tauri/src/proxy/forwarder.rs:forward:2775c9889f1e129a:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/forwarder.rs:2255`
@@ -3238,7 +2375,7 @@
 - 严重程度：高
 - 指纹：`2775c9889f1e129ae9d8aafbc31bf28e500a86b234d846ff0e3d59842c8a84e2`
 
-### 287. `hardcoded:src-tauri/src/proxy/forwarder.rs:forward:fde4a229a64293ad:001`
+### 215. `hardcoded:src-tauri/src/proxy/forwarder.rs:forward:fde4a229a64293ad:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/forwarder.rs:2774`
@@ -3249,7 +2386,7 @@
 - 严重程度：高
 - 指纹：`fde4a229a64293ade80d15908a8318fe57142f9977588a057e9779aee4c30f05`
 
-### 288. `hardcoded:src-tauri/src/proxy/forwarder.rs:prepare_success_response_for_failover:70f876f10acead0a:001`
+### 216. `hardcoded:src-tauri/src/proxy/forwarder.rs:prepare_success_response_for_failover:70f876f10acead0a:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/forwarder.rs:2899`
@@ -3260,7 +2397,7 @@
 - 严重程度：高
 - 指纹：`70f876f10acead0aec62015e7fe7ec5f0518f10e8316d489a365244ac3242412`
 
-### 289. `hardcoded:src-tauri/src/proxy/handlers.rs:log_forward_error:151303d6876275a9:001`
+### 217. `hardcoded:src-tauri/src/proxy/handlers.rs:log_forward_error:151303d6876275a9:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/handlers.rs:3270`
@@ -3271,7 +2408,7 @@
 - 严重程度：高
 - 指纹：`151303d6876275a97476349d03c531b93b41f78408200a47a8f4728941b4d376`
 
-### 290. `hardcoded:src-tauri/src/proxy/handlers.rs:log_usage:151303d6876275a9:001`
+### 218. `hardcoded:src-tauri/src/proxy/handlers.rs:log_usage:151303d6876275a9:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/handlers.rs:3343`
@@ -3282,7 +2419,7 @@
 - 严重程度：高
 - 指纹：`151303d6876275a97476349d03c531b93b41f78408200a47a8f4728941b4d376`
 
-### 291. `hardcoded:src-tauri/src/proxy/hyper_client.rs:send_request:2f6f76302fd5185b:001`
+### 219. `hardcoded:src-tauri/src/proxy/hyper_client.rs:send_request:2f6f76302fd5185b:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/hyper_client.rs:298`
@@ -3293,7 +2430,7 @@
 - 严重程度：高
 - 指纹：`2f6f76302fd5185b8b3cce36d3cedafd7cdea38d7e5beb493d740373bbb27c6e`
 
-### 292. `hardcoded:src-tauri/src/proxy/hyper_client.rs:send_request:2f6f76302fd5185b:002`
+### 220. `hardcoded:src-tauri/src/proxy/hyper_client.rs:send_request:2f6f76302fd5185b:002`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/hyper_client.rs:326`
@@ -3304,7 +2441,7 @@
 - 严重程度：高
 - 指纹：`2f6f76302fd5185b8b3cce36d3cedafd7cdea38d7e5beb493d740373bbb27c6e`
 
-### 293. `hardcoded:src-tauri/src/proxy/hyper_client.rs:send_request:81dd0b71180c95f5:001`
+### 221. `hardcoded:src-tauri/src/proxy/hyper_client.rs:send_request:81dd0b71180c95f5:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/hyper_client.rs:329`
@@ -3315,7 +2452,7 @@
 - 严重程度：高
 - 指纹：`81dd0b71180c95f502556cf68ddbdf6b848f1324fa3f952fbe950f77b640d12f`
 
-### 294. `hardcoded:src-tauri/src/proxy/providers/claude.rs:extract_base_url:028b7cfa4d81008f:001`
+### 222. `hardcoded:src-tauri/src/proxy/providers/claude.rs:extract_base_url:028b7cfa4d81008f:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/providers/claude.rs:762`
@@ -3326,7 +2463,7 @@
 - 严重程度：高
 - 指纹：`028b7cfa4d81008fcb455a3f7317fa05e351f31716d0c02e6cdcc6bab2110a94`
 
-### 295. `hardcoded:src-tauri/src/proxy/providers/codex.rs:extract_base_url:4d11dda2e5d11ddf:001`
+### 223. `hardcoded:src-tauri/src/proxy/providers/codex.rs:extract_base_url:4d11dda2e5d11ddf:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/providers/codex.rs:1091`
@@ -3337,7 +2474,7 @@
 - 严重程度：高
 - 指纹：`4d11dda2e5d11ddf1b5ffd1624320ff789067a4131d5023163445cdd26702d5d`
 
-### 296. `hardcoded:src-tauri/src/proxy/providers/codex_oauth_auth.rs:resolve_valid_cached_token_under_lock:276164b2d1f69e4e:001`
+### 224. `hardcoded:src-tauri/src/proxy/providers/codex_oauth_auth.rs:resolve_valid_cached_token_under_lock:276164b2d1f69e4e:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/providers/codex_oauth_auth.rs:981`
@@ -3348,7 +2485,7 @@
 - 严重程度：高
 - 指纹：`276164b2d1f69e4ee32c033d4d99a5bb1865cc02b4245be1357873c9a3279857`
 
-### 297. `hardcoded:src-tauri/src/proxy/providers/codex_oauth_auth.rs:get_valid_token_bundle_for_account:72ac248ee5d38687:001`
+### 225. `hardcoded:src-tauri/src/proxy/providers/codex_oauth_auth.rs:get_valid_token_bundle_for_account:72ac248ee5d38687:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/providers/codex_oauth_auth.rs:1122`
@@ -3359,7 +2496,7 @@
 - 严重程度：高
 - 指纹：`72ac248ee5d38687e0631bda1c7f62ab5c40d68014af778cf7d6a5c298b142af`
 
-### 298. `hardcoded:src-tauri/src/proxy/providers/codex_oauth_auth.rs:get_valid_token:2e346b7932557830:001`
+### 226. `hardcoded:src-tauri/src/proxy/providers/codex_oauth_auth.rs:get_valid_token:2e346b7932557830:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/providers/codex_oauth_auth.rs:1380`
@@ -3370,7 +2507,7 @@
 - 严重程度：高
 - 指纹：`2e346b79325578304a04cd65c179cb7c962d804a77b01173ccfc5009756f3ef6`
 
-### 299. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:get_valid_token:f87002101b466aa4:001`
+### 227. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:get_valid_token:f87002101b466aa4:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:407`
@@ -3381,7 +2518,7 @@
 - 严重程度：高
 - 指纹：`f87002101b466aa4601990891758baffd1375aff02d6c260565f27e8b0a97e46`
 
-### 300. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:discover_endpoints:a7e74db775952430:001`
+### 228. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:discover_endpoints:a7e74db775952430:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:496`
@@ -3392,7 +2529,7 @@
 - 严重程度：高
 - 指纹：`a7e74db7759524300587e8bf8f179b14da627ec9fceac26716ed7793b6503a3f`
 
-### 301. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:discover_endpoints:7b37c38f3d1cfbd5:001`
+### 229. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:discover_endpoints:7b37c38f3d1cfbd5:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:502`
@@ -3403,7 +2540,7 @@
 - 严重程度：高
 - 指纹：`7b37c38f3d1cfbd52da2c23a6c8ffc8b5b41315480b325064c008932cbe8649f`
 
-### 302. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:add_account_internal:3d5fd21230b6069b:001`
+### 230. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:add_account_internal:3d5fd21230b6069b:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:573`
@@ -3414,7 +2551,7 @@
 - 严重程度：高
 - 指纹：`3d5fd21230b6069b94cf6a8ef15a9ea51307396e505a6131b85cfe332593fa7e`
 
-### 303. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:commit_refreshed_tokens:fb6e370c2875a61c:001`
+### 231. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:commit_refreshed_tokens:fb6e370c2875a61c:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:622`
@@ -3425,7 +2562,7 @@
 - 严重程度：高
 - 指纹：`fb6e370c2875a61c8e1f80df50b749d568bd6b066188c2994eaa7475e7d171f1`
 
-### 304. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:validate_access_token:63fdc69122c0d32d:001`
+### 232. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:validate_access_token:63fdc69122c0d32d:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:883`
@@ -3436,7 +2573,7 @@
 - 严重程度：高
 - 指纹：`63fdc69122c0d32d77c54369042525e44b5c404992c1784c04e6d39bc255d5a4`
 
-### 305. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:parse_device_code_response:095ac0acf3259e9d:001`
+### 233. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:parse_device_code_response:095ac0acf3259e9d:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:893`
@@ -3447,7 +2584,7 @@
 - 严重程度：高
 - 指纹：`095ac0acf3259e9dc36118dea905f1fdacb9a5b13da5bb234c8213ffbd2ab0b2`
 
-### 306. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:parse_token_response:3aebecd0ea168cf6:001`
+### 234. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:parse_token_response:3aebecd0ea168cf6:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:898`
@@ -3458,7 +2595,7 @@
 - 严重程度：高
 - 指纹：`3aebecd0ea168cf66ad296c1f6ecfbf8fa2ac5a685107658a4fe72100d42a289`
 
-### 307. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:parse_discovery_document:a19550b0a3612c69:001`
+### 235. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:parse_discovery_document:a19550b0a3612c69:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:903`
@@ -3469,7 +2606,7 @@
 - 严重程度：高
 - 指纹：`a19550b0a3612c69d1fbbba8efba64e3210e06fc2b580d8c5cb105776d58e964`
 
-### 308. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:validate_xai_endpoint:fb76de080641f085:001`
+### 236. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:validate_xai_endpoint:fb76de080641f085:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:942`
@@ -3480,7 +2617,7 @@
 - 严重程度：高
 - 指纹：`fb76de080641f0851b2db8ef915eb791b25eb3d4df0aff23c814b0f5676e2754`
 
-### 309. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:validate_xai_endpoint:0ee62ae8d052fbd7:001`
+### 237. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:validate_xai_endpoint:0ee62ae8d052fbd7:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:950`
@@ -3491,7 +2628,7 @@
 - 严重程度：高
 - 指纹：`0ee62ae8d052fbd7c347708c76762cfd1f61af6e6e7f63375b5615069e9773a2`
 
-### 310. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:read_json_response:9e802efcf135f60e:001`
+### 238. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:read_json_response:9e802efcf135f60e:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:964`
@@ -3502,7 +2639,7 @@
 - 严重程度：高
 - 指纹：`9e802efcf135f60e29aef74fa2dbbdac36995a68b07d6f93d7205a581939810a`
 
-### 311. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:read_json_response:9e802efcf135f60e:002`
+### 239. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:read_json_response:9e802efcf135f60e:002`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:970`
@@ -3513,7 +2650,7 @@
 - 严重程度：高
 - 指纹：`9e802efcf135f60e29aef74fa2dbbdac36995a68b07d6f93d7205a581939810a`
 
-### 312. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:read_json_response:ebd9550e10ef3ca8:001`
+### 240. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:read_json_response:ebd9550e10ef3ca8:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:974`
@@ -3524,7 +2661,7 @@
 - 严重程度：高
 - 指纹：`ebd9550e10ef3ca80977979c88faa7c9c6b71dd6a66cc808a18569e37c6098c2`
 
-### 313. `hardcoded:src-tauri/src/proxy/response_processor.rs:read_decoded_body:70f876f10acead0a:001`
+### 241. `hardcoded:src-tauri/src/proxy/response_processor.rs:read_decoded_body:70f876f10acead0a:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/response_processor.rs:97`
@@ -3535,7 +2672,7 @@
 - 严重程度：高
 - 指纹：`70f876f10acead0aec62015e7fe7ec5f0518f10e8316d489a365244ac3242412`
 
-### 314. `hardcoded:src-tauri/src/proxy/response_processor.rs:log_usage_internal:151303d6876275a9:001`
+### 242. `hardcoded:src-tauri/src/proxy/response_processor.rs:log_usage_internal:151303d6876275a9:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/response_processor.rs:723`
@@ -3546,7 +2683,7 @@
 - 严重程度：高
 - 指纹：`151303d6876275a97476349d03c531b93b41f78408200a47a8f4728941b4d376`
 
-### 315. `hardcoded:src-tauri/src/proxy/response_processor.rs:create_logged_passthrough_stream:70d6ac580a3c62b2:001`
+### 243. `hardcoded:src-tauri/src/proxy/response_processor.rs:create_logged_passthrough_stream:70d6ac580a3c62b2:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/response_processor.rs:777`
@@ -3557,7 +2694,7 @@
 - 严重程度：高
 - 指纹：`70d6ac580a3c62b205fb58d78a5adf86da229b29ed925c644c59288b61526671`
 
-### 316. `hardcoded:src-tauri/src/proxy/response_processor.rs:create_logged_passthrough_stream:7cea794de606b064:001`
+### 244. `hardcoded:src-tauri/src/proxy/response_processor.rs:create_logged_passthrough_stream:7cea794de606b064:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/response_processor.rs:777`
@@ -3568,7 +2705,7 @@
 - 严重程度：高
 - 指纹：`7cea794de606b0645b19e7b37a6c6130968b1ab0ac8f9757bfc1287595819da2`
 
-### 317. `hardcoded:src-tauri/src/proxy/server.rs:start:596e2f65f8dbcea2:001`
+### 245. `hardcoded:src-tauri/src/proxy/server.rs:start:596e2f65f8dbcea2:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/proxy/server.rs:111`
@@ -3579,7 +2716,7 @@
 - 严重程度：高
 - 指纹：`596e2f65f8dbcea272f107a652a9757b9271f0eb321eb4414efda02f70f48c0d`
 
-### 318. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:decode:aa49cbcd2d37b164:001`
+### 246. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:decode:aa49cbcd2d37b164:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/agy_account/keychain.rs:33`
@@ -3590,7 +2727,7 @@
 - 严重程度：高
 - 指纹：`aa49cbcd2d37b164df33c1811d728e1356c9a34947bc596d00a24831e975132b`
 
-### 319. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:decode:f78a8b4a5afbcacc:001`
+### 247. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:decode:f78a8b4a5afbcacc:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/agy_account/keychain.rs:35`
@@ -3601,7 +2738,7 @@
 - 严重程度：高
 - 指纹：`f78a8b4a5afbcacc089a87c09513a173773ba17436ec39a3c7c8d13a9804ddd8`
 
-### 320. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:decode:19f962e1c69cbb10:001`
+### 248. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:decode:19f962e1c69cbb10:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/agy_account/keychain.rs:40`
@@ -3612,7 +2749,7 @@
 - 严重程度：高
 - 指纹：`19f962e1c69cbb10f2713607330ef28512befa109cc96d765bb96953f0c6f8af`
 
-### 321. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:decode:283335358b564e83:001`
+### 249. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:decode:283335358b564e83:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/agy_account/keychain.rs:43`
@@ -3623,7 +2760,7 @@
 - 严重程度：高
 - 指纹：`283335358b564e83b3e100f1bbb570fb805ea02140400e79ff70782f50abee00`
 
-### 322. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:read:4a53fbbf15fd8fef:001`
+### 250. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:read:4a53fbbf15fd8fef:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/agy_account/keychain.rs:102`
@@ -3634,7 +2771,7 @@
 - 严重程度：高
 - 指纹：`4a53fbbf15fd8fef700ac3be4fa2d225da4a2c14929beb007f17df188bf8fa90`
 
-### 323. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:read:9f4ea1a91b0c1be1:001`
+### 251. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:read:9f4ea1a91b0c1be1:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/agy_account/keychain.rs:110`
@@ -3645,7 +2782,7 @@
 - 严重程度：高
 - 指纹：`9f4ea1a91b0c1be165e18728708f0cbe451df825303ebebdb54b5ce779790432`
 
-### 324. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:read:f78a8b4a5afbcacc:001`
+### 252. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:read:f78a8b4a5afbcacc:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/agy_account/keychain.rs:115`
@@ -3656,7 +2793,7 @@
 - 严重程度：高
 - 指纹：`f78a8b4a5afbcacc089a87c09513a173773ba17436ec39a3c7c8d13a9804ddd8`
 
-### 325. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:write:3c583463b5eb99f5:001`
+### 253. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:write:3c583463b5eb99f5:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/agy_account/keychain.rs:130`
@@ -3667,7 +2804,7 @@
 - 严重程度：高
 - 指纹：`3c583463b5eb99f5fd3b5e6a94923d81afbcc20dd2551401aa175dbe51b8d748`
 
-### 326. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:write:da6e61624898db53:001`
+### 254. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:write:da6e61624898db53:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/agy_account/keychain.rs:142`
@@ -3678,7 +2815,7 @@
 - 严重程度：高
 - 指纹：`da6e61624898db530c5dee1a6e2bf2bc6de90e6a98ca102578cf854198ca01ae`
 
-### 327. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:write:da6e61624898db53:002`
+### 255. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:write:da6e61624898db53:002`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/agy_account/keychain.rs:149`
@@ -3689,7 +2826,7 @@
 - 严重程度：高
 - 指纹：`da6e61624898db530c5dee1a6e2bf2bc6de90e6a98ca102578cf854198ca01ae`
 
-### 328. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:write:da6e61624898db53:003`
+### 256. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:write:da6e61624898db53:003`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/agy_account/keychain.rs:171`
@@ -3700,7 +2837,7 @@
 - 严重程度：高
 - 指纹：`da6e61624898db530c5dee1a6e2bf2bc6de90e6a98ca102578cf854198ca01ae`
 
-### 329. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:write:957bb532aa406c77:001`
+### 257. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:write:957bb532aa406c77:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/agy_account/keychain.rs:178`
@@ -3711,31 +2848,7 @@
 - 严重程度：高
 - 指纹：`957bb532aa406c77c46cc47afb493146ecdb2f0a8d22e0d74d9bdd9e85bc4c74`
 
-### 330. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:unsupported_error:01f68bb65169741b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/agy_account/keychain.rs:212`
-- 结构：`unsupported_error` / `backend_localized_error`
-- 原文/表达式：agy.account.unsupported_platform
-- 后端载荷：{"zh": "切换 Antigravity 账号目前只支持 macOS", "en": "Switching Antigravity accounts is only supported on macOS for now", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`01f68bb65169741b87b76c062d6e14f6302063edbc7b31295fd4ec7a0e6ba476`
-
-### 331. `hardcoded:src-tauri/src/services/agy_account/mod.rs:poll_login:94ce94ee1a1d26f6:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/agy_account/mod.rs:231`
-- 结构：`poll_login` / `backend_localized_error`
-- 原文/表达式：agy.account.login_expired
-- 后端载荷：{"zh": "这次登录已结束，请重新添加账号", "en": "This sign-in has ended. Add the account again.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`94ce94ee1a1d26f631dd9012c518a155d31145aad9bc164b810f474e84d7b84e`
-
-### 332. `hardcoded:src-tauri/src/services/agy_account/mod.rs:poll_login:b8e3795ac634d5d0:001`
+### 258. `hardcoded:src-tauri/src/services/agy_account/mod.rs:poll_login:b8e3795ac634d5d0:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/agy_account/mod.rs:241`
@@ -3746,43 +2859,7 @@
 - 严重程度：高
 - 指纹：`b8e3795ac634d5d035a99c1673ba090eaeecacf1796f511eba620de1d856c5be`
 
-### 333. `hardcoded:src-tauri/src/services/agy_account/mod.rs:poll_login:1de384373217b9ac:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/agy_account/mod.rs:251`
-- 结构：`poll_login` / `backend_localized_error`
-- 原文/表达式：agy.account.missing_refresh_token
-- 后端载荷：{"zh": "Google 没有返回长期登录凭据，请重新添加并在授权页同意全部权限", "en": "Google did not return a long-lived credential. Add the account again and accept all permissions.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`1de384373217b9acaffc2497be7eb8e87a7ad1eca387b2cc2b8bac5ccb9e13d9`
-
-### 334. `hardcoded:src-tauri/src/services/agy_account/mod.rs:switch_to:7127428cdb878141:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/agy_account/mod.rs:314`
-- 结构：`switch_to` / `backend_localized_error`
-- 原文/表达式：agy.account.requires_reauth
-- 后端载荷：{"zh": "这个账号的登录已失效，请重新添加", "en": "This account's sign-in has expired. Add it again.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`7127428cdb878141b361fbecdcf798b1c073ff3fde861ccbcd03e8f5b52c690a`
-
-### 335. `hardcoded:src-tauri/src/services/agy_account/mod.rs:switch_to:390978659277ce42:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/agy_account/mod.rs:347`
-- 结构：`switch_to` / `backend_localized_error`
-- 原文/表达式：agy.account.write_verify_failed
-- 后端载荷：{"zh": "写入后核对不一致，agy 的登录可能没有切换成功", "en": "The written sign-in did not verify; agy may not have switched accounts.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`390978659277ce42d56fbe63e5da0d62665ac310fab2e23697e4aeba0e92a890`
-
-### 336. `hardcoded:src-tauri/src/services/agy_account/mod.rs:run_blocking:3f9d180b97e07051:001`
+### 259. `hardcoded:src-tauri/src/services/agy_account/mod.rs:run_blocking:3f9d180b97e07051:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/agy_account/mod.rs:624`
@@ -3793,7 +2870,7 @@
 - 严重程度：高
 - 指纹：`3f9d180b97e070519765e0bca9f706c11230a58e0e9680b0fa79e144a8931c7c`
 
-### 337. `hardcoded:src-tauri/src/services/agy_account/oauth.rs:post_token:d2b260e271c1cb6f:001`
+### 260. `hardcoded:src-tauri/src/services/agy_account/oauth.rs:post_token:d2b260e271c1cb6f:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/agy_account/oauth.rs:257`
@@ -3804,7 +2881,7 @@
 - 严重程度：高
 - 指纹：`d2b260e271c1cb6f862ab21a073bf38e17e119a3e88eb0a7f2b8b3745cff4ad8`
 
-### 338. `hardcoded:src-tauri/src/services/agy_account/oauth.rs:post_token:bf5b96d48b88998d:001`
+### 261. `hardcoded:src-tauri/src/services/agy_account/oauth.rs:post_token:bf5b96d48b88998d:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/agy_account/oauth.rs:260`
@@ -3815,7 +2892,7 @@
 - 严重程度：高
 - 指纹：`bf5b96d48b88998db8596252fab0733a2482fc2498aa99e5f3f1f061f09f2350`
 
-### 339. `hardcoded:src-tauri/src/services/agy_account/oauth.rs:post_token:0706d03df44b68df:001`
+### 262. `hardcoded:src-tauri/src/services/agy_account/oauth.rs:post_token:0706d03df44b68df:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/agy_account/oauth.rs:275`
@@ -3826,19 +2903,7 @@
 - 严重程度：高
 - 指纹：`0706d03df44b68df6686ec63d78f59909d002abac1dbb35a9d36d50aad2a1459`
 
-### 340. `hardcoded:src-tauri/src/services/claude_account/cc_lock.rs:acquire:e525d36f089fa9fc:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/cc_lock.rs:67`
-- 结构：`acquire` / `backend_localized_error`
-- 原文/表达式：claude.snapshot.lock_busy
-- 后端载荷：{"zh": "Claude Code 正在使用登录信息（刷新或登录中），请稍后再切换", "en": "Claude Code is using its sign-in right now (refreshing or signing in). Try switching again in a moment.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`e525d36f089fa9fca7ca5371223d85308b1c39e649b57b87752a6cd965932039`
-
-### 341. `hardcoded:src-tauri/src/services/claude_account/layout.rs:assert_config_dir:0d94df287382ca7f:001`
+### 263. `hardcoded:src-tauri/src/services/claude_account/layout.rs:assert_config_dir:0d94df287382ca7f:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/claude_account/layout.rs:57`
@@ -3849,7 +2914,7 @@
 - 严重程度：高
 - 指纹：`0d94df287382ca7fad86b3cddfef758fc3239358b81cb5e06dc65bd7af579152`
 
-### 342. `hardcoded:src-tauri/src/services/claude_account/layout.rs:assert_config_dir:7e172ea528e96b88:001`
+### 264. `hardcoded:src-tauri/src/services/claude_account/layout.rs:assert_config_dir:7e172ea528e96b88:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/claude_account/layout.rs:66`
@@ -3860,7 +2925,7 @@
 - 严重程度：高
 - 指纹：`7e172ea528e96b8851194930d76b73b36b63c404073faea5060fbe3f1b297cb5`
 
-### 343. `hardcoded:src-tauri/src/services/claude_account/layout.rs:assert_config_dir:dc7af0fe6b52d223:001`
+### 265. `hardcoded:src-tauri/src/services/claude_account/layout.rs:assert_config_dir:dc7af0fe6b52d223:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/claude_account/layout.rs:72`
@@ -3871,7 +2936,7 @@
 - 严重程度：高
 - 指纹：`dc7af0fe6b52d22341a1d2a897550c975e6945e17cd103adffc8432f1ca14e8f`
 
-### 344. `hardcoded:src-tauri/src/services/claude_account/layout.rs:assert_config_dir:1ccd0c17e41bd9aa:001`
+### 266. `hardcoded:src-tauri/src/services/claude_account/layout.rs:assert_config_dir:1ccd0c17e41bd9aa:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/claude_account/layout.rs:79`
@@ -3882,31 +2947,7 @@
 - 严重程度：高
 - 指纹：`1ccd0c17e41bd9aa5c941ff6dd0a14ce81388082837501f227f6c180df113095`
 
-### 345. `hardcoded:src-tauri/src/services/claude_account/login.rs:submit_paste:d7bbd02b19bfc44c:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/login.rs:108`
-- 结构：`submit_paste` / `backend_localized_error`
-- 原文/表达式：claude.account.paste_unrecognized
-- 后端载荷：{"zh": "请粘贴登录页显示的代码，或浏览器最后停留的完整地址", "en": "Paste the code the sign-in page shows, or the full address the browser ended on.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`d7bbd02b19bfc44ca6bdf9ee34be59310edc6a103b161b45f7128a77cda21df8`
-
-### 346. `hardcoded:src-tauri/src/services/claude_account/login.rs:forward_callback:cff00a9e46d88bd5:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/login.rs:117`
-- 结构：`forward_callback` / `backend_localized_error`
-- 原文/表达式：claude.account.paste_wrong_address
-- 后端载荷：{"zh": "这个地址不是这次登录的，请粘贴这次登录的浏览器标签最后停留的地址", "en": "That address isn't from this sign-in. Paste the one this sign-in's browser tab ended on.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`cff00a9e46d88bd568225d4d16066b11f2a38320e356206122ec15c6540262ae`
-
-### 347. `hardcoded:src-tauri/src/services/claude_account/login.rs:forward_callback:c0c2063eea0b19b8:001`
+### 267. `hardcoded:src-tauri/src/services/claude_account/login.rs:forward_callback:c0c2063eea0b19b8:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/claude_account/login.rs:146`
@@ -3917,19 +2958,7 @@
 - 严重程度：高
 - 指纹：`c0c2063eea0b19b8429d2cdd802dd648d0b37ad62a697de30784c744aaba65bc`
 
-### 348. `hardcoded:src-tauri/src/services/claude_account/login.rs:login_over:829e916524c1a48f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/login.rs:152`
-- 结构：`login_over` / `backend_localized_error`
-- 原文/表达式：claude.account.login_over
-- 后端载荷：{"zh": "这次登录已结束，请重新开始", "en": "This sign-in has ended. Start it again.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`829e916524c1a48f2dbce905218025757ac8be6edc52aa4519999ea419860aa2`
-
-### 349. `hardcoded:src-tauri/src/services/claude_account/login.rs:wait_for_link:6a3fd6ca73979dfd:001`
+### 268. `hardcoded:src-tauri/src/services/claude_account/login.rs:wait_for_link:6a3fd6ca73979dfd:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/claude_account/login.rs:375`
@@ -3940,7 +2969,7 @@
 - 严重程度：高
 - 指纹：`6a3fd6ca73979dfde24a4a061dc9504e4568bec92bc8017ca016966183932aa9`
 
-### 350. `hardcoded:src-tauri/src/services/claude_account/login.rs:wait_for_link:16490595a0ca16a1:001`
+### 269. `hardcoded:src-tauri/src/services/claude_account/login.rs:wait_for_link:16490595a0ca16a1:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/claude_account/login.rs:378`
@@ -3951,7 +2980,7 @@
 - 严重程度：高
 - 指纹：`16490595a0ca16a1b4e79789bfd33729a83d300c373af51f85224b373bde2b90`
 
-### 351. `hardcoded:src-tauri/src/services/claude_account/login.rs:wait_for_link:9d3c2d4f9ad4fbf9:001`
+### 270. `hardcoded:src-tauri/src/services/claude_account/login.rs:wait_for_link:9d3c2d4f9ad4fbf9:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/claude_account/login.rs:386`
@@ -3962,7 +2991,7 @@
 - 严重程度：高
 - 指纹：`9d3c2d4f9ad4fbf901ef39566e91281d35d69e67105618d1a29d31aba5e4f256`
 
-### 352. `hardcoded:src-tauri/src/services/claude_account/login.rs:spawn_login:7298b97e1b0939d7:001`
+### 271. `hardcoded:src-tauri/src/services/claude_account/login.rs:spawn_login:7298b97e1b0939d7:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/claude_account/login.rs:460`
@@ -3973,79 +3002,7 @@
 - 严重程度：高
 - 指纹：`7298b97e1b0939d7e86db9464dde0bd4fffd2962abdafc840411fcb0d55115e0`
 
-### 353. `hardcoded:src-tauri/src/services/claude_account/mod.rs:poll_login:13e0911635dec4e9:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/mod.rs:290`
-- 结构：`poll_login` / `backend_localized_error`
-- 原文/表达式：claude.account.login_expired
-- 后端载荷：{"zh": "这次登录已结束，请重新添加账号", "en": "This sign-in has ended. Add the account again.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`13e0911635dec4e9adc2754355ed4518e20b78e7436e5e6f4fc51c2ab94e1790`
-
-### 354. `hardcoded:src-tauri/src/services/claude_account/mod.rs:finish_login:a6daadc357ea97a5:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/mod.rs:354`
-- 结构：`finish_login` / `backend_localized_error`
-- 原文/表达式：claude.account.identity_missing
-- 后端载荷：{"zh": "登录完成了，但读不到账号资料，请重试", "en": "Signed in, but the account profile could not be read. Try again.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`a6daadc357ea97a529570dd5ee046f868f3b09737d5d6c94fcae8d9655f33b82`
-
-### 355. `hardcoded:src-tauri/src/services/claude_account/mod.rs:submit_paste:13e0911635dec4e9:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/mod.rs:433`
-- 结构：`submit_paste` / `backend_localized_error`
-- 原文/表达式：claude.account.login_expired
-- 后端载荷：{"zh": "这次登录已结束，请重新添加账号", "en": "This sign-in has ended. Add the account again.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`13e0911635dec4e9adc2754355ed4518e20b78e7436e5e6f4fc51c2ab94e1790`
-
-### 356. `hardcoded:src-tauri/src/services/claude_account/mod.rs:account_not_found:40b96a4651d97e2f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/mod.rs:559`
-- 结构：`account_not_found` / `backend_localized_error`
-- 原文/表达式：claude.account.not_found
-- 后端载荷：{"zh": "这个账号不在这台电脑上", "en": "This account isn't on this computer.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`40b96a4651d97e2fae736edf22d361b574f2fbc44e819496eb4e603b8a4f0945`
-
-### 357. `hardcoded:src-tauri/src/services/claude_account/snapshot/creds.rs:owner_of:cb1dc128faf45a3b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/snapshot/creds.rs:161`
-- 结构：`owner_of` / `backend_localized_error`
-- 原文/表达式：claude.snapshot.owner_unknown
-- 后端载荷：{"zh": "认不出 Claude Code 现在登录的是哪个账号（登录资料不完整或不一致），没有切换。运行一次 claude 让它补全资料后再试", "en": "Can't tell which account Claude Code is signed in to right now (its profile is missing or inconsistent), so nothing was switched. Run claude once so it can fill in the profile, then try again.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`cb1dc128faf45a3b65383cbbf27cf277f065a69bc3c188f143d45c3ab6eca1c7`
-
-### 358. `hardcoded:src-tauri/src/services/claude_account/snapshot/creds.rs:changed:fcf84cf02c67e73e:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/snapshot/creds.rs:171`
-- 结构：`changed` / `backend_localized_error`
-- 原文/表达式：claude.snapshot.changed
-- 后端载荷：{"zh": "Claude Code 刚刚改动了登录信息，切换已取消，请再试一次", "en": "Claude Code just changed its sign-in data, so the switch was canceled. Try again.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`fcf84cf02c67e73e899d98a5953778752b0c8a2c675886f27922e8d9b3cf2ccc`
-
-### 359. `hardcoded:src-tauri/src/services/claude_account/snapshot/files.rs:write_profile:9e1af08c9ae84ad1:001`
+### 272. `hardcoded:src-tauri/src/services/claude_account/snapshot/files.rs:write_profile:9e1af08c9ae84ad1:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/claude_account/snapshot/files.rs:69`
@@ -4056,139 +3013,7 @@
 - 严重程度：高
 - 指纹：`9e1af08c9ae84ad16cfa73dce2c144cabf92a8a847d319a1663ccfa2d9d30216`
 
-### 360. `hardcoded:src-tauri/src/services/claude_account/snapshot/store.rs:parse:00db3a6b4a97cbd7:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/snapshot/store.rs:93`
-- 结构：`parse` / `backend_localized_error`
-- 原文/表达式：claude.snapshot.unreadable
-- 后端载荷：{"zh": "Claude Code 的登录信息格式无法识别，没有做任何改动", "en": "Claude Code's sign-in data has an unrecognized format. Nothing was changed.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`00db3a6b4a97cbd7e87bba2248f51687e621460f2b0853c9b37ea98eb93de01d`
-
-### 361. `hardcoded:src-tauri/src/services/claude_account/snapshot/store/keychain.rs:write:36a410ad9c18857e:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/snapshot/store/keychain.rs:73`
-- 结构：`write` / `backend_localized_error`
-- 原文/表达式：claude.snapshot.too_large
-- 后端载荷：{"zh": "Claude Code 的登录信息太大，无法写入钥匙串，没有切换", "en": "Claude Code's sign-in data is too large for the keychain, so nothing was switched.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`36a410ad9c18857e4681d9b764b78e08ae8d4eec3edf50263f754e4e2b2ebaa4`
-
-### 362. `hardcoded:src-tauri/src/services/claude_account/snapshot/store/keychain.rs:run:2f2de834579df21c:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/snapshot/store/keychain.rs:145`
-- 结构：`run` / `backend_localized_error`
-- 原文/表达式：claude.snapshot.keychain_timeout
-- 后端载荷：{"zh": "访问钥匙串超时（可能在等你确认弹窗），没有切换", "en": "Keychain access timed out (it may be waiting for you to confirm a prompt), so nothing was switched.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`2f2de834579df21c7f45b30c08cfa75d98b427f70e41e9faa6aaf31c2d25ba51`
-
-### 363. `hardcoded:src-tauri/src/services/claude_account/snapshot/store/keychain.rs:locked:43345991e930b552:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/snapshot/store/keychain.rs:161`
-- 结构：`locked` / `backend_localized_error`
-- 原文/表达式：claude.snapshot.keychain_locked
-- 后端载荷：{"zh": "钥匙串已锁定，请解锁后再切换", "en": "The keychain is locked. Unlock it, then switch again.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`43345991e930b552d11d87ea27eaceeabf040505a4caaeb892b1bd537bcb5f01`
-
-### 364. `hardcoded:src-tauri/src/services/claude_account/snapshot/switch.rs:plan:3da40771be98c2a0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/snapshot/switch.rs:106`
-- 结构：`plan` / `backend_localized_error`
-- 原文/表达式：claude.snapshot.target_signed_out
-- 后端载荷：{"zh": "这个 Claude 账号的登录已失效或已过期，请在授权中心重新登录后再切换", "en": "This Claude account is signed out or its sign-in has expired. Sign in again in the Auth Center, then switch.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`3da40771be98c2a022dfc97f94088f7c3765e517560fd0cef7ead17993e796a3`
-
-### 365. `hardcoded:src-tauri/src/services/claude_account/snapshot/switch.rs:plan:7bee7fe84b8a22ad:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/snapshot/switch.rs:115`
-- 结构：`plan` / `backend_localized_error`
-- 原文/表达式：claude.snapshot.target_profile_missing
-- 后端载荷：{"zh": "读不到这个 Claude 账号的资料，请在授权中心重新登录", "en": "This Claude account's profile could not be read. Sign in again in the Auth Center.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`7bee7fe84b8a22ad83ff758dd96a6af88ed84fee18915a14b3e7620951adfdf0`
-
-### 366. `hardcoded:src-tauri/src/services/claude_account/snapshot/switch.rs:plan:ee6fc8bd31da42a9:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/snapshot/switch.rs:125`
-- 结构：`plan` / `backend_localized_error`
-- 原文/表达式：claude.snapshot.target_mismatch
-- 后端载荷：{"zh": "这个账号的目录里现在登录的不是它（可能在它的终端里登录了别的账号），没有切换。请在授权中心重新登录这个账号", "en": "This account's folder is now signed in to a different account (maybe someone signed in to another account in its terminal), so nothing was switched. Sign in to this account again in the Auth Center.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`ee6fc8bd31da42a9e9c47c6ae30e2deb1ae739c4bfb9cb76b8cf54252566cecb`
-
-### 367. `hardcoded:src-tauri/src/services/claude_account/snapshot/switch.rs:commit:b81b89e3db21fe5e:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/snapshot/switch.rs:211`
-- 结构：`commit` / `backend_localized_error`
-- 原文/表达式：claude.snapshot.too_slow
-- 后端载荷：{"zh": "等待 Claude Code 的锁或钥匙串太久，切换已取消，请再试一次", "en": "Waiting for Claude Code's locks or the keychain took too long, so the switch was canceled. Try again.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`b81b89e3db21fe5e3fb1bbabeb4c997531ed16f740793bd0b2f96b0e47342117`
-
-### 368. `hardcoded:src-tauri/src/services/claude_account/snapshot/switch.rs:commit:70afdc8bfdeade03:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/snapshot/switch.rs:227`
-- 结构：`commit` / `backend_localized_error`
-- 原文/表达式：claude.snapshot.verify_failed
-- 后端载荷：{"zh": "写入 Claude Code 的登录后读回不一致，请重试", "en": "The Claude Code sign-in read back differently after writing. Try again.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`70afdc8bfdeade0375bd60fb91c02e410285223af51592ab39094f46428c47ef`
-
-### 369. `hardcoded:src-tauri/src/services/claude_account/snapshot/switch.rs:park:de3e78d4163495b7:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/snapshot/switch.rs:356`
-- 结构：`park` / `backend_localized_error`
-- 原文/表达式：claude.snapshot.park_failed
-- 后端载荷：{"zh": "保存原来的 Claude 登录失败，没有切换", "en": "Saving the previous Claude sign-in failed, so nothing was switched.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`de3e78d4163495b7ee65a6d055d2cca61ee777894486edcf06cf9aea21e7d180`
-
-### 370. `hardcoded:src-tauri/src/services/claude_account/snapshot/switch.rs:keep_backup:00749c3cf00feebd:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/snapshot/switch.rs:373`
-- 结构：`keep_backup` / `backend_localized_error`
-- 原文/表达式：claude.snapshot.backup_failed
-- 后端载荷：{"zh": "备份账号原有的 Claude 登录失败，没有切换", "en": "Backing up the account's existing Claude sign-in failed, so nothing was switched.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`00749c3cf00feebde0eaa592e8130f8d994b181aef88c89395f9e4b3749b9c13`
-
-### 371. `hardcoded:src-tauri/src/services/claude_account/usage.rs:run_usage:85d6ec51ddc6bfca:001`
+### 273. `hardcoded:src-tauri/src/services/claude_account/usage.rs:run_usage:85d6ec51ddc6bfca:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/claude_account/usage.rs:111`
@@ -4199,7 +3024,7 @@
 - 严重程度：高
 - 指纹：`85d6ec51ddc6bfcacae650e242a77c088c9225718d40e1f0512619d76f7243e1`
 
-### 372. `hardcoded:src-tauri/src/services/claude_account/usage.rs:run_usage:e512cf016f960728:001`
+### 274. `hardcoded:src-tauri/src/services/claude_account/usage.rs:run_usage:e512cf016f960728:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/claude_account/usage.rs:122`
@@ -4210,7 +3035,7 @@
 - 严重程度：高
 - 指纹：`e512cf016f9607285ce4778e4e7899497acafe63f6c7c119a38c25c4071ff407`
 
-### 373. `hardcoded:src-tauri/src/services/env_manager.rs:delete_env_vars:b62858102b25fbb9:001`
+### 275. `hardcoded:src-tauri/src/services/env_manager.rs:delete_env_vars:b62858102b25fbb9:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/env_manager.rs:32`
@@ -4221,7 +3046,7 @@
 - 严重程度：高
 - 指纹：`b62858102b25fbb95b0042c0863e1fc827e88dfbc8fda9f27f7530ed8997a80f`
 
-### 374. `hardcoded:src-tauri/src/services/env_manager.rs:create_backup:80e8e9892e19511c:001`
+### 276. `hardcoded:src-tauri/src/services/env_manager.rs:create_backup:80e8e9892e19511c:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/env_manager.rs:46`
@@ -4232,7 +3057,7 @@
 - 严重程度：高
 - 指纹：`80e8e9892e19511cbcc6082c3fa23701e21df536cdf0ae2e56ea5bec512dedcb`
 
-### 375. `hardcoded:src-tauri/src/services/env_manager.rs:create_backup:078f577b7f2895f7:001`
+### 277. `hardcoded:src-tauri/src/services/env_manager.rs:create_backup:078f577b7f2895f7:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/env_manager.rs:61`
@@ -4243,7 +3068,7 @@
 - 严重程度：高
 - 指纹：`078f577b7f2895f77b14b69f7ef61e50aa4f58a506a9fb55e124df1a29fbd8c6`
 
-### 376. `hardcoded:src-tauri/src/services/env_manager.rs:create_backup:84143b167bc363b8:001`
+### 278. `hardcoded:src-tauri/src/services/env_manager.rs:create_backup:84143b167bc363b8:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/env_manager.rs:63`
@@ -4254,7 +3079,7 @@
 - 严重程度：高
 - 指纹：`84143b167bc363b83071de32ef8471a8f0e2cd9661346dfd8c5ca1d1a273747a`
 
-### 377. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:8b3f699bca11c444:001`
+### 279. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:8b3f699bca11c444:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/env_manager.rs:82`
@@ -4265,7 +3090,7 @@
 - 严重程度：高
 - 指纹：`8b3f699bca11c444701024fc62c2894288273d43b1149194c7adeeb0dcb28516`
 
-### 378. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:b14852a0ad3b6de7:001`
+### 280. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:b14852a0ad3b6de7:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/env_manager.rs:85`
@@ -4276,7 +3101,7 @@
 - 严重程度：高
 - 指纹：`b14852a0ad3b6de7e1a4287fcaf93c2326dacb87e3b166eecf6202a5c2cfb1a5`
 
-### 379. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:833352a6f66187a1:001`
+### 281. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:833352a6f66187a1:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/env_manager.rs:92`
@@ -4287,7 +3112,7 @@
 - 严重程度：高
 - 指纹：`833352a6f66187a11e210a789a8baef3ef73558a460b20fc72ad8d791278f626`
 
-### 380. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:0761c8363b59018d:001`
+### 282. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:0761c8363b59018d:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/env_manager.rs:95`
@@ -4298,7 +3123,7 @@
 - 严重程度：高
 - 指纹：`0761c8363b59018df2ff25d17cbbf83974f9fc2c38b3367c05a32914f7e1d83f`
 
-### 381. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:334ea04c65eff935:001`
+### 283. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:334ea04c65eff935:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/env_manager.rs:99`
@@ -4309,7 +3134,7 @@
 - 严重程度：高
 - 指纹：`334ea04c65eff9353aaace3cd2eff0098874a7d22902982ace0e1da26b03d68d`
 
-### 382. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:42c89e7b93dbdf87:001`
+### 284. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:42c89e7b93dbdf87:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/env_manager.rs:100`
@@ -4320,7 +3145,7 @@
 - 严重程度：高
 - 指纹：`42c89e7b93dbdf8783714866d9940625931680db7d222e446ac5fd07de3e5ee3`
 
-### 383. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:29ca7ca180627714:001`
+### 285. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:29ca7ca180627714:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/env_manager.rs:111`
@@ -4331,7 +3156,7 @@
 - 严重程度：高
 - 指纹：`29ca7ca18062771477526230eb091850be6a8e66bec333d7237dc1b5101e03cd`
 
-### 384. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:50640721a7501624:001`
+### 286. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:50640721a7501624:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/env_manager.rs:118`
@@ -4342,7 +3167,7 @@
 - 严重程度：高
 - 指纹：`50640721a750162462ee681b279f1ba23812deb7a34567f53988d9bc6d848a15`
 
-### 385. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:d02df2142e3a9d5e:001`
+### 287. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:d02df2142e3a9d5e:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/env_manager.rs:140`
@@ -4353,7 +3178,7 @@
 - 严重程度：高
 - 指纹：`d02df2142e3a9d5ef55334fc992ef64948b37ff0dc4682ec6e815be516e34efa`
 
-### 386. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:42c89e7b93dbdf87:002`
+### 288. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:42c89e7b93dbdf87:002`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/env_manager.rs:148`
@@ -4364,7 +3189,7 @@
 - 严重程度：高
 - 指纹：`42c89e7b93dbdf8783714866d9940625931680db7d222e446ac5fd07de3e5ee3`
 
-### 387. `hardcoded:src-tauri/src/services/env_manager.rs:restore_from_backup:efea55a2db6eb1f0:001`
+### 289. `hardcoded:src-tauri/src/services/env_manager.rs:restore_from_backup:efea55a2db6eb1f0:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/env_manager.rs:155`
@@ -4375,7 +3200,7 @@
 - 严重程度：高
 - 指纹：`efea55a2db6eb1f05721b15595630246eb3c7933df8427d41b82b04212938d18`
 
-### 388. `hardcoded:src-tauri/src/services/env_manager.rs:restore_from_backup:7bcd86700fca4fdd:001`
+### 290. `hardcoded:src-tauri/src/services/env_manager.rs:restore_from_backup:7bcd86700fca4fdd:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/env_manager.rs:158`
@@ -4386,7 +3211,7 @@
 - 严重程度：高
 - 指纹：`7bcd86700fca4fdd6c95bb9fd3b210b56667147a651330268f18837fd7ab5de3`
 
-### 389. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:8b3f699bca11c444:001`
+### 291. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:8b3f699bca11c444:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/env_manager.rs:176`
@@ -4397,7 +3222,7 @@
 - 严重程度：高
 - 指纹：`8b3f699bca11c444701024fc62c2894288273d43b1149194c7adeeb0dcb28516`
 
-### 390. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:0aadf12582c8d359:001`
+### 292. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:0aadf12582c8d359:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/env_manager.rs:179`
@@ -4408,7 +3233,7 @@
 - 严重程度：高
 - 指纹：`0aadf12582c8d359cce3f78b657d754e0f68622534be7527cf8eea56da9b0027`
 
-### 391. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:833352a6f66187a1:001`
+### 293. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:833352a6f66187a1:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/env_manager.rs:185`
@@ -4419,7 +3244,7 @@
 - 严重程度：高
 - 指纹：`833352a6f66187a11e210a789a8baef3ef73558a460b20fc72ad8d791278f626`
 
-### 392. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:2db0d2260938626d:001`
+### 294. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:2db0d2260938626d:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/env_manager.rs:188`
@@ -4430,7 +3255,7 @@
 - 严重程度：高
 - 指纹：`2db0d2260938626d14f9dc34225a4eef2abf49f31294550f24a1dd196babde5d`
 
-### 393. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:cbcd9d11be96195c:001`
+### 295. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:cbcd9d11be96195c:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/env_manager.rs:193`
@@ -4441,7 +3266,7 @@
 - 严重程度：高
 - 指纹：`cbcd9d11be96195c7afe1dde48daaca2ec09aab610856fdec7990bf67d62060b`
 
-### 394. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:29ca7ca180627714:001`
+### 296. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:29ca7ca180627714:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/env_manager.rs:206`
@@ -4452,7 +3277,7 @@
 - 严重程度：高
 - 指纹：`29ca7ca18062771477526230eb091850be6a8e66bec333d7237dc1b5101e03cd`
 
-### 395. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:50640721a7501624:001`
+### 297. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:50640721a7501624:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/env_manager.rs:213`
@@ -4463,7 +3288,7 @@
 - 严重程度：高
 - 指纹：`50640721a750162462ee681b279f1ba23812deb7a34567f53988d9bc6d848a15`
 
-### 396. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:d02df2142e3a9d5e:001`
+### 298. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:d02df2142e3a9d5e:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/env_manager.rs:220`
@@ -4474,7 +3299,7 @@
 - 严重程度：高
 - 指纹：`d02df2142e3a9d5ef55334fc992ef64948b37ff0dc4682ec6e815be516e34efa`
 
-### 397. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:cbcd9d11be96195c:002`
+### 299. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:cbcd9d11be96195c:002`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/env_manager.rs:225`
@@ -4485,19 +3310,7 @@
 - 严重程度：高
 - 指纹：`cbcd9d11be96195c7afe1dde48daaca2ec09aab610856fdec7990bf67d62060b`
 
-### 398. `hardcoded:src-tauri/src/services/kimi_oauth/mod.rs:ensure_profile_signed_in:9bbc37d3a2534945:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/kimi_oauth/mod.rs:1075`
-- 结构：`ensure_profile_signed_in` / `backend_localized_error`
-- 原文/表达式：kimi.account.not_signed_in
-- 后端载荷：{"zh": "这个 Kimi 账号没有在本机登录，请到授权中心登录后再切换", "en": "This Kimi account is not signed in on this computer; sign in from the Authorization Center first", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`9bbc37d3a2534945974dcec419622c7b046dce9ee807805ff8a23fb1035b0805`
-
-### 399. `hardcoded:src-tauri/src/services/mcp.rs:sync_all_enabled:a097a3884831e945:001`
+### 300. `hardcoded:src-tauri/src/services/mcp.rs:sync_all_enabled:a097a3884831e945:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/mcp.rs:454`
@@ -4508,7 +3321,7 @@
 - 严重程度：高
 - 指纹：`a097a3884831e9453b66eb3210bd352df6b73d5385083a2de5770f4379f832b4`
 
-### 400. `hardcoded:src-tauri/src/services/mcp.rs:resync_targets:1e9873c6e5248d3b:001`
+### 301. `hardcoded:src-tauri/src/services/mcp.rs:resync_targets:1e9873c6e5248d3b:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/mcp.rs:487`
@@ -4519,7 +3332,7 @@
 - 严重程度：高
 - 指纹：`1e9873c6e5248d3bbfc3e7c1b69ca6768d6dffb334e789e5fd430c0f13bb6bad`
 
-### 401. `hardcoded:src-tauri/src/services/mcp.rs:project_servers_to_app:86bbdcec6d1b6cd6:001`
+### 302. `hardcoded:src-tauri/src/services/mcp.rs:project_servers_to_app:86bbdcec6d1b6cd6:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/mcp.rs:567`
@@ -4530,7 +3343,7 @@
 - 严重程度：高
 - 指纹：`86bbdcec6d1b6cd64c69e1f2f7679d0446cd1c26acae445de2b87cfdfebfd929`
 
-### 402. `hardcoded:src-tauri/src/services/mcp.rs:import_from_all_apps:a42238eccc67caaa:001`
+### 303. `hardcoded:src-tauri/src/services/mcp.rs:import_from_all_apps:a42238eccc67caaa:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/mcp.rs:879`
@@ -4541,43 +3354,7 @@
 - 严重程度：高
 - 指纹：`a42238eccc67caaa9f6a34776e5050f5c51cc5173a95674132c0142473621a06`
 
-### 403. `hardcoded:src-tauri/src/services/model_pricing.rs:normalize_decimal:4d6322c7e4a94f73:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/model_pricing.rs:116`
-- 结构：`normalize_decimal` / `backend_localized_error`
-- 原文/表达式：usage.invalidPrice
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`4d6322c7e4a94f7302072e0681bfacceccc4680dbaa0b0d4011259e6519c41d9`
-
-### 404. `hardcoded:src-tauri/src/services/model_pricing.rs:normalize_pricing:68c3ae2b5fe66812:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/model_pricing.rs:129`
-- 结构：`normalize_pricing` / `backend_localized_error`
-- 原文/表达式：usage.modelIdRequired
-- 后端载荷：{"zh": "模型 ID 不能为空", "en": "Model ID is required", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`68c3ae2b5fe668126f425ffd012160376bf111e553699fbe4307b676fdc60618`
-
-### 405. `hardcoded:src-tauri/src/services/model_pricing.rs:normalize_pricing:71d1543ec3dbe2fc:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/model_pricing.rs:136`
-- 结构：`normalize_pricing` / `backend_localized_error`
-- 原文/表达式：usage.displayNameRequired
-- 后端载荷：{"zh": "显示名称不能为空", "en": "Display name is required", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`71d1543ec3dbe2fcb4cd7c76a352d303158431e22ca18a440229db2999ead214`
-
-### 406. `hardcoded:src-tauri/src/services/model_pricing.rs:upsert_pricing:545b9c9d91fd48c0:001`
+### 304. `hardcoded:src-tauri/src/services/model_pricing.rs:upsert_pricing:545b9c9d91fd48c0:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/model_pricing.rs:270`
@@ -4588,7 +3365,7 @@
 - 严重程度：高
 - 指纹：`545b9c9d91fd48c0311ece76ca022fc67036893df426a9f5b560f3f89a28c1de`
 
-### 407. `hardcoded:src-tauri/src/services/model_pricing.rs:sync_local_model_pricing:d058cec6e60d2148:001`
+### 305. `hardcoded:src-tauri/src/services/model_pricing.rs:sync_local_model_pricing:d058cec6e60d2148:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/model_pricing.rs:301`
@@ -4599,7 +3376,7 @@
 - 严重程度：高
 - 指纹：`d058cec6e60d2148ce085e13820ccf9a098c634449e48c8d08cb80567c94ab4e`
 
-### 408. `hardcoded:src-tauri/src/services/model_pricing.rs:get_models_dev_sync_state:d058cec6e60d2148:001`
+### 306. `hardcoded:src-tauri/src/services/model_pricing.rs:get_models_dev_sync_state:d058cec6e60d2148:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/model_pricing.rs:321`
@@ -4610,7 +3387,7 @@
 - 严重程度：高
 - 指纹：`d058cec6e60d2148ce085e13820ccf9a098c634449e48c8d08cb80567c94ab4e`
 
-### 409. `hardcoded:src-tauri/src/services/model_pricing.rs:save_models_dev_sync_config:d058cec6e60d2148:001`
+### 307. `hardcoded:src-tauri/src/services/model_pricing.rs:save_models_dev_sync_config:d058cec6e60d2148:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/model_pricing.rs:336`
@@ -4621,7 +3398,7 @@
 - 严重程度：高
 - 指纹：`d058cec6e60d2148ce085e13820ccf9a098c634449e48c8d08cb80567c94ab4e`
 
-### 410. `hardcoded:src-tauri/src/services/model_pricing.rs:record_models_dev_sync_result:89492c292e86ba32:001`
+### 308. `hardcoded:src-tauri/src/services/model_pricing.rs:record_models_dev_sync_result:89492c292e86ba32:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/model_pricing.rs:353`
@@ -4632,7 +3409,7 @@
 - 严重程度：高
 - 指纹：`89492c292e86ba3247f6806293a7af30e358e9ebaf075cc49e20b8deb638628e`
 
-### 411. `hardcoded:src-tauri/src/services/model_pricing.rs:update_model_pricing_batch_inner:d058cec6e60d2148:001`
+### 309. `hardcoded:src-tauri/src/services/model_pricing.rs:update_model_pricing_batch_inner:d058cec6e60d2148:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/model_pricing.rs:386`
@@ -4643,19 +3420,7 @@
 - 严重程度：高
 - 指纹：`d058cec6e60d2148ce085e13820ccf9a098c634449e48c8d08cb80567c94ab4e`
 
-### 412. `hardcoded:src-tauri/src/services/model_pricing.rs:delete_model_pricing:68c3ae2b5fe66812:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/model_pricing.rs:445`
-- 结构：`delete_model_pricing` / `backend_localized_error`
-- 原文/表达式：usage.modelIdRequired
-- 后端载荷：{"zh": "模型 ID 不能为空", "en": "Model ID is required", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`68c3ae2b5fe668126f425ffd012160376bf111e553699fbe4307b676fdc60618`
-
-### 413. `hardcoded:src-tauri/src/services/model_pricing.rs:delete_model_pricing:d058cec6e60d2148:001`
+### 310. `hardcoded:src-tauri/src/services/model_pricing.rs:delete_model_pricing:d058cec6e60d2148:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/model_pricing.rs:455`
@@ -4666,7 +3431,7 @@
 - 严重程度：高
 - 指纹：`d058cec6e60d2148ce085e13820ccf9a098c634449e48c8d08cb80567c94ab4e`
 
-### 414. `hardcoded:src-tauri/src/services/profile.rs:create:09488335360a2e91:001`
+### 311. `hardcoded:src-tauri/src/services/profile.rs:create:09488335360a2e91:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/profile.rs:271`
@@ -4677,7 +3442,7 @@
 - 严重程度：高
 - 指纹：`09488335360a2e91632b0657e4ff9130afb0153118353e90ba7c92ceae6e5eab`
 
-### 415. `hardcoded:src-tauri/src/services/profile.rs:update:433bc41fe9333e8b:001`
+### 312. `hardcoded:src-tauri/src/services/profile.rs:update:433bc41fe9333e8b:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/profile.rs:307`
@@ -4688,7 +3453,7 @@
 - 严重程度：高
 - 指纹：`433bc41fe9333e8bda9af4f395ff43bc95ce546db3d2eb3265af8522b2ec1958`
 
-### 416. `hardcoded:src-tauri/src/services/profile.rs:update:09488335360a2e91:001`
+### 313. `hardcoded:src-tauri/src/services/profile.rs:update:09488335360a2e91:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/profile.rs:310`
@@ -4699,7 +3464,7 @@
 - 严重程度：高
 - 指纹：`09488335360a2e91632b0657e4ff9130afb0153118353e90ba7c92ceae6e5eab`
 
-### 417. `hardcoded:src-tauri/src/services/profile.rs:apply:433bc41fe9333e8b:001`
+### 314. `hardcoded:src-tauri/src/services/profile.rs:apply:433bc41fe9333e8b:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/profile.rs:366`
@@ -4710,7 +3475,7 @@
 - 严重程度：高
 - 指纹：`433bc41fe9333e8bda9af4f395ff43bc95ce546db3d2eb3265af8522b2ec1958`
 
-### 418. `hardcoded:src-tauri/src/services/prompt.rs:delete_prompt:cee4eb3e8f53ffe8:001`
+### 315. `hardcoded:src-tauri/src/services/prompt.rs:delete_prompt:cee4eb3e8f53ffe8:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/prompt.rs:142`
@@ -4721,7 +3486,7 @@
 - 严重程度：高
 - 指纹：`cee4eb3e8f53ffe8519d3cfca13a7c7be2115a97ffb9e813f6f60f9928f7deba`
 
-### 419. `hardcoded:src-tauri/src/services/prompt.rs:enable_prompt:3a14670e4e48d7bd:001`
+### 316. `hardcoded:src-tauri/src/services/prompt.rs:enable_prompt:3a14670e4e48d7bd:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/prompt.rs:220`
@@ -4732,7 +3497,7 @@
 - 严重程度：高
 - 指纹：`3a14670e4e48d7bd29f2e357ebad77414f2d82eb108440a2636a6bb60d103ee0`
 
-### 420. `hardcoded:src-tauri/src/services/prompt.rs:import_from_file:83ec9577dc224234:001`
+### 317. `hardcoded:src-tauri/src/services/prompt.rs:import_from_file:83ec9577dc224234:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/prompt.rs:240`
@@ -4743,7 +3508,7 @@
 - 严重程度：高
 - 指纹：`83ec9577dc22423415fdfb7b93fdccfad943e8d32b87ed98c06e617933649ddf`
 
-### 421. `hardcoded:src-tauri/src/services/prompt.rs:sync_all_to_live:7f33587d159c801b:001`
+### 318. `hardcoded:src-tauri/src/services/prompt.rs:sync_all_to_live:7f33587d159c801b:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/prompt.rs:325`
@@ -4754,7 +3519,7 @@
 - 严重程度：高
 - 指纹：`7f33587d159c801bed0faa5ded630773c433621561174ed31e86056a2059b901`
 
-### 422. `hardcoded:src-tauri/src/services/prompt.rs:delete_pi_prompt:cee4eb3e8f53ffe8:001`
+### 319. `hardcoded:src-tauri/src/services/prompt.rs:delete_pi_prompt:cee4eb3e8f53ffe8:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/prompt.rs:618`
@@ -4765,55 +3530,7 @@
 - 严重程度：高
 - 指纹：`cee4eb3e8f53ffe8519d3cfca13a7c7be2115a97ffb9e813f6f60f9928f7deba`
 
-### 423. `hardcoded:src-tauri/src/services/provider/agy_direct.rs:live_settings:a7398b03cc2502d0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/agy_direct.rs:67`
-- 结构：`live_settings` / `backend_localized_error`
-- 原文/表达式：gemini.validation.missing_api_key
-- 后端载荷：{"zh": "Gemini 配置缺少必需字段: GEMINI_API_KEY", "en": "Gemini config missing required field: GEMINI_API_KEY", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`a7398b03cc2502d00b394af7f92d086357da95b7ba904be9ec1dbcab4d30ffc4`
-
-### 424. `hardcoded:src-tauri/src/services/provider/claude_editor.rs:plan_save:74c4ba34f0aeafc0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/claude_editor.rs:232`
-- 结构：`plan_save` / `backend_localized_error`
-- 原文/表达式：provider.claude.editor.invalid_shape
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`74c4ba34f0aeafc02fe0e88151c4005d82578a2cd11db25b3566d722791a5956`
-
-### 425. `hardcoded:src-tauri/src/services/provider/claude_official.rs:ensure_default_terminal_is_official:e0ed11a62887d614:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/claude_official.rs:249`
-- 结构：`ensure_default_terminal_is_official` / `backend_localized_error`
-- 原文/表达式：claude.account.default_taken
-- 后端载荷：{"zh": "这个账号现在在 Claude Code 的默认登录里，但 Claude Code 当前用的是其他供应商或本地路由，打开的终端不会用这个账号。请先切到这张卡（或任一官方卡）再打开终端", "en": "This account is Claude Code's current sign-in, but Claude Code is set to another provider or the local router, so a new terminal wouldn't use this account. Switch to this card (or any official card) first, then open the terminal.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`e0ed11a62887d614f802c73864f08b30e2e56ef574073d177b3f1fa94acbffbe`
-
-### 426. `hardcoded:src-tauri/src/services/provider/claude_official.rs:terminal_account:52cfe578bb96da8c:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/claude_official.rs:339`
-- 结构：`terminal_account` / `backend_localized_error`
-- 原文/表达式：claude.account.not_on_device
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`52cfe578bb96da8c7f409c37a095d0a1ed039ba4f8b74f4ad700c52466aa12cd`
-
-### 427. `hardcoded:src-tauri/src/services/provider/codex_client_catalog.rs:restart_daemon:71e3725e46e60d11:001`
+### 320. `hardcoded:src-tauri/src/services/provider/codex_client_catalog.rs:restart_daemon:71e3725e46e60d11:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/provider/codex_client_catalog.rs:628`
@@ -4824,7 +3541,7 @@
 - 严重程度：高
 - 指纹：`71e3725e46e60d11593a5e1db2c2e2bba9a021071aa14ee83986782855bbc579`
 
-### 428. `hardcoded:src-tauri/src/services/provider/codex_client_catalog.rs:restart_daemon:312a6050f5ea3aa0:001`
+### 321. `hardcoded:src-tauri/src/services/provider/codex_client_catalog.rs:restart_daemon:312a6050f5ea3aa0:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/provider/codex_client_catalog.rs:630`
@@ -4835,7 +3552,7 @@
 - 严重程度：高
 - 指纹：`312a6050f5ea3aa0a0e5d385f62daf6870d7955785ea8d02004a4cbfa34ea2cb`
 
-### 429. `hardcoded:src-tauri/src/services/provider/codex_direct.rs:check_stack_member:12b5cf3152d9f237:001`
+### 322. `hardcoded:src-tauri/src/services/provider/codex_direct.rs:check_stack_member:12b5cf3152d9f237:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/provider/codex_direct.rs:778`
@@ -4846,31 +3563,7 @@
 - 严重程度：高
 - 指纹：`12b5cf3152d9f237decd000160f161dec81f8d52fc01db970160db19cd78d4d8`
 
-### 430. `hardcoded:src-tauri/src/services/provider/codex_direct.rs:run_with_edits:96c93866d4405bea:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/codex_direct.rs:1185`
-- 结构：`run_with_edits` / `backend_localized_error`
-- 原文/表达式：codex.official_models_login_changed
-- 后端载荷：{"zh": "Codex 的登录在这次操作期间变了，官方模型列表对不上新的登录。本次没有写入任何文件，请重试", "en": "The Codex login changed during this operation, so the official model list no longer matches it. Nothing was written; please try again", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`96c93866d4405bea5a1fd72b9eab887dbf17476067da26d0955d0f881f0960ea`
-
-### 431. `hardcoded:src-tauri/src/services/provider/codex_direct.rs:run_with_edits:d7ca0df52f99c668:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/codex_direct.rs:1196`
-- 结构：`run_with_edits` / `backend_localized_error`
-- 原文/表达式：codex.login_stash_unreadable
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`d7ca0df52f99c668d1aaa63dffa7cdd65f5f98a44813caecfb51417bf615b7c8`
-
-### 432. `hardcoded:src-tauri/src/services/provider/codex_direct.rs:run_with_edits:a44c612f3133c2c1:001`
+### 323. `hardcoded:src-tauri/src/services/provider/codex_direct.rs:run_with_edits:a44c612f3133c2c1:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/provider/codex_direct.rs:1263`
@@ -4881,7 +3574,7 @@
 - 严重程度：高
 - 指纹：`a44c612f3133c2c101f09b4f638476785bce3c437280320799f7026d6f7c6ae0`
 
-### 433. `hardcoded:src-tauri/src/services/provider/codex_official_models.rs:fmt:bb6cca844ac067e7:001`
+### 324. `hardcoded:src-tauri/src/services/provider/codex_official_models.rs:fmt:bb6cca844ac067e7:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/provider/codex_official_models.rs:478`
@@ -4892,7 +3585,7 @@
 - 严重程度：高
 - 指纹：`bb6cca844ac067e776710d24b8c4545f06a524420cc0f24e933a315b111756a0`
 
-### 434. `hardcoded:src-tauri/src/services/provider/codex_official_models.rs:fmt:b01ec7de8ca95046:001`
+### 325. `hardcoded:src-tauri/src/services/provider/codex_official_models.rs:fmt:b01ec7de8ca95046:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/provider/codex_official_models.rs:479`
@@ -4903,7 +3596,7 @@
 - 严重程度：高
 - 指纹：`b01ec7de8ca95046f1ffc6de14a68717cb726d771a61148e1c16d19e556a656b`
 
-### 435. `hardcoded:src-tauri/src/services/provider/codex_official_models.rs:fmt:fffbb38bad3de65e:001`
+### 326. `hardcoded:src-tauri/src/services/provider/codex_official_models.rs:fmt:fffbb38bad3de65e:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/provider/codex_official_models.rs:480`
@@ -4914,7 +3607,7 @@
 - 严重程度：高
 - 指纹：`fffbb38bad3de65e42407c10a460f26e93f8305281bdc75c73b32e5fe7de6e7e`
 
-### 436. `hardcoded:src-tauri/src/services/provider/codex_official_models.rs:fmt:33d150a393324e4e:001`
+### 327. `hardcoded:src-tauri/src/services/provider/codex_official_models.rs:fmt:33d150a393324e4e:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/provider/codex_official_models.rs:513`
@@ -4925,7 +3618,7 @@
 - 严重程度：高
 - 指纹：`33d150a393324e4ed9fe99c217106220a806ea9dd53474da68332a9d26cbc411`
 
-### 437. `hardcoded:src-tauri/src/services/provider/codex_official_models.rs:fmt:c160ed77093429bd:001`
+### 328. `hardcoded:src-tauri/src/services/provider/codex_official_models.rs:fmt:c160ed77093429bd:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/provider/codex_official_models.rs:514`
@@ -4936,7 +3629,7 @@
 - 严重程度：高
 - 指纹：`c160ed77093429bdaa6e86be2875a26f796ae0c8a7c8e5fd343f32527aef0070`
 
-### 438. `hardcoded:src-tauri/src/services/provider/codex_official_models.rs:fmt:8890f364cda19ceb:001`
+### 329. `hardcoded:src-tauri/src/services/provider/codex_official_models.rs:fmt:8890f364cda19ceb:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/provider/codex_official_models.rs:515`
@@ -4947,103 +3640,7 @@
 - 严重程度：高
 - 指纹：`8890f364cda19ceb2bccc3124a83ffe9c141ca75965b44ff9c9b933cb3bb07f7`
 
-### 439. `hardcoded:src-tauri/src/services/provider/endpoints.rs:add_custom_endpoint:411d9529217c1aa0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/endpoints.rs:43`
-- 结构：`add_custom_endpoint` / `backend_localized_error`
-- 原文/表达式：provider.endpoint.url_required
-- 后端载荷：{"zh": "URL 不能为空", "en": "URL cannot be empty", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`411d9529217c1aa0ecd2feb27dd40fe4e217698cc69db1f58d8289a9559f25df`
-
-### 440. `hardcoded:src-tauri/src/services/provider/gemini_editor.rs:plan_save:4d45253a83f00bb5:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/gemini_editor.rs:358`
-- 结构：`plan_save` / `backend_localized_error`
-- 原文/表达式：provider.gemini.editor.invalid_shape
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`4d45253a83f00bb590dacabbcbede36a51040c059dd3a250012ff474f248cb83`
-
-### 441. `hardcoded:src-tauri/src/services/provider/icon.rs:validate_icon:9fc2c6e14a925ed1:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/icon.rs:44`
-- 结构：`validate_icon` / `backend_localized_error`
-- 原文/表达式：provider.icon.invalid
-- 后端载荷：{"zh": "自定义图标无效，请重新上传", "en": "The custom icon is invalid, please upload it again", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`9fc2c6e14a925ed1c26f523e820464d716ea7ea9dc150f14451988668ac65d74`
-
-### 442. `hardcoded:src-tauri/src/services/provider/icon.rs:normalize_library_name:4b83197ecaf05587:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/icon.rs:237`
-- 结构：`normalize_library_name` / `backend_localized_error`
-- 原文/表达式：customIcon.nameEmpty
-- 后端载荷：{"zh": "请给图标起个名字", "en": "Please name the icon", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`4b83197ecaf055871c554f550140ff3bb9210976eb713c910347f06e3593f438`
-
-### 443. `hardcoded:src-tauri/src/services/provider/icon.rs:normalize_library_name:ff75154ee8c864e2:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/icon.rs:244`
-- 结构：`normalize_library_name` / `backend_localized_error`
-- 原文/表达式：customIcon.nameTooLong
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`ff75154ee8c864e2b1b7fb8f539b539f7c3864609159fc116ecc3dadb0952de6`
-
-### 444. `hardcoded:src-tauri/src/services/provider/icon.rs:library_icon_not_found:f523981d2f415745:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/icon.rs:254`
-- 结构：`library_icon_not_found` / `backend_localized_error`
-- 原文/表达式：customIcon.notFound
-- 后端载荷：{"zh": "这个图标已经不在「我的图标」里了", "en": "This icon is no longer in My Icons", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`f523981d2f4157454411886a4c8c457229cca0932d9a9a13fdba66bd63e34167`
-
-### 445. `hardcoded:src-tauri/src/services/provider/icon.rs:add_library_icon:9fc2c6e14a925ed1:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/icon.rs:274`
-- 结构：`add_library_icon` / `backend_localized_error`
-- 原文/表达式：provider.icon.invalid
-- 后端载荷：{"zh": "自定义图标无效，请重新上传", "en": "The custom icon is invalid, please upload it again", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`9fc2c6e14a925ed1c26f523e820464d716ea7ea9dc150f14451988668ac65d74`
-
-### 446. `hardcoded:src-tauri/src/services/provider/icon.rs:add_library_icon:76a358e836a40dcd:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/icon.rs:288`
-- 结构：`add_library_icon` / `backend_localized_error`
-- 原文/表达式：customIcon.libraryFull
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`76a358e836a40dcd8503fc33538ad0c50b4ea29421efbec78f607018a9b97a30`
-
-### 447. `hardcoded:src-tauri/src/services/provider/live.rs:get_codex_managed_oauth_live_auth_value:892ed905b1a1f20f:001`
+### 330. `hardcoded:src-tauri/src/services/provider/live.rs:get_codex_managed_oauth_live_auth_value:892ed905b1a1f20f:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/provider/live.rs:477`
@@ -5054,7 +3651,7 @@
 - 严重程度：高
 - 指纹：`892ed905b1a1f20fd596b7fed4d811c6bf4a510178069fa64e44fe2823557c04`
 
-### 448. `hardcoded:src-tauri/src/services/provider/live.rs:get_codex_managed_oauth_live_auth_value:cfdb63cd3a1ae050:001`
+### 331. `hardcoded:src-tauri/src/services/provider/live.rs:get_codex_managed_oauth_live_auth_value:cfdb63cd3a1ae050:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/provider/live.rs:500`
@@ -5065,7 +3662,7 @@
 - 严重程度：高
 - 指纹：`cfdb63cd3a1ae0502da6f02fb4eba8554d097d7afe1a234fa676aa98e27f4f07`
 
-### 449. `hardcoded:src-tauri/src/services/provider/live.rs:prepare_codex_managed_oauth_live_auth_switch_away:f965f2318d4978c9:001`
+### 332. `hardcoded:src-tauri/src/services/provider/live.rs:prepare_codex_managed_oauth_live_auth_switch_away:f965f2318d4978c9:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/provider/live.rs:520`
@@ -5076,79 +3673,7 @@
 - 严重程度：高
 - 指纹：`f965f2318d4978c9abf2d951d7c8f72793d007d3335104810ca8d246edc5743f`
 
-### 450. `hardcoded:src-tauri/src/services/provider/live.rs:write_live_snapshot:3704e0150c116837:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/live.rs:547`
-- 结构：`write_live_snapshot` / `backend_localized_error`
-- 原文/表达式：claude.live.requires_engine
-- 后端载荷：{"zh": "Claude Code 配置只能经关键字段写入流程写入", "en": "Claude Code configuration must be written through the key-field write flow", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`3704e0150c11683798bab32d7a04881765c1ffe938531101017468d2891e7aef`
-
-### 451. `hardcoded:src-tauri/src/services/provider/live.rs:write_live_snapshot:0a6becebb2b1a447:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/live.rs:554`
-- 结构：`write_live_snapshot` / `backend_localized_error`
-- 原文/表达式：claude_desktop.live.requires_db_context
-- 后端载荷：{"zh": "Claude Desktop 配置写入需要通过供应商切换流程执行", "en": "Claude Desktop configuration must be written through the provider switch flow", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`0a6becebb2b1a447f24632137d41a727b0de3d4eaddbd513ea52d1e7f02ca098`
-
-### 452. `hardcoded:src-tauri/src/services/provider/live.rs:write_live_snapshot:abbff85c82945929:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/live.rs:561`
-- 结构：`write_live_snapshot` / `backend_localized_error`
-- 原文/表达式：codex.live.requires_engine
-- 后端载荷：{"zh": "Codex 配置只能经关键字段写入流程写入", "en": "Codex configuration must be written through the key-field write flow", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`abbff85c829459294b58f4a6224fed73fa70dea90435bfc1c10332ad367dda06`
-
-### 453. `hardcoded:src-tauri/src/services/provider/live.rs:write_live_snapshot:36bf3ce9717009d3:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/live.rs:568`
-- 结构：`write_live_snapshot` / `backend_localized_error`
-- 原文/表达式：gemini.live.requires_engine
-- 后端载荷：{"zh": "Gemini CLI 配置只能经关键字段写入流程写入", "en": "Gemini CLI configuration must be written through the key-field write flow", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`36bf3ce9717009d3b5ee0cbf6cb394bf2906e9b5a9b8ca29f70e99531860af80`
-
-### 454. `hardcoded:src-tauri/src/services/provider/live.rs:write_live_snapshot:f280f9939106537c:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/live.rs:575`
-- 结构：`write_live_snapshot` / `backend_localized_error`
-- 原文/表达式：grokbuild.live.requires_engine
-- 后端载荷：{"zh": "Grok Build 配置只能经关键字段写入流程写入", "en": "Grok Build configuration must be written through the key-field write flow", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`f280f9939106537cc5dcd103d2986d42b147cda039bf3d760a1ff0a2dc8f7e1f`
-
-### 455. `hardcoded:src-tauri/src/services/provider/live.rs:write_live_snapshot:8e14769a7cc0edad:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/live.rs:616`
-- 结构：`write_live_snapshot` / `backend_localized_error`
-- 原文/表达式：provider.opencode.custom_definition_required
-- 后端载荷：{"zh": "新的 OpenCode 供应商标识需要填写 npm 包和至少一个模型；只有配置中已有的同名供应商可以沿用默认定义", "en": "A new OpenCode provider ID requires an npm package and at least one model; only an existing ID in the live config may inherit defaults", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`8e14769a7cc0edad12d956445df50d08287a75e92e2af9e0ce0e2bd02f61c6cf`
-
-### 456. `hardcoded:src-tauri/src/services/provider/live.rs:sync_current_to_live:4c6cafaa01e6c8b7:001`
+### 333. `hardcoded:src-tauri/src/services/provider/live.rs:sync_current_to_live:4c6cafaa01e6c8b7:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/provider/live.rs:904`
@@ -5159,139 +3684,7 @@
 - 严重程度：高
 - 指纹：`4c6cafaa01e6c8b70e917cc1d95499a5503c2c293decc47175498c65056aa033`
 
-### 457. `hardcoded:src-tauri/src/services/provider/live.rs:read_live_settings:90ffe375a43d0bd5:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/live.rs:932`
-- 结构：`read_live_settings` / `backend_localized_error`
-- 原文/表达式：claude.live.missing
-- 后端载荷：{"zh": "Claude Code 配置文件不存在", "en": "Claude settings file is missing", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`90ffe375a43d0bd534fad6cc222bc4350a39f2250752a2a8499dad463aaa0bf0`
-
-### 458. `hardcoded:src-tauri/src/services/provider/live.rs:read_live_settings:309001095a492496:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/live.rs:940`
-- 结构：`read_live_settings` / `backend_localized_error`
-- 原文/表达式：claude_desktop.live.read_unsupported
-- 后端载荷：{"zh": "Claude Desktop 3P 配置不支持作为通用 live 配置导入，请使用“从 Claude 导入兼容供应商”。", "en": "Claude Desktop 3P configuration cannot be imported as a generic live config. Use 'Import compatible providers from Claude' instead.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`309001095a49249649370f2f84c1b94d5ecfd6b47d67e839c18f7fef8c165386`
-
-### 459. `hardcoded:src-tauri/src/services/provider/live.rs:read_live_settings:1b2e32a08967624f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/live.rs:953`
-- 结构：`read_live_settings` / `backend_localized_error`
-- 原文/表达式：gemini.env.missing
-- 后端载荷：{"zh": "Gemini .env 文件不存在", "en": "Gemini .env file not found", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`1b2e32a08967624fa4d0e2dce14683944b528ad37ac6c6cd60465035da7017e2`
-
-### 460. `hardcoded:src-tauri/src/services/provider/live.rs:read_live_settings:5c735f7f13c75166:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/live.rs:983`
-- 结构：`read_live_settings` / `backend_localized_error`
-- 原文/表达式：opencode.config.missing
-- 后端载荷：{"zh": "OpenCode 配置文件不存在", "en": "OpenCode configuration file not found", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`5c735f7f13c75166fcc4d0e6db3f67079785a096db6357cca34dee0c89987063`
-
-### 461. `hardcoded:src-tauri/src/services/provider/live.rs:read_live_settings:b3a894a6f2d7a9e7:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/live.rs:999`
-- 结构：`read_live_settings` / `backend_localized_error`
-- 原文/表达式：openclaw.config.missing
-- 后端载荷：{"zh": "OpenClaw 配置文件不存在", "en": "OpenClaw configuration file not found", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`b3a894a6f2d7a9e73784cb9ca46f99ac5776e904821a0d0b939348ad40e38f4d`
-
-### 462. `hardcoded:src-tauri/src/services/provider/live.rs:read_live_settings:1ca5e1503587dea5:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/live.rs:1012`
-- 结构：`read_live_settings` / `backend_localized_error`
-- 原文/表达式：hermes.config.missing
-- 后端载荷：{"zh": "Hermes 配置文件不存在", "en": "Hermes configuration file not found", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`1ca5e1503587dea541394eeced83613e39d9a0c54ccd795c7ae8535180d829c9`
-
-### 463. `hardcoded:src-tauri/src/services/provider/live.rs:import_default_config:8cbfb43cf9dbd27f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/live.rs:1059`
-- 结构：`import_default_config` / `backend_localized_error`
-- 原文/表达式：provider.import.live_taken_over
-- 后端载荷：{"zh": "Live 配置当前处于代理接管状态（包含占位符），不能导入为供应商。请先关闭代理接管或恢复 Live 配置后重试。", "en": "The live config is currently taken over by the proxy (contains placeholders) and cannot be imported as a provider. Disable proxy takeover or restore the live config first.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`8cbfb43cf9dbd27f2630a40a53879e7d661c5dcff6bc6b8cc4f6be146b4c8172`
-
-### 464. `hardcoded:src-tauri/src/services/provider/live.rs:import_default_config:90ffe375a43d0bd5:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/live.rs:1086`
-- 结构：`import_default_config` / `backend_localized_error`
-- 原文/表达式：claude.live.missing
-- 后端载荷：{"zh": "Claude Code 配置文件不存在", "en": "Claude settings file is missing", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`90ffe375a43d0bd534fad6cc222bc4350a39f2250752a2a8499dad463aaa0bf0`
-
-### 465. `hardcoded:src-tauri/src/services/provider/live.rs:import_default_config:c4faeae3d0c15fe2:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/live.rs:1097`
-- 结构：`import_default_config` / `backend_localized_error`
-- 原文/表达式：claude_desktop.import_unsupported
-- 后端载荷：{"zh": "Claude Desktop 3P 配置不能通过通用导入读取，请使用“从 Claude 导入兼容供应商”。", "en": "Claude Desktop 3P config cannot be imported through the generic import flow. Use 'Import compatible providers from Claude' instead.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`c4faeae3d0c15fe20d1dd18320a12fa1037bc3568868d9bc26112082650bd520`
-
-### 466. `hardcoded:src-tauri/src/services/provider/live.rs:import_default_config:8d4ca2475560f1e2:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/live.rs:1111`
-- 结构：`import_default_config` / `backend_localized_error`
-- 原文/表达式：gemini.live.missing
-- 后端载荷：{"zh": "Gemini 配置文件不存在", "en": "Gemini configuration file is missing", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`8d4ca2475560f1e2e5fb3db473ef1f30d0178726fe5eccee4d18a3d333e384f3`
-
-### 467. `hardcoded:src-tauri/src/services/provider/mod.rs:desktop_needs_routing_error:5dafbcc09cdc35e3:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:76`
-- 结构：`desktop_needs_routing_error` / `backend_localized_error`
-- 原文/表达式：switch.desktop_needs_routing
-- 后端载荷：{"zh": "这个供应商要经本地路由才能用（模型映射或托管账号），请先把 Claude Desktop 切到路由模式", "en": "This provider only works through local routing (model mapping or a managed account); switch Claude Desktop to the routing mode first", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`5dafbcc09cdc35e31da50d7fffbda1e64a2435629cd5ee2c84569c838ca26429`
-
-### 468. `hardcoded:src-tauri/src/services/provider/mod.rs:add_codex:ef2e86e38e1b1ce4:001`
+### 334. `hardcoded:src-tauri/src/services/provider/mod.rs:add_codex:ef2e86e38e1b1ce4:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/provider/mod.rs:5804`
@@ -5302,7 +3695,7 @@
 - 严重程度：高
 - 指纹：`ef2e86e38e1b1ce4d8affe8f069e2716585f89d6848d36a186b92a2ddb5892da`
 
-### 469. `hardcoded:src-tauri/src/services/provider/mod.rs:editor_view_with_meta:bba52252fb37b0fc:001`
+### 335. `hardcoded:src-tauri/src/services/provider/mod.rs:editor_view_with_meta:bba52252fb37b0fc:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/provider/mod.rs:5854`
@@ -5313,7 +3706,7 @@
 - 严重程度：高
 - 指纹：`bba52252fb37b0fc5807f9280786411262f1761fda9794a66642ea853f7cf777`
 
-### 470. `hardcoded:src-tauri/src/services/provider/mod.rs:update_codex:d599f4382315ca81:001`
+### 336. `hardcoded:src-tauri/src/services/provider/mod.rs:update_codex:d599f4382315ca81:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/provider/mod.rs:6501`
@@ -5324,7 +3717,7 @@
 - 严重程度：高
 - 指纹：`d599f4382315ca8192b26cadd7bc5e6db0a23502ee7ef0eaf85ee2882d2efd86`
 
-### 471. `hardcoded:src-tauri/src/services/provider/mod.rs:delete:70c9a7a0f27993ae:001`
+### 337. `hardcoded:src-tauri/src/services/provider/mod.rs:delete:70c9a7a0f27993ae:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/provider/mod.rs:6611`
@@ -5335,31 +3728,7 @@
 - 严重程度：高
 - 指纹：`70c9a7a0f27993ae819512f75c0d4b5595d4fd553734f8487181967fa270e14b`
 
-### 472. `hardcoded:src-tauri/src/services/provider/mod.rs:switch_inner:3a82bbf1fde0e2bc:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:6817`
-- 结构：`switch_inner` / `backend_localized_error`
-- 原文/表达式：agy.switch.unsupported
-- 后端载荷：{"zh": "Antigravity 的卡片不需要启用，用「打开终端」启动即可", "en": "Antigravity cards are not enabled; use Open terminal to start one", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`3a82bbf1fde0e2bc3d3df55c9434e1b70b6d48d1d5023514a4a383638d957822`
-
-### 473. `hardcoded:src-tauri/src/services/provider/mod.rs:switch_inner:ebdb2c32489f9aea:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:6883`
-- 结构：`switch_inner` / `backend_localized_error`
-- 原文/表达式：switch.official_blocked_by_proxy
-- 后端载荷：{"zh": "路由模式下不能切换到官方供应商，使用代理访问官方 API 可能导致账号被封禁。请先退出路由模式，或选择第三方供应商。", "en": "Cannot switch to an official provider in routing mode. Using a proxy with official APIs may cause account bans.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`ebdb2c32489f9aea7b91bbb1499693e4410c415816782a09f34f6a6f6647eeca`
-
-### 474. `hardcoded:src-tauri/src/services/provider/mod.rs:switch_inner:de52da403c73fbc5:001`
+### 338. `hardcoded:src-tauri/src/services/provider/mod.rs:switch_inner:de52da403c73fbc5:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/provider/mod.rs:6901`
@@ -5370,7 +3739,7 @@
 - 严重程度：高
 - 指纹：`de52da403c73fbc5f1597f691a1f51ca51edd020c241bf1ca6177f2fa6ebb40d`
 
-### 475. `hardcoded:src-tauri/src/services/provider/mod.rs:scrub_leaked_gemini_common_config:33a3960f44ebc991:001`
+### 339. `hardcoded:src-tauri/src/services/provider/mod.rs:scrub_leaked_gemini_common_config:33a3960f44ebc991:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/provider/mod.rs:7731`
@@ -5381,295 +3750,7 @@
 - 严重程度：高
 - 指纹：`33a3960f44ebc9913a2be0997d622281f8cbfc46bb999b0f038ef1446fcd76cb`
 
-### 476. `hardcoded:src-tauri/src/services/provider/mod.rs:validate_provider_settings:c77dcd39bd1f8884:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:7952`
-- 结构：`validate_provider_settings` / `backend_localized_error`
-- 原文/表达式：provider.claude.settings.not_object
-- 后端载荷：{"zh": "Claude 配置必须是 JSON 对象", "en": "Claude configuration must be a JSON object", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`c77dcd39bd1f8884d28f7b8283d881624d26a5131e236596b4d64211df10e33b`
-
-### 477. `hardcoded:src-tauri/src/services/provider/mod.rs:validate_provider_settings:d6984546ad31ff3b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:7964`
-- 结构：`validate_provider_settings` / `backend_localized_error`
-- 原文/表达式：provider.codex.settings.not_object
-- 后端载荷：{"zh": "Codex 配置必须是 JSON 对象", "en": "Codex configuration must be a JSON object", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`d6984546ad31ff3b36f65b5487610bde439cb6a2abf138c63163c996e1537c36`
-
-### 478. `hardcoded:src-tauri/src/services/provider/mod.rs:validate_provider_settings:542e5c90c79fca02:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:7972`
-- 结构：`validate_provider_settings` / `backend_localized_error`
-- 原文/表达式：provider.codex.auth.missing
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`542e5c90c79fca02e8a91a2698d2af20619ecab0609467fb5429f867b9ba1df2`
-
-### 479. `hardcoded:src-tauri/src/services/provider/mod.rs:validate_provider_settings:039bbb176ae52a89:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:7979`
-- 结构：`validate_provider_settings` / `backend_localized_error`
-- 原文/表达式：provider.codex.auth.not_object
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`039bbb176ae52a890e0a6dbef8da04bf89eadb269ab4a7aef25cceeed25ae9f7`
-
-### 480. `hardcoded:src-tauri/src/services/provider/mod.rs:validate_provider_settings:244e65cbdea418be:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:7991`
-- 结构：`validate_provider_settings` / `backend_localized_error`
-- 原文/表达式：provider.codex.config.invalid_type
-- 后端载荷：{"zh": "Codex config 字段必须是字符串", "en": "Codex config field must be a string", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`244e65cbdea418be7315efb3062ea1841843526c2c908b36bf39112ba35562d8`
-
-### 481. `hardcoded:src-tauri/src/services/provider/mod.rs:validate_provider_settings:019fa51d2626af13:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:8012`
-- 结构：`validate_provider_settings` / `backend_localized_error`
-- 原文/表达式：provider.grokbuild.settings.not_object
-- 后端载荷：{"zh": "Grok Build 配置必须是 JSON 对象", "en": "Grok Build configuration must be a JSON object", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`019fa51d2626af13d35f857a468ded7e428c8460c3f06153e75aeaf8e69e055e`
-
-### 482. `hardcoded:src-tauri/src/services/provider/mod.rs:validate_provider_settings:7c902e7d1ecb5042:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:8022`
-- 结构：`validate_provider_settings` / `backend_localized_error`
-- 原文/表达式：provider.grokbuild.config.missing
-- 后端载荷：{"zh": "Grok Build 配置缺少 config 字段", "en": "Grok Build configuration is missing the config field", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`7c902e7d1ecb50422d32e46f3ad8346b195bd9b55aadc8a0ee548644b436e83a`
-
-### 483. `hardcoded:src-tauri/src/services/provider/mod.rs:validate_provider_settings:7919351e3d63519c:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:8040`
-- 结构：`validate_provider_settings` / `backend_localized_error`
-- 原文/表达式：provider.opencode.settings.not_object
-- 后端载荷：{"zh": "OpenCode 配置必须是 JSON 对象", "en": "OpenCode configuration must be a JSON object", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`7919351e3d63519c572f5fac2b55bd1a9490c8ba5dec58f00038dfb74c1065f0`
-
-### 484. `hardcoded:src-tauri/src/services/provider/mod.rs:validate_provider_settings:53b8c2f96d43919d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:8063`
-- 结构：`validate_provider_settings` / `backend_localized_error`
-- 原文/表达式：provider.openclaw.settings.not_object
-- 后端载荷：{"zh": "OpenClaw 配置必须是 JSON 对象", "en": "OpenClaw configuration must be a JSON object", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`53b8c2f96d43919df6e390e7f8eefaa4adbab24844b2244313922cc9a7dbc9f4`
-
-### 485. `hardcoded:src-tauri/src/services/provider/mod.rs:validate_provider_settings:4808f8fdf0a64571:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:8073`
-- 结构：`validate_provider_settings` / `backend_localized_error`
-- 原文/表达式：provider.hermes.settings.not_object
-- 后端载荷：{"zh": "Hermes 配置必须是 JSON 对象", "en": "Hermes configuration must be a JSON object", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`4808f8fdf0a645713efd8f7f9cdca42928dccabcfad1260738227193439dcb2b`
-
-### 486. `hardcoded:src-tauri/src/services/provider/mod.rs:extract_credentials:e948ef166a597815:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:8119`
-- 结构：`extract_credentials` / `backend_localized_error`
-- 原文/表达式：provider.claude.env.missing
-- 后端载荷：{"zh": "配置格式错误: 缺少 env", "en": "Invalid configuration: missing env section", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`e948ef166a597815a8dd38bde85c01602e3a3cbcd4907f1ea9f69ea54aaec72e`
-
-### 487. `hardcoded:src-tauri/src/services/provider/mod.rs:extract_credentials:23c309e24f7e6fd0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:8131`
-- 结构：`extract_credentials` / `backend_localized_error`
-- 原文/表达式：provider.claude.api_key.missing
-- 后端载荷：{"zh": "缺少 API Key", "en": "API key is missing", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`23c309e24f7e6fd08e96418ab0b3139a2745cba0a3a25106aae7659a9d08f7c6`
-
-### 488. `hardcoded:src-tauri/src/services/provider/mod.rs:extract_credentials:d0da205ca618fc79:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:8143`
-- 结构：`extract_credentials` / `backend_localized_error`
-- 原文/表达式：provider.claude.base_url.missing
-- 后端载荷：{"zh": "缺少 ANTHROPIC_BASE_URL 配置", "en": "Missing ANTHROPIC_BASE_URL configuration", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`d0da205ca618fc79cd7a2b9cda3600a3fa41c6ab9009b1514e80ab254ba6be35`
-
-### 489. `hardcoded:src-tauri/src/services/provider/mod.rs:extract_credentials:7c902e7d1ecb5042:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:8159`
-- 结构：`extract_credentials` / `backend_localized_error`
-- 原文/表达式：provider.grokbuild.config.missing
-- 后端载荷：{"zh": "Grok Build 配置缺少 config 字段", "en": "Grok Build configuration is missing the config field", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`7c902e7d1ecb50422d32e46f3ad8346b195bd9b55aadc8a0ee548644b436e83a`
-
-### 490. `hardcoded:src-tauri/src/services/provider/mod.rs:extract_credentials:7e1821405962fffb:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:8167`
-- 结构：`extract_credentials` / `backend_localized_error`
-- 原文/表达式：provider.grokbuild.credentials.missing
-- 后端载荷：{"zh": "Grok Build 配置缺少 Base URL 或 API Key", "en": "Grok Build configuration is missing the base URL or API key", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`7e1821405962fffb5942872d0b3dbea92cb1d644596763d1afdf0640f1ca10e3`
-
-### 491. `hardcoded:src-tauri/src/services/provider/mod.rs:extract_credentials:b4412ee98120a079:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:8186`
-- 结构：`extract_credentials` / `backend_localized_error`
-- 原文/表达式：provider.codex.auth.missing
-- 后端载荷：{"zh": "配置格式错误: 缺少 auth", "en": "Invalid configuration: missing auth section", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`b4412ee98120a079d649524c9618ba4f8a3faf4e7a63e79f5f988797d6a52874`
-
-### 492. `hardcoded:src-tauri/src/services/provider/mod.rs:extract_credentials:365f169dbe325237:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:8204`
-- 结构：`extract_credentials` / `backend_localized_error`
-- 原文/表达式：provider.codex.api_key.missing
-- 后端载荷：{"zh": "缺少 API Key", "en": "API key is missing", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`365f169dbe32523732813bc884a9ead873934f20842c33e2d115fb8771db15fb`
-
-### 493. `hardcoded:src-tauri/src/services/provider/mod.rs:extract_credentials:8e135940e729ebb0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:8213`
-- 结构：`extract_credentials` / `backend_localized_error`
-- 原文/表达式：provider.regex_init_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`8e135940e729ebb0b4e81751b129c0858cf1b2c716af70da5583963e31efbcf2`
-
-### 494. `hardcoded:src-tauri/src/services/provider/mod.rs:extract_credentials:32ac5860269133dd:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:8223`
-- 结构：`extract_credentials` / `backend_localized_error`
-- 原文/表达式：provider.codex.base_url.invalid
-- 后端载荷：{"zh": "config.toml 中 base_url 格式错误", "en": "base_url in config.toml has invalid format", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`32ac5860269133ddf4ac73d8a05c5be1926c729156728810af6c8d04de7b5a1f`
-
-### 495. `hardcoded:src-tauri/src/services/provider/mod.rs:extract_credentials:5faeb3912325c88e:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:8230`
-- 结构：`extract_credentials` / `backend_localized_error`
-- 原文/表达式：provider.codex.base_url.missing
-- 后端载荷：{"zh": "config.toml 中缺少 base_url 配置", "en": "base_url is missing from config.toml", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`5faeb3912325c88e9d3cdcd7af5c42bc8b8795dc619fd573b9e5fe83b011b667`
-
-### 496. `hardcoded:src-tauri/src/services/provider/mod.rs:extract_credentials:99c6543e464b5d6e:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:8245`
-- 结构：`extract_credentials` / `backend_localized_error`
-- 原文/表达式：gemini.missing_api_key
-- 后端载荷：{"zh": "缺少 GEMINI_API_KEY", "en": "Missing GEMINI_API_KEY", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`99c6543e464b5d6e78d78416f5b255ed80b383f127d48080c72b1080cc911d7e`
-
-### 497. `hardcoded:src-tauri/src/services/provider/mod.rs:extract_credentials:2207205b8f4ddc2c:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:8266`
-- 结构：`extract_credentials` / `backend_localized_error`
-- 原文/表达式：provider.opencode.options.missing
-- 后端载荷：{"zh": "配置格式错误: 缺少 options", "en": "Invalid configuration: missing options section", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`2207205b8f4ddc2c911a389a3acfc1db6567d13bbeefa2a30831a92d80aab35a`
-
-### 498. `hardcoded:src-tauri/src/services/provider/mod.rs:extract_credentials:3b2ac15a02c37531:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:8277`
-- 结构：`extract_credentials` / `backend_localized_error`
-- 原文/表达式：provider.opencode.api_key.missing
-- 后端载荷：{"zh": "缺少 API Key", "en": "API key is missing", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`3b2ac15a02c37531e618e8240892070f581aa27dd92e81204413fe45def7dc4a`
-
-### 499. `hardcoded:src-tauri/src/services/provider/mod.rs:extract_credentials:e7de139a39414263:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:8328`
-- 结构：`extract_credentials` / `backend_localized_error`
-- 原文/表达式：provider.openclaw.api_key.missing
-- 后端载荷：{"zh": "缺少 API Key", "en": "API key is missing", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`e7de139a3941426363d1192605d45db85cdc795502b51f77154dbe8d13b13310`
-
-### 500. `hardcoded:src-tauri/src/services/provider/mod.rs:sync_universal_to_apps:270d62a2a7fad7e3:001`
+### 340. `hardcoded:src-tauri/src/services/provider/mod.rs:sync_universal_to_apps:270d62a2a7fad7e3:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/provider/mod.rs:8583`
@@ -5680,79 +3761,7 @@
 - 严重程度：高
 - 指纹：`270d62a2a7fad7e3be37ebc387e2b4d38f140fa4d9b4a233adce47a5289d54d7`
 
-### 501. `hardcoded:src-tauri/src/services/provider/usage.rs:execute_and_format_usage_result:914fdf5e10efd54b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/usage.rs:44`
-- 结构：`execute_and_format_usage_result` / `backend_localized_error`
-- 原文/表达式：usage_script.data_format_error
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`914fdf5e10efd54b587002dbd54f75132a91ba54d07fb97e0b2ccb3b49c04dcd`
-
-### 502. `hardcoded:src-tauri/src/services/provider/usage.rs:query_usage:bb132b897f452dfe:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/usage.rs:134`
-- 结构：`query_usage` / `backend_localized_error`
-- 原文/表达式：provider.not_found
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`bb132b897f452dfe2377baa4b7fb07014f3878a3bc65091c2b998d0f63afb7d9`
-
-### 503. `hardcoded:src-tauri/src/services/provider/usage.rs:query_usage:ef90ada747232b5a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/usage.rs:146`
-- 结构：`query_usage` / `backend_localized_error`
-- 原文/表达式：provider.usage.script.missing
-- 后端载荷：{"zh": "未配置用量查询脚本", "en": "Usage script is not configured", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`ef90ada747232b5a4044e76b9725a12d1acb1150e81c4e5b865c87d853a9f78d`
-
-### 504. `hardcoded:src-tauri/src/services/provider/usage.rs:query_usage:660f7f2d38e9da60:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/usage.rs:153`
-- 结构：`query_usage` / `backend_localized_error`
-- 原文/表达式：provider.usage.disabled
-- 后端载荷：{"zh": "用量查询未启用", "en": "Usage query is disabled", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`660f7f2d38e9da6089424c461a885de2abe9ea44b8da07352b8a96abf028fec1`
-
-### 505. `hardcoded:src-tauri/src/services/provider/usage.rs:test_usage_script:bb132b897f452dfe:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/usage.rs:207`
-- 结构：`test_usage_script` / `backend_localized_error`
-- 原文/表达式：provider.not_found
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`bb132b897f452dfe2377baa4b7fb07014f3878a3bc65091c2b998d0f63afb7d9`
-
-### 506. `hardcoded:src-tauri/src/services/provider/usage.rs:validate_usage_script:7ccba66f4d53aa0a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/usage.rs:235`
-- 结构：`validate_usage_script` / `backend_localized_error`
-- 原文/表达式：usage_script.interval_too_large
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`7ccba66f4d53aa0ac321aafa4570e3dc269c0f1b99867d1d53386f21c8759844`
-
-### 507. `hardcoded:src-tauri/src/services/proxy.rs:write:7db20ad10a37b8f0:001`
+### 341. `hardcoded:src-tauri/src/services/proxy.rs:write:7db20ad10a37b8f0:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:40`
@@ -5763,7 +3772,7 @@
 - 严重程度：高
 - 指纹：`7db20ad10a37b8f0b90bf057ec1ef69e7e43e855a8b1cd58f29b227879159383`
 
-### 508. `hardcoded:src-tauri/src/services/proxy.rs:start_server:cec75a72ce37662d:001`
+### 342. `hardcoded:src-tauri/src/services/proxy.rs:start_server:cec75a72ce37662d:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:110`
@@ -5774,7 +3783,7 @@
 - 严重程度：高
 - 指纹：`cec75a72ce37662d87ff326f8cfffd10556d293d9aada15a5f2ccabcc28b3988`
 
-### 509. `hardcoded:src-tauri/src/services/proxy.rs:start_server:a5be30ee46307584:001`
+### 343. `hardcoded:src-tauri/src/services/proxy.rs:start_server:a5be30ee46307584:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:117`
@@ -5785,7 +3794,7 @@
 - 严重程度：高
 - 指纹：`a5be30ee4630758425108a571f1e5c1d627925b0cdb7a269873af0c07d9f5a66`
 
-### 510. `hardcoded:src-tauri/src/services/proxy.rs:start_server:bd8ca066533a11e0:001`
+### 344. `hardcoded:src-tauri/src/services/proxy.rs:start_server:bd8ca066533a11e0:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:125`
@@ -5796,7 +3805,7 @@
 - 严重程度：高
 - 指纹：`bd8ca066533a11e05a08d374aab10c5bd14c2a7af6201ead725ba636fd951b67`
 
-### 511. `hardcoded:src-tauri/src/services/proxy.rs:start_server:43da0387e26cd148:001`
+### 345. `hardcoded:src-tauri/src/services/proxy.rs:start_server:43da0387e26cd148:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:144`
@@ -5807,7 +3816,7 @@
 - 严重程度：高
 - 指纹：`43da0387e26cd148b078935b8b5309288fd896e309d0ccabfc94e2b95c109c88`
 
-### 512. `hardcoded:src-tauri/src/services/proxy.rs:persist_ephemeral_listen_port_if_needed:cec75a72ce37662d:001`
+### 346. `hardcoded:src-tauri/src/services/proxy.rs:persist_ephemeral_listen_port_if_needed:cec75a72ce37662d:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:174`
@@ -5818,7 +3827,7 @@
 - 严重程度：高
 - 指纹：`cec75a72ce37662d87ff326f8cfffd10556d293d9aada15a5f2ccabcc28b3988`
 
-### 513. `hardcoded:src-tauri/src/services/proxy.rs:persist_ephemeral_listen_port_if_needed:19fbbb3533a1a5ae:001`
+### 347. `hardcoded:src-tauri/src/services/proxy.rs:persist_ephemeral_listen_port_if_needed:19fbbb3533a1a5ae:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:179`
@@ -5829,7 +3838,7 @@
 - 严重程度：高
 - 指纹：`19fbbb3533a1a5aed55a15de87c0aababa5017624f1aeb1e6d2d15c06b1bb861`
 
-### 514. `hardcoded:src-tauri/src/services/proxy.rs:stop_server:e2155c9800030e55:001`
+### 348. `hardcoded:src-tauri/src/services/proxy.rs:stop_server:e2155c9800030e55:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:227`
@@ -5840,7 +3849,7 @@
 - 严重程度：高
 - 指纹：`e2155c9800030e5589c0f178b74f5a8159cdb6fba2dba7414d77ad56b0d23553`
 
-### 515. `hardcoded:src-tauri/src/services/proxy.rs:stop_server:cec75a72ce37662d:001`
+### 349. `hardcoded:src-tauri/src/services/proxy.rs:stop_server:cec75a72ce37662d:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:234`
@@ -5851,7 +3860,7 @@
 - 严重程度：高
 - 指纹：`cec75a72ce37662d87ff326f8cfffd10556d293d9aada15a5f2ccabcc28b3988`
 
-### 516. `hardcoded:src-tauri/src/services/proxy.rs:build_proxy_urls:bd8ca066533a11e0:001`
+### 350. `hardcoded:src-tauri/src/services/proxy.rs:build_proxy_urls:bd8ca066533a11e0:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:256`
@@ -5862,7 +3871,7 @@
 - 严重程度：高
 - 指纹：`bd8ca066533a11e05a08d374aab10c5bd14c2a7af6201ead725ba636fd951b67`
 
-### 517. `hardcoded:src-tauri/src/services/proxy.rs:build_proxy_urls:f9fca7a20aa05885:001`
+### 351. `hardcoded:src-tauri/src/services/proxy.rs:build_proxy_urls:f9fca7a20aa05885:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:266`
@@ -5873,7 +3882,7 @@
 - 严重程度：高
 - 指纹：`f9fca7a20aa05885a91bd4eb79d856c1a19fb8f98573de37f7b91b37777168e0`
 
-### 518. `hardcoded:src-tauri/src/services/proxy.rs:read_claude_live:fd8a1e640ebce812:001`
+### 352. `hardcoded:src-tauri/src/services/proxy.rs:read_claude_live:fd8a1e640ebce812:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:400`
@@ -5884,7 +3893,7 @@
 - 严重程度：高
 - 指纹：`fd8a1e640ebce8121ea434ca171b2438301f47925a765e6144b1cdc893c7f62a`
 
-### 519. `hardcoded:src-tauri/src/services/proxy.rs:read_claude_live:351d58157d69a329:001`
+### 353. `hardcoded:src-tauri/src/services/proxy.rs:read_claude_live:351d58157d69a329:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:404`
@@ -5895,7 +3904,7 @@
 - 严重程度：高
 - 指纹：`351d58157d69a3297e88d6c94f9dd3834ce58920aef0932e4693e3891a191851`
 
-### 520. `hardcoded:src-tauri/src/services/proxy.rs:read_claude_live:23f437444a24699e:001`
+### 354. `hardcoded:src-tauri/src/services/proxy.rs:read_claude_live:23f437444a24699e:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:420`
@@ -5906,7 +3915,7 @@
 - 严重程度：高
 - 指纹：`23f437444a24699ea85235b5f15ea363fb88be94006fb910af5ae4e149056fd5`
 
-### 521. `hardcoded:src-tauri/src/services/proxy.rs:read_codex_live:a656d269eab3d73a:001`
+### 355. `hardcoded:src-tauri/src/services/proxy.rs:read_codex_live:a656d269eab3d73a:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:430`
@@ -5917,7 +3926,7 @@
 - 严重程度：高
 - 指纹：`a656d269eab3d73a7ed0e3c9bdabf52fb111c5056858a1543451f58591acb68f`
 
-### 522. `hardcoded:src-tauri/src/services/proxy.rs:read_gemini_live:24dac3f26fc91a3c:001`
+### 356. `hardcoded:src-tauri/src/services/proxy.rs:read_gemini_live:24dac3f26fc91a3c:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:438`
@@ -5928,7 +3937,7 @@
 - 严重程度：高
 - 指纹：`24dac3f26fc91a3c2be80099b7e4826e9710f310efef6d38abd5bb3e795f7810`
 
-### 523. `hardcoded:src-tauri/src/services/proxy.rs:read_gemini_live:2b8f99068d5956e8:001`
+### 357. `hardcoded:src-tauri/src/services/proxy.rs:read_gemini_live:2b8f99068d5956e8:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:441`
@@ -5939,7 +3948,7 @@
 - 严重程度：高
 - 指纹：`2b8f99068d5956e85a3b4a900ea648d3711d5a76edb3efd84a1bde8a5baf2483`
 
-### 524. `hardcoded:src-tauri/src/services/proxy.rs:read_grok_live:54b02f59d7da361a:001`
+### 358. `hardcoded:src-tauri/src/services/proxy.rs:read_grok_live:54b02f59d7da361a:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:447`
@@ -5950,7 +3959,7 @@
 - 严重程度：高
 - 指纹：`54b02f59d7da361a163e9a44ec53b37b894296a48967780de93493904c23c2fd`
 
-### 525. `hardcoded:src-tauri/src/services/proxy.rs:get_config:bd8ca066533a11e0:001`
+### 359. `hardcoded:src-tauri/src/services/proxy.rs:get_config:bd8ca066533a11e0:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:470`
@@ -5961,7 +3970,7 @@
 - 严重程度：高
 - 指纹：`bd8ca066533a11e05a08d374aab10c5bd14c2a7af6201ead725ba636fd951b67`
 
-### 526. `hardcoded:src-tauri/src/services/proxy.rs:update_config:bd8ca066533a11e0:001`
+### 360. `hardcoded:src-tauri/src/services/proxy.rs:update_config:bd8ca066533a11e0:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:481`
@@ -5972,7 +3981,7 @@
 - 严重程度：高
 - 指纹：`bd8ca066533a11e05a08d374aab10c5bd14c2a7af6201ead725ba636fd951b67`
 
-### 527. `hardcoded:src-tauri/src/services/proxy.rs:update_config:ee80b46bd67d4394:001`
+### 361. `hardcoded:src-tauri/src/services/proxy.rs:update_config:ee80b46bd67d4394:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:490`
@@ -5983,7 +3992,7 @@
 - 严重程度：高
 - 指纹：`ee80b46bd67d43949d7d82598bd41b8b3a5183450da985fa7e22c27ae7333a64`
 
-### 528. `hardcoded:src-tauri/src/services/proxy.rs:update_global_config:cec75a72ce37662d:001`
+### 362. `hardcoded:src-tauri/src/services/proxy.rs:update_global_config:cec75a72ce37662d:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:507`
@@ -5994,7 +4003,7 @@
 - 严重程度：高
 - 指纹：`cec75a72ce37662d87ff326f8cfffd10556d293d9aada15a5f2ccabcc28b3988`
 
-### 529. `hardcoded:src-tauri/src/services/proxy.rs:update_global_config:aa2c6c3dd7b45cf0:001`
+### 363. `hardcoded:src-tauri/src/services/proxy.rs:update_global_config:aa2c6c3dd7b45cf0:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:512`
@@ -6005,7 +4014,7 @@
 - 严重程度：高
 - 指纹：`aa2c6c3dd7b45cf0d84e10544372e8d49df8a9c77b6fd3eecdcac44120dd6076`
 
-### 530. `hardcoded:src-tauri/src/services/proxy.rs:apply_saved_config:bd8ca066533a11e0:001`
+### 364. `hardcoded:src-tauri/src/services/proxy.rs:apply_saved_config:bd8ca066533a11e0:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:537`
@@ -6016,7 +4025,7 @@
 - 严重程度：高
 - 指纹：`bd8ca066533a11e05a08d374aab10c5bd14c2a7af6201ead725ba636fd951b67`
 
-### 531. `hardcoded:src-tauri/src/services/proxy.rs:apply_saved_config:a92933db7114e58f:001`
+### 365. `hardcoded:src-tauri/src/services/proxy.rs:apply_saved_config:a92933db7114e58f:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:551`
@@ -6027,7 +4036,7 @@
 - 严重程度：高
 - 指纹：`a92933db7114e58f4013d39577019e573cc41232162245b9a833b6c35b066dd1`
 
-### 532. `hardcoded:src-tauri/src/services/proxy.rs:apply_saved_config:401543d8822e69ba:001`
+### 366. `hardcoded:src-tauri/src/services/proxy.rs:apply_saved_config:401543d8822e69ba:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:569`
@@ -6038,7 +4047,7 @@
 - 严重程度：高
 - 指纹：`401543d8822e69ba41d832a923359a4408132ba7d2d9a3731fc6577f7fe44cfa`
 
-### 533. `hardcoded:src-tauri/src/services/proxy.rs:restore_and_start:bd8ca066533a11e0:001`
+### 367. `hardcoded:src-tauri/src/services/proxy.rs:restore_and_start:bd8ca066533a11e0:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/proxy.rs:594`
@@ -6049,43 +4058,7 @@
 - 严重程度：高
 - 指纹：`bd8ca066533a11e05a08d374aab10c5bd14c2a7af6201ead725ba636fd951b67`
 
-### 534. `hardcoded:src-tauri/src/services/s3.rs:s3_status_error:de4de09fa6bfd91c:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/s3.rs:294`
-- 结构：`s3_status_error` / `backend_localized_error`
-- 原文/表达式：s3.http.status
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`de4de09fa6bfd91c0510b1758a990eb93c52832194907e3f00385a63fd79f50f`
-
-### 535. `hardcoded:src-tauri/src/services/s3.rs:response_too_large_error:b7589068c11ce0f4:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/s3.rs:299`
-- 结构：`response_too_large_error` / `backend_localized_error`
-- 原文/表达式：s3.response_too_large
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`b7589068c11ce0f4f45120937b3cfa2d5b4860e46a5ffb6d1db794ae2879fa1f`
-
-### 536. `hardcoded:src-tauri/src/services/s3.rs:test_connection:068b9dd01c282915:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/s3.rs:336`
-- 结构：`test_connection` / `backend_localized_error`
-- 原文/表达式：s3.url.invalid
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`068b9dd01c2829157423a3b560b02afd1964c468722a0661919404c3d52b3146`
-
-### 537. `hardcoded:src-tauri/src/services/s3.rs:test_connection:a5574109f0208e89:001`
+### 368. `hardcoded:src-tauri/src/services/s3.rs:test_connection:a5574109f0208e89:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/s3.rs:361`
@@ -6096,19 +4069,7 @@
 - 严重程度：高
 - 指纹：`a5574109f0208e899feb6b620feb3f1f686aded4ec939631420afc1bec51c400`
 
-### 538. `hardcoded:src-tauri/src/services/s3.rs:put_object:068b9dd01c282915:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/s3.rs:378`
-- 结构：`put_object` / `backend_localized_error`
-- 原文/表达式：s3.url.invalid
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`068b9dd01c2829157423a3b560b02afd1964c468722a0661919404c3d52b3146`
-
-### 539. `hardcoded:src-tauri/src/services/s3.rs:put_object:f53b1cc6cdf3a09b:001`
+### 369. `hardcoded:src-tauri/src/services/s3.rs:put_object:f53b1cc6cdf3a09b:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/s3.rs:405`
@@ -6119,19 +4080,7 @@
 - 严重程度：高
 - 指纹：`f53b1cc6cdf3a09ba9e868e5ff8af81d3abd7ee155eedc7297789bb1133d288a`
 
-### 540. `hardcoded:src-tauri/src/services/s3.rs:get_object:068b9dd01c282915:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/s3.rs:423`
-- 结构：`get_object` / `backend_localized_error`
-- 原文/表达式：s3.url.invalid
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`068b9dd01c2829157423a3b560b02afd1964c468722a0661919404c3d52b3146`
-
-### 541. `hardcoded:src-tauri/src/services/s3.rs:get_object:9a4f338ad2fc9ba6:001`
+### 370. `hardcoded:src-tauri/src/services/s3.rs:get_object:9a4f338ad2fc9ba6:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/s3.rs:448`
@@ -6142,7 +4091,7 @@
 - 严重程度：高
 - 指纹：`9a4f338ad2fc9ba611cdf9441a731a887fbfb50b8dbb343689af9b61d6b2c9bf`
 
-### 542. `hardcoded:src-tauri/src/services/s3.rs:get_object:9a4f338ad2fc9ba6:002`
+### 371. `hardcoded:src-tauri/src/services/s3.rs:get_object:9a4f338ad2fc9ba6:002`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/s3.rs:449`
@@ -6153,31 +4102,7 @@
 - 严重程度：高
 - 指纹：`9a4f338ad2fc9ba611cdf9441a731a887fbfb50b8dbb343689af9b61d6b2c9bf`
 
-### 543. `hardcoded:src-tauri/src/services/s3.rs:get_object:6bb5678b921d1587:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/s3.rs:473`
-- 结构：`get_object` / `backend_localized_error`
-- 原文/表达式：s3.response_read_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`6bb5678b921d158769611e8f6ad52dc7e487d6e5ec5c07c53ba967f6b2dda764`
-
-### 544. `hardcoded:src-tauri/src/services/s3.rs:head_object:068b9dd01c282915:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/s3.rs:494`
-- 结构：`head_object` / `backend_localized_error`
-- 原文/表达式：s3.url.invalid
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`068b9dd01c2829157423a3b560b02afd1964c468722a0661919404c3d52b3146`
-
-### 545. `hardcoded:src-tauri/src/services/s3.rs:head_object:d68a4bbea7336121:001`
+### 372. `hardcoded:src-tauri/src/services/s3.rs:head_object:d68a4bbea7336121:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/s3.rs:519`
@@ -6188,43 +4113,7 @@
 - 严重程度：高
 - 指纹：`d68a4bbea73361213bfe1f356f395784a9858afea0224d7bdfb4ba76fd3802b6`
 
-### 546. `hardcoded:src-tauri/src/services/s3_sync.rs:download:6ceaf5bb6166893e:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/s3_sync.rs:93`
-- 结构：`download` / `backend_localized_error`
-- 原文/表达式：s3.sync.remote_empty
-- 后端载荷：{"zh": "远端没有可下载的同步数据", "en": "No downloadable sync data found on the remote.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`6ceaf5bb6166893e3b81a6b275eabb258d2ba3431d300eaba9ef40c1df7bca5a`
-
-### 547. `hardcoded:src-tauri/src/services/s3_sync.rs:download_and_verify:10ce67e54dc262d6:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/s3_sync.rs:183`
-- 结构：`download_and_verify` / `backend_localized_error`
-- 原文/表达式：s3.sync.manifest_missing_artifact
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`10ce67e54dc262d6eb012e9d875b8a0ac6a892654735e6f6d9636efc61af2a3a`
-
-### 548. `hardcoded:src-tauri/src/services/s3_sync.rs:download_and_verify:7e1f59b0b7fc7fa1:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/s3_sync.rs:195`
-- 结构：`download_and_verify` / `backend_localized_error`
-- 原文/表达式：s3.sync.remote_missing_artifact
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`7e1f59b0b7fc7fa1ee9e6801ec96a22e99d0e778df4ff9a45fb0949496f8cdd6`
-
-### 549. `hardcoded:src-tauri/src/services/session_usage.rs:read_tail_before:08b34311e6519632:001`
+### 373. `hardcoded:src-tauri/src/services/session_usage.rs:read_tail_before:08b34311e6519632:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage.rs:592`
@@ -6235,7 +4124,7 @@
 - 严重程度：高
 - 指纹：`08b34311e65196327e12494b556d370a6e9ea2324901229902e62ef49f7a5bdf`
 
-### 550. `hardcoded:src-tauri/src/services/session_usage.rs:read_tail_before:ced20c02873b0bc7:001`
+### 374. `hardcoded:src-tauri/src/services/session_usage.rs:read_tail_before:ced20c02873b0bc7:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage.rs:595`
@@ -6246,7 +4135,7 @@
 - 严重程度：高
 - 指纹：`ced20c02873b0bc7460a97a8c2aa45f12c90c88a68328630b22d1c1c7b3d613d`
 
-### 551. `hardcoded:src-tauri/src/services/session_usage.rs:sync_single_file:62d071da4464668a:001`
+### 375. `hardcoded:src-tauri/src/services/session_usage.rs:sync_single_file:62d071da4464668a:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage.rs:636`
@@ -6257,7 +4146,7 @@
 - 严重程度：高
 - 指纹：`62d071da4464668a1783c3c49bb438d8510916313c79c3562d36f5ca181e22fa`
 
-### 552. `hardcoded:src-tauri/src/services/session_usage.rs:sync_single_file:4e3c61b7c3c11f20:001`
+### 376. `hardcoded:src-tauri/src/services/session_usage.rs:sync_single_file:4e3c61b7c3c11f20:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage.rs:650`
@@ -6268,7 +4157,7 @@
 - 严重程度：高
 - 指纹：`4e3c61b7c3c11f2056e83511fbb1f1ce42c1db5f9ffbf51167018c6e3eabce6e`
 
-### 553. `hardcoded:src-tauri/src/services/session_usage.rs:sync_single_file:9c15439e7a910c3e:001`
+### 377. `hardcoded:src-tauri/src/services/session_usage.rs:sync_single_file:9c15439e7a910c3e:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage.rs:722`
@@ -6279,7 +4168,7 @@
 - 严重程度：高
 - 指纹：`9c15439e7a910c3eb4d1fc5bbc1c02453f190bfcd18c5237932db1986d29e0de`
 
-### 554. `hardcoded:src-tauri/src/services/session_usage.rs:sync_single_file:7c11fc7e739f682b:001`
+### 378. `hardcoded:src-tauri/src/services/session_usage.rs:sync_single_file:7c11fc7e739f682b:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage.rs:861`
@@ -6290,7 +4179,7 @@
 - 严重程度：高
 - 指纹：`7c11fc7e739f682b0e9b5cb59dd5b15adf27044c7b8ad32a1412a174e2cdf56b`
 
-### 555. `hardcoded:src-tauri/src/services/session_usage.rs:sync_single_file:75009592482d72ba:001`
+### 379. `hardcoded:src-tauri/src/services/session_usage.rs:sync_single_file:75009592482d72ba:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage.rs:940`
@@ -6301,7 +4190,7 @@
 - 严重程度：高
 - 指纹：`75009592482d72ba6fec150442e82b58f7cb1d0190d47a257d8fa6b4e587050a`
 
-### 556. `hardcoded:src-tauri/src/services/session_usage.rs:update_claude_sync_state_on_conn:d5920b4317b643f3:001`
+### 380. `hardcoded:src-tauri/src/services/session_usage.rs:update_claude_sync_state_on_conn:d5920b4317b643f3:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage.rs:980`
@@ -6312,7 +4201,7 @@
 - 严重程度：高
 - 指纹：`d5920b4317b643f3871ab5db3fcb2d6903962ea7ef6216bdc8b03cf969f90c0b`
 
-### 557. `hardcoded:src-tauri/src/services/session_usage.rs:update_sync_state_on_conn:d5920b4317b643f3:001`
+### 381. `hardcoded:src-tauri/src/services/session_usage.rs:update_sync_state_on_conn:d5920b4317b643f3:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage.rs:1043`
@@ -6323,7 +4212,7 @@
 - 严重程度：高
 - 指纹：`d5920b4317b643f3871ab5db3fcb2d6903962ea7ef6216bdc8b03cf969f90c0b`
 
-### 558. `hardcoded:src-tauri/src/services/session_usage.rs:find_stored_session_row:8b8ad13b2401757d:001`
+### 382. `hardcoded:src-tauri/src/services/session_usage.rs:find_stored_session_row:8b8ad13b2401757d:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage.rs:1092`
@@ -6334,7 +4223,7 @@
 - 严重程度：高
 - 指纹：`8b8ad13b2401757de1923771049176a8849cc523d008d7f9bd4f539f268fc7ef`
 
-### 559. `hardcoded:src-tauri/src/services/session_usage.rs:refresh_session_log_entry_on_conn:a750e0b51b98d318:001`
+### 383. `hardcoded:src-tauri/src/services/session_usage.rs:refresh_session_log_entry_on_conn:a750e0b51b98d318:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage.rs:1192`
@@ -6345,7 +4234,7 @@
 - 严重程度：高
 - 指纹：`a750e0b51b98d3183bfd0da3dfac76052b52fe48ad7198bb1a20e357773a026c`
 
-### 560. `hardcoded:src-tauri/src/services/session_usage.rs:refresh_session_log_entry_on_conn:81cd0a6b9f9dfd99:001`
+### 384. `hardcoded:src-tauri/src/services/session_usage.rs:refresh_session_log_entry_on_conn:81cd0a6b9f9dfd99:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage.rs:1203`
@@ -6356,7 +4245,7 @@
 - 严重程度：高
 - 指纹：`81cd0a6b9f9dfd99d640f97d4237c097f98efd51443d412899cb37aa7cb88f24`
 
-### 561. `hardcoded:src-tauri/src/services/session_usage.rs:refresh_session_log_entry_on_conn:5552f1e07ed30a8c:001`
+### 385. `hardcoded:src-tauri/src/services/session_usage.rs:refresh_session_log_entry_on_conn:5552f1e07ed30a8c:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage.rs:1231`
@@ -6367,7 +4256,7 @@
 - 严重程度：高
 - 指纹：`5552f1e07ed30a8c62e6dca2aca63f11160fb1272d6604ef7891c170116b70a8`
 
-### 562. `hardcoded:src-tauri/src/services/session_usage.rs:upsert_session_log_entry_on_conn:65f74c4768eb1979:001`
+### 386. `hardcoded:src-tauri/src/services/session_usage.rs:upsert_session_log_entry_on_conn:65f74c4768eb1979:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage.rs:1325`
@@ -6378,7 +4267,7 @@
 - 严重程度：高
 - 指纹：`65f74c4768eb1979cfec3ffb31e6602a64581a36fc7cee2a4f2b4d7167e238e5`
 
-### 563. `hardcoded:src-tauri/src/services/session_usage_codex.rs:signatures_before:fe9a6d5831f00f14:001`
+### 387. `hardcoded:src-tauri/src/services/session_usage_codex.rs:signatures_before:fe9a6d5831f00f14:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_codex.rs:165`
@@ -6389,7 +4278,7 @@
 - 严重程度：高
 - 指纹：`fe9a6d5831f00f1424599564eb38a2b217f4773f9f12f18f78a7cf456072da49`
 
-### 564. `hardcoded:src-tauri/src/services/session_usage_codex.rs:signatures_before:e5317e3a17394dd7:001`
+### 388. `hardcoded:src-tauri/src/services/session_usage_codex.rs:signatures_before:e5317e3a17394dd7:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_codex.rs:174`
@@ -6400,7 +4289,7 @@
 - 严重程度：高
 - 指纹：`e5317e3a17394dd75de6566e81a240221294fb396c02403055844e595b579175`
 
-### 565. `hardcoded:src-tauri/src/services/session_usage_codex.rs:parse_codex_file_with_index:0eb2016e8ddcf835:001`
+### 389. `hardcoded:src-tauri/src/services/session_usage_codex.rs:parse_codex_file_with_index:0eb2016e8ddcf835:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_codex.rs:1282`
@@ -6411,7 +4300,7 @@
 - 严重程度：高
 - 指纹：`0eb2016e8ddcf8359ec2c53bdc7881282713df8f581d5f7c8cf36a2f0f1e0422`
 
-### 566. `hardcoded:src-tauri/src/services/session_usage_codex.rs:parse_codex_file_with_index:a388200552db073c:001`
+### 390. `hardcoded:src-tauri/src/services/session_usage_codex.rs:parse_codex_file_with_index:a388200552db073c:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_codex.rs:1408`
@@ -6422,7 +4311,7 @@
 - 严重程度：高
 - 指纹：`a388200552db073c43cd58b428bb398af4800207a4b788c55ce5b7cc3a56a035`
 
-### 567. `hardcoded:src-tauri/src/services/session_usage_codex.rs:parse_codex_file_with_index:b13f15981cf060b4:001`
+### 391. `hardcoded:src-tauri/src/services/session_usage_codex.rs:parse_codex_file_with_index:b13f15981cf060b4:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_codex.rs:1548`
@@ -6433,7 +4322,7 @@
 - 严重程度：高
 - 指纹：`b13f15981cf060b4576d2f9b86995725e6bb9fcdd0ffd575b64bda2ed6f82b6a`
 
-### 568. `hardcoded:src-tauri/src/services/session_usage_codex.rs:load_parent_timeline:ba09d4b504d86e3e:001`
+### 392. `hardcoded:src-tauri/src/services/session_usage_codex.rs:load_parent_timeline:ba09d4b504d86e3e:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_codex.rs:1692`
@@ -6444,7 +4333,7 @@
 - 严重程度：高
 - 指纹：`ba09d4b504d86e3e9cfa1200c5ecb488fd331443b5988d07b8c5222df0a37988`
 
-### 569. `hardcoded:src-tauri/src/services/session_usage_codex.rs:load_parent_timeline:ba09d4b504d86e3e:002`
+### 393. `hardcoded:src-tauri/src/services/session_usage_codex.rs:load_parent_timeline:ba09d4b504d86e3e:002`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_codex.rs:1719`
@@ -6455,7 +4344,7 @@
 - 严重程度：高
 - 指纹：`ba09d4b504d86e3e9cfa1200c5ecb488fd331443b5988d07b8c5222df0a37988`
 
-### 570. `hardcoded:src-tauri/src/services/session_usage_codex.rs:load_parent_timeline:57290f2d2a1c869b:001`
+### 394. `hardcoded:src-tauri/src/services/session_usage_codex.rs:load_parent_timeline:57290f2d2a1c869b:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_codex.rs:1730`
@@ -6466,7 +4355,7 @@
 - 严重程度：高
 - 指纹：`57290f2d2a1c869ba8f1908c8cbb8a8c84d4c8bcd43a47f2f271e43d2bc558a7`
 
-### 571. `hardcoded:src-tauri/src/services/session_usage_codex.rs:resolve_parent_signatures:d86185143745f92c:001`
+### 395. `hardcoded:src-tauri/src/services/session_usage_codex.rs:resolve_parent_signatures:d86185143745f92c:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_codex.rs:1822`
@@ -6477,7 +4366,7 @@
 - 严重程度：高
 - 指纹：`d86185143745f92cc3e20238c248c92a80ade5f720d94f20d5ea5eace786544c`
 
-### 572. `hardcoded:src-tauri/src/services/session_usage_codex.rs:resolve_parent_signatures:8d4d83d016ac3eeb:001`
+### 396. `hardcoded:src-tauri/src/services/session_usage_codex.rs:resolve_parent_signatures:8d4d83d016ac3eeb:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_codex.rs:1852`
@@ -6488,7 +4377,7 @@
 - 严重程度：高
 - 指纹：`8d4d83d016ac3eeb674367d239b4ea43d4dd82a6af7f352f8790c524eec97594`
 
-### 573. `hardcoded:src-tauri/src/services/session_usage_codex.rs:resolve_parent_signatures:d86185143745f92c:002`
+### 397. `hardcoded:src-tauri/src/services/session_usage_codex.rs:resolve_parent_signatures:d86185143745f92c:002`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_codex.rs:1877`
@@ -6499,7 +4388,7 @@
 - 严重程度：高
 - 指纹：`d86185143745f92cc3e20238c248c92a80ade5f720d94f20d5ea5eace786544c`
 
-### 574. `hardcoded:src-tauri/src/services/session_usage_codex.rs:sync_single_codex_file:62d071da4464668a:001`
+### 398. `hardcoded:src-tauri/src/services/session_usage_codex.rs:sync_single_codex_file:62d071da4464668a:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_codex.rs:1998`
@@ -6510,7 +4399,7 @@
 - 严重程度：高
 - 指纹：`62d071da4464668a1783c3c49bb438d8510916313c79c3562d36f5ca181e22fa`
 
-### 575. `hardcoded:src-tauri/src/services/session_usage_codex.rs:sync_single_codex_file:1e7c8486cf1b1c02:001`
+### 399. `hardcoded:src-tauri/src/services/session_usage_codex.rs:sync_single_codex_file:1e7c8486cf1b1c02:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_codex.rs:2219`
@@ -6521,7 +4410,7 @@
 - 严重程度：高
 - 指纹：`1e7c8486cf1b1c025c2ca07770ad6c9f0d73e9cfe75768d3675589887ec769c8`
 
-### 576. `hardcoded:src-tauri/src/services/session_usage_codex.rs:sync_single_codex_file:2974a85e6015313b:001`
+### 400. `hardcoded:src-tauri/src/services/session_usage_codex.rs:sync_single_codex_file:2974a85e6015313b:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_codex.rs:2251`
@@ -6532,7 +4421,7 @@
 - 严重程度：高
 - 指纹：`2974a85e6015313ba2595fb42ba64fcb97dc6473922a877b9baa3e7477dd6000`
 
-### 577. `hardcoded:src-tauri/src/services/session_usage_codex.rs:insert_codex_session_entry_on_conn:716b0280840cfdf2:001`
+### 401. `hardcoded:src-tauri/src/services/session_usage_codex.rs:insert_codex_session_entry_on_conn:716b0280840cfdf2:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_codex.rs:2417`
@@ -6543,7 +4432,7 @@
 - 严重程度：高
 - 指纹：`716b0280840cfdf20d2e1143ab6518e52eda890004756543b983606f205052f4`
 
-### 578. `hardcoded:src-tauri/src/services/session_usage_gemini.rs:sync_gemini_usage:77c7fcde3406addd:001`
+### 402. `hardcoded:src-tauri/src/services/session_usage_gemini.rs:sync_gemini_usage:77c7fcde3406addd:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_gemini.rs:72`
@@ -6554,7 +4443,7 @@
 - 严重程度：高
 - 指纹：`77c7fcde3406adddc2af1b690d420a9dc613b485dd3d702f88a80dff0cd2ae34`
 
-### 579. `hardcoded:src-tauri/src/services/session_usage_gemini.rs:sync_single_gemini_file:62d071da4464668a:001`
+### 403. `hardcoded:src-tauri/src/services/session_usage_gemini.rs:sync_single_gemini_file:62d071da4464668a:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_gemini.rs:145`
@@ -6565,7 +4454,7 @@
 - 严重程度：高
 - 指纹：`62d071da4464668a1783c3c49bb438d8510916313c79c3562d36f5ca181e22fa`
 
-### 580. `hardcoded:src-tauri/src/services/session_usage_gemini.rs:sync_single_gemini_file:02cc55fb29f06e9f:001`
+### 404. `hardcoded:src-tauri/src/services/session_usage_gemini.rs:sync_single_gemini_file:02cc55fb29f06e9f:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_gemini.rs:155`
@@ -6576,7 +4465,7 @@
 - 严重程度：高
 - 指纹：`02cc55fb29f06e9f0c17d28ed856acf911fa264a107a4c69686c204a96edab36`
 
-### 581. `hardcoded:src-tauri/src/services/session_usage_gemini.rs:sync_single_gemini_file:99a8d5e326f9fdfb:001`
+### 405. `hardcoded:src-tauri/src/services/session_usage_gemini.rs:sync_single_gemini_file:99a8d5e326f9fdfb:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_gemini.rs:157`
@@ -6587,7 +4476,7 @@
 - 严重程度：高
 - 指纹：`99a8d5e326f9fdfb5f63de68f82a64b27d59801c0935e64abd662babff2ffd84`
 
-### 582. `hardcoded:src-tauri/src/services/session_usage_gemini.rs:insert_gemini_session_entry:b277e4275d6cbdc4:001`
+### 406. `hardcoded:src-tauri/src/services/session_usage_gemini.rs:insert_gemini_session_entry:b277e4275d6cbdc4:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_gemini.rs:363`
@@ -6598,7 +4487,7 @@
 - 严重程度：高
 - 指纹：`b277e4275d6cbdc4b699af278186f462e0ad2b38a8780d4dd794d6e4ddb2f6de`
 
-### 583. `hardcoded:src-tauri/src/services/session_usage_grokbuild.rs:sync_grokbuild_usage:86dca6f707f24d4a:001`
+### 407. `hardcoded:src-tauri/src/services/session_usage_grokbuild.rs:sync_grokbuild_usage:86dca6f707f24d4a:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_grokbuild.rs:118`
@@ -6609,7 +4498,7 @@
 - 严重程度：高
 - 指纹：`86dca6f707f24d4a67eb3a541ebe1c69fe947c90fb4358baa1235e3949005f22`
 
-### 584. `hardcoded:src-tauri/src/services/session_usage_grokbuild.rs:sync_single_grok_file:62d071da4464668a:001`
+### 408. `hardcoded:src-tauri/src/services/session_usage_grokbuild.rs:sync_single_grok_file:62d071da4464668a:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_grokbuild.rs:196`
@@ -6620,7 +4509,7 @@
 - 严重程度：高
 - 指纹：`62d071da4464668a1783c3c49bb438d8510916313c79c3562d36f5ca181e22fa`
 
-### 585. `hardcoded:src-tauri/src/services/session_usage_grokbuild.rs:sync_single_grok_file:02cc55fb29f06e9f:001`
+### 409. `hardcoded:src-tauri/src/services/session_usage_grokbuild.rs:sync_single_grok_file:02cc55fb29f06e9f:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_grokbuild.rs:219`
@@ -6631,7 +4520,7 @@
 - 严重程度：高
 - 指纹：`02cc55fb29f06e9f0c17d28ed856acf911fa264a107a4c69686c204a96edab36`
 
-### 586. `hardcoded:src-tauri/src/services/session_usage_grokbuild.rs:insert_grok_session_entry:a5a1e21886b4e665:001`
+### 410. `hardcoded:src-tauri/src/services/session_usage_grokbuild.rs:insert_grok_session_entry:a5a1e21886b4e665:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_grokbuild.rs:577`
@@ -6642,7 +4531,7 @@
 - 严重程度：高
 - 指纹：`a5a1e21886b4e665f82d67eea33e8032c1f9b13905f38725cdc1bb17a38c71c3`
 
-### 587. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:sqlite_table_exists:5ef1ceec045f45c0:001`
+### 411. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:sqlite_table_exists:5ef1ceec045f45c0:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_opencode.rs:78`
@@ -6653,7 +4542,7 @@
 - 严重程度：高
 - 指纹：`5ef1ceec045f45c02d39f213c3725df56b5b083adc716b6f60aeb0ef222112f9`
 
-### 588. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:sync_opencode_usage:4403381475796ab0:001`
+### 412. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:sync_opencode_usage:4403381475796ab0:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_opencode.rs:103`
@@ -6664,7 +4553,7 @@
 - 严重程度：高
 - 指纹：`4403381475796ab0b16d92ae80ba45ffaf593bcc41465c491cf58ab877c448ed`
 
-### 589. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:sync_opencode_usage:ed11fc6dcc775fe6:001`
+### 413. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:sync_opencode_usage:ed11fc6dcc775fe6:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_opencode.rs:129`
@@ -6675,7 +4564,7 @@
 - 严重程度：高
 - 指纹：`ed11fc6dcc775fe60d89cd6a6bcba677d92d5c408758c526f36c967d7508e2c0`
 
-### 590. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:sync_opencode_usage:e043b3557209df7b:001`
+### 414. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:sync_opencode_usage:e043b3557209df7b:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_opencode.rs:168`
@@ -6686,7 +4575,7 @@
 - 严重程度：高
 - 指纹：`e043b3557209df7b7a3a135779aaf34e507a3f435f3c0edb260f8737c61b4d9c`
 
-### 591. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:sync_opencode_usage:b4f3fda4204ed1fc:001`
+### 415. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:sync_opencode_usage:b4f3fda4204ed1fc:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_opencode.rs:178`
@@ -6697,7 +4586,7 @@
 - 严重程度：高
 - 指纹：`b4f3fda4204ed1fc29d8bb9f8a6ccc770cac75c324279bbe5a5e1984ecf2ba69`
 
-### 592. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:sync_opencode_usage:7c91a5d4143b1cdb:001`
+### 416. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:sync_opencode_usage:7c91a5d4143b1cdb:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_opencode.rs:196`
@@ -6708,7 +4597,7 @@
 - 严重程度：高
 - 指纹：`7c91a5d4143b1cdb4dbf5fffe26d2b0fb2f1bf9759f67b9729b8ded8ecf792ad`
 
-### 593. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:query_sessions:737930c048b097bf:001`
+### 417. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:query_sessions:737930c048b097bf:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_opencode.rs:243`
@@ -6719,7 +4608,7 @@
 - 严重程度：高
 - 指纹：`737930c048b097bf9136efde2c656b9607da48f9ac7f237428a776eb34bdd851`
 
-### 594. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:query_sessions:1489a923553ff27f:001`
+### 418. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:query_sessions:1489a923553ff27f:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_opencode.rs:249`
@@ -6730,7 +4619,7 @@
 - 严重程度：高
 - 指纹：`1489a923553ff27f1dd7a6ce3a89b8af83fbf9f6779755bf2422ff643b8a1d3b`
 
-### 595. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:query_sessions:819b6466fee6d47a:001`
+### 419. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:query_sessions:819b6466fee6d47a:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_opencode.rs:253`
@@ -6741,7 +4630,7 @@
 - 严重程度：高
 - 指纹：`819b6466fee6d47a02c4bc68c70d75cce5316f4c01d2b80e2039a44da882419e`
 
-### 596. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:query_assistant_messages:260eb32e075d569c:001`
+### 420. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:query_assistant_messages:260eb32e075d569c:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_opencode.rs:281`
@@ -6752,7 +4641,7 @@
 - 严重程度：高
 - 指纹：`260eb32e075d569cf755f2904e465a6a90c93199f7daf64fdf49e4ccdbc8060a`
 
-### 597. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:query_assistant_messages:244e553fa3ea1746:001`
+### 421. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:query_assistant_messages:244e553fa3ea1746:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_opencode.rs:291`
@@ -6763,7 +4652,7 @@
 - 严重程度：高
 - 指纹：`244e553fa3ea174601ada11db7fb4d5ed4e09a4e921f3133539ac3682bfcbe96`
 
-### 598. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:query_assistant_messages:bd5e24a7ccc658f3:001`
+### 422. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:query_assistant_messages:bd5e24a7ccc658f3:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_opencode.rs:297`
@@ -6774,7 +4663,7 @@
 - 严重程度：高
 - 指纹：`bd5e24a7ccc658f32770e1789da75a5872e93e12c3d1db883683386b6d894a92`
 
-### 599. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:insert_opencode_message:8a9d5298706dbc83:001`
+### 423. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:insert_opencode_message:8a9d5298706dbc83:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_opencode.rs:550`
@@ -6785,7 +4674,7 @@
 - 严重程度：高
 - 指纹：`8a9d5298706dbc83eb8761634942bb99811a56797513336525af195bc8a16958`
 
-### 600. `hardcoded:src-tauri/src/services/session_usage_pi.rs:sync_pi_usage:039423aa34d267ed:001`
+### 424. `hardcoded:src-tauri/src/services/session_usage_pi.rs:sync_pi_usage:039423aa34d267ed:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:170`
@@ -6796,7 +4685,7 @@
 - 严重程度：高
 - 指纹：`039423aa34d267eda3acb3e620ca5835a443732ea952c6093e66b046d2f9563e`
 
-### 601. `hardcoded:src-tauri/src/services/session_usage_pi.rs:sync_pi_files:f82c4d0d9ed0cb5d:001`
+### 425. `hardcoded:src-tauri/src/services/session_usage_pi.rs:sync_pi_files:f82c4d0d9ed0cb5d:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:184`
@@ -6807,7 +4696,7 @@
 - 严重程度：高
 - 指纹：`f82c4d0d9ed0cb5d9b7c6c2c48fc06c1bf2c291205a5a5c6234aef23bc417163`
 
-### 602. `hardcoded:src-tauri/src/services/session_usage_pi.rs:sync_pi_files:70c011d2a31a9f78:001`
+### 426. `hardcoded:src-tauri/src/services/session_usage_pi.rs:sync_pi_files:70c011d2a31a9f78:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:194`
@@ -6818,7 +4707,7 @@
 - 严重程度：高
 - 指纹：`70c011d2a31a9f7803680fb82ab53e29dd5493c711121b0572fed7c9477dd2e3`
 
-### 603. `hardcoded:src-tauri/src/services/session_usage_pi.rs:child_cutoff:b2bea21163457a3b:001`
+### 427. `hardcoded:src-tauri/src/services/session_usage_pi.rs:child_cutoff:b2bea21163457a3b:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:235`
@@ -6829,7 +4718,7 @@
 - 严重程度：高
 - 指纹：`b2bea21163457a3b0b9256186ca06858e8cc54d3952bebfa7ca8589440437360`
 
-### 604. `hardcoded:src-tauri/src/services/session_usage_pi.rs:sync_single_pi_file:a1e4437a5fdc9323:001`
+### 428. `hardcoded:src-tauri/src/services/session_usage_pi.rs:sync_single_pi_file:a1e4437a5fdc9323:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:246`
@@ -6840,7 +4729,7 @@
 - 严重程度：高
 - 指纹：`a1e4437a5fdc9323cb0137eb40e7191e51f5c2cd941ee5b1df521c9851c6c0cd`
 
-### 605. `hardcoded:src-tauri/src/services/session_usage_pi.rs:sync_single_pi_file:51e02cf0f3242db4:001`
+### 429. `hardcoded:src-tauri/src/services/session_usage_pi.rs:sync_single_pi_file:51e02cf0f3242db4:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:251`
@@ -6851,7 +4740,7 @@
 - 严重程度：高
 - 指纹：`51e02cf0f3242db40f4f151f55f4077452784f7054757f209f1672c002dfcd4f`
 
-### 606. `hardcoded:src-tauri/src/services/session_usage_pi.rs:sync_single_pi_file:eab5715efa1d420f:001`
+### 430. `hardcoded:src-tauri/src/services/session_usage_pi.rs:sync_single_pi_file:eab5715efa1d420f:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:256`
@@ -6862,7 +4751,7 @@
 - 严重程度：高
 - 指纹：`eab5715efa1d420f67049719efaf9e60c3e5ad957ac58d81948a81df13171852`
 
-### 607. `hardcoded:src-tauri/src/services/session_usage_pi.rs:sync_single_pi_file:5d8acc24768bce36:001`
+### 431. `hardcoded:src-tauri/src/services/session_usage_pi.rs:sync_single_pi_file:5d8acc24768bce36:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:294`
@@ -6873,7 +4762,7 @@
 - 严重程度：高
 - 指纹：`5d8acc24768bce364fde4135ad395c30b3831a9de6082c8d15ac62446bfa71a1`
 
-### 608. `hardcoded:src-tauri/src/services/session_usage_pi.rs:sync_single_pi_file:d4c1296288ab6ab6:001`
+### 432. `hardcoded:src-tauri/src/services/session_usage_pi.rs:sync_single_pi_file:d4c1296288ab6ab6:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:306`
@@ -6884,7 +4773,7 @@
 - 严重程度：高
 - 指纹：`d4c1296288ab6ab6627fa6432bf8ceafa33ace1ec5689559e729e08a00580bcf`
 
-### 609. `hardcoded:src-tauri/src/services/session_usage_pi.rs:update_pi_sync_state_on_conn:6d29d51fa9c79e90:001`
+### 433. `hardcoded:src-tauri/src/services/session_usage_pi.rs:update_pi_sync_state_on_conn:6d29d51fa9c79e90:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:355`
@@ -6895,7 +4784,7 @@
 - 严重程度：高
 - 指纹：`6d29d51fa9c79e90caceeb74cfe53f6c1f048b2df1c4da908ed26d59fd9c158c`
 
-### 610. `hardcoded:src-tauri/src/services/session_usage_pi.rs:pi_file_revision:83e863050b58b0c8:001`
+### 434. `hardcoded:src-tauri/src/services/session_usage_pi.rs:pi_file_revision:83e863050b58b0c8:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:368`
@@ -6906,7 +4795,7 @@
 - 严重程度：高
 - 指纹：`83e863050b58b0c8d931718d0a021f2abe9a75ca8c4da3d480eaef9a4cffa697`
 
-### 611. `hardcoded:src-tauri/src/services/session_usage_pi.rs:pi_file_revision:fc27bfdc33003b82:001`
+### 435. `hardcoded:src-tauri/src/services/session_usage_pi.rs:pi_file_revision:fc27bfdc33003b82:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:371`
@@ -6917,7 +4806,7 @@
 - 严重程度：高
 - 指纹：`fc27bfdc33003b82bc61de1c8dd6706956976203edb79059df165394f768e4d2`
 
-### 612. `hardcoded:src-tauri/src/services/session_usage_pi.rs:pi_prefix_tail_matches:83e863050b58b0c8:001`
+### 436. `hardcoded:src-tauri/src/services/session_usage_pi.rs:pi_prefix_tail_matches:83e863050b58b0c8:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:389`
@@ -6928,7 +4817,7 @@
 - 严重程度：高
 - 指纹：`83e863050b58b0c8d931718d0a021f2abe9a75ca8c4da3d480eaef9a4cffa697`
 
-### 613. `hardcoded:src-tauri/src/services/session_usage_pi.rs:pi_prefix_tail_matches:d821db75b5676ed8:001`
+### 437. `hardcoded:src-tauri/src/services/session_usage_pi.rs:pi_prefix_tail_matches:d821db75b5676ed8:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:392`
@@ -6939,7 +4828,7 @@
 - 严重程度：高
 - 指纹：`d821db75b5676ed882c64e20b09294cab8a9a925827c2926a7d7d4bc46f7e952`
 
-### 614. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:83e863050b58b0c8:001`
+### 438. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:83e863050b58b0c8:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:414`
@@ -6950,7 +4839,7 @@
 - 严重程度：高
 - 指纹：`83e863050b58b0c8d931718d0a021f2abe9a75ca8c4da3d480eaef9a4cffa697`
 
-### 615. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:45243e631d563704:001`
+### 439. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:45243e631d563704:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:434`
@@ -6961,7 +4850,7 @@
 - 严重程度：高
 - 指纹：`45243e631d5637045c71f9e37a4b09c455cb101d6ecf29f51c4ec81b1953faeb`
 
-### 616. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:b3414b8ef5892804:001`
+### 440. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:b3414b8ef5892804:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:436`
@@ -6972,7 +4861,7 @@
 - 严重程度：高
 - 指纹：`b3414b8ef5892804f7e657bd07aa9bcbcab5d55940ffeab153bc0be974835a7c`
 
-### 617. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:407c426f8ba3a5ef:001`
+### 441. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:407c426f8ba3a5ef:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:441`
@@ -6983,7 +4872,7 @@
 - 严重程度：高
 - 指纹：`407c426f8ba3a5efa5c3fb2484bc4e6769614fba5ae946bc002800fc3cde2644`
 
-### 618. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:1e967e2aa34b3f8e:001`
+### 442. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:1e967e2aa34b3f8e:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:461`
@@ -6994,7 +4883,7 @@
 - 严重程度：高
 - 指纹：`1e967e2aa34b3f8e3c0f89ad49b42d6fe8ae5a81660643202774c8785204f571`
 
-### 619. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:25ad85d4c5d8fdc8:001`
+### 443. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:25ad85d4c5d8fdc8:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:479`
@@ -7005,7 +4894,7 @@
 - 严重程度：高
 - 指纹：`25ad85d4c5d8fdc845c86d0594567e2197367aeffd37f009afd9bff5ed734d32`
 
-### 620. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:1d41fbfb63d11315:001`
+### 444. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:1d41fbfb63d11315:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:488`
@@ -7016,7 +4905,7 @@
 - 严重程度：高
 - 指纹：`1d41fbfb63d113156c75a36f534f5f09b92d10809f6355f7443d9e8036af9771`
 
-### 621. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:dbc0787825ae5f0e:001`
+### 445. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:dbc0787825ae5f0e:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:494`
@@ -7027,7 +4916,7 @@
 - 严重程度：高
 - 指纹：`dbc0787825ae5f0e8a53d617c494ec997939b809673892d786b3a0ee4f86a99d`
 
-### 622. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:bb97fb9d4248a46b:001`
+### 446. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:bb97fb9d4248a46b:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:520`
@@ -7038,7 +4927,7 @@
 - 严重程度：高
 - 指纹：`bb97fb9d4248a46b51a61ad24956b245ebc3c069833ca69e708e366bc4f7a2de`
 
-### 623. `hardcoded:src-tauri/src/services/session_usage_pi.rs:insert_pi_record:1af784fa639b9e4a:001`
+### 447. `hardcoded:src-tauri/src/services/session_usage_pi.rs:insert_pi_record:1af784fa639b9e4a:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:898`
@@ -7049,7 +4938,7 @@
 - 严重程度：高
 - 指纹：`1af784fa639b9e4a387645eae49db05eee25700c33ff843252495a5bbcbce4bb`
 
-### 624. `hardcoded:src-tauri/src/services/session_usage_pi.rs:insert_pi_record:1af784fa639b9e4a:002`
+### 448. `hardcoded:src-tauri/src/services/session_usage_pi.rs:insert_pi_record:1af784fa639b9e4a:002`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:910`
@@ -7060,7 +4949,7 @@
 - 严重程度：高
 - 指纹：`1af784fa639b9e4a387645eae49db05eee25700c33ff843252495a5bbcbce4bb`
 
-### 625. `hardcoded:src-tauri/src/services/session_usage_pi.rs:insert_pi_record:1c7048e9e0604d2d:001`
+### 449. `hardcoded:src-tauri/src/services/session_usage_pi.rs:insert_pi_record:1c7048e9e0604d2d:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:925`
@@ -7071,7 +4960,7 @@
 - 严重程度：高
 - 指纹：`1c7048e9e0604d2decc08fecc08c00b98ac41b478eb4a3a4aaf2cc9f46fe65c4`
 
-### 626. `hardcoded:src-tauri/src/services/session_usage_pi.rs:insert_pi_record:3859de41dee1ac7b:001`
+### 450. `hardcoded:src-tauri/src/services/session_usage_pi.rs:insert_pi_record:3859de41dee1ac7b:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/session_usage_pi.rs:1001`
@@ -7082,7 +4971,7 @@
 - 严重程度：高
 - 指纹：`3859de41dee1ac7b43c7a882fe6009eee196b70d85948d76c31c931fe1aa2bd4`
 
-### 627. `hardcoded:src-tauri/src/services/skill.rs:import_from_apps:3af8fcc5127322b8:001`
+### 451. `hardcoded:src-tauri/src/services/skill.rs:import_from_apps:3af8fcc5127322b8:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/skill.rs:2438`
@@ -7093,7 +4982,7 @@
 - 严重程度：高
 - 指纹：`3af8fcc5127322b819a0e94acfc73bc66defc91f188401f566b07fff9961961c`
 
-### 628. `hardcoded:src-tauri/src/services/skill.rs:try_repo_branches:30860835c1352d77:001`
+### 452. `hardcoded:src-tauri/src/services/skill.rs:try_repo_branches:30860835c1352d77:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/skill.rs:3798`
@@ -7104,7 +4993,7 @@
 - 严重程度：高
 - 指纹：`30860835c1352d77aa4306ee886a02d0b5aa97ac9249b0bc8ec97163576f4989`
 
-### 629. `hardcoded:src-tauri/src/services/speedtest.rs:test_endpoints:8b7f52f0dbb6ed9f:001`
+### 453. `hardcoded:src-tauri/src/services/speedtest.rs:test_endpoints:8b7f52f0dbb6ed9f:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/speedtest.rs:93`
@@ -7115,7 +5004,7 @@
 - 严重程度：高
 - 指纹：`8b7f52f0dbb6ed9fc7ade64c1159a2ab9dec79959006d209de645f22b602914d`
 
-### 630. `hardcoded:src-tauri/src/services/stream_check.rs:probe_reachability:a8f37ce6dddf61a2:001`
+### 454. `hardcoded:src-tauri/src/services/stream_check.rs:probe_reachability:a8f37ce6dddf61a2:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/stream_check.rs:223`
@@ -7126,43 +5015,7 @@
 - 严重程度：高
 - 指纹：`a8f37ce6dddf61a23c67304f93b77eca7200b7e6bdc413f4260bdd7b17a75116`
 
-### 631. `hardcoded:src-tauri/src/services/stream_check.rs:extract_openclaw_base_url:d8326ad60affc69e:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/stream_check.rs:314`
-- 结构：`extract_openclaw_base_url` / `backend_localized_error`
-- 原文/表达式：openclaw_base_url_missing
-- 后端载荷：{"zh": "OpenClaw 供应商缺少 baseUrl", "en": "OpenClaw provider is missing `baseUrl`", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`d8326ad60affc69ec14180e7ac4bcd5e565051cd553fb7c8601ac5f167c07eee`
-
-### 632. `hardcoded:src-tauri/src/services/stream_check.rs:extract_hermes_base_url:19d9763c16eb3450:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/stream_check.rs:331`
-- 结构：`extract_hermes_base_url` / `backend_localized_error`
-- 原文/表达式：hermes_base_url_missing
-- 后端载荷：{"zh": "Hermes 供应商缺少 base_url", "en": "Hermes provider is missing `base_url`", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`19d9763c16eb345046f3b330d9507b4ec6482f206438c48576e90447de69fe5a`
-
-### 633. `hardcoded:src-tauri/src/services/stream_check.rs:resolve_opencode_base_url:419fe5960178cce6:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/stream_check.rs:359`
-- 结构：`resolve_opencode_base_url` / `backend_localized_error`
-- 原文/表达式：opencode_base_url_missing
-- 后端载荷：{"zh": "OpenCode 供应商缺少 options.baseURL，且当前 SDK 包没有默认端点", "en": "OpenCode provider is missing `options.baseURL` and the SDK package has no default endpoint", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`419fe5960178cce6596a69434c07db5cf643d4b527e6b8581203772016b36533`
-
-### 634. `hardcoded:src-tauri/src/services/subscription.rs:read_codex_keychain_secret:dbd25eadd7d922d3:001`
+### 455. `hardcoded:src-tauri/src/services/subscription.rs:read_codex_keychain_secret:dbd25eadd7d922d3:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/subscription.rs:707`
@@ -7173,7 +5026,7 @@
 - 严重程度：高
 - 指纹：`dbd25eadd7d922d3a1d3476adeaf6ab3e7d1698457366ed36a4a2b1d7dee0169`
 
-### 635. `hardcoded:src-tauri/src/services/subscription.rs:read_codex_keychain_secret:aef32b4040c63ba6:001`
+### 456. `hardcoded:src-tauri/src/services/subscription.rs:read_codex_keychain_secret:aef32b4040c63ba6:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/subscription.rs:713`
@@ -7184,163 +5037,7 @@
 - 严重程度：高
 - 指纹：`aef32b4040c63ba6695592fd4533146aff44c8e8d16ec3431b7b874d03539590`
 
-### 636. `hardcoded:src-tauri/src/services/sync_protocol.rs:build_local_snapshot:7b0bb367e37e13c9:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/sync_protocol.rs:183`
-- 结构：`build_local_snapshot` / `backend_localized_error`
-- 原文/表达式：sync.snapshot_tmpdir_failed
-- 后端载荷：{"zh": "创建快照临时目录失败", "en": "Failed to create temporary directory for snapshot", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`7b0bb367e37e13c9dc81abc256668707c8094a657307822bab309e36013e4592`
-
-### 637. `hardcoded:src-tauri/src/services/sync_protocol.rs:validate_manifest_compat:67cdb470baf5f3b3:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/sync_protocol.rs:260`
-- 结构：`validate_manifest_compat` / `backend_localized_error`
-- 原文/表达式：sync.manifest_format_incompatible
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`67cdb470baf5f3b39cc4207ec8f0205c1f31ae5525b0cdfc012cf5f4eec43430`
-
-### 638. `hardcoded:src-tauri/src/services/sync_protocol.rs:validate_manifest_compat:73a5fdaf4b9e6224:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/sync_protocol.rs:270`
-- 结构：`validate_manifest_compat` / `backend_localized_error`
-- 原文/表达式：sync.manifest_version_incompatible
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`73a5fdaf4b9e6224e86cf215938992d730239989cb238f65347ac0002179f2e9`
-
-### 639. `hardcoded:src-tauri/src/services/sync_protocol.rs:validate_manifest_compat:b1005c5d65aec238:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/sync_protocol.rs:283`
-- 结构：`validate_manifest_compat` / `backend_localized_error`
-- 原文/表达式：sync.manifest_db_version_missing
-- 后端载荷：{"zh": "远端 manifest 缺少数据库兼容版本", "en": "Remote manifest is missing the database compatibility version.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`b1005c5d65aec238d9a3c8dc4bc2b94c101f2c31a7c7a135fc7c13a489c9f1a2`
-
-### 640. `hardcoded:src-tauri/src/services/sync_protocol.rs:validate_manifest_compat:1b59df7fa26d9ba7:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/sync_protocol.rs:302`
-- 结构：`validate_manifest_compat` / `backend_localized_error`
-- 原文/表达式：sync.manifest_db_version_incompatible
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`1b59df7fa26d9ba73c8f4571c8276da6cad31af1cbe053395369bda9c207e542`
-
-### 641. `hardcoded:src-tauri/src/services/sync_protocol.rs:validate_artifact_size_limit:3c525387251dd070:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/sync_protocol.rs:322`
-- 结构：`validate_artifact_size_limit` / `backend_localized_error`
-- 原文/表达式：sync.artifact_too_large
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`3c525387251dd07049c97b7012265f251cf6fae516ae9c7c9f877745000e974a`
-
-### 642. `hardcoded:src-tauri/src/services/sync_protocol.rs:verify_artifact:d2defb856a9eeb9d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/sync_protocol.rs:342`
-- 结构：`verify_artifact` / `backend_localized_error`
-- 原文/表达式：sync.artifact_size_mismatch
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`d2defb856a9eeb9de4abdcd8ee621a417ead32483058bffb0a472e9510284614`
-
-### 643. `hardcoded:src-tauri/src/services/sync_protocol.rs:verify_artifact:9802c700172ae13b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/sync_protocol.rs:359`
-- 结构：`verify_artifact` / `backend_localized_error`
-- 原文/表达式：sync.artifact_hash_mismatch
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`9802c700172ae13b3e04778b489b2dee009f729815a296a2c578c6ee12166377`
-
-### 644. `hardcoded:src-tauri/src/services/sync_protocol.rs:apply_snapshot:4f237ee098cdefa5:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/sync_protocol.rs:384`
-- 结构：`apply_snapshot` / `backend_localized_error`
-- 原文/表达式：sync.sql_not_utf8
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`4f237ee098cdefa5434555ed6a6e3e43270a38de605ad9d978fca6a813a83f11`
-
-### 645. `hardcoded:src-tauri/src/services/webdav.rs:parse_base_url:71acd304e6a339a7:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav.rs:35`
-- 结构：`parse_base_url` / `backend_localized_error`
-- 原文/表达式：webdav.base_url.required
-- 后端载荷：{"zh": "WebDAV 地址不能为空", "en": "WebDAV URL is required.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`71acd304e6a339a7228b80baaa64c54d512545f629756d9a05e21b91fb029a38`
-
-### 646. `hardcoded:src-tauri/src/services/webdav.rs:parse_base_url:36897f1a313301a2:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav.rs:42`
-- 结构：`parse_base_url` / `backend_localized_error`
-- 原文/表达式：webdav.base_url.invalid
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`36897f1a313301a2016a9e236050d9e2663337e018ac38f8265ed51fb3d30cec`
-
-### 647. `hardcoded:src-tauri/src/services/webdav.rs:parse_base_url:80ce283f2c1f81fa:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav.rs:50`
-- 结构：`parse_base_url` / `backend_localized_error`
-- 原文/表达式：webdav.base_url.scheme_invalid
-- 后端载荷：{"zh": "WebDAV 仅支持 http/https 地址", "en": "WebDAV URL must use http or https.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`80ce283f2c1f81fa129809c8baab55bfb806ac5633cd79fef5c10b77dcc3b6e2`
-
-### 648. `hardcoded:src-tauri/src/services/webdav.rs:build_remote_url:78ab226f9318dafb:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav.rs:65`
-- 结构：`build_remote_url` / `backend_localized_error`
-- 原文/表达式：webdav.base_url.unusable
-- 后端载荷：{"zh": "WebDAV 地址格式不支持追加路径", "en": "WebDAV URL format does not support appending path segments.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`78ab226f9318dafb855b6fc0ce2f0a904e3a5ec7300b296c3b27fc08f0f115bb`
-
-### 649. `hardcoded:src-tauri/src/services/webdav.rs:test_connection:a5574109f0208e89:001`
+### 457. `hardcoded:src-tauri/src/services/webdav.rs:test_connection:a5574109f0208e89:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/webdav.rs:157`
@@ -7351,7 +5048,7 @@
 - 严重程度：高
 - 指纹：`a5574109f0208e899feb6b620feb3f1f686aded4ec939631420afc1bec51c400`
 
-### 650. `hardcoded:src-tauri/src/services/webdav.rs:ensure_remote_directories:c39f36dbf6e95813:001`
+### 458. `hardcoded:src-tauri/src/services/webdav.rs:ensure_remote_directories:c39f36dbf6e95813:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/webdav.rs:204`
@@ -7362,7 +5059,7 @@
 - 严重程度：高
 - 指纹：`c39f36dbf6e95813564a2c7eb7ffc0ef3dbac059e06065114b8594e3e17cb195`
 
-### 651. `hardcoded:src-tauri/src/services/webdav.rs:put_bytes:f53b1cc6cdf3a09b:001`
+### 459. `hardcoded:src-tauri/src/services/webdav.rs:put_bytes:f53b1cc6cdf3a09b:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/webdav.rs:251`
@@ -7373,7 +5070,7 @@
 - 严重程度：高
 - 指纹：`f53b1cc6cdf3a09ba9e868e5ff8af81d3abd7ee155eedc7297789bb1133d288a`
 
-### 652. `hardcoded:src-tauri/src/services/webdav.rs:get_bytes:9a4f338ad2fc9ba6:001`
+### 460. `hardcoded:src-tauri/src/services/webdav.rs:get_bytes:9a4f338ad2fc9ba6:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/webdav.rs:274`
@@ -7384,7 +5081,7 @@
 - 严重程度：高
 - 指纹：`9a4f338ad2fc9ba611cdf9441a731a887fbfb50b8dbb343689af9b61d6b2c9bf`
 
-### 653. `hardcoded:src-tauri/src/services/webdav.rs:get_bytes:9a4f338ad2fc9ba6:002`
+### 461. `hardcoded:src-tauri/src/services/webdav.rs:get_bytes:9a4f338ad2fc9ba6:002`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/webdav.rs:276`
@@ -7395,7 +5092,7 @@
 - 严重程度：高
 - 指纹：`9a4f338ad2fc9ba611cdf9441a731a887fbfb50b8dbb343689af9b61d6b2c9bf`
 
-### 654. `hardcoded:src-tauri/src/services/webdav.rs:get_bytes:0db9af77f115e056:001`
+### 462. `hardcoded:src-tauri/src/services/webdav.rs:get_bytes:0db9af77f115e056:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/webdav.rs:300`
@@ -7406,19 +5103,7 @@
 - 严重程度：高
 - 指纹：`0db9af77f115e056ec3125b25189295260f931b2f99f8ae8ea8152f64ea025ae`
 
-### 655. `hardcoded:src-tauri/src/services/webdav.rs:get_bytes:3f89f1d58700d1c5:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav.rs:307`
-- 结构：`get_bytes` / `backend_localized_error`
-- 原文/表达式：webdav.response_read_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`3f89f1d58700d1c5dbd11fb1f3501978cb7b195869296797503aac46b94889d2`
-
-### 656. `hardcoded:src-tauri/src/services/webdav.rs:head_etag:d68a4bbea7336121:001`
+### 463. `hardcoded:src-tauri/src/services/webdav.rs:head_etag:d68a4bbea7336121:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/services/webdav.rs:333`
@@ -7429,271 +5114,7 @@
 - 严重程度：高
 - 指纹：`d68a4bbea73361213bfe1f356f395784a9858afea0224d7bdfb4ba76fd3802b6`
 
-### 657. `hardcoded:src-tauri/src/services/webdav.rs:webdav_status_error:74c870ee66e658cc:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav.rs:421`
-- 结构：`webdav_status_error` / `backend_localized_error`
-- 原文/表达式：webdav.http.status
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`74c870ee66e658ccadec60fc874301034e5d294735b84838a3b4e85594879d28`
-
-### 658. `hardcoded:src-tauri/src/services/webdav.rs:response_too_large_error:3a12dc4f04559f92:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav.rs:430`
-- 结构：`response_too_large_error` / `backend_localized_error`
-- 原文/表达式：webdav.response_too_large
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`3a12dc4f04559f921766ab6b26bb7ff2aa4eb4d2d1ce402b3b433118d45e75ea`
-
-### 659. `hardcoded:src-tauri/src/services/webdav_sync.rs:download:c96c8f63e6fd70e8:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav_sync.rs:114`
-- 结构：`download` / `backend_localized_error`
-- 原文/表达式：webdav.sync.remote_empty
-- 后端载荷：{"zh": "远端没有可下载的同步数据", "en": "No downloadable sync data found on the remote.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`c96c8f63e6fd70e89fadac5a7c18e7ca5fd6d3f6b1e9fccbbc174164b9fc87b1`
-
-### 660. `hardcoded:src-tauri/src/services/webdav_sync.rs:download_and_verify:7b9f2b08df6acfa7:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav_sync.rs:248`
-- 结构：`download_and_verify` / `backend_localized_error`
-- 原文/表达式：webdav.sync.manifest_missing_artifact
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`7b9f2b08df6acfa739b1ba4a943a99379480492bd8fbd88254771dc4f1511ae0`
-
-### 661. `hardcoded:src-tauri/src/services/webdav_sync.rs:download_and_verify:c41cb7ae40c0ef81:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav_sync.rs:260`
-- 结构：`download_and_verify` / `backend_localized_error`
-- 原文/表达式：webdav.sync.remote_missing_artifact
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`c41cb7ae40c0ef81e0ab4a5a4c126bc2f1275dca3e7c82673e1ae75913e3f170`
-
-### 662. `hardcoded:src-tauri/src/services/webdav_sync/archive.rs:zip_skills_ssot:2f63cf69ac73fcb1:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav_sync/archive.rs:33`
-- 结构：`zip_skills_ssot` / `backend_localized_error`
-- 原文/表达式：webdav.sync.skills_ssot_dir_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`2f63cf69ac73fcb1f991ea44b43aaaf03dbd546a0413a8f3cef5d78337af6b12`
-
-### 663. `hardcoded:src-tauri/src/services/webdav_sync/archive.rs:zip_skills_ssot:2661747f0ef964f5:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav_sync/archive.rs:63`
-- 结构：`zip_skills_ssot` / `backend_localized_error`
-- 原文/表达式：webdav.sync.skills_zip_write_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`2661747f0ef964f55d341959d0163686941ccea601485c2e7c90d85f4dfc8791`
-
-### 664. `hardcoded:src-tauri/src/services/webdav_sync/archive.rs:restore_skills_zip:e58c7ab8e0e66ae5:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav_sync/archive.rs:74`
-- 结构：`restore_skills_zip` / `backend_localized_error`
-- 原文/表达式：webdav.sync.skills_extract_tmpdir_failed
-- 后端载荷：{"zh": "创建 skills 解压临时目录失败", "en": "Failed to create temporary directory for skills extraction", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`e58c7ab8e0e66ae52e4a4808cfff08f45cf941a2c2e85b4896027b0b66e49951`
-
-### 665. `hardcoded:src-tauri/src/services/webdav_sync/archive.rs:restore_skills_zip:a72b17f2f345fa18:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav_sync/archive.rs:86`
-- 结构：`restore_skills_zip` / `backend_localized_error`
-- 原文/表达式：webdav.sync.skills_zip_parse_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`a72b17f2f345fa183e4d5e62dda77f7d71402426bed14458608131dc6642cace`
-
-### 666. `hardcoded:src-tauri/src/services/webdav_sync/archive.rs:restore_skills_zip:083584eba1f09143:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav_sync/archive.rs:97`
-- 结构：`restore_skills_zip` / `backend_localized_error`
-- 原文/表达式：webdav.sync.skills_zip_too_many_entries
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`083584eba1f09143cb4dd2c13825561c7ba8f99a2a3ae4a104e0b0733808a1dd`
-
-### 667. `hardcoded:src-tauri/src/services/webdav_sync/archive.rs:restore_skills_zip:4018fb9071dad8f5:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav_sync/archive.rs:113`
-- 结构：`restore_skills_zip` / `backend_localized_error`
-- 原文/表达式：webdav.sync.skills_zip_entry_read_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`4018fb9071dad8f55c4674fe50ee14c19242e6d3305222666c7a8278e66adf6f`
-
-### 668. `hardcoded:src-tauri/src/services/webdav_sync/archive.rs:restore_skills_zip:2f63cf69ac73fcb1:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav_sync/archive.rs:141`
-- 结构：`restore_skills_zip` / `backend_localized_error`
-- 原文/表达式：webdav.sync.skills_ssot_dir_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`2f63cf69ac73fcb1f991ea44b43aaaf03dbd546a0413a8f3cef5d78337af6b12`
-
-### 669. `hardcoded:src-tauri/src/services/webdav_sync/archive.rs:replace_skills_dir:4302bf9115a5a83d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav_sync/archive.rs:229`
-- 结构：`replace_skills_dir` / `backend_localized_error`
-- 原文/表达式：webdav.sync.skills_replace_and_rollback_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`4302bf9115a5a83d7e28ed9a303059e71370cf6c2b5d77127b2e68bd2b8ae9ef`
-
-### 670. `hardcoded:src-tauri/src/services/webdav_sync/archive.rs:skills_rename_error:501ccde762bf8ecc:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav_sync/archive.rs:248`
-- 结构：`skills_rename_error` / `backend_localized_error`
-- 原文/表达式：webdav.sync.skills_rename_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`501ccde762bf8ecca5c1142041e10039886b93e8fcadd57e5f79c7685c6af453`
-
-### 671. `hardcoded:src-tauri/src/services/webdav_sync/archive.rs:backup_current_skills:2f63cf69ac73fcb1:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav_sync/archive.rs:276`
-- 结构：`backup_current_skills` / `backend_localized_error`
-- 原文/表达式：webdav.sync.skills_ssot_dir_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`2f63cf69ac73fcb1f991ea44b43aaaf03dbd546a0413a8f3cef5d78337af6b12`
-
-### 672. `hardcoded:src-tauri/src/services/webdav_sync/archive.rs:backup_current_skills:7e5b0b522bd33a39:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav_sync/archive.rs:283`
-- 结构：`backup_current_skills` / `backend_localized_error`
-- 原文/表达式：webdav.sync.skills_backup_tmpdir_failed
-- 后端载荷：{"zh": "创建 skills 备份临时目录失败", "en": "Failed to create temporary directory for skills backup", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`7e5b0b522bd33a3986c38d1bfa030f1ff2fb311435ca318a334bef431c77cad3`
-
-### 673. `hardcoded:src-tauri/src/services/webdav_sync/archive.rs:rollback_after_import_error_with:3cba909104809de6:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav_sync/archive.rs:328`
-- 结构：`rollback_after_import_error_with` / `backend_localized_error`
-- 原文/表达式：sync.db_import_and_rollback_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`3cba909104809de640e52c46ac9aa3fc3a4c8e54eb2f6bcad5326badd09e4567`
-
-### 674. `hardcoded:src-tauri/src/services/webdav_sync/archive.rs:zip_dir_recursive:000a43dc41da2c00:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav_sync/archive.rs:379`
-- 结构：`zip_dir_recursive` / `backend_localized_error`
-- 原文/表达式：webdav.sync.zip_relative_path_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`000a43dc41da2c0060a1a1f86b55977fc05407a98941d4782824589f8fe48514`
-
-### 675. `hardcoded:src-tauri/src/services/webdav_sync/archive.rs:zip_dir_recursive:21045cba71e3e264:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav_sync/archive.rs:398`
-- 结构：`zip_dir_recursive` / `backend_localized_error`
-- 原文/表达式：webdav.sync.zip_add_directory_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`21045cba71e3e2648c40cf57f8f63e21a2b080286acb89402f20924193a2b1ba`
-
-### 676. `hardcoded:src-tauri/src/services/webdav_sync/archive.rs:zip_dir_recursive:29ae711055a7d2b3:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav_sync/archive.rs:407`
-- 结构：`zip_dir_recursive` / `backend_localized_error`
-- 原文/表达式：webdav.sync.zip_start_file_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`29ae711055a7d2b37cb98238cbb8688be973a0ce89df3ea6f38eea95000ec5da`
-
-### 677. `hardcoded:src-tauri/src/services/webdav_sync/archive.rs:zip_dir_recursive:70e63dd5306d4858:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav_sync/archive.rs:418`
-- 结构：`zip_dir_recursive` / `backend_localized_error`
-- 原文/表达式：webdav.sync.zip_write_file_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`70e63dd5306d4858f37592e4bbaca99a0aa9fae7ff327ca5ed5283876b1e1212`
-
-### 678. `hardcoded:src-tauri/src/services/webdav_sync/archive.rs:copy_entry_with_total_limit:318d6f5f9f93400a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav_sync/archive.rs:487`
-- 结构：`copy_entry_with_total_limit` / `backend_localized_error`
-- 原文/表达式：webdav.sync.skills_zip_too_large
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`318d6f5f9f93400ae6dc576021edb078c4846416aa312bbdea7eadc6e53f9211`
-
-### 679. `hardcoded:src-tauri/src/session_manager/content.rs:validate_sqlite_source:5468662776eb4c05:001`
+### 464. `hardcoded:src-tauri/src/session_manager/content.rs:validate_sqlite_source:5468662776eb4c05:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/session_manager/content.rs:176`
@@ -7704,7 +5125,7 @@
 - 严重程度：高
 - 指纹：`5468662776eb4c059d2c9fc7e57addd1125327ba21247a862de17ca17dccaaf2`
 
-### 680. `hardcoded:src-tauri/src/session_manager/content.rs:resolve_content_ref:490770696681f7aa:001`
+### 465. `hardcoded:src-tauri/src/session_manager/content.rs:resolve_content_ref:490770696681f7aa:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/session_manager/content.rs:274`
@@ -7715,7 +5136,7 @@
 - 严重程度：高
 - 指纹：`490770696681f7aa14d097d42c1eb7510676ea5cf84c566fe51fe4ee55ed70ae`
 
-### 681. `hardcoded:src-tauri/src/session_manager/content.rs:read_sqlite_cell:9f5f86595df70ab0:001`
+### 466. `hardcoded:src-tauri/src/session_manager/content.rs:read_sqlite_cell:9f5f86595df70ab0:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/session_manager/content.rs:487`
@@ -7726,7 +5147,7 @@
 - 严重程度：高
 - 指纹：`9f5f86595df70ab0e8d78403ade118a950f40b3ecc3a177a2cd071d881187bcf`
 
-### 682. `hardcoded:src-tauri/src/session_manager/content.rs:canonical_local_image:9e9f72a029db6cc8:001`
+### 467. `hardcoded:src-tauri/src/session_manager/content.rs:canonical_local_image:9e9f72a029db6cc8:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/session_manager/content.rs:608`
@@ -7737,7 +5158,7 @@
 - 严重程度：高
 - 指纹：`9e9f72a029db6cc8a84f38f1ad39a7a6ac0f0d5dbbac4134d2e4896ef997e815`
 
-### 683. `hardcoded:src-tauri/src/session_manager/content.rs:canonical_local_image:24f7bbdd4627adef:001`
+### 468. `hardcoded:src-tauri/src/session_manager/content.rs:canonical_local_image:24f7bbdd4627adef:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/session_manager/content.rs:615`
@@ -7748,7 +5169,7 @@
 - 严重程度：高
 - 指纹：`24f7bbdd4627adefa6bb57e9bc797c46b187e0fc6f857ad41167d86809c29468`
 
-### 684. `hardcoded:src-tauri/src/session_manager/content.rs:canonical_local_image:a9e99b1d3748eb55:001`
+### 469. `hardcoded:src-tauri/src/session_manager/content.rs:canonical_local_image:a9e99b1d3748eb55:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/session_manager/content.rs:618`
@@ -7759,7 +5180,7 @@
 - 严重程度：高
 - 指纹：`a9e99b1d3748eb55b1472d24a564324afb6357fe0a7be59d904e184520fbf75d`
 
-### 685. `hardcoded:src-tauri/src/session_manager/content.rs:canonical_local_image:678f36e6cb146ae4:001`
+### 470. `hardcoded:src-tauri/src/session_manager/content.rs:canonical_local_image:678f36e6cb146ae4:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/session_manager/content.rs:621`
@@ -7770,7 +5191,7 @@
 - 严重程度：高
 - 指纹：`678f36e6cb146ae4cf20225b03b2aa9d0170418ba24acdfeb2dd7e5f3a09b3df`
 
-### 686. `hardcoded:src-tauri/src/session_manager/content.rs:read_local_image:1fdf8f149c0404bc:001`
+### 471. `hardcoded:src-tauri/src/session_manager/content.rs:read_local_image:1fdf8f149c0404bc:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/session_manager/content.rs:643`
@@ -7781,7 +5202,7 @@
 - 严重程度：高
 - 指纹：`1fdf8f149c0404bc01121e79d33a41babd87561b540607d6719f38a8569c2af3`
 
-### 687. `hardcoded:src-tauri/src/session_manager/content.rs:resolve_reveal_path:1f83ecf93757ade3:001`
+### 472. `hardcoded:src-tauri/src/session_manager/content.rs:resolve_reveal_path:1f83ecf93757ade3:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/session_manager/content.rs:703`
@@ -7792,7 +5213,7 @@
 - 严重程度：高
 - 指纹：`1f83ecf93757ade32cad7080fc0a56717c7e9fa778ac2bc5761caac01b965d4e`
 
-### 688. `hardcoded:src-tauri/src/session_manager/content.rs:resolve_reveal_path:e62e50f2adda11e3:001`
+### 473. `hardcoded:src-tauri/src/session_manager/content.rs:resolve_reveal_path:e62e50f2adda11e3:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/session_manager/content.rs:705`
@@ -7803,79 +5224,7 @@
 - 严重程度：高
 - 指纹：`e62e50f2adda11e338a7764b38eff14df7a494da53c6df2d549942f6b861b058`
 
-### 689. `hardcoded:src-tauri/src/settings.rs:validate:71acd304e6a339a7:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/settings.rs:174`
-- 结构：`validate` / `backend_localized_error`
-- 原文/表达式：webdav.base_url.required
-- 后端载荷：{"zh": "WebDAV 地址不能为空", "en": "WebDAV URL is required.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`71acd304e6a339a7228b80baaa64c54d512545f629756d9a05e21b91fb029a38`
-
-### 690. `hardcoded:src-tauri/src/settings.rs:validate:1c9b7fea3a9edb8c:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/settings.rs:181`
-- 结构：`validate` / `backend_localized_error`
-- 原文/表达式：webdav.username.required
-- 后端载荷：{"zh": "WebDAV 用户名不能为空", "en": "WebDAV username is required.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`1c9b7fea3a9edb8c2ec17aa4560bd3c6e92784644c2a7b2a637ae8755c09e354`
-
-### 691. `hardcoded:src-tauri/src/settings.rs:validate:79725fd041720fcb:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/settings.rs:255`
-- 结构：`validate` / `backend_localized_error`
-- 原文/表达式：s3.bucket.required
-- 后端载荷：{"zh": "S3 存储桶不能为空", "en": "S3 bucket is required.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`79725fd041720fcba0bec58a3d1880efaba85b65c859b0d4421469bc25aa3a7c`
-
-### 692. `hardcoded:src-tauri/src/settings.rs:validate:50328356cafb42bf:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/settings.rs:262`
-- 结构：`validate` / `backend_localized_error`
-- 原文/表达式：s3.region.required
-- 后端载荷：{"zh": "S3 区域不能为空", "en": "S3 region is required.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`50328356cafb42bfcfc98c58aa05864582b38f1e7842ab7fda9f16fee36dc59b`
-
-### 693. `hardcoded:src-tauri/src/settings.rs:validate:1d9ee4e72a9a4b47:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/settings.rs:269`
-- 结构：`validate` / `backend_localized_error`
-- 原文/表达式：s3.access_key_id.required
-- 后端载荷：{"zh": "S3 Access Key ID 不能为空", "en": "S3 Access Key ID is required.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`1d9ee4e72a9a4b4775087b773d2bab1b43abe69dd9b711e9381fa053fcdc6b76`
-
-### 694. `hardcoded:src-tauri/src/settings.rs:validate:b2de17659b7b78fa:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/settings.rs:276`
-- 结构：`validate` / `backend_localized_error`
-- 原文/表达式：s3.secret_access_key.required
-- 后端载荷：{"zh": "S3 Secret Access Key 不能为空", "en": "S3 Secret Access Key is required.", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`b2de17659b7b78faf82a64b1394f63571335ad83df81b7bc0d1e4d58ae4a30b5`
-
-### 695. `hardcoded:src-tauri/src/settings.rs:save_settings_file:d5ec95889a0cfb38:001`
+### 474. `hardcoded:src-tauri/src/settings.rs:save_settings_file:d5ec95889a0cfb38:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/settings.rs:968`
@@ -7886,7 +5235,7 @@
 - 严重程度：高
 - 指纹：`d5ec95889a0cfb3888af0d51688a480559511bf4dc7ece15e4868b93ad06d0fd`
 
-### 696. `hardcoded:src-tauri/src/settings.rs:write_settings_to_path:eea2a087133af3e9:001`
+### 475. `hardcoded:src-tauri/src/settings.rs:write_settings_to_path:eea2a087133af3e9:001`
 
 - 状态：确认遗漏
 - 文件：`src-tauri/src/settings.rs:990`
@@ -7897,499 +5246,7 @@
 - 严重程度：高
 - 指纹：`eea2a087133af3e9643652e39063b4981d9969f3e4cf6185d3ef609a508fa48c`
 
-### 697. `hardcoded:src-tauri/src/usage_script.rs:create_script_runtime:c19d1bf717457b86:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:42`
-- 结构：`create_script_runtime` / `backend_localized_error`
-- 原文/表达式：usage_script.runtime_create_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`c19d1bf717457b867f8b209d997ce1cc81abb51d2e28fc8c4c0c6aee2eeda255`
-
-### 698. `hardcoded:src-tauri/src/usage_script.rs:create_script_runtime:28f1623991b00758:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:58`
-- 结构：`create_script_runtime` / `backend_localized_error`
-- 原文/表达式：usage_script.invalid_timeout
-- 后端载荷：{"zh": "无法计算脚本执行截止时间", "en": "Unable to compute script execution deadline", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`28f1623991b0075867acd6b0e48b1337e617069681a6c3d5e6dcab0285101453`
-
-### 699. `hardcoded:src-tauri/src/usage_script.rs:create_script_runtime:1d7e14042e856e48:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:82`
-- 结构：`create_script_runtime` / `backend_localized_error`
-- 原文/表达式：usage_script.config_parse_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`1d7e14042e856e48cc50afae79527414180241012fc2df0234cb8f7a69d4e1ac`
-
-### 700. `hardcoded:src-tauri/src/usage_script.rs:create_script_runtime:b97cbeb8285a3e4f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:91`
-- 结构：`create_script_runtime` / `backend_localized_error`
-- 原文/表达式：usage_script.request_missing
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`b97cbeb8285a3e4f878d2073fd46c37865f1615b5230eeb498dc9c57e06537b5`
-
-### 701. `hardcoded:src-tauri/src/usage_script.rs:create_script_runtime:b335b2eeb1191498:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:102`
-- 结构：`create_script_runtime` / `backend_localized_error`
-- 原文/表达式：usage_script.request_serialize_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`b335b2eeb1191498f58c12c2e4337914fcc3b46929dabff6cd521f9221eba411`
-
-### 702. `hardcoded:src-tauri/src/usage_script.rs:create_script_runtime:cd27cfadf54d986c:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:130`
-- 结构：`create_script_runtime` / `backend_localized_error`
-- 原文/表达式：usage_script.request_format_invalid
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`cd27cfadf54d986c9608609bdb572367e252bb612ba0113e434ad40ab1605971`
-
-### 703. `hardcoded:src-tauri/src/usage_script.rs:create_script_runtime:212a45d0dcb7413a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:147`
-- 结构：`create_script_runtime` / `backend_localized_error`
-- 原文/表达式：usage_script.context_create_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`212a45d0dcb7413a738e25d17dc6263cf77db8083198ff0402814a5c8edaa112`
-
-### 704. `hardcoded:src-tauri/src/usage_script.rs:create_script_runtime:074700c77ea1d439:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:157`
-- 结构：`create_script_runtime` / `backend_localized_error`
-- 原文/表达式：usage_script.config_reparse_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`074700c77ea1d4397ecc079d00d77f6c255f0915dd40a06d2938a34d9371fc25`
-
-### 705. `hardcoded:src-tauri/src/usage_script.rs:create_script_runtime:b37b02cf88c1f0a6:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:166`
-- 结构：`create_script_runtime` / `backend_localized_error`
-- 原文/表达式：usage_script.extractor_missing
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`b37b02cf88c1f0a604664af26a2ceb9c97fe27d9056b3723ed4b5c7585505374`
-
-### 706. `hardcoded:src-tauri/src/usage_script.rs:create_script_runtime:444083432f879735:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:176`
-- 结构：`create_script_runtime` / `backend_localized_error`
-- 原文/表达式：usage_script.response_parse_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`444083432f8797354b0cc6ac1c108f3b09a6e88007d477fa2ba00afeb5749ecc`
-
-### 707. `hardcoded:src-tauri/src/usage_script.rs:create_script_runtime:6b207c65edfe4053:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:185`
-- 结构：`create_script_runtime` / `backend_localized_error`
-- 原文/表达式：usage_script.extractor_exec_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`6b207c65edfe4053aa1295d94f7c7de04f753af3f5d19868e477706397581b8e`
-
-### 708. `hardcoded:src-tauri/src/usage_script.rs:create_script_runtime:8aab72b4a20e98f8:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:196`
-- 结构：`create_script_runtime` / `backend_localized_error`
-- 原文/表达式：usage_script.result_serialize_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`8aab72b4a20e98f83b3482e283740220357420ff7e18ce45dc0e461f4c9fca7c`
-
-### 709. `hardcoded:src-tauri/src/usage_script.rs:create_script_runtime:0e9adf1a6a8ff3d7:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:203`
-- 结构：`create_script_runtime` / `backend_localized_error`
-- 原文/表达式：usage_script.serialize_none
-- 后端载荷：{"zh": "序列化返回 None", "en": "Serialization returned None", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`0e9adf1a6a8ff3d77f7f0c4e1df8e7f749194694f24a965efae0b920281a5e4f`
-
-### 710. `hardcoded:src-tauri/src/usage_script.rs:create_script_runtime:6f2efca5975eb93a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:211`
-- 结构：`create_script_runtime` / `backend_localized_error`
-- 原文/表达式：usage_script.get_string_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`6f2efca5975eb93ae768be250f339f41c289e53499e3c0bc7bb5ab5d9670d823`
-
-### 711. `hardcoded:src-tauri/src/usage_script.rs:create_script_runtime:681110aa6ae76159:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:220`
-- 结构：`create_script_runtime` / `backend_localized_error`
-- 原文/表达式：usage_script.json_parse_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`681110aa6ae76159458e3f5c6c9e9d16044dff0883cb36dfc86b5023cb76c639`
-
-### 712. `hardcoded:src-tauri/src/usage_script.rs:send_http_request:60612e23a2314c64:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:255`
-- 结构：`send_http_request` / `backend_localized_error`
-- 原文/表达式：usage_script.invalid_http_method
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`60612e23a2314c64159d87a51b8e16e9d24d02b34ac61d57ee4f8949f1b93fe6`
-
-### 713. `hardcoded:src-tauri/src/usage_script.rs:send_http_request:7c27120048e9998f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:278`
-- 结构：`send_http_request` / `backend_localized_error`
-- 原文/表达式：usage_script.request_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`7c27120048e9998f6b2615d26a49e860e57619953d99e58464e1b745eb57c430`
-
-### 714. `hardcoded:src-tauri/src/usage_script.rs:send_http_request:d388a647f32e29c7:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:287`
-- 结构：`send_http_request` / `backend_localized_error`
-- 原文/表达式：usage_script.read_response_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`d388a647f32e29c7008f54fa193bf18a4cad685dc4906867d18c7a6304ed8d6f`
-
-### 715. `hardcoded:src-tauri/src/usage_script.rs:send_http_request:4a0cfb4ef2b00a7c:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:304`
-- 结构：`send_http_request` / `backend_localized_error`
-- 原文/表达式：usage_script.http_error
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`4a0cfb4ef2b00a7c487234c0cc5db00a10625dc5df4915387ff3f8ead83dbc03`
-
-### 716. `hardcoded:src-tauri/src/usage_script.rs:validate_result:08dcc4b0cb4c7a64:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:319`
-- 结构：`validate_result` / `backend_localized_error`
-- 原文/表达式：usage_script.empty_array
-- 后端载荷：{"zh": "脚本返回的数组不能为空", "en": "Script returned empty array", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`08dcc4b0cb4c7a64425c26868969502921a9f7007b1f2c5588507b4016fd285d`
-
-### 717. `hardcoded:src-tauri/src/usage_script.rs:validate_result:5fb094bba95c7cb7:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:327`
-- 结构：`validate_result` / `backend_localized_error`
-- 原文/表达式：usage_script.array_validation_failed
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`5fb094bba95c7cb76c1489fb58eae43a104b58cb66e8aae0392031e278ba1fb5`
-
-### 718. `hardcoded:src-tauri/src/usage_script.rs:validate_single_usage:bf7949a6fcda62c3:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:344`
-- 结构：`validate_single_usage` / `backend_localized_error`
-- 原文/表达式：usage_script.must_return_object
-- 后端载荷：{"zh": "脚本必须返回对象或对象数组", "en": "Script must return object or array of objects", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`bf7949a6fcda62c306a6599e0edfbc28d41b0059ca8a8a82af802d44f2c9d976`
-
-### 719. `hardcoded:src-tauri/src/usage_script.rs:validate_single_usage:e9e56f7514dc0bdb:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:356`
-- 结构：`validate_single_usage` / `backend_localized_error`
-- 原文/表达式：usage_script.isvalid_type_error
-- 后端载荷：{"zh": "isValid 必须是布尔值或 null", "en": "isValid must be boolean or null", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`e9e56f7514dc0bdb62100a7628d9c620d9263fbae2daef57faf1e0730b7f70d7`
-
-### 720. `hardcoded:src-tauri/src/usage_script.rs:validate_single_usage:c92af0cf0d92d854:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:366`
-- 结构：`validate_single_usage` / `backend_localized_error`
-- 原文/表达式：usage_script.invalidmessage_type_error
-- 后端载荷：{"zh": "invalidMessage 必须是字符串或 null", "en": "invalidMessage must be string or null", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`c92af0cf0d92d85460f4596b5055ec1c8c8de13b9069c161169c20b3c2c036f6`
-
-### 721. `hardcoded:src-tauri/src/usage_script.rs:validate_single_usage:2abd81727035980b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:376`
-- 结构：`validate_single_usage` / `backend_localized_error`
-- 原文/表达式：usage_script.remaining_type_error
-- 后端载荷：{"zh": "remaining 必须是数字或 null", "en": "remaining must be number or null", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`2abd81727035980b8438da3e74bc3ba0e45f5c4aa4237674305d21e5c5ac15d1`
-
-### 722. `hardcoded:src-tauri/src/usage_script.rs:validate_single_usage:c1178e586d8bc56e:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:383`
-- 结构：`validate_single_usage` / `backend_localized_error`
-- 原文/表达式：usage_script.unit_type_error
-- 后端载荷：{"zh": "unit 必须是字符串或 null", "en": "unit must be string or null", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`c1178e586d8bc56e00954a9ca294b1891457ead50d89742e450c8f6b3569d4df`
-
-### 723. `hardcoded:src-tauri/src/usage_script.rs:validate_single_usage:4219002a7b5e8543:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:390`
-- 结构：`validate_single_usage` / `backend_localized_error`
-- 原文/表达式：usage_script.total_type_error
-- 后端载荷：{"zh": "total 必须是数字或 null", "en": "total must be number or null", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`4219002a7b5e85433d81aa96fa89e686413fdca1b76827d7f242aac5c2a1810e`
-
-### 724. `hardcoded:src-tauri/src/usage_script.rs:validate_single_usage:501de230db389460:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:397`
-- 结构：`validate_single_usage` / `backend_localized_error`
-- 原文/表达式：usage_script.used_type_error
-- 后端载荷：{"zh": "used 必须是数字或 null", "en": "used must be number or null", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`501de230db3894600c6224b26d006d634ca4f5cebc5bda8e2f9a40ce76911582`
-
-### 725. `hardcoded:src-tauri/src/usage_script.rs:validate_single_usage:0e1d97230ce847b4:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:407`
-- 结构：`validate_single_usage` / `backend_localized_error`
-- 原文/表达式：usage_script.planname_type_error
-- 后端载荷：{"zh": "planName 必须是字符串或 null", "en": "planName must be string or null", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`0e1d97230ce847b44d0c4206c52ec46a3441a42622fe58edd228405ec835bafd`
-
-### 726. `hardcoded:src-tauri/src/usage_script.rs:validate_single_usage:579e97ff1f041361:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:414`
-- 结构：`validate_single_usage` / `backend_localized_error`
-- 原文/表达式：usage_script.extra_type_error
-- 后端载荷：{"zh": "extra 必须是字符串或 null", "en": "extra must be string or null", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`579e97ff1f04136116881f90253a0597440f8e688b1d6cd1f7d0358b3859c17a`
-
-### 727. `hardcoded:src-tauri/src/usage_script.rs:validate_base_url:075065a462767644:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:449`
-- 结构：`validate_base_url` / `backend_localized_error`
-- 原文/表达式：usage_script.base_url_empty
-- 后端载荷：{"zh": "base_url 不能为空", "en": "base_url cannot be empty", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`075065a462767644f5702bed06d294ff489093b5469372c16df19b86150062d1`
-
-### 728. `hardcoded:src-tauri/src/usage_script.rs:validate_base_url:d6fa1fbb1939b3db:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:458`
-- 结构：`validate_base_url` / `backend_localized_error`
-- 原文/表达式：usage_script.base_url_invalid
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`d6fa1fbb1939b3dba2d7e61f417528be5ce08aade4ce0c517c74d5b1c70f2a87`
-
-### 729. `hardcoded:src-tauri/src/usage_script.rs:validate_base_url:38b5c0a20a30ff8c:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:469`
-- 结构：`validate_base_url` / `backend_localized_error`
-- 原文/表达式：usage_script.base_url_https_required
-- 后端载荷：{"zh": "base_url 必须使用 HTTPS 协议（localhost 除外）", "en": "base_url must use HTTPS (localhost allowed)", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`38b5c0a20a30ff8c30c4a2302ff558ae0da0253a0bf8f31c5c5e8b6f9741e513`
-
-### 730. `hardcoded:src-tauri/src/usage_script.rs:validate_base_url:5f4f9eca29a72877:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:478`
-- 结构：`validate_base_url` / `backend_localized_error`
-- 原文/表达式：usage_script.base_url_hostname_missing
-- 后端载荷：{"zh": "base_url 必须包含有效的主机名", "en": "base_url must include a valid hostname", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`5f4f9eca29a7287706d4954b7102246effa92263b7aa964f1871b43d4f7d106e`
-
-### 731. `hardcoded:src-tauri/src/usage_script.rs:validate_base_url:276efbabb6c0a39a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:487`
-- 结构：`validate_base_url` / `backend_localized_error`
-- 原文/表达式：usage_script.base_url_hostname_empty
-- 后端载荷：{"zh": "base_url 主机名不能为空", "en": "base_url hostname cannot be empty", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`276efbabb6c0a39ad74fab5254fd154bc0a2e396730b349b93f08b379f2610fc`
-
-### 732. `hardcoded:src-tauri/src/usage_script.rs:validate_request_url:6bd0cdfb1b6e12e4:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:509`
-- 结构：`validate_request_url` / `backend_localized_error`
-- 原文/表达式：usage_script.request_url_invalid
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`6bd0cdfb1b6e12e4b5144ce72ac2ac82287035eebefd39814722cbf2468bc3ef`
-
-### 733. `hardcoded:src-tauri/src/usage_script.rs:validate_request_url:e13cc839845b50f6:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:521`
-- 结构：`validate_request_url` / `backend_localized_error`
-- 原文/表达式：usage_script.request_https_required
-- 后端载荷：{"zh": "请求 URL 必须使用 HTTPS 协议（localhost 除外）", "en": "Request URL must use HTTPS (localhost allowed)", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`e13cc839845b50f611981baf0db3f11697ce1af0b8f144b99fa2f9e2e7dd7666`
-
-### 734. `hardcoded:src-tauri/src/usage_script.rs:validate_request_url:d6fa1fbb1939b3db:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:533`
-- 结构：`validate_request_url` / `backend_localized_error`
-- 原文/表达式：usage_script.base_url_invalid
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`d6fa1fbb1939b3dba2d7e61f417528be5ce08aade4ce0c517c74d5b1c70f2a87`
-
-### 735. `hardcoded:src-tauri/src/usage_script.rs:validate_request_url:b4cfdb7725c06fbc:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:542`
-- 结构：`validate_request_url` / `backend_localized_error`
-- 原文/表达式：usage_script.request_host_mismatch
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`b4cfdb7725c06fbc46688bb3ed3ba2b3d2548dea1cdf117964f498d6abe595ef`
-
-### 736. `hardcoded:src-tauri/src/usage_script.rs:validate_request_url:83b8674a0cd576fd:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:567`
-- 结构：`validate_request_url` / `backend_localized_error`
-- 原文/表达式：usage_script.request_port_mismatch
-- 后端载荷：{"zh": null, "en": null, "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`83b8674a0cd576fda582f4374d42e15703b9dfadfd962c6416e808fba43f2e52`
-
-### 737. `hardcoded:src-tauri/src/usage_script.rs:validate_request_url:fc3bcef2c4ae2d15:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/usage_script.rs:575`
-- 结构：`validate_request_url` / `backend_localized_error`
-- 原文/表达式：usage_script.request_port_unknown
-- 后端载荷：{"zh": "无法确定端口号", "en": "Unable to determine port number", "ko": null}
-- 判定原因：后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。
-- 处理方向：将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。
-- 严重程度：高
-- 指纹：`fc3bcef2c4ae2d157cd344e872ae5137b98aeb811a9633176797fd0381d5bad4`
-
-### 738. `hardcoded:src/components/DeepLinkImportDialog.tsx:DeepLinkImportDialog:7de02e7f919bd514:001`
+### 476. `hardcoded:src/components/DeepLinkImportDialog.tsx:DeepLinkImportDialog:7de02e7f919bd514:001`
 
 - 状态：确认遗漏
 - 文件：`src/components/DeepLinkImportDialog.tsx:732`
@@ -8401,7 +5258,7 @@
 - 严重程度：中
 - 指纹：`7de02e7f919bd51427a2a49637b5c42567018fb93282b59b55b2b22702496bf5`
 
-### 739. `hardcoded:src/components/DeepLinkImportDialog.tsx:DeepLinkImportDialog:4922fc9dd3ca2b64:001`
+### 477. `hardcoded:src/components/DeepLinkImportDialog.tsx:DeepLinkImportDialog:4922fc9dd3ca2b64:001`
 
 - 状态：确认遗漏
 - 文件：`src/components/DeepLinkImportDialog.tsx:750`
@@ -8413,7 +5270,7 @@
 - 严重程度：中
 - 指纹：`4922fc9dd3ca2b64dee0e420d7d46927d37f1c7147a0c3aef8b5601ac96eb468`
 
-### 740. `hardcoded:src/components/UsageScriptModal.tsx:UsageScriptModal:23189d55f6973f2c:001`
+### 478. `hardcoded:src/components/UsageScriptModal.tsx:UsageScriptModal:23189d55f6973f2c:001`
 
 - 状态：确认遗漏
 - 文件：`src/components/UsageScriptModal.tsx:1156`
@@ -8425,7 +5282,7 @@
 - 严重程度：中
 - 指纹：`23189d55f6973f2ce5325707ab40ed9a145fd5b71f0f009448f0c15fc22b3d73`
 
-### 741. `hardcoded:src/components/UsageScriptModal.tsx:UsageScriptModal:23189d55f6973f2c:002`
+### 479. `hardcoded:src/components/UsageScriptModal.tsx:UsageScriptModal:23189d55f6973f2c:002`
 
 - 状态：确认遗漏
 - 文件：`src/components/UsageScriptModal.tsx:1320`
@@ -8437,7 +5294,7 @@
 - 严重程度：中
 - 指纹：`23189d55f6973f2ce5325707ab40ed9a145fd5b71f0f009448f0c15fc22b3d73`
 
-### 742. `hardcoded:src/components/providers/forms/hooks/useCodexTomlValidation.ts:errorMessage:dded5e1d24c96e2a:001`
+### 480. `hardcoded:src/components/providers/forms/hooks/useCodexTomlValidation.ts:errorMessage:dded5e1d24c96e2a:001`
 
 - 状态：确认遗漏
 - 文件：`src/components/providers/forms/hooks/useCodexTomlValidation.ts:30`
@@ -8448,7 +5305,7 @@
 - 严重程度：中
 - 指纹：`dded5e1d24c96e2ab01ae6104d644879cd1342121f14ea2f61f45289423e4636`
 
-### 743. `hardcoded:src/components/universal/UniversalProviderFormModal.tsx:UniversalProviderFormModal:6f71800c93bd916e:001`
+### 481. `hardcoded:src/components/universal/UniversalProviderFormModal.tsx:UniversalProviderFormModal:6f71800c93bd916e:001`
 
 - 状态：确认遗漏
 - 文件：`src/components/universal/UniversalProviderFormModal.tsx:600`
@@ -8460,7 +5317,7 @@
 - 严重程度：中
 - 指纹：`6f71800c93bd916e601cf078542b5250383633bf18f08a2c6e019db9975abcbb`
 
-### 744. `hardcoded:src/components/usage/providerLabel.ts:SESSION_PROVIDER_APPS:01f4e2433ec4be24:001`
+### 482. `hardcoded:src/components/usage/providerLabel.ts:SESSION_PROVIDER_APPS:01f4e2433ec4be24:001`
 
 - 状态：确认遗漏
 - 文件：`src/components/usage/providerLabel.ts:15`
@@ -8471,7 +5328,7 @@
 - 严重程度：低
 - 指纹：`01f4e2433ec4be24aa94ed7466ff73dab3a6273a008a0f9aed4869b5e16e7381`
 
-### 745. `hardcoded:src/components/usage/providerLabel.ts:SESSION_PROVIDER_APPS:8fe6db86f3c11f21:001`
+### 483. `hardcoded:src/components/usage/providerLabel.ts:SESSION_PROVIDER_APPS:8fe6db86f3c11f21:001`
 
 - 状态：确认遗漏
 - 文件：`src/components/usage/providerLabel.ts:16`
@@ -8482,7 +5339,7 @@
 - 严重程度：低
 - 指纹：`8fe6db86f3c11f21652978cdaaf7dc6862ff8027669c667d9b53aba230d8385a`
 
-### 746. `hardcoded:src/components/usage/providerLabel.ts:SESSION_PROVIDER_APPS:0f38be253cd29be7:001`
+### 484. `hardcoded:src/components/usage/providerLabel.ts:SESSION_PROVIDER_APPS:0f38be253cd29be7:001`
 
 - 状态：确认遗漏
 - 文件：`src/components/usage/providerLabel.ts:17`
@@ -8493,7 +5350,7 @@
 - 严重程度：低
 - 指纹：`0f38be253cd29be755bc5a7ce60ac1f4eac5fb8a9f3f49def9b0b34ff6776911`
 
-### 747. `hardcoded:src/config/codingPlanProviders.ts:CODING_PLAN_PROVIDERS:3db0e7b4fbcf5a89:001`
+### 485. `hardcoded:src/config/codingPlanProviders.ts:CODING_PLAN_PROVIDERS:3db0e7b4fbcf5a89:001`
 
 - 状态：确认遗漏
 - 文件：`src/config/codingPlanProviders.ts:36`
@@ -8504,7 +5361,7 @@
 - 严重程度：中
 - 指纹：`3db0e7b4fbcf5a8948b03db16bd40f01af615ee9904524b3272508eba3cde421`
 
-### 748. `hardcoded:src/config/codingPlanProviders.ts:CODING_PLAN_PROVIDERS:b1d2aaa46c82135e:001`
+### 486. `hardcoded:src/config/codingPlanProviders.ts:CODING_PLAN_PROVIDERS:b1d2aaa46c82135e:001`
 
 - 状态：确认遗漏
 - 文件：`src/config/codingPlanProviders.ts:46`
@@ -8515,7 +5372,7 @@
 - 严重程度：中
 - 指纹：`b1d2aaa46c82135e0282e4459e7bfe473670d79814971cdf27774cc7b7ab9bab`
 
-### 749. `hardcoded:src/config/codingPlanProviders.ts:CODING_PLAN_PROVIDERS:63c6e0bb0efb7b2f:001`
+### 487. `hardcoded:src/config/codingPlanProviders.ts:CODING_PLAN_PROVIDERS:63c6e0bb0efb7b2f:001`
 
 - 状态：确认遗漏
 - 文件：`src/config/codingPlanProviders.ts:68`
@@ -8526,7 +5383,7 @@
 - 严重程度：中
 - 指纹：`63c6e0bb0efb7b2f6f3fda2e0400019812642e4a76f44e02c7e9ab2a74d7d86a`
 
-### 750. `hardcoded:src/config/geminiProviderPresets.ts:geminiProviderPresets:adc217dd32753992:001`
+### 488. `hardcoded:src/config/geminiProviderPresets.ts:geminiProviderPresets:adc217dd32753992:001`
 
 - 状态：确认遗漏
 - 文件：`src/config/geminiProviderPresets.ts:44`
@@ -8537,7 +5394,7 @@
 - 严重程度：中
 - 指纹：`adc217dd3275399254b3aba37faa7150ec4e752f85dfe37af80fccbe4685bb7f`
 
-### 751. `hardcoded:src/config/opencodeProviderPresets.ts:opencodeProviderPresets:789e7138516546aa:002`
+### 489. `hardcoded:src/config/opencodeProviderPresets.ts:opencodeProviderPresets:789e7138516546aa:002`
 
 - 状态：确认遗漏
 - 文件：`src/config/opencodeProviderPresets.ts:1619`
@@ -8548,7 +5405,7 @@
 - 严重程度：中
 - 指纹：`789e7138516546aa68ed5ea9c8627110855d29b1508d9ad45c62862229330f09`
 
-### 752. `hardcoded:src/config/opencodeProviderPresets.ts:opencodeProviderPresets:4c8a38aad6ae652f:002`
+### 490. `hardcoded:src/config/opencodeProviderPresets.ts:opencodeProviderPresets:4c8a38aad6ae652f:002`
 
 - 状态：确认遗漏
 - 文件：`src/config/opencodeProviderPresets.ts:1654`
@@ -8559,7 +5416,7 @@
 - 严重程度：中
 - 指纹：`4c8a38aad6ae652f0539951f8b9983f36ffab8ed99199f7648df6aada9753a9c`
 
-### 753. `hardcoded:src/config/opencodeProviderPresets.ts:opencodeProviderPresets:dfc683f1eeccb537:002`
+### 491. `hardcoded:src/config/opencodeProviderPresets.ts:opencodeProviderPresets:dfc683f1eeccb537:002`
 
 - 状态：确认遗漏
 - 文件：`src/config/opencodeProviderPresets.ts:2873`
@@ -8570,7 +5427,7 @@
 - 严重程度：中
 - 指纹：`dfc683f1eeccb5372dd95a3444222d8c6161c261fdfbe9efc0ad0b086f45e3c1`
 
-### 754. `hardcoded:src/config/opencodeProviderPresets.ts:opencodeProviderPresets:97c44cb45918dcfe:002`
+### 492. `hardcoded:src/config/opencodeProviderPresets.ts:opencodeProviderPresets:97c44cb45918dcfe:002`
 
 - 状态：确认遗漏
 - 文件：`src/config/opencodeProviderPresets.ts:2921`
@@ -8581,7 +5438,7 @@
 - 严重程度：中
 - 指纹：`97c44cb45918dcfee9ba21647a6c60d52621760b8208176d0d7c6dabfa7fd12b`
 
-### 755. `hardcoded:src/config/opencodeProviderPresets.ts:opencodeProviderPresets:d4c50f95774cffbd:002`
+### 493. `hardcoded:src/config/opencodeProviderPresets.ts:opencodeProviderPresets:d4c50f95774cffbd:002`
 
 - 状态：确认遗漏
 - 文件：`src/config/opencodeProviderPresets.ts:4430`
@@ -8592,7 +5449,7 @@
 - 严重程度：中
 - 指纹：`d4c50f95774cffbdd6d3e0c9322cabbe28c48e1300e327260432b52186917a32`
 
-### 756. `hardcoded:src/config/piProviderPresets.ts:piProviderPresetDefinitions:789e7138516546aa:002`
+### 494. `hardcoded:src/config/piProviderPresets.ts:piProviderPresetDefinitions:789e7138516546aa:002`
 
 - 状态：确认遗漏
 - 文件：`src/config/piProviderPresets.ts:938`
@@ -8603,7 +5460,7 @@
 - 严重程度：中
 - 指纹：`789e7138516546aa68ed5ea9c8627110855d29b1508d9ad45c62862229330f09`
 
-### 757. `hardcoded:src/config/piProviderPresets.ts:piProviderPresetDefinitions:4c8a38aad6ae652f:002`
+### 495. `hardcoded:src/config/piProviderPresets.ts:piProviderPresetDefinitions:4c8a38aad6ae652f:002`
 
 - 状态：确认遗漏
 - 文件：`src/config/piProviderPresets.ts:964`
@@ -8614,7 +5471,7 @@
 - 严重程度：中
 - 指纹：`4c8a38aad6ae652f0539951f8b9983f36ffab8ed99199f7648df6aada9753a9c`
 
-### 758. `hardcoded:src/config/piProviderPresets.ts:piProviderPresetDefinitions:dfc683f1eeccb537:002`
+### 496. `hardcoded:src/config/piProviderPresets.ts:piProviderPresetDefinitions:dfc683f1eeccb537:002`
 
 - 状态：确认遗漏
 - 文件：`src/config/piProviderPresets.ts:1507`
@@ -8625,7 +5482,7 @@
 - 严重程度：中
 - 指纹：`dfc683f1eeccb5372dd95a3444222d8c6161c261fdfbe9efc0ad0b086f45e3c1`
 
-### 759. `hardcoded:src/config/piProviderPresets.ts:piProviderPresetDefinitions:97c44cb45918dcfe:002`
+### 497. `hardcoded:src/config/piProviderPresets.ts:piProviderPresetDefinitions:97c44cb45918dcfe:002`
 
 - 状态：确认遗漏
 - 文件：`src/config/piProviderPresets.ts:1534`
@@ -8636,7 +5493,7 @@
 - 严重程度：中
 - 指纹：`97c44cb45918dcfee9ba21647a6c60d52621760b8208176d0d7c6dabfa7fd12b`
 
-### 760. `hardcoded:src/config/piProviderPresets.ts:piProviderPresetDefinitions:d4c50f95774cffbd:002`
+### 498. `hardcoded:src/config/piProviderPresets.ts:piProviderPresetDefinitions:d4c50f95774cffbd:002`
 
 - 状态：确认遗漏
 - 文件：`src/config/piProviderPresets.ts:3221`
@@ -8647,7 +5504,7 @@
 - 严重程度：中
 - 指纹：`d4c50f95774cffbdd6d3e0c9322cabbe28c48e1300e327260432b52186917a32`
 
-### 761. `hardcoded:src/config/presetFamilies.ts:PRESET_FAMILIES:dfc683f1eeccb537:001`
+### 499. `hardcoded:src/config/presetFamilies.ts:PRESET_FAMILIES:dfc683f1eeccb537:001`
 
 - 状态：确认遗漏
 - 文件：`src/config/presetFamilies.ts:34`
@@ -8658,7 +5515,7 @@
 - 严重程度：中
 - 指纹：`dfc683f1eeccb5372dd95a3444222d8c6161c261fdfbe9efc0ad0b086f45e3c1`
 
-### 762. `hardcoded:src/config/universalProviderPresets.ts:universalProviderPresets:664ce053a17de1b3:001`
+### 500. `hardcoded:src/config/universalProviderPresets.ts:universalProviderPresets:664ce053a17de1b3:001`
 
 - 状态：确认遗漏
 - 文件：`src/config/universalProviderPresets.ts:75`
@@ -8670,7 +5527,7 @@
 - 严重程度：中
 - 指纹：`664ce053a17de1b3e13623a1bc0aff33eaebdcab7c04f81910e6cd9f90f08940`
 
-### 763. `hardcoded:src/config/universalProviderPresets.ts:universalProviderPresets:c0c340c6669b573e:001`
+### 501. `hardcoded:src/config/universalProviderPresets.ts:universalProviderPresets:c0c340c6669b573e:001`
 
 - 状态：确认遗漏
 - 文件：`src/config/universalProviderPresets.ts:78`
@@ -8682,7 +5539,7 @@
 - 严重程度：中
 - 指纹：`c0c340c6669b573e18e6d5299a9dd465ccd59f8fbfac855315a8bce686806315`
 
-### 764. `hardcoded:src/config/universalProviderPresets.ts:universalProviderPresets:f21532a893347f92:001`
+### 502. `hardcoded:src/config/universalProviderPresets.ts:universalProviderPresets:f21532a893347f92:001`
 
 - 状态：确认遗漏
 - 文件：`src/config/universalProviderPresets.ts:88`
@@ -8694,7 +5551,7 @@
 - 严重程度：中
 - 指纹：`f21532a893347f92a196d5fbf7be8002b50452cfc9517c225b38077a2e210d19`
 
-### 765. `hardcoded:src/hooks/usePromptActions.ts:toggleEnabled:7dddff38555ef878:001`
+### 503. `hardcoded:src/hooks/usePromptActions.ts:toggleEnabled:7dddff38555ef878:001`
 
 - 状态：确认遗漏
 - 文件：`src/hooks/usePromptActions.ts:199`
@@ -8705,7 +5562,7 @@
 - 严重程度：中
 - 指纹：`7dddff38555ef8787e5d36ce807e6e3c0b4c852ca4c6fd7de592f7e643ac2774`
 
-### 766. `hardcoded:src/index.html:<html>:25446063f4c3bc2c:001`
+### 504. `hardcoded:src/index.html:<html>:25446063f4c3bc2c:001`
 
 - 状态：确认遗漏
 - 文件：`src/index.html:6`
@@ -8716,7 +5573,7 @@
 - 严重程度：中
 - 指纹：`25446063f4c3bc2c4ce81522b40c699107700afcbbd0d794b4a8ec0e13978833`
 
-### 767. `hardcoded:src/lib/requestOverrides.ts:parseRequestOverrideJson:74a1bddc53f46610:001`
+### 505. `hardcoded:src/lib/requestOverrides.ts:parseRequestOverrideJson:74a1bddc53f46610:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/requestOverrides.ts:91`
@@ -8727,7 +5584,7 @@
 - 严重程度：中
 - 指纹：`74a1bddc53f466101dff2904702b8bd0ddaef45642ab91ee157378761979c0ea`
 
-### 768. `hardcoded:src/lib/requestOverrides.ts:parseBodyOverrideJson:813beebde821ec1c:001`
+### 506. `hardcoded:src/lib/requestOverrides.ts:parseBodyOverrideJson:813beebde821ec1c:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/requestOverrides.ts:107`
@@ -8738,7 +5595,7 @@
 - 严重程度：中
 - 指纹：`813beebde821ec1cb48962885314f3d031e6a6bd5482e27a4e210a81940131b4`
 
-### 769. `hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:587ae7c1023150ec:001`
+### 507. `hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:587ae7c1023150ec:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/requestOverrides.ts:124`
@@ -8749,7 +5606,7 @@
 - 严重程度：中
 - 指纹：`587ae7c1023150ecebc867c1df143765656e9380c6464a02a190f337ce98627c`
 
-### 770. `hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:de3ce1024b239d54:001`
+### 508. `hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:de3ce1024b239d54:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/requestOverrides.ts:127`
@@ -8760,7 +5617,7 @@
 - 严重程度：中
 - 指纹：`de3ce1024b239d54108c50efa6da9ba8387d822f3bb2da1daff71d060a2822dc`
 
-### 771. `hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:c77d98caf29bc0fc:001`
+### 509. `hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:c77d98caf29bc0fc:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/requestOverrides.ts:130`
@@ -8771,7 +5628,7 @@
 - 严重程度：中
 - 指纹：`c77d98caf29bc0fc37623658e4524653c937a42ca0d2d204d62c51b94bb13c65`
 
-### 772. `hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:a45fdb85bfe0af33:001`
+### 510. `hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:a45fdb85bfe0af33:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/requestOverrides.ts:133`
@@ -8782,7 +5639,7 @@
 - 严重程度：中
 - 指纹：`a45fdb85bfe0af339b8c272992fd8858ba95727f4e09e08409d29f8576cdf9c8`
 
-### 773. `hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:a639e11e36f4e1ed:001`
+### 511. `hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:a639e11e36f4e1ed:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/requestOverrides.ts:138`
@@ -8793,7 +5650,7 @@
 - 严重程度：中
 - 指纹：`a639e11e36f4e1edef2e3f824bd6feb179f721bbec6e803769cd4775cf4d6774`
 
-### 774. `hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:cdd5bee05a2f14b7:001`
+### 512. `hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:cdd5bee05a2f14b7:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/requestOverrides.ts:143`
@@ -8804,7 +5661,7 @@
 - 严重程度：中
 - 指纹：`cdd5bee05a2f14b731f62ea59c18ef91aa0461065f2a267a23497f4b9294d0f0`
 
-### 775. `hardcoded:src/lib/schemas/provider.ts:parseJsonError:aecab70fa3eb4483:001`
+### 513. `hardcoded:src/lib/schemas/provider.ts:parseJsonError:aecab70fa3eb4483:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/schemas/provider.ts:8`
@@ -8815,7 +5672,7 @@
 - 严重程度：高
 - 指纹：`aecab70fa3eb4483d59e7135e6cdb65eb399594a53e65c6aeb2db6bc15e2cbd7`
 
-### 776. `hardcoded:src/lib/schemas/provider.ts:parseJsonError:e61d4ec9a0fef58d:001`
+### 514. `hardcoded:src/lib/schemas/provider.ts:parseJsonError:e61d4ec9a0fef58d:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/schemas/provider.ts:17`
@@ -8826,7 +5683,7 @@
 - 严重程度：高
 - 指纹：`e61d4ec9a0fef58db5ff96f63a6a681b09e417d73a3ff70d650a53603efd6076`
 
-### 777. `hardcoded:src/lib/schemas/provider.ts:parseJsonError:d73db14d9074a0c0:001`
+### 515. `hardcoded:src/lib/schemas/provider.ts:parseJsonError:d73db14d9074a0c0:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/schemas/provider.ts:25`
@@ -8837,7 +5694,7 @@
 - 严重程度：高
 - 指纹：`d73db14d9074a0c08f89b15b5c974e472b2b555a85a6b94396bb512d6b49dd00`
 
-### 778. `hardcoded:src/lib/schemas/provider.ts:cleanMessage:97077e67b17ede29:001`
+### 516. `hardcoded:src/lib/schemas/provider.ts:cleanMessage:97077e67b17ede29:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/schemas/provider.ts:31`
@@ -8848,7 +5705,7 @@
 - 严重程度：高
 - 指纹：`97077e67b17ede29a35860441bc8000c254533a05720b689f192931234c66f58`
 
-### 779. `hardcoded:src/lib/schemas/provider.ts:cleanMessage:e892654a499d52a7:001`
+### 517. `hardcoded:src/lib/schemas/provider.ts:cleanMessage:e892654a499d52a7:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/schemas/provider.ts:32`
@@ -8859,7 +5716,7 @@
 - 严重程度：高
 - 指纹：`e892654a499d52a776c3d245b8800e9d15b1b07e6451fd2fa30d453a2b1a7b82`
 
-### 780. `hardcoded:src/lib/schemas/provider.ts:cleanMessage:c8cdcb6926a83554:001`
+### 518. `hardcoded:src/lib/schemas/provider.ts:cleanMessage:c8cdcb6926a83554:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/schemas/provider.ts:33`
@@ -8870,7 +5727,7 @@
 - 严重程度：高
 - 指纹：`c8cdcb6926a835545691338032924229cd53759990aae97477a7bf21e131e35b`
 
-### 781. `hardcoded:src/lib/schemas/provider.ts:parseJsonError:871e44e90167d743:001`
+### 519. `hardcoded:src/lib/schemas/provider.ts:parseJsonError:871e44e90167d743:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/schemas/provider.ts:35`
@@ -8881,7 +5738,7 @@
 - 严重程度：高
 - 指纹：`871e44e90167d7433d1072b39182b1448f83765d0dcde7e9577a2832e8791818`
 
-### 782. `hardcoded:src/lib/schemas/provider.ts:providerSchema:427abb574107ec59:001`
+### 520. `hardcoded:src/lib/schemas/provider.ts:providerSchema:427abb574107ec59:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/schemas/provider.ts:40`
@@ -8892,7 +5749,7 @@
 - 严重程度：高
 - 指纹：`427abb574107ec59a30fde77da8729c8c08073c9fb45ff05b125331a88aa7ec2`
 
-### 783. `hardcoded:src/lib/schemas/provider.ts:providerSchema:e8867867bf2d0227:001`
+### 521. `hardcoded:src/lib/schemas/provider.ts:providerSchema:e8867867bf2d0227:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/schemas/provider.ts:44`
@@ -8903,7 +5760,7 @@
 - 严重程度：高
 - 指纹：`e8867867bf2d0227e95f4188c168499c13dfee7249796dc55f4250831fbce7a3`
 
-### 784. `hardcoded:src/utils/grokBuildConfig.ts:validateGrokBuildConfig:635935c049e3abfa:001`
+### 522. `hardcoded:src/utils/grokBuildConfig.ts:validateGrokBuildConfig:635935c049e3abfa:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/grokBuildConfig.ts:134`
@@ -8914,7 +5771,7 @@
 - 严重程度：中
 - 指纹：`635935c049e3abfa7247fbd192cc4eb7265ad18cff7a3165d737ec491e3fab2c`
 
-### 785. `hardcoded:src/utils/grokBuildConfig.ts:validateGrokBuildConfig:968d44e96bbf12f6:001`
+### 523. `hardcoded:src/utils/grokBuildConfig.ts:validateGrokBuildConfig:968d44e96bbf12f6:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/grokBuildConfig.ts:140`
@@ -8925,7 +5782,7 @@
 - 严重程度：中
 - 指纹：`968d44e96bbf12f608276a5eced6afc50a8f4fef840e5eb40a52e7ad791610df`
 
-### 786. `hardcoded:src/utils/grokBuildConfig.ts:validateGrokBuildConfig:2a3495bd745faa88:001`
+### 524. `hardcoded:src/utils/grokBuildConfig.ts:validateGrokBuildConfig:2a3495bd745faa88:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/grokBuildConfig.ts:142`
@@ -8936,7 +5793,7 @@
 - 严重程度：中
 - 指纹：`2a3495bd745faa8885ff841209ab8af13f6a2e3e22c7cf8884f9a67725e148da`
 
-### 787. `hardcoded:src/utils/grokBuildConfig.ts:validateGrokBuildConfig:d431161f73c1ac64:001`
+### 525. `hardcoded:src/utils/grokBuildConfig.ts:validateGrokBuildConfig:d431161f73c1ac64:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/grokBuildConfig.ts:148`
@@ -8947,7 +5804,7 @@
 - 严重程度：中
 - 指纹：`d431161f73c1ac6437b4d0b9a7ffd0c0ea3514cff3ccbae1b61a1958141b009f`
 
-### 788. `hardcoded:src/utils/grokBuildConfig.ts:validateGrokBuildConfig:b7775baf7a5fdce9:001`
+### 526. `hardcoded:src/utils/grokBuildConfig.ts:validateGrokBuildConfig:b7775baf7a5fdce9:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/grokBuildConfig.ts:156`
@@ -8958,7 +5815,7 @@
 - 严重程度：中
 - 指纹：`b7775baf7a5fdce95f61dff5e19343fc3cbb8e50fcc71cb4f79597e58856db12`
 
-### 789. `hardcoded:src/utils/providerConfigUtils.ts:validateJsonConfig:148d195e21b05db5:001`
+### 527. `hardcoded:src/utils/providerConfigUtils.ts:validateJsonConfig:148d195e21b05db5:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/providerConfigUtils.ts:15`
@@ -8969,7 +5826,7 @@
 - 严重程度：中
 - 指纹：`148d195e21b05db59551b5f85b09fed0c9b3b4c7562654815396d4f98af53328`
 
-### 790. `hardcoded:src/utils/providerConfigUtils.ts:validateJsonConfig:639cb148b070e7fe:001`
+### 528. `hardcoded:src/utils/providerConfigUtils.ts:validateJsonConfig:639cb148b070e7fe:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/providerConfigUtils.ts:23`
@@ -8980,7 +5837,7 @@
 - 严重程度：中
 - 指纹：`639cb148b070e7fe5226b48b8369e5de2b69d8b08db5c7f3a39a5932a3532645`
 
-### 791. `hardcoded:src/utils/providerConfigUtils.ts:validateJsonConfig:f97bc449d16f097d:001`
+### 529. `hardcoded:src/utils/providerConfigUtils.ts:validateJsonConfig:f97bc449d16f097d:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/providerConfigUtils.ts:27`
@@ -8991,7 +5848,7 @@
 - 严重程度：中
 - 指纹：`f97bc449d16f097d3aea6632be3b35c38783c1ba9dd3aa8fa01cefbfd2b5e89a`
 
-### 792. `hardcoded:src/utils/tomlUtils.ts:tomlToMcpServer:240c7ff86f1aecbb:001`
+### 530. `hardcoded:src/utils/tomlUtils.ts:tomlToMcpServer:240c7ff86f1aecbb:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/tomlUtils.ts:55`
@@ -9002,7 +5859,7 @@
 - 严重程度：中
 - 指纹：`240c7ff86f1aecbb227873991becce122d47306bdd8a616c392308747d3657fb`
 
-### 793. `hardcoded:src/utils/tomlUtils.ts:tomlToMcpServer:d98de4c622938e59:001`
+### 531. `hardcoded:src/utils/tomlUtils.ts:tomlToMcpServer:d98de4c622938e59:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/tomlUtils.ts:93`
@@ -9013,7 +5870,7 @@
 - 严重程度：中
 - 指纹：`d98de4c622938e596340b98d8fabc8679feda1bb76fd35500647753705bd1270`
 
-### 794. `hardcoded:src/utils/tomlUtils.ts:normalizeServerConfig:b6499972805a260f:001`
+### 532. `hardcoded:src/utils/tomlUtils.ts:normalizeServerConfig:b6499972805a260f:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/tomlUtils.ts:103`
@@ -9024,7 +5881,7 @@
 - 严重程度：中
 - 指纹：`b6499972805a260fe3f2d54f127303cd8e7adcc8610923b7b7a54968ea5e8888`
 
-### 795. `hardcoded:src/utils/tomlUtils.ts:normalizeServerConfig:7a31ea38d57de345:001`
+### 533. `hardcoded:src/utils/tomlUtils.ts:normalizeServerConfig:7a31ea38d57de345:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/tomlUtils.ts:113`
@@ -9035,7 +5892,7 @@
 - 严重程度：中
 - 指纹：`7a31ea38d57de345c57f8e5647bb7ad9a84fefa98fb31df5c5a9ef8c17d87da8`
 
-### 796. `hardcoded:src/utils/tomlUtils.ts:normalizeServerConfig:628993c2cd0e3bf1:001`
+### 534. `hardcoded:src/utils/tomlUtils.ts:normalizeServerConfig:628993c2cd0e3bf1:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/tomlUtils.ts:151`
@@ -9046,7 +5903,7 @@
 - 严重程度：中
 - 指纹：`628993c2cd0e3bf114744cfd3087de772b027995d3d5d1cce9373e6aedf965de`
 
-### 797. `hardcoded:src/utils/tomlUtils.ts:normalizeServerConfig:36486ce84613bdea:001`
+### 535. `hardcoded:src/utils/tomlUtils.ts:normalizeServerConfig:36486ce84613bdea:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/tomlUtils.ts:180`

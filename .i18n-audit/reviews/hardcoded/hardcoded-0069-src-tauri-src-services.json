@@ -76,20 +76,22 @@
     },
     {
       "id": "hardcoded:src-tauri/src/services/model_pricing.rs:delete_model_pricing:68c3ae2b5fe66812:001",
-      "status": "确认遗漏",
+      "status": "无需国际化",
       "content_fingerprint": "68c3ae2b5fe668126f425ffd012160376bf111e553699fbe4307b676fdc60618",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/services/model_pricing.rs",
       "line": 445,
       "function": "delete_model_pricing",
       "expression": "usage.modelIdRequired",
-      "reason": "后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。",
-      "suggested_action": "将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。",
+      "reason": "产品决定：仅实现中英双语的后端错误不纳入本次韩语国际化遗漏项。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "高",
+      "severity": "低",
       "review_batch": "hardcoded:0069:src-tauri-src-services",
-      "round": 1
+      "round": 1,
+      "excluded_from_missing": true,
+      "exclusion_source_kind": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/services/model_pricing.rs:delete_model_pricing:f51a4830ec3259db:001",

@@ -66,11 +66,16 @@ def validate_hardcoded()->dict[str,Any]:
  if len(by_id)!=len(candidates): errors.append('hardcoded: duplicate candidate IDs')
  scope_excluded={item['path'] for item in CONFIG.get('scope_exclusions',[]) if item.get('path')}
  listed_scope_excluded={item['path'] for item in manifest.get('excluded_files',[]) if item.get('category')=='scope-exclusion'}
+ candidate_exclusions={item['source_kind']:item for item in CONFIG.get('candidate_scope_exclusions',[]) if item.get('source_kind')}
  if scope_excluded-listed_scope_excluded:
   errors.append(f'hardcoded: scope exclusions missing from manifest: {sorted(scope_excluded-listed_scope_excluded)}')
  leaked=sum(1 for c in candidates if c.get('source_file') in scope_excluded)
  if leaked:
   errors.append(f'hardcoded: {leaked} candidates remain from scope-excluded files')
+ for kind,rule in candidate_exclusions.items():
+  wrong=[c for c in candidates if c.get('source_kind')==kind and c.get('status')!=rule.get('status','无需国际化')]
+  if wrong:
+   errors.append(f'hardcoded: {len(wrong)} excluded {kind} candidates have the wrong status')
  assigned=defaultdict(list)
  for b in plans['batches']:
   for cid in b['record_ids']: assigned[cid].append(b['batch_id'])

@@ -25,20 +25,22 @@
     },
     {
       "id": "hardcoded:src-tauri/src/prompt_files.rs:prompt_file_path:270a6eaf162ceb81:001",
-      "status": "确认遗漏",
+      "status": "无需国际化",
       "content_fingerprint": "270a6eaf162ceb81963589e88bdf792c47831415fd472bfeb2eb12862abd6adc",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/prompt_files.rs",
       "line": 23,
       "function": "prompt_file_path",
       "expression": "app.prompts_unsupported",
-      "reason": "后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。",
-      "suggested_action": "将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。",
+      "reason": "产品决定：仅实现中英双语的后端错误不纳入本次韩语国际化遗漏项。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "高",
+      "severity": "低",
       "review_batch": "hardcoded:0057:src-tauri-src-prompt_files.rs",
-      "round": 1
+      "round": 1,
+      "excluded_from_missing": true,
+      "exclusion_source_kind": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/prompt_files.rs:prompt_file_path:af3a427b87668195:001",
@@ -93,20 +95,22 @@
     },
     {
       "id": "hardcoded:src-tauri/src/prompt_files.rs:get_base_dir_with_fallback:4ba692aafee48fa6:001",
-      "status": "确认遗漏",
+      "status": "无需国际化",
       "content_fingerprint": "4ba692aafee48fa634b7c82034a0e438ab83252d0ec3e15ebb9e917cd31f35cb",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/prompt_files.rs",
       "line": 90,
       "function": "get_base_dir_with_fallback",
       "expression": "home_dir_not_found",
-      "reason": "后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。",
-      "suggested_action": "将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。",
+      "reason": "产品决定：仅实现中英双语的后端错误不纳入本次韩语国际化遗漏项。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "高",
+      "severity": "低",
       "review_batch": "hardcoded:0057:src-tauri-src-prompt_files.rs",
-      "round": 1
+      "round": 1,
+      "excluded_from_missing": true,
+      "exclusion_source_kind": "backend_localized_error"
     }
   ]
 }

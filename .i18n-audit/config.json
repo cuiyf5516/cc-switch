@@ -31,5 +31,13 @@
       "path": "deplink.html",
       "reason": "产品决定：该独立静态页只提供简体中文，不纳入本次韩语国际化审查。"
     }
+  ],
+  "candidate_scope_exclusions": [
+    {
+      "source_kind": "backend_localized_error",
+      "status": "无需国际化",
+      "reason": "产品决定：仅实现中英双语的后端错误不纳入本次韩语国际化遗漏项。",
+      "severity": "低"
+    }
   ]
 }
