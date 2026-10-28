@@ -44,20 +44,27 @@
     },
     {
       "id": "dynamic-i18n:src/components/deeplink/McpConfirmation.tsx:McpConfirmation:d7f7b8d4887c79a0:001",
-      "status": "待核实",
+      "status": "无需国际化",
       "content_fingerprint": "d7f7b8d4887c79a0de17ef5158c37ad4cf32609e660350c71f01326dd264af1d",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
       "reviewer": "primary",
       "source_file": "src/components/deeplink/McpConfirmation.tsx",
       "line": 161,
       "function": "McpConfirmation",
       "expression": "riskI18nKey(kind)",
-      "reason": "翻译键由运行时表达式“riskI18nKey(kind)”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。",
-      "suggested_action": "核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。",
+      "reason": "RiskKind 的三个值均有 deeplink.risk.* 资源。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "中",
+      "severity": "低",
       "review_batch": "hardcoded:0113:src-components-deeplink",
-      "round": 1
+      "round": 1,
+      "dynamic_key_verification": true,
+      "dynamic_key_resolution": "finite-map",
+      "evidence_keys": [
+        "deeplink.risk.envHijack",
+        "deeplink.risk.privateEndpoint",
+        "deeplink.risk.shellCommand"
+      ]
     }
   ]
 }

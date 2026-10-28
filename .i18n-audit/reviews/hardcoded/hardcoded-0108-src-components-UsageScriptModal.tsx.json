@@ -365,20 +365,32 @@
     },
     {
       "id": "dynamic-i18n:src/components/UsageScriptModal.tsx:UsageScriptModal:f52cef484535047b:001",
-      "status": "待核实",
+      "status": "无需国际化",
       "content_fingerprint": "f52cef484535047b84076cc20d0d6ab8a036bf7c19ac95a1e96bd959dce84ce0",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
       "reviewer": "primary",
       "source_file": "src/components/UsageScriptModal.tsx",
       "line": 988,
       "function": "UsageScriptModal",
       "expression": "TEMPLATE_NAME_KEYS[name]",
-      "reason": "翻译键由运行时表达式“TEMPLATE_NAME_KEYS[name]”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。",
-      "suggested_action": "核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。",
+      "reason": "所有 TEMPLATE_NAME_KEYS 值均存在。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "中",
+      "severity": "低",
       "review_batch": "hardcoded:0108:src-components-UsageScriptModal.tsx",
-      "round": 1
+      "round": 1,
+      "dynamic_key_verification": true,
+      "dynamic_key_resolution": "finite-map",
+      "evidence_keys": [
+        "usageScript.templateCustom",
+        "usageScript.templateGeneral",
+        "usageScript.templateNewAPI",
+        "usageScript.templateSub2API",
+        "usageScript.templateCopilot",
+        "usageScript.templateTokenPlan",
+        "usageScript.templateBalance",
+        "usageScript.templateOfficialSubscription"
+      ]
     },
     {
       "id": "hardcoded:src/components/UsageScriptModal.tsx:UsageScriptModal:2f5f1d6fbfb061ed:001",

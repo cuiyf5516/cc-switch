@@ -156,37 +156,55 @@
     },
     {
       "id": "dynamic-i18n:src/components/skills/SkillsStorageSheet.tsx:SkillsStorageSheet:0c9f9f16eb7882e5:001",
-      "status": "待核实",
+      "status": "无需国际化",
       "content_fingerprint": "0c9f9f16eb7882e54ef00841c2a810356cde523b3b567ad568f426ada1cf34f4",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
       "reviewer": "primary",
       "source_file": "src/components/skills/SkillsStorageSheet.tsx",
       "line": 306,
       "function": "SkillsStorageSheet",
       "expression": "option.labelKey",
-      "reason": "翻译键由运行时表达式“option.labelKey”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。",
-      "suggested_action": "核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。",
+      "reason": "SYNC_METHODS 的 labelKey/descKey 均存在。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "中",
+      "severity": "低",
       "review_batch": "hardcoded:0137:src-components-skills",
-      "round": 1
+      "round": 1,
+      "dynamic_key_verification": true,
+      "dynamic_key_resolution": "finite-map",
+      "evidence_keys": [
+        "skills.storageSheet.syncSymlink",
+        "skills.storageSheet.syncSymlinkDesc",
+        "skills.storageSheet.syncAuto",
+        "skills.storageSheet.syncCopyDesc",
+        "skills.storageSheet.syncCopy"
+      ]
     },
     {
       "id": "dynamic-i18n:src/components/skills/SkillsStorageSheet.tsx:SkillsStorageSheet:36befa74dfbcc58f:001",
-      "status": "待核实",
+      "status": "无需国际化",
       "content_fingerprint": "36befa74dfbcc58f25411157c9597ba984e7e2d0a0815ac516fadfe3689ab2b7",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
       "reviewer": "primary",
       "source_file": "src/components/skills/SkillsStorageSheet.tsx",
       "line": 309,
       "function": "SkillsStorageSheet",
       "expression": "option.descKey",
-      "reason": "翻译键由运行时表达式“option.descKey”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。",
-      "suggested_action": "核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。",
+      "reason": "SYNC_METHODS 的 labelKey/descKey 均存在。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "中",
+      "severity": "低",
       "review_batch": "hardcoded:0137:src-components-skills",
-      "round": 1
+      "round": 1,
+      "dynamic_key_verification": true,
+      "dynamic_key_resolution": "finite-map",
+      "evidence_keys": [
+        "skills.storageSheet.syncSymlink",
+        "skills.storageSheet.syncSymlinkDesc",
+        "skills.storageSheet.syncAuto",
+        "skills.storageSheet.syncCopyDesc",
+        "skills.storageSheet.syncCopy"
+      ]
     },
     {
       "id": "hardcoded:src/components/skills/UnifiedSkillsPanel.tsx:filteredSkills:0c4237f14c86fc54:001",
@@ -209,20 +227,30 @@
     },
     {
       "id": "dynamic-i18n:src/components/skills/UnifiedSkillsPanel.tsx:text:dc4eb9bbc03ce6c2:001",
-      "status": "待核实",
+      "status": "无需国际化",
       "content_fingerprint": "dc4eb9bbc03ce6c2f1f6d09396558b5864c5f98fedaa2cb3471f608770e9cb02",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
       "reviewer": "primary",
       "source_file": "src/components/skills/UnifiedSkillsPanel.tsx",
       "line": 458,
       "function": "text",
       "expression": "enabled ? toastKey.on : toastKey.off",
-      "reason": "翻译键由运行时表达式“enabled ? toastKey.on : toastKey.off”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。",
-      "suggested_action": "核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。",
+      "reason": "toastKey 的调用值和 appMatrix 状态值均有资源。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "中",
+      "severity": "低",
       "review_batch": "hardcoded:0137:src-components-skills",
-      "round": 1
+      "round": 1,
+      "dynamic_key_verification": true,
+      "dynamic_key_resolution": "finite-map",
+      "evidence_keys": [
+        "appMatrix.toast.enabled",
+        "appMatrix.toast.disabled",
+        "skillsPage.toast.disabledSelection",
+        "appMatrix.cell.on",
+        "appMatrix.cell.off",
+        "appMatrix.cell.fail"
+      ]
     },
     {
       "id": "hardcoded:src/components/skills/UnifiedSkillsPanel.tsx:uninstallIds:762c11e5b60e3e2c:001",
@@ -317,20 +345,30 @@
     },
     {
       "id": "dynamic-i18n:src/components/skills/UnifiedSkillsPanel.tsx:InstalledRow:947324ed6a00ba24:001",
-      "status": "待核实",
+      "status": "无需国际化",
       "content_fingerprint": "947324ed6a00ba241dcc93e16c9b7022385f2e299608f805663901480e1d6454",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
       "reviewer": "primary",
       "source_file": "src/components/skills/UnifiedSkillsPanel.tsx",
       "line": 1929,
       "function": "InstalledRow",
       "expression": "`appMatrix.cell.${state}`",
-      "reason": "翻译键由运行时表达式“`appMatrix.cell.${state}`”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。",
-      "suggested_action": "核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。",
+      "reason": "toastKey 的调用值和 appMatrix 状态值均有资源。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "中",
+      "severity": "低",
       "review_batch": "hardcoded:0137:src-components-skills",
-      "round": 1
+      "round": 1,
+      "dynamic_key_verification": true,
+      "dynamic_key_resolution": "finite-map",
+      "evidence_keys": [
+        "appMatrix.toast.enabled",
+        "appMatrix.toast.disabled",
+        "skillsPage.toast.disabledSelection",
+        "appMatrix.cell.on",
+        "appMatrix.cell.off",
+        "appMatrix.cell.fail"
+      ]
     }
   ]
 }

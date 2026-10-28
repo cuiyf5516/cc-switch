@@ -190,20 +190,30 @@
     },
     {
       "id": "dynamic-i18n:src/hooks/useProviderActions.ts:message:957b5b6d4c6b0d30:001",
-      "status": "待核实",
+      "status": "无需国际化",
       "content_fingerprint": "957b5b6d4c6b0d309df52a69490ab3731b3e639d324d8b29bf10dc914b793946",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
       "reviewer": "primary",
       "source_file": "src/hooks/useProviderActions.ts",
       "line": 278,
       "function": "message",
       "expression": "messageKey",
-      "reason": "翻译键由运行时表达式“messageKey”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。",
-      "suggested_action": "核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。",
+      "reason": "messageKey 的六个分支键均存在。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "中",
+      "severity": "低",
       "review_batch": "hardcoded:0183:src-hooks-useProviderActions.ts",
-      "round": 1
+      "round": 1,
+      "dynamic_key_verification": true,
+      "dynamic_key_resolution": "finite-map",
+      "evidence_keys": [
+        "notifications.switchSuccess",
+        "notifications.codexRestartRequired",
+        "notifications.geminiRestartRequired",
+        "notifications.grokBuildRestartRequired",
+        "notifications.claudeDesktopRestartRequired",
+        "notifications.addToConfigSuccess"
+      ]
     }
   ]
 }

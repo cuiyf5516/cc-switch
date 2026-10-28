@@ -1,0 +1,1464 @@
+{
+  "schema_version": 1,
+  "count": 162,
+  "items": [
+    {
+      "id": "dynamic-i18n:src/App.tsx:handleEnablePiProvider:779cd86c8074aae3:001",
+      "source_file": "src/App.tsx",
+      "line": 362,
+      "column": 9,
+      "function": "handleEnablePiProvider",
+      "expression": "`${app}.provider.enabled`",
+      "context": "          error,\n        );\n      });\n      toast.success(\n        t(`${app}.provider.enabled`, {\n          defaultValue: \"已在 Pi 中启用\",\n        }),\n        { closeButton: true },\n      );\n    } catch (error) {"
+    },
+    {
+      "id": "dynamic-i18n:src/App.tsx:handleEnablePiProvider:4d25811d6f7f74f8:001",
+      "source_file": "src/App.tsx",
+      "line": 370,
+      "column": 9,
+      "function": "handleEnablePiProvider",
+      "expression": "`${app}.provider.enableFailed`",
+      "context": "      );\n    } catch (error) {\n      const detail = extractErrorMessage(error);\n      toast.error(\n        t(`${app}.provider.enableFailed`, {\n          defaultValue: \"无法在 Pi 中启用此供应商\",\n        }),\n        {\n          description:\n            translatePiProviderMutationError(detail, t) || detail || undefined,"
+    },
+    {
+      "id": "dynamic-i18n:src/App.tsx:handleConfirmAction:9f662d6a31a429e7:001",
+      "source_file": "src/App.tsx",
+      "line": 1049,
+      "column": 13,
+      "function": "handleConfirmAction",
+      "expression": "`${activeApp}.provider.removed`",
+      "context": "      }\n      await refreshAdditiveLiveState(activeApp);\n      toast.success(\n        isPiFamilyApp(activeApp)\n          ? t(`${activeApp}.provider.removed`, {\n              defaultValue: \"已从 Pi 移除\",\n            })\n          : t(\"notifications.removeFromConfigSuccess\", {\n              defaultValue: \"已从配置移除\",\n            }),"
+    },
+    {
+      "id": "dynamic-i18n:src/App.tsx:handleDuplicateProvider:fe3b12eac8542ca4:001",
+      "source_file": "src/App.tsx",
+      "line": 1103,
+      "column": 11,
+      "function": "handleDuplicateProvider",
+      "expression": "isNative\n              ? \"opencode.duplicateRequiresNativeDefinition\"\n              : \"opencode.duplicateRequiresDefinition\"",
+      "context": "          isNative ? \"package\" : \"npm\",\n        )\n      ) {\n        toast.error(\n          t(\n            isNative\n              ? \"opencode.duplicateRequiresNativeDefinition\"\n              : \"opencode.duplicateRequiresDefinition\",\n          ),\n        );"
+    },
+    {
+      "id": "dynamic-i18n:src/components/DeepLinkImportDialog.tsx:DeepLinkImportDialog:dfdad65bcce899e6:001",
+      "source_file": "src/components/DeepLinkImportDialog.tsx",
+      "line": 575,
+      "column": 34,
+      "function": "DeepLinkImportDialog",
+      "expression": "riskI18nKey(endpointRisk)",
+      "context": "                              </span>\n                            )}\n                            {endpointRisk && (\n                              <div className=\"text-xs font-normal mt-0.5\">\n                                {t(riskI18nKey(endpointRisk))}\n                              </div>\n                            )}\n                          </div>\n                        );\n                      })}"
+    },
+    {
+      "id": "dynamic-i18n:src/components/IconPicker.tsx:handleFileChange:16fefef2206f4fc1:001",
+      "source_file": "src/components/IconPicker.tsx",
+      "line": 116,
+      "column": 19,
+      "function": "handleFileChange",
+      "expression": "`iconPicker.uploadError.${code}`",
+      "context": "    } catch (error) {\n      if (seq !== selectionSeqRef.current) return;\n      const code =\n        error instanceof CustomIconError ? error.code : \"decodeFailed\";\n      toast.error(t(`iconPicker.uploadError.${code}`));\n    } finally {\n      if (seq === selectionSeqRef.current) setUploading(false);\n    }\n  };\n"
+    },
+    {
+      "id": "dynamic-i18n:src/components/SubscriptionQuotaFooter.tsx:tierLabel:594c5d7f4330650b:001",
+      "source_file": "src/components/SubscriptionQuotaFooter.tsx",
+      "line": 129,
+      "column": 33,
+      "function": "tierLabel",
+      "expression": "TIER_I18N_KEYS[name]",
+      "context": "  };\n}\n\nexport function tierLabel(t: TFunction, name: string): string {\n  return TIER_I18N_KEYS[name] ? t(TIER_I18N_KEYS[name]) : name;\n}\n\n/** 卡片合并行里的短档名（`subscription.short.*`，英日用缩写） */\nexport function tierShortLabel(t: TFunction, name: string): string {\n  const key = TIER_I18N_KEYS[name];"
+    },
+    {
+      "id": "dynamic-i18n:src/components/SubscriptionQuotaFooter.tsx:tierShortLabel:cc8832922601ce1f:001",
+      "source_file": "src/components/SubscriptionQuotaFooter.tsx",
+      "line": 135,
+      "column": 16,
+      "function": "tierShortLabel",
+      "expression": "key.replace(\"subscription.\", \"subscription.short.\")",
+      "context": "\n/** 卡片合并行里的短档名（`subscription.short.*`，英日用缩写） */\nexport function tierShortLabel(t: TFunction, name: string): string {\n  const key = TIER_I18N_KEYS[name];\n  return key ? t(key.replace(\"subscription.\", \"subscription.short.\")) : name;\n}\n\n/** 已知档位 → 额度行 */\nexport function tierLines(\n  t: TFunction,"
+    },
+    {
+      "id": "dynamic-i18n:src/components/SubscriptionQuotaFooter.tsx:label:ad936fcbed631fa6:001",
+      "source_file": "src/components/SubscriptionQuotaFooter.tsx",
+      "line": 152,
+      "column": 27,
+      "function": "label",
+      "expression": "group",
+      "context": "    .filter((tier) => tier.name in TIER_I18N_KEYS)\n    .filter((tier) => !inline || !HIDDEN_INLINE_TIERS.has(tier.name));\n  return (inline ? collapseInlineGroups(known) : known).map((tier) => {\n    const group = inline ? INLINE_TIER_GROUPS[tier.name] : undefined;\n    const label = group ? t(group) : tierLabel(t, tier.name);\n    return {\n      label,\n      line: tierLine(t, tier, label, {\n        short: group ? label : tierShortLabel(t, tier.name),\n        display,"
+    },
+    {
+      "id": "dynamic-i18n:src/components/UsageScriptModal.tsx:UsageScriptModal:f52cef484535047b:001",
+      "source_file": "src/components/UsageScriptModal.tsx",
+      "line": 988,
+      "column": 24,
+      "function": "UsageScriptModal",
+      "expression": "TEMPLATE_NAME_KEYS[name]",
+      "context": "                          : \"bg-surface text-fg-2 hover:bg-subtle hover:text-accent-foreground\",\n                      )}\n                      onClick={() => handleUsePreset(name)}\n                    >\n                      {t(TEMPLATE_NAME_KEYS[name])}\n                    </Button>\n                  );\n                })}\n            </div>\n"
+    },
+    {
+      "id": "dynamic-i18n:src/components/WhatsNewDialog.tsx:WhatsNewDialog:3f85b3caaa1db65c:001",
+      "source_file": "src/components/WhatsNewDialog.tsx",
+      "line": 123,
+      "column": 24,
+      "function": "WhatsNewDialog",
+      "expression": "`whatsNew.types.${item.type}`",
+      "context": "                    key={index}\n                    className=\"flex items-start gap-2 text-body text-fg-1\"\n                  >\n                    <span className=\"mt-0.5 shrink-0 rounded-control bg-subtle px-1.5 text-badge text-fg-2\">\n                      {t(`whatsNew.types.${item.type}`)}\n                    </span>\n                    <span className=\"min-w-0\">{item[language]}</span>\n                  </li>\n                ))}\n              </ul>"
+    },
+    {
+      "id": "dynamic-i18n:src/components/apps/AppsPage.tsx:sections:88b10ec29471d286:001",
+      "source_file": "src/components/apps/AppsPage.tsx",
+      "line": 217,
+      "column": 20,
+      "function": "sections",
+      "expression": "installed\n                ? \"appsPage.sectionInstalled\"\n                : \"appsPage.sectionNotInstalled\"",
+      "context": "            .filter((s) => s.installed === installed)\n            .map((s) => s.row);\n          return {\n            key,\n            title: t(\n              installed\n                ? \"appsPage.sectionInstalled\"\n                : \"appsPage.sectionNotInstalled\",\n              { count: rows.length },\n            ),"
+    },
+    {
+      "id": "dynamic-i18n:src/components/apps/AppsPage.tsx:envBadge:cfc322af6c201189:001",
+      "source_file": "src/components/apps/AppsPage.tsx",
+      "line": 749,
+      "column": 12,
+      "function": "envBadge",
+      "expression": "ENV_BADGE_CONFIG.wsl.labelKey",
+      "context": "    ? SOURCE_LABEL[defaultInstall.source]\n    : undefined;\n  const envBadge =\n    info?.env_type === \"wsl\" && ENV_BADGE_CONFIG.wsl\n      ? `${t(ENV_BADGE_CONFIG.wsl.labelKey)}${info.wsl_distro ? ` · ${info.wsl_distro}` : \"\"}`\n      : null;\n\n  const version = isVersionLoading ? (\n    <span\n      role=\"status\""
+    },
+    {
+      "id": "dynamic-i18n:src/components/apps/AppsPage.tsx:installHint:a7313ac9d3fdc954:001",
+      "source_file": "src/components/apps/AppsPage.tsx",
+      "line": 801,
+      "column": 23,
+      "function": "installHint",
+      "expression": "`appsPage.installHint.${tool}`",
+      "context": "        : t(\"settings.toolUpdate\")}\n    </Button>\n  ) : null;\n\n  const installHint = t(`appsPage.installHint.${tool}`, { defaultValue: \"\" });\n  const meta = defaultInstall ? (\n    <>\n      <span className=\"min-w-0 truncate font-mono\" title={defaultInstall.path}>\n        {defaultInstall.path}\n      </span>"
+    },
+    {
+      "id": "dynamic-i18n:src/components/apps/useToolManagement.ts:executeRun:fa889cec796591ae:001",
+      "source_file": "src/components/apps/useToolManagement.ts",
+      "line": 866,
+      "column": 11,
+      "function": "executeRun",
+      "expression": "action === \"uninstall\"\n              ? \"settings.toolUninstallFailed\"\n              : \"settings.toolActionFailed\"",
+      "context": "          },\n        );\n      } else if (succeeded === 0) {\n        toast.error(\n          t(\n            action === \"uninstall\"\n              ? \"settings.toolUninstallFailed\"\n              : \"settings.toolActionFailed\",\n          ),\n          {"
+    },
+    {
+      "id": "dynamic-i18n:src/components/deeplink/McpConfirmation.tsx:McpConfirmation:d7f7b8d4887c79a0:001",
+      "source_file": "src/components/deeplink/McpConfirmation.tsx",
+      "line": 161,
+      "column": 22,
+      "function": "McpConfirmation",
+      "expression": "riskI18nKey(kind)",
+      "context": "              key={kind}\n              className=\"text-warning-text text-sm flex items-start gap-2\"\n            >\n              <span aria-hidden=\"true\">⚠️</span>\n              <span>{t(riskI18nKey(kind))}</span>\n            </div>\n          ))}\n        </div>\n      )}\n"
+    },
+    {
+      "id": "dynamic-i18n:src/components/hermes/HermesMemoryPanel.tsx:name:75356b9afb016217:001",
+      "source_file": "src/components/hermes/HermesMemoryPanel.tsx",
+      "line": 119,
+      "column": 16,
+      "function": "name",
+      "expression": "meta.nameKey",
+      "context": "  configDir,\n}) => {\n  const { t } = useTranslation();\n  const meta = KIND_META[kind];\n  const name = t(meta.nameKey);\n  const { data, isLoading, isError } = useHermesMemory(kind, true);\n  const drafts = useHermesMemoryDrafts();\n  const toggleMutation = useToggleHermesMemoryEnabled();\n\n  // 只在第一次读到文件时填草稿；保存后的重新读取不覆盖正在编辑的内容"
+    },
+    {
+      "id": "dynamic-i18n:src/components/hermes/HermesMemoryPanel.tsx:handleToggle:7663f326f8433d18:001",
+      "source_file": "src/components/hermes/HermesMemoryPanel.tsx",
+      "line": 146,
+      "column": 13,
+      "function": "handleToggle",
+      "expression": "next ? \"hermes.memory.toggledOn\" : \"hermes.memory.toggledOff\"",
+      "context": "      { kind, enabled: next },\n      {\n        onSuccess: () =>\n          toast.success(\n            t(next ? \"hermes.memory.toggledOn\" : \"hermes.memory.toggledOff\", {\n              name,\n            }),\n          ),\n      },\n    );"
+    },
+    {
+      "id": "dynamic-i18n:src/components/hermes/HermesMemoryPanel.tsx:MemoryTabPane:8fb010723006dfa3:001",
+      "source_file": "src/components/hermes/HermesMemoryPanel.tsx",
+      "line": 175,
+      "column": 21,
+      "function": "MemoryTabPane",
+      "expression": "meta.descKey",
+      "context": "            {t(\"hermes.memory.enableLabel\", { name })}\n          </span>\n          <HelpTip title={t(\"hermes.memory.helpTitle\", { name })}>\n            {t(\"hermes.memory.helpBody\", {\n              desc: t(meta.descKey),\n              rule: t(\"hermes.memory.separatorRule\"),\n            })}\n          </HelpTip>\n        </div>\n        {enabled ? ("
+    },
+    {
+      "id": "dynamic-i18n:src/components/hermes/HermesMemoryPanel.tsx:MemoryTabPane:51f6c463686ee31f:001",
+      "source_file": "src/components/hermes/HermesMemoryPanel.tsx",
+      "line": 208,
+      "column": 33,
+      "function": "MemoryTabPane",
+      "expression": "meta.placeholderKey",
+      "context": "          disabled={!loaded}\n          onChange={(event) =>\n            hermesMemoryDrafts.edit(kind, event.target.value)\n          }\n          placeholder={loaded ? t(meta.placeholderKey) : t(\"prompts.loading\")}\n          spellCheck={false}\n          className={cn(\n            fieldClass,\n            \"min-h-[200px] flex-1 resize-none px-3.5 py-3 font-mono leading-[21px]\",\n          )}"
+    },
+    {
+      "id": "dynamic-i18n:src/components/hermes/HermesMemoryPanel.tsx:HermesMemoryPanel:43ecfa8432d123f8:001",
+      "source_file": "src/components/hermes/HermesMemoryPanel.tsx",
+      "line": 300,
+      "column": 22,
+      "function": "HermesMemoryPanel",
+      "expression": "KIND_META[kind].nameKey",
+      "context": "        items={KINDS.map((kind) => ({\n          value: kind,\n          label: (\n            <>\n              <span>{t(KIND_META[kind].nameKey)}</span>\n              <span className=\"font-mono text-badge font-normal text-fg-3\">\n                {KIND_META[kind].file}\n              </span>\n              {isHermesMemoryDirty(drafts, kind) && (\n                <span"
+    },
+    {
+      "id": "dynamic-i18n:src/components/mcp/McpFormModal.tsx:fieldErrorText:c2af3397f931d9d7:001",
+      "source_file": "src/components/mcp/McpFormModal.tsx",
+      "line": 206,
+      "column": 12,
+      "function": "fieldErrorText",
+      "expression": "`mcpPage.drawer.errors.${code}`",
+      "context": "    list.map((app) => APP_DISPLAY_NAME[app]).join(t(\"mcpPage.listSeparator\"));\n\n  const fieldErrorText = (code?: string) => {\n    if (!code) return \"\";\n    return t(`mcpPage.drawer.errors.${code}`, { name: name.trim() });\n  };\n\n  const formatLabel = (format: PasteFormat) =>\n    t(`mcpPage.drawer.pasteFormats.${format}`);\n"
+    },
+    {
+      "id": "dynamic-i18n:src/components/mcp/McpFormModal.tsx:formatLabel:365b5da25b0130b9:001",
+      "source_file": "src/components/mcp/McpFormModal.tsx",
+      "line": 210,
+      "column": 5,
+      "function": "formatLabel",
+      "expression": "`mcpPage.drawer.pasteFormats.${format}`",
+      "context": "    return t(`mcpPage.drawer.errors.${code}`, { name: name.trim() });\n  };\n\n  const formatLabel = (format: PasteFormat) =>\n    t(`mcpPage.drawer.pasteFormats.${format}`);\n\n  // ─── 模板 / 粘贴 ─────────────────────────────────────────────────────\n  const pickTemplate = (id: string) => {\n    const preset = mcpPresets.find((item) => item.id === id);\n    if (!preset) return;"
+    },
+    {
+      "id": "dynamic-i18n:src/components/mcp/McpFormModal.tsx:McpFormModal:110e6c2fccad7e63:001",
+      "source_file": "src/components/mcp/McpFormModal.tsx",
+      "line": 659,
+      "column": 32,
+      "function": "McpFormModal",
+      "expression": "`mcp.presets.${preset.id}.description`",
+      "context": "                  className=\"flex flex-wrap gap-2\"\n                >\n                  {mcpPresets.map((preset) => (\n                    <HoverTip\n                      content={t(`mcp.presets.${preset.id}.description`)}\n                    >\n                      <button\n                        key={preset.id}\n                        type=\"button\"\n                        aria-pressed={template === preset.id}"
+    },
+    {
+      "id": "dynamic-i18n:src/components/mcp/McpFormModal.tsx:McpFormModal:b38b4246acafdcdc:001",
+      "source_file": "src/components/mcp/McpFormModal.tsx",
+      "line": 668,
+      "column": 26,
+      "function": "McpFormModal",
+      "expression": "`mcpPage.templateLabels.${preset.id}`",
+      "context": "                        aria-pressed={template === preset.id}\n                        onClick={() => pickTemplate(preset.id)}\n                        className=\"h-7 whitespace-nowrap rounded-full border border-border-strong bg-surface px-3 text-body transition-colors hover:bg-subtle aria-pressed:bg-selected aria-pressed:font-medium\"\n                      >\n                        {t(`mcpPage.templateLabels.${preset.id}`, {\n                          defaultValue: preset.id,\n                        })}\n                      </button>\n                    </HoverTip>\n                  ))}"
+    },
+    {
+      "id": "dynamic-i18n:src/components/mcp/UnifiedMcpPanel.tsx:UnifiedMcpPanel:947324ed6a00ba24:001",
+      "source_file": "src/components/mcp/UnifiedMcpPanel.tsx",
+      "line": 940,
+      "column": 44,
+      "function": "UnifiedMcpPanel",
+      "expression": "`appMatrix.cell.${state}`",
+      "context": "                                    key={app}\n                                    app={app}\n                                    state={state}\n                                    disabled={controlsDisabled}\n                                    label={t(`appMatrix.cell.${state}`, {\n                                      name: id,\n                                      app: APP_DISPLAY_NAME[app],\n                                    })}\n                                    onClick={() =>\n                                      handleCellClick(id, server, app)"
+    },
+    {
+      "id": "dynamic-i18n:src/components/mcp/UnifiedMcpPanel.tsx:UnifiedMcpPanel:d9d6a85445fe9b7e:001",
+      "source_file": "src/components/mcp/UnifiedMcpPanel.tsx",
+      "line": 1143,
+      "column": 32,
+      "function": "UnifiedMcpPanel",
+      "expression": "IMPORT_SOURCE_FILES[app].noteKey as string",
+      "context": "                            {IMPORT_SOURCE_FILES[app].file}\n                          </code>\n                          {IMPORT_SOURCE_FILES[app].noteKey && (\n                            <span className=\"text-fg-2\">\n                              {t(IMPORT_SOURCE_FILES[app].noteKey as string)}\n                            </span>\n                          )}\n                        </span>\n                      </li>\n                    ))}"
+    },
+    {
+      "id": "dynamic-i18n:src/components/profiles/ProfileSwitcher.tsx:ProfileSwitcher:bf07f0e194763ea6:001",
+      "source_file": "src/components/profiles/ProfileSwitcher.tsx",
+      "line": 116,
+      "column": 20,
+      "function": "ProfileSwitcher",
+      "expression": "`profiles.switcherTooltip.${scope}`",
+      "context": "            aria-expanded={open}\n            aria-label={t(\"profiles.switcherAriaLabel\", {\n              name: currentProfile?.name ?? t(\"profiles.none\"),\n            })}\n            title={t(`profiles.switcherTooltip.${scope}`)}\n            className={cn(\n              \"inline-flex h-8 items-center gap-1.5 rounded-lg px-2.5 text-sm font-medium transition-colors\",\n              \"hover:bg-black/5 dark:hover:bg-white/5\",\n              currentProfile ? \"text-fg-1\" : \"text-fg-2\",\n            )}"
+    },
+    {
+      "id": "dynamic-i18n:src/components/profiles/ProfileSwitcher.tsx:ProfileSwitcher:bf07f0e194763ea6:002",
+      "source_file": "src/components/profiles/ProfileSwitcher.tsx",
+      "line": 134,
+      "column": 23,
+      "function": "ProfileSwitcher",
+      "expression": "`profiles.switcherTooltip.${scope}`",
+      "context": "        <PopoverContent\n          side=\"bottom\"\n          align=\"start\"\n          sideOffset={6}\n          aria-label={t(`profiles.switcherTooltip.${scope}`)}\n          className=\"z-[100] w-64 p-0\"\n        >\n          <Command label={t(\"profiles.searchPlaceholder\")}>\n            <CommandInput placeholder={t(\"profiles.searchPlaceholder\")} />\n            <CommandList>"
+    },
+    {
+      "id": "dynamic-i18n:src/components/profiles/ProfileSwitcher.tsx:ProfileSwitcher:1ea05b4ee91472f2:001",
+      "source_file": "src/components/profiles/ProfileSwitcher.tsx",
+      "line": 223,
+      "column": 16,
+      "function": "ProfileSwitcher",
+      "expression": "`profiles.createDescription.${scope}`",
+      "context": "        <DialogContent className=\"max-w-sm\" zIndex=\"alert\">\n          <DialogHeader className=\"space-y-3 border-b-0 bg-transparent pb-0\">\n            <DialogTitle>{t(\"profiles.createFromCurrent\")}</DialogTitle>\n            <DialogDescription>\n              {t(`profiles.createDescription.${scope}`)}\n            </DialogDescription>\n          </DialogHeader>\n          <div className=\"px-6 pt-3\">\n            <Input\n              value={newName}"
+    },
+    {
+      "id": "dynamic-i18n:src/components/prompts/PiNativePromptResources.tsx:PiInstructionFileEditor:d1d3865d992378c2:001",
+      "source_file": "src/components/prompts/PiNativePromptResources.tsx",
+      "line": 211,
+      "column": 16,
+      "function": "PiInstructionFileEditor",
+      "expression": "baseSnapshot.exists ? \"pi.prompts.editFile\" : \"pi.prompts.createFile\"",
+      "context": "\n  return (\n    <>\n      <PromptDrawer\n        title={t(\n          baseSnapshot.exists ? \"pi.prompts.editFile\" : \"pi.prompts.createFile\",\n          { filename: file.filename },\n        )}\n        description={t(file.descriptionKey)}\n        onClose={onClose}"
+    },
+    {
+      "id": "dynamic-i18n:src/components/prompts/PiNativePromptResources.tsx:PiInstructionFileEditor:a8bc05c127159b54:001",
+      "source_file": "src/components/prompts/PiNativePromptResources.tsx",
+      "line": 215,
+      "column": 22,
+      "function": "PiInstructionFileEditor",
+      "expression": "file.descriptionKey",
+      "context": "        title={t(\n          baseSnapshot.exists ? \"pi.prompts.editFile\" : \"pi.prompts.createFile\",\n          { filename: file.filename },\n        )}\n        description={t(file.descriptionKey)}\n        onClose={onClose}\n        busy={busy}\n        footer={\n          <>\n            {baseSnapshot.exists ? ("
+    },
+    {
+      "id": "dynamic-i18n:src/components/prompts/PiNativePromptResources.tsx:remove:2694dcf2980c7a5b:001",
+      "source_file": "src/components/prompts/PiNativePromptResources.tsx",
+      "line": 364,
+      "column": 16,
+      "function": "remove",
+      "expression": "kind === \"system_append\"\n            ? \"pi.prompts.appendDeleted\"\n            : \"pi.prompts.overrideDeleted\"",
+      "context": "      setEditing(null);\n      await queryClient.invalidateQueries({ queryKey: promptFileKey(kind) });\n      const blank = !snapshot.content.trim();\n      showPromptToast(t, {\n        title: t(\n          kind === \"system_append\"\n            ? \"pi.prompts.appendDeleted\"\n            : \"pi.prompts.overrideDeleted\",\n        ),\n        description: `${t("
+    },
+    {
+      "id": "dynamic-i18n:src/components/prompts/PiNativePromptResources.tsx:remove:ccfd4aa37ca34de2:001",
+      "source_file": "src/components/prompts/PiNativePromptResources.tsx",
+      "line": 369,
+      "column": 25,
+      "function": "remove",
+      "expression": "blank ? \"pi.prompts.deletedBlank\" : \"pi.prompts.deletedUndoable\"",
+      "context": "          kind === \"system_append\"\n            ? \"pi.prompts.appendDeleted\"\n            : \"pi.prompts.overrideDeleted\",\n        ),\n        description: `${t(\n          blank ? \"pi.prompts.deletedBlank\" : \"pi.prompts.deletedUndoable\",\n        )}${t(\"pi.prompts.reloadAfterDelete\")}`,\n        undoneTitle: t(\"pi.prompts.fileRestored\", {\n          filename: file.filename,\n        }),"
+    },
+    {
+      "id": "dynamic-i18n:src/components/prompts/PiNativePromptResources.tsx:PiSystemPromptFiles:d1d85835cac8c3b6:001",
+      "source_file": "src/components/prompts/PiNativePromptResources.tsx",
+      "line": 426,
+      "column": 20,
+      "function": "PiSystemPromptFiles",
+      "expression": "file.titleKey",
+      "context": "          >\n            <div className=\"flex min-w-0 flex-1 flex-col gap-0.5\">\n              <div className=\"flex min-w-0 items-center gap-2\">\n                <span className=\"whitespace-nowrap text-body font-medium text-fg-1\">\n                  {t(file.titleKey)}\n                </span>\n                <code className=\"whitespace-nowrap font-mono text-caption text-fg-2\">\n                  {file.filename}\n                </code>\n                {file.recommended ? ("
+    },
+    {
+      "id": "dynamic-i18n:src/components/prompts/PiNativePromptResources.tsx:PiSystemPromptFiles:a8bc05c127159b54:001",
+      "source_file": "src/components/prompts/PiNativePromptResources.tsx",
+      "line": 438,
+      "column": 18,
+      "function": "PiSystemPromptFiles",
+      "expression": "file.descriptionKey",
+      "context": "                  </span>\n                ) : null}\n              </div>\n              <span className=\"text-caption text-fg-2\">\n                {t(file.descriptionKey)}\n              </span>\n            </div>\n            <span\n              id={statusId}\n              className={cn("
+    },
+    {
+      "id": "dynamic-i18n:src/components/prompts/PiNativePromptResources.tsx:PiSystemPromptFiles:c2b9bd028b119153:001",
+      "source_file": "src/components/prompts/PiNativePromptResources.tsx",
+      "line": 478,
+      "column": 32,
+      "function": "PiSystemPromptFiles",
+      "expression": "data?.exists ? \"common.edit\" : \"pi.prompts.create\"",
+      "context": "                type=\"button\"\n                variant=\"neutral\"\n                size=\"compact\"\n                aria-describedby={statusId}\n                aria-label={`${t(data?.exists ? \"common.edit\" : \"pi.prompts.create\")} ${file.filename}`}\n                disabled={!data || remove.isPending}\n                onClick={() => setEditing(file.kind)}\n                className=\"min-w-16 shrink-0\"\n              >\n                {t(data?.exists ? \"common.edit\" : \"pi.prompts.create\")}"
+    },
+    {
+      "id": "dynamic-i18n:src/components/prompts/PiNativePromptResources.tsx:PiSystemPromptFiles:c2b9bd028b119153:002",
+      "source_file": "src/components/prompts/PiNativePromptResources.tsx",
+      "line": 483,
+      "column": 18,
+      "function": "PiSystemPromptFiles",
+      "expression": "data?.exists ? \"common.edit\" : \"pi.prompts.create\"",
+      "context": "                disabled={!data || remove.isPending}\n                onClick={() => setEditing(file.kind)}\n                className=\"min-w-16 shrink-0\"\n              >\n                {t(data?.exists ? \"common.edit\" : \"pi.prompts.create\")}\n              </Button>\n            )}\n\n            {editing === file.kind && data ? (\n              <PiInstructionFileEditor"
+    },
+    {
+      "id": "dynamic-i18n:src/components/prompts/PromptFormPanel.tsx:nameError:faa60122c7dfa55e:001",
+      "source_file": "src/components/prompts/PromptFormPanel.tsx",
+      "line": 88,
+      "column": 7,
+      "function": "nameError",
+      "expression": "isHermes ? \"prompts.nameRequiredHermes\" : \"prompts.nameRequired\"",
+      "context": "  const bodyBytes = utf8Bytes(content);\n  const limit = appId === \"mcode\" ? MCODE_PROMPT_LIMIT : undefined;\n  const overLimit = limit !== undefined && bodyBytes > limit;\n  const nameError = !name.trim()\n    ? t(isHermes ? \"prompts.nameRequiredHermes\" : \"prompts.nameRequired\")\n    : \"\";\n  const bodyError = overLimit\n    ? t(\"prompts.mcodeTooLarge\", { size: formatSize(bodyBytes) })\n    : \"\";\n  const showNameError = attempted && Boolean(nameError);"
+    },
+    {
+      "id": "dynamic-i18n:src/components/prompts/PromptFormPanel.tsx:PromptFormPanel:f3ffc31bc1e64a97:001",
+      "source_file": "src/components/prompts/PromptFormPanel.tsx",
+      "line": 195,
+      "column": 28,
+      "function": "PromptFormPanel",
+      "expression": "isHermes\n                  ? \"prompts.namePlaceholderHermes\"\n                  : \"prompts.namePlaceholder\"",
+      "context": "              type=\"text\"\n              value={name}\n              onChange={(event) => setName(event.target.value)}\n              disabled={saving}\n              placeholder={t(\n                isHermes\n                  ? \"prompts.namePlaceholderHermes\"\n                  : \"prompts.namePlaceholder\",\n              )}\n              aria-required=\"true\""
+    },
+    {
+      "id": "dynamic-i18n:src/components/prompts/PromptListItem.tsx:PromptListItem:d12e0500610428ba:001",
+      "source_file": "src/components/prompts/PromptListItem.tsx",
+      "line": 94,
+      "column": 21,
+      "function": "PromptListItem",
+      "expression": "active ? \"prompts.disableAria\" : \"prompts.enableAria\"",
+      "context": "        type=\"button\"\n        variant=\"neutral\"\n        size=\"compact\"\n        disabled={disabled}\n        aria-label={t(active ? \"prompts.disableAria\" : \"prompts.enableAria\", {\n          name: prompt.name,\n        })}\n        onClick={() => onToggle(id, !active)}\n        className=\"min-w-14 shrink-0\"\n      >"
+    },
+    {
+      "id": "dynamic-i18n:src/components/prompts/PromptListItem.tsx:PromptListItem:cccf9c2fec5053e8:001",
+      "source_file": "src/components/prompts/PromptListItem.tsx",
+      "line": 100,
+      "column": 10,
+      "function": "PromptListItem",
+      "expression": "active ? \"prompts.disable\" : \"prompts.enable\"",
+      "context": "        })}\n        onClick={() => onToggle(id, !active)}\n        className=\"min-w-14 shrink-0\"\n      >\n        {t(active ? \"prompts.disable\" : \"prompts.enable\")}\n      </Button>\n\n      <div className=\"flex shrink-0 gap-1\">\n        <HoverTip content={t(\"common.edit\")}>\n          <Button"
+    },
+    {
+      "id": "dynamic-i18n:src/components/prompts/usePromptPageCommon.ts:toggleEffectText:2225c982a3afe1fa:001",
+      "source_file": "src/components/prompts/usePromptPageCommon.ts",
+      "line": 64,
+      "column": 12,
+      "function": "toggleEffectText",
+      "expression": "enabled ? \"prompts.toast.hermesOn\" : \"prompts.toast.hermesOff\"",
+      "context": "  appId: AppId,\n  enabled: boolean,\n): string {\n  if (appId === \"hermes\") {\n    return t(enabled ? \"prompts.toast.hermesOn\" : \"prompts.toast.hermesOff\");\n  }\n  if (appId === \"pi\") return t(\"pi.prompts.reloadNotice\");\n  return \"\";\n}"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/CodexStaleClientsNotice.tsx:CodexStaleClientsNotice:d73fd9997e52d916:001",
+      "source_file": "src/components/providers/CodexStaleClientsNotice.tsx",
+      "line": 41,
+      "column": 16,
+      "function": "CodexStaleClientsNotice",
+      "expression": "staleClients.unverified\n            ? \"proxy.stackMode.codexStale.unverifiedTitle\"\n            : staleClients.auth\n              ? \"proxy.stackMode.codexStale.authTitle\"\n              : \"proxy.stackMode.codexStale.title\"",
+      "context": "  return (\n    <>\n      <Notice\n        tone=\"warning\"\n        title={t(\n          staleClients.unverified\n            ? \"proxy.stackMode.codexStale.unverifiedTitle\"\n            : staleClients.auth\n              ? \"proxy.stackMode.codexStale.authTitle\"\n              : \"proxy.stackMode.codexStale.title\","
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/KimiAccountLogin.tsx:rows:0efcbaf86f008873:001",
+      "source_file": "src/components/providers/KimiAccountLogin.tsx",
+      "line": 57,
+      "column": 13,
+      "function": "rows",
+      "expression": "`kimi.oauth.${account.region}`",
+      "context": "      login: account.nickname ?? account.name,\n      avatarUrl: account.avatarUrl,\n      details: account.authenticated\n        ? [\n            t(`kimi.oauth.${account.region}`),\n            account.primary ? t(\"kimi.oauth.primaryShort\") : null,\n          ].filter(Boolean)\n        : [account.error ?? t(\"kimi.oauth.signedOut\")],\n      isDefault: current,\n      needsReauth: !account.authenticated,"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/KimiAccountLogin.tsx:KimiAccountLogin:60eddd19f0eccda0:001",
+      "source_file": "src/components/providers/KimiAccountLogin.tsx",
+      "line": 181,
+      "column": 18,
+      "function": "KimiAccountLogin",
+      "expression": "confirmRemove?.primary\n            ? \"kimi.oauth.dismissConfirm\"\n            : \"kimi.oauth.removeConfirm\"",
+      "context": "          confirmRemove?.primary\n            ? t(\"kimi.oauth.dismissAccount\")\n            : t(\"kimi.oauth.removeAccount\")\n        }\n        message={t(\n          confirmRemove?.primary\n            ? \"kimi.oauth.dismissConfirm\"\n            : \"kimi.oauth.removeConfirm\",\n          { name: confirmRemove?.nickname ?? confirmRemove?.name },\n        )}"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/OpenTerminalDialog.tsx:OpenTerminalDialog:2b72580d648a686e:001",
+      "source_file": "src/components/providers/OpenTerminalDialog.tsx",
+      "line": 229,
+      "column": 16,
+      "function": "OpenTerminalDialog",
+      "expression": "appId === \"agy\"\n                  ? \"provider.openTerminalDialog.isolationBodyAgy\"\n                  : \"provider.openTerminalDialog.isolationBody\"",
+      "context": "        <div className=\"space-y-4 px-6 py-3\">\n          {provider && terminalIsIsolated(provider, appId) && (\n            <Notice title={t(\"provider.openTerminalDialog.isolationTitle\")}>\n              {/* Antigravity 没有「切换」，Claude Code 那句「之后切换不会影响它」对它不成立 */}\n              {t(\n                appId === \"agy\"\n                  ? \"provider.openTerminalDialog.isolationBodyAgy\"\n                  : \"provider.openTerminalDialog.isolationBody\",\n                { name: provider.name },\n              )}"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/ProviderCardActions.tsx:ProviderCardActions:7ac214e2da017a6c:001",
+      "source_file": "src/components/providers/ProviderCardActions.tsx",
+      "line": 158,
+      "column": 20,
+      "function": "ProviderCardActions",
+      "expression": "openTerminalIsolated\n              ? \"provider.openTerminalIsolated\"\n              : \"provider.openTerminal\"",
+      "context": "      )}\n\n      {onOpenTerminal && (\n        <HoverTip\n          content={t(\n            openTerminalIsolated\n              ? \"provider.openTerminalIsolated\"\n              : \"provider.openTerminal\",\n          )}\n        >"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/ProviderEmptyState.tsx:ProviderEmptyState:4fd05547609ab33c:001",
+      "source_file": "src/components/providers/ProviderEmptyState.tsx",
+      "line": 48,
+      "column": 13,
+      "function": "ProviderEmptyState",
+      "expression": "`${emptyCopyNs}.empty.title`",
+      "context": "        <Server className=\"h-6 w-6\" strokeWidth={1.5} aria-hidden=\"true\" />\n      </div>\n      <h2 className=\"text-section text-fg-1\">\n        {emptyCopyNs\n          ? t(`${emptyCopyNs}.empty.title`)\n          : t(\"provider.noProviders\")}\n      </h2>\n      {emptyCopyNs && (\n        <p className=\"mt-2 max-w-lg text-body text-fg-2\">\n          {t(`${emptyCopyNs}.empty.description`)}"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/ProviderEmptyState.tsx:ProviderEmptyState:bc32d0931c886d14:001",
+      "source_file": "src/components/providers/ProviderEmptyState.tsx",
+      "line": 53,
+      "column": 12,
+      "function": "ProviderEmptyState",
+      "expression": "`${emptyCopyNs}.empty.description`",
+      "context": "          : t(\"provider.noProviders\")}\n      </h2>\n      {emptyCopyNs && (\n        <p className=\"mt-2 max-w-lg text-body text-fg-2\">\n          {t(`${emptyCopyNs}.empty.description`)}\n        </p>\n      )}\n      {showKeyFieldsHint && (\n        <p className=\"mt-2 max-w-lg text-body text-fg-2\">\n          {t(\"provider.noProvidersDescriptionKeyFields\")}"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/ProviderList.tsx:piStateErrorNotice:a72c91773a926bd1:001",
+      "source_file": "src/components/providers/ProviderList.tsx",
+      "line": 430,
+      "column": 16,
+      "function": "piStateErrorNotice",
+      "expression": "`${appId}.current.readFailed`",
+      "context": "  const piStateErrorNotice =\n    isPiFamilyApp(appId) && isPiCurrentStateError ? (\n      <Notice\n        tone=\"warning\"\n        title={t(`${appId}.current.readFailed`, {\n          defaultValue: \"无法读取 Pi 当前配置\",\n        })}\n      >\n        {t(`${appId}.current.stateUnavailableHint`)}\n        {piStateError ? ` ${piStateError}` : \"\"}"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/ProviderList.tsx:piStateErrorNotice:cae9391778824b2d:001",
+      "source_file": "src/components/providers/ProviderList.tsx",
+      "line": 434,
+      "column": 10,
+      "function": "piStateErrorNotice",
+      "expression": "`${appId}.current.stateUnavailableHint`",
+      "context": "        title={t(`${appId}.current.readFailed`, {\n          defaultValue: \"无法读取 Pi 当前配置\",\n        })}\n      >\n        {t(`${appId}.current.stateUnavailableHint`)}\n        {piStateError ? ` ${piStateError}` : \"\"}\n      </Notice>\n    ) : null;\n\n  if (isLoading || (isLiveMembershipPending && sortedProviders.length > 0)) {"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/ClaudeDesktopProviderForm.tsx:applyDesktopPreset:e0d3c7fcb27f761e:001",
+      "source_file": "src/components/providers/forms/ClaudeDesktopProviderForm.tsx",
+      "line": 433,
+      "column": 44,
+      "function": "applyDesktopPreset",
+      "expression": "preset.nameKey",
+      "context": "    formBaseUrl: baseUrl,\n  });\n\n  const applyDesktopPreset = (preset: ClaudeDesktopProviderPreset) => {\n    form.setValue(\"name\", preset.nameKey ? t(preset.nameKey) : preset.name);\n    form.setValue(\"websiteUrl\", preset.websiteUrl);\n    form.setValue(\"notes\", \"\");\n    form.setValue(\"icon\", preset.icon ?? \"\");\n    form.setValue(\"iconColor\", preset.iconColor ?? \"\");\n"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/CodexConfigSections.tsx:CodexAuthSection:b3aada018c964656:001",
+      "source_file": "src/components/providers/forms/CodexConfigSections.tsx",
+      "line": 88,
+      "column": 12,
+      "function": "CodexAuthSection",
+      "expression": "isProxyTakeover\n              ? \"codexConfig.authJsonStorageHint\"\n              : \"codexConfig.authJsonHint\"",
+      "context": "      {error && <p className=\"text-xs text-danger-text\">{error}</p>}\n\n      {!error && (\n        <p className=\"text-xs text-fg-2\">\n          {t(\n            isProxyTakeover\n              ? \"codexConfig.authJsonStorageHint\"\n              : \"codexConfig.authJsonHint\",\n          )}\n        </p>"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/CodexConfigSections.tsx:CodexConfigSection:75b82bc2e41ebdef:001",
+      "source_file": "src/components/providers/forms/CodexConfigSections.tsx",
+      "line": 332,
+      "column": 12,
+      "function": "CodexConfigSection",
+      "expression": "isProxyTakeover\n              ? \"codexConfig.configTomlStorageHint\"\n              : \"codexConfig.configTomlHint\"",
+      "context": "      {configError && <p className=\"text-xs text-danger-text\">{configError}</p>}\n\n      {!configError && (\n        <p className=\"text-xs text-fg-2\">\n          {t(\n            isProxyTakeover\n              ? \"codexConfig.configTomlStorageHint\"\n              : \"codexConfig.configTomlHint\",\n          )}\n        </p>"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/CommonConfigEditor.tsx:CommonConfigEditor:e626f805fbbd0918:001",
+      "source_file": "src/components/providers/forms/CommonConfigEditor.tsx",
+      "line": 226,
+      "column": 22,
+      "function": "CommonConfigEditor",
+      "expression": "`claudeConfig.${key}`",
+      "context": "                checked={toggleStates[key]}\n                onChange={(e) => handleToggle(key, e.target.checked)}\n                className=\"ui-checkbox\"\n              />\n              <span>{t(`claudeConfig.${key}`)}</span>\n            </label>\n            <HelpTip title={t(`claudeConfig.${key}`)}>\n              {t(`claudeConfig.${key}Help`)}\n            </HelpTip>\n          </span>"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/CommonConfigEditor.tsx:CommonConfigEditor:e626f805fbbd0918:002",
+      "source_file": "src/components/providers/forms/CommonConfigEditor.tsx",
+      "line": 228,
+      "column": 29,
+      "function": "CommonConfigEditor",
+      "expression": "`claudeConfig.${key}`",
+      "context": "                className=\"ui-checkbox\"\n              />\n              <span>{t(`claudeConfig.${key}`)}</span>\n            </label>\n            <HelpTip title={t(`claudeConfig.${key}`)}>\n              {t(`claudeConfig.${key}Help`)}\n            </HelpTip>\n          </span>\n        ))}\n      </div>"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/CommonConfigEditor.tsx:CommonConfigEditor:6441eb22cfc8b522:001",
+      "source_file": "src/components/providers/forms/CommonConfigEditor.tsx",
+      "line": 229,
+      "column": 16,
+      "function": "CommonConfigEditor",
+      "expression": "`claudeConfig.${key}Help`",
+      "context": "              />\n              <span>{t(`claudeConfig.${key}`)}</span>\n            </label>\n            <HelpTip title={t(`claudeConfig.${key}`)}>\n              {t(`claudeConfig.${key}Help`)}\n            </HelpTip>\n          </span>\n        ))}\n      </div>\n      <JsonEditor"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/GrokBuildProviderForm.tsx:presetName:e0d3c7fcb27f761e:001",
+      "source_file": "src/components/providers/forms/GrokBuildProviderForm.tsx",
+      "line": 280,
+      "column": 48,
+      "function": "presetName",
+      "expression": "preset.nameKey",
+      "context": "      (candidate) => candidate.id === presetId,\n    );\n    if (!entry) return;\n    const preset = entry.preset;\n    const presetName = preset.nameKey ? String(t(preset.nameKey)) : preset.name;\n    const presetBaseUrl = extractCodexBaseUrl(preset.config) ?? \"\";\n    const presetModel = extractCodexModelName(preset.config) ?? profile;\n    const presetApiFormat =\n      preset.apiFormat ??\n      codexApiFormatFromWireApi(extractCodexWireApi(preset.config)) ??"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/HermesFormFields.tsx:baseUrlErrorMessage:5eb171ca5f27c5ee:001",
+      "source_file": "src/components/providers/forms/HermesFormFields.tsx",
+      "line": 113,
+      "column": 7,
+      "function": "baseUrlErrorMessage",
+      "expression": "BASE_URL_ERROR_I18N_KEY[baseUrlErrorCode]",
+      "context": "\n  const baseUrlErrorCode = useMemo(() => validateBaseUrl(baseUrl), [baseUrl]);\n  const showBaseUrlError = baseUrlTouched && baseUrlErrorCode !== null;\n  const baseUrlErrorMessage = baseUrlErrorCode\n    ? t(BASE_URL_ERROR_I18N_KEY[baseUrlErrorCode])\n    : \"\";\n\n  // Stable list keys: a manual ref rather than UUID-in-state so adding/removing\n  // rows doesn't re-mount unrelated inputs (would drop focus mid-typing).\n  const modelKeysRef = useRef<string[]>([]);"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/HermesFormFields.tsx:HermesFormFields:ebd78379247b5bd6:001",
+      "source_file": "src/components/providers/forms/HermesFormFields.tsx",
+      "line": 239,
+      "column": 18,
+      "function": "HermesFormFields",
+      "expression": "mode.labelKey",
+      "context": "          </SelectTrigger>\n          <SelectContent>\n            {hermesApiModes.map((mode) => (\n              <SelectItem key={mode.value} value={mode.value}>\n                {t(mode.labelKey)}\n              </SelectItem>\n            ))}\n          </SelectContent>\n        </Select>\n      </div>"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/KimiProviderForm.tsx:presetSelector:e0d3c7fcb27f761e:001",
+      "source_file": "src/components/providers/forms/KimiProviderForm.tsx",
+      "line": 417,
+      "column": 35,
+      "function": "presetSelector",
+      "expression": "preset.nameKey",
+      "context": "          ),\n        );\n        setProviderKey(preset?.providerKey ?? \"\");\n        form.reset({\n          name: preset?.nameKey ? t(preset.nameKey) : (preset?.name ?? \"\"),\n          notes: \"\",\n          websiteUrl: preset?.websiteUrl ?? \"\",\n          icon: preset?.icon ?? \"\",\n          iconColor: preset?.iconColor ?? \"\",\n          settingsConfig: \"\","
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/KimiProviderForm.tsx:KimiProviderForm:450a277c2780a76f:001",
+      "source_file": "src/components/providers/forms/KimiProviderForm.tsx",
+      "line": 766,
+      "column": 36,
+      "function": "KimiProviderForm",
+      "expression": "`kimi.capabilities.${capability}`",
+      "context": "                                <Label\n                                  htmlFor={`kimi-model-${capability}-${key}`}\n                                  className=\"cursor-pointer\"\n                                >\n                                  {t(`kimi.capabilities.${capability}`)}\n                                </Label>\n                                {CAPABILITIES_WITH_HELP.has(capability) && (\n                                  <HelpTip\n                                    title={t(`kimi.capabilities.${capability}`)}\n                                  >"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/KimiProviderForm.tsx:KimiProviderForm:450a277c2780a76f:002",
+      "source_file": "src/components/providers/forms/KimiProviderForm.tsx",
+      "line": 770,
+      "column": 44,
+      "function": "KimiProviderForm",
+      "expression": "`kimi.capabilities.${capability}`",
+      "context": "                                  {t(`kimi.capabilities.${capability}`)}\n                                </Label>\n                                {CAPABILITIES_WITH_HELP.has(capability) && (\n                                  <HelpTip\n                                    title={t(`kimi.capabilities.${capability}`)}\n                                  >\n                                    {t(`kimi.capabilityHints.${capability}`)}\n                                  </HelpTip>\n                                )}\n                              </div>"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/KimiProviderForm.tsx:KimiProviderForm:c76f11a5e2460403:001",
+      "source_file": "src/components/providers/forms/KimiProviderForm.tsx",
+      "line": 772,
+      "column": 38,
+      "function": "KimiProviderForm",
+      "expression": "`kimi.capabilityHints.${capability}`",
+      "context": "                                {CAPABILITIES_WITH_HELP.has(capability) && (\n                                  <HelpTip\n                                    title={t(`kimi.capabilities.${capability}`)}\n                                  >\n                                    {t(`kimi.capabilityHints.${capability}`)}\n                                  </HelpTip>\n                                )}\n                              </div>\n                              <Switch\n                                id={`kimi-model-${capability}-${key}`}"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/OmoFormFields.tsx:renderBuiltinModelRow:f19573ea4c8f34d1:001",
+      "source_file": "src/components/providers/forms/OmoFormFields.tsx",
+      "line": 921,
+      "column": 20,
+      "function": "renderBuiltinModelRow",
+      "expression": "def.tooltipKey",
+      "context": "              {def.display}\n              <span className=\"relative inline-flex group/tip\">\n                <HelpCircle className=\"h-3.5 w-3.5 text-fg-3 hover:text-fg-2 cursor-help shrink-0\" />\n                <span className=\"invisible opacity-0 group-hover/tip:visible group-hover/tip:opacity-100 transition-opacity duration-150 absolute left-0 top-full mt-1 z-50 w-[260px] rounded-md bg-popover text-popover-foreground border border-border shadow-md px-3 py-2 text-xs leading-relaxed font-normal pointer-events-none\">\n                  {t(def.tooltipKey)}\n                </span>\n              </span>\n            </div>\n            <div className=\"text-xs text-fg-2 truncate\">{t(def.descKey)}</div>\n          </div>"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/OmoFormFields.tsx:renderBuiltinModelRow:2b3d6a81dfe0d684:001",
+      "source_file": "src/components/providers/forms/OmoFormFields.tsx",
+      "line": 925,
+      "column": 58,
+      "function": "renderBuiltinModelRow",
+      "expression": "def.descKey",
+      "context": "                  {t(def.tooltipKey)}\n                </span>\n              </span>\n            </div>\n            <div className=\"text-xs text-fg-2 truncate\">{t(def.descKey)}</div>\n          </div>\n          {renderModelSelect(\n            currentModel,\n            (value) => handleModelChange(key, value, store, setter),\n            def.recommended,"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/PiProviderForm.tsx:PiProviderForm:144d278fd002fc14:001",
+      "source_file": "src/components/providers/forms/PiProviderForm.tsx",
+      "line": 1997,
+      "column": 60,
+      "function": "PiProviderForm",
+      "expression": "`pi.form.thinkingLevels.${level}`",
+      "context": "                                                type=\"button\"\n                                                aria-label={t(\n                                                  \"pi.form.editThinkingLevel\",\n                                                  {\n                                                    level: t(\n                                                      `pi.form.thinkingLevels.${level}`,\n                                                    ),\n                                                  },\n                                                )}\n                                                className=\"group flex h-[42px] w-full items-center gap-3 border-b border-border/40 px-4 text-left text-sm transition-colors last:border-b-0 hover:bg-subtle\""
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/PiProviderForm.tsx:PiProviderForm:144d278fd002fc14:002",
+      "source_file": "src/components/providers/forms/PiProviderForm.tsx",
+      "line": 2005,
+      "column": 52,
+      "function": "PiProviderForm",
+      "expression": "`pi.form.thinkingLevels.${level}`",
+      "context": "                                                )}\n                                                className=\"group flex h-[42px] w-full items-center gap-3 border-b border-border/40 px-4 text-left text-sm transition-colors last:border-b-0 hover:bg-subtle\"\n                                              >\n                                                <span className=\"flex-1\">\n                                                  {t(\n                                                    `pi.form.thinkingLevels.${level}`,\n                                                  )}\n                                                </span>\n                                                <span\n                                                  className={"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/PiProviderForm.tsx:PiProviderForm:144d278fd002fc14:003",
+      "source_file": "src/components/providers/forms/PiProviderForm.tsx",
+      "line": 2048,
+      "column": 50,
+      "function": "PiProviderForm",
+      "expression": "`pi.form.thinkingLevels.${level}`",
+      "context": "                                              sticky=\"always\"\n                                              className=\"pi-thinking-popover z-[1000] w-72 space-y-3 p-4 shadow-xl\"\n                                            >\n                                              <p className=\"text-sm font-medium\">\n                                                {t(\n                                                  `pi.form.thinkingLevels.${level}`,\n                                                )}\n                                              </p>\n                                              <label className=\"flex cursor-pointer items-center gap-2.5 text-sm\">\n                                                <input"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/PiProviderForm.tsx:PiProviderForm:144d278fd002fc14:004",
+      "source_file": "src/components/providers/forms/PiProviderForm.tsx",
+      "line": 2124,
+      "column": 62,
+      "function": "PiProviderForm",
+      "expression": "`pi.form.thinkingLevels.${level}`",
+      "context": "                                                  }\n                                                  aria-label={t(\n                                                    \"pi.form.thinkingLevelValue\",\n                                                    {\n                                                      level: t(\n                                                        `pi.form.thinkingLevels.${level}`,\n                                                      ),\n                                                    },\n                                                  )}\n                                                  className=\"h-8 min-w-0 flex-1 font-mono text-xs\""
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/PiProviderForm.tsx:PiProviderForm:132a666b0f252c49:001",
+      "source_file": "src/components/providers/forms/PiProviderForm.tsx",
+      "line": 2213,
+      "column": 30,
+      "function": "PiProviderForm",
+      "expression": "`omp.form.discoveryTypes.${labelKey}`",
+      "context": "                          {t(\"omp.form.discoveryOff\")}\n                        </SelectItem>\n                        {OMP_DISCOVERY_TYPES.map(({ value, labelKey }) => (\n                          <SelectItem key={value} value={value}>\n                            {t(`omp.form.discoveryTypes.${labelKey}`)}\n                          </SelectItem>\n                        ))}\n                        {ompDiscoveryType &&\n                          !OMP_DISCOVERY_TYPES.some(\n                            ({ value }) => value === ompDiscoveryType,"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:handleSubmit:b107d3ee7afe31c4:001",
+      "source_file": "src/components/providers/forms/ProviderForm.tsx",
+      "line": 1366,
+      "column": 13,
+      "function": "handleSubmit",
+      "expression": "isNativeOpencode\n                ? \"opencode.nativeCustomProviderRequired\"\n                : \"opencode.customProviderRequired\"",
+      "context": "          : !!opencodeForm.opencodeNpm.trim() &&\n            Object.keys(opencodeForm.opencodeModels).length > 0;\n        if (!hasDefinition) {\n          toast.error(\n            t(\n              isNativeOpencode\n                ? \"opencode.nativeCustomProviderRequired\"\n                : \"opencode.customProviderRequired\",\n            ),\n          );"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:presetName:70b8f41adf91a088:001",
+      "source_file": "src/components/providers/forms/ProviderForm.tsx",
+      "line": 1850,
+      "column": 13,
+      "function": "presetName",
+      "expression": "selectedPresetEntry.preset.nameKey",
+      "context": "      )?.login;\n      const presetName = selectedPresetEntry\n        ? \"nameKey\" in selectedPresetEntry.preset &&\n          selectedPresetEntry.preset.nameKey\n          ? t(selectedPresetEntry.preset.nameKey)\n          : selectedPresetEntry.preset.name\n        : null;\n      if (selectedAccountLogin && presetName && payload.name === presetName) {\n        payload.name = `${presetName} (${selectedAccountLogin})`;\n      }"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:handlePresetChange:e0d3c7fcb27f761e:001",
+      "source_file": "src/components/providers/forms/ProviderForm.tsx",
+      "line": 2245,
+      "column": 32,
+      "function": "handlePresetChange",
+      "expression": "preset.nameKey",
+      "context": "          \"openai_responses\",\n      );\n\n      form.reset({\n        name: preset.nameKey ? t(preset.nameKey) : preset.name,\n        websiteUrl: preset.websiteUrl ?? \"\",\n        settingsConfig: JSON.stringify({ auth, config }, null, 2),\n        icon: preset.icon ?? \"\",\n        iconColor: preset.iconColor ?? \"\",\n      });"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:handlePresetChange:e0d3c7fcb27f761e:002",
+      "source_file": "src/components/providers/forms/ProviderForm.tsx",
+      "line": 2271,
+      "column": 32,
+      "function": "handlePresetChange",
+      "expression": "preset.nameKey",
+      "context": "\n      resetGeminiConfig(env, config);\n\n      form.reset({\n        name: preset.nameKey ? t(preset.nameKey) : preset.name,\n        websiteUrl: preset.websiteUrl ?? \"\",\n        settingsConfig: JSON.stringify(preset.settingsConfig, null, 2),\n        icon: preset.icon ?? \"\",\n        iconColor: preset.iconColor ?? \"\",\n      });"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:handlePresetChange:e0d3c7fcb27f761e:003",
+      "source_file": "src/components/providers/forms/ProviderForm.tsx",
+      "line": 2300,
+      "column": 32,
+      "function": "handlePresetChange",
+      "expression": "preset.nameKey",
+      "context": "\n      opencodeForm.resetOpencodeState(config);\n\n      form.reset({\n        name: preset.nameKey ? t(preset.nameKey) : preset.name,\n        websiteUrl: preset.websiteUrl ?? \"\",\n        settingsConfig: JSON.stringify(config, null, 2),\n        icon: preset.icon ?? \"\",\n        iconColor: preset.iconColor ?? \"\",\n      });"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:handlePresetChange:e0d3c7fcb27f761e:004",
+      "source_file": "src/components/providers/forms/ProviderForm.tsx",
+      "line": 2327,
+      "column": 32,
+      "function": "handlePresetChange",
+      "expression": "preset.nameKey",
+      "context": "      openclawForm.resetOpenclawState(config);\n\n      // Update form fields\n      form.reset({\n        name: preset.nameKey ? t(preset.nameKey) : preset.name,\n        websiteUrl: preset.websiteUrl ?? \"\",\n        settingsConfig: JSON.stringify(config, null, 2),\n        icon: preset.icon ?? \"\",\n        iconColor: preset.iconColor ?? \"\",\n      });"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:handlePresetChange:e0d3c7fcb27f761e:005",
+      "source_file": "src/components/providers/forms/ProviderForm.tsx",
+      "line": 2344,
+      "column": 32,
+      "function": "handlePresetChange",
+      "expression": "preset.nameKey",
+      "context": "\n      hermesForm.resetHermesState(config, preset.providerKey);\n\n      form.reset({\n        name: preset.nameKey ? t(preset.nameKey) : preset.name,\n        websiteUrl: preset.websiteUrl ?? \"\",\n        settingsConfig: JSON.stringify(config, null, 2),\n        icon: preset.icon ?? \"\",\n        iconColor: preset.iconColor ?? \"\",\n      });"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:handlePresetChange:e0d3c7fcb27f761e:006",
+      "source_file": "src/components/providers/forms/ProviderForm.tsx",
+      "line": 2380,
+      "column": 30,
+      "function": "handlePresetChange",
+      "expression": "preset.nameKey",
+      "context": "    setLocalApiKeyField(preset.apiKeyField ?? \"ANTHROPIC_AUTH_TOKEN\");\n    setLocalIsFullUrl(false);\n\n    form.reset({\n      name: preset.nameKey ? t(preset.nameKey) : preset.name,\n      websiteUrl: preset.websiteUrl ?? \"\",\n      settingsConfig: JSON.stringify(config, null, 2),\n      icon: preset.icon ?? \"\",\n      iconColor: preset.iconColor ?? \"\",\n    });"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:ProviderFormFull:2929691ef61b6b98:001",
+      "source_file": "src/components/providers/forms/ProviderForm.tsx",
+      "line": 2593,
+      "column": 24,
+      "function": "ProviderFormFull",
+      "expression": "isProviderKeyLocked\n                          ? \"hermes.form.providerKeyBuiltinLocked\"\n                          : \"hermes.form.providerKeyBuiltin\"",
+      "context": "                    <p\n                      className=\"text-xs text-warning-text\"\n                      data-testid=\"hermes-key-builtin-warning\"\n                    >\n                      {t(\n                        isProviderKeyLocked\n                          ? \"hermes.form.providerKeyBuiltinLocked\"\n                          : \"hermes.form.providerKeyBuiltin\",\n                        { key: hermesForm.hermesProviderKey.trim() },\n                      )}"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/ProviderPresetSelector.tsx:PresetPicker:2ecf60adfaf48d3d:001",
+      "source_file": "src/components/providers/forms/ProviderPresetSelector.tsx",
+      "line": 697,
+      "column": 22,
+      "function": "PresetPicker",
+      "expression": "`providerPreset.group.${key}`",
+      "context": "        >\n          {navItems.map((key) => (\n            <CategoryButton\n              key={key}\n              label={t(`providerPreset.group.${key}`)}\n              count={countFor(key)}\n              active={category === key}\n              dim={searching && countFor(key) === 0}\n              onClick={() => setCategory(key)}\n            />"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/ProviderPresetSelector.tsx:PresetPicker:4449886f332aee87:001",
+      "source_file": "src/components/providers/forms/ProviderPresetSelector.tsx",
+      "line": 724,
+      "column": 16,
+      "function": "PresetPicker",
+      "expression": "`providerPreset.groupHint.${category}`",
+      "context": "\n        <div className=\"min-w-0 flex-1 overflow-y-auto\">\n          {category !== \"all\" && (\n            <p className=\"mb-2 text-caption text-fg-2\">\n              {t(`providerPreset.groupHint.${category}`)}\n            </p>\n          )}\n\n          {nothing ? (\n            <div className=\"flex flex-col items-center gap-2 py-12 text-center\">"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/ProviderPresetSelector.tsx:PresetPicker:d66617847d5d3184:001",
+      "source_file": "src/components/providers/forms/ProviderPresetSelector.tsx",
+      "line": 788,
+      "column": 22,
+      "function": "PresetPicker",
+      "expression": "`providerPreset.group.${section.group}`",
+      "context": "                  <h3\n                    id={`preset-section-${section.group}`}\n                    className=\"px-0.5 text-caption font-medium text-fg-2\"\n                  >\n                    {t(`providerPreset.group.${section.group}`)}\n                  </h3>\n                  <div className=\"grid grid-cols-2 gap-2\">\n                    {section.items.map(renderRow)}\n                  </div>\n                </section>"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/ProviderPresetSelector.tsx:presetRowDetail:1ef66cb0a07d81d7:001",
+      "source_file": "src/components/providers/forms/ProviderPresetSelector.tsx",
+      "line": 830,
+      "column": 12,
+      "function": "presetRowDetail",
+      "expression": "`providerPreset.loginWith.${loginAccountKey(appId, first.preset)}`",
+      "context": "        })\n      : t(\"providerPreset.matchedVersion\", { name });\n  }\n  if (presetRowGroup(row) === \"login\") {\n    return t(\n      `providerPreset.loginWith.${loginAccountKey(appId, first.preset)}`,\n    );\n  }\n  if (row.family) {\n    return t(\"providerPreset.versionCount\", {"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/hooks/useKimiOAuth.ts:poll:54e9f1fe2ffcfff0:001",
+      "source_file": "src/components/providers/forms/hooks/useKimiOAuth.ts",
+      "line": 97,
+      "column": 20,
+      "function": "poll",
+      "expression": "`kimi.oauth.${result.ended}`",
+      "context": "        if (current !== generation.current) return;\n        if (result.ended) {\n          activeFlow.current = null;\n          setFlow(null);\n          setError(t(`kimi.oauth.${result.ended}`));\n          setRetryable(false);\n        } else if (result.authenticated) {\n          activeFlow.current = null;\n          setFlow(null);\n          setError(null);"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/presetGroups.ts:presetDisplayName:e0d3c7fcb27f761e:001",
+      "source_file": "src/components/providers/forms/presetGroups.ts",
+      "line": 87,
+      "column": 34,
+      "function": "presetDisplayName",
+      "expression": "preset.nameKey",
+      "context": "  return domain.replace(DOMAIN_PREFIXES, \"\").replace(DOMAIN_SUFFIXES, \"\");\n}\n\nexport function presetDisplayName(preset: AnyPreset, t: Translate): string {\n  return preset.nameKey ? String(t(preset.nameKey)) : preset.name;\n}\n\n/**\n * 每个词都要出现在 `texts` 里；带点的词（「kimi.ai」「z.ai」）也可以命中完整域名。\n * 域名平时只比主体，免得「com」「api」全命中。"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/presetGroups.ts:familyDisplayName:68cf4bfef554bafb:001",
+      "source_file": "src/components/providers/forms/presetGroups.ts",
+      "line": 209,
+      "column": 32,
+      "function": "familyDisplayName",
+      "expression": "info.nameKey",
+      "context": "}\n\nexport function familyDisplayName(family: PresetFamilyId, t: Translate) {\n  const info: PresetFamilyInfo = PRESET_FAMILIES[family];\n  return info.nameKey ? String(t(info.nameKey)) : info.name;\n}\n\nexport function presetRowName(row: PresetRowItem, t: Translate): string {\n  return row.family\n    ? familyDisplayName(row.family, t)"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/presetGroups.ts:presetPlanLabel:0e82ff606c3fadd8:001",
+      "source_file": "src/components/providers/forms/presetGroups.ts",
+      "line": 219,
+      "column": 17,
+      "function": "presetPlanLabel",
+      "expression": "`providerPreset.plan.${plan}`",
+      "context": "    : presetDisplayName(row.versions[0].preset, t);\n}\n\nexport function presetPlanLabel(plan: PresetPlanKey, t: Translate): string {\n  return String(t(`providerPreset.plan.${plan}`));\n}\n\nexport function presetRegionLabel(\n  region: PresetRegionKey,\n  t: Translate,"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/presetGroups.ts:presetRegionLabel:ad2da87a36c33418:001",
+      "source_file": "src/components/providers/forms/presetGroups.ts",
+      "line": 226,
+      "column": 17,
+      "function": "presetRegionLabel",
+      "expression": "`providerPreset.region.${region}`",
+      "context": "export function presetRegionLabel(\n  region: PresetRegionKey,\n  t: Translate,\n): string {\n  return String(t(`providerPreset.region.${region}`));\n}\n\n/** 版本标签「套餐 · 地区」（「编程订阅 · 国内」）；两个都没写的用域名 */\nexport function presetVersionLabel(entry: PresetEntry, t: Translate): string {\n  const { planKey, regionKey } = entry.preset;"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/forms/shared/ApiKeySection.tsx:promotion:8c26f1886f0b1401:001",
+      "source_file": "src/components/providers/forms/shared/ApiKeySection.tsx",
+      "line": 60,
+      "column": 9,
+      "function": "promotion",
+      "expression": "`providerForm.partnerPromotion.${partnerPromotionKey}`",
+      "context": "  const showLink = shouldShowLink && Boolean(websiteUrl);\n  // 推广语跟着「获取 API Key」走，按输入框说明文字的样式写在框下面（v7 不画推广框）\n  const promotion =\n    showLink && partnerPromotionKey\n      ? t(`providerForm.partnerPromotion.${partnerPromotionKey}`, {\n          defaultValue: \"\",\n        })\n      : \"\";\n\n  return ("
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/mode/ModeDialog.tsx:EnterBody:fcdbad57bad3a97a:001",
+      "source_file": "src/components/providers/mode/ModeDialog.tsx",
+      "line": 226,
+      "column": 7,
+      "function": "EnterBody",
+      "expression": "app === \"claude-desktop\"\n          ? \"mode.dialog.desktopLeaveStackNote\"\n          : \"mode.dialog.leaveStackNote\"",
+      "context": "                : []),\n            ];\n  if (active === \"stack\" && target === \"route\") {\n    notes.push(\n      t(\n        app === \"claude-desktop\"\n          ? \"mode.dialog.desktopLeaveStackNote\"\n          : \"mode.dialog.leaveStackNote\",\n      ),\n    );"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/mode/ModeDialog.tsx:targetName:9a6e6056bc68a344:001",
+      "source_file": "src/components/providers/mode/ModeDialog.tsx",
+      "line": 249,
+      "column": 22,
+      "function": "targetName",
+      "expression": "`mode.names.${target}`",
+      "context": "      setBusy(false);\n    }\n  };\n\n  const targetName = t(`mode.names.${target}`);\n  const title = viaDirect\n    ? t(\"mode.dialog.switchTitle\", {\n        app: appName,\n        from: t(`mode.names.${active}`),\n        to: targetName,"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/mode/ModeDialog.tsx:title:63b0f1c3e4f1b584:001",
+      "source_file": "src/components/providers/mode/ModeDialog.tsx",
+      "line": 253,
+      "column": 15,
+      "function": "title",
+      "expression": "`mode.names.${active}`",
+      "context": "  const targetName = t(`mode.names.${target}`);\n  const title = viaDirect\n    ? t(\"mode.dialog.switchTitle\", {\n        app: appName,\n        from: t(`mode.names.${active}`),\n        to: targetName,\n      })\n    : target === \"route\"\n      ? t(\"mode.dialog.routeTitle\", { app: appName })\n      : t(\"mode.dialog.stackTitle\", { app: appName });"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/mode/ModeDialog.tsx:ExitBody:63b0f1c3e4f1b584:001",
+      "source_file": "src/components/providers/mode/ModeDialog.tsx",
+      "line": 427,
+      "column": 19,
+      "function": "ExitBody",
+      "expression": "`mode.names.${active}`",
+      "context": "      <div className=\"space-y-1\">\n        <DialogTitle className=\"text-title\">\n          {t(\"mode.dialog.exitTitle\", {\n            app: appName,\n            from: t(`mode.names.${active}`),\n          })}\n        </DialogTitle>\n        <DialogDescription className=\"text-body text-fg-2\">\n          {t(\"mode.dialog.exitLead\", { app: appName, provider })}\n        </DialogDescription>"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/mode/ModeTabs.tsx:ModeTabs:8594999185d253ca:001",
+      "source_file": "src/components/providers/mode/ModeTabs.tsx",
+      "line": 117,
+      "column": 16,
+      "function": "ModeTabs",
+      "expression": "`mode.names.${mode}`",
+      "context": "                className=\"h-3.5 w-3.5\"\n                strokeWidth={2}\n                aria-hidden=\"true\"\n              />\n              {t(`mode.names.${mode}`)}\n              {isActive && (\n                <span\n                  aria-label={t(\"mode.active\")}\n                  role=\"img\"\n                  className={cn("
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/mode/ModeTabs.tsx:ModeTabs:37635fc3d0ebe24c:001",
+      "source_file": "src/components/providers/mode/ModeTabs.tsx",
+      "line": 135,
+      "column": 14,
+      "function": "ModeTabs",
+      "expression": "`mode.help.${mode}`",
+      "context": "      </div>\n      <HelpTip title={t(\"mode.help.title\")} className=\"-ms-2\">\n        {modes.map((mode) => (\n          <span key={mode} className=\"block\">\n            {t(`mode.help.${mode}`)}\n          </span>\n        ))}\n      </HelpTip>\n\n      <div className=\"flex-1\" />"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:63b0f1c3e4f1b584:001",
+      "source_file": "src/components/providers/mode/SwitchModePanel.tsx",
+      "line": 384,
+      "column": 17,
+      "function": "SwitchModePanel",
+      "expression": "`mode.names.${active}`",
+      "context": "        key=\"broken\"\n        tone=\"warning\"\n        title={t(\"mode.notice.serviceDown\", {\n          app: appName,\n          mode: t(`mode.names.${active}`),\n        })}\n        actions={\n          <>\n            <Button\n              variant=\"neutral\""
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:3ccf2e312468eabd:001",
+      "source_file": "src/components/providers/mode/SwitchModePanel.tsx",
+      "line": 429,
+      "column": 17,
+      "function": "SwitchModePanel",
+      "expression": "`mode.names.${startupFailure.stack ? \"stack\" : \"route\"}`",
+      "context": "        key=\"startup\"\n        tone=\"warning\"\n        title={t(\"mode.notice.attachFailed\", {\n          app: appName,\n          mode: t(`mode.names.${startupFailure.stack ? \"stack\" : \"route\"}`),\n        })}\n        onDismiss={onDismissStartupFailure}\n        dismissLabel={t(\"common.close\")}\n        actions={\n          <Button"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:b01ceb686ee7b005:001",
+      "source_file": "src/components/providers/mode/SwitchModePanel.tsx",
+      "line": 467,
+      "column": 16,
+      "function": "SwitchModePanel",
+      "expression": "`provider.${stack.notice}`",
+      "context": "    notices.push(\n      <Notice\n        key=\"stackNotice\"\n        tone=\"warning\"\n        title={t(`provider.${stack.notice}`)}\n        actions={\n          stack.notice === \"routeOwnsCatalog\" ? (\n            <Button\n              variant=\"neutral\"\n              size=\"compact\""
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:814432bf883e93e6:001",
+      "source_file": "src/components/providers/mode/SwitchModePanel.tsx",
+      "line": 484,
+      "column": 18,
+      "function": "SwitchModePanel",
+      "expression": "`provider.officialModelsReason.${reason}`",
+      "context": "      >\n        {stack.noticeReasons?.length\n          ? stack.noticeReasons.map((reason) => (\n              <div key={reason}>\n                {t(`provider.officialModelsReason.${reason}`)}\n              </div>\n            ))\n          : undefined}\n      </Notice>,\n    );"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:5183420e5cea98fb:001",
+      "source_file": "src/components/providers/mode/SwitchModePanel.tsx",
+      "line": 517,
+      "column": 17,
+      "function": "SwitchModePanel",
+      "expression": "`mode.names.${view}`",
+      "context": "      <Notice\n        key=\"activate\"\n        tone=\"neutral\"\n        title={t(\"mode.activate.viewing\", {\n          view: t(`mode.names.${view}`),\n          app: appName,\n          active: t(`mode.names.${active}`),\n        })}\n        actions={\n          <Button"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:63b0f1c3e4f1b584:002",
+      "source_file": "src/components/providers/mode/SwitchModePanel.tsx",
+      "line": 519,
+      "column": 19,
+      "function": "SwitchModePanel",
+      "expression": "`mode.names.${active}`",
+      "context": "        tone=\"neutral\"\n        title={t(\"mode.activate.viewing\", {\n          view: t(`mode.names.${view}`),\n          app: appName,\n          active: t(`mode.names.${active}`),\n        })}\n        actions={\n          <Button\n            variant={view}\n            size=\"regular\""
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:63b0f1c3e4f1b584:003",
+      "source_file": "src/components/providers/mode/SwitchModePanel.tsx",
+      "line": 570,
+      "column": 18,
+      "function": "SwitchModePanel",
+      "expression": "`mode.names.${active}`",
+      "context": "                    : \"bg-fg-3\",\n                )}\n              />\n              <span className=\"shrink-0 text-fg-2\">\n                {t(`mode.names.${active}`)}\n              </span>\n              <span aria-hidden=\"true\" className=\"text-fg-3\">\n                ·\n              </span>\n              <span className=\"min-w-0 truncate font-medium text-fg-1\">"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/presentation.ts:buildSwitchSectionsByView:952b41156d70dc1d:001",
+      "source_file": "src/components/providers/presentation.ts",
+      "line": 616,
+      "column": 15,
+      "function": "buildSwitchSectionsByView",
+      "expression": "app === \"claude-desktop\"\n            ? \"providerCard.section.stackDefaultHelpDesktop\"\n            : \"providerCard.section.stackDefaultHelp\"",
+      "context": "        ? t(\"providerCard.section.stackDefault\")\n        : t(\"providerCard.section.stackDefaultAfterSwitch\"),\n      help: {\n        title: t(\"providerCard.section.stackDefault\"),\n        body: t(\n          app === \"claude-desktop\"\n            ? \"providerCard.section.stackDefaultHelpDesktop\"\n            : \"providerCard.section.stackDefaultHelp\",\n        ),\n      },"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/presentation.ts:piBlocked:770eceac0b7cd3f8:001",
+      "source_file": "src/components/providers/presentation.ts",
+      "line": 717,
+      "column": 9,
+      "function": "piBlocked",
+      "expression": "`${app}.current.stateUnavailableHint`",
+      "context": "  const added: ProviderSection[\"items\"] = [];\n  const available: ProviderSection[\"items\"] = [];\n  const piBlocked =\n    isPiFamilyApp(app) && input.piStateUnavailable\n      ? t(`${app}.current.stateUnavailableHint`)\n      : undefined;\n\n  for (const p of providers) {\n    const chips: CardChip[] = [];\n    if (app === \"kimi\") {"
+    },
+    {
+      "id": "dynamic-i18n:src/components/providers/presentation.ts:buildAdditiveSections:2eb4a51baae54d37:001",
+      "source_file": "src/components/providers/presentation.ts",
+      "line": 957,
+      "column": 16,
+      "function": "buildAdditiveSections",
+      "expression": "`apps.${app}`",
+      "context": "      title: t(\"providerCard.section.added\", { count: added.length }),\n      help: {\n        title: t(\"providerCard.section.addedHelpTitle\"),\n        body: t(\"providerCard.section.addedHelp\", {\n          app: t(`apps.${app}`),\n        }),\n      },\n      emptyText: t(\"providerCard.section.addedEmpty\"),\n      items: added,\n    },"
+    },
+    {
+      "id": "dynamic-i18n:src/components/quota/quotaRules.ts:tierLine:02df858ef720e28a:001",
+      "source_file": "src/components/quota/quotaRules.ts",
+      "line": 138,
+      "column": 11,
+      "function": "tierLine",
+      "expression": "used ? \"quota.tierUsed\" : \"quota.tierLeft\"",
+      "context": "    emphasis: left <= 0 ? undefined : `${shown}%`,\n    text:\n      left <= 0\n        ? t(\"quota.tierUsedUp\", params)\n        : t(used ? \"quota.tierUsed\" : \"quota.tierLeft\", {\n            ...params,\n            value: shown,\n          }),\n    value:\n      left <= 0"
+    },
+    {
+      "id": "dynamic-i18n:src/components/quota/quotaRules.ts:tierLine:b5286d080dc232bd:001",
+      "source_file": "src/components/quota/quotaRules.ts",
+      "line": 145,
+      "column": 11,
+      "function": "tierLine",
+      "expression": "used ? \"quota.used\" : \"quota.left\"",
+      "context": "          }),\n    value:\n      left <= 0\n        ? t(\"quota.usedUp\")\n        : t(used ? \"quota.used\" : \"quota.left\", { value: shown }),\n    label,\n    resetsAt: tier.resetsAt,\n    short:\n      short === undefined\n        ? undefined"
+    },
+    {
+      "id": "dynamic-i18n:src/components/sessions/SessionItem.tsx:deleteReason:26c0854586264f75:001",
+      "source_file": "src/components/sessions/SessionItem.tsx",
+      "line": 108,
+      "column": 7,
+      "function": "deleteReason",
+      "expression": "session.providerId === \"dsh\"\n          ? \"dsh.deleteSessionHint\"\n          : session.providerId === \"kimi\"\n            ? \"kimi.deleteSessionHint\"\n            : session.providerId === \"agy\"\n              ? \"sessionManager.agyDeleteHint\"\n              : \"sessionManager.mcodeDeleteHint\"",
+      "context": "    .filter(Boolean)\n    .join(\"\\n\");\n\n  const deleteReason = !deletable\n    ? t(\n        session.providerId === \"dsh\"\n          ? \"dsh.deleteSessionHint\"\n          : session.providerId === \"kimi\"\n            ? \"kimi.deleteSessionHint\"\n            : session.providerId === \"agy\""
+    },
+    {
+      "id": "dynamic-i18n:src/components/sessions/SessionManagerPage.tsx:label:2c70e12b7a0646f9:001",
+      "source_file": "src/components/sessions/SessionManagerPage.tsx",
+      "line": 312,
+      "column": 19,
+      "function": "label",
+      "expression": "key",
+      "context": "  const terminalName = useMemo(() => {\n    if (!isMac()) return null;\n    const value = settings?.preferredTerminal || \"terminal\";\n    const key = `settings.terminal.options.macos.${value}`;\n    const label = t(key);\n    return label === key ? value : label;\n  }, [settings?.preferredTerminal, t]);\n\n  const copyText = useCallback(\n    async (text: string, message: string) => {"
+    },
+    {
+      "id": "dynamic-i18n:src/components/sessions/reader/SessionReaderHeader.tsx:moreMenu:d9527cde90f33c89:001",
+      "source_file": "src/components/sessions/reader/SessionReaderHeader.tsx",
+      "line": 356,
+      "column": 16,
+      "function": "moreMenu",
+      "expression": "session.providerId === \"dsh\"\n                  ? \"dsh.deleteSessionHint\"\n                  : session.providerId === \"kimi\"\n                    ? \"kimi.deleteSessionHint\"\n                    : \"sessionManager.mcodeDeleteHint\"",
+      "context": "        </DropdownMenuItem>\n        {!deletable &&\n          [\"mcode\", \"kimi\", \"dsh\"].includes(session.providerId) && (\n            <p className=\"px-2.5 pb-1.5 text-caption text-fg-2\">\n              {t(\n                session.providerId === \"dsh\"\n                  ? \"dsh.deleteSessionHint\"\n                  : session.providerId === \"kimi\"\n                    ? \"kimi.deleteSessionHint\"\n                    : \"sessionManager.mcodeDeleteHint\","
+    },
+    {
+      "id": "dynamic-i18n:src/components/sessions/reader/exportMarkdown.ts:metaText:05aec9f0cd39e139:001",
+      "source_file": "src/components/sessions/reader/exportMarkdown.ts",
+      "line": 34,
+      "column": 48,
+      "function": "metaText",
+      "expression": "`status.${meta.status}`",
+      "context": "}\n\nconst metaText = (meta: StepMeta, { t, formatCost }: MarkdownExportOptions) => {\n  const parts: string[] = [];\n  if (isFailureStatus(meta.status)) parts.push(t(`status.${meta.status}`));\n  if (meta.exitCode !== undefined) {\n    parts.push(t(\"exitCode\", { code: meta.exitCode }));\n  }\n  if (meta.diff) parts.push(`+${meta.diff.added} −${meta.diff.removed}`);\n  if (meta.durationMs) parts.push(formatDuration(meta.durationMs));"
+    },
+    {
+      "id": "dynamic-i18n:src/components/sessions/reader/exportMarkdown.ts:label:741390bbafe0c1e5:001",
+      "source_file": "src/components/sessions/reader/exportMarkdown.ts",
+      "line": 80,
+      "column": 21,
+      "function": "label",
+      "expression": "style.thinkingLabelKey",
+      "context": "      ];\n    }\n    case \"thinking\": {\n      if (!options.includeThinking) return [];\n      const label = t(style.thinkingLabelKey);\n      const body = step.block.text || step.block.summary || \"\";\n      const glyph = style.thinkingGlyph ? `${style.thinkingGlyph} ` : \"\";\n      return [\n        `${pad}- ${glyph}${label}${body ? `: ${indentBody(body, `${pad}  `)}` : \"\"}`,\n      ];"
+    },
+    {
+      "id": "dynamic-i18n:src/components/sessions/reader/i18n.ts:useReaderT:a18b869b2e81c0c5:001",
+      "source_file": "src/components/sessions/reader/i18n.ts",
+      "line": 140,
+      "column": 14,
+      "function": "useReaderT",
+      "expression": "full",
+      "context": "    (key, options) => {\n      const full = key.startsWith(\"sessionManager.\")\n        ? key\n        : `${READER_I18N_PREFIX}${key}`;\n      return t(full, { defaultValue: defaultFor(full) ?? key, ...options });\n    },\n    [t],\n  );\n};"
+    },
+    {
+      "id": "dynamic-i18n:src/components/sessions/reader/toolSummary.ts:translate:982d9e3eb996f559:001",
+      "source_file": "src/components/sessions/reader/toolSummary.ts",
+      "line": 199,
+      "column": 51,
+      "function": "translate",
+      "expression": "text",
+      "context": "  \"write\",\n]);\n\nconst translate = (text: string, t?: Translate) =>\n  t && text.startsWith(READER_VERB_I18N_PREFIX) ? t(text) : text;\n\nconst verbFor = (\n  call: ToolCallBlock,\n  style: AgentReaderStyle,\n  t?: Translate,"
+    },
+    {
+      "id": "dynamic-i18n:src/components/sessions/reader/toolSummary.ts:verbFor:6806f86a17f0ae04:001",
+      "source_file": "src/components/sessions/reader/toolSummary.ts",
+      "line": 209,
+      "column": 46,
+      "function": "verbFor",
+      "expression": "verb",
+      "context": ") => {\n  const alias = RAW_NAME_VERBS[style.id]?.[call.rawName];\n  if (alias) return alias;\n  const verb = style.verbs[call.kind];\n  return verb === undefined ? call.rawName : translate(verb, t);\n};\n\n/** Codex 的文件改动动词：全是新增 Added、全是删除 Deleted，多文件显示「N files」 */\nconst codexDiffTitle = (call: ToolCallBlock, verb: string, target: string) => {\n  const files = call.diff?.files ?? [];"
+    },
+    {
+      "id": "dynamic-i18n:src/components/sessions/reader/toolSummary.ts:verb:5c4db77b4c3c9984:001",
+      "source_file": "src/components/sessions/reader/toolSummary.ts",
+      "line": 238,
+      "column": 18,
+      "function": "verb",
+      "expression": "TOOL_OUTPUT_VERB_KEY",
+      "context": "  options: StepTitleOptions = {},\n): StepTitle => {\n  const { call } = step;\n  if (!call) {\n    const verb = translate(TOOL_OUTPUT_VERB_KEY, options.t);\n    return { icon: \"\", verb, target: \"\", text: verb };\n  }\n  let verb = verbFor(call, style, options.t);\n  let target = PATH_KINDS.has(call.kind)\n    ? shortenPath(call.title, options.projectDir)"
+    },
+    {
+      "id": "dynamic-i18n:src/components/settings/BackupStorageSection.tsx:itemText:1db9123095e31b5b:001",
+      "source_file": "src/components/settings/BackupStorageSection.tsx",
+      "line": 42,
+      "column": 5,
+      "function": "itemText",
+      "expression": "`settings.backupStorage.items.${id}.${field}`",
+      "context": "  // 默认折叠：备份类别多时列表较长，标题行仍显示合计大小\n  const [open, setOpen] = useState(false);\n\n  const itemText = (id: string, field: \"name\" | \"hint\") =>\n    t(`settings.backupStorage.items.${id}.${field}`, { defaultValue: id });\n  const revealLabel = t(\"settings.backupStorage.reveal\");\n  const deleteLabel = t(\"settings.backupStorage.delete\");\n  const totalBytes = locations.reduce((sum, l) => sum + l.sizeBytes, 0);\n\n  const handleReveal = async (id: string) => {"
+    },
+    {
+      "id": "dynamic-i18n:src/components/settings/LogConfigPanel.tsx:LogConfigPanel:691fd4ccfbfb6e21:001",
+      "source_file": "src/components/settings/LogConfigPanel.tsx",
+      "line": 77,
+      "column": 20,
+      "function": "LogConfigPanel",
+      "expression": "`settings.advanced.logConfig.levelDesc.${level}`",
+      "context": "              <p>{t(\"settings.advanced.logConfig.levelDescription\")}</p>\n              {LOG_LEVELS.map((level) => (\n                <p key={level}>\n                  <span className=\"font-mono\">{level}</span> —{\" \"}\n                  {t(`settings.advanced.logConfig.levelDesc.${level}`)}\n                </p>\n              ))}\n            </div>\n          </HelpTip>\n        </div>"
+    },
+    {
+      "id": "dynamic-i18n:src/components/settings/LogConfigPanel.tsx:LogConfigPanel:e46dabee057f30b0:001",
+      "source_file": "src/components/settings/LogConfigPanel.tsx",
+      "line": 96,
+      "column": 18,
+      "function": "LogConfigPanel",
+      "expression": "`settings.advanced.logConfig.levels.${level}`",
+      "context": "          </SelectTrigger>\n          <SelectContent>\n            {LOG_LEVELS.map((level) => (\n              <SelectItem key={level} value={level}>\n                {t(`settings.advanced.logConfig.levels.${level}`)}\n              </SelectItem>\n            ))}\n          </SelectContent>\n        </Select>\n      </div>"
+    },
+    {
+      "id": "dynamic-i18n:src/components/settings/SettingsPage.tsx:SettingsPage:73080ad588a22bcf:001",
+      "source_file": "src/components/settings/SettingsPage.tsx",
+      "line": 533,
+      "column": 16,
+      "function": "SettingsPage",
+      "expression": "`settings.sections.${section}`",
+      "context": "  return (\n    <>\n      <AppPageHeader\n        icon={<SectionIcon className=\"h-5 w-5\" strokeWidth={1.5} />}\n        title={t(`settings.sections.${section}`)}\n      />\n      <div\n        ref={scrollRef}\n        id=\"main-content\"\n        className=\"min-h-0 flex-1 overflow-y-auto scroll-stable\""
+    },
+    {
+      "id": "dynamic-i18n:src/components/settings/TerminalSettings.tsx:TerminalSelect:79a386948d425aae:001",
+      "source_file": "src/components/settings/TerminalSettings.tsx",
+      "line": 103,
+      "column": 14,
+      "function": "TerminalSelect",
+      "expression": "terminal.labelKey",
+      "context": "      </SelectTrigger>\n      <SelectContent>\n        {terminals.map((terminal) => (\n          <SelectItem key={terminal.value} value={terminal.value}>\n            {t(terminal.labelKey)}\n          </SelectItem>\n        ))}\n      </SelectContent>\n    </Select>\n  );"
+    },
+    {
+      "id": "dynamic-i18n:src/components/settings/WebdavSyncSection.tsx:WebdavSyncSection:99f59962822de2ac:001",
+      "source_file": "src/components/settings/WebdavSyncSection.tsx",
+      "line": 1012,
+      "column": 24,
+      "function": "WebdavSyncSection",
+      "expression": "preset.label",
+      "context": "                </SelectTrigger>\n                <SelectContent>\n                  {WEBDAV_PRESETS.map((preset) => (\n                    <SelectItem key={preset.id} value={preset.id}>\n                      {t(preset.label)}\n                    </SelectItem>\n                  ))}\n                </SelectContent>\n              </Select>\n            </div>"
+    },
+    {
+      "id": "dynamic-i18n:src/components/settings/WebdavSyncSection.tsx:WebdavSyncSection:8387eb890b0f99fb:001",
+      "source_file": "src/components/settings/WebdavSyncSection.tsx",
+      "line": 1068,
+      "column": 24,
+      "function": "WebdavSyncSection",
+      "expression": "activePreset.hint",
+      "context": "            {/* Preset hint */}\n            {activePreset?.hint && (\n              <div className=\"flex items-start gap-2 pl-44 text-xs text-fg-2\">\n                <Info className=\"h-3.5 w-3.5 shrink-0 mt-0.5\" />\n                <span>{t(activePreset.hint)}</span>\n              </div>\n            )}\n\n            {/* Remote Root */}\n            <div className=\"flex items-center gap-4\">"
+    },
+    {
+      "id": "dynamic-i18n:src/components/settings/WebdavSyncSection.tsx:WebdavSyncSection:99f59962822de2ac:002",
+      "source_file": "src/components/settings/WebdavSyncSection.tsx",
+      "line": 1240,
+      "column": 24,
+      "function": "WebdavSyncSection",
+      "expression": "preset.label",
+      "context": "                </SelectTrigger>\n                <SelectContent>\n                  {S3_PRESETS.map((preset) => (\n                    <SelectItem key={preset.id} value={preset.id}>\n                      {t(preset.label)}\n                    </SelectItem>\n                  ))}\n                </SelectContent>\n              </Select>\n            </div>"
+    },
+    {
+      "id": "dynamic-i18n:src/components/settings/WebdavSyncSection.tsx:WebdavSyncSection:5dd4180e2514c9a4:001",
+      "source_file": "src/components/settings/WebdavSyncSection.tsx",
+      "line": 1251,
+      "column": 24,
+      "function": "WebdavSyncSection",
+      "expression": "activeS3Preset.hint",
+      "context": "            {/* Preset hint */}\n            {activeS3Preset?.hint && (\n              <div className=\"flex items-start gap-2 pl-44 text-xs text-fg-2\">\n                <Info className=\"h-3.5 w-3.5 shrink-0 mt-0.5\" />\n                <span>{t(activeS3Preset.hint)}</span>\n              </div>\n            )}\n\n            {/* Region */}\n            <div className=\"flex items-center gap-4\">"
+    },
+    {
+      "id": "dynamic-i18n:src/components/settings/sections/AppConfigSection.tsx:directoryRow:1743f9d9e477bf5f:001",
+      "source_file": "src/components/settings/sections/AppConfigSection.tsx",
+      "line": 114,
+      "column": 22,
+      "function": "directoryRow",
+      "expression": "DIRECTORY_PLACEHOLDER[app]",
+      "context": "            | string\n            | undefined\n        }\n        resolvedValue={resolvedDirs[app]}\n        placeholder={t(DIRECTORY_PLACEHOLDER[app])}\n        onChange={(value) => onDirectoryChange(app, value)}\n        onBrowse={() => onBrowseDirectory(app)}\n        onReset={() => onResetDirectory(app)}\n      />\n    </SettingsRow>"
+    },
+    {
+      "id": "dynamic-i18n:src/components/settings/sections/GeneralSection.tsx:GeneralSection:4b8d2a85ad692265:001",
+      "source_file": "src/components/settings/sections/GeneralSection.tsx",
+      "line": 70,
+      "column": 24,
+      "function": "GeneralSection",
+      "expression": "language.labelKey",
+      "context": "                </SelectTrigger>\n                <SelectContent>\n                  {LANGUAGES.map((language) => (\n                    <SelectItem key={language.value} value={language.value}>\n                      {t(language.labelKey)}\n                    </SelectItem>\n                  ))}\n                </SelectContent>\n              </Select>\n            }"
+    },
+    {
+      "id": "dynamic-i18n:src/components/settings/sections/RoutingSection.tsx:RoutingSection:8594999185d253ca:001",
+      "source_file": "src/components/settings/sections/RoutingSection.tsx",
+      "line": 402,
+      "column": 28,
+      "function": "RoutingSection",
+      "expression": "`mode.names.${mode}`",
+      "context": "            {usingApps.map(({ app, mode, routeName }) => (\n              <UsingAppRow\n                key={app}\n                app={app}\n                modeLabel={t(`mode.names.${mode}`)}\n                dotClass={MODE_TONE[mode].dot}\n                detail={\n                  mode === \"stack\"\n                    ? t(\"routingSettings.stackDetail\", { name: routeName })\n                    : t(\"routingSettings.routeDetail\", { name: routeName })"
+    },
+    {
+      "id": "dynamic-i18n:src/components/shell/Sidebar.tsx:SettingsDirectory:73080ad588a22bcf:001",
+      "source_file": "src/components/shell/Sidebar.tsx",
+      "line": 754,
+      "column": 20,
+      "function": "SettingsDirectory",
+      "expression": "`settings.sections.${section}`",
+      "context": "            key={section}\n            collapsed={collapsed}\n            selected={settingsSection === section}\n            icon={icon}\n            label={t(`settings.sections.${section}`)}\n            dot={section === \"about\" && hasUpdate}\n            dotTone=\"success\"\n            endDot\n            title={\n              section === \"about\" && hasUpdate"
+    },
+    {
+      "id": "dynamic-i18n:src/components/skills/SkillsStorageSheet.tsx:SkillsStorageSheet:0c9f9f16eb7882e5:001",
+      "source_file": "src/components/skills/SkillsStorageSheet.tsx",
+      "line": 306,
+      "column": 22,
+      "function": "SkillsStorageSheet",
+      "expression": "option.labelKey",
+      "context": "                    checked={syncMethod === option.id}\n                    onChange={() => handleSyncMethod(option.id)}\n                  />\n                  <span>\n                    {t(option.labelKey)}\n                    {option.descKey && (\n                      <span className=\"ml-2 text-caption text-fg-2\">\n                        {t(option.descKey)}\n                      </span>\n                    )}"
+    },
+    {
+      "id": "dynamic-i18n:src/components/skills/SkillsStorageSheet.tsx:SkillsStorageSheet:36befa74dfbcc58f:001",
+      "source_file": "src/components/skills/SkillsStorageSheet.tsx",
+      "line": 309,
+      "column": 26,
+      "function": "SkillsStorageSheet",
+      "expression": "option.descKey",
+      "context": "                  <span>\n                    {t(option.labelKey)}\n                    {option.descKey && (\n                      <span className=\"ml-2 text-caption text-fg-2\">\n                        {t(option.descKey)}\n                      </span>\n                    )}\n                  </span>\n                </label>\n              ))}"
+    },
+    {
+      "id": "dynamic-i18n:src/components/skills/UnifiedSkillsPanel.tsx:text:dc4eb9bbc03ce6c2:001",
+      "source_file": "src/components/skills/UnifiedSkillsPanel.tsx",
+      "line": 458,
+      "column": 18,
+      "function": "text",
+      "expression": "enabled ? toastKey.on : toastKey.off",
+      "context": "  ) => {\n    if (!beginWrite()) return;\n    try {\n      const { succeeded, failed } = await writeMany(ids, app, enabled);\n      let text = t(enabled ? toastKey.on : toastKey.off, {\n        app: APP_DISPLAY_NAME[app],\n        count: succeeded.length,\n        noun,\n      });\n      if (failed) text += t(\"appMatrix.toast.partialFail\", { count: failed });"
+    },
+    {
+      "id": "dynamic-i18n:src/components/skills/UnifiedSkillsPanel.tsx:InstalledRow:947324ed6a00ba24:001",
+      "source_file": "src/components/skills/UnifiedSkillsPanel.tsx",
+      "line": 1929,
+      "column": 22,
+      "function": "InstalledRow",
+      "expression": "`appMatrix.cell.${state}`",
+      "context": "              key={app}\n              app={app}\n              state={state}\n              disabled={disabled}\n              label={t(`appMatrix.cell.${state}`, {\n                name: skill.name,\n                app: APP_DISPLAY_NAME[app],\n              })}\n              onClick={() => onCell(app)}\n            />"
+    },
+    {
+      "id": "dynamic-i18n:src/components/usage/RequestLogColumnsMenu.tsx:RequestLogColumnsMenu:4c6b716150f3dad4:001",
+      "source_file": "src/components/usage/RequestLogColumnsMenu.tsx",
+      "line": 59,
+      "column": 16,
+      "function": "RequestLogColumnsMenu",
+      "expression": "REQUEST_LOG_COLUMN_LABEL_KEYS[id]",
+      "context": "      label={t(\"usage.display.logColumns\")}\n      summary={t(\"usage.display.logColumns\")}\n      items={TOGGLEABLE_REQUEST_LOG_COLUMNS.map(({ id }) => ({\n        id,\n        label: t(REQUEST_LOG_COLUMN_LABEL_KEYS[id]),\n        checked: logColumns.includes(id),\n      }))}\n      onToggle={(id) => {\n        const column = id as RequestLogColumnId;\n        void saveColumnOverrides("
+    },
+    {
+      "id": "dynamic-i18n:src/components/usage/RequestLogTable.tsx:label:4c6b716150f3dad4:001",
+      "source_file": "src/components/usage/RequestLogTable.tsx",
+      "line": 354,
+      "column": 19,
+      "function": "label",
+      "expression": "REQUEST_LOG_COLUMN_LABEL_KEYS[id]",
+      "context": "      body: t(\"usage.firstTokenHelp\"),\n    },\n  };\n  const renderHeader = (id: RequestLogColumnId) => {\n    const label = t(REQUEST_LOG_COLUMN_LABEL_KEYS[id]);\n    const help = headerHelp[id];\n    if (!help) return label;\n    return (\n      <span className=\"inline-flex items-center gap-0.5\">\n        {label}"
+    },
+    {
+      "id": "dynamic-i18n:src/components/usage/UsageDisplaySection.tsx:todayLabel:9c965868dda12772:001",
+      "source_file": "src/components/usage/UsageDisplaySection.tsx",
+      "line": 93,
+      "column": 5,
+      "function": "todayLabel",
+      "expression": "`usage.display.sidebarTodayItems.${item}`",
+      "context": "      setTodayItems(savedTodayItems);\n    }\n  };\n  const todayLabel = (item: SidebarTodayItem) =>\n    t(`usage.display.sidebarTodayItems.${item}`);\n  const todayFull = todayItems.length >= SIDEBAR_TODAY_MAX_ITEMS;\n\n  const savedChartType = resolveTrendChartType(value);\n  const [chartType, setChartType] = useState<TrendChartType>(savedChartType);\n  useEffect(() => setChartType(savedChartType), [savedChartType]);"
+    },
+    {
+      "id": "dynamic-i18n:src/components/usage/UsageDisplaySection.tsx:UsageDisplaySection:74fefa25328abc5c:001",
+      "source_file": "src/components/usage/UsageDisplaySection.tsx",
+      "line": 196,
+      "column": 20,
+      "function": "UsageDisplaySection",
+      "expression": "`usage.display.trendChartTypes.${type}`",
+      "context": "            </SelectTrigger>\n            <SelectContent>\n              {TREND_CHART_TYPES.map((type) => (\n                <SelectItem key={type} value={type}>\n                  {t(`usage.display.trendChartTypes.${type}`)}\n                </SelectItem>\n              ))}\n            </SelectContent>\n          </Select>\n          {currency !== \"USD\" && ("
+    },
+    {
+      "id": "dynamic-i18n:src/components/workspace/WorkspaceFilesPanel.tsx:WorkspaceFilesPanel:347a6a525595a8b6:001",
+      "source_file": "src/components/workspace/WorkspaceFilesPanel.tsx",
+      "line": 123,
+      "column": 58,
+      "function": "WorkspaceFilesPanel",
+      "expression": "file.descKey",
+      "context": "                  ) : (\n                    <Circle className=\"w-3.5 h-3.5 text-fg-3 flex-shrink-0\" />\n                  )}\n                </div>\n                <p className=\"text-xs text-fg-2 mt-0.5\">{t(file.descKey)}</p>\n              </div>\n            </button>\n          );\n        })}\n"
+    },
+    {
+      "id": "dynamic-i18n:src/config/mcpPresets.ts:getMcpPresetWithDescription:0c1d1c92eda0e772:001",
+      "source_file": "src/config/mcpPresets.ts",
+      "line": 102,
+      "column": 18,
+      "function": "getMcpPresetWithDescription",
+      "expression": "descriptionKey",
+      "context": "): McpServer => {\n  const descriptionKey = `mcp.presets.${preset.id}.description`;\n  return {\n    ...preset,\n    description: t(descriptionKey),\n  } as McpServer;\n};\n\nexport default mcpPresets;"
+    },
+    {
+      "id": "dynamic-i18n:src/hooks/useModeActions.ts:enter:883829e896b1bc8a:001",
+      "source_file": "src/hooks/useModeActions.ts",
+      "line": 62,
+      "column": 15,
+      "function": "enter",
+      "expression": "app === \"codex\"\n                  ? \"mode.toast.enteredStack\"\n                  : app === \"claude-desktop\"\n                    ? \"mode.toast.enteredStackDesktop\"\n                    : \"mode.toast.enteredStackLive\"",
+      "context": "              t(\"mode.toast.enteredRoute\", {\n                app: appName,\n                provider: routeName ?? \"\",\n              }) + (app === \"claude-desktop\" ? restartHint : \"\")\n            : t(\n                app === \"codex\"\n                  ? \"mode.toast.enteredStack\"\n                  : app === \"claude-desktop\"\n                    ? \"mode.toast.enteredStackDesktop\"\n                    : \"mode.toast.enteredStackLive\","
+    },
+    {
+      "id": "dynamic-i18n:src/hooks/usePromptActions.ts:toggleEnabled:0a592ddbd2de0f49:001",
+      "source_file": "src/hooks/usePromptActions.ts",
+      "line": 210,
+      "column": 15,
+      "function": "toggleEnabled",
+      "expression": "enabled\n                  ? \"pi.prompts.usePromptSuccess\"\n                  : \"pi.prompts.stopUsingSuccess\"",
+      "context": "          const refreshed =\n            currentAppIdRef.current === appId ? await reload() : false;\n          if (notify) {\n            toast.success(\n              t(\n                enabled\n                  ? \"pi.prompts.usePromptSuccess\"\n                  : \"pi.prompts.stopUsingSuccess\",\n              ),\n              {"
+    },
+    {
+      "id": "dynamic-i18n:src/hooks/useProviderActions.ts:message:957b5b6d4c6b0d30:001",
+      "source_file": "src/hooks/useProviderActions.ts",
+      "line": 278,
+      "column": 15,
+      "function": "message",
+      "expression": "messageKey",
+      "context": "            defaultMessage = \"已添加到配置\";\n          }\n          const message = result?.route\n            ? routeSwitchNotification(result.route, activeApp, provider.name, t)\n            : t(messageKey, { defaultValue: defaultMessage });\n          toast.success(message, {\n            closeButton: true,\n          });\n        }\n      } catch {"
+    },
+    {
+      "id": "dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:c948ad90dbb56786:001",
+      "source_file": "src/lib/claudePlan.ts",
+      "line": 17,
+      "column": 14,
+      "function": "claudePlanLabel",
+      "expression": "`${key}.pro`",
+      "context": "  if (!type) return null;\n  const key = \"provider.form.claudeAccount.plan\";\n  switch (type) {\n    case \"pro\":\n      return t(`${key}.pro`, { defaultValue: \"Pro\" });\n    case \"max\":\n      if (rateLimitTier === \"default_claude_max_20x\") {\n        return t(`${key}.max20x`, { defaultValue: \"Max 20x\" });\n      }\n      if (rateLimitTier === \"default_claude_max_5x\") {"
+    },
+    {
+      "id": "dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:e6d34e9dad987f63:001",
+      "source_file": "src/lib/claudePlan.ts",
+      "line": 20,
+      "column": 16,
+      "function": "claudePlanLabel",
+      "expression": "`${key}.max20x`",
+      "context": "    case \"pro\":\n      return t(`${key}.pro`, { defaultValue: \"Pro\" });\n    case \"max\":\n      if (rateLimitTier === \"default_claude_max_20x\") {\n        return t(`${key}.max20x`, { defaultValue: \"Max 20x\" });\n      }\n      if (rateLimitTier === \"default_claude_max_5x\") {\n        return t(`${key}.max5x`, { defaultValue: \"Max 5x\" });\n      }\n      return t(`${key}.max`, { defaultValue: \"Max\" });"
+    },
+    {
+      "id": "dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:526dea196aee52d7:001",
+      "source_file": "src/lib/claudePlan.ts",
+      "line": 23,
+      "column": 16,
+      "function": "claudePlanLabel",
+      "expression": "`${key}.max5x`",
+      "context": "      if (rateLimitTier === \"default_claude_max_20x\") {\n        return t(`${key}.max20x`, { defaultValue: \"Max 20x\" });\n      }\n      if (rateLimitTier === \"default_claude_max_5x\") {\n        return t(`${key}.max5x`, { defaultValue: \"Max 5x\" });\n      }\n      return t(`${key}.max`, { defaultValue: \"Max\" });\n    case \"team\":\n      // Claude Code 自己也按这个组合认 Team 的高级席位\n      return rateLimitTier === \"default_claude_max_5x\""
+    },
+    {
+      "id": "dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:0643f8d5c2a7a4d6:001",
+      "source_file": "src/lib/claudePlan.ts",
+      "line": 25,
+      "column": 14,
+      "function": "claudePlanLabel",
+      "expression": "`${key}.max`",
+      "context": "      }\n      if (rateLimitTier === \"default_claude_max_5x\") {\n        return t(`${key}.max5x`, { defaultValue: \"Max 5x\" });\n      }\n      return t(`${key}.max`, { defaultValue: \"Max\" });\n    case \"team\":\n      // Claude Code 自己也按这个组合认 Team 的高级席位\n      return rateLimitTier === \"default_claude_max_5x\"\n        ? t(`${key}.teamPremium`, { defaultValue: \"Team 高级席位\" })\n        : t(`${key}.team`, { defaultValue: \"Team\" });"
+    },
+    {
+      "id": "dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:73cc9395a6dcb325:001",
+      "source_file": "src/lib/claudePlan.ts",
+      "line": 29,
+      "column": 11,
+      "function": "claudePlanLabel",
+      "expression": "`${key}.teamPremium`",
+      "context": "      return t(`${key}.max`, { defaultValue: \"Max\" });\n    case \"team\":\n      // Claude Code 自己也按这个组合认 Team 的高级席位\n      return rateLimitTier === \"default_claude_max_5x\"\n        ? t(`${key}.teamPremium`, { defaultValue: \"Team 高级席位\" })\n        : t(`${key}.team`, { defaultValue: \"Team\" });\n    case \"enterprise\":\n      return t(`${key}.enterprise`, { defaultValue: \"Enterprise\" });\n    default:\n      return type.charAt(0).toUpperCase() + type.slice(1);"
+    },
+    {
+      "id": "dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:8047060929970a87:001",
+      "source_file": "src/lib/claudePlan.ts",
+      "line": 30,
+      "column": 11,
+      "function": "claudePlanLabel",
+      "expression": "`${key}.team`",
+      "context": "    case \"team\":\n      // Claude Code 自己也按这个组合认 Team 的高级席位\n      return rateLimitTier === \"default_claude_max_5x\"\n        ? t(`${key}.teamPremium`, { defaultValue: \"Team 高级席位\" })\n        : t(`${key}.team`, { defaultValue: \"Team\" });\n    case \"enterprise\":\n      return t(`${key}.enterprise`, { defaultValue: \"Enterprise\" });\n    default:\n      return type.charAt(0).toUpperCase() + type.slice(1);\n  }"
+    },
+    {
+      "id": "dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:906c5699182dee61:001",
+      "source_file": "src/lib/claudePlan.ts",
+      "line": 32,
+      "column": 14,
+      "function": "claudePlanLabel",
+      "expression": "`${key}.enterprise`",
+      "context": "      return rateLimitTier === \"default_claude_max_5x\"\n        ? t(`${key}.teamPremium`, { defaultValue: \"Team 高级席位\" })\n        : t(`${key}.team`, { defaultValue: \"Team\" });\n    case \"enterprise\":\n      return t(`${key}.enterprise`, { defaultValue: \"Enterprise\" });\n    default:\n      return type.charAt(0).toUpperCase() + type.slice(1);\n  }\n}"
+    },
+    {
+      "id": "dynamic-i18n:src/lib/errors/skillErrorParser.ts:formatSkillError:70769166fc12d162:001",
+      "source_file": "src/lib/errors/skillErrorParser.ts",
+      "line": 88,
+      "column": 14,
+      "function": "formatSkillError",
+      "expression": "defaultTitle",
+      "context": "\n  if (!parsedError) {\n    // 如果不是结构化错误，返回原始错误字符串\n    return {\n      title: t(defaultTitle),\n      description: errorString || t(\"common.error\"),\n    };\n  }\n\n  const { code, context, suggestion } = parsedError;"
+    },
+    {
+      "id": "dynamic-i18n:src/lib/errors/skillErrorParser.ts:description:f55554c3a3e38660:001",
+      "source_file": "src/lib/errors/skillErrorParser.ts",
+      "line": 99,
+      "column": 21,
+      "function": "description",
+      "expression": "errorKey",
+      "context": "  // 获取错误消息的 i18n key\n  const errorKey = getErrorI18nKey(code);\n\n  // 构建描述（错误消息 + 建议）\n  let description = t(errorKey, context);\n\n  // 如果有建议，追加到描述中\n  if (suggestion) {\n    const suggestionKey = getSuggestionI18nKey(suggestion);\n    const suggestionText = t(suggestionKey);"
+    },
+    {
+      "id": "dynamic-i18n:src/lib/errors/skillErrorParser.ts:suggestionText:74e698c28bf062c8:001",
+      "source_file": "src/lib/errors/skillErrorParser.ts",
+      "line": 104,
+      "column": 28,
+      "function": "suggestionText",
+      "expression": "suggestionKey",
+      "context": "\n  // 如果有建议，追加到描述中\n  if (suggestion) {\n    const suggestionKey = getSuggestionI18nKey(suggestion);\n    const suggestionText = t(suggestionKey);\n    description += `\\n\\n${suggestionText}`;\n  }\n\n  return {\n    title: t(defaultTitle),"
+    },
+    {
+      "id": "dynamic-i18n:src/lib/errors/skillErrorParser.ts:formatSkillError:70769166fc12d162:002",
+      "source_file": "src/lib/errors/skillErrorParser.ts",
+      "line": 109,
+      "column": 12,
+      "function": "formatSkillError",
+      "expression": "defaultTitle",
+      "context": "    description += `\\n\\n${suggestionText}`;\n  }\n\n  return {\n    title: t(defaultTitle),\n    description,\n  };\n}\n\n/**"
+    },
+    {
+      "id": "dynamic-i18n:src/lib/errors/skillErrorParser.ts:skillErrorReason:cc40d5267afefbf0:001",
+      "source_file": "src/lib/errors/skillErrorParser.ts",
+      "line": 126,
+      "column": 12,
+      "function": "skillErrorReason",
+      "expression": "getSuggestionI18nKey(suggestion)",
+      "context": "    return (errorString.split(\"\\n\")[0] ?? \"\").trim() || t(\"common.error\");\n  }\n  const { code, context, suggestion } = parsedError;\n  if (suggestion && /^http\\d{3}$/.test(suggestion)) {\n    return t(getSuggestionI18nKey(suggestion));\n  }\n  return t(getErrorI18nKey(code), context);\n}"
+    },
+    {
+      "id": "dynamic-i18n:src/lib/errors/skillErrorParser.ts:skillErrorReason:37f93e4d82bbafa0:001",
+      "source_file": "src/lib/errors/skillErrorParser.ts",
+      "line": 128,
+      "column": 10,
+      "function": "skillErrorReason",
+      "expression": "getErrorI18nKey(code)",
+      "context": "  const { code, context, suggestion } = parsedError;\n  if (suggestion && /^http\\d{3}$/.test(suggestion)) {\n    return t(getSuggestionI18nKey(suggestion));\n  }\n  return t(getErrorI18nKey(code), context);\n}"
+    },
+    {
+      "id": "dynamic-i18n:src/lib/query/proxy.ts:useSetProxyStackMember:2e6460788eddf87d:001",
+      "source_file": "src/lib/query/proxy.ts",
+      "line": 122,
+      "column": 9,
+      "function": "useSetProxyStackMember",
+      "expression": "variables.appType === \"codex\" ||\n            variables.appType === \"claude-desktop\"\n            ? \"provider.stackSaved\"\n            : \"provider.stackSavedLive\"",
+      "context": "      enabled: boolean;\n    }) => proxyApi.setProxyStackMember(appType, providerId, enabled),\n    onSuccess: (notice, variables) => {\n      toast.success(\n        t(\n          // 这两个客户端只在启动时读配置（Desktop 的模型列表写在配置里）\n          variables.appType === \"codex\" ||\n            variables.appType === \"claude-desktop\"\n            ? \"provider.stackSaved\"\n            : \"provider.stackSavedLive\","
+    },
+    {
+      "id": "dynamic-i18n:src/lib/query/proxy.ts:useSetProxyStackMember:7f3542671de62631:001",
+      "source_file": "src/lib/query/proxy.ts",
+      "line": 138,
+      "column": 23,
+      "function": "useSetProxyStackMember",
+      "expression": "`provider.${notice}`",
+      "context": "          closeButton: true,\n        },\n      );\n      if (notice) {\n        toast.warning(t(`provider.${notice}`), { closeButton: true });\n      }\n    },\n    onError: (error: unknown) => {\n      if (isStackWriteError(error) && error.partial) {\n        toast.warning(t(\"provider.stackPartial\"), {"
+    },
+    {
+      "id": "dynamic-i18n:src/lib/query/proxy.ts:useAdoptCodexStackCatalog:7f3542671de62631:001",
+      "source_file": "src/lib/query/proxy.ts",
+      "line": 174,
+      "column": 23,
+      "function": "useAdoptCodexStackCatalog",
+      "expression": "`provider.${notice}`",
+      "context": "    mutationFn: () => proxyApi.adoptCodexStackCatalog(),\n    onSuccess: (notice) => {\n      toast.success(t(\"provider.adoptCatalogDone\"), { closeButton: true });\n      if (notice) {\n        toast.warning(t(`provider.${notice}`), { closeButton: true });\n      }\n    },\n    onError: (error: unknown) => {\n      toast.error(\n        t(\"provider.adoptCatalogFailed\", {"
+    },
+    {
+      "id": "dynamic-i18n:src/utils/errorUtils.ts:translatePiProviderMutationError:87913d866ba16384:001",
+      "source_file": "src/utils/errorUtils.ts",
+      "line": 47,
+      "column": 22,
+      "function": "translatePiProviderMutationError",
+      "expression": "ompKey",
+      "context": "): string => {\n  if (!message) return \"\";\n  // Oh My Pi 的后端错误本身就是 i18n key（`omp.errors.*`）。\n  const ompKey = message.match(/omp\\.errors\\.[A-Za-z]+/)?.[0];\n  if (ompKey) return t(ompKey);\n\n  if (\n    message.includes(\"models.json changed\") ||\n    message.includes(\"changed outside CC Switch\") ||\n    message.includes(\"no longer present in models.json\") ||"
+    },
+    {
+      "id": "dynamic-i18n:src/utils/errorUtils.ts:translateMcpBackendError:87913d866ba16384:001",
+      "source_file": "src/utils/errorUtils.ts",
+      "line": 95,
+      "column": 22,
+      "function": "translateMcpBackendError",
+      "expression": "ompKey",
+      "context": "): string => {\n  if (!message) return \"\";\n  // Oh My Pi 的后端错误本身就是 i18n key（`omp.errors.*`）。\n  const ompKey = message.match(/omp\\.errors\\.[A-Za-z]+/)?.[0];\n  if (ompKey) return t(ompKey);\n  const msg = String(message).trim();\n\n  // 基础字段与结构校验相关\n  if (msg.includes(\"MCP 服务器 ID 不能为空\")) {\n    return t(\"mcp.error.idRequired\");"
+    }
+  ]
+}

@@ -46,20 +46,26 @@
     },
     {
       "id": "dynamic-i18n:src/components/apps/AppsPage.tsx:sections:88b10ec29471d286:001",
-      "status": "待核实",
+      "status": "无需国际化",
       "content_fingerprint": "88b10ec29471d286f568d96fe5a96005b2e44592ebd16daef0c067f09d0b56d8",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
       "reviewer": "primary",
       "source_file": "src/components/apps/AppsPage.tsx",
       "line": 217,
       "function": "sections",
       "expression": "installed\n                ? \"appsPage.sectionInstalled\"\n                : \"appsPage.sectionNotInstalled\"",
-      "reason": "翻译键由运行时表达式“installed\n                ? \"appsPage.sectionInstalled\"\n                : \"appsPage.sectionNotInstalled\"”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。",
-      "suggested_action": "核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。",
+      "reason": "该动态调用只有有限字面量分支，所有分支键在 zh/en/ko 均存在。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "中",
+      "severity": "低",
       "review_batch": "hardcoded:0110:src-components-apps",
-      "round": 1
+      "round": 1,
+      "dynamic_key_verification": true,
+      "dynamic_key_resolution": "literal-branches",
+      "evidence_keys": [
+        "appsPage.sectionInstalled",
+        "appsPage.sectionNotInstalled"
+      ]
     },
     {
       "id": "hardcoded:src/components/apps/AppsPage.tsx:renderRow:0470e756400c2021:001",
@@ -99,20 +105,27 @@
     },
     {
       "id": "dynamic-i18n:src/components/apps/AppsPage.tsx:envBadge:cfc322af6c201189:001",
-      "status": "待核实",
+      "status": "无需国际化",
       "content_fingerprint": "cfc322af6c20118946129fe571601732b788bf744b7587675baf8f51ca169d3f",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
       "reviewer": "primary",
       "source_file": "src/components/apps/AppsPage.tsx",
       "line": 749,
       "function": "envBadge",
       "expression": "ENV_BADGE_CONFIG.wsl.labelKey",
-      "reason": "翻译键由运行时表达式“ENV_BADGE_CONFIG.wsl.labelKey”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。",
-      "suggested_action": "核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。",
+      "reason": "App 安装/未安装分支和 ENV_BADGE_CONFIG.wsl.labelKey 均存在；Kimi/DSH hint 使用空默认值，作为可选提示排除。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "中",
+      "severity": "低",
       "review_batch": "hardcoded:0110:src-components-apps",
-      "round": 1
+      "round": 1,
+      "dynamic_key_verification": true,
+      "dynamic_key_resolution": "finite-map",
+      "evidence_keys": [
+        "appsPage.sectionInstalled",
+        "appsPage.sectionNotInstalled",
+        "settings.envBadge.wsl"
+      ]
     },
     {
       "id": "hardcoded:src/components/apps/AppsPage.tsx:envBadge:fe929c298d19df00:001",
@@ -135,20 +148,23 @@
     },
     {
       "id": "dynamic-i18n:src/components/apps/AppsPage.tsx:installHint:a7313ac9d3fdc954:001",
-      "status": "待核实",
+      "status": "无需国际化",
       "content_fingerprint": "a7313ac9d3fdc95467738f3e8d22bfc93d7f9b14c75fe5c47b7ec556ceb63883",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
       "reviewer": "primary",
       "source_file": "src/components/apps/AppsPage.tsx",
       "line": 801,
       "function": "installHint",
       "expression": "`appsPage.installHint.${tool}`",
-      "reason": "翻译键由运行时表达式“`appsPage.installHint.${tool}`”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。",
-      "suggested_action": "核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。",
+      "reason": "该 hint 使用 defaultValue: ''；Kimi/DSH 在所有语言中都不是可安装提示，缺失键不会显示为原始键。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "中",
+      "severity": "低",
       "review_batch": "hardcoded:0110:src-components-apps",
-      "round": 1
+      "round": 1,
+      "dynamic_key_verification": true,
+      "dynamic_key_resolution": "intentional-fallback",
+      "evidence_keys": []
     },
     {
       "id": "hardcoded:src/components/apps/ManualUninstallDialog.tsx:environmentLabelForTool:94385bfc2ba7421b:001",

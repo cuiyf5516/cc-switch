@@ -33,23 +33,24 @@
     "valid_review_count": 4426,
     "unreviewed_count": 0,
     "status_counts": {
-      "无需国际化": 4264,
-      "待核实": 162
+      "无需国际化": 4425,
+      "确认遗漏": 1
     },
     "scan_coverage_pct": 100.0,
     "candidate_review_coverage_pct": 100.0,
     "dynamic_translation_key_count": 162,
-    "dynamic_translation_key_reviewed": 162
+    "dynamic_translation_key_reviewed": 162,
+    "dynamic_key_verification_count": 162
   },
   "quality": {
     "present": true,
     "translation_keep_sample_required": 655,
     "translation_keep_sample_reviewed": 655,
     "translation_issue_recheck_count": 86,
-    "hardcoded_confirmed_recheck_count": 0,
-    "hardcoded_pending_recheck_count": 162,
-    "hardcoded_no_i18n_sample_required": 640,
-    "hardcoded_no_i18n_sample_reviewed": 640
+    "hardcoded_confirmed_recheck_count": 1,
+    "hardcoded_pending_recheck_count": 0,
+    "hardcoded_no_i18n_sample_required": 664,
+    "hardcoded_no_i18n_sample_reviewed": 664
   },
   "completion_conditions_met": true,
   "validation_exit_code": 0

@@ -64,6 +64,22 @@ def validate_hardcoded()->dict[str,Any]:
  manifest=load(OUT/'manifest/hardcoded_candidates.json'); plans=load(OUT/'manifest/hardcoded_batches.json')
  candidates=manifest['candidates']; by_id={c['id']:c for c in candidates}
  if len(by_id)!=len(candidates): errors.append('hardcoded: duplicate candidate IDs')
+ dynamic_path=OUT/'reviews/quality/dynamic_key_verification.json'
+ dynamic_decisions={}
+ if not dynamic_path.exists():
+  errors.append('hardcoded: dynamic key verification result is absent')
+ else:
+  dynamic_data=load(dynamic_path)
+  dynamic_decisions={item['id']:item for item in dynamic_data.get('decisions',[])}
+  dynamic_candidates={c['id'] for c in candidates if c.get('source_kind')=='dynamic_i18n_key'}
+  if set(dynamic_decisions)!=dynamic_candidates:
+   errors.append(f'hardcoded: dynamic key decisions do not cover all candidates ({len(dynamic_decisions)}/{len(dynamic_candidates)})')
+  for rid,decision in dynamic_decisions.items():
+   status=decision.get('status')
+   if status not in {'确认遗漏','无需国际化'}:
+    errors.append(f'hardcoded: unresolved dynamic key decision {rid}: {status}')
+   elif rid in by_id and by_id[rid].get('status')!=status:
+    errors.append(f'hardcoded: dynamic key manifest status mismatch {rid}')
  scope_excluded={item['path'] for item in CONFIG.get('scope_exclusions',[]) if item.get('path')}
  listed_scope_excluded={item['path'] for item in manifest.get('excluded_files',[]) if item.get('category')=='scope-exclusion'}
  candidate_exclusions=[item for item in CONFIG.get('candidate_scope_exclusions',[]) if item.get('source_kind') or item.get('source_file_prefix')]
@@ -117,6 +133,7 @@ def validate_hardcoded()->dict[str,Any]:
   'candidate_review_coverage_pct':pct(len(valid),len(candidates)),
   'dynamic_translation_key_count':sum(1 for c in candidates if c['source_kind']=='dynamic_i18n_key'),
   'dynamic_translation_key_reviewed':sum(1 for c in candidates if c['source_kind']=='dynamic_i18n_key' and c['id'] in valid),
+  'dynamic_key_verification_count':len(dynamic_decisions),
  }
 
 def validate_quality(tr:dict[str,Any])->dict[str,Any]:

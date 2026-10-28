@@ -1,7 +1,7 @@
 {
   "method": "stratified by source kind + top-level source area, SHA-256 ordering",
-  "no_i18n_count": 4264,
-  "required": 640,
+  "no_i18n_count": 4425,
+  "required": 664,
   "sample_ids": [
     "hardcoded:src-tauri/src/agy_config.rs:read_live_settings:272ec9739e18d77c:001",
     "hardcoded:src-tauri/src/agy_config.rs:read_live_settings:b77349bf1fa9b26d:001",
@@ -642,6 +642,30 @@
     "hardcoded:src-tauri/src/services/balance.rs:query_zhipu_balance:46b08e6f32486b1b:001",
     "hardcoded:src-tauri/src/commands/sync_support.rs:run_post_import_sync:f7ca44e800b45019:001",
     "hardcoded:src-tauri/src/services/session_usage_pi.rs:insert_pi_record:1af784fa639b9e4a:002",
-    "hardcoded:src/components/providers/forms/presetGroups.ts:PINYIN_BOUNDARIES:19c5ea98c97ffa7a:001"
+    "hardcoded:src/components/providers/forms/presetGroups.ts:PINYIN_BOUNDARIES:19c5ea98c97ffa7a:001",
+    "dynamic-i18n:src/lib/query/proxy.ts:useSetProxyStackMember:2e6460788eddf87d:001",
+    "dynamic-i18n:src/components/sessions/SessionManagerPage.tsx:label:2c70e12b7a0646f9:001",
+    "dynamic-i18n:src/components/mcp/McpFormModal.tsx:McpFormModal:110e6c2fccad7e63:001",
+    "dynamic-i18n:src/components/hermes/HermesMemoryPanel.tsx:MemoryTabPane:51f6c463686ee31f:001",
+    "dynamic-i18n:src/lib/errors/skillErrorParser.ts:skillErrorReason:37f93e4d82bbafa0:001",
+    "dynamic-i18n:src/components/sessions/reader/exportMarkdown.ts:label:741390bbafe0c1e5:001",
+    "dynamic-i18n:src/lib/errors/skillErrorParser.ts:formatSkillError:70769166fc12d162:001",
+    "dynamic-i18n:src/components/providers/presentation.ts:piBlocked:770eceac0b7cd3f8:001",
+    "dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:ProviderFormFull:2929691ef61b6b98:001",
+    "dynamic-i18n:src/components/providers/OpenTerminalDialog.tsx:OpenTerminalDialog:2b72580d648a686e:001",
+    "dynamic-i18n:src/components/sessions/reader/toolSummary.ts:translate:982d9e3eb996f559:001",
+    "dynamic-i18n:src/components/settings/WebdavSyncSection.tsx:WebdavSyncSection:5dd4180e2514c9a4:001",
+    "dynamic-i18n:src/components/providers/ProviderEmptyState.tsx:ProviderEmptyState:bc32d0931c886d14:001",
+    "dynamic-i18n:src/components/prompts/PromptListItem.tsx:PromptListItem:cccf9c2fec5053e8:001",
+    "dynamic-i18n:src/components/usage/UsageDisplaySection.tsx:todayLabel:9c965868dda12772:001",
+    "dynamic-i18n:src/components/quota/quotaRules.ts:tierLine:b5286d080dc232bd:001",
+    "dynamic-i18n:src/components/skills/UnifiedSkillsPanel.tsx:InstalledRow:947324ed6a00ba24:001",
+    "dynamic-i18n:src/components/providers/mode/ModeDialog.tsx:targetName:9a6e6056bc68a344:001",
+    "dynamic-i18n:src/components/prompts/PromptFormPanel.tsx:PromptFormPanel:f3ffc31bc1e64a97:001",
+    "dynamic-i18n:src/components/hermes/HermesMemoryPanel.tsx:MemoryTabPane:8fb010723006dfa3:001",
+    "dynamic-i18n:src/components/providers/forms/OmoFormFields.tsx:renderBuiltinModelRow:f19573ea4c8f34d1:001",
+    "dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:handleSubmit:b107d3ee7afe31c4:001",
+    "dynamic-i18n:src/components/sessions/reader/toolSummary.ts:verb:5c4db77b4c3c9984:001",
+    "dynamic-i18n:src/components/IconPicker.tsx:handleFileChange:16fefef2206f4fc1:001"
   ]
 }

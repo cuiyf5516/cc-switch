@@ -8,54 +8,84 @@
   "records": [
     {
       "id": "dynamic-i18n:src/components/profiles/ProfileSwitcher.tsx:ProfileSwitcher:bf07f0e194763ea6:001",
-      "status": "待核实",
+      "status": "无需国际化",
       "content_fingerprint": "bf07f0e194763ea621ddc1be1a0fa505b153e66da09a849dc06007c5051c8f33",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
       "reviewer": "primary",
       "source_file": "src/components/profiles/ProfileSwitcher.tsx",
       "line": 116,
       "function": "ProfileSwitcher",
       "expression": "`profiles.switcherTooltip.${scope}`",
-      "reason": "翻译键由运行时表达式“`profiles.switcherTooltip.${scope}`”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。",
-      "suggested_action": "核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。",
+      "reason": "ProfileScope 只有 claude/claude-desktop/codex，对应资源均存在。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "中",
+      "severity": "低",
       "review_batch": "hardcoded:0118:src-components-profiles",
-      "round": 1
+      "round": 1,
+      "dynamic_key_verification": true,
+      "dynamic_key_resolution": "finite-map",
+      "evidence_keys": [
+        "profiles.switcherTooltip.claude",
+        "profiles.switcherTooltip.claude-desktop",
+        "profiles.switcherTooltip.codex",
+        "profiles.createDescription.claude",
+        "profiles.createDescription.claude-desktop",
+        "profiles.createDescription.codex"
+      ]
     },
     {
       "id": "dynamic-i18n:src/components/profiles/ProfileSwitcher.tsx:ProfileSwitcher:bf07f0e194763ea6:002",
-      "status": "待核实",
+      "status": "无需国际化",
       "content_fingerprint": "bf07f0e194763ea621ddc1be1a0fa505b153e66da09a849dc06007c5051c8f33",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
       "reviewer": "primary",
       "source_file": "src/components/profiles/ProfileSwitcher.tsx",
       "line": 134,
       "function": "ProfileSwitcher",
       "expression": "`profiles.switcherTooltip.${scope}`",
-      "reason": "翻译键由运行时表达式“`profiles.switcherTooltip.${scope}`”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。",
-      "suggested_action": "核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。",
+      "reason": "ProfileScope 只有 claude/claude-desktop/codex，对应资源均存在。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "中",
+      "severity": "低",
       "review_batch": "hardcoded:0118:src-components-profiles",
-      "round": 1
+      "round": 1,
+      "dynamic_key_verification": true,
+      "dynamic_key_resolution": "finite-map",
+      "evidence_keys": [
+        "profiles.switcherTooltip.claude",
+        "profiles.switcherTooltip.claude-desktop",
+        "profiles.switcherTooltip.codex",
+        "profiles.createDescription.claude",
+        "profiles.createDescription.claude-desktop",
+        "profiles.createDescription.codex"
+      ]
     },
     {
       "id": "dynamic-i18n:src/components/profiles/ProfileSwitcher.tsx:ProfileSwitcher:1ea05b4ee91472f2:001",
-      "status": "待核实",
+      "status": "无需国际化",
       "content_fingerprint": "1ea05b4ee91472f2dff58eae1a3185cc82d499fe00c348b089dcb152ba5846d9",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
       "reviewer": "primary",
       "source_file": "src/components/profiles/ProfileSwitcher.tsx",
       "line": 223,
       "function": "ProfileSwitcher",
       "expression": "`profiles.createDescription.${scope}`",
-      "reason": "翻译键由运行时表达式“`profiles.createDescription.${scope}`”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。",
-      "suggested_action": "核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。",
+      "reason": "ProfileScope 只有 claude/claude-desktop/codex，对应资源均存在。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "中",
+      "severity": "低",
       "review_batch": "hardcoded:0118:src-components-profiles",
-      "round": 1
+      "round": 1,
+      "dynamic_key_verification": true,
+      "dynamic_key_resolution": "finite-map",
+      "evidence_keys": [
+        "profiles.switcherTooltip.claude",
+        "profiles.switcherTooltip.claude-desktop",
+        "profiles.switcherTooltip.codex",
+        "profiles.createDescription.claude",
+        "profiles.createDescription.claude-desktop",
+        "profiles.createDescription.codex"
+      ]
     }
   ]
 }

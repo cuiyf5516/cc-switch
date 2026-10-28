@@ -131,20 +131,30 @@
     },
     {
       "id": "dynamic-i18n:src/components/shell/Sidebar.tsx:SettingsDirectory:73080ad588a22bcf:001",
-      "status": "待核实",
+      "status": "无需国际化",
       "content_fingerprint": "73080ad588a22bcf793b9900af2a25a37aa84db57382a48713b1575b878c240e",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
       "reviewer": "primary",
       "source_file": "src/components/shell/Sidebar.tsx",
       "line": 754,
       "function": "SettingsDirectory",
       "expression": "`settings.sections.${section}`",
-      "reason": "翻译键由运行时表达式“`settings.sections.${section}`”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。",
-      "suggested_action": "核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。",
+      "reason": "SettingsSection 的六个值均有资源。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "中",
+      "severity": "低",
       "review_batch": "hardcoded:0136:src-components-shell",
-      "round": 1
+      "round": 1,
+      "dynamic_key_verification": true,
+      "dynamic_key_resolution": "finite-map",
+      "evidence_keys": [
+        "settings.sections.general",
+        "settings.sections.appConfig",
+        "settings.sections.routing",
+        "settings.sections.network",
+        "settings.sections.data",
+        "settings.sections.about"
+      ]
     },
     {
       "id": "hardcoded:src/components/shell/Sidebar.tsx:SettingsDirectory:a4262e1c9bcbc172:001",

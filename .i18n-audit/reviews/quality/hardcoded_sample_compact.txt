@@ -638,3 +638,27 @@
 638	src-tauri/src/commands/sync_support.rs:28	rust_string	runtime log level: {error}
 639	src-tauri/src/services/session_usage_pi.rs:910	rust_string	查询 Pi 用量去重账本失败: {error}
 640	src/components/providers/forms/presetGroups.ts:388	string	阿八嚓哒妸发旮哈讥咔垃痳拏噢妑七呥扨它穵夕丫帀
+641	src/lib/query/proxy.ts:122	dynamic_i18n_key	variables.appType === "codex" || /             variables.appType === "claude-desktop" /             ? "provider.stackSaved" /             : "provider.stackSavedLive"
+642	src/components/sessions/SessionManagerPage.tsx:312	dynamic_i18n_key	key
+643	src/components/mcp/McpFormModal.tsx:659	dynamic_i18n_key	`mcp.presets.${preset.id}.description`
+644	src/components/hermes/HermesMemoryPanel.tsx:208	dynamic_i18n_key	meta.placeholderKey
+645	src/lib/errors/skillErrorParser.ts:128	dynamic_i18n_key	getErrorI18nKey(code)
+646	src/components/sessions/reader/exportMarkdown.ts:80	dynamic_i18n_key	style.thinkingLabelKey
+647	src/lib/errors/skillErrorParser.ts:88	dynamic_i18n_key	defaultTitle
+648	src/components/providers/presentation.ts:717	dynamic_i18n_key	`${app}.current.stateUnavailableHint`
+649	src/components/providers/forms/ProviderForm.tsx:2593	dynamic_i18n_key	isProviderKeyLocked /                           ? "hermes.form.providerKeyBuiltinLocked" /                           : "hermes.form.providerKeyBuiltin"
+650	src/components/providers/OpenTerminalDialog.tsx:229	dynamic_i18n_key	appId === "agy" /                   ? "provider.openTerminalDialog.isolationBodyAgy" /                   : "provider.openTerminalDialog.isolationBody"
+651	src/components/sessions/reader/toolSummary.ts:199	dynamic_i18n_key	text
+652	src/components/settings/WebdavSyncSection.tsx:1251	dynamic_i18n_key	activeS3Preset.hint
+653	src/components/providers/ProviderEmptyState.tsx:53	dynamic_i18n_key	`${emptyCopyNs}.empty.description`
+654	src/components/prompts/PromptListItem.tsx:100	dynamic_i18n_key	active ? "prompts.disable" : "prompts.enable"
+655	src/components/usage/UsageDisplaySection.tsx:93	dynamic_i18n_key	`usage.display.sidebarTodayItems.${item}`
+656	src/components/quota/quotaRules.ts:145	dynamic_i18n_key	used ? "quota.used" : "quota.left"
+657	src/components/skills/UnifiedSkillsPanel.tsx:1929	dynamic_i18n_key	`appMatrix.cell.${state}`
+658	src/components/providers/mode/ModeDialog.tsx:249	dynamic_i18n_key	`mode.names.${target}`
+659	src/components/prompts/PromptFormPanel.tsx:195	dynamic_i18n_key	isHermes /                   ? "prompts.namePlaceholderHermes" /                   : "prompts.namePlaceholder"
+660	src/components/hermes/HermesMemoryPanel.tsx:175	dynamic_i18n_key	meta.descKey
+661	src/components/providers/forms/OmoFormFields.tsx:921	dynamic_i18n_key	def.tooltipKey
+662	src/components/providers/forms/ProviderForm.tsx:1366	dynamic_i18n_key	isNativeOpencode /                 ? "opencode.nativeCustomProviderRequired" /                 : "opencode.customProviderRequired"
+663	src/components/sessions/reader/toolSummary.ts:238	dynamic_i18n_key	TOOL_OUTPUT_VERB_KEY
+664	src/components/IconPicker.tsx:116	dynamic_i18n_key	`iconPicker.uploadError.${code}`

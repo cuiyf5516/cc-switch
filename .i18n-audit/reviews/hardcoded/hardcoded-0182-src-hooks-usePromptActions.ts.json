@@ -44,20 +44,26 @@
     },
     {
       "id": "dynamic-i18n:src/hooks/usePromptActions.ts:toggleEnabled:0a592ddbd2de0f49:001",
-      "status": "待核实",
+      "status": "无需国际化",
       "content_fingerprint": "0a592ddbd2de0f4975252f9cdbe2dbe113aabd4c0d6efee015027c3922676cc9",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
       "reviewer": "primary",
       "source_file": "src/hooks/usePromptActions.ts",
       "line": 210,
       "function": "toggleEnabled",
       "expression": "enabled\n                  ? \"pi.prompts.usePromptSuccess\"\n                  : \"pi.prompts.stopUsingSuccess\"",
-      "reason": "翻译键由运行时表达式“enabled\n                  ? \"pi.prompts.usePromptSuccess\"\n                  : \"pi.prompts.stopUsingSuccess\"”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。",
-      "suggested_action": "核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。",
+      "reason": "该动态调用只有有限字面量分支，所有分支键在 zh/en/ko 均存在。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "中",
+      "severity": "低",
       "review_batch": "hardcoded:0182:src-hooks-usePromptActions.ts",
-      "round": 1
+      "round": 1,
+      "dynamic_key_verification": true,
+      "dynamic_key_resolution": "literal-branches",
+      "evidence_keys": [
+        "pi.prompts.usePromptSuccess",
+        "pi.prompts.stopUsingSuccess"
+      ]
     }
   ]
 }

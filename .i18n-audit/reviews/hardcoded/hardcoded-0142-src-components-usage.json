@@ -234,20 +234,30 @@
     },
     {
       "id": "dynamic-i18n:src/components/usage/UsageDisplaySection.tsx:todayLabel:9c965868dda12772:001",
-      "status": "待核实",
+      "status": "无需国际化",
       "content_fingerprint": "9c965868dda12772b73d7958875846e84e79a30b5a00c878d6a75c0f72e2639a",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
       "reviewer": "primary",
       "source_file": "src/components/usage/UsageDisplaySection.tsx",
       "line": 93,
       "function": "todayLabel",
       "expression": "`usage.display.sidebarTodayItems.${item}`",
-      "reason": "翻译键由运行时表达式“`usage.display.sidebarTodayItems.${item}`”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。",
-      "suggested_action": "核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。",
+      "reason": "侧栏今日项和趋势图类型的有限值均有资源。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "中",
+      "severity": "低",
       "review_batch": "hardcoded:0142:src-components-usage",
-      "round": 1
+      "round": 1,
+      "dynamic_key_verification": true,
+      "dynamic_key_resolution": "finite-map",
+      "evidence_keys": [
+        "usage.display.sidebarTodayItems.cost",
+        "usage.display.sidebarTodayItems.tokens",
+        "usage.display.sidebarTodayItems.requests",
+        "usage.display.sidebarTodayItems.hitRate",
+        "usage.display.trendChartTypes.bar",
+        "usage.display.trendChartTypes.area"
+      ]
     },
     {
       "id": "hardcoded:src/components/usage/UsageDisplaySection.tsx:optionLabel:c3dfb4461375f848:001",
@@ -270,20 +280,30 @@
     },
     {
       "id": "dynamic-i18n:src/components/usage/UsageDisplaySection.tsx:UsageDisplaySection:74fefa25328abc5c:001",
-      "status": "待核实",
+      "status": "无需国际化",
       "content_fingerprint": "74fefa25328abc5cd636335aba766326037e74a4da2150435f5b885939fd630c",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T16:15:48.797364+00:00",
       "reviewer": "primary",
       "source_file": "src/components/usage/UsageDisplaySection.tsx",
       "line": 196,
       "function": "UsageDisplaySection",
       "expression": "`usage.display.trendChartTypes.${type}`",
-      "reason": "翻译键由运行时表达式“`usage.display.trendChartTypes.${type}`”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。",
-      "suggested_action": "核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。",
+      "reason": "侧栏今日项和趋势图类型的有限值均有资源。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "中",
+      "severity": "低",
       "review_batch": "hardcoded:0142:src-components-usage",
-      "round": 1
+      "round": 1,
+      "dynamic_key_verification": true,
+      "dynamic_key_resolution": "finite-map",
+      "evidence_keys": [
+        "usage.display.sidebarTodayItems.cost",
+        "usage.display.sidebarTodayItems.tokens",
+        "usage.display.sidebarTodayItems.requests",
+        "usage.display.sidebarTodayItems.hitRate",
+        "usage.display.trendChartTypes.bar",
+        "usage.display.trendChartTypes.area"
+      ]
     },
     {
       "id": "hardcoded:src/components/usage/UsageDisplaySection.tsx:UsageDisplaySection:12ddfc8f83437c33:001",
