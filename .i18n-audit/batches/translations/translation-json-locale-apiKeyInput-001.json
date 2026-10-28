@@ -1,0 +1,18 @@
+{
+  "batch_id": "translation:json-locale:apiKeyInput:001",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "apiKeyInput",
+  "ordinal": 1,
+  "record_count": 3,
+  "record_ids": [
+    "json:src/i18n/locales#apiKeyInput.hide",
+    "json:src/i18n/locales#apiKeyInput.placeholder",
+    "json:src/i18n/locales#apiKeyInput.show"
+  ],
+  "keys": [
+    "apiKeyInput.hide",
+    "apiKeyInput.placeholder",
+    "apiKeyInput.show"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "batch_id": "hardcoded:0041:src-tauri-src-gemini_config.rs",
+  "kind": "hardcoded",
+  "group": "src-tauri/src/gemini_config.rs",
+  "ordinal": 1,
+  "record_count": 24,
+  "record_ids": [
+    "hardcoded:src-tauri/src/gemini_config.rs:parse_env_file_strict:3efc1f5418e2f6db:001",
+    "hardcoded:src-tauri/src/gemini_config.rs:parse_env_file_strict:941aa56641ae0d58:001",
+    "hardcoded:src-tauri/src/gemini_config.rs:parse_env_file_strict:109c0efc9ca03497:001",
+    "hardcoded:src-tauri/src/gemini_config.rs:parse_env_file_strict:07ec770c3a80192b:001",
+    "hardcoded:src-tauri/src/gemini_config.rs:parse_env_file_strict:8d7c7fea370ebb06:001",
+    "hardcoded:src-tauri/src/gemini_config.rs:parse_env_file_strict:ddad385265d12d35:001",
+    "hardcoded:src-tauri/src/gemini_config.rs:parse_env_file_strict:5c5a955ef07926d5:001",
+    "hardcoded:src-tauri/src/gemini_config.rs:parse_env_file_strict:38818ecaac856d37:001",
+    "hardcoded:src-tauri/src/gemini_config.rs:parse_env_file_strict:6d275283ed8b9b98:001",
+    "hardcoded:src-tauri/src/gemini_config.rs:parse_env_file_strict:9a792999e365b2b8:001",
+    "hardcoded:src-tauri/src/gemini_config.rs:parse_env_file_strict:a00fced21ba4f214:001",
+    "hardcoded:src-tauri/src/gemini_config.rs:parse_env_file_strict:42bc53dfd9efce7b:001",
+    "hardcoded:src-tauri/src/gemini_config.rs:validate_gemini_settings:172762c866ea005b:001",
+    "hardcoded:src-tauri/src/gemini_config.rs:validate_gemini_settings:619229f93d065559:001",
+    "hardcoded:src-tauri/src/gemini_config.rs:validate_gemini_settings:1df8ab6e38956740:001",
+    "hardcoded:src-tauri/src/gemini_config.rs:validate_gemini_settings:9877ff4fc4b49835:001",
+    "hardcoded:src-tauri/src/gemini_config.rs:validate_gemini_settings:6da394ed387065ef:001",
+    "hardcoded:src-tauri/src/gemini_config.rs:validate_gemini_settings:fe52e9f7eae4758c:001",
+    "hardcoded:src-tauri/src/gemini_config.rs:validate_gemini_settings:f29d22506e84c03a:001",
+    "hardcoded:src-tauri/src/gemini_config.rs:validate_gemini_settings:123ffc16ac9c09b2:001",
+    "hardcoded:src-tauri/src/gemini_config.rs:validate_gemini_settings_strict:a7398b03cc2502d0:001",
+    "hardcoded:src-tauri/src/gemini_config.rs:validate_gemini_settings_strict:6f47b915e14d2897:001",
+    "hardcoded:src-tauri/src/gemini_config.rs:validate_gemini_settings_strict:081795d4c739bc53:001",
+    "hardcoded:src-tauri/src/gemini_config.rs:validate_gemini_settings_strict:e2495d8cc570e062:001"
+  ]
+}

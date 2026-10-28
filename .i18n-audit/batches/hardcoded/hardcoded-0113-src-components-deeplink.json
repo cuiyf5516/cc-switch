@@ -1,0 +1,12 @@
+{
+  "batch_id": "hardcoded:0113:src-components-deeplink",
+  "kind": "hardcoded",
+  "group": "src/components/deeplink",
+  "ordinal": 1,
+  "record_count": 3,
+  "record_ids": [
+    "hardcoded:src/components/deeplink/McpConfirmation.tsx:mcpServers:d390fed9f417d145:001",
+    "hardcoded:src/components/deeplink/McpConfirmation.tsx:McpConfirmation:35da9ae11afebfb5:001",
+    "dynamic-i18n:src/components/deeplink/McpConfirmation.tsx:McpConfirmation:d7f7b8d4887c79a0:001"
+  ]
+}

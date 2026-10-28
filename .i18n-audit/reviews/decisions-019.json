@@ -1,0 +1,10 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:provider:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:provider:002","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:provider:003","default_status":"可保留","overrides":[
+{"key":"provider.officialModelsReason.loginStale","status":"建议改","reason":"「로그인이 새로 고쳐지지 않았습니다」搭配不自然，登录信息应使用「갱신되다」。","suggestion":"공식 목록: Codex 로그인이 8일 이상 갱신되지 않았습니다. Codex를 한 번 사용하면 자동으로 갱신됩니다.","ui_context":"Codex 官方模型列表状态提示"}
+]},
+{"batch_id":"translation:json-locale:provider:004","default_status":"可保留","overrides":[
+{"key":"provider.stackBadgeNoModels","status":"建议改","reason":"「해당 모델이」指代不存在的模型，句子前后矛盾；应直接说明该供应商不会出现在模型选择器。","suggestion":"이 공급자에는 설정된 모델이 없어 모델 선택 메뉴에 표시되지 않습니다.","ui_context":"聚合供应商徽标提示"}
+]}
+]}

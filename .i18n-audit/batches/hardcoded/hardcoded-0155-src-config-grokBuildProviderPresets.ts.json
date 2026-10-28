@@ -1,0 +1,12 @@
+{
+  "batch_id": "hardcoded:0155:src-config-grokBuildProviderPresets.ts",
+  "kind": "hardcoded",
+  "group": "src/config/grokBuildProviderPresets.ts",
+  "ordinal": 1,
+  "record_count": 3,
+  "record_ids": [
+    "hardcoded:src/config/grokBuildProviderPresets.ts:grokPresetConfig:56073284f463eb7b:001",
+    "hardcoded:src/config/grokBuildProviderPresets.ts:grokBuildProviderPresets:5e6b57135719e73e:001",
+    "hardcoded:src/config/grokBuildProviderPresets.ts:grokBuildProviderPresets:5e6b57135719e73e:002"
+  ]
+}

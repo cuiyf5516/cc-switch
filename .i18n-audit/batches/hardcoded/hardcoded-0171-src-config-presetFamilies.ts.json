@@ -1,0 +1,10 @@
+{
+  "batch_id": "hardcoded:0171:src-config-presetFamilies.ts",
+  "kind": "hardcoded",
+  "group": "src/config/presetFamilies.ts",
+  "ordinal": 1,
+  "record_count": 1,
+  "record_ids": [
+    "hardcoded:src/config/presetFamilies.ts:PRESET_FAMILIES:dfc683f1eeccb537:001"
+  ]
+}

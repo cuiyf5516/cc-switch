@@ -1,0 +1,26 @@
+{
+  "batch_id": "hardcoded:0036:src-tauri-src-database",
+  "kind": "hardcoded",
+  "group": "src-tauri/src/database",
+  "ordinal": 4,
+  "record_count": 17,
+  "record_ids": [
+    "hardcoded:src-tauri/src/database/schema.rs:get_user_version:36bba3e296167b2f:001",
+    "hardcoded:src-tauri/src/database/schema.rs:set_user_version:2ed92a7931da8a62:001",
+    "hardcoded:src-tauri/src/database/schema.rs:set_user_version:9be2d503a5f8d5e3:001",
+    "hardcoded:src-tauri/src/database/schema.rs:create_request_logs_usage_indexes_if_supported:3453a31fad9e30c4:001",
+    "hardcoded:src-tauri/src/database/schema.rs:create_request_logs_usage_indexes_if_supported:1bd0cec6f4f527fa:001",
+    "hardcoded:src-tauri/src/database/schema.rs:create_request_logs_usage_indexes_if_supported:77f9e426b5b978b3:001",
+    "hardcoded:src-tauri/src/database/schema.rs:create_request_logs_usage_indexes_if_supported:048ec36a8184d4dd:001",
+    "hardcoded:src-tauri/src/database/schema.rs:validate_identifier:7d650a94fe9a59b3:001",
+    "hardcoded:src-tauri/src/database/schema.rs:validate_identifier:90b31c400be95b57:001",
+    "hardcoded:src-tauri/src/database/schema.rs:table_exists:f5db9346ca1b5561:001",
+    "hardcoded:src-tauri/src/database/schema.rs:table_exists:f20347ae9498d426:001",
+    "hardcoded:src-tauri/src/database/schema.rs:table_exists:eeb123ff5b01929d:001",
+    "hardcoded:src-tauri/src/database/schema.rs:has_column:599add9d925e7de1:001",
+    "hardcoded:src-tauri/src/database/schema.rs:has_column:669f93117b39737d:001",
+    "hardcoded:src-tauri/src/database/schema.rs:has_column:c948c80c6073cb98:001",
+    "hardcoded:src-tauri/src/database/schema.rs:add_column_if_missing:43d3d2a1999f56e1:001",
+    "hardcoded:src-tauri/src/database/schema.rs:add_column_if_missing:714f10b1f55e9d79:001"
+  ]
+}

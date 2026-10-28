@@ -1,0 +1,12 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:kimi:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:kimi:002","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:mcode:001","default_status":"可保留","overrides":[
+{"key":"mcode.empty.description","status":"建议改","reason":"中文明确写的是“MiniMax 官方账号登录”，韩文遗漏了“공식”，弱化了账号类型。","suggestion":"MiniMax 공식 계정 로그인은 MiniMax Code 자체에서 관리되므로 가져올 필요가 없습니다. 이미 config.yaml에 있는 사용자 지정 공급자가 여기에 자동으로 표시됩니다. 프리셋 또는 사용자 지정 공급자를 추가하려면 오른쪽 상단의 + 버튼을 사용하세요.","ui_context":"MiniMax Code 空状态说明"}
+]},
+{"batch_id":"translation:json-locale:mcp:001","default_status":"可保留","overrides":[
+{"key":"mcp.error.commandRequired","status":"建议改","reason":"「입력해주세요」未按韩语辅助动词规范分写，且与该区其他提示的终结句风格不一致。","suggestion":"명령어를 입력해 주세요.","ui_context":"MCP 服务器命令校验"},
+{"key":"mcp.error.idExists","status":"建议改","reason":"原文要求“更换”标识，韩文「다른 것을 선택하세요」表示选择一个东西，可能被误解为选择现有项。","suggestion":"식별자가 이미 존재합니다. 다른 식별자를 사용하세요.","ui_context":"MCP 服务器标识重复错误"},
+{"key":"mcp.form.descriptionPlaceholder","status":"建议改","reason":"「선택적 설명」偏直译，作为输入框占位符不如「설명(선택 사항)」自然明确。","suggestion":"설명(선택 사항)","ui_context":"MCP 描述输入框占位符"}
+]}
+]}

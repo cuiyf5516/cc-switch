@@ -1,0 +1,10 @@
+{
+  "batch_id": "hardcoded:0175:src-config-userAgentPresets.ts",
+  "kind": "hardcoded",
+  "group": "src/config/userAgentPresets.ts",
+  "ordinal": 1,
+  "record_count": 1,
+  "record_ids": [
+    "hardcoded:src/config/userAgentPresets.ts:USER_AGENT_PRESETS:22004d7e79879d6d:001"
+  ]
+}

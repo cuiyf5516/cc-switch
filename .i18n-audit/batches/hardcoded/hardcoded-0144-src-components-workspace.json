@@ -1,0 +1,24 @@
+{
+  "batch_id": "hardcoded:0144:src-components-workspace",
+  "kind": "hardcoded",
+  "group": "src/components/workspace",
+  "ordinal": 1,
+  "record_count": 15,
+  "record_ids": [
+    "hardcoded:src/components/workspace/DailyMemoryPanel.tsx:formatFileSize:229dd2efa20cfa06:001",
+    "hardcoded:src/components/workspace/DailyMemoryPanel.tsx:formatFileSize:3774273e5fbf94ef:001",
+    "hardcoded:src/components/workspace/DailyMemoryPanel.tsx:formatFileSize:388be0693bbcaae7:001",
+    "hardcoded:src/components/workspace/DailyMemoryPanel.tsx:executeSearch:abb94558ee961d42:001",
+    "hardcoded:src/components/workspace/DailyMemoryPanel.tsx:loadFiles:59cc86b9c64cdf44:001",
+    "hardcoded:src/components/workspace/DailyMemoryPanel.tsx:openFile:2c7623a13d084bad:001",
+    "hardcoded:src/components/workspace/DailyMemoryPanel.tsx:handleSave:15bf68c284240638:001",
+    "hardcoded:src/components/workspace/DailyMemoryPanel.tsx:handleDelete:be9c57f2c7f7a0f3:001",
+    "hardcoded:src/components/workspace/DailyMemoryPanel.tsx:DailyMemoryPanel:a62f9585aac4983d:001",
+    "hardcoded:src/components/workspace/DailyMemoryPanel.tsx:DailyMemoryPanel:3a7a1f5342930d80:001",
+    "hardcoded:src/components/workspace/WorkspaceFileEditor.tsx:WorkspaceFileEditor:7211f4f96915b99e:001",
+    "hardcoded:src/components/workspace/WorkspaceFileEditor.tsx:handleSave:74abb1c912cbdd81:001",
+    "hardcoded:src/components/workspace/WorkspaceFileEditor.tsx:WorkspaceFileEditor:4e3cefaa77f57680:001",
+    "hardcoded:src/components/workspace/WorkspaceFileEditor.tsx:WorkspaceFileEditor:3a7a1f5342930d80:001",
+    "dynamic-i18n:src/components/workspace/WorkspaceFilesPanel.tsx:WorkspaceFilesPanel:347a6a525595a8b6:001"
+  ]
+}

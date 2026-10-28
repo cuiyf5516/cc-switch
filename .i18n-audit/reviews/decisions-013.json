@@ -1,0 +1,8 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:omo:001","default_status":"可保留","overrides":[
+{"key":"omo.advancedJsonHint","status":"建议改","reason":"当前韩文以「permission 등.」直接接下一句，列表后的标点和句子衔接不自然。","suggestion":"temperature, top_p, budgetTokens, prompt_append, permission 등의 값을 설정합니다. 기본값을 사용하려면 비워 두세요.","ui_context":"OMO 高级参数说明"},
+{"key":"omo.agentTooltip.atlas","status":"建议改","reason":"「완료하기 보다는」未按韩语规范连写为「완료하기보다는」。","suggestion":"실행 단계에서 작업 분배 및 조정을 담당하는 메인 오케스트레이터(TODO 목록 보유)입니다. 모든 업무를 직접 완료하기보다는 전문 에이전트에게 위임합니다.","ui_context":"OMO Atlas 代理说明"}
+]},
+{"batch_id":"translation:json-locale:omo:002","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:omo:003","default_status":"可保留","overrides":[]}
+]}

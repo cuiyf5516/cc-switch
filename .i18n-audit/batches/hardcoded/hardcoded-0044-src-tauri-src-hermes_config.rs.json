@@ -1,0 +1,16 @@
+{
+  "batch_id": "hardcoded:0044:src-tauri-src-hermes_config.rs",
+  "kind": "hardcoded",
+  "group": "src-tauri/src/hermes_config.rs",
+  "ordinal": 1,
+  "record_count": 7,
+  "record_ids": [
+    "hardcoded:src-tauri/src/hermes_config.rs:ensure_provider_writable:ef7335103fb42d0e:001",
+    "hardcoded:src-tauri/src/hermes_config.rs:get_model_config:354bce1481f6ddbb:001",
+    "hardcoded:src-tauri/src/hermes_config.rs:set_model_config:9372c470eeadd5ec:001",
+    "hardcoded:src-tauri/src/hermes_config.rs:yaml_to_json:8442042fbe6d7016:001",
+    "hardcoded:src-tauri/src/hermes_config.rs:yaml_to_json:84274fd02b99ea56:001",
+    "hardcoded:src-tauri/src/hermes_config.rs:json_to_yaml:f582c9e843b1b2be:001",
+    "hardcoded:src-tauri/src/hermes_config.rs:json_to_yaml:951e41c161129a25:001"
+  ]
+}

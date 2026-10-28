@@ -1,0 +1,493 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:openclawConfig:001",
+  "kind": "translation",
+  "namespace": "openclawConfig",
+  "reviewed_at": "2026-10-28T13:57:11.225192+00:00",
+  "review_count": 23,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#openclawConfig.defaultModel.addFallback",
+      "key": "openclawConfig.defaultModel.addFallback",
+      "status": "可保留",
+      "combined_fingerprint": "1d3f7018c121f1748a2bebcfed38fa47317945c223ac8d57e0e3f29f0ea2844b",
+      "content_fingerprints": {
+        "en": "f599b5e183d1302c931dd63b9efc595febc1fb4e64939a79f787a882c3f39116",
+        "ja": "4cdfb84cbadc220d0c251fa7098aa1f21d12549be720553231ab0c910c49396a",
+        "ko": "2b0403aeede4e327e25697799881455be8c171e876504a4a476b77b361531fc2",
+        "tr": "78dbe5da01d30dbbbf95cd7df8a094264c86860ea1ad2514107f31ca7c628d31",
+        "zh": "a7770e6976663dc75a018e83a8586eac55fa32c4730aeb488e9983865dae4ebc",
+        "zh-TW": "e7c652371358bebce8c43a6afe1edc8aed238c41788dd4414a78ae017ff5cdb4"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.225192+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“添加回退模型”与韩文“대체 모델 추가”在本条目所属 openclawConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclawConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclawConfig.defaultModel.description",
+      "key": "openclawConfig.defaultModel.description",
+      "status": "可保留",
+      "combined_fingerprint": "a3d6d7ccd8a2e5de172b305fb147ca3bc9351fadff2985ac3e002b72ddb1177f",
+      "content_fingerprints": {
+        "en": "c4c761e375ebbfa1489dbb38eb81357bb4eec9d114fdc7580ed58f57539b2805",
+        "ja": "f7c2c5ce56c1a8a3cf8b10fc6f30cbcd63350a749d0b4b579cf92ab79235f116",
+        "ko": "b8dd2cbb906f6015989c97018c2b3bff5fc0e050d8a10e736b9e7cb2d180101a",
+        "tr": "743ee2def6b4e6b80e2f7c52380cad89abc7f576073729c4c1b079f4ce799893",
+        "zh": "13d7546e545305af45cae6fc120c600182d8fc5208900bbec8125bd3ca13fd91",
+        "zh-TW": "8d47d91bc41299c4a01b5ece5d159638afb410cf29f2e92b9f89821294317bb5"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.225192+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“配置 OpenClaw 的默认主模型和回退模型”与韩文“OpenClaw의 기본 주 모델과 대체 모델을 설정합니다”在本条目所属 openclawConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclawConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclawConfig.defaultModel.fallbacks",
+      "key": "openclawConfig.defaultModel.fallbacks",
+      "status": "可保留",
+      "combined_fingerprint": "3c81e67c3866222a3bc86cf530aefb0306a60178354d59a0ae62e0eb0758c580",
+      "content_fingerprints": {
+        "en": "0041dc240e755f7dac320a4d55939e95e844c47ff624ff3933c927d1153962b6",
+        "ja": "179586040b60360a210ca8d4d914fcd14371b04b602ff1a9f8531fe1a87874b8",
+        "ko": "39a3ad79f0cb3237e3865e7d5db9de17556621b3940453f7737f2612e58d00b1",
+        "tr": "94ce813092ae870592061b578489407dcb5dc901af61f9b9b72120f3d063a76f",
+        "zh": "294ef40f6cbf9fdc85b1c8e14250020180a4a4130ee4eb95321cbc4c0f21123d",
+        "zh-TW": "fe25b05377cc0c8da24a7bbdb6970a4619b65c5f972fbe00c34b78cbc07bd021"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.225192+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“回退模型”与韩文“대체 모델”在本条目所属 openclawConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclawConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclawConfig.defaultModel.fallbacksPlaceholder",
+      "key": "openclawConfig.defaultModel.fallbacksPlaceholder",
+      "status": "可保留",
+      "combined_fingerprint": "02b9efd109457460f118555d3a7ac87233455cda9c745863ed0f9b83a69e98e2",
+      "content_fingerprints": {
+        "en": "f9c089b05df5229447cffa33a7396292032f55ed64f93befe6e2269f16e011d4",
+        "ja": "644e60d4f33b964d0e59422822460814f5b4c0cc358555e141d4a03bb8f92d18",
+        "ko": "e21122bed1a63763f85dd3704553752c52f94335430fed2bec01a11e3501757f",
+        "tr": "d3a4cacdb93fc290c3ba6c55e266c15a0309383eeefd88e6c41be12d2d5d22f3",
+        "zh": "36f52fa1e0e8add9c26e8b482ec7bab886ad2ad34c451c4241d3ecba697120d4",
+        "zh-TW": "36f52fa1e0e8add9c26e8b482ec7bab886ad2ad34c451c4241d3ecba697120d4"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.225192+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“例如: openrouter/anthropic/claude-sonnet-4.5”与韩文“예: openrouter/anthropic/claude-sonnet-4.5”在本条目所属 openclawConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclawConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclawConfig.defaultModel.primary",
+      "key": "openclawConfig.defaultModel.primary",
+      "status": "建议改",
+      "combined_fingerprint": "49316649abe47f66cf73664394056168f1d3522a44f1c91a6b0e65fdc13f792f",
+      "content_fingerprints": {
+        "en": "bc2701b024601dd88c58cdba885c980d2f87f74401b4182bfcbebf1cd9fe8647",
+        "ja": "928c18f21996adf08026e752d58e4c27de5f689bdb9d8b7ed88d654fc7893bb7",
+        "ko": "0ac4579b33c891f907b173b9be435fc008131b44acd71dc771074f88c6cf0ccf",
+        "tr": "0c35d5b8aa2d1ba2555b51e6a982794f58fc412069fa1799df850865d59a0efa",
+        "zh": "234a689f177e2f8eb7a1a497dffed52a1dd492bd226da714c2e0b64b39eb8823",
+        "zh-TW": "234a689f177e2f8eb7a1a497dffed52a1dd492bd226da714c2e0b64b39eb8823"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.225192+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“主模型”与韩文“기본 모델”在本条目所属 openclawConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": "原文是「主模型」，但韩文「기본 모델」与同组「默认模型」完全同义，导致主/默认概念混淆；项目其他位置使用「주 모델」表示 primary。",
+      "suggestion": "주 모델",
+      "ui_context": "OpenClaw 默认模型字段",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclawConfig.defaultModel.primaryPlaceholder",
+      "key": "openclawConfig.defaultModel.primaryPlaceholder",
+      "status": "可保留",
+      "combined_fingerprint": "653447bcc6a4da471855390dafe2ee7cb2e7fb9e687b78a45ced96e2021e3aa9",
+      "content_fingerprints": {
+        "en": "deeaf786528e763c175b8fbc9681c60dc8ec60c4ec228a16b7949657c342b5c2",
+        "ja": "9a0f20dc8b06c13f2930c933fe21c9c8952b89b57c6996d1329d6ca45f178bcc",
+        "ko": "13123952cbc88ab895ec81dd1d5624b5a1e4f6d7d51860e83f7c9a2e3732fc2d",
+        "tr": "f806bd0b01ac64c1e482a6b5185a1fa06c499cdae7412ae099f7f694d6f7a76d",
+        "zh": "4c23206e2694013a711a89d5e4194429f238d94fa2afb9ab9980f8182219e9a5",
+        "zh-TW": "4c23206e2694013a711a89d5e4194429f238d94fa2afb9ab9980f8182219e9a5"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.225192+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“例如: deepseek/deepseek-chat”与韩文“예: deepseek/deepseek-chat”在本条目所属 openclawConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclawConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclawConfig.defaultModel.saveFailed",
+      "key": "openclawConfig.defaultModel.saveFailed",
+      "status": "可保留",
+      "combined_fingerprint": "369cc75a9e9cd830fbbbfd9345c319348a64ecb259a7e98b8661edfddd0c85fd",
+      "content_fingerprints": {
+        "en": "03dbb2ddd5b7af3136b40c09411d8b39eea0c764563219f8eb714148b3fec34f",
+        "ja": "9b84f65a85026c3591deceb1a4fa0dc29f0e89d058b078a425595197a86b13a3",
+        "ko": "37a3fb4264c647a09d9d6bcbe6afd8f3eca1bfd7f7b21fe2312d11f8657cb305",
+        "tr": "ace1f4d8b409792b15b480f2fb1940aa8ded955f34dc8fc1f78ebccbc324cd3d",
+        "zh": "3d857ea4d99de06993acb62c2582228ee5fc1b8c333f8899a1ca8ba56a7e5699",
+        "zh-TW": "81f09fff3437d271fe109a8bced5ad7f8c5abe1c4cc7ee11a8c27d7388e9e216"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.225192+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“保存默认模型失败”与韩文“기본 모델을 저장하지 못했습니다.”在本条目所属 openclawConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclawConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclawConfig.defaultModel.saved",
+      "key": "openclawConfig.defaultModel.saved",
+      "status": "可保留",
+      "combined_fingerprint": "b3f9d2d1c6bf227ece5cf960579d19132d5874c6272a090305065889871c0a08",
+      "content_fingerprints": {
+        "en": "ae611ae43e6da3899a0c44ebe24959e4c71a5a0961061f4ff21e4a4a5e704898",
+        "ja": "2380a7eda9c818e08ace6af6538ec5ee6242eb8d92350f7f1d9dc76c385cdffb",
+        "ko": "79c7c5459c8a5e791a10296227ef784619ba8d64ab378e73746a611ae667ecad",
+        "tr": "f8ecc92a91067f69692a29e70e43e11ea54fded33cd5c3fcece8d76e713fd03a",
+        "zh": "bdf227d3461723bcf74d363f8f022e241952b1ee9c45937383485b21fa88ca2a",
+        "zh-TW": "9faaa83eae02cd15f5d3e9a34a23761c7c868e5b5ddea801907a277678204ea1"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.225192+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“默认模型配置已保存”与韩文“기본 모델 설정이 저장되었습니다.”在本条目所属 openclawConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclawConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclawConfig.defaultModel.title",
+      "key": "openclawConfig.defaultModel.title",
+      "status": "可保留",
+      "combined_fingerprint": "220f47e65d313cbf8289173cb83e68fe475df247a62f80bd0609dbcf59acc246",
+      "content_fingerprints": {
+        "en": "8b4e8774ddf69ec72bc41ca1103285e1a64a79beea57878751154b33b27ed880",
+        "ja": "264aab1db81d5871791456ba8748ccf12be6ea9e8973facdc77c607889ccff27",
+        "ko": "0ac4579b33c891f907b173b9be435fc008131b44acd71dc771074f88c6cf0ccf",
+        "tr": "2712d49602f9816a739b09499f901c56863ccb2ceb996594a93a248a2cf53ba3",
+        "zh": "1e2933c6b813322a9bee618bc0799720c34cb038052f78c122045a812fc26283",
+        "zh-TW": "254462f168e29e9a38b663f2b633ea65e91ba5bf122c413057115ffaad185e6c"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.225192+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“默认模型”与韩文“기본 모델”在本条目所属 openclawConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclawConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclawConfig.modelCatalog.addEntry",
+      "key": "openclawConfig.modelCatalog.addEntry",
+      "status": "可保留",
+      "combined_fingerprint": "e2e645d77176c4f8068e273630941ed740d81604fd1ea36e47a00a4d86df3495",
+      "content_fingerprints": {
+        "en": "7060e8240675f8ae74715c90d9d023d250642ddc2c260e77f32e7d25f278cf2a",
+        "ja": "330de90cbdbc54b82c6a40cac311c8ad4825244e866e0463e1ba3ca863e600ce",
+        "ko": "cd907e94bdaaecb17d771dc10d42b1e014465fa381b4eb81173dbc9bc6664794",
+        "tr": "cf61d09250fa189ff9784580f32151f4750626875aaae3fbd1c701d07cf23330",
+        "zh": "168e845a86bc370314f52a6e37bb77a12ead3a85c5202f5172ce18281cd220b6",
+        "zh-TW": "e552c2accdbf51788248329f84fe0f4551e3e6845d164ca620f81ae75b395de3"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.225192+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“添加模型”与韩文“모델 추가”在本条目所属 openclawConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclawConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclawConfig.modelCatalog.alias",
+      "key": "openclawConfig.modelCatalog.alias",
+      "status": "可保留",
+      "combined_fingerprint": "98215f6742b16d6c837df422e8c5eb53d635a952d3413a1c8bf8afb44a120707",
+      "content_fingerprints": {
+        "en": "b19e02e9502bbe5ac59dff4b2d4160768a4a7b8feff5693e5769613562290a45",
+        "ja": "7bb82713093614fc4eb6726c4103f4b7bf8311fc7e284276e38e3aaf52cd655d",
+        "ko": "e7474f4c2d4ed3a177d37eb679ce7cd095b8ea44505ea26bba44733202b05321",
+        "tr": "9719cda3c8069f360e9a300bf5daf17ea012dd796da3992eb12c43a04a0f6b1b",
+        "zh": "55c4cb3d74643b57713eed7d847757d4880f94028cf3821630eafffe954882a7",
+        "zh-TW": "b3aa3c683d060d87124cc5cf3e04c8ce3236aed16cc7a50ab978e370c38590b3"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.225192+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“别名”与韩文“별칭”在本条目所属 openclawConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclawConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclawConfig.modelCatalog.aliasPlaceholder",
+      "key": "openclawConfig.modelCatalog.aliasPlaceholder",
+      "status": "可保留",
+      "combined_fingerprint": "878002dd3490cc7c68e516d72d2eb21e6c95ff0c50733c6e18822f4ed064a743",
+      "content_fingerprints": {
+        "en": "b7f25a3a9b1fb1f92339f8228622c1b44b31a1295e829d5ab727cb12f3648cdb",
+        "ja": "a6b066c1b0421538f5ca3715d6d72b62898d25976dbea5baf5096e4dccc39bbd",
+        "ko": "d97d78292d1c46a746802a9776b9d76a67378a71dc08966ca66185191cd9da93",
+        "tr": "fcafebacdbd68143254560dd530f029321ba82e006a511cc557ad7b3bd1d61b3",
+        "zh": "db6b4299c428112e7cdfec696e038477328b7287d5fef31f7cc12efaa810aa10",
+        "zh-TW": "db6b4299c428112e7cdfec696e038477328b7287d5fef31f7cc12efaa810aa10"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.225192+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“例如: DeepSeek”与韩文“예: DeepSeek”在本条目所属 openclawConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclawConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclawConfig.modelCatalog.description",
+      "key": "openclawConfig.modelCatalog.description",
+      "status": "可保留",
+      "combined_fingerprint": "acbb9539c579e394730119f487340767f6a6b0bd586e5be95383f5c6320d803c",
+      "content_fingerprints": {
+        "en": "fe7ebf82d98e87c5d30f90dab22475f26d61434eb7e21b6ac911973a92d44a72",
+        "ja": "fe32eafb036acd0bf8c01b8405d4134c37ca9b3a7efdcd612e90fe2682d8e6ac",
+        "ko": "08cc59578070c9734a2b67d6d7668996a3b54ed9b9337f4e90d6a36a470e1209",
+        "tr": "d77aa5215a0d9a9683108da51430d265b9f85ece9eaa6a016b5dc04df69dc357",
+        "zh": "7b425b9bfbf311e8d23800d2dfa97d85bcaa88f65cbf73052c5aefa38054971a",
+        "zh-TW": "ec9637e5e5d29cfcc46ab48be79865868ecd95963044960ac8671dea410911c3"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.225192+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“配置可用模型的别名和允许列表”与韩文“모델 별칭 및 허용 목록 설정”在本条目所属 openclawConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclawConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclawConfig.modelCatalog.empty",
+      "key": "openclawConfig.modelCatalog.empty",
+      "status": "可保留",
+      "combined_fingerprint": "e5faff34a478c89638d36e5857e7a3638d1cdac9d7fcbf001d02612f6005a614",
+      "content_fingerprints": {
+        "en": "3ead402e80064db5516be49b629e9e40106a7bb0fe68de36208bc94d100e79cd",
+        "ja": "a1a33cb386133d38e4c69fff277e6a64467dcdf480478cda2d0eb89c0e4c39c1",
+        "ko": "573a690a1eacd9f4ca1b664b02a6c45a52a6b9dbb50b2cc89adb42bc3fe0523a",
+        "tr": "406b5ca2419b0b5bc69c776aacff4ce52be4d900baa5905b0483a23bd99c5c1d",
+        "zh": "1cef21dd873dfb0ea3a0ddb4d1ea7749621f9b3228d158767b2eb67bef970af8",
+        "zh-TW": "bd3b7e1f3724823382e5b85f721ca135e2a09c506667377d219c3a13dfbae4a0"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.225192+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“暂无模型目录配置”与韩文“모델 카탈로그 항목이 없습니다.”在本条目所属 openclawConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclawConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclawConfig.modelCatalog.emptyHint",
+      "key": "openclawConfig.modelCatalog.emptyHint",
+      "status": "可保留",
+      "combined_fingerprint": "6738e34f8a800678ce1c9e9a8155978e825b61476da0a873f408cc22d5fead9b",
+      "content_fingerprints": {
+        "en": "f93caf5c531aa1d4e49cd8f1c849dc5fd08cd7714340e789310885f288c871ba",
+        "ja": "d509c0958887fe28495f0c9ce1cf21bde01ef4818715e332207d17ffaab08cdd",
+        "ko": "db178bbd4b68f906dc22273b05267d7e44af9377d151312bff39df34099ee7d1",
+        "tr": "1d23465b40e3f93ec1e1cfd2964bff09db2bc6267e6b9ff05b90f5c6449c42f6",
+        "zh": "617dd4641b1de407d65dcbe9eda679da4515f8bbcaf7d529b87d0a3d927e70a3",
+        "zh-TW": "819b2e0d42ba89e78eccb1722812c7f3a4a6d4fb6571a2139219e1b2e0acf979"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.225192+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“添加模型到目录以配置别名”与韩文“별칭을 설정하려면 카탈로그에 모델을 추가하세요.”在本条目所属 openclawConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclawConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclawConfig.modelCatalog.modelId",
+      "key": "openclawConfig.modelCatalog.modelId",
+      "status": "可保留",
+      "combined_fingerprint": "e7766f45f01120b06af4d9270acfdf99bf78f062ebc13b4ca9f360cc609d07d2",
+      "content_fingerprints": {
+        "en": "089ef2b6dbb34fa9bb82acd6a7a001bf8859980102e4b39463bc39a9a0819491",
+        "ja": "9fe9ff1336d23a57406701661a36da5a69a4723ba7e51e3ed293dad65bf41f29",
+        "ko": "f84b0001ab9fb614c8d598e9e3d541e3e6a665313b387444872aa21cc35f58ad",
+        "tr": "669cd527f912888b0dc81d22446477e428055e2366a5533474b032289933e9ec",
+        "zh": "8b84338de394a65450b3b1ac323422df4dc70a7f840d46a04832ed21a0762a81",
+        "zh-TW": "8b84338de394a65450b3b1ac323422df4dc70a7f840d46a04832ed21a0762a81"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.225192+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“模型 ID”与韩文“모델 ID”在本条目所属 openclawConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclawConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclawConfig.modelCatalog.modelIdPlaceholder",
+      "key": "openclawConfig.modelCatalog.modelIdPlaceholder",
+      "status": "可保留",
+      "combined_fingerprint": "653447bcc6a4da471855390dafe2ee7cb2e7fb9e687b78a45ced96e2021e3aa9",
+      "content_fingerprints": {
+        "en": "deeaf786528e763c175b8fbc9681c60dc8ec60c4ec228a16b7949657c342b5c2",
+        "ja": "9a0f20dc8b06c13f2930c933fe21c9c8952b89b57c6996d1329d6ca45f178bcc",
+        "ko": "13123952cbc88ab895ec81dd1d5624b5a1e4f6d7d51860e83f7c9a2e3732fc2d",
+        "tr": "f806bd0b01ac64c1e482a6b5185a1fa06c499cdae7412ae099f7f694d6f7a76d",
+        "zh": "4c23206e2694013a711a89d5e4194429f238d94fa2afb9ab9980f8182219e9a5",
+        "zh-TW": "4c23206e2694013a711a89d5e4194429f238d94fa2afb9ab9980f8182219e9a5"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.225192+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“例如: deepseek/deepseek-chat”与韩文“예: deepseek/deepseek-chat”在本条目所属 openclawConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclawConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclawConfig.modelCatalog.removeEntry",
+      "key": "openclawConfig.modelCatalog.removeEntry",
+      "status": "可保留",
+      "combined_fingerprint": "4d1237098a487595bf78b9104abf42eea3db11fc76c1c594041c59fe26547232",
+      "content_fingerprints": {
+        "en": "c3812fc4acb861d5182fc2b8155f327f736fbe5e5eb86a7bd7afcb6dc5497282",
+        "ja": "e9653dc3edcbc072d033d200b3aa56539fde84e9b7cc80287fedc9f91cbe03ad",
+        "ko": "ab6625092d13f484dfb0d40fc543574d5d5114db2d05b3d696a4de72b64b86c7",
+        "tr": "b88019aa289e7800050498119a65b2d00e37bbd8e57d13339dfcc7d2d6184630",
+        "zh": "6135d4159e8925413f3341383615f2995299a536c2a7e15b74035d6d8593c03d",
+        "zh-TW": "6135d4159e8925413f3341383615f2995299a536c2a7e15b74035d6d8593c03d"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.225192+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“移除”与韩文“제거”在本条目所属 openclawConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclawConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclawConfig.modelCatalog.saveFailed",
+      "key": "openclawConfig.modelCatalog.saveFailed",
+      "status": "可保留",
+      "combined_fingerprint": "13723b8ac15747ee9b51434875d73c40651d3838bc381ee8dd4c7999b9950727",
+      "content_fingerprints": {
+        "en": "e01e056760a1f61400b99daa7e4e6fe9ba4c4b04912885c434b8e49eb7250bdb",
+        "ja": "2fdc9266180489b19c3e2db295dd998cbd2500c4d830882b97c1b9747bc675db",
+        "ko": "8fe47a4fdc97c770ee90446cecb216f36388e715a32af43f813a017efe51f237",
+        "tr": "80ac8d4cf176a2979ba565e5a46a37215338b609e6d52097503755515a95fdbf",
+        "zh": "33dcdd3ebdf48eea193bbd2b18e937bb38642d6efbb6764b2d7aed6e76d045eb",
+        "zh-TW": "86de6c01a7cea1eee5f32c751de1ec62a0cb37f22cb6d6feff3123dd01b9f1e3"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.225192+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“保存模型目录失败”与韩文“모델 카탈로그를 저장하지 못했습니다.”在本条目所属 openclawConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclawConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclawConfig.modelCatalog.saved",
+      "key": "openclawConfig.modelCatalog.saved",
+      "status": "可保留",
+      "combined_fingerprint": "5e4fc066367715ea4797ec75d35a22b1bd22f725ffbd8718571e22503ce6e1e4",
+      "content_fingerprints": {
+        "en": "f4bb8a1637540b10f6e17d1c5a853fac2c97e8c003581e1dc3c677e20226faca",
+        "ja": "f3078f372d6c14fdab325b7c8d15718da334ab916e8eadfa10f2d89403de6e92",
+        "ko": "173e0dec74b7e6c9444331a771020d8986bf7b9edef760df300452de9f0da8c2",
+        "tr": "39c02f875060bb7a5579cc0104de49e42040e82d403b6f48af33c6c7c9614bda",
+        "zh": "cd02061fff3c595e01557b0ebcc5cfe3375a2750b9ee44d9855c2246f67c894b",
+        "zh-TW": "598006c1a247dee51163210046fcddceb03aa4520ddbbf722a70dbb5a399605c"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.225192+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“模型目录已保存”与韩文“모델 카탈로그가 저장되었습니다.”在本条目所属 openclawConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclawConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclawConfig.modelCatalog.title",
+      "key": "openclawConfig.modelCatalog.title",
+      "status": "可保留",
+      "combined_fingerprint": "6c547a3c86b87212673226611b03dd0b0638283be8e24fd35bc4a4615506995c",
+      "content_fingerprints": {
+        "en": "20f737d8de1ece8e11aaa0d80f1ed717605369adcc6a002766c3dd43ff2fe26c",
+        "ja": "4f3a98ab609d8c83ef8b043eb72c30e2424cf184b37796d4c3afdbfd61ff6360",
+        "ko": "cc655c7cd3e5cf6a8f4cd50c0ad9c499da35d36aa8eeb409035d69038c359cb8",
+        "tr": "d57d2b1b438f071b1194d769c1f219de4427a6373c38f1844fe60bf88fb700fc",
+        "zh": "34b3cac2a496d26344ef6eea4d57776e399eca34bace6f1533d03f4459d679f8",
+        "zh-TW": "31bf3d8f68088ad04c7e58c89607bb02d4206f2a12ee3541742c5a2a31a5c41e"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.225192+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“模型目录”与韩文“모델 카탈로그”在本条目所属 openclawConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclawConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclawConfig.suggestedDefaults",
+      "key": "openclawConfig.suggestedDefaults",
+      "status": "可保留",
+      "combined_fingerprint": "a7ad9ad0a30c424d4fbbec5686b91ccae1909c1be7e8b0052d82d26f968864cc",
+      "content_fingerprints": {
+        "en": "52464bb211cf38a4e9622f1bb392062082f6a4739469ee9e28c1d40bba0379c2",
+        "ja": "c4136b5c79d7128f47b2b680d9b5e7d7b00063967e93b73dca9a55267b9d6c4b",
+        "ko": "212d5e3c273406969989bde1106322586101883eac80a43299998ae1c98baab0",
+        "tr": "f52d78fba032b75068bea4f41f9f50a2dbb9ebdfd257fd3e07c46da3ecabaff3",
+        "zh": "60fd86630217365f74110a1f629a38e8e318b12d8774b6d930f479c0d71886e9",
+        "zh-TW": "d72c22ce685ba5d303f09260834c47a854a337806c275e6b49e8f5f00a04364b"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.225192+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“应用建议默认配置”与韩文“제안된 기본값 적용”在本条目所属 openclawConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclawConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclawConfig.suggestedDefaultsHint",
+      "key": "openclawConfig.suggestedDefaultsHint",
+      "status": "可保留",
+      "combined_fingerprint": "41f2851ce3815c33cedc29a3e7359282088a6f0f87d16be28848ec6e2fe839be",
+      "content_fingerprints": {
+        "en": "3ad65eda5a127ca2ad11332601c947a6f203c5a2371b09a3f68277c1aa64a7a7",
+        "ja": "b878823f9c3cd523783465f47cf44e10e6c72ae0fb0f434e24dbf5699afcc888",
+        "ko": "87e5b271a7815c91e66c515bdcd27c6f1e4d46d32a61201790612a6dae8d0ef3",
+        "tr": "b0d051d5e8b1f0bcfcdbb731d4e51089a52dddad3e06bb98a560f21cb58d8977",
+        "zh": "9c3481c715e88a94e3654cd1f3244fb612325ce2d5280645aa976ef6a8ef0205",
+        "zh-TW": "f4670d32230089a6630926528ccee6cbf1c42b9d6905bd49c0277e1c44ff719f"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.225192+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“使用此预设推荐的默认模型配置”与韩文“이 프리셋의 권장 기본 모델 설정을 사용하세요.”在本条目所属 openclawConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclawConfig",
+      "round": 1
+    }
+  ]
+}

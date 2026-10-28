@@ -1,0 +1,20 @@
+{
+  "batch_id": "hardcoded:0183:src-hooks-useProviderActions.ts",
+  "kind": "hardcoded",
+  "group": "src/hooks/useProviderActions.ts",
+  "ordinal": 1,
+  "record_count": 11,
+  "record_ids": [
+    "hardcoded:src/hooks/useProviderActions.ts:addProvider:96351427644559db:001",
+    "hardcoded:src/hooks/useProviderActions.ts:updateProvider:ad3e8e94f0e3d770:001",
+    "hardcoded:src/hooks/useProviderActions.ts:switchProvider:1a0d882c4be2dde9:001",
+    "hardcoded:src/hooks/useProviderActions.ts:switchProvider:0503db1b44ad4817:001",
+    "hardcoded:src/hooks/useProviderActions.ts:defaultMessage:c5dcde6ac770eac5:001",
+    "hardcoded:src/hooks/useProviderActions.ts:switchProvider:116dbbe928c6714b:001",
+    "hardcoded:src/hooks/useProviderActions.ts:switchProvider:126efddcad591bbf:001",
+    "hardcoded:src/hooks/useProviderActions.ts:switchProvider:33e50759e61e9304:001",
+    "hardcoded:src/hooks/useProviderActions.ts:switchProvider:85c07603d29beae6:001",
+    "hardcoded:src/hooks/useProviderActions.ts:switchProvider:cf2a766696e724f9:001",
+    "dynamic-i18n:src/hooks/useProviderActions.ts:message:957b5b6d4c6b0d30:001"
+  ]
+}

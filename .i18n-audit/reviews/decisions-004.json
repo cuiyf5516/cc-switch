@@ -1,0 +1,6 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:appsPage:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:claudeConfig:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:claudeDesktop:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:codex:001","default_status":"可保留","overrides":[]}
+]}

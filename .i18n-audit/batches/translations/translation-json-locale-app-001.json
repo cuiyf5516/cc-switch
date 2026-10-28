@@ -1,0 +1,16 @@
+{
+  "batch_id": "translation:json-locale:app:001",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "app",
+  "ordinal": 1,
+  "record_count": 2,
+  "record_ids": [
+    "json:src/i18n/locales#app.description",
+    "json:src/i18n/locales#app.title"
+  ],
+  "keys": [
+    "app.description",
+    "app.title"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0187:src-hooks-useTauriEvent.ts",
+  "kind": "hardcoded",
+  "group": "src/hooks/useTauriEvent.ts",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 1,
+  "records": [
+    {
+      "id": "hardcoded:src/hooks/useTauriEvent.ts:useTauriEvent:bc2160c053b2d8d4:001",
+      "status": "无需国际化",
+      "content_fingerprint": "bc2160c053b2d8d4fb13efaff2af6736cfac7ff3040ccb6c887fb3e64debd6b1",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/hooks/useTauriEvent.ts",
+      "line": 30,
+      "function": "useTauriEvent",
+      "expression": "`Failed to subscribe ${eventName} event`",
+      "reason": "控制台日志或诊断信息，不作为界面文案。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0187:src-hooks-useTauriEvent.ts",
+      "round": 1
+    }
+  ]
+}

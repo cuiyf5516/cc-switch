@@ -1,0 +1,20 @@
+{
+  "batch_id": "translation:json-locale:firstRunNotice:001",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "firstRunNotice",
+  "ordinal": 1,
+  "record_count": 4,
+  "record_ids": [
+    "json:src/i18n/locales#firstRunNotice.bodyDefault",
+    "json:src/i18n/locales#firstRunNotice.bodyOfficial",
+    "json:src/i18n/locales#firstRunNotice.confirm",
+    "json:src/i18n/locales#firstRunNotice.title"
+  ],
+  "keys": [
+    "firstRunNotice.bodyDefault",
+    "firstRunNotice.bodyOfficial",
+    "firstRunNotice.confirm",
+    "firstRunNotice.title"
+  ]
+}

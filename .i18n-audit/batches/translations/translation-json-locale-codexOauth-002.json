@@ -1,0 +1,16 @@
+{
+  "batch_id": "translation:json-locale:codexOauth:002",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "codexOauth",
+  "ordinal": 2,
+  "record_count": 2,
+  "record_ids": [
+    "json:src/i18n/locales#codexOauth.useDefaultAccount",
+    "json:src/i18n/locales#codexOauth.waitingForAuth"
+  ],
+  "keys": [
+    "codexOauth.useDefaultAccount",
+    "codexOauth.waitingForAuth"
+  ]
+}

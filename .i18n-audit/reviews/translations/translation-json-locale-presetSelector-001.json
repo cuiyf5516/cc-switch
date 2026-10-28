@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:presetSelector:001",
+  "kind": "translation",
+  "namespace": "presetSelector",
+  "reviewed_at": "2026-10-28T13:40:03.247416+00:00",
+  "review_count": 5,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#presetSelector.custom",
+      "key": "presetSelector.custom",
+      "status": "可保留",
+      "combined_fingerprint": "24d01c119cb795be614f067354edcbe18d7b7026a11583e8a3e319b1de413bb2",
+      "content_fingerprints": {
+        "en": "494ca78f7374e46fb2de9ad9f2dbd4aaae89b50b2ca044177a1566a59e06627e",
+        "ja": "517f5a984feaaf2eec7a37e4eba01f06a91a3e32f8b1fef08a759e52e0d77150",
+        "ko": "e1f51d662031b68d602f8339be7c402a80acb89ebeb065087d726d50079bacfc",
+        "tr": "7bd8b8264c4ebd69770cbd733c8570725dedc3ec9bf089b2040b95e82112815b",
+        "zh": "4eafa9e925b30bcdc99faefeb4a833b47194b0d4f6d7753cecfebea31a61d01a",
+        "zh-TW": "1fe9883907bac4149ddb6fcda0cb2a8728199a8d5ed3ed92bc44b9e9783d6f05"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.247416+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“自定义”与韩文“사용자 지정”在本条目所属 presetSelector UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "presetSelector",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#presetSelector.customDescription",
+      "key": "presetSelector.customDescription",
+      "status": "可保留",
+      "combined_fingerprint": "eb954bf073b2f08d3cbb757143f7362bab45acd24e2b8064cdeabcd65aa18009",
+      "content_fingerprints": {
+        "en": "12eda2a230f50c032e946a02c325ffc1865ed8c062d176197d7cdb454bfa5f19",
+        "ja": "c5c366fa48234b47be265031745dba6081fb30910ced56d3e7b86b84a2a6b9a0",
+        "ko": "5a9e6395dc75c18108c2e62e22a11ab9272c12777c7146d1ce412e3b095828af",
+        "tr": "fd7c23714593452829cc288212ac804f8f5e88b3058d9794731d11eab736ac2a",
+        "zh": "732204481ee264372a973e94b08016a540b2fd09cd3ddad5746cc587f2069129",
+        "zh-TW": "5c32bb87786ed955a1c9ded4ac3721c26ab404e50b857393f50f51df1d99e711"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.247416+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“手动配置供应商，需要填写完整的配置信息”与韩文“공급자를 수동으로 설정하고 전체 설정이 필요함”在本条目所属 presetSelector UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "presetSelector",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#presetSelector.officialDescription",
+      "key": "presetSelector.officialDescription",
+      "status": "可保留",
+      "combined_fingerprint": "0ce200cbfdf46161f07b43c8c2821ea6590eb7c4e81b8e5b781bf97cd7a463ce",
+      "content_fingerprints": {
+        "en": "748a0dfe64ba0097b778808cec0b35e4d4823ace5e448742d10abd12ae55c6d5",
+        "ja": "1fd3549ebf7359284d88738f554b5beabc2e5a1094df93a72bb5706cf562591c",
+        "ko": "b95157b333610449ac0dd1805797c90d1aa3f2b2406d2a36247b985f1357a03a",
+        "tr": "af3696dec06b55315639f3e75d87721d982f4bbc998006412e260955ad49ed2d",
+        "zh": "3d6baa8ce03f6dd9c58b13c1a40c20e27baacadc99adb790cf0e57aff0c213a5",
+        "zh-TW": "648a90783239912525d7eddd2c3871374484353cc47b7d9463b937b9c8b816e6"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.247416+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“官方登录，不需要填写 API Key”与韩文“공식 로그인, API 키 필요 없음”在本条目所属 presetSelector UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "presetSelector",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#presetSelector.presetDescription",
+      "key": "presetSelector.presetDescription",
+      "status": "可保留",
+      "combined_fingerprint": "dfbe4dfab69e0db53968e8301e417e60030c1298886eb24bdb3ccf8e4ed5de11",
+      "content_fingerprints": {
+        "en": "e0d9498faab1839513c38a5ae93b7d6cfa9b5ce5a2c17667efee46cc0bcf5eea",
+        "ja": "94b4b33bc967f476b491edb408292bc038e2e7ad34211541febc7d503baacdc7",
+        "ko": "e1c574e9dae56fcc2e64efed24b05a7306a12467f9739b7c54b986fcf5fea717",
+        "tr": "2f9d0bb6ad53be32ad33c86d0b4a80d4150a1165520663978bf7b70cb37c2cbe",
+        "zh": "10202755108442c6ad8645aa7ea0df59866e2ff6e55044ddb3025cad9efcd2df",
+        "zh-TW": "08e0b6b0bf4a843aa40b18fa1ec7b9c20b8fee295f9d4d26b8d7aba8407772b0"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.247416+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“使用预设配置，只需填写 API Key”与韩文“프리셋 설정 사용, API 키만 필요”在本条目所属 presetSelector UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "presetSelector",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#presetSelector.title",
+      "key": "presetSelector.title",
+      "status": "可保留",
+      "combined_fingerprint": "3c4dfcf7639093524150a57c14ae158036809dbd5b52e61d50c1fca81cf48994",
+      "content_fingerprints": {
+        "en": "8862f6edf27a017ae2621d9e7ac91e7c219ee045285d41ed27dc9ce309464abb",
+        "ja": "0cfbbf045653be25472426dec3c44dd6ed892b11733d4982d51527efcceb59ee",
+        "ko": "439f564c87b6a3e56cf4ff434c97b7bdec6d75bca9cb6262065abea975ab57eb",
+        "tr": "12b8176753db4886cbfe693a2cfc6e3519010daf3bcdde45a567908191f41950",
+        "zh": "aab21ea4434503fa0956c513bb779ac17f5fad02bc3a19c2960640d35c44f4ee",
+        "zh-TW": "46ac39f0b15835e7dae7bda3c05178462f37c0922cb7dbb11f0dd8c08b093aa3"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.247416+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“选择配置类型”与韩文“설정 유형 선택”在本条目所属 presetSelector UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "presetSelector",
+      "round": 1
+    }
+  ]
+}

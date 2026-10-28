@@ -1,0 +1,14 @@
+{
+  "batch_id": "hardcoded:0219:src-utils-grokBuildConfig.ts",
+  "kind": "hardcoded",
+  "group": "src/utils/grokBuildConfig.ts",
+  "ordinal": 1,
+  "record_count": 5,
+  "record_ids": [
+    "hardcoded:src/utils/grokBuildConfig.ts:validateGrokBuildConfig:635935c049e3abfa:001",
+    "hardcoded:src/utils/grokBuildConfig.ts:validateGrokBuildConfig:968d44e96bbf12f6:001",
+    "hardcoded:src/utils/grokBuildConfig.ts:validateGrokBuildConfig:2a3495bd745faa88:001",
+    "hardcoded:src/utils/grokBuildConfig.ts:validateGrokBuildConfig:d431161f73c1ac64:001",
+    "hardcoded:src/utils/grokBuildConfig.ts:validateGrokBuildConfig:b7775baf7a5fdce9:001"
+  ]
+}

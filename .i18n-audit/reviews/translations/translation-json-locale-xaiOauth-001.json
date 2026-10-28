@@ -1,0 +1,409 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:xaiOauth:001",
+  "kind": "translation",
+  "namespace": "xaiOauth",
+  "reviewed_at": "2026-10-28T14:08:37.327681+00:00",
+  "review_count": 19,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#xaiOauth.accountCount",
+      "key": "xaiOauth.accountCount",
+      "status": "可保留",
+      "combined_fingerprint": "5a6fd7679e20582e6cbd7f2ab96f6e323552ec6dcddaae19cec0f93cfacb2b74",
+      "content_fingerprints": {
+        "en": "ae82bce2ece08d88e5d99446f873fe735e8cd3cefb3c2a75383c79dfe24aef59",
+        "ja": "7c2aff33e20ab351120dd34293ad2e533f12b42132a0bfc39919faa108fb4d6d",
+        "ko": "b7bc16082fff694f1aa1029979abb92613f0d02afbba24000efe9c49fc37473e",
+        "tr": "4d76cb0da8a358ca90a5bc8f88afc9d9014a8e9d9da4994f9632e12cc6ffbfca",
+        "zh": "6318829944499e24eb65732e438167cb61d10e753007992ffe65884b1b81d8c4",
+        "zh-TW": "082ead50adcea1f6a5dd2f0c5f77690bf22ba8eae65110ce22ebefbaf9dd795b"
+      },
+      "reviewed_at": "2026-10-28T14:08:37.327681+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{{count}} 个可用账号”与韩文“사용 가능한 계정: {{count}}”在本条目所属 xaiOauth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "xaiOauth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#xaiOauth.accounts",
+      "key": "xaiOauth.accounts",
+      "status": "可保留",
+      "combined_fingerprint": "e19d639f06b03775af31ca011a2a277f97e9d44c4cbccb20a1cc6e724e82a54b",
+      "content_fingerprints": {
+        "en": "674f240976c42989a2d5513d4f6b4eb75b391b5be64e35082255c77d84a19b13",
+        "ja": "d7e7301bf1ba94c52ca9d870c39e2046fe39b8aeefc91802b8cd94b91f5eba93",
+        "ko": "7d54d31b5e2f29bfe0e5e34d4306be5e3e4b4a60c2643b760080ff346e49153e",
+        "tr": "080aea0b535932a78a49ae88a621bb2d9b20ba3c6ee262dbff6137f0038aeb23",
+        "zh": "a84c1605cfe44cd6207f404ee97586f492b26776d302cae2a0dc3121b81f71ec",
+        "zh-TW": "f6deb522f3916ced0121cebc134578e933d94778fa56236c1d5b47c4d60c5c60"
+      },
+      "reviewed_at": "2026-10-28T14:08:37.327681+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“xAI 账号”与韩文“xAI 계정”在本条目所属 xaiOauth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "xaiOauth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#xaiOauth.addOrReauth",
+      "key": "xaiOauth.addOrReauth",
+      "status": "可保留",
+      "combined_fingerprint": "82b29ebcde321881f65e15cc05266cca85871e25469a2147052abe5706fd2a42",
+      "content_fingerprints": {
+        "en": "a40acbcedb2a0478b9e24ecf1a2fd452679090e2598a71e13b1127e37cd65b91",
+        "ja": "8cef9eac9366a4a0d83e98c68f89dee4fa82eb1c6b743529c0eba094e4c2c908",
+        "ko": "d30328c2c88bd451889d6f90744065dcb76b0887f83b20f273b4300d8b8c4e13",
+        "tr": "2aa35b794be5a8e9763d4a283c22159fcd0c1120d5f7f55802e16b82d148a5d5",
+        "zh": "6e9ec60df32a81a62cfb3839777fcb1f7eaa9ffab5308f4b9658182bdd92012d",
+        "zh-TW": "3ac107839f9ddfd4ed8afe8fe3299e59ba359535ba0f5306ff7a0bd1a513490d"
+      },
+      "reviewed_at": "2026-10-28T14:08:37.327681+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“添加账号或重新登录”与韩文“계정 추가 또는 다시 로그인”在本条目所属 xaiOauth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "xaiOauth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#xaiOauth.authStatus",
+      "key": "xaiOauth.authStatus",
+      "status": "可保留",
+      "combined_fingerprint": "fc26aa77d0e19c39b023ea7bc0c0a2a0a26d457a80ae84280e75834095ec7377",
+      "content_fingerprints": {
+        "en": "c0c27538222845b464e06a60c8f5119abc05adb47d613bf3b9278029f8a8f3a5",
+        "ja": "45eb6cb173d0f2b6676c0395436e6dc078d2481eaccf1b4f5b92c190ce4937e0",
+        "ko": "bc26f6042cbb7587184d9ac4ed16ee9f441cb2529a41716593dd27359ddef3ac",
+        "tr": "15de34cd2ee70b02a09974dd6b39eee6d78017b1ca81d62c06a1fd70bc50e0e9",
+        "zh": "9132e0cd720560620f66d7ed31a4330a1f80d6f45605ec56f697c37614d9a403",
+        "zh-TW": "b8bef28f000f2fad09f4e8f81b159e1a341b04c53647604d1b7e32ce1a97b891"
+      },
+      "reviewed_at": "2026-10-28T14:08:37.327681+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“xAI OAuth 认证”与韩文“xAI OAuth 인증”在本条目所属 xaiOauth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "xaiOauth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#xaiOauth.defaultAccount",
+      "key": "xaiOauth.defaultAccount",
+      "status": "可保留",
+      "combined_fingerprint": "8fb68036782904c2e15138fba4d8cf528a42c81d2c78a066fa6bbadf28bef781",
+      "content_fingerprints": {
+        "en": "21b111cbfe6e8fca2d181c43f53ad548b22e38aca955b9824706a504b0a07a2d",
+        "ja": "29236e14bb30a64df4a12aec3992344286730205ae3667fa8f65fd425744df39",
+        "ko": "10ccf42a824aaa496258cd6a6c2518ef04a58f5c280557cfaa4ce4e684f7d162",
+        "tr": "006ac77b363eee37fba6105764bb89c6b33a25e69542968d6f6df006e55cde05",
+        "zh": "844b8cc8dff7c1d87b0f840c0a1271b227b332288a1a947f24fd376bfd12c1c9",
+        "zh-TW": "09f725209f4b3f7e8af6b7080c2e10520e8dd9cb687fa30a2a04489b57c22451"
+      },
+      "reviewed_at": "2026-10-28T14:08:37.327681+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“默认”与韩文“기본값”在本条目所属 xaiOauth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "xaiOauth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#xaiOauth.enterCode",
+      "key": "xaiOauth.enterCode",
+      "status": "可保留",
+      "combined_fingerprint": "ed251200f5e03e98966db02276db5b8ca103d87b341c2d506a13d2ead8b456ff",
+      "content_fingerprints": {
+        "en": "309de156493c6e9fc772ca33354cd80f4ddbc0f3534789a9f0bde9154a8039be",
+        "ja": "46776807e10b378dc378b5d6acdb1c6aab86ae21d1748115e1ab123d2d7840d7",
+        "ko": "4edb11a075447d415cfed71d9c6e494a2855df5e071de6158b01b04ffb23d386",
+        "tr": "3ae01e1e22c2e4582a03098337edbb1c1e82f2198bab958c4673f47b6abebbf4",
+        "zh": "2126ab39dfebac6a9e76399d5832799a7206b048a478ff57897c5df8ef4e025b",
+        "zh-TW": "27e21c64818e78c2a4e8b0e882b7f296c9e620fd515232cd76dfb23b9bf24e93"
+      },
+      "reviewed_at": "2026-10-28T14:08:37.327681+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“若浏览器未自动填入，请输入：”与韩文“브라우저가 자동으로 입력하지 않은 경우 다음을 입력하세요.”在本条目所属 xaiOauth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "xaiOauth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#xaiOauth.expired",
+      "key": "xaiOauth.expired",
+      "status": "可保留",
+      "combined_fingerprint": "b09083182915c3eadeb4534efe847c915ca236f0bdcd9dc2e1d3ad2aef8d2399",
+      "content_fingerprints": {
+        "en": "8471c84e2e0b747fa8f20fcbcb86a5b0c1cae37c5d485f20a7573c33c36baf0a",
+        "ja": "351cf86b07c914db5af6526c60cc3b9b3b72f954f045fa9a79a36be6d1ec0cc6",
+        "ko": "f7506a7730123c3a2c1f7373ab0f2b2f2efbd47d77cf6ed0d8683b9b25422922",
+        "tr": "07866137d3eb51344ef98eb42e80b76142832c56d43be2a9f8bceade859680c3",
+        "zh": "02f35d470aff3aaf63f32926081d7e88c78a1efcadfadb7b59592b95c7d902e7",
+        "zh-TW": "83caac9e62b90a36ac8686d6288f5febbf81aea6c37cb51ecafb2c2c6810b6c9"
+      },
+      "reviewed_at": "2026-10-28T14:08:37.327681+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“凭据已失效”与韩文“자격 증명이 만료되었습니다.”在本条目所属 xaiOauth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "xaiOauth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#xaiOauth.login",
+      "key": "xaiOauth.login",
+      "status": "可保留",
+      "combined_fingerprint": "c7148c655b4d2174132128b5d6ece84cfe597603fd363cb1d7aae89e53c239af",
+      "content_fingerprints": {
+        "en": "673db5acde42b44ac1d4d1b003bbe6fbef81991815ffddbb776c254a492259b7",
+        "ja": "f7148f3279a09b9163d1a1870a8e5b16856e52fd2110bd7cb50db2f996963c6f",
+        "ko": "583f7bdf7cdaa15b8a992f0e38d345f215abb71115b76e45822e1914f9cf7a94",
+        "tr": "6898df946836603875229a72c26440595eec9c3b09c7f06fa1028b6d650e7527",
+        "zh": "01be684bdd890be33f559bcf74914a8f2ef54c599ba8cde8846465d7f3070a97",
+        "zh-TW": "52a5e4a071c98ed09a1910b3babe4c35cf59dbbd9cec8fac4900f07af46a3bd1"
+      },
+      "reviewed_at": "2026-10-28T14:08:37.327681+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“使用 xAI 登录”与韩文“xAI로 로그인”在本条目所属 xaiOauth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "xaiOauth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#xaiOauth.loginRequired",
+      "key": "xaiOauth.loginRequired",
+      "status": "可保留",
+      "combined_fingerprint": "4410d7810a2d1837e0ee3241489f05b39e449892d11cd783dd0e6ea737f181e9",
+      "content_fingerprints": {
+        "en": "badbe6ce3d643fbcfc98396a0b3376e03d3f7aff2f8e829e121d80fba25e79e3",
+        "ja": "662325a1b2407bf82473de6bcffa3e040bae1a3182a553f95746d0342bfde405",
+        "ko": "bb7cf18a43e25a61b4944c8446d651dca2f5d227c7f11f1714db00e5cb3cf2cd",
+        "tr": "49b3e283bb6fac18e345925de218e391b6cc91901c43052c3823ceec213b0dee",
+        "zh": "42e1bfd2b129d2ba50d5389d57cfe154324ffb0bfa32f228c6e0af503e4024a1",
+        "zh-TW": "0823ae8ab732081ecd920d603fb8dd96270c06fc529503deb576bbe31d191e89"
+      },
+      "reviewed_at": "2026-10-28T14:08:37.327681+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“请先登录 xAI 账号”与韩文“먼저 xAI 계정에 로그인하세요”在本条目所属 xaiOauth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "xaiOauth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#xaiOauth.logoutAll",
+      "key": "xaiOauth.logoutAll",
+      "status": "可保留",
+      "combined_fingerprint": "36f13bfbf5bfb21568490cd54522a72d2b918027822a0d61edd637e9f4eca598",
+      "content_fingerprints": {
+        "en": "0be65837f2265ec72057accc196bd28da86a07c558c5d98596fb9374c7a22bc9",
+        "ja": "5925cd2724bffb49a1764670c0936ef94634df447dcb75341b1ea783dfcb7b14",
+        "ko": "0db573ebd150c70845a4516c09f8d6fcc3be80772a94e4f399c2e4cf66d6d0be",
+        "tr": "fbe33f4839ff1da8949d2d1e374a9da276fe53ad42b6c04a38c3f3f7233e6335",
+        "zh": "49382e9430d31d1c2bbbd421606668b5f305e6302c04b3da3e27b4d28afd138a",
+        "zh-TW": "b9ebc868469c449a75f66b582961494cb8be56d77b5667c252d8ff8bfe12f7ae"
+      },
+      "reviewed_at": "2026-10-28T14:08:37.327681+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“删除全部 xAI 账号”与韩文“모든 xAI 계정 삭제”在本条目所属 xaiOauth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "xaiOauth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#xaiOauth.notAuthenticated",
+      "key": "xaiOauth.notAuthenticated",
+      "status": "可保留",
+      "combined_fingerprint": "c8cef87b268ebaa6c65f7f59963cf84479e6bfeae804e55e25d0ea5f012ea88d",
+      "content_fingerprints": {
+        "en": "76d1efbeed2dd7b2fbdf5644084a9e7b6ffd536af4c1be2a4b287edc7af80674",
+        "ja": "b15ae5b0e0432c3e873e2df09676214a13975a7570679f8b11ed6ac85356fda4",
+        "ko": "465864fbb8a0c236406726c558768ecb8451483c37c80c6c1a3f5319a01584e3",
+        "tr": "4bbfaae48f26428916988c6c345eb10c1408c31b6cb5b01681185dffb035e3ff",
+        "zh": "d9c133f233b4df8aff5c9e1d48054d4a2a3385b52d7421411a403739d92c35d2",
+        "zh-TW": "557859ff5a43e267cfd8c6283585c9eebca5afbc2e5df4d5080f7acbe145ee0b"
+      },
+      "reviewed_at": "2026-10-28T14:08:37.327681+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“未认证”与韩文“인증되지 않음”在本条目所属 xaiOauth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "xaiOauth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#xaiOauth.reauthRequired",
+      "key": "xaiOauth.reauthRequired",
+      "status": "可保留",
+      "combined_fingerprint": "300ba9719f61aad4c1326365541669cfbea36c5ab5e764bb988a8111302f6dbf",
+      "content_fingerprints": {
+        "en": "288685d3684c345acfa964d4483a2598a3ccf7486f11d09d82bc49793eab0952",
+        "ja": "cb9631c7e100f3062577773d787c62a6fcee06fc424134ccec9920440cb9371e",
+        "ko": "5555277a028764649acbcdbfb192d4815b778bad5137e89a0c1f77787497dc8f",
+        "tr": "b867d65d05486c522262749ae5aadfa21d85d74d2b31b9fbcc52f0e411e32287",
+        "zh": "3499131624f8b9cdbf5fcd66c8d5aa209c6de0de97f2d0dc775440a9c77f010f",
+        "zh-TW": "fd3d29587e3fdacc2db2b0c9aa781ebf6bf0cfb5156718ab43ca403796c7e420"
+      },
+      "reviewed_at": "2026-10-28T14:08:37.327681+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“需要重新登录”与韩文“다시 로그인 필요”在本条目所属 xaiOauth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "xaiOauth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#xaiOauth.removeAccount",
+      "key": "xaiOauth.removeAccount",
+      "status": "可保留",
+      "combined_fingerprint": "c535dfe4d1fd9d6f882f29926a594dfd36e57113471ffeaad61cf93eff390667",
+      "content_fingerprints": {
+        "en": "fd35618c19209f1032d90c06f85423efc4a939f899b23104eed772b47e4559fc",
+        "ja": "45cab102571833b825fc066a64db18ae0fa99b0e90eac73148deee18b967cd66",
+        "ko": "07051913f67d3a7ef7548ab3e9cbcfa81dc0a9a7b01470bb7db977f6092be47e",
+        "tr": "065c074ce32c3655d702c52079763c0250ee8244537b67b39cb01587fdc308bf",
+        "zh": "f83faae7028078f71be0bae4b19dd3d3b137d746dfdf5f4d15ec70b919fb8c04",
+        "zh-TW": "01f64ff89541005e8a0c97c7f06650938ebdff92984fdb769354d8b77e3601f7"
+      },
+      "reviewed_at": "2026-10-28T14:08:37.327681+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“移除账号”与韩文“계정 삭제”在本条目所属 xaiOauth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "xaiOauth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#xaiOauth.retry",
+      "key": "xaiOauth.retry",
+      "status": "可保留",
+      "combined_fingerprint": "25e187964e0e5e418be9f8c31c8e31ac22187ac56874c2afcd4cd0069d3b950b",
+      "content_fingerprints": {
+        "en": "942087cc2d41e01304b7195558d093d10c72af8e838c7556d6a02d471ee71852",
+        "ja": "fb6cc190949da044499f8bcfc763929640af9ae3a3e929b2d230f4e423b6482b",
+        "ko": "196856a662bd90843ddb2e1f68e1cc74617b43b35778c7b5f520c38ea80038e1",
+        "tr": "1f30ff52f9d5e535582c74b3e4381c1e8290c3902db4d28c42228a6d736decf1",
+        "zh": "b8784c8dd5636ff231b121892144e4a3977d5b874f21934c53f850cde7bac0ea",
+        "zh-TW": "7e59d0f162931a5dd57bd27f0ad05cb09f6cc588b5831bd53312bbb7ac618f6e"
+      },
+      "reviewed_at": "2026-10-28T14:08:37.327681+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“重试”与韩文“다시 시도”在本条目所属 xaiOauth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "xaiOauth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#xaiOauth.selectAccount",
+      "key": "xaiOauth.selectAccount",
+      "status": "可保留",
+      "combined_fingerprint": "a0547f29bd2b0d8d1f49365a6b66fa93b99e9062c1e82dd5f411aa99b5b59d4c",
+      "content_fingerprints": {
+        "en": "6dd7b48a3fb195b4a52c7d60e9f3b179113b489c9412a881a41abf06da3df7e2",
+        "ja": "4dc2551e7b2ca4a9f95fb3d85bf28c75cec7237a930384f0c01f9265cca358ec",
+        "ko": "4405a281d0044a10ddc3a8b94b7de9df026d1032a95a09502bf68815cb3493c5",
+        "tr": "4db9a196ce1de2257fa45432ff1fa87c70a58d285341fe338bc2f6d8b4265f0f",
+        "zh": "d0e6a1a28308848226fe49a70e2355e759e08130c0486a8b286b986f4bf3ce39",
+        "zh-TW": "4a791e6a12b3c21ecff04765608415865e067ec3ffee56f05b69d1be847142fa"
+      },
+      "reviewed_at": "2026-10-28T14:08:37.327681+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“选择账号”与韩文“계정 선택”在本条目所属 xaiOauth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "xaiOauth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#xaiOauth.selectAccountPlaceholder",
+      "key": "xaiOauth.selectAccountPlaceholder",
+      "status": "可保留",
+      "combined_fingerprint": "27423d938ac31c87e7b29506db6947834f541ff9ee1a94d9b2c4209cc6ddba30",
+      "content_fingerprints": {
+        "en": "3670e8141204fa98fe8d6bf029783b1840f76c810871e385938f9eb51e7b120c",
+        "ja": "bc082ec124c9d7960c906d6e20cf963516d042af2d6a91632d2a136caa19d206",
+        "ko": "d0f80e7a407ddb967edfa478a37c833cdce86e09f586a7d07ad82d50da06cc5d",
+        "tr": "8eff75c98c58437e26a3860264df7fb0e659f6b01791982ae6513a3abd0411fe",
+        "zh": "2a1651ad70733718c9229314a44c681b946b15bdd043188947352583dd8b6371",
+        "zh-TW": "e87a1febc20ba451c77065c7e5494a22e42c87ef2830fb6fbf5dce5c41ba998f"
+      },
+      "reviewed_at": "2026-10-28T14:08:37.327681+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“选择 xAI 账号”与韩文“xAI 계정을 선택하세요”在本条目所属 xaiOauth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "xaiOauth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#xaiOauth.setAsDefault",
+      "key": "xaiOauth.setAsDefault",
+      "status": "可保留",
+      "combined_fingerprint": "676baec8b1b3e97debdf06f706c4c4a4cb1c9f5238bfbf3131528503d39a8d35",
+      "content_fingerprints": {
+        "en": "d09b4dd6265a220211fc2e0fc1fbe77a19e78a124bf6e916541a06712221381a",
+        "ja": "595438a97d781c530f9339910234ef5bbe618ca15c361d2d8f24a23dfadcfc64",
+        "ko": "4556ebecb3e5cdde74dc777c5ca151cad1343f95905f65e7d2ee659d09c5650a",
+        "tr": "35193b8639c4f3ae9d3e07fe96068383f2ae2c3bf77054fd008723686fd286a2",
+        "zh": "357211096f78cdb88042c0f87efac67b24ae8d127c3d0fa0746eb40048d03206",
+        "zh-TW": "a02e4c13b23aeb75ecc845eb82ef055ef322005ba7280e59f53bbafd6e8b8346"
+      },
+      "reviewed_at": "2026-10-28T14:08:37.327681+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“设为默认”与韩文“기본값으로 설정”在本条目所属 xaiOauth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "xaiOauth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#xaiOauth.useDefaultAccount",
+      "key": "xaiOauth.useDefaultAccount",
+      "status": "可保留",
+      "combined_fingerprint": "a21d4457589f759a8711abd026729c67050b858bdab024ead00f33405427fff2",
+      "content_fingerprints": {
+        "en": "0a553e37dbbe365a1a6b7ba69cd553b9a3dcd9b89d0e259983d829663e50c19b",
+        "ja": "c8f767cce496d2cf20471312202697b6cc74761359e61a1234bcc4bc99eaa970",
+        "ko": "4675434f31db720a572b8959dba65180e93de07fe3ae5fc28463dde150205c17",
+        "tr": "5c32881fe88329c12e7e8c368aad302822427d15c5ae37bc32c052adae6afc3e",
+        "zh": "d6f05e4ba3786d2a3e5bf983ebf2ee103bbe0288f28fa5c7638d70e994068032",
+        "zh-TW": "a37551e5d0280344b2f3ba1741baae7902b445ad533096b90c5418ad6308188a"
+      },
+      "reviewed_at": "2026-10-28T14:08:37.327681+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“使用默认账号”与韩文“기본 계정 사용”在本条目所属 xaiOauth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "xaiOauth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#xaiOauth.waitingForAuth",
+      "key": "xaiOauth.waitingForAuth",
+      "status": "可保留",
+      "combined_fingerprint": "b90ac9e1cff7c657c82df28c476e31573cde905e76c26fa86db03d295bf1e69e",
+      "content_fingerprints": {
+        "en": "d64e728c5c81405a95d115ed79bffb557987c3c374ff232eff44a82c63ff53b3",
+        "ja": "3a4efffe129ac3e088243d52cc7e61d6c62d65d2e27cf7bf71957f846a9ad2f2",
+        "ko": "2658aa19be5c9fa9da22c1e550ba30ad3a6f18dfd9c794610558164b1a93652e",
+        "tr": "05a49cfbf21d0865bb1aa45aec45e1cf9769e8266b47a4da4634fa0b1fbbd124",
+        "zh": "51e25ae7f312b19936b7644e0d04272493922d69c05cb5126956fcccf56ce4cd",
+        "zh-TW": "5cf7a71e6e99ac53516da71c5f74c2e92d1534ce706845129a059925f045f64b"
+      },
+      "reviewed_at": "2026-10-28T14:08:37.327681+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“等待 xAI 授权中…”与韩文“xAI 인증을 기다리는 중…”在本条目所属 xaiOauth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "xaiOauth",
+      "round": 1
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "batch_id": "hardcoded:0207:src-lib-requestOverrides.ts",
+  "kind": "hardcoded",
+  "group": "src/lib/requestOverrides.ts",
+  "ordinal": 1,
+  "record_count": 8,
+  "record_ids": [
+    "hardcoded:src/lib/requestOverrides.ts:parseRequestOverrideJson:74a1bddc53f46610:001",
+    "hardcoded:src/lib/requestOverrides.ts:parseBodyOverrideJson:813beebde821ec1c:001",
+    "hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:587ae7c1023150ec:001",
+    "hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:de3ce1024b239d54:001",
+    "hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:c77d98caf29bc0fc:001",
+    "hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:a45fdb85bfe0af33:001",
+    "hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:a639e11e36f4e1ed:001",
+    "hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:cdd5bee05a2f14b7:001"
+  ]
+}

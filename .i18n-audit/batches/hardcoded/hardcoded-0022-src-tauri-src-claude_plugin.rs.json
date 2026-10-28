@@ -1,0 +1,11 @@
+{
+  "batch_id": "hardcoded:0022:src-tauri-src-claude_plugin.rs",
+  "kind": "hardcoded",
+  "group": "src-tauri/src/claude_plugin.rs",
+  "ordinal": 1,
+  "record_count": 2,
+  "record_ids": [
+    "hardcoded:src-tauri/src/claude_plugin.rs:write_claude_config:e0e237d68619aa81:001",
+    "hardcoded:src-tauri/src/claude_plugin.rs:clear_claude_config:e0e237d68619aa81:001"
+  ]
+}

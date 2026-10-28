@@ -1,0 +1,22 @@
+{
+  "batch_id": "translation:json-locale:health:001",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "health",
+  "ordinal": 1,
+  "record_count": 5,
+  "record_ids": [
+    "json:src/i18n/locales#health.circuitOpen",
+    "json:src/i18n/locales#health.consecutiveFailures",
+    "json:src/i18n/locales#health.degraded",
+    "json:src/i18n/locales#health.failed",
+    "json:src/i18n/locales#health.operational"
+  ],
+  "keys": [
+    "health.circuitOpen",
+    "health.consecutiveFailures",
+    "health.degraded",
+    "health.failed",
+    "health.operational"
+  ]
+}

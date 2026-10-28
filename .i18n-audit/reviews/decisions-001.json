@@ -1,0 +1,10 @@
+{
+  "decisions": [
+    {"batch_id":"translation:json-locale:confirm:001","default_status":"可保留","overrides":[]},
+    {"batch_id":"translation:json-locale:notifications:001","default_status":"可保留","overrides":[]},
+    {"batch_id":"translation:json-locale:notifications:002","default_status":"可保留","overrides":[]},
+    {"batch_id":"translation:json-locale:errors:001","default_status":"可保留","overrides":[]},
+    {"batch_id":"translation:json-locale:failover:001","default_status":"可保留","overrides":[]},
+    {"batch_id":"translation:json-locale:health:001","default_status":"可保留","overrides":[]}
+  ]
+}

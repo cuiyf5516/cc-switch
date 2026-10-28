@@ -1,0 +1,15 @@
+{
+  "batch_id": "hardcoded:0179:src-hooks-useImportExport.ts",
+  "kind": "hardcoded",
+  "group": "src/hooks/useImportExport.ts",
+  "ordinal": 1,
+  "record_count": 6,
+  "record_ids": [
+    "hardcoded:src/hooks/useImportExport.ts:selectImportFile:46b8161baf2f22b4:001",
+    "hardcoded:src/hooks/useImportExport.ts:importConfig:5fca4cfa46cf228e:001",
+    "hardcoded:src/hooks/useImportExport.ts:importConfig:38c0cc97a8561e6c:001",
+    "hardcoded:src/hooks/useImportExport.ts:stamp:f2dcb0ff05d4bf4f:001",
+    "hardcoded:src/hooks/useImportExport.ts:exportConfig:f13be88aac6f5c9e:001",
+    "hardcoded:src/hooks/useImportExport.ts:exportConfig:d754b191a47f6b80:001"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "batch_id": "hardcoded:0098:src-components-ConfirmDialog.tsx",
+  "kind": "hardcoded",
+  "group": "src/components/ConfirmDialog.tsx",
+  "ordinal": 1,
+  "record_count": 2,
+  "record_ids": [
+    "hardcoded:src/components/ConfirmDialog.tsx:iconClass:b50fb4944fe1e27c:001",
+    "hardcoded:src/components/ConfirmDialog.tsx:iconClass:1b042d9285edbc6b:001"
+  ]
+}

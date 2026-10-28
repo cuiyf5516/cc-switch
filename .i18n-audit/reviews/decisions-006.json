@@ -1,0 +1,9 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:console:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:copilot:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:dsh:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:geminiConfig:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:grokBuild:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:header:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:iconPicker:001","default_status":"可保留","overrides":[]}
+]}

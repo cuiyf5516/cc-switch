@@ -1,0 +1,241 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:native-tray:tray:002",
+  "kind": "translation",
+  "namespace": "tray",
+  "reviewed_at": "2026-10-28T14:10:35.147805+00:00",
+  "review_count": 11,
+  "records": [
+    {
+      "id": "rust:src-tauri/src/tray.rs#tier_gemini_flash_lite",
+      "key": "tier_gemini_flash_lite",
+      "status": "可保留",
+      "combined_fingerprint": "c6aacc3d828030a75fd33b8ce892b099eaa60b51ccd125c1a6ad2ff3cd7cf505",
+      "content_fingerprints": {
+        "en": "afc6ef196c364c30c139a2bee31db4cffeb340456e3e330f16c172096a598f8a",
+        "tr": "afc6ef196c364c30c139a2bee31db4cffeb340456e3e330f16c172096a598f8a",
+        "zh": "afc6ef196c364c30c139a2bee31db4cffeb340456e3e330f16c172096a598f8a",
+        "ja": "afc6ef196c364c30c139a2bee31db4cffeb340456e3e330f16c172096a598f8a",
+        "zh-TW": "afc6ef196c364c30c139a2bee31db4cffeb340456e3e330f16c172096a598f8a",
+        "ko": "afc6ef196c364c30c139a2bee31db4cffeb340456e3e330f16c172096a598f8a"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.147805+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Flash Lite”与韩文“Flash Lite”在本条目所属 tray UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "tray",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/tray.rs#tier_gemini_pro",
+      "key": "tier_gemini_pro",
+      "status": "可保留",
+      "combined_fingerprint": "397f64725299685383161cc023043f94ff2cf8f53ef55887e9e3eeef8e8aeda8",
+      "content_fingerprints": {
+        "en": "957b0b874524d09a5d035007f821a094a22b678fb157991e28bba1fe21d4e6b9",
+        "tr": "957b0b874524d09a5d035007f821a094a22b678fb157991e28bba1fe21d4e6b9",
+        "zh": "957b0b874524d09a5d035007f821a094a22b678fb157991e28bba1fe21d4e6b9",
+        "ja": "957b0b874524d09a5d035007f821a094a22b678fb157991e28bba1fe21d4e6b9",
+        "zh-TW": "957b0b874524d09a5d035007f821a094a22b678fb157991e28bba1fe21d4e6b9",
+        "ko": "957b0b874524d09a5d035007f821a094a22b678fb157991e28bba1fe21d4e6b9"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.147805+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Pro”与韩文“Pro”在本条目所属 tray UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "tray",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/tray.rs#tier_left",
+      "key": "tier_left",
+      "status": "可保留",
+      "combined_fingerprint": "6d1428f745fd629fa7539844bc89d0f995efe7f2c4b1766375c9ca9f1454cb0e",
+      "content_fingerprints": {
+        "en": "d56408fef7f85917f197439aa9d85b383769b96cc418a8dede8d5ad557737142",
+        "tr": "e52c8eb2b3092faa68277ad82633717b3fcc65fd69f4d934dcc9758b4de06211",
+        "zh": "367ce887ec07c296fd502ec82740cabc2882f94d83de9bd4786e48444a087127",
+        "ja": "27115f33d6e60244fa3f60c3507f48042966bb6952e45373b952341a8a063a0a",
+        "zh-TW": "f23da05004a97817e28170087376e3c62167afd6928e4d7c1d0af864a1a73439",
+        "ko": "7213a847fcd4fffe99df7b46cd79f0671a2ebfa49ddd98b3b5efe89a80fcd977"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.147805+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{labelSp}剩余 {value}%”与韩文“{label} {value}% 남음”在本条目所属 tray UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "tray",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/tray.rs#tier_monthly",
+      "key": "tier_monthly",
+      "status": "可保留",
+      "combined_fingerprint": "7d7544f13a0951300c2d9ed0e84b07d6ef20e646a402d6141ac2e0adb14d5ce5",
+      "content_fingerprints": {
+        "en": "9b11f6b707d2a03e0265465f32520bc1bc213de121de958539662d0ec1453fcb",
+        "tr": "e055e06d75814d33632e84b11c8365d75f953058c78c7a15bdb356d7a8e13183",
+        "zh": "68b21af949decffb23d26143f641f08d40fe4f75d78a1c1ca58e13a4849cd896",
+        "ja": "0c21a1ccbbbeff7c37f9a118fe274fe0635046d9ee6c378200c5f71b21797b77",
+        "zh-TW": "68b21af949decffb23d26143f641f08d40fe4f75d78a1c1ca58e13a4849cd896",
+        "ko": "52a46af13934e75259a280e8380e72c5ee23cb993a641845b1eef65ea0ae38eb"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.147805+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“每月”与韩文“월간”在本条目所属 tray UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "tray",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/tray.rs#tier_premium",
+      "key": "tier_premium",
+      "status": "可保留",
+      "combined_fingerprint": "65d830ee4bf22867e430ddeea2215c613cdcf7951198cb2c73f16c1334be8945",
+      "content_fingerprints": {
+        "en": "de88c121a82a06352bf1aaceba20578356408a334ba046a1084d4e50da923c5e",
+        "tr": "de88c121a82a06352bf1aaceba20578356408a334ba046a1084d4e50da923c5e",
+        "zh": "ff5cbbc3f7df113f1558de1f7dbc4a40e2e7e3d0d96d96c158c93b9326cc55d3",
+        "ja": "c248bc0a01fb7e8b653e71fa42b29fff7b36c5f912ff06ac003a26b5a250a8b5",
+        "zh-TW": "b303dade01e372384ca96ce6cbf91edd8a6ad392577cc05adf32f82acc337a7c",
+        "ko": "478ff655e9fa8b76be6a1ce12804023215330614d2fdcdd62eff4fd8cae65a4e"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.147805+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“高级请求”与韩文“프리미엄 요청”在本条目所属 tray UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "tray",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/tray.rs#tier_thirty_day",
+      "key": "tier_thirty_day",
+      "status": "可保留",
+      "combined_fingerprint": "cccd8511e2265cbcb91bddbc6fa4f561153f9e7e59e719a993c7136b526c3e98",
+      "content_fingerprints": {
+        "en": "7a9c1c95fd56823fcf750d7c881545907a83c0dc5def593296fdfd3650bce149",
+        "tr": "d22b0a7592c69dd98430f636a4f2b1d0002da1e6849efd017831e53bb288cc85",
+        "zh": "84ad2952a3089ce7f0c3b2408872983c41b22e5d7d374709249e80791180bbc3",
+        "ja": "4124de9a1b39657e62bb3dbdf88e4d7f812427ae662f0fd52cee9d1cd0a7a68a",
+        "zh-TW": "84ad2952a3089ce7f0c3b2408872983c41b22e5d7d374709249e80791180bbc3",
+        "ko": "aaf25d1dc4a735bd0c6aee8e25970ce4627a576e9ff8c14107611a0af04a5421"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.147805+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“30 天”与韩文“30일”在本条目所属 tray UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "tray",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/tray.rs#tier_used",
+      "key": "tier_used",
+      "status": "可保留",
+      "combined_fingerprint": "ed22c3945f28d67aa061c0cec55376d3ed078c8932e1477798778c6363fe844f",
+      "content_fingerprints": {
+        "en": "38d69a030327f6f468eb2e3c1ee202984ee18e8b1aa22c441cfd9340342d3ec7",
+        "tr": "114a9bb4b8e0522fbe48f635c8d81620b5c378cf65ca348d832f3720732d0ca9",
+        "zh": "bec1a0b8fab7975ee6045b655e86c6c194c88e7c331da1b4084d87ef0d51cd07",
+        "ja": "972e2d16191557b6367db276d721b7e2c764ca105039d11d002410a114167b3e",
+        "zh-TW": "bec1a0b8fab7975ee6045b655e86c6c194c88e7c331da1b4084d87ef0d51cd07",
+        "ko": "4b8ead9c4c9ffc012c98331e27084f04a42b579fca59fe2f072169e4607c4506"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.147805+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{labelSp}已用 {value}%”与韩文“{label} {value}% 사용”在本条目所属 tray UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "tray",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/tray.rs#tier_used_up",
+      "key": "tier_used_up",
+      "status": "可保留",
+      "combined_fingerprint": "7799510f23864a96f9f1d93b7ae806c28c81635944225b863d69f72f9323e8dd",
+      "content_fingerprints": {
+        "en": "a2ef0699b0f2635abd75d2df2e13ce602f5e51a8a2abc8beddab73b055714a61",
+        "tr": "3c60cddca3b4c78e3831b414d007005f633ccf5e990b94b2a6b460c4cc5a623c",
+        "zh": "907eb264c20e0d4436c8388e1f17748daea6110644406a4134352ab88252d0a4",
+        "ja": "012bc9f46c3c6bba9c9c7e412bd971e99e83373e260639cc809bc3c0e4ab7294",
+        "zh-TW": "907eb264c20e0d4436c8388e1f17748daea6110644406a4134352ab88252d0a4",
+        "ko": "7941d636f4237ed374ca228d543bbd6933a6a7f2580a739004da532ea5aac95f"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.147805+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{labelSp}已用完”与韩文“{label} 소진됨”在本条目所属 tray UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "tray",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/tray.rs#tier_weekly",
+      "key": "tier_weekly",
+      "status": "可保留",
+      "combined_fingerprint": "a661e33073f01a51d287b00d1e86438302e2b5ce2f4be06925731a74639e04bb",
+      "content_fingerprints": {
+        "en": "2975132481a7a6957cfa95055d04e706f21f1a613f448d0a17463f2eacca4636",
+        "tr": "abc3e615d675e22b8b2bba752d47359b9108b8b4347cce91f178cd693598ba6a",
+        "zh": "92845d3b531d9fec186eba9baa580886c353afe9d93683a1b496efea57607810",
+        "ja": "03bf5ecb4620d8314086b7cec3e3cd2ec24a4697eb1c905b9835d1afcef29016",
+        "zh-TW": "a8a3dfb18c80dd50cab632152b754596f15cbc4869ffb69e5ded9a642c5ca0f6",
+        "ko": "2392bb5e3aa698e8c44b743a7fd14094626205977620f46ca8d631599e795f81"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.147805+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“每周”与韩文“주간”在本条目所属 tray UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "tray",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/tray.rs#tooltip_problem",
+      "key": "tooltip_problem",
+      "status": "可保留",
+      "combined_fingerprint": "a04be1909e2a510228758d283f696d3614587ca4e0fd6a47333ea4d7721e44e3",
+      "content_fingerprints": {
+        "en": "33b14616be97e1e3258f9f8ce80a7f4762f6215e9229010272e010d253fb1c67",
+        "tr": "798ab1a8a39614823bed6a81c229d27b93e2c2e104c50afc2db9dc5c924edfcf",
+        "zh": "0e984d6fce5ecb68e0c3aec87ae5020918398bd152fcc793a4a1ac814cef5a6d",
+        "ja": "7d6604db3cbe7607885f64eee739770d5e6e277dfe7d4187d96c2eb86b19b936",
+        "zh-TW": "7fef8bebeab3f093c1772ae7778ef174c18253a41f4c77a273202e2a8ee563f7",
+        "ko": "feff2442655ffb853fd65df8f8259285d169aa2add5c3727a8aa8fff923811af"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.147805+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“CC Switch · 需要处理：{problem}”与韩文“CC Switch · 확인 필요: {problem}”在本条目所属 tray UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "tray",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/tray.rs#used_amount",
+      "key": "used_amount",
+      "status": "可保留",
+      "combined_fingerprint": "d59e4495008e2a5a5ecadb71da5fc6475402fb8fc5ff56966985ac391da2be6c",
+      "content_fingerprints": {
+        "en": "ef1937fb8637e4c9a922c0770778103598341f4ef4b632f257f480fb61eb4af2",
+        "tr": "98fe9d465362d5672bb03ffdc9ba15b287054bdd9257a9dcf83ee536deecf1cf",
+        "zh": "ba3a46332d469854e5e8cc67fbef440052b2fdeeeb4788fa65d482582ddc106d",
+        "ja": "773bbd3f2817bfff11f3020bd3d784c79b70b73c32c96f1f54014ac11c4e7764",
+        "zh-TW": "ba3a46332d469854e5e8cc67fbef440052b2fdeeeb4788fa65d482582ddc106d",
+        "ko": "7cb267dc112e6b5ee4a1754f02bfe53382fadfbd0a6a761abde51969e145f6b1"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.147805+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已使用 {value}”与韩文“{value} 사용”在本条目所属 tray UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "tray",
+      "round": 1
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "batch_id": "hardcoded:0154:src-config-geminiProviderPresets.ts",
+  "kind": "hardcoded",
+  "group": "src/config/geminiProviderPresets.ts",
+  "ordinal": 1,
+  "record_count": 1,
+  "record_ids": [
+    "hardcoded:src/config/geminiProviderPresets.ts:geminiProviderPresets:adc217dd32753992:001"
+  ]
+}

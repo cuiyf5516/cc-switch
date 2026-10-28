@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0113:src-components-deeplink",
+  "kind": "hardcoded",
+  "group": "src/components/deeplink",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 3,
+  "records": [
+    {
+      "id": "hardcoded:src/components/deeplink/McpConfirmation.tsx:mcpServers:d390fed9f417d145:001",
+      "status": "无需国际化",
+      "content_fingerprint": "d390fed9f417d145e6d7e263a99765317bf2cec85effc31cc43208070fd2eb81",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/components/deeplink/McpConfirmation.tsx",
+      "line": 28,
+      "function": "mcpServers",
+      "expression": "Failed to parse MCP config:",
+      "reason": "控制台日志或诊断信息，不作为界面文案。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0113:src-components-deeplink",
+      "round": 1
+    },
+    {
+      "id": "hardcoded:src/components/deeplink/McpConfirmation.tsx:McpConfirmation:35da9ae11afebfb5:001",
+      "status": "待核实",
+      "content_fingerprint": "35da9ae11afebfb5323b8f89fd223456af591e09fdced2e0c311353a1b51c09a",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/components/deeplink/McpConfirmation.tsx",
+      "line": 142,
+      "function": "McpConfirmation",
+      "expression": "`${key}=${maskValue(key, String(value))}`",
+      "reason": "该英文字符串“`${key}=${maskValue(key, String(value))}`”可能作为提示或错误展示，但静态上下文不足以确认展示链路。",
+      "suggested_action": "追踪调用方并确认是否需要本地化。",
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0113:src-components-deeplink",
+      "round": 1
+    },
+    {
+      "id": "dynamic-i18n:src/components/deeplink/McpConfirmation.tsx:McpConfirmation:d7f7b8d4887c79a0:001",
+      "status": "待核实",
+      "content_fingerprint": "d7f7b8d4887c79a0de17ef5158c37ad4cf32609e660350c71f01326dd264af1d",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/components/deeplink/McpConfirmation.tsx",
+      "line": 161,
+      "function": "McpConfirmation",
+      "expression": "riskI18nKey(kind)",
+      "reason": "翻译键由运行时表达式“riskI18nKey(kind)”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。",
+      "suggested_action": "核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。",
+      "suggested_ko": null,
+      "severity": "中",
+      "review_batch": "hardcoded:0113:src-components-deeplink",
+      "round": 1
+    }
+  ]
+}

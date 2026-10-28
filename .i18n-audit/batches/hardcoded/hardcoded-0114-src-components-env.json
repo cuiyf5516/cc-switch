@@ -1,0 +1,10 @@
+{
+  "batch_id": "hardcoded:0114:src-components-env",
+  "kind": "hardcoded",
+  "group": "src/components/env",
+  "ordinal": 1,
+  "record_count": 1,
+  "record_ids": [
+    "hardcoded:src/components/env/EnvWarningBanner.tsx:handleDelete:80fabc714fc13238:001"
+  ]
+}

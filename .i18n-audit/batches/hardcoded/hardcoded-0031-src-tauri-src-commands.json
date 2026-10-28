@@ -1,0 +1,25 @@
+{
+  "batch_id": "hardcoded:0031:src-tauri-src-commands",
+  "kind": "hardcoded",
+  "group": "src-tauri/src/commands",
+  "ordinal": 7,
+  "record_count": 16,
+  "record_ids": [
+    "hardcoded:src-tauri/src/commands/workspace.rs:write_daily_memory_file:cd7a6e15d8219869:001",
+    "hardcoded:src-tauri/src/commands/workspace.rs:search_daily_memory_files:e0bb3ad48f63ca0e:001",
+    "hardcoded:src-tauri/src/commands/workspace.rs:search_daily_memory_files:d42178eb0df4b055:001",
+    "hardcoded:src-tauri/src/commands/workspace.rs:delete_daily_memory_file:1a062bbbfcad88a9:001",
+    "hardcoded:src-tauri/src/commands/workspace.rs:read_workspace_file:cda8e5e0dacbb356:001",
+    "hardcoded:src-tauri/src/commands/workspace.rs:write_workspace_file:12516c3528262562:001",
+    "hardcoded:src-tauri/src/commands/workspace.rs:write_workspace_file:38369254e44c9eba:001",
+    "hardcoded:src-tauri/src/commands/workspace.rs:open_workspace_directory:a31d0f94a511046a:001",
+    "hardcoded:src-tauri/src/commands/workspace.rs:open_workspace_directory:f7cdddb6fa51858f:001",
+    "hardcoded:src-tauri/src/commands/xai_oauth.rs:query_xai_oauth_quota_for:7db153defa52dda8:001",
+    "hardcoded:src-tauri/src/commands/xai_oauth.rs:query_xai_oauth_quota_for:612aca9f68ee42c6:001",
+    "hardcoded:src-tauri/src/commands/xai_oauth.rs:get_xai_oauth_models:1472da318d855ee1:001",
+    "hardcoded:src-tauri/src/commands/xai_oauth.rs:get_xai_oauth_models:e96b6003adb227c1:001",
+    "hardcoded:src-tauri/src/commands/xai_oauth.rs:get_xai_oauth_models:f690e396a3486b1e:001",
+    "hardcoded:src-tauri/src/commands/xai_oauth.rs:get_xai_oauth_models:b75faebd1b948dff:001",
+    "hardcoded:src-tauri/src/commands/xai_oauth.rs:get_xai_oauth_models:efb29f531bdcacb1:001"
+  ]
+}

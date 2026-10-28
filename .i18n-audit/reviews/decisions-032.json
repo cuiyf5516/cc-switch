@@ -1,0 +1,6 @@
+{"decisions":[
+{"batch_id":"translation:native-inline-error:nativeErrors:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:native-panel:panel:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:native-tray:tray:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:native-tray:tray:002","default_status":"可保留","overrides":[]}
+]}

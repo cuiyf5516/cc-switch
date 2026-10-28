@@ -1,0 +1,241 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:failover:001",
+  "kind": "translation",
+  "namespace": "failover",
+  "reviewed_at": "2026-10-28T13:38:52.454197+00:00",
+  "review_count": 11,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#failover.addQueue",
+      "key": "failover.addQueue",
+      "status": "可保留",
+      "combined_fingerprint": "ce686141517b4fa035b7c0e93dd27214458c958b43e39fa07ed363b66c555001",
+      "content_fingerprints": {
+        "en": "9fd728c66c9a256b121472dabf32a34317aed01d8427d70ec830289cf23a7cc8",
+        "ja": "d91017c932b5fc756522e43c732b39b893d8061e3045e7f942ae7ebbf5bfb043",
+        "ko": "b73accca8a4a51d3d53f509927666c08e28e1ac49d6f36b081b98b6c5796b4ae",
+        "tr": "f560a85f28c085ec60c1980692fd0455f217d291c58d566489e1593ed1fc0c87",
+        "zh": "451755e3831fa39eeec844bf3c3a3b3cf5fa48c0b64d5ed8217d71d5b0e8461d",
+        "zh-TW": "451755e3831fa39eeec844bf3c3a3b3cf5fa48c0b64d5ed8217d71d5b0e8461d"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.454197+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“加入”与韩文“추가”在本条目所属 failover UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "failover",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#failover.disabled",
+      "key": "failover.disabled",
+      "status": "可保留",
+      "combined_fingerprint": "fa79fb29b6a0bb26f83e25436132ce1a1419df857ea15c6af4dd757dd44096a8",
+      "content_fingerprints": {
+        "en": "84ca60e26403628d938cae042caf549b5961299d714db5fcf01152176046f889",
+        "ja": "da00c795ec1ab83fa1ca4a7afaddf4db4fad7b7ec2e5346363c470a5b593797e",
+        "ko": "5c213ed6e1e46c5e0f3a542a908639b9c16d7ca0de0fd414bc59214bef2f06f4",
+        "tr": "7f39d705b7e94f4d94ea4f378d8753ef5b3cf94a1199e223b9e3a1ea88fdd51c",
+        "zh": "730f77b6740900bfe325776310276cc340a6ae652b78c912fd0756a81ab6dedb",
+        "zh-TW": "fadc919ad881fa82c5d65caa0c748385e33922e9732dbdfcef45cfb2fbdc70bd"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.454197+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{{app}} 故障转移已关闭”与韩文“{{app}} 장애 조치가 비활성화되었습니다.”在本条目所属 failover UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "failover",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#failover.enabled",
+      "key": "failover.enabled",
+      "status": "可保留",
+      "combined_fingerprint": "c2a534ddc63a22ef59d062215b801e9489d4fbb1231736fea235d071f817fd8a",
+      "content_fingerprints": {
+        "en": "65cd2e79586035dcb1181d8fbdc64eab4991bf877168f6494729fbe909c80eda",
+        "ja": "2d9a8fdd23a1bfb7fce9439d379aa1b385d8a363ebd419c0e179bab6695225f1",
+        "ko": "4079b871a74c58e8e401bfb5e88faa6453ef4abedb8be76c672def7e02284fed",
+        "tr": "0591ae2f5f5e17ea1325a963cf71fb4eac7e73e9f04b92010c47caf082665b66",
+        "zh": "2796a39a753dc8e21d6c2ef951b861885b86cb90a52e74a3dd975a319308b6ef",
+        "zh-TW": "243929544aab3def3e8f7bd740948bf1f42bdef2c8fc99e29b4cb09f60ee7806"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.454197+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{{app}} 故障转移已启用”与韩文“{{app}} 장애 조치가 활성화되었습니다.”在本条目所属 failover UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "failover",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#failover.inQueue",
+      "key": "failover.inQueue",
+      "status": "可保留",
+      "combined_fingerprint": "87b3b1e03a08b381fac4067b935cf2dfc505f9caccf370f517b104de28483c22",
+      "content_fingerprints": {
+        "en": "03872dc9d62dc79de6f25320162bb73a9dd5f3ebb316dea7385261269ada06b3",
+        "ja": "57ee11e29763376fb3b63b477ce703a22930e7693c5c12d110517d58a93e57eb",
+        "ko": "991e8dbb3cfaceeb530f2af7a687f7454a2cd1469fceeea272db1afb1d9aab9e",
+        "tr": "41d1408114e4f4065af32e1ac7c7e95d716181f1d786885cc2409825f1c329c1",
+        "zh": "4ac953404a4e7c459d507f7d27d905405fad43b508ca9b700590e8a7b1b0eaa1",
+        "zh-TW": "4ac953404a4e7c459d507f7d27d905405fad43b508ca9b700590e8a7b1b0eaa1"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.454197+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已加入”与韩文“대기열에 있음”在本条目所属 failover UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "failover",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#failover.priority.tooltip",
+      "key": "failover.priority.tooltip",
+      "status": "可保留",
+      "combined_fingerprint": "44674f48f768776aa06c9921e8cff020d1d8f321959ddabcae56b4283c545999",
+      "content_fingerprints": {
+        "en": "b74356cc71a830ed242d39e128dee72922f34b4b2b57122099bc5a2e05ebf270",
+        "ja": "3ef05885e85797f908b86ce63244128e1dfee3bdefa83bbd59168ccb153978a0",
+        "ko": "82c7664ddbfc0c984b16f420196bcf2add053af80f396ff4412438e29a5dbc56",
+        "tr": "a7e0c25f88015b69ca4284b75f36537a70600837933e94b61037803ef052c612",
+        "zh": "7165dc158fcb614459928f113fa6e8a60e79c3bcadef1b4adcf96e1230ae4e50",
+        "zh-TW": "4a94baf852f02c542ee55e67041bfc30b44e100b82e7b15a2336a095e56d2599"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.454197+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“故障转移优先级 {{priority}}”与韩文“장애 조치 우선 순위 {{priority}}”在本条目所属 failover UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "failover",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#failover.queueAddFailed",
+      "key": "failover.queueAddFailed",
+      "status": "可保留",
+      "combined_fingerprint": "1f39ee993b2ada5b10c4802ff84d14c64d5d2c8a01c952fe59f9a0f99c49a600",
+      "content_fingerprints": {
+        "en": "5908459e5659890ac46b6fcf58e032e3c9c70d4594b8a8398d6181173304b88e",
+        "ja": "68a928e5667ecb43598fa39912dfc4e1f0f8dc358daa465be99975e0b012bad5",
+        "ko": "0f6ff4db95c8724e967211a8fc4f8b7e493cb3379bc3626d3a99d4dfa0d56ce5",
+        "tr": "693bf0c336edbc597779dd529eb1da887ac023e34d7c1972f97f77472fae2c2e",
+        "zh": "92090689af372a7a3914271bba3131658d2610e5fa2502d3d43d3bb5c01910ae",
+        "zh-TW": "370fa8434237ff83dcec4cdf568e93755a791a837020d044723fae3a12b549c4"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.454197+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“加入队列失败：{{detail}}”与韩文“대기열에 추가하지 못했습니다: {{detail}}”在本条目所属 failover UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "failover",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#failover.queueRemoveFailed",
+      "key": "failover.queueRemoveFailed",
+      "status": "可保留",
+      "combined_fingerprint": "568d1d9452b7709594626f76afc670b310a3d316741f02a107fcb569462f3e47",
+      "content_fingerprints": {
+        "en": "af5259c0ab0bd9f912ff722f59255e2eaf76b758796aa4654bf6eaf74f5e124f",
+        "ja": "c9819fbefc19c7199103e1d35bf2990521acdfb69110df1e4722e468d5fba782",
+        "ko": "67e1f1229560808e68d244fb1ce1ae4e294ba43de6642147b80639ec0fb71ce2",
+        "tr": "922a750df2bd3286717186fdebe9784c330469d5db381ddd0ba2e3db8b401ab7",
+        "zh": "8d5707e3357d582399092e9f6cb125d3ac0444a638ec33af321250ababb26ee8",
+        "zh-TW": "737a9d8561cbd942cb09413ea205d8726a3eaa17ff9f78869bd1381c7e54991c"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.454197+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“移出队列失败：{{detail}}”与韩文“대기열에서 제거하지 못했습니다: {{detail}}”在本条目所属 failover UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "failover",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#failover.toggleFailed",
+      "key": "failover.toggleFailed",
+      "status": "可保留",
+      "combined_fingerprint": "45324fa37bb0f35b6f0203402554f667baf9ac59a22227ad446156ead764ed6a",
+      "content_fingerprints": {
+        "en": "81513e33b2814388166e3490380f2870306741b3f7e00cc227f50d20df0c862a",
+        "ja": "ec04f04ff5a3ba2af7138e153eec7fd12b8a2f446856f23fa6d0623f237db1cb",
+        "ko": "a3cc3d6102402996f658309b31547927aa019bbe3e4a407c04b8cb218d445f7f",
+        "tr": "2c37b7536c75cf4cd082fb0a128cfb775dbd840fdf510b5daaac91647036ba5d",
+        "zh": "013d46bb7642ec2db25ceb44e16691ec862e3fbdc82167c6aedef125c92940b1",
+        "zh-TW": "981fca82d213635ea975548d0ef114c7fae4d61b4946ea13f85ad3428a86f128"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.454197+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“操作失败: {{detail}}”与韩文“작업 실패: {{detail}}”在本条目所属 failover UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "failover",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#failover.tooltip.disabled",
+      "key": "failover.tooltip.disabled",
+      "status": "可保留",
+      "combined_fingerprint": "6d366e732750b9ff8f0e9cfeaacea529c687a086b19686dad032bf73a0643ac1",
+      "content_fingerprints": {
+        "en": "c1c4e8e4f1c515e9ae45da38857c8402e907692800f8b3b9ddc7063955207625",
+        "ja": "6470e021af85240e00d3db93bef9875f05fc433cd193b90feb2b054fc84baeda",
+        "ko": "2ae4326a422c574ca546cc41e32dfcba80bb41c4f46c868e86cd1d02a20aafc6",
+        "tr": "bf6fa7761bbc77b187954f336bb9d1e1cd210480c048ede3499afe97b9ed8915",
+        "zh": "0e5b6e109739ded8f31339a411244a1f57228c0cc1bfe53202e58f6458a88eb5",
+        "zh-TW": "6ebc5f5e068ee9231fdd7eaf2d6e4588d44673e3093980d99656d59cf03c45c8"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.454197+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“启用 {{app}} 故障转移 / 将立即切换到队列 P1，并在失败时自动切换到下一个”与韩文“{{app}} 장애 조치 활성화 / 즉시 대기열 P1로 전환한 다음 오류 발생 시 폴백합니다.”在本条目所属 failover UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "failover",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#failover.tooltip.enabled",
+      "key": "failover.tooltip.enabled",
+      "status": "可保留",
+      "combined_fingerprint": "45e8906c6ea41dca4e9476d91408d7f02445ccc2aea4825922e1bc18ccf2c4c3",
+      "content_fingerprints": {
+        "en": "529acf172caa40404d0a5e2405c1514b6817c9d422d6ecc30d1261ce0f687c62",
+        "ja": "b656497d7e162321c0135f80da0dfef213dd9ab179da7995a912eb244376d3da",
+        "ko": "0d2696af7f4633c04624da27fc2202a01aa5fbda52853d928cca885345323491",
+        "tr": "afc0d1694736623208dcb39ec15b04e413fd8ba2ff70874386562087aeb30ffe",
+        "zh": "dfa7121081d31a71a1778a099285db2e54c0cf7b1fe5e50e39f316a1670663a0",
+        "zh-TW": "484b8edc6133dc85271b1b9bb630aa5a4023a583e8bdd5621788407a6ccf8585"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.454197+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{{app}} 故障转移已启用 / 按队列优先级（P1→P2→...）选择供应商”与韩文“{{app}} 장애 조치 활성화됨 / 요청은 대기열 우선순위를 따릅니다(P1→P2→...)”在本条目所属 failover UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "failover",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#failover.tooltip.takeoverRequired",
+      "key": "failover.tooltip.takeoverRequired",
+      "status": "可保留",
+      "combined_fingerprint": "8c0fc71f81c2ffd2eea7edf26c2ce0c3a25c1a92b4f9582d96bd995b83fcc9fe",
+      "content_fingerprints": {
+        "en": "2082ab1ec2d64d23f6f339b3b23cd713494e652a87210455255d55db955a07ea",
+        "ja": "d1b6519f3b10dc3783f3d0a3d38356af39931cc8e55a2a3c05b7b03fc37d3169",
+        "ko": "5ed8917f2cdad19fa5e5a833777bec4c7928972869cfe7a5f596f8f0316e95d6",
+        "tr": "5a891590f0c24d6f79779e88066357779633c5e23615b1f246dea17377f41019",
+        "zh": "2eff057308840842a52d5568ae5688ee9eb43d87da53a8155c22369a88dfc0f6",
+        "zh-TW": "4b858734ccf5a4f59413cab7231828d8dc8b50ad49e0b3f944d7f3d7720b24be"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.454197+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“请先接管 {{app}}，再启用故障转移”与韩文“먼저 {{app}}의 요청을 라우팅 서비스에서 관리하도록 설정한 뒤 장애 조치를 켜세요”在本条目所属 failover UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "failover",
+      "round": 1
+    }
+  ]
+}

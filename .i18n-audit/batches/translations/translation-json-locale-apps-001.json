@@ -1,0 +1,40 @@
+{
+  "batch_id": "translation:json-locale:apps:001",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "apps",
+  "ordinal": 1,
+  "record_count": 14,
+  "record_ids": [
+    "json:src/i18n/locales#apps.agy",
+    "json:src/i18n/locales#apps.claude",
+    "json:src/i18n/locales#apps.claude-desktop",
+    "json:src/i18n/locales#apps.claudeCode",
+    "json:src/i18n/locales#apps.claudeDesktop",
+    "json:src/i18n/locales#apps.codex",
+    "json:src/i18n/locales#apps.gemini",
+    "json:src/i18n/locales#apps.grokbuild",
+    "json:src/i18n/locales#apps.hermes",
+    "json:src/i18n/locales#apps.mcode",
+    "json:src/i18n/locales#apps.omp",
+    "json:src/i18n/locales#apps.openclaw",
+    "json:src/i18n/locales#apps.opencode",
+    "json:src/i18n/locales#apps.pi"
+  ],
+  "keys": [
+    "apps.agy",
+    "apps.claude",
+    "apps.claude-desktop",
+    "apps.claudeCode",
+    "apps.claudeDesktop",
+    "apps.codex",
+    "apps.gemini",
+    "apps.grokbuild",
+    "apps.hermes",
+    "apps.mcode",
+    "apps.omp",
+    "apps.openclaw",
+    "apps.opencode",
+    "apps.pi"
+  ]
+}

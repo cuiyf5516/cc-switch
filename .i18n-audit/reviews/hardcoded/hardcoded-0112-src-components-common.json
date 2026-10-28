@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0112:src-components-common",
+  "kind": "hardcoded",
+  "group": "src/components/common",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 1,
+  "records": [
+    {
+      "id": "hardcoded:src/components/common/AppToggleGroup.tsx:AppToggleGroup:9082376c2ee7a698:001",
+      "status": "待核实",
+      "content_fingerprint": "9082376c2ee7a698eb414ed4c59f91d2af4863761c909f4023e5bd149f86d814",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/components/common/AppToggleGroup.tsx",
+      "line": 27,
+      "function": "AppToggleGroup",
+      "expression": "`${label}${enabled ? \" ✓\" : \"\"}`",
+      "reason": "该英文字符串“`${label}${enabled ? \" ✓\" : \"\"}`”可能作为提示或错误展示，但静态上下文不足以确认展示链路。",
+      "suggested_action": "追踪调用方并确认是否需要本地化。",
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0112:src-components-common",
+      "round": 1
+    }
+  ]
+}

@@ -1,0 +1,472 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:skills:005",
+  "kind": "translation",
+  "namespace": "skills",
+  "reviewed_at": "2026-10-28T14:07:39.739033+00:00",
+  "review_count": 22,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#skills.storageSheet.title",
+      "key": "skills.storageSheet.title",
+      "status": "可保留",
+      "combined_fingerprint": "7de3173bb5d30f66a80ee43f4da24209bbdf0709f26d5fe5517008f2873283e6",
+      "content_fingerprints": {
+        "en": "4cca6b9d7fd96ad4aeae101329adfdb14a929f64ee136d12a545379ff2066006",
+        "ja": "2719f149584998d43ca22a43a053922cbf6d7d86cc3823742e03be378ae5892a",
+        "ko": "19c4ad635eb0e21d71a2226335b47068cfd0d49ecc7235e60ea22129c905096e",
+        "tr": "5348d4218dc70d04a466d7f9ec18f662d6b0f5cb623e71162e65b4d9d5b4009f",
+        "zh": "b6932c815df217e1226a94e2a05af50b53e170384ba8edbf11c42e7857722a53",
+        "zh-TW": "3037028cfa044155300f38c6fafb7cfba3b1896e8e27d8ffea54456fdc848b4e"
+      },
+      "reviewed_at": "2026-10-28T14:07:39.739033+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“存储与同步”与韩文“저장 및 동기화”在本条目所属 skills UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skills",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skills.storageSheet.unifiedWarning",
+      "key": "skills.storageSheet.unifiedWarning",
+      "status": "可保留",
+      "combined_fingerprint": "5611fb7685f9531ea2b89bf9c0c96595c83802e14fbc714ee1fb8b55528c3571",
+      "content_fingerprints": {
+        "en": "a272b1170357797e366483210d209306dcc89cbaa205853dbf6b1899d837d486",
+        "ja": "21306686a29b86d379cf0ed5ac41e5b09ca9769a37b3bbd28377bb857b2664f3",
+        "ko": "2139251349e0223ce74de64f8fb82b79e1be27b2197018d4f8a37087bafc894a",
+        "tr": "6de8baa5f279b1bfa2b1d224763425b5a73dc9f75e2767b661cd5d48e3a045e3",
+        "zh": "e7e221b5cf4596022577c226c28858f375fa54ff8b2003dd568a1c4bf764b43f",
+        "zh-TW": "b65f70cd71ba81af63696753685f76dd3a69ce25a378cef8f5910c190833007f"
+      },
+      "reviewed_at": "2026-10-28T14:07:39.739033+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Codex、Gemini CLI、OpenCode 等会直接读这个目录，各应用的开关对它们不再完全生效。”与韩文“Codex, Gemini CLI, OpenCode 등은 이 폴더를 직접 읽으므로 앱별 스위치가 더 이상 완전히 적용되지 않습니다.”在本条目所属 skills UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skills",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skills.title",
+      "key": "skills.title",
+      "status": "可保留",
+      "combined_fingerprint": "4c9c18505f9aa4f51c7aed894fb22a5fbf1fea8d390a25480afaa85a49c7fad2",
+      "content_fingerprints": {
+        "en": "e5d2a259a62b4b3cab672a4b4870ae63489ad318ba521ca5e8e7bf5520bfb1c3",
+        "ja": "46ef5d4aa8f7d4996b316d6ae518d2308754dba536005846de7946220b5ae322",
+        "ko": "d0623adb80bde5f121a7e134912e5a77d806ee65be1db5dacb3f012c9899a31a",
+        "tr": "eae79afa4202a6a0837f4a559da528bd8e83fbdb133cd79fdf113d37f9c8aa49",
+        "zh": "46ef5d4aa8f7d4996b316d6ae518d2308754dba536005846de7946220b5ae322",
+        "zh-TW": "46ef5d4aa8f7d4996b316d6ae518d2308754dba536005846de7946220b5ae322"
+      },
+      "reviewed_at": "2026-10-28T14:07:39.739033+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Skills 管理”与韩文“스킬 관리”在本条目所属 skills UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skills",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skills.uninstall",
+      "key": "skills.uninstall",
+      "status": "可保留",
+      "combined_fingerprint": "1e4d8dea7aecce492d39775fd9ac6a11a22ab566defc7f2e932b645ecbc82d2c",
+      "content_fingerprints": {
+        "en": "fe199528850a4e24c14d9ece87a07b40bdcfa5fe504c175c117b997c29259ca6",
+        "ja": "0612e88f2939897d0ea3a76689ee0e2b4081af94b42a0cbb06dd2f0d463ceb7a",
+        "ko": "ab6625092d13f484dfb0d40fc543574d5d5114db2d05b3d696a4de72b64b86c7",
+        "tr": "b88019aa289e7800050498119a65b2d00e37bbd8e57d13339dfcc7d2d6184630",
+        "zh": "06bc14b60f3598a3fde833340ee93e8c934fa6eff21bbd6a6df354528b53af01",
+        "zh-TW": "66046513e3ca694e8f11251dcdf24ef0aadf9e711d29ec3a6785fcc9bfcb185b"
+      },
+      "reviewed_at": "2026-10-28T14:07:39.739033+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“卸载”与韩文“제거”在本条目所属 skills UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skills",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skills.uninstallConfirm",
+      "key": "skills.uninstallConfirm",
+      "status": "可保留",
+      "combined_fingerprint": "bbaab91b8c67dc46919e00c3caf6152d49658326a3d79e87cd53afa90d78c221",
+      "content_fingerprints": {
+        "en": "120f05580392903f9254effc84487a9bb8b53dd90562e3c452ea33c453e74e43",
+        "ja": "18a964ae20b7587e0fd34a9f458dee386564e4b4a045c9332bcfd47d470203a7",
+        "ko": "7e5b0364366d8c93f8369e17e2b23247dee574edc0b6f2322ff031279ca60812",
+        "tr": "bf217a20972693d84c5263dd20698a9216d493f315a3d66b62a8cec5ab8fcbd6",
+        "zh": "1cbd4b63c4de18d9e9439a193bbe81aec49c215fb0e0935514faff496b4dce27",
+        "zh-TW": "d76cc7ac98aa44cd8c07f354ee9b0552cb2f1afc29f2a42e0ea33e898a8898bf"
+      },
+      "reviewed_at": "2026-10-28T14:07:39.739033+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“确定要卸载技能 \"{{name}}\" 吗？这将从所有应用中移除该技能，并在删除前自动创建本地备份。”与韩文“정말로 \"{{name}}\"을(를) 제거하시겠습니까? 이렇게 하면 모든 앱에서 스킬이 제거되고 먼저 로컬 백업이 생성됩니다.”在本条目所属 skills UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skills",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skills.uninstallFailed",
+      "key": "skills.uninstallFailed",
+      "status": "可保留",
+      "combined_fingerprint": "12d180a60c4cf1b82fcdf9e058f5b741aec387a79acaa2db71d25b798358cbc5",
+      "content_fingerprints": {
+        "en": "f2dc8a6f1e79a7795dc17042f3768990ed980017c2e82d166d79fd161afa3314",
+        "ja": "0f9e4c713173fbbabb27bbffa7f038182053c4b14287115b692898b0b9e0cad2",
+        "ko": "41ecc2fbfeef2b08177f38e353188d45976cb4c683d395c6f2895e632c9dbc37",
+        "tr": "bd527e68bee312dbd3826195eb6d3e68a50e164eed6af957ac25ee648744d651",
+        "zh": "2eb73d2d20a5347f7e06532958a4c4f837c27300d321b5f766afb06826c5541c",
+        "zh-TW": "c4a2fdc0d7f31fb864848cd679ef328aee371356f3d2a434b7e993047a2eb1a2"
+      },
+      "reviewed_at": "2026-10-28T14:07:39.739033+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“卸载失败”与韩文“제거하지 못했습니다.”在本条目所属 skills UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skills",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skills.uninstallInMainPanel",
+      "key": "skills.uninstallInMainPanel",
+      "status": "可保留",
+      "combined_fingerprint": "c1d7674938315e8df63ec020983ad9a4e9cb3d88f565201732a159b465b493a4",
+      "content_fingerprints": {
+        "en": "186cefae96c2ad53e31c7c9bb81578bb61e73819682ed42bc6a81af28fcfdec5",
+        "ja": "a069b050e34bd1fbe1ca94f2c0492ff2a4ab456836567cc275dad319a58ec24a",
+        "ko": "d85a6859d5742b894d4c65826cb317568dca3e59fc551b8650dbd830c0a42c2e",
+        "tr": "5482714222f41906997db960f9174b58f4fd5b76f049bb451cb2a4a0ec83fd43",
+        "zh": "b5c404a329b593e5982ff8fe54f5525fd0096924dc1da0f3237b680256ade78f",
+        "zh-TW": "2ea04b443666a294c7910154ecb1e77ca9d61cbf4c334c13d5228c7716be95f7"
+      },
+      "reviewed_at": "2026-10-28T14:07:39.739033+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“请在主面板中卸载技能”与韩文“메인 패널에서 스킬을 제거하세요”在本条目所属 skills UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skills",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skills.uninstallPiCleanupIncomplete",
+      "key": "skills.uninstallPiCleanupIncomplete",
+      "status": "可保留",
+      "combined_fingerprint": "99851615fb55e0921f307f7ea9651976a2bbf1ca5ce94efba1938bf44b788934",
+      "content_fingerprints": {
+        "en": "512c0dc77a470f91e22d569e238dd6f4f55300e0b99db14d19d2d92b788ec196",
+        "ja": "8ce236b6d2f9f3f702ab798d20b72d4e7342ccdda9442af28bca61d85af96b11",
+        "ko": "21b8df9a3139339fab6c225df3aa68a785e8131a6364487dd7ce4e7ecbdc0bb7",
+        "tr": "5d90faf5751fc3c973fac4d53fd029624c9ced01d73e35a1f532683c68cee083",
+        "zh": "e8586581608d333b63eab968f85d50cc28fafd0a8ca35855b6554904e301f530",
+        "zh-TW": "f38d65ae5a3b7461729681b22788ddb5a2390020ad637d7de307a0dc09eca8e4"
+      },
+      "reviewed_at": "2026-10-28T14:07:39.739033+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Pi 清理未能完成，请手动检查 Pi Skills 目录中是否有残留副本。”与韩文“Pi 정리를 완료할 수 없습니다. 남은 사본이 있는지 Pi 스킬 디렉터리를 수동으로 확인하세요.”在本条目所属 skills UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skills",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skills.uninstallPiPreserved",
+      "key": "skills.uninstallPiPreserved",
+      "status": "可保留",
+      "combined_fingerprint": "fd1940fe4209d755954bc5e1822f5c6b20118b27b3f5760b367172e31a4d7216",
+      "content_fingerprints": {
+        "en": "8114163988b984f48655145c54715f0d816f393ddaaa40645ef59e53c7f7036d",
+        "ja": "a0490ae016367cc4689c33156208efed8bbf3268dbb03745f2ee13d1e0368d33",
+        "ko": "7ebc12b2d6d2b967b26288dd50d530551f36cbe27b8db46918f3395636b30c4e",
+        "tr": "30d69bfa4e1ee0fb3887ce4c00b7e9a06e9bfe373154cdb91274732d09ab8941",
+        "zh": "e6a4a4e88b2f4dfbe4786772dfbb31b97bbdad50a57ed6c1fec9d57dc508411a",
+        "zh-TW": "fd97c9372b63a756ef6e427258d4aa1c1b848d82edea63ef86d3d6baba8dce6d"
+      },
+      "reviewed_at": "2026-10-28T14:07:39.739033+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“无法确认该 Pi 副本由 CC Switch 管理，已保留：{{path}}”与韩文“Pi에 있는 사본이 CC Switch에서 관리하는 파일인지 확인할 수 없어 그대로 두었습니다: {{path}}”在本条目所属 skills UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skills",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skills.uninstallSuccess",
+      "key": "skills.uninstallSuccess",
+      "status": "可保留",
+      "combined_fingerprint": "8d3d93edb145ceac2a1fa0b8c9dc2260571b9075efde76d04be46c5a5e5093ff",
+      "content_fingerprints": {
+        "en": "85d45e0c3f5c0dc1917b8c71b83792bed7da206701d9ffc4515286457e4b0dbc",
+        "ja": "4e7ee6dfeee7edb75a8e1a294f807ec6adc45ae569e06311f3912205d9dc10da",
+        "ko": "187191d08b36b8ba5f26b2fe69b102fefe8658a919b7ecd9fdbca2141148ae4b",
+        "tr": "d2d93f631cca4575b2d96265c944acc070f4d18ce48a401cfc747521f1848966",
+        "zh": "89d4962d6cba7ab4449faa61d00a6f66488f18cc026ff024cf3af6d282001d77",
+        "zh-TW": "7824a25fcb810721562fb05b29d1378953890e4f8b88e6655c89905bd2823e8a"
+      },
+      "reviewed_at": "2026-10-28T14:07:39.739033+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“技能 {{name}} 已卸载”与韩文“스킬 {{name}} 제거를 완료했습니다.”在本条目所属 skills UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skills",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skills.uninstalling",
+      "key": "skills.uninstalling",
+      "status": "可保留",
+      "combined_fingerprint": "be495d94cbfb3e83bc76af6e46b168d8f4c2772c4acccad71f6e59d559f248f6",
+      "content_fingerprints": {
+        "en": "67c43c3364c63834c00d70d2900fb2e0d13a3c0f98f33e5343dbf56e664c651e",
+        "ja": "0fa32e98dc73bbe7b896d7feb526368c0dec651233e571cb4c77b5966dfe5347",
+        "ko": "cec873b4136d5d97459db5a5705aa36835847e85a39152e70bedf3110abc2eec",
+        "tr": "305d1ebb2fa2539a05435c1259259b4c31052ae9db903aba3f6e637c1eeb63d5",
+        "zh": "5cd20b18766a121797eb375ad764cfbc6e9c4633eae2aeab7079109fbe355848",
+        "zh-TW": "97f1b42632ffba2ff4d242f965a8ee02a644b41721dc241805025f2f81409842"
+      },
+      "reviewed_at": "2026-10-28T14:07:39.739033+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“卸载中...”与韩文“제거 중...”在本条目所属 skills UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skills",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skills.unmanagedAvailable",
+      "key": "skills.unmanagedAvailable",
+      "status": "可保留",
+      "combined_fingerprint": "4a0e9a198f00c4e0e205aba516c304afad45cf3308c5aa021b80b9ec37cd9962",
+      "content_fingerprints": {
+        "en": "98e689af0c96a5c24bfcea538d9523b9fcf13b745d0cd7cc18894302d55f5981",
+        "ja": "fd5ccb33d1ce48ff92c27934609062ead7ed7d3e06b4fd6024a3206a460d48c6",
+        "ko": "538102678eae283c78822af819a98a061c93895c702b07830d77eb019c221132",
+        "tr": "28d235caeeebe2a534399a757cc1705c185869c51b3d195b161b1072e7799c48",
+        "zh": "0065ed658b1bc4961329cdd76f3ee34f5533df19255249b0d5f5863ccba9dd70",
+        "zh-TW": "1ce05be2d3c9284fda9bc99ae4bb512f780a53394b6164030c6a88cb99a8b456"
+      },
+      "reviewed_at": "2026-10-28T14:07:39.739033+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“发现可导入的技能”与韩文“스킬 가져오기 가능”在本条目所属 skills UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skills",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skills.update",
+      "key": "skills.update",
+      "status": "可保留",
+      "combined_fingerprint": "a935dbe24369a4b5f6c2e69d9cedb19b10ea6b27539a50982183dda72f7de909",
+      "content_fingerprints": {
+        "en": "c1c1009d3f37ec058070a62e22caf9ac9dae2169d452487c5c271a8bcf57a291",
+        "ja": "3055a035f0eb7a8b00ddc95c65ab5de8fc1df0436e13adfb45607bdaa03673fc",
+        "ko": "9ea9bd59e20c2e511d024bdc666763e474a32f680bde8ff3852ff362c25b8b48",
+        "tr": "bf6531d30a81423222bf2293460aa459b753d52eaa2028603fcedb3404964291",
+        "zh": "3055a035f0eb7a8b00ddc95c65ab5de8fc1df0436e13adfb45607bdaa03673fc",
+        "zh-TW": "3055a035f0eb7a8b00ddc95c65ab5de8fc1df0436e13adfb45607bdaa03673fc"
+      },
+      "reviewed_at": "2026-10-28T14:07:39.739033+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“更新”与韩文“업데이트”在本条目所属 skills UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skills",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skills.updateAll",
+      "key": "skills.updateAll",
+      "status": "可保留",
+      "combined_fingerprint": "4d2d20ded62f59c6c8a0cf91506cd73870a14587b182b579ce2d33e7c4973e01",
+      "content_fingerprints": {
+        "en": "e23cea1f3556068e4784b1a72fa00c22e5b3a2c51f758f37c233be3b3a0f45fd",
+        "ja": "71c27e14e7889fbeee1d879f203d6846f3a90155ac01539021a264b509b24513",
+        "ko": "816bfd8188d94a69b112b666e6a333b199fac02d16d32ebdcac96cf5e5957e71",
+        "tr": "3423f2b9e2ef5d1e1f71301b742df9128c0dc1ca5beea93146c8985af62c2852",
+        "zh": "dbfeca9cc038168a41cb32f822081abc62d7698ae88d61fdcb41f8f84b9f2faf",
+        "zh-TW": "dbfeca9cc038168a41cb32f822081abc62d7698ae88d61fdcb41f8f84b9f2faf"
+      },
+      "reviewed_at": "2026-10-28T14:07:39.739033+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“全部更新 ({{count}})”与韩文“모두 업데이트({{count}})”在本条目所属 skills UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skills",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skills.updateAllSuccess",
+      "key": "skills.updateAllSuccess",
+      "status": "可保留",
+      "combined_fingerprint": "5cad577a4b9411622bbdeb8ca703048c97b4ca9acb955f65c6a1414a565c370e",
+      "content_fingerprints": {
+        "en": "07a47f4ae6dbfc0da4a21094293a48df97e8b7ddcc3b47f3ffbfb5991d03f6ea",
+        "ja": "5204fb269a0b23190dd58ed2d2bc04544f816d34414258d74307349bfe36bebb",
+        "ko": "e85e2c44304a93cf3659caff1ce83420e4c7159e63863fadf2013e6e13054532",
+        "tr": "ee3d076732929c9a13c1ad24a8d6e7f0f46785ad6c22c0a25513d089a0c04179",
+        "zh": "eccf929e315edddbd25062e4dcb4a12ff22424d8d355681b432f7dc8218376d5",
+        "zh-TW": "e90c5f4b632f8252d2d259a39fee4acbffc481d2a85297366bed92c58b0bb86e"
+      },
+      "reviewed_at": "2026-10-28T14:07:39.739033+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已成功更新 {{count}} 个技能”与韩文“스킬 {{count}}개를 업데이트했습니다.”在本条目所属 skills UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skills",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skills.updateAvailable",
+      "key": "skills.updateAvailable",
+      "status": "可保留",
+      "combined_fingerprint": "c664008370e67e9d0b063b0a3616e33551a3c7769de33168d3f677e23773b3e0",
+      "content_fingerprints": {
+        "en": "c1c1009d3f37ec058070a62e22caf9ac9dae2169d452487c5c271a8bcf57a291",
+        "ja": "c5837a6813d49882aa16c64aafac25f814e79aa7d8f6eb0d002cfe9c9b94e0da",
+        "ko": "698bea72e955567626fc6664f89359a9c36511ab30cdf4b3d10845b673e301a2",
+        "tr": "bf6531d30a81423222bf2293460aa459b753d52eaa2028603fcedb3404964291",
+        "zh": "08d43bdc4dcb6253030c9c21ef2b04e66cdf96aa9f2f1b78cf668f36a3773a65",
+        "zh-TW": "08d43bdc4dcb6253030c9c21ef2b04e66cdf96aa9f2f1b78cf668f36a3773a65"
+      },
+      "reviewed_at": "2026-10-28T14:07:39.739033+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“可更新”与韩文“업데이트 있음”在本条目所属 skills UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skills",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skills.updateFailed",
+      "key": "skills.updateFailed",
+      "status": "可保留",
+      "combined_fingerprint": "6ec8d3bc96379185154c322ca00dd3d42903247d7746601f8d36e39bc5b91da2",
+      "content_fingerprints": {
+        "en": "8eb4917bbe54bb6931bfe8eb2004688624ae220a95ce2b0f97d782b87dadcd15",
+        "ja": "4991b3403a5471df716c1e18fc5c32bcf1a7080dc745af31d66dfe8ca6c6925b",
+        "ko": "6473276eac47bf6b4bca9d1ef335af55d1d1d77ea4f0975f20ecf995e2669857",
+        "tr": "a25e2e7d82a60c7a5cb1175d4a4365c640e88720e21c28994f72394891160dd1",
+        "zh": "ec99e5c45d648fd6275b440b548f67e4f292e530f5e632379c4daa12789cdff4",
+        "zh-TW": "d501fb5da3a11b237d3b7010dc5943daf49e93886cfe357fb0bc1b34334803f5"
+      },
+      "reviewed_at": "2026-10-28T14:07:39.739033+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“更新失败”与韩文“업데이트하지 못했습니다.”在本条目所属 skills UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skills",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skills.updateSuccess",
+      "key": "skills.updateSuccess",
+      "status": "可保留",
+      "combined_fingerprint": "614d598fa873bc728f3917c1504aed6c15fbb6c7024845d8c2b1210f33c06f2e",
+      "content_fingerprints": {
+        "en": "506d49ecd36f8cf1974fbfe3b629e40379d2133a0f4f443e51593fa45c8bad1f",
+        "ja": "032283462d260705176fddb490a63d9745fc28176634d36ed9c4ddee94f9aded",
+        "ko": "574391cb99fc4db02a2030d8ee77556339f2001d77aff1f95efbe5d2f9d1e9a8",
+        "tr": "03a53e049142ead360d077bb1238c74ef68c622ffb2479b6a60eab4662d5df1c",
+        "zh": "dbf085b164aa2d804dc75beaee1c66307566b5ff5c3d0f5964dddd2e1b04b6b1",
+        "zh-TW": "4d0fd24926dc6190c71a9a70499bd84c0f28d5c8fbacd2808fd537ba21538c4e"
+      },
+      "reviewed_at": "2026-10-28T14:07:39.739033+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“技能 {{name}} 已更新到最新版本”与韩文“스킬 {{name}} 업데이트를 완료했습니다. 현재 최신 버전입니다.”在本条目所属 skills UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skills",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skills.updatesIncomplete",
+      "key": "skills.updatesIncomplete",
+      "status": "可保留",
+      "combined_fingerprint": "d31c7d0d921af6f698c6a6b8707caea9ffc71ffba898d23a787dad6f4930ac62",
+      "content_fingerprints": {
+        "en": "c2f1500ce7e108a45b9bc6450fbdd1a487fa1faea4e128e619b4c785c7b81ae3",
+        "ja": "b2e3f7eea3ea22214b62ec8784e19f1c0de987d1a6fd11705114ef33d0ccf970",
+        "ko": "3fcdd1f976af4712f2ba81d915d0fd791aad307c0096fc0182a2723a9de5f048",
+        "tr": "7c5e7d884696de18e41c2e2f277c261e7546a3ecce1c8961ca0fd641b8b3d04a",
+        "zh": "0d1ef19f34d9732935015b6b19b5254c986c6aa1786e3035a0d19f8fb5907079",
+        "zh-TW": "986790ced8ce138299cfc217728da9502875abfe8fd88f987acdaf06261dda80"
+      },
+      "reviewed_at": "2026-10-28T14:07:39.739033+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“没有发现更新，但有 {{count}} 个仓库没有读到”与韩文“업데이트를 찾지 못했지만, 저장소 {{count}}개를 읽지 못해 일부 스킬은 확인하지 못했습니다.”在本条目所属 skills UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skills",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skills.updating",
+      "key": "skills.updating",
+      "status": "可保留",
+      "combined_fingerprint": "4335a42cea391d37510b735c461b8d2b65b2865f26bb81c03e57c22b44620227",
+      "content_fingerprints": {
+        "en": "0a4e0b71b7f3583747a2885b292087c9c6f78873bdd7b3b84cb70c1d0a9a7bc4",
+        "ja": "a2ef83d5a3e4e14bb593ea2e244db0da27536605840fc68ed6a6273dd135573a",
+        "ko": "e1be962eb7b862050f6ffffb39e53dd3087dabf7b3ea4ef1567c263062854258",
+        "tr": "8aad2336c294dda84baf7b8f19393cf91454e82b2cea30113e54710f3922685c",
+        "zh": "a2ef83d5a3e4e14bb593ea2e244db0da27536605840fc68ed6a6273dd135573a",
+        "zh-TW": "a2ef83d5a3e4e14bb593ea2e244db0da27536605840fc68ed6a6273dd135573a"
+      },
+      "reviewed_at": "2026-10-28T14:07:39.739033+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“更新中...”与韩文“업데이트 중...”在本条目所属 skills UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skills",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skills.updatingAll",
+      "key": "skills.updatingAll",
+      "status": "可保留",
+      "combined_fingerprint": "4335a42cea391d37510b735c461b8d2b65b2865f26bb81c03e57c22b44620227",
+      "content_fingerprints": {
+        "en": "0a4e0b71b7f3583747a2885b292087c9c6f78873bdd7b3b84cb70c1d0a9a7bc4",
+        "ja": "a2ef83d5a3e4e14bb593ea2e244db0da27536605840fc68ed6a6273dd135573a",
+        "ko": "e1be962eb7b862050f6ffffb39e53dd3087dabf7b3ea4ef1567c263062854258",
+        "tr": "8aad2336c294dda84baf7b8f19393cf91454e82b2cea30113e54710f3922685c",
+        "zh": "a2ef83d5a3e4e14bb593ea2e244db0da27536605840fc68ed6a6273dd135573a",
+        "zh-TW": "a2ef83d5a3e4e14bb593ea2e244db0da27536605840fc68ed6a6273dd135573a"
+      },
+      "reviewed_at": "2026-10-28T14:07:39.739033+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“更新中...”与韩文“업데이트 중...”在本条目所属 skills UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skills",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skills.view",
+      "key": "skills.view",
+      "status": "可保留",
+      "combined_fingerprint": "2650e16ec3142e5aefb0c26ff519339b8d67865702694c4c662346cc9c3f50ba",
+      "content_fingerprints": {
+        "en": "dcc839a4015c4b7dd9db959a8f757833b8adb92462a751b973386e453c6d58a3",
+        "ja": "17efc6654ed280c70117040bebd3d505951acc41c48335ad31e6c09ba86db84b",
+        "ko": "ac5b575fff0fa06549418c43fa668ef0102c44d9c99ee432a0ba60a0a47230e2",
+        "tr": "c0e2e6ad937b3a3e99899a455b2ebda76eedf1a38302ee3415d528908bf5eb1c",
+        "zh": "db8db0530432bd1596cd1ef21016dfc12392548a4b82019f1b1d7a315e0a55c0",
+        "zh-TW": "55f633268f476a199c388240cbeebe35f203228cdbf639efbc568d0325106840"
+      },
+      "reviewed_at": "2026-10-28T14:07:39.739033+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“查看”与韩文“보기”在本条目所属 skills UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skills",
+      "round": 1
+    }
+  ]
+}

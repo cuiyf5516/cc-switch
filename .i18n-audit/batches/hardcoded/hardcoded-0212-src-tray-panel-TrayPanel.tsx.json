@@ -1,0 +1,19 @@
+{
+  "batch_id": "hardcoded:0212:src-tray-panel-TrayPanel.tsx",
+  "kind": "hardcoded",
+  "group": "src/tray-panel/TrayPanel.tsx",
+  "ordinal": 1,
+  "record_count": 10,
+  "record_ids": [
+    "hardcoded:src/tray-panel/TrayPanel.tsx:FOCUS_RING:650c57e57c359ebb:001",
+    "hardcoded:src/tray-panel/TrayPanel.tsx:QuotaBlock:cc992c496c079a15:001",
+    "hardcoded:src/tray-panel/TrayPanel.tsx:AppRow:e1c87a72a9ca77b9:001",
+    "hardcoded:src/tray-panel/TrayPanel.tsx:media:f2d5c41a3679336a:001",
+    "hardcoded:src/tray-panel/TrayPanel.tsx:load:156ab38d877cbbf7:001",
+    "hardcoded:src/tray-panel/TrayPanel.tsx:relayout:8bbf300e92d150fa:001",
+    "hardcoded:src/tray-panel/TrayPanel.tsx:relayout:90b2d1e9dbec423a:001",
+    "hardcoded:src/tray-panel/TrayPanel.tsx:cornerStyle:a5a5e6a44a98b4e4:001",
+    "hardcoded:src/tray-panel/TrayPanel.tsx:cornerStyle:e63ea7d292a5c50c:001",
+    "hardcoded:src/tray-panel/TrayPanel.tsx:TrayPanel:8ed2ae598541c9ba:001"
+  ]
+}

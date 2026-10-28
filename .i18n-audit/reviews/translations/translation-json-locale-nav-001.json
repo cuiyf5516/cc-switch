@@ -1,0 +1,472 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:nav:001",
+  "kind": "translation",
+  "namespace": "nav",
+  "reviewed_at": "2026-10-28T13:56:10.181864+00:00",
+  "review_count": 22,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#nav.apps",
+      "key": "nav.apps",
+      "status": "可保留",
+      "combined_fingerprint": "6ff15b8315e2da5e64e5140f6e6eae0802563d5f02add97d2c1373c5b2e68c31",
+      "content_fingerprints": {
+        "en": "89dd748442c194857825848e1500abbbc5f52fb067ad27fb05dc9fb23eebba3b",
+        "ja": "8d1fea4126f74a1fcdfc7e8bdac9013aa725fa63acd7cd8bacacd24ac2221590",
+        "ko": "1ccc7940a43ac2d86d04aeea1cc65db2b719a81a03731e21385437fb25dc497a",
+        "tr": "856bc41534c9ef72a252d18f9ddf3456d50a42fe59f548cc8635ec4e9e7f30ad",
+        "zh": "63c73c4730f4473ea2beef0ad57a558a421b2505fd141f0c21ff6c8116a457a4",
+        "zh-TW": "95514e5a7ff6578349fbc7bcb48e2cd302173d7f95a6c9ba62e92cf384aacbdc"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.181864+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“应用”与韩文“앱”在本条目所属 nav UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "nav",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#nav.appsGroup",
+      "key": "nav.appsGroup",
+      "status": "可保留",
+      "combined_fingerprint": "6ff15b8315e2da5e64e5140f6e6eae0802563d5f02add97d2c1373c5b2e68c31",
+      "content_fingerprints": {
+        "en": "89dd748442c194857825848e1500abbbc5f52fb067ad27fb05dc9fb23eebba3b",
+        "ja": "8d1fea4126f74a1fcdfc7e8bdac9013aa725fa63acd7cd8bacacd24ac2221590",
+        "ko": "1ccc7940a43ac2d86d04aeea1cc65db2b719a81a03731e21385437fb25dc497a",
+        "tr": "856bc41534c9ef72a252d18f9ddf3456d50a42fe59f548cc8635ec4e9e7f30ad",
+        "zh": "63c73c4730f4473ea2beef0ad57a558a421b2505fd141f0c21ff6c8116a457a4",
+        "zh-TW": "95514e5a7ff6578349fbc7bcb48e2cd302173d7f95a6c9ba62e92cf384aacbdc"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.181864+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“应用”与韩文“앱”在本条目所属 nav UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "nav",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#nav.appsHasUpdate",
+      "key": "nav.appsHasUpdate",
+      "status": "可保留",
+      "combined_fingerprint": "d77ac042830d13526d5a554808c89f6541764dc3a2313092b82a15be38d8a238",
+      "content_fingerprints": {
+        "en": "ec0a68ad00fb3e28d1bd9d96e9fd2f40148b5834cae164308644f1e54c189a94",
+        "ja": "1ccc12df5781e2bfc8b2d779cb5a60e827b3a192fd4288b18de9e65f9166c463",
+        "ko": "18fc30a06e2549406267bc11d6ee594543aef6608122a9ab3d2b5511acfe7889",
+        "tr": "c56ee5cff63697e264c52434eb1e10b733bad2b1c823b4637b7b5c2b87805c8f",
+        "zh": "1d8347105ea9ca4d8fd0c9f66d6f71f826240fbacc999c18519705081281e582",
+        "zh-TW": "7c839e48c7bcdf0aee60ae50317c01c368327d03ffb2ff6372a669e9c8fb8e0e"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.181864+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“应用 · 有可用更新”与韩文“앱 · 업데이트 사용 가능”在本条目所属 nav UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "nav",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#nav.appsTitle",
+      "key": "nav.appsTitle",
+      "status": "可保留",
+      "combined_fingerprint": "4a2fa4c352b1d9b685d59bac4400a7f9ffe6396af89a7ecb5233c3b8d677c065",
+      "content_fingerprints": {
+        "en": "e85a1baeb06ee6aa176305f47bde1a7d9488c3e5eccc8866d7ec283944366769",
+        "ja": "f868fc019fe3384dc2f9b34fac74b46e4e0bcd1546c0ffe200cda934777cd282",
+        "ko": "eb4a1678f5a02275f3cd9c3aa6d2e7bf08ebdb250cfe59e8bb9ee9b81aebed1a",
+        "tr": "bfa9694dc994ddb90c8fb7517d48143039a10ac91d1428a4f4653af11c0ed623",
+        "zh": "cf0b1ae9648a122b3ba5e8d91a440930aead980b34db28d1326e9be9a4349056",
+        "zh-TW": "f61a19ef6e549410ce80badfb952c20811a809acb7f3cf665a40d30d69e7001a"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.181864+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“应用：安装、升级、在侧栏显示哪些”与韩文“앱: 설치, 업그레이드, 사이드바에서 표시할 항목 선택”在本条目所属 nav UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "nav",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#nav.auth",
+      "key": "nav.auth",
+      "status": "可保留",
+      "combined_fingerprint": "e44041fd26da5b4e0199ce356c303d80f11e567ffe5ed58174dfbdbf695780a2",
+      "content_fingerprints": {
+        "en": "8a7c8b67fe8bde8bb31f62db5896a1cd8c7bfa29ff7b86554a1ad2958c166e92",
+        "ja": "f74f2247c76cf7e0ba968717e11650c2b106b02356dac304a22d9d37141cf7ce",
+        "ko": "950fa931630b80e02d9b2fac76cf44376a93547f1ef9fd0ca01cfff4d6f78202",
+        "tr": "04489dff24b5fc642cdc5107ebba4aad8345b411c78dbc30ea653bd76f0ca8dc",
+        "zh": "f6029c05e9ea09d76c399abde34f6c837b13b49eba447bd054820bb151e3bd26",
+        "zh-TW": "f837f73cdbf14e293079875719045a222746d82826e9b461bd8f5261e04d4966"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.181864+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“授权中心”与韩文“인증 센터”在本条目所属 nav UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "nav",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#nav.authNeedsReauth",
+      "key": "nav.authNeedsReauth",
+      "status": "可保留",
+      "combined_fingerprint": "fa1e21779ae2061d6a3b476bca7c2cdef37d137bbb05890b996e0693dda12d4f",
+      "content_fingerprints": {
+        "en": "3cce125491bd01147ba4d7cbde22d5b518bed4af6a9acd1dfed98500459369f2",
+        "ja": "7c6fa72d7db279c4668c7d456f6ebe06c0d102de5a78f6abea7aa2e4f38cf24d",
+        "ko": "c838f9f25a71262a9405022bcb745eef9a10001226bc11de17cf118514990dc9",
+        "tr": "b6fe73a12754a4ce319baabcbe141b9083bab2440311f1ca021852c5a1606aba",
+        "zh": "3a8cec88b80f928374f03a08a4ada3b41db4fd31a95f9255775380da9b9c1e6c",
+        "zh-TW": "ea8b6152e7962859ac7baa706ab47dd1d4c270bcc37c0fde0f3f1b810bcd3e0f"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.181864+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“有账号需要重新登录”与韩文“다시 로그인해야 하는 계정이 있습니다.”在本条目所属 nav UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "nav",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#nav.back",
+      "key": "nav.back",
+      "status": "可保留",
+      "combined_fingerprint": "f9da39d4c05f4f3faa9b739b2133a9511a21043ab32542e291a8585bbd6e54fc",
+      "content_fingerprints": {
+        "en": "76900f1bfd16c8d4dd3d25e6f46638d7165aee23883ccea6bfe071c514421769",
+        "ja": "8fc7f899161b2076651a211a123ccbad0f7ad032c023f59aa3ffd06983e887b8",
+        "ko": "2df06869205b07fef47dbb16e8c2da627d0ecd62f4e74c8512640a6ca25735c5",
+        "tr": "b68a3150ea85d32cdd905f10393710dd4d8c89bc4f84aaeba534f2465958699f",
+        "zh": "572cf45ba43634b3448aadbc48d5398a1b32ad8a97bf42b689c394de222c30a1",
+        "zh-TW": "572cf45ba43634b3448aadbc48d5398a1b32ad8a97bf42b689c394de222c30a1"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.181864+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“返回”与韩文“뒤로”在本条目所属 nav UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "nav",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#nav.collapseSidebar",
+      "key": "nav.collapseSidebar",
+      "status": "可保留",
+      "combined_fingerprint": "6582168ead7d4c2e4802990193b3599166f8f0813e921eea1817dc69036c8272",
+      "content_fingerprints": {
+        "en": "aab31cde23ba9783050a754575b80c05e0e799b1542990b24b4b4bde2327e37e",
+        "ja": "cd3379e939bf6be3df0a5a8f19a94d1ba0bbadb70fef82cc47bb5ed8efdfd3ed",
+        "ko": "98b4863116eba8a1cab75f728cc07b4b700bb0e831120bc9f83d9a1e1a99630f",
+        "tr": "3a8a5af7d9b2ef88e24d1d30057f77faefe0672a43892a6b08aa0a35bee5379b",
+        "zh": "bb0b6e36b3ae63825f914a92cfeec4cd641df1dbb629a900df7ed60eee92e9b9",
+        "zh-TW": "96a4a457424da4eb575fca238cd1377f146ee28a39651d741bf7c6d50ee95f8a"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.181864+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“收起侧栏”与韩文“사이드바 접기”在本条目所属 nav UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "nav",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#nav.expandSidebar",
+      "key": "nav.expandSidebar",
+      "status": "可保留",
+      "combined_fingerprint": "3075edc76a452eec8c55ac3a30eb5a5e107c981c77d32afef4456fb35c3c795d",
+      "content_fingerprints": {
+        "en": "37a5d6485e109bf695382308d0e2cd33913c3e5f7e9ab990e8f1a5f4287b2c6a",
+        "ja": "39d264d4962d85ee8d3e6d0e1f0ba29e0adeb0926c823a1aa08bb42ce8a6f869",
+        "ko": "80564051abfdaa7d7bfdc69814f31e8ae1e3bc81985cc4cd5e4d082f87a540b2",
+        "tr": "f33339811597b043d4b37fc60d4db775d26d7cd331a91aeec4f6e370ecd9d2c1",
+        "zh": "658ff1eade42c4b40bcd23bb10af0a0b039fbc7dabdd556695f8c22dc4b6d5bf",
+        "zh-TW": "a7cce6e4bd918c834988ecd7fdc8734d2bb2506e7f7fee65067a8e25ba0b6687"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.181864+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“展开侧栏”与韩文“사이드바 확장”在本条目所属 nav UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "nav",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#nav.mainLabel",
+      "key": "nav.mainLabel",
+      "status": "可保留",
+      "combined_fingerprint": "a355fc06770c7983ad04abc72401019fe9070e4afdddec0aa918d573e135efa6",
+      "content_fingerprints": {
+        "en": "eb355944b92d10582856f8aea34b3e319ba465b8aa4c294973cf53f665399a2c",
+        "ja": "b05800bc20638cdf2e4cca66d926c703bff398a855cda909f635d4cfae215f08",
+        "ko": "0888309df2eb6f63ec09a5597263f5189f9d132a349d42b29cf265012c304e6c",
+        "tr": "338a27d7a65ab2d0842fede3cc7d87bfffe708b1101ec59940c4d53dbfdcfbf3",
+        "zh": "9bae680405099fc82a22dd3d3e52f6862c77fd88e8163dc12442427d870df40b",
+        "zh-TW": "1944996eb06b5a6a4ba94b092b13d19d1ac3b97f14861340afe482a6803a5e7b"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.181864+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“主导航”与韩文“메인 네비게이션”在本条目所属 nav UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "nav",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#nav.mode.route",
+      "key": "nav.mode.route",
+      "status": "可保留",
+      "combined_fingerprint": "7cc0e795c2b1a56f5c6196a7dbb3e6f82dd14a88e35173ce63ff933932633ca4",
+      "content_fingerprints": {
+        "en": "bcba696f3eb100537ab06942d097dfb259afca3eaa6e37a43327e67215620060",
+        "ja": "42ddd14621c36aaad83197af41617beb1cd7ec3fffd06f119cb4e4a1c2ffa088",
+        "ko": "d5f034600245b0063ba6892197c1e7cce85d061de2e3e8e69f9fff7330f7fd36",
+        "tr": "20d9d2373d0fb651197c9fa3fcbd25e564ee035b18a0000611605f809ff47d0c",
+        "zh": "b9670c85a4ab939eebef4821f4f6dad33dd7bc541eea594653d1fdd2ba1ee733",
+        "zh-TW": "b9670c85a4ab939eebef4821f4f6dad33dd7bc541eea594653d1fdd2ba1ee733"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.181864+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“路由”与韩文“라우팅”在本条目所属 nav UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "nav",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#nav.mode.stack",
+      "key": "nav.mode.stack",
+      "status": "可保留",
+      "combined_fingerprint": "884ce9b9a312bbb0738188769f510b35e2cb19d549c327f308cea0c0d814e6a2",
+      "content_fingerprints": {
+        "en": "749cfaf9af6c41d33a9d565aa0616344a23dddf7d48cafde3af484d1fc54160a",
+        "ja": "ed69652a817676e7efe153c8f4f93907ed4ddc03699ff536097b65057df395c3",
+        "ko": "b6d92dcc447aea804ea5a5826b72bb62fc466571318df258b647bad5fe9316c0",
+        "tr": "1c63681c3f0b670d7e6b9e53f7694e1a4a3edf4bc1182c7240445f70b9565c7b",
+        "zh": "a4768faecb385ed91181804fde350f669981fba1f4ff0f9c2ede2d61d318e9a2",
+        "zh-TW": "a4768faecb385ed91181804fde350f669981fba1f4ff0f9c2ede2d61d318e9a2"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.181864+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“聚合”与韩文“통합”在本条目所属 nav UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "nav",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#nav.needsAttention",
+      "key": "nav.needsAttention",
+      "status": "可保留",
+      "combined_fingerprint": "3b5fec3fb516dfb7813f927f00a73ba8819af0330048bd801b7e20cf1c54b2ca",
+      "content_fingerprints": {
+        "en": "c1ebc7817870e5be78fceae559ba5fcac2b68d5c5498d8080298004f3f79d62d",
+        "ja": "ef65dbcef310ae1d31d1fbada29eddb3cd4b0a0e237ceef57ffd05bafa311f43",
+        "ko": "9d446388e4c127675588518a2f79cf9e29014d761077dda445f7dc6c9b73cd7e",
+        "tr": "0714827e9b325dbbe803fddf44b2a63c37bbcc7c9e0b01db79c531b9bffad920",
+        "zh": "b7e3e715f18b9bace69fef102c98a2f7b43e0b95923692c81cc887d4aee6e7cd",
+        "zh-TW": "fc61e6b72a632a0f9bfc5ebcccd357127ac7d037477fb1b67dc224f1390588dc"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.181864+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“需要处理”与韩文“주의가 필요함”在本条目所属 nav UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "nav",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#nav.prompts",
+      "key": "nav.prompts",
+      "status": "可保留",
+      "combined_fingerprint": "a27943abf8f344ad88d60461badf8735644ce95883b75fbb2f6c27054d0edb8b",
+      "content_fingerprints": {
+        "en": "5f2e66e6539797d0bd28bc075bb8c65f2ef0e3b6379e33cb933d72b4277d7b7e",
+        "ja": "1054ac7a441ba578864ad9994682ec90339ebb96c9b5599bdeae172402084388",
+        "ko": "69db7c2d6809a5e3fefea6624cb699c9c987cda92531be88f293371d39c6a60a",
+        "tr": "8a7090144697d9bc18edd09efcbfbf8efa2483511b07c48df4812022fa5c9564",
+        "zh": "4b47dbae97ba938af9d1a765215e380ed96933b3002fd32a920051c2dc6a6519",
+        "zh-TW": "e98e5845b5f38ca8ff38854e59d33ff964b32beff8259a80e3251fa598d6f100"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.181864+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“提示词”与韩文“프롬프트”在本条目所属 nav UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "nav",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#nav.sessions",
+      "key": "nav.sessions",
+      "status": "可保留",
+      "combined_fingerprint": "373db3bd0b1c2e88617d5379c6890cff9546b3fbc77139730160486fc6997705",
+      "content_fingerprints": {
+        "en": "6fa3cbf451b2a1d54159d42c3ea5ab8725b0c8620d831f8c1602676b38ab00e6",
+        "ja": "fbb0bd6e70e2c8466a99176d78ce1a70b015edc5cd9eb80ef89832634adb59cc",
+        "ko": "e600d4f5926e73d4adb4865050d0eee969abbce6f7c09a4c3a1647b55b89d65b",
+        "tr": "1cfcb0e0c3462e6eeb12dee0f31667a66fabddeee82ff1f1284529a081f9060d",
+        "zh": "a63280253f17d4401f9d5b66220903ea555fbd499bd9196ee0392696d192c18f",
+        "zh-TW": "eda135194fbc931d178e11d5575cbe5e72f16f04c9803112495e78cfd979302f"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.181864+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“会话”与韩文“세션”在本条目所属 nav UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "nav",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#nav.settings",
+      "key": "nav.settings",
+      "status": "可保留",
+      "combined_fingerprint": "f3552a858e1b3a3dc95da171f5885fac3466996e3b747714950b9fe217a25947",
+      "content_fingerprints": {
+        "en": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+        "ja": "0d8619aae051ae343ea983e969d29b7bd7a618eb1b25a6c87c133c5e3ee25264",
+        "ko": "115bced49291a6a0df971e8cd50b00fad1ea43e34be6d37b41f7128b3cf6a65d",
+        "tr": "80ad54ad05fab693358efb5a03aadd9e095ecac2b25357119c03e003a68a7b70",
+        "zh": "df3d58c7d84b85f2037cdd20ffca0f386668645ea53008c11b0c8887182b0356",
+        "zh-TW": "0d8619aae051ae343ea983e969d29b7bd7a618eb1b25a6c87c133c5e3ee25264"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.181864+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“设置”与韩文“설정”在本条目所属 nav UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "nav",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#nav.settingsHasUpdate",
+      "key": "nav.settingsHasUpdate",
+      "status": "可保留",
+      "combined_fingerprint": "fb1eee719a16d978184338dfe47352d6eafed24a38e36cfa34c5ba494df611f7",
+      "content_fingerprints": {
+        "en": "9f5fcaf5ee013bdd2dbe872b6817a7a9b92b662e9e9ed84ca0704b085ec3fa66",
+        "ja": "c099e065d3f92598453f9dadf7820cc4786d6c1d29f9168dd7b85132f0acc15b",
+        "ko": "9a80c024efe530b3052cd4e10c6752f7b4fb58234541dd45b58db0363d253a43",
+        "tr": "af1bc833fc706dced0b0e4976aec15221008a2e99d8f43399dc69157517db99c",
+        "zh": "d7fa9ddcc958ac7381b11adde55514e66e6d9bf43b773c6b681a4363dc86edd3",
+        "zh-TW": "9d7a8bd3e5d1a2a38771bd36578f9a0e1b0953d97ffcac272c622440bfd63ba8"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.181864+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“设置 · CC Switch 有新版本”与韩文“설정 · 새로운 CC Switch 버전을 사용할 수 있습니다”在本条目所属 nav UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "nav",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#nav.skipToContent",
+      "key": "nav.skipToContent",
+      "status": "可保留",
+      "combined_fingerprint": "dba30d14c89f3c06cddb98e74caddd9fd56afe431c739f474bc5e079becf8a30",
+      "content_fingerprints": {
+        "en": "c887f134c26ea8310e1fb4bd6fbab7b640393bd1b556e62691c7a442be92ec2a",
+        "ja": "9261e0df274d9ef9987b4b5b171c49e7eda22b331799b3addc03f6454ebef495",
+        "ko": "f93d306c222881ee4bb247f9d23f010bd3f84c0b2b6f51edb1b03307932d4180",
+        "tr": "70415ad64aa1c3a96c647f295854b2a905b83a3007ed67d6c02c23737489139d",
+        "zh": "006bef4da739a57b1ea95bf332bdeef293adf652a50d9522f1abad330f157428",
+        "zh-TW": "c0260344b163acc52a192dc77efc1cbdd7d43fbaa64e041e212d53a4cb6338f1"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.181864+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“跳到主要内容”与韩文“주요 콘텐츠로 건너뛰기”在本条目所属 nav UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "nav",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#nav.today",
+      "key": "nav.today",
+      "status": "可保留",
+      "combined_fingerprint": "23e907d7f3c3e87182336f5e30e83236d79cc8e4e9e6bcc77ed1d9fc8ed0ddae",
+      "content_fingerprints": {
+        "en": "c6512dc6b324731c58b1da4c06e62456c84313b38957d8e22d14bc7dc3c49b78",
+        "ja": "87603c63377a0544d5b172fae81d2f1305d5e9d9fc0b640246b7e2c7d330fb4e",
+        "ko": "51b832c21b5ce86abac73a55e5df703da7ecc6868eba95c1736003296d1bd6a1",
+        "tr": "c85f91ebc0ad60dbc7f0cc4a3a956dd677ba570cba8638e0b1441891cffae1d6",
+        "zh": "87603c63377a0544d5b172fae81d2f1305d5e9d9fc0b640246b7e2c7d330fb4e",
+        "zh-TW": "87603c63377a0544d5b172fae81d2f1305d5e9d9fc0b640246b7e2c7d330fb4e"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.181864+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“今日 {{value}}”与韩文“오늘 {{value}}”在本条目所属 nav UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "nav",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#nav.todayHitRate",
+      "key": "nav.todayHitRate",
+      "status": "可保留",
+      "combined_fingerprint": "0aadac8bf65fdb951e7de26120367f703cf466bd1644ef97fb280d493ac38df6",
+      "content_fingerprints": {
+        "en": "c69e1f3c4cdc8014fbb43f211295cd16c819bacf38432ecddc42b88cd79ee210",
+        "ja": "fc8696147ae807dde9beaf2b52b3908e674f5469578026e2f7a482961591ff10",
+        "ko": "358fac95c4eeff9f41c4974a52a17d87c17d49c64355847b2a97c4f59b2559e5",
+        "tr": "d7e48dc003ec4980dabb19b429815cf386febf8ccf789483f9e97386daeece2f",
+        "zh": "680d8b31ee9f1caed51a242bab48a54b64a9065bf4de6757929a5cd58f31e805",
+        "zh-TW": "680d8b31ee9f1caed51a242bab48a54b64a9065bf4de6757929a5cd58f31e805"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.181864+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“命中 {{value}}”与韩文“적중률 {{value}}”在本条目所属 nav UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "nav",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#nav.todayRequests",
+      "key": "nav.todayRequests",
+      "status": "可保留",
+      "combined_fingerprint": "ce7850cf825144ad60c7264c182b49dfa564cdcf0b87673863af1cdb7f8e04d8",
+      "content_fingerprints": {
+        "en": "2887306579115b143af2d8d22d21b6becdbf48034017eab60a6ebc300a0bb21b",
+        "ja": "f17128f7d126a30dcf604cedb90911aead0514d99487ba3491d37593bd063bd7",
+        "ko": "635e9282e69c166befaed1a6dff42b82e52a074e3e94f5da5e2be7f59889dff7",
+        "tr": "eecc0859ab424c1e7b5a19796dc386052cb360723882543455c8c817ce8310f5",
+        "zh": "566c84148334773520da46a6a2b8035365083825b3992b34c52087088eb90349",
+        "zh-TW": "566c84148334773520da46a6a2b8035365083825b3992b34c52087088eb90349"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.181864+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{{value}} 次”与韩文“요청 {{value}}회”在本条目所属 nav UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "nav",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#nav.usage",
+      "key": "nav.usage",
+      "status": "可保留",
+      "combined_fingerprint": "598c03cc93a664e8b265c23a37dde2f1efec8aea8ef7814f722577d680671850",
+      "content_fingerprints": {
+        "en": "8d59829c1e15afe1a7fae93e8e5e32d8511bec5fd598a09f4fea6033b31e8a66",
+        "ja": "2f90e400fdb41833d3c38de0c099e0ab15e2c3106bebe602097f22ff5168c16c",
+        "ko": "eeb3eeedf4d3dffc1e6c66c3d59a8b3ac6cf7af75808a1679c43969ae636948d",
+        "tr": "606aaa0be3664e84633d1808e2aff582ecdd5d089f8a20329abd66594eb306fb",
+        "zh": "3ce933a38226d14c5fdbafbc86dd09bc9503d72be9fa09bfa9b6807ac0f00390",
+        "zh-TW": "7e2c5f0bb3612dd5ddca69fc8cd416372338df3d4c5713f9a5c3baa301329557"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.181864+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“用量统计”与韩文“사용량”在本条目所属 nav UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "nav",
+      "round": 1
+    }
+  ]
+}

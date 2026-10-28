@@ -1,0 +1,10 @@
+{
+  "batch_id": "hardcoded:0201:src-lib-modelMetadata.ts",
+  "kind": "hardcoded",
+  "group": "src/lib/modelMetadata.ts",
+  "ordinal": 1,
+  "record_count": 1,
+  "record_ids": [
+    "hardcoded:src/lib/modelMetadata.ts:findByVendor:d70070750f69df8e:001"
+  ]
+}

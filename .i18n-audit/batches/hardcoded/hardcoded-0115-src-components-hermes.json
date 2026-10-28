@@ -1,0 +1,15 @@
+{
+  "batch_id": "hardcoded:0115:src-components-hermes",
+  "kind": "hardcoded",
+  "group": "src/components/hermes",
+  "ordinal": 1,
+  "record_count": 6,
+  "record_ids": [
+    "hardcoded:src/components/hermes/HermesMemoryPanel.tsx:memoryFilePath:481b09631c288ecf:001",
+    "dynamic-i18n:src/components/hermes/HermesMemoryPanel.tsx:name:75356b9afb016217:001",
+    "dynamic-i18n:src/components/hermes/HermesMemoryPanel.tsx:handleToggle:7663f326f8433d18:001",
+    "dynamic-i18n:src/components/hermes/HermesMemoryPanel.tsx:MemoryTabPane:8fb010723006dfa3:001",
+    "dynamic-i18n:src/components/hermes/HermesMemoryPanel.tsx:MemoryTabPane:51f6c463686ee31f:001",
+    "dynamic-i18n:src/components/hermes/HermesMemoryPanel.tsx:HermesMemoryPanel:43ecfa8432d123f8:001"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "batch_id": "translation:json-locale:appPage:001",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "appPage",
+  "ordinal": 1,
+  "record_count": 11,
+  "record_ids": [
+    "json:src/i18n/locales#appPage.configDirectory",
+    "json:src/i18n/locales#appPage.hideFromSidebar",
+    "json:src/i18n/locales#appPage.installAndUpgrade",
+    "json:src/i18n/locales#appPage.memory",
+    "json:src/i18n/locales#appPage.moreActions",
+    "json:src/i18n/locales#appPage.openclawConfig",
+    "json:src/i18n/locales#appPage.providers",
+    "json:src/i18n/locales#appPage.viewSessions",
+    "json:src/i18n/locales#appPage.viewUsage",
+    "json:src/i18n/locales#appPage.webUi",
+    "json:src/i18n/locales#appPage.workspace"
+  ],
+  "keys": [
+    "appPage.configDirectory",
+    "appPage.hideFromSidebar",
+    "appPage.installAndUpgrade",
+    "appPage.memory",
+    "appPage.moreActions",
+    "appPage.openclawConfig",
+    "appPage.providers",
+    "appPage.viewSessions",
+    "appPage.viewUsage",
+    "appPage.webUi",
+    "appPage.workspace"
+  ]
+}

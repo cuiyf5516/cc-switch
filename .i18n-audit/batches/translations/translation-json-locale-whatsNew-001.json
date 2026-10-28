@@ -1,0 +1,32 @@
+{
+  "batch_id": "translation:json-locale:whatsNew:001",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "whatsNew",
+  "ordinal": 1,
+  "record_count": 10,
+  "record_ids": [
+    "json:src/i18n/locales#whatsNew.confirm",
+    "json:src/i18n/locales#whatsNew.recentTitle",
+    "json:src/i18n/locales#whatsNew.showEarlier",
+    "json:src/i18n/locales#whatsNew.since",
+    "json:src/i18n/locales#whatsNew.types.fix",
+    "json:src/i18n/locales#whatsNew.types.improve",
+    "json:src/i18n/locales#whatsNew.types.new",
+    "json:src/i18n/locales#whatsNew.updatedTo",
+    "json:src/i18n/locales#whatsNew.versionDetails",
+    "json:src/i18n/locales#whatsNew.viewFull"
+  ],
+  "keys": [
+    "whatsNew.confirm",
+    "whatsNew.recentTitle",
+    "whatsNew.showEarlier",
+    "whatsNew.since",
+    "whatsNew.types.fix",
+    "whatsNew.types.improve",
+    "whatsNew.types.new",
+    "whatsNew.updatedTo",
+    "whatsNew.versionDetails",
+    "whatsNew.viewFull"
+  ]
+}

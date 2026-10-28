@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:errors:001",
+  "kind": "translation",
+  "namespace": "errors",
+  "reviewed_at": "2026-10-28T13:38:52.452214+00:00",
+  "review_count": 6,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#errors.configLoadFailedMessage",
+      "key": "errors.configLoadFailedMessage",
+      "status": "可保留",
+      "combined_fingerprint": "024ff71813c2d400fe6fdd4c4020f998b86ac8fa90fc6dca5a8f9a0932c599c6",
+      "content_fingerprints": {
+        "en": "f86ec0ab9fa434611dcbcd3ad18b671941534bc5007089fde74e457242fa8f42",
+        "ja": "a4d7f679924ebccf71e4f00ae95b59e9a0ba33b10ed3b68d25217ac1da3c7e2b",
+        "ko": "e85268a5497f7f039f34dedff6ee453af718c4752152e31b3f6b660b230a4359",
+        "tr": "8617405a0e476bc85a2db123cffff6375d32d96a6dc1ddbe94b5ff2584c155ef",
+        "zh": "002f7464a1486da3bd9fb1266b19f4da88ea3e07bc131ae1bd354e18cc2ef3e1",
+        "zh-TW": "5c91a2b6331b065c2607de8d4168c215658d0c190c81bcf366d35c001ae60543"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.452214+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“无法读取配置文件： / {{path}} /  / 错误详情： / {{detail}} /  / 请手动检查 JSON 是否有效，或从同目录的备份文件（如 config.json.bak）恢复。 /  / 应用将退出以便您进行修复。”与韩文“설정 파일을 읽을 수 없습니다: / {{path}} /  / 오류 세부정보: / {{detail}} /  / JSON이 유효한지 직접 확인하거나 같은 디렉터리의 백업 파일(예: config.json.bak)에서 복원하세요. /  / 문제를 수정할 수 있도록 앱이 종료됩니다.”在本条目所属 errors UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "errors",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#errors.configLoadFailedTitle",
+      "key": "errors.configLoadFailedTitle",
+      "status": "可保留",
+      "combined_fingerprint": "e8540eff6471406d8d9c88d6a6212e0e1c56ab74875a01533d797f1c05fe7bf0",
+      "content_fingerprints": {
+        "en": "ea4f8130d44691f2fec642a6d64fe86ee2f0f16eeb1c136695edbd2ed7f755fa",
+        "ja": "58ca757dd340ccd8ac94811453cdb984ceed458ef3fb22d84288e84fddb32151",
+        "ko": "91273e4ed67955e00540f6f23d33f9bb211c6c5cdf7708c744db8844ce74d020",
+        "tr": "a0ca2377502abbb16f44d70fb76be6571084bafdad958437f85568b147d3816a",
+        "zh": "b91496e63aefefd5b8a6e41c8d68d3a8e7f70507233453a2789ca6a7bd170f53",
+        "zh-TW": "64bc5fef152af7098c849d459caecece7773f9ee708e63f9ed4d6a30377388e6"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.452214+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“配置加载失败”与韩文“설정 로드 실패”在本条目所属 errors UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "errors",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#errors.frontendCrashMessage",
+      "key": "errors.frontendCrashMessage",
+      "status": "可保留",
+      "combined_fingerprint": "fd3e86f069ad786f5e3106e214103208e45b40170875991441ba29b0de604365",
+      "content_fingerprints": {
+        "en": "ed2b073ea7000e315960885cf86c3268b0bd9704bb45a500196de49adc783273",
+        "ja": "79a68be291155004309f5cf708d5b443d7800feb732b581b58aa80ed950c4ba8",
+        "ko": "30d8ec36b6f3e2871d4f74e7a32a0afae430b6b0b6c769374ad82196fd3a8cbd",
+        "tr": "6c147dd0013fe1dc69959f48bd05b19cf95de371c4d8ee4c529dccf0663e229d",
+        "zh": "e7d67f6fc13427ee7ac3664b5db33343bd7477be24b8370a269192fb8e743a9a",
+        "zh-TW": "2e09b03e3cb3ef8e58524e786c63cad583dc40a307d69b68f4652506922aebfa"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.452214+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已尝试将错误信息写入应用诊断日志。请重新加载界面；如果问题持续，请在提交 Issue 时附上日志。”与韩文“오류를 앱 진단 로그에 기록하려고 시도했습니다. 인터페이스를 다시 불러오세요. 문제가 계속되면 Issue를 제출할 때 로그를 첨부하세요.”在本条目所属 errors UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "errors",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#errors.frontendCrashTitle",
+      "key": "errors.frontendCrashTitle",
+      "status": "可保留",
+      "combined_fingerprint": "fbde1dc10f89afc6e2455f0773c3c35ae7f6af99d6924b1c5a8a9f285f45a3a0",
+      "content_fingerprints": {
+        "en": "98792a6f9b7d88929d2038eea8b762465ccc82e0d9503b6498a70040bcc880f5",
+        "ja": "7341db182cd89a08988a397a02b2e25358950885190e0c100de148b0e821d451",
+        "ko": "99d65b3390c9f9d7d9bebca90baf2e68cbf931530da50a45c020fabe700e87f0",
+        "tr": "936d18179214605669766bd5ec218533833af160f5962dd322b97884f40d6666",
+        "zh": "b83096a3cc880a040ed3b9e0a97d64f1624b9abc795fc75731c7af9fe1c5b629",
+        "zh-TW": "511c27a5fd819569317a50eeac142ab530d5944450bebefa42f20db70500078a"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.452214+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“界面遇到了问题”与韩文“인터페이스에 문제가 발생했습니다.”在本条目所属 errors UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "errors",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#errors.reloadInterface",
+      "key": "errors.reloadInterface",
+      "status": "可保留",
+      "combined_fingerprint": "c3ff430ca43e9af85847969bf92d3c030d019a6239fed30ec9cce331563d0965",
+      "content_fingerprints": {
+        "en": "bdc3a5a1699e9733f208c00d8499367ee6b263aba55284e7c7c144c8f628e2d3",
+        "ja": "457fc358bb5dc00a6c58ce12fecfbf9e070413d1e0e6f1b199b461bf16e2c388",
+        "ko": "c0689a48f5db048773771589562c428cd1d70896d35a8952fa48cee0c43627fb",
+        "tr": "7cf743c648e7bfee6eec7b6d628aee330c13e9bef10e26c3fb38d7d5b255efb4",
+        "zh": "f7ababd34b90f9ef8832034899648e7cd1a64d0c88c2bab3a578f338f80f9914",
+        "zh-TW": "da664b62eada9dadf71a9ed22796b5e3a51342d4bd956b540945e2d89ecaa6e8"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.452214+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“重新加载界面”与韩文“인터페이스 새로 고침”在本条目所属 errors UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "errors",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#errors.usage_query_failed",
+      "key": "errors.usage_query_failed",
+      "status": "可保留",
+      "combined_fingerprint": "b07e999968bfdb9b385931f1ba5d8cd487129be5757cdec56d7598b6c8537e4b",
+      "content_fingerprints": {
+        "en": "a5dae0b28369fd6491117e1d2831b87fe035a80320c385e7c30cf39ec3cc11ed",
+        "ja": "f7c405068ebf0bf5f5befb663f1db4314fbe1893811335a5740c2eb18689a04c",
+        "ko": "b8549c1ff137aea379112a4c8791a7070fbe5c5d7daad2de24dce573454ace93",
+        "tr": "9159908990f351620ddefc2161933ebe61e40f70607bb2cdd0601cc20cf45c31",
+        "zh": "eaf7249b3f21db475e5409df804facadc64b03585bbf64197234c4d9e06dcc84",
+        "zh-TW": "fe1616b5e5f0ef2bfa722c22028dbd7476d2b9140c45da901512edc4c18cdf0f"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.452214+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“用量查询失败”与韩文“사용량 조회 실패”在本条目所属 errors UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "errors",
+      "round": 1
+    }
+  ]
+}

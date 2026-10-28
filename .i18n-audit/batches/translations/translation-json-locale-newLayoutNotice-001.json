@@ -1,0 +1,20 @@
+{
+  "batch_id": "translation:json-locale:newLayoutNotice:001",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "newLayoutNotice",
+  "ordinal": 1,
+  "record_count": 4,
+  "record_ids": [
+    "json:src/i18n/locales#newLayoutNotice.body",
+    "json:src/i18n/locales#newLayoutNotice.confirm",
+    "json:src/i18n/locales#newLayoutNotice.title",
+    "json:src/i18n/locales#newLayoutNotice.viewReleaseNotes"
+  ],
+  "keys": [
+    "newLayoutNotice.body",
+    "newLayoutNotice.confirm",
+    "newLayoutNotice.title",
+    "newLayoutNotice.viewReleaseNotes"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "project_root": ".",
+  "created_for": "Korean i18n full audit",
+  "reference_language": "zh",
+  "target_language": "ko",
+  "supporting_language": "en",
+  "locale_dir": "src/i18n/locales",
+  "fallback_language": "en",
+  "translation_batch_size": 40,
+  "hardcoded_batch_size": 40,
+  "production_scope": [
+    "src/**/*.{ts,tsx,js,jsx,html}",
+    "src-tauri/src/**/*.rs",
+    "deplink.html"
+  ],
+  "translation_statuses": ["必改", "建议改", "可保留", "待核实"],
+  "candidate_statuses": ["确认遗漏", "待核实", "无需国际化", "未审核"],
+  "write_boundary": ".i18n-audit/ only"
+}

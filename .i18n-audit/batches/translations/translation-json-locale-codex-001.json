@@ -1,0 +1,36 @@
+{
+  "batch_id": "translation:json-locale:codex:001",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "codex",
+  "ordinal": 1,
+  "record_count": 12,
+  "record_ids": [
+    "json:src/i18n/locales#codex.accountLoading",
+    "json:src/i18n/locales#codex.accountNotSelected",
+    "json:src/i18n/locales#codex.accountStatusUnavailable",
+    "json:src/i18n/locales#codex.boundAccountUnavailable",
+    "json:src/i18n/locales#codex.chooseAccount",
+    "json:src/i18n/locales#codex.followCodexLogin",
+    "json:src/i18n/locales#codex.followCodexLoginDescription",
+    "json:src/i18n/locales#codex.nativeLogin",
+    "json:src/i18n/locales#codex.needsRouting",
+    "json:src/i18n/locales#codex.noRoutingSupport",
+    "json:src/i18n/locales#codex.officialRouting",
+    "json:src/i18n/locales#codex.openAiAccount"
+  ],
+  "keys": [
+    "codex.accountLoading",
+    "codex.accountNotSelected",
+    "codex.accountStatusUnavailable",
+    "codex.boundAccountUnavailable",
+    "codex.chooseAccount",
+    "codex.followCodexLogin",
+    "codex.followCodexLoginDescription",
+    "codex.nativeLogin",
+    "codex.needsRouting",
+    "codex.noRoutingSupport",
+    "codex.officialRouting",
+    "codex.openAiAccount"
+  ]
+}

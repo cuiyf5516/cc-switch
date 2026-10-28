@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:firstRunNotice:001",
+  "kind": "translation",
+  "namespace": "firstRunNotice",
+  "reviewed_at": "2026-10-28T13:40:03.251382+00:00",
+  "review_count": 4,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#firstRunNotice.bodyDefault",
+      "key": "firstRunNotice.bodyDefault",
+      "status": "可保留",
+      "combined_fingerprint": "5f7e6f6a246951a3071f8608137ab6b48ea8f50f9340a3f131d615f5ac7fe137",
+      "content_fingerprints": {
+        "en": "ad8d4d7d73ac221baf5a6e425c79ea415f13841f2ca4d9860cadfc818f5522db",
+        "ja": "ce03aee6f87c340f0418b2a524a140a3f70c336f5ee5a1d7e211c28cbf873a84",
+        "ko": "48faf8956a7d38d568b17e16200ec7f581e2b4c6ff4220c5fa3ff56034bf5ebb",
+        "tr": "73ab763d2cb126243570f9ddb6d4cede850385d3ab08015b6bf248c54aa7218f",
+        "zh": "7f9706448a2de42e72d04b3d249ce24e933ae97fad7d296773b020a1714f7727",
+        "zh-TW": "3386de5e01d0cd643882f26a8585a64c36ce75f0614a555aadd9cfdcbbf95778"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.251382+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“CC Switch 可以帮你在 Claude Code / Codex / Gemini CLI 的多个供应商之间一键切换。如果你之前已经配置过这些工具，CC Switch 会自动把现有设置保存为名为 “default” 的供应商，保证你的配置不会丢失。”与韩文“CC Switch를 사용하면 Claude Code / Codex / Gemini CLI의 여러 공급자 간에 클릭 한 번으로 전환할 수 있습니다. 이러한 도구가 이미 설정되어 있다면 CC Switch가 기존 설정을 \"default\"라는 공급자로 자동 저장하므로 기존 설정이 손실되지 않습니다.”在本条目所属 firstRunNotice UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "firstRunNotice",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#firstRunNotice.bodyOfficial",
+      "key": "firstRunNotice.bodyOfficial",
+      "status": "可保留",
+      "combined_fingerprint": "8a36ae862ab7668c80efe1dafa44dc73f1acad15dcc09c764418adea4e46848f",
+      "content_fingerprints": {
+        "en": "a2eb3f584a49cbf381f5b463d541b053618a48d09db6f114868f6b7eb859b74e",
+        "ja": "7dcf12aa9ed9051e6c2afcbab9da9b6c4505164a566f22ebdc0da0649b0f1fcf",
+        "ko": "3afba136a72a694c626f026952197144e1d065243829e8be875cc0b65ae87971",
+        "tr": "826827fa7a7ff5e3eb94c48d98d57293c2c85bf36aee6c1aaa9089f2168a792a",
+        "zh": "d8d15923e4980809cc8f784190fb60c94730b9a9b64bc4803ca62a692373342d",
+        "zh-TW": "c1d8f0f3ee0a858b81317439424aef14bc2c93e25691981a79929cfcae972bcc"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.251382+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“列表里还预置了 “官方（Official）” 供应商，随时点一下即可切回官方默认配置。切换前 CC Switch 会自动把当前配置备份回 default，可以放心来回切。CC Switch 就是这样工作的 😊”与韩文“목록에는 ‘공식(Official)’ 공급자도 미리 등록되어 있습니다. 언제든지 선택하여 공식 기본 설정으로 돌아갈 수 있습니다. CC Switch는 전환 전에 현재 설정을 ‘default’에 자동으로 백업하므로 안심하고 전환할 수 있습니다. CC Switch는 이렇게 작동합니다 😊”在本条目所属 firstRunNotice UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "firstRunNotice",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#firstRunNotice.confirm",
+      "key": "firstRunNotice.confirm",
+      "status": "可保留",
+      "combined_fingerprint": "b33f94bc463a87de4038377097199b386ae6f32b67aa8e366cc9e5786c4210aa",
+      "content_fingerprints": {
+        "en": "5ad3dbd1242a4cea217e8b68a9fd2c8187f2c337258279193f6d9a31a9f1a69c",
+        "ja": "c05e77f6fd6844dd1d1fc1193fa95dc1587e4752c5a3b32619dfebd9bab24365",
+        "ko": "d0b5eebde68b9538543cf2f617e06b636664d443157bf575215722044574e0fd",
+        "tr": "52fd345da1dc95b96b4334b4043b2e406a7bf96c864024fe985ba641189e7cfd",
+        "zh": "348f1cf1243e74bc40ca0788530d6e72653e75544a25a8262a96b9f37d24c2ca",
+        "zh-TW": "f3b4ae81147795465e6e4fa5d8de2af34b1e82332805d168cf3037d0b37c2a38"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.251382+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“我知道了”与韩文“알겠습니다”在本条目所属 firstRunNotice UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "firstRunNotice",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#firstRunNotice.title",
+      "key": "firstRunNotice.title",
+      "status": "可保留",
+      "combined_fingerprint": "d7f8d009802d3f3aecbb68569df59cd9127bcd387a3a11ae5859ecb48d48cf1e",
+      "content_fingerprints": {
+        "en": "2809576cec1e44ea4bfb484f56b63ef7c212e3670cba3550445383e919b3c5b0",
+        "ja": "baae91b98a106159507fb88a0e0878f42452b4f7829412a9e46ce4d4196a1eb9",
+        "ko": "fb768c40832504ed4b125430a3718db33cc8c374a4d100b30fad9114219bfd4d",
+        "tr": "a6f2be4e473f03d054f80091d594d998863d23e819b0c50f61545fbff2a8f13e",
+        "zh": "4532e533266e5a2c18b9af7cfe82319c01f112629ee5bc1be9d7c4ac2d930d63",
+        "zh-TW": "3290aa16ecfe870a01b11bb1bf7de94c3cf840c12dc2ae7e62dfdcecb15b6c76"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.251382+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“欢迎使用 CC Switch”与韩文“CC Switch에 오신 것을 환영합니다”在本条目所属 firstRunNotice UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "firstRunNotice",
+      "round": 1
+    }
+  ]
+}

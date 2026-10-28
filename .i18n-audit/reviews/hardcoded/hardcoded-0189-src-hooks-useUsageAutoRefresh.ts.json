@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0189:src-hooks-useUsageAutoRefresh.ts",
+  "kind": "hardcoded",
+  "group": "src/hooks/useUsageAutoRefresh.ts",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 2,
+  "records": [
+    {
+      "id": "hardcoded:src/hooks/useUsageAutoRefresh.ts:scan:4b846084ab2eb6b1:001",
+      "status": "无需国际化",
+      "content_fingerprint": "4b846084ab2eb6b15fecbc11b8b56ed14448f8844c1704d746c4af01501ed5e1",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/hooks/useUsageAutoRefresh.ts",
+      "line": 54,
+      "function": "scan",
+      "expression": "[UsageDashboard] Session auto-sync errors",
+      "reason": "控制台日志或诊断信息，不作为界面文案。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0189:src-hooks-useUsageAutoRefresh.ts",
+      "round": 1
+    },
+    {
+      "id": "hardcoded:src/hooks/useUsageAutoRefresh.ts:scan:402775b805d7ab9d:001",
+      "status": "无需国际化",
+      "content_fingerprint": "402775b805d7ab9debdfce08dff91bcd64100d3f770fbbc90768252d153d773b",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/hooks/useUsageAutoRefresh.ts",
+      "line": 60,
+      "function": "scan",
+      "expression": "[UsageDashboard] Session auto-sync failed",
+      "reason": "控制台日志或诊断信息，不作为界面文案。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0189:src-hooks-useUsageAutoRefresh.ts",
+      "round": 1
+    }
+  ]
+}

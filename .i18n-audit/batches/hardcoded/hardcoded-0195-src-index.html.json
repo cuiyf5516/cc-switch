@@ -1,0 +1,11 @@
+{
+  "batch_id": "hardcoded:0195:src-index.html",
+  "kind": "hardcoded",
+  "group": "src/index.html",
+  "ordinal": 1,
+  "record_count": 2,
+  "record_ids": [
+    "hardcoded:src/index.html:<html>:ede110c10283e660:001",
+    "hardcoded:src/index.html:<html>:25446063f4c3bc2c:001"
+  ]
+}

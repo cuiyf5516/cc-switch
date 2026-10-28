@@ -1,0 +1,12 @@
+{
+  "batch_id": "hardcoded:0174:src-config-universalProviderPresets.ts",
+  "kind": "hardcoded",
+  "group": "src/config/universalProviderPresets.ts",
+  "ordinal": 1,
+  "record_count": 3,
+  "record_ids": [
+    "hardcoded:src/config/universalProviderPresets.ts:universalProviderPresets:664ce053a17de1b3:001",
+    "hardcoded:src/config/universalProviderPresets.ts:universalProviderPresets:c0c340c6669b573e:001",
+    "hardcoded:src/config/universalProviderPresets.ts:universalProviderPresets:f21532a893347f92:001"
+  ]
+}

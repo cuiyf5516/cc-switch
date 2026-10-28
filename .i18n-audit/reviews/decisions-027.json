@@ -1,0 +1,13 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:skills:001","default_status":"可保留","overrides":[
+{"key":"skills.count","status":"建议改","reason":"原文是“共 count 个技能”，韩文「count 스킬」缺少量词且语序不自然。","suggestion":"스킬 {{count}}개","ui_context":"技能数量徽标"},
+{"key":"skills.error.suggestion.checkNetwork","status":"建议改","reason":"「확인해주세요」未按韩语辅助动词规范分写，与同组「확인하세요」风格不一致。","suggestion":"네트워크 연결을 확인해 주세요.","ui_context":"技能下载失败建议"}
+]},
+{"batch_id":"translation:json-locale:skills:002","default_status":"可保留","overrides":[
+{"key":"skills.installFromZip.skippedItem","status":"建议改","reason":"「{{name}}에서 사용」缺少状态词，作为列表项不完整；应说明该目录正被同名技能使用。","suggestion":"{{directory}}({{name}}에서 사용 중)","ui_context":"ZIP 安装目录冲突列表"},
+{"key":"skills.installFromZip.successMultiple","status":"建议改","reason":"「{{count}} 스킬」量词和语序不自然，项目其他位置统一为「스킬 N개」。","suggestion":"스킬 {{count}}개를 설치했습니다.","ui_context":"ZIP 多技能安装成功提示"}
+]},
+{"batch_id":"translation:json-locale:skills:003","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:skills:004","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:skills:005","default_status":"可保留","overrides":[]}
+]}

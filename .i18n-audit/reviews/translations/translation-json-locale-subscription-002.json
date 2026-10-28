@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:subscription:002",
+  "kind": "translation",
+  "namespace": "subscription",
+  "reviewed_at": "2026-10-28T13:40:03.243939+00:00",
+  "review_count": 3,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#subscription.title",
+      "key": "subscription.title",
+      "status": "可保留",
+      "combined_fingerprint": "ebb354eb5651a74c29f714b1b289dc85764cf3471f9487177183bdd5f601aeac",
+      "content_fingerprints": {
+        "en": "f99c459e15e72449f3a6557c03b09ddb34b87af638df04c9a388a3183fad912a",
+        "ja": "5a2c966a1908fed2c8d7d15a7b15fb9fc48928c98da02545aa7a0653392429c6",
+        "ko": "9a4cfb2cd80ce5a2c4f1f50a2a53e93054c4fa4a826f0691ad84aa524f864b74",
+        "tr": "8e2d10f4b3321b5dd0de499a18640f0286273912551bac9b08bf12a059bdc7e2",
+        "zh": "354d1f2c2a3c38a967002910c5ea74e418b6887279dae44482f41106057d39ff",
+        "zh-TW": "6e57062b248669519d866bc528ff84d696bedd790429f2401ea6676e5536c344"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.243939+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“订阅额度”与韩文“구독 할당량”在本条目所属 subscription UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "subscription",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#subscription.utilization",
+      "key": "subscription.utilization",
+      "status": "可保留",
+      "combined_fingerprint": "1c4eb43d83b9c591f9aed25c0406ac63e6c45f573f0a686aeb6adfc0acee3768",
+      "content_fingerprints": {
+        "en": "f67899daf99f9b43fae5efc073367d6385a6e8ce9992119ecba2e6c653fe4a08",
+        "ja": "f67899daf99f9b43fae5efc073367d6385a6e8ce9992119ecba2e6c653fe4a08",
+        "ko": "f67899daf99f9b43fae5efc073367d6385a6e8ce9992119ecba2e6c653fe4a08",
+        "tr": "f67899daf99f9b43fae5efc073367d6385a6e8ce9992119ecba2e6c653fe4a08",
+        "zh": "f67899daf99f9b43fae5efc073367d6385a6e8ce9992119ecba2e6c653fe4a08",
+        "zh-TW": "f67899daf99f9b43fae5efc073367d6385a6e8ce9992119ecba2e6c653fe4a08"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.243939+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{{value}}%”与韩文“{{value}}%”在本条目所属 subscription UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "subscription",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#subscription.weeklyLimit",
+      "key": "subscription.weeklyLimit",
+      "status": "可保留",
+      "combined_fingerprint": "a661e33073f01a51d287b00d1e86438302e2b5ce2f4be06925731a74639e04bb",
+      "content_fingerprints": {
+        "en": "2975132481a7a6957cfa95055d04e706f21f1a613f448d0a17463f2eacca4636",
+        "ja": "03bf5ecb4620d8314086b7cec3e3cd2ec24a4697eb1c905b9835d1afcef29016",
+        "ko": "2392bb5e3aa698e8c44b743a7fd14094626205977620f46ca8d631599e795f81",
+        "tr": "abc3e615d675e22b8b2bba752d47359b9108b8b4347cce91f178cd693598ba6a",
+        "zh": "92845d3b531d9fec186eba9baa580886c353afe9d93683a1b496efea57607810",
+        "zh-TW": "a8a3dfb18c80dd50cab632152b754596f15cbc4869ffb69e5ded9a642c5ca0f6"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.243939+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“每周”与韩文“주간”在本条目所属 subscription UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "subscription",
+      "round": 1
+    }
+  ]
+}

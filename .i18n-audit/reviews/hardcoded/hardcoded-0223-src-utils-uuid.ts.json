@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0223:src-utils-uuid.ts",
+  "kind": "hardcoded",
+  "group": "src/utils/uuid.ts",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 2,
+  "records": [
+    {
+      "id": "hardcoded:src/utils/uuid.ts:generateUUID:9a9f4bf4aeae48b2:001",
+      "status": "待核实",
+      "content_fingerprint": "9a9f4bf4aeae48b2882f4021cac56f9f4350e04fd8c61c89f42fa458a08f0dda",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/utils/uuid.ts",
+      "line": 21,
+      "function": "generateUUID",
+      "expression": "crypto API not available - please update your operating system",
+      "reason": "该英文错误可能经 API 调用方展示给用户，需结合实际 toast/error boundary 链路确认。",
+      "suggested_action": "核实展示链路；如需展示则改为结构化错误并本地化。",
+      "suggested_ko": null,
+      "severity": "中",
+      "review_batch": "hardcoded:0223:src-utils-uuid.ts",
+      "round": 1
+    },
+    {
+      "id": "hardcoded:src/utils/uuid.ts:generateUUID:5dc10448349e3c3f:001",
+      "status": "待核实",
+      "content_fingerprint": "5dc10448349e3c3f2bbf6a1e1bee1f54d086cfe7deb59921a0d97fc9a2a65613",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/utils/uuid.ts",
+      "line": 36,
+      "function": "generateUUID",
+      "expression": "`${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`",
+      "reason": "该英文错误可能经 API 调用方展示给用户，需结合实际 toast/error boundary 链路确认。",
+      "suggested_action": "核实展示链路；如需展示则改为结构化错误并本地化。",
+      "suggested_ko": null,
+      "severity": "中",
+      "review_batch": "hardcoded:0223:src-utils-uuid.ts",
+      "round": 1
+    }
+  ]
+}

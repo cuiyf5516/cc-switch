@@ -1,0 +1,19 @@
+{
+  "batch_id": "hardcoded:0020:src-tauri-src-claude_desktop_config.rs",
+  "kind": "hardcoded",
+  "group": "src-tauri/src/claude_desktop_config.rs",
+  "ordinal": 2,
+  "record_count": 10,
+  "record_ids": [
+    "hardcoded:src-tauri/src/claude_desktop_config.rs:direct_inference_model_specs:fff2aeeafbd8d8bb:001",
+    "hardcoded:src-tauri/src/claude_desktop_config.rs:configured_proxy_model_routes:2d0830f82f0d086d:001",
+    "hardcoded:src-tauri/src/claude_desktop_config.rs:configured_proxy_model_routes:48953d992d92988d:001",
+    "hardcoded:src-tauri/src/claude_desktop_config.rs:configured_proxy_model_routes:66516b17b7faa62b:001",
+    "hardcoded:src-tauri/src/claude_desktop_config.rs:configured_proxy_model_routes:40274536b835c5e1:001",
+    "hardcoded:src-tauri/src/claude_desktop_config.rs:configured_proxy_model_routes:272dcb18d47da352:001",
+    "hardcoded:src-tauri/src/claude_desktop_config.rs:map_proxy_request_model:f3588b54dc6afcd5:001",
+    "hardcoded:src-tauri/src/claude_desktop_config.rs:map_proxy_request_model:7905b77636ffcbb5:001",
+    "hardcoded:src-tauri/src/claude_desktop_config.rs:route_profile:6e0661f299e72a58:001",
+    "hardcoded:src-tauri/src/claude_desktop_config.rs:unsupported_platform_error:8e8b215483f9a89e:001"
+  ]
+}

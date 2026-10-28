@@ -1,0 +1,22 @@
+{
+  "batch_id": "hardcoded:0136:src-components-shell",
+  "kind": "hardcoded",
+  "group": "src/components/shell",
+  "ordinal": 1,
+  "record_count": 13,
+  "record_ids": [
+    "hardcoded:src/components/shell/AppGlyph.tsx:APP_DISPLAY_NAME:40f5bd93e8d06737:001",
+    "hardcoded:src/components/shell/NewLayoutDialog.tsx:handleAcknowledge:1e655ab9df322f74:001",
+    "hardcoded:src/components/shell/NewLayoutDialog.tsx:handleViewReleaseNotes:b7234250036d8913:001",
+    "hardcoded:src/components/shell/Sidebar.tsx:SidebarTopBar:768748e73feb9050:001",
+    "hardcoded:src/components/shell/Sidebar.tsx:SidebarTopBar:768748e73feb9050:002",
+    "hardcoded:src/components/shell/Sidebar.tsx:tip:8cc90a1e7ba29384:001",
+    "hardcoded:src/components/shell/Sidebar.tsx:tip:8c483261e408f811:001",
+    "dynamic-i18n:src/components/shell/Sidebar.tsx:SettingsDirectory:73080ad588a22bcf:001",
+    "hardcoded:src/components/shell/Sidebar.tsx:SettingsDirectory:a4262e1c9bcbc172:001",
+    "hardcoded:src/components/shell/Sidebar.tsx:SettingsDirectory:46fc6c2631c7c14d:001",
+    "hardcoded:src/components/shell/WindowControls.tsx:BUTTON:98da8dcb7a6ba140:001",
+    "hardcoded:src/components/shell/WindowControls.tsx:sync:efaa22fdf7de2950:001",
+    "hardcoded:src/components/shell/WindowControls.tsx:run:88e9b3096a98aac6:001"
+  ]
+}

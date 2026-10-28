@@ -1,0 +1,13 @@
+{
+  "batch_id": "hardcoded:0015:deplink.html",
+  "kind": "hardcoded",
+  "group": "deplink.html",
+  "ordinal": 15,
+  "record_count": 4,
+  "record_ids": [
+    "hardcoded:deplink.html:<html>:92af0bc3bf30a389:001",
+    "hardcoded:deplink.html:<html>:e827cf9a35bf5b49:001",
+    "hardcoded:deplink.html:<html>:542b73e733e2103d:001",
+    "hardcoded:deplink.html:<html>:494ae4b1bdb8a5bf:001"
+  ]
+}

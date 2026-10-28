@@ -1,0 +1,472 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:appMatrix:001",
+  "kind": "translation",
+  "namespace": "appMatrix",
+  "reviewed_at": "2026-10-28T13:39:08.429087+00:00",
+  "review_count": 22,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#appMatrix.cell.fail",
+      "key": "appMatrix.cell.fail",
+      "status": "可保留",
+      "combined_fingerprint": "b5aa66fa2c7f6d6139d6310b1ddafe713b87b9069630d9f60282aa5ecf96aa19",
+      "content_fingerprints": {
+        "en": "3afb21eb36a5f946125fd0a26b8b0b098eae427aa54b2868c74621cdcb9abfb6",
+        "ja": "28b36e89afafffd91e2050a25926a2bec43f38e2895d9bbf8b48c6bf3bde6538",
+        "ko": "5c5567c8ab72509ac13e9a804f2881c724ca94edbc3db333cb34ddd73ff19e9d",
+        "tr": "470da161df5468d6c3a6c8b91239f04b6880c29c18fabdb08d0f91940ad1d3b2",
+        "zh": "1c51373754a3948dcd43242b72aad8c2711a59dc0d73e492a9a836f784695be0",
+        "zh-TW": "9d0e7d1737462280e35281fc50123fd8909e3e4877cb07ba1096004d041fb1ce"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.429087+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{{name}} · {{app}}：写入失败，点按重试”与韩文“{{name}} · {{app}}: 저장 실패, 클릭하여 다시 시도”在本条目所属 appMatrix UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appMatrix",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appMatrix.cell.off",
+      "key": "appMatrix.cell.off",
+      "status": "可保留",
+      "combined_fingerprint": "2e95a6bb74abce090affca656efa7f0d1060084e3330f3888572e4d58f1289eb",
+      "content_fingerprints": {
+        "en": "1647fc88dcac97271ea51a0176653d6f0a7328a459876baa889a3c549d812754",
+        "ja": "b5224fc754d10e76326c010d8d14ec1c3b67ee27a0669d3e59579529c6e4a1ff",
+        "ko": "ae9ad269efdaa1c5130f347bbd9ddbc4794e371cbdff242e1f7d1d49a3309e2e",
+        "tr": "1984a7dfbd39eb0dd244fa813ba63e2b095e05f7458d40699e60af4247a50d76",
+        "zh": "55dc7994c407e553d16cf3a83d27f75f39a7c84cb03ebeafba6a373303cf5f36",
+        "zh-TW": "717292aa43726d5360e72f91032f23bf74a6de5d5148e555db643aececba0987"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.429087+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{{name}} · {{app}}：未启用”与韩文“{{name}} · {{app}}: 꺼짐”在本条目所属 appMatrix UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appMatrix",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appMatrix.cell.on",
+      "key": "appMatrix.cell.on",
+      "status": "可保留",
+      "combined_fingerprint": "4963895757516643253857d345c8e1bcc33cbd40e28967e2751ac8714ebc8a82",
+      "content_fingerprints": {
+        "en": "8f8a9d1d33648321fb4dcdb6b9d21df9f8c8d3dcc510d44656ca8f9706d8c940",
+        "ja": "53e746a261cf40251ca8f364cff757af60df45255acb1ff7b9dcb70a30cb1ac7",
+        "ko": "e22ea38d8fd9257c9bc7de4c856ba8241b8033b96b30409393c82f5b6f7043f3",
+        "tr": "40e6e276ddf0dd5fb1df84725f25fa7c7afa6c89ade5e7aab9b97285e077d101",
+        "zh": "0d737e3e767e0950df3fb2e17fb7eddeb4bb5d7d9dbc88925f352947612fc0c9",
+        "zh-TW": "5a7f45ab01d4ebd8a7660f49b6b98c2425f04267f2d6c8e1a8fcf619f2cc42d6"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.429087+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{{name}} · {{app}}：已启用”与韩文“{{name}} · {{app}}: 활성화됨”在本条目所属 appMatrix UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appMatrix",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appMatrix.clearSearch",
+      "key": "appMatrix.clearSearch",
+      "status": "可保留",
+      "combined_fingerprint": "30fd9f7cc294610eb9e1944d05d45c8bb178b45a507a942851d206b207e0a725",
+      "content_fingerprints": {
+        "en": "3b7ea51793e9d906afa06afb86252abb48e1125cc96a7f5efabcfd8597ea183a",
+        "ja": "414ce27b3694f7253d9a03e2b8607ccadff06f590a0c7d28dedea6870f3ff641",
+        "ko": "3201d04830622213c1539975772f068341803246450867b4a9beaba42ffe04d7",
+        "tr": "5a3f99c5c09d607ba2e3bb612f27d84d1af25282079281397dcf55c3baba8bfb",
+        "zh": "b6f00afa6537489b272a69159dd57f7360d34d2a53251dcee7e51920af80920a",
+        "zh-TW": "0c2d1a3aeaff90756a95b6accfe906912bab1940acc7ed5191dbbc6611b0aca9"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.429087+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“清空搜索”与韩文“검색 지우기”在本条目所属 appMatrix UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appMatrix",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appMatrix.columnAria",
+      "key": "appMatrix.columnAria",
+      "status": "可保留",
+      "combined_fingerprint": "8968dc4577289f77c6b2d6d3ee6c7c3d6a87fd2169e282a74c1fc3ef501c5434",
+      "content_fingerprints": {
+        "en": "6a2215a435dbe9c5337a54d09423eb2823ffcdd5b166be59fc1039415bd8327c",
+        "ja": "db0ff86cc9d1be27947deb50fb8656cbe518c5b8b4f95964920818ec86a42820",
+        "ko": "2320d99a03b4ea5e7de0e683d925dbab17d02c108ee54957076073e459a16116",
+        "tr": "5a36fc8f240fd3dd771cb0bbfa64646e23eb693f1515fa81a2d811bea43b9298",
+        "zh": "19419ecd020a204629b45c87ede017c720d70b82ceacdbae2e9c3edc5e155d0c",
+        "zh-TW": "0182bd339cd54f80a6dbdcdae05393274c297d45bb41861266291e2896f4d3fe"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.429087+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{{app}}：已在 {{on}} / {{total}} 个 {{noun}} 上启用，批量操作”与韩文“{{app}}: {{noun}} {{total}}개 중 {{on}}개 활성화됨, 일괄 작업”在本条目所属 appMatrix UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appMatrix",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appMatrix.found",
+      "key": "appMatrix.found",
+      "status": "可保留",
+      "combined_fingerprint": "c902b4fe5f104044dabf4ecbabef01c5b674af6c517ecab894da672d2b6bed5e",
+      "content_fingerprints": {
+        "en": "b5a1145bd7c3026719e24e82d4edaeeee9de23a392e836b21168d79851665774",
+        "ja": "203fc23c054d088d623bead9d2f6833ec703a2dfbf75b7e0b508d7b9d3c7b4c8",
+        "ko": "d6d9928320dbfd3c5aaf349ff848b801189cfa7e54f8c6a38302633e84c66663",
+        "tr": "53ba8aeaab75f1ab0d96ac84d9e9887239254955c8be3c45bffc7d99a39165e8",
+        "zh": "7aaa37d53387ea2400746a54fceb485a9d3041652e565467161ce0745b401709",
+        "zh-TW": "edbecf9efefbe14a7431274939f821c800dee1dce3cbdc7fc8384fd3b967a0c3"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.429087+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“找到 {{count}} 个”与韩文“검색 결과 {{count}}개”在本条目所属 appMatrix UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appMatrix",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appMatrix.ompDiscovery.docsLink",
+      "key": "appMatrix.ompDiscovery.docsLink",
+      "status": "可保留",
+      "combined_fingerprint": "b46d3daf69b4c1d1842c8e6106830266139c26ed6e1f62c3998d64d683d061d1",
+      "content_fingerprints": {
+        "en": "d4372c69ce4a51564be64d5b8f49d5fa7ee0e739a08bc3c153d954eeee2e6af7",
+        "ja": "d6206b95c0e030551c4a1c6a9ce60df5f48abaad192d12e6afb934d48c5022ed",
+        "ko": "3f9e0b2f0b651af2eae7934b1f32d2bfb728b851798d33046b5b46d4ae80add7",
+        "tr": "c6eb78340936bd002010852ccc46ead3ff8aec39522afd122e5b6d483912edd0",
+        "zh": "586a921c208a2e7c71df94b328b3827ea563dac6b225586a698ad2017b2eace4",
+        "zh-TW": "9d84c9f1ecf87fdb2c58cad3cd652cb1c769bd5bee3d7feb2c02e58ce4cfbeed"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.429087+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“怎样让 Oh My Pi 不读取其他 Agent 的配置”与韩文“Oh My Pi가 다른 에이전트의 설정을 불러오지 않도록 하는 방법”在本条目所属 appMatrix UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appMatrix",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appMatrix.ompDiscovery.help",
+      "key": "appMatrix.ompDiscovery.help",
+      "status": "可保留",
+      "combined_fingerprint": "9b25b1008bb5834864b2d785ccb44e1fcb97f6ef03554054a1936b7ddb071f6b",
+      "content_fingerprints": {
+        "en": "d4ba5291c5646ad3861cfc1824ee8a191a7052e2bb84a50a144f049b6b932421",
+        "ja": "0d9e6ab13569317a350253cd3b2a75ae12c4397b4c517194611a6d9c3d58146e",
+        "ko": "a576693062280682b05d4beb02f5b13dc83cbf6f5082088165c52de388779504",
+        "tr": "200d74111e495b87478c1a557c546e117db4c406c4709df4ab2caa5fd20b268f",
+        "zh": "f3db485e1e018a81e78d1c8f85d5ff5368bcf68af099120a699cae8321b821ec",
+        "zh-TW": "da869f728c62cd5a18e763c174e80a83eb363286c621b0b55784e262195e7c83"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.429087+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Oh My Pi 除了 ~/.omp/agent 自己的配置，还会从其他 Agent 的目录发现 MCP 服务器、技能、命令、钩子、规则和设置（如 Claude 的 ~/.claude、Codex 的 ~/.codex 等）。要让 Oh My Pi 的实际生效内容与 CC Switch 界面一致，请在 ~/.omp/agent/config.yml 用 disabledProviders 关闭不需要的发现来源（id 与文档一致，如 claude、codex、gemini、opencode、github、agents）。”与韩文“Oh My Pi는 자체 설정 디렉터리인 ~/.omp/agent 외에도 다른 에이전트의 디렉터리(예: Claude의 ~/.claude, Codex의 ~/.codex)에서 MCP 서버, 스킬, 명령어, 훅, 규칙 및 설정을 자동으로 찾습니다. Oh My Pi에 실제로 적용되는 항목이 CC Switch 화면과 일치하도록 하려면 ~/.omp/agent/config.yml의 disabledProviders에서 불필요한 검색 소스를 비활성화하세요. ID는 문서에 명시된 값(예: claude, codex, gemini, opencode, github, agents)을 사용합니다.”在本条目所属 appMatrix UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appMatrix",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appMatrix.ompDiscovery.title",
+      "key": "appMatrix.ompDiscovery.title",
+      "status": "可保留",
+      "combined_fingerprint": "250cf9e587831c214fafe241b03b1062d9b1dcb96e2e4c17b88ff03c101c31d6",
+      "content_fingerprints": {
+        "en": "c8f77254f719315d5651fa687f8344e93c0e507e5a5425f910c659b5eab7b081",
+        "ja": "8b285975e989b12e6305ebea15f014c8eff59171992b216fbdc7b062b1fe6f8e",
+        "ko": "f2c01e123879b0cced1d97388555117730abf8adf7956c80783100663060b6fa",
+        "tr": "14659fe13861ed9bdc9bf3d1703f93e5449fe46f345397eeaeeba69c3078ebf9",
+        "zh": "2546acc53294e9ba05dc78593e64585b0e7534b444a575976dd6322187fb5b08",
+        "zh-TW": "18cf773c9668f2073cacc917eb698149783462f3578f5c8a563b8be2f0e17179"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.429087+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Oh My Pi 的实际加载范围”与韩文“Oh My Pi가 실제로 불러오는 항목”在本条目所属 appMatrix UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appMatrix",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appMatrix.pop.count",
+      "key": "appMatrix.pop.count",
+      "status": "可保留",
+      "combined_fingerprint": "9fc7b6b7ea3a8768fdf6c84ae56fac019e8df400dfb4fffa2da31d633cef0d77",
+      "content_fingerprints": {
+        "en": "f86f7d025b62b1d6bfc4a3ab76876ba01cf0d8357be83bb64f010b80b42fbf2d",
+        "ja": "dcdc7ee86bb8755b818cbc9cbd2d74b06e0f0d698e7f9b08613714b1f49d605a",
+        "ko": "786099458a42d03921054ee4ea9e8d1de6ecfe40191c2fa224b566457fc7ef4a",
+        "tr": "518aa13dc00d5678d098282023b299d076f2862050ccf90bd879cada26d81bd1",
+        "zh": "ce9ad2b982e39b9c39e8b116b45a380bde1e9db92d5dc9a19dbc428e08ed78db",
+        "zh-TW": "70fd002f91a147a3212e3cb7ecd3c9e0caa8c891944159324120739627929066"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.429087+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已在 {{on}} / {{total}} 个 {{noun}} 上启用”与韩文“{{noun}} {{total}}개 중 {{on}}개 활성화됨”在本条目所属 appMatrix UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appMatrix",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appMatrix.pop.disableAll",
+      "key": "appMatrix.pop.disableAll",
+      "status": "可保留",
+      "combined_fingerprint": "23e9e4e53d7d5b47d98372cb67bb5b40f0ebf6142d009ac8ce262b680d0c3e50",
+      "content_fingerprints": {
+        "en": "59d74fd7dc6c7617ee458f55b408841fe6f9205ef0fbeab8178643b15f40d17f",
+        "ja": "df8b05434193b4eb4bc811b8313ff4ff92136ad5b9d77c13eb236070782e143c",
+        "ko": "8cfacb48b4ef12055d9f71ce1ea622355bb5620ebfe8f1b6ee309deb4bed4bac",
+        "tr": "17022d5e1c4f3afdb45fa059f5516d98499aaa6de58e08db5bb67a56e1b0336f",
+        "zh": "34f7336d39831fcad1ef4f69da25a6e8f4ac86ef28f51aafa4d476d55205a061",
+        "zh-TW": "9a4acf35cc0e4e63b6a5ac51a19092a787f3d4226f19afe09de82dff09b2c596"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.429087+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“全部关闭”与韩文“모두 끄기”在本条目所属 appMatrix UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appMatrix",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appMatrix.pop.enableAll",
+      "key": "appMatrix.pop.enableAll",
+      "status": "可保留",
+      "combined_fingerprint": "eed75b05007a322df9d872db1f26bfa46684b24b24f7f42621d67b8429a8b335",
+      "content_fingerprints": {
+        "en": "06f08e7c2f8a8c00ba00b6158fbdf7b9e788e2c2b792a9cb7f4f17a373218c4f",
+        "ja": "d316967537d8e393cba1244868cfbe805cd1752311849d5c671368ce15e3fa53",
+        "ko": "ce1f78a795408249d39b65580e5f23effdf354f4b746cf37bcdf7efe1f085673",
+        "tr": "ee7566cb94dcfc012c9009c847bc2cbceb6ff25e8d314699675f939908dfcc5f",
+        "zh": "2a4540b12718c8908af0a0f7c43708b4a8e9089003dbe2bffb41b529d7825ae9",
+        "zh-TW": "f83a1263cd43fef68cf1712971647929a1e7e7afacf893a3e6457f2049a8279e"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.429087+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“全部启用”与韩文“모두 활성화”在本条目所属 appMatrix UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appMatrix",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appMatrix.pop.enableRest",
+      "key": "appMatrix.pop.enableRest",
+      "status": "可保留",
+      "combined_fingerprint": "8d791d7e7a0b15d5c7f18c71b41b7347498cfc654ff9f4a1561dc5d356b251d4",
+      "content_fingerprints": {
+        "en": "c90dc0974eb3ea83b2c03be68ddfb8c65ca81adc4da0be224285da442fbe67ba",
+        "ja": "0b4641ea199d726db7a478ba5712904cc86a8b4e9e400fe2448cd0d5ab2d2c0d",
+        "ko": "4dff21bb265337d162a1b34d31a45422cc61d3cdc3adc69583ef7a23f932db62",
+        "tr": "8b2a42be722f3a742b9532289297ecd0505a9a3e4fca70b924fbeaf810a6081f",
+        "zh": "b1b4af89f906723aa4c948943fd527408de701aeccb07145493ce753f2e0f9c7",
+        "zh-TW": "1a9ed2a69c9cfcf00b93b970ee6c0a7a78ef51a50f31417f2d48f79b3f220d20"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.429087+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“启用其余 {{count}} 个”与韩文“나머지 {{count}}개 활성화”在本条目所属 appMatrix UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appMatrix",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appMatrix.pop.failCount",
+      "key": "appMatrix.pop.failCount",
+      "status": "可保留",
+      "combined_fingerprint": "a16bf74bc94756402e6a0d88fdd4f71f9739646a2b265755866588377fd7f502",
+      "content_fingerprints": {
+        "en": "70bd79c165a541c0970423dd81ead13c788dc986ffdf5407bdc0dfd230842ea4",
+        "ja": "75c66a3cc08676f3451327dafde7de7d628e692685ae0d1435979b8006eaea88",
+        "ko": "1cd16586a7e14b30941e2258a77c5b65088a9d443351d9e281e8d8938a59fb98",
+        "tr": "a15fb60ad623fe022e6b282525d536c0c5e51b7b81c1ae1656df7e75c15db52e",
+        "zh": "5a41e732a32e7767e201366318aba5411393d23d63f967924e6e176ed8f4b5ce",
+        "zh-TW": "0271b344df35009719697e63b16b49599ca8480fe121f67924570a90dc290567"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.429087+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“其中 {{count}} 个写入失败”与韩文“그중 {{count}}개 저장 실패”在本条目所属 appMatrix UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appMatrix",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appMatrix.pop.scopeAll",
+      "key": "appMatrix.pop.scopeAll",
+      "status": "可保留",
+      "combined_fingerprint": "41e905fc823c0ccd8fbaca658f8e35bf5a5c33b57dc3e8fb467e6ae54687cf8e",
+      "content_fingerprints": {
+        "en": "5ddd4ed83dcd878b5ce4e2f8e5ff4a7d52f4b2203c83e69fc961bfeab41677b6",
+        "ja": "2950ee917744b583cea757a7f61d9fa1e560a3828bf2cecb50b7275b48a01f87",
+        "ko": "ef42958292920241a1a670080b3040f4b004ecf29be20daa8d5546c9845c6a37",
+        "tr": "68ec881c5ce7d58faa054820b4ec988632f3c24733ffbfc356bb0b7ea4cd3fc6",
+        "zh": "89c6666833b5b7444564b9129adf97c99c44ceaacf4923daa6b4610e2e99f022",
+        "zh-TW": "07e3978b4be738b666b31e17ca7925a2ccf3cf7390e195fac85f8f0d686bde57"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.429087+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“只作用于当前列表里的 {{count}} 个”与韩文“이 목록의 항목 {{count}}개에 적용됩니다.”在本条目所属 appMatrix UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appMatrix",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appMatrix.pop.scopeFilter",
+      "key": "appMatrix.pop.scopeFilter",
+      "status": "可保留",
+      "combined_fingerprint": "a958920a498cdec11e0cdbadfb16ff9f09f236ea3ab2e3d4cf590dd6fc04713b",
+      "content_fingerprints": {
+        "en": "ab38000c3aad9acf308babfb9054d4b4bf9dc51503c939b474cb9e127a374c87",
+        "ja": "59aec71535323d421f1383c4a0f0c99be35219c837dc696c8e2cd954eeb89765",
+        "ko": "fe167ded8afb789cd0f962a97eccfc6d7102f6585102276136c14f7ec9e9a4c6",
+        "tr": "bd29f07924f65ce2da00364d67633bebd744bff4c0baecda72f6d39e8d5e0578",
+        "zh": "b76813e5ecaaa81e63dd5b34ed7683a578c31222a39c92b453a4b9deb342ed62",
+        "zh-TW": "2aaa25721f2556f2563cfac5f538133c4e7da2dc7894f3a198e0ab06deb3deda"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.429087+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“只作用于筛选出的 {{count}} 个”与韩文“필터링된 {{count}}개 항목에만 적용됩니다”在本条目所属 appMatrix UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appMatrix",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appMatrix.pop.scopeSearch",
+      "key": "appMatrix.pop.scopeSearch",
+      "status": "可保留",
+      "combined_fingerprint": "f64d7a87acbe2f4e6ea12ea0a2d44af2572038a43358ac79b45e00802b9902f8",
+      "content_fingerprints": {
+        "en": "f40b03576ba10bff34f735fc3c3fd48af1157672b1b4948ae546702e2eeed82a",
+        "ja": "5651d04710e99a52934151d0ea6ff5a556a7396a9494c27350b498550f41fd65",
+        "ko": "09ecf944a3b692c2223b7978bf0b2ebb581338058748b1e9f9cb403cf883b80e",
+        "tr": "8d16c9aee41bf28fc6e26916d888a88feb3e418be30124f2a4dab61f550f7a7d",
+        "zh": "bde134b8bde6df28785ffa30bc04111de8df741ca68928ddd47bbe0918ff67c0",
+        "zh-TW": "142b7d541177ca358615d0a3370f15fe41eaa1d73fb81b4e9da35577db0e298e"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.429087+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“只作用于搜索出的 {{count}} 个”与韩文“검색 결과 {{count}}개에만 적용됩니다.”在本条目所属 appMatrix UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appMatrix",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appMatrix.toast.disabled",
+      "key": "appMatrix.toast.disabled",
+      "status": "可保留",
+      "combined_fingerprint": "6a49420d7965bf85abc798f749b66d00bc8bd00c51127002be89c771f98dfb7d",
+      "content_fingerprints": {
+        "en": "ba1e032fc368360700e1835b80546147bbe8a08fc3f1f4dbcff0f591ead4cc7e",
+        "ja": "7ece5cbc0faadaf47fac62c08c11305b6abe70a7887fcbc4a2c40633ba9eeafb",
+        "ko": "13cbd7e5ef527bb2ed6bb7548086282fd9542fd236a9fe10201ab8cebdeb29c0",
+        "tr": "ab1411a4771a6eb0ee875550fd262a348a120877a1f6653b3516084692178471",
+        "zh": "cbd7d0db39255e01c4ae6f16cb5fbf4a127c464f4fd9e815c91344c51d9f86fa",
+        "zh-TW": "6b58dd573a383862e5a35948650c3f6d779dbc07bc60af467c7fbe0bc0a7a356"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.429087+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已在 {{app}} 关闭 {{count}} 个 {{noun}}”与韩文“{{app}}에서 {{noun}} {{count}}개를 비활성화했습니다.”在本条目所属 appMatrix UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appMatrix",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appMatrix.toast.enabled",
+      "key": "appMatrix.toast.enabled",
+      "status": "可保留",
+      "combined_fingerprint": "5a3a67da98cab2827fe2b3f0db7261d4574eb0bfd09fd58852a36aa4e12f158b",
+      "content_fingerprints": {
+        "en": "ab374329abb54770a195bd2e7acc25c183ed98f30de7724d54b027dc1fe0e707",
+        "ja": "ad475b66995ff100d342b9deda99e7186ffe951dc926685eadd77d02949fb5bc",
+        "ko": "faa9109bebea25f3aabe152a7894e7add175db5d9b28ef9a6a47fe7b161849c2",
+        "tr": "211b1639b4df9f05b7b107a296c8094d23bb1a89a960f0dd35e552ae014479c0",
+        "zh": "8528b333f69d2f297950885c6affb88aa429c57a3f3bedd4973ea13845e776d3",
+        "zh-TW": "13526900201325f514d057e2f2e92d2f7ac0be2ea2450e090e561d34097da617"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.429087+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已在 {{app}} 启用 {{count}} 个 {{noun}}”与韩文“{{app}}에서 {{noun}} {{count}}개를 활성화했습니다.”在本条目所属 appMatrix UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appMatrix",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appMatrix.toast.partialFail",
+      "key": "appMatrix.toast.partialFail",
+      "status": "可保留",
+      "combined_fingerprint": "d2094370ee7e51cae5ede88881d8fc7e597cacd962d78c6f01dea8023cfb31fe",
+      "content_fingerprints": {
+        "en": "68c207a2528c4e97c9c81dac764a441575407cd427d22fdf56c442d53b92faa9",
+        "ja": "535fe771f191e14d18d04b1bcc76c4e7fd0ac82cf5dc1d7e86eed75652ca95bf",
+        "ko": "7951b22ee028d3b4e1835989a84fae373d31f05db7db15873bb366cd0c3c5bd1",
+        "tr": "9df03ecba89d58d19a5ef2c79f0e93a785655faddc0a485c27e60bd9d6a4872e",
+        "zh": "0b2ce001ba5ca08009319e9c475e137b2b288a8bde0ba6dbecedcc3094d7fc26",
+        "zh-TW": "34c2379afb78f3d1fab0102b7709d06ae541bddd059d671a20143a95a7e5b5f6"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.429087+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“，其中 {{count}} 个没有写入，已在列表里标出”与韩文“ · 그중 {{count}}개를 저장하지 못해 목록에 표시했습니다.”在本条目所属 appMatrix UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appMatrix",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appMatrix.toast.undone",
+      "key": "appMatrix.toast.undone",
+      "status": "可保留",
+      "combined_fingerprint": "4fd6d940fabb43e20d4a4e691100a00ed5cd20fde163a4141799e28bc8176344",
+      "content_fingerprints": {
+        "en": "dcccf568dff915d91e8f60e858d322cd5aa2e5ae0a2ab31dfb3ab6a37e53285b",
+        "ja": "8142b8c4b42f1fb0fd585fd29914f2e41751591f81e7204a965d20fac2c85744",
+        "ko": "3f5f6bf64fe38a0173b7c5f702c69785516645b8ab824000f46e6679510a0f97",
+        "tr": "c85698aff1afcd0c55deac6415fddc52466e4fcbc7786fc8b0d4e7bda0c211ff",
+        "zh": "fef96e34f77b742b32120dac448c1d90f3a2ee2c9bb6942fec13b70d7816cd06",
+        "zh-TW": "06172d1eb2b771d3b995f583d85930aec789779f67c724817f69d60ba764d3cc"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.429087+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已撤销”与韩文“실행 취소됨”在本条目所属 appMatrix UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appMatrix",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appMatrix.undo",
+      "key": "appMatrix.undo",
+      "status": "可保留",
+      "combined_fingerprint": "19693b8e71a7b65e21ed3d7059793214f599239431141ae5116df4a93fa89a34",
+      "content_fingerprints": {
+        "en": "a8283ade31856f71220db0e6f60a257c6889dc4dad0f275f66ad44b9ed9bf8d5",
+        "ja": "dc65bd3603e8227e890ea9df05fcbbf5a53b955359dfc244bab3b49b72e8075c",
+        "ko": "ce706412fa752a6192bfa7ec8f04c8c032b97b0ea1b962d73d6fbdeaeeb3f60d",
+        "tr": "6b65f1920bb281e7d17489ca4d7a870d328d698fc1ba743e6d8be6ce1dfac565",
+        "zh": "926a50b98ece2667069d47bd532e8ae1fb23218868a8f289c09937478f717c7a",
+        "zh-TW": "2abdcba8d536bb17c22384c5d8e146b05a349302745148be3e4068ebcedae68f"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.429087+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“撤销”与韩文“실행 취소”在本条目所属 appMatrix UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appMatrix",
+      "round": 1
+    }
+  ]
+}

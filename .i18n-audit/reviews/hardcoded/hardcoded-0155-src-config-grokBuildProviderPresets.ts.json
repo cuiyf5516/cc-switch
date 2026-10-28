@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0155:src-config-grokBuildProviderPresets.ts",
+  "kind": "hardcoded",
+  "group": "src/config/grokBuildProviderPresets.ts",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 3,
+  "records": [
+    {
+      "id": "hardcoded:src/config/grokBuildProviderPresets.ts:grokPresetConfig:56073284f463eb7b:001",
+      "status": "无需国际化",
+      "content_fingerprint": "56073284f463eb7b0c0ee0f7c37ada7937ce4b5d37cb3eca51fbcf681305b2d5",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/config/grokBuildProviderPresets.ts",
+      "line": 72,
+      "function": "grokPresetConfig",
+      "expression": "`model_provider = \"custom\"\nmodel = ${tomlString(model)}\n\n[model_providers.custom]\nname = ${tomlString(providerName)}\nbase_url = ${tomlString(baseUrl)}\nwire_api = \"responses\"\nrequires_openai_auth = true`",
+      "reason": "预设中的配置片段、模型标识、User-Agent 或系统提示词，不属于界面自然语言。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0155:src-config-grokBuildProviderPresets.ts",
+      "round": 1
+    },
+    {
+      "id": "hardcoded:src/config/grokBuildProviderPresets.ts:grokBuildProviderPresets:5e6b57135719e73e:001",
+      "status": "无需国际化",
+      "content_fingerprint": "5e6b57135719e73ee8d8b00f17be75466dd1cbc1d56ea9fc87dbb9e7d8684920",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/config/grokBuildProviderPresets.ts",
+      "line": 434,
+      "function": "grokBuildProviderPresets",
+      "expression": "Compshare Coding Plan",
+      "reason": "供应商或模型的品牌名、模型标识/展示名属于专有名词，当前产品策略保持原样。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0155:src-config-grokBuildProviderPresets.ts",
+      "round": 1
+    },
+    {
+      "id": "hardcoded:src/config/grokBuildProviderPresets.ts:grokBuildProviderPresets:5e6b57135719e73e:002",
+      "status": "无需国际化",
+      "content_fingerprint": "5e6b57135719e73ee8d8b00f17be75466dd1cbc1d56ea9fc87dbb9e7d8684920",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/config/grokBuildProviderPresets.ts",
+      "line": 443,
+      "function": "grokBuildProviderPresets",
+      "expression": "Compshare Coding Plan",
+      "reason": "CSS 类名、样式或布局配置，不是用户文案。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0155:src-config-grokBuildProviderPresets.ts",
+      "round": 1
+    }
+  ]
+}

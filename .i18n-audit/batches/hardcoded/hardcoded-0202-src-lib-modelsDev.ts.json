@@ -1,0 +1,10 @@
+{
+  "batch_id": "hardcoded:0202:src-lib-modelsDev.ts",
+  "kind": "hardcoded",
+  "group": "src/lib/modelsDev.ts",
+  "ordinal": 1,
+  "record_count": 1,
+  "record_ids": [
+    "hardcoded:src/lib/modelsDev.ts:fetchModelsDev:9e4495a2c8af0702:001"
+  ]
+}

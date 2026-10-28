@@ -1,0 +1,16 @@
+{
+  "batch_id": "translation:json-locale:claudeCode:001",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "claudeCode",
+  "ordinal": 1,
+  "record_count": 2,
+  "record_ids": [
+    "json:src/i18n/locales#claudeCode.needsRouting",
+    "json:src/i18n/locales#claudeCode.noRoutingSupport"
+  ],
+  "keys": [
+    "claudeCode.needsRouting",
+    "claudeCode.noRoutingSupport"
+  ]
+}

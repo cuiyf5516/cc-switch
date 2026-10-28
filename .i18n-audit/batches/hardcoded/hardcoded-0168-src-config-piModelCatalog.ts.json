@@ -1,0 +1,13 @@
+{
+  "batch_id": "hardcoded:0168:src-config-piModelCatalog.ts",
+  "kind": "hardcoded",
+  "group": "src/config/piModelCatalog.ts",
+  "ordinal": 2,
+  "record_count": 4,
+  "record_ids": [
+    "hardcoded:src/config/piModelCatalog.ts:piModelCatalog:1b6b70b55ddf774f:001",
+    "hardcoded:src/config/piModelCatalog.ts:piModelCatalog:4da215539bd579cd:001",
+    "hardcoded:src/config/piModelCatalog.ts:piModelCatalog:db44e8e897c6488d:001",
+    "hardcoded:src/config/piModelCatalog.ts:piModelCatalog:f5a516c2f8a95d7f:001"
+  ]
+}

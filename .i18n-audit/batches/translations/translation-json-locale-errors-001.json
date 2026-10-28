@@ -1,0 +1,24 @@
+{
+  "batch_id": "translation:json-locale:errors:001",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "errors",
+  "ordinal": 1,
+  "record_count": 6,
+  "record_ids": [
+    "json:src/i18n/locales#errors.configLoadFailedMessage",
+    "json:src/i18n/locales#errors.configLoadFailedTitle",
+    "json:src/i18n/locales#errors.frontendCrashMessage",
+    "json:src/i18n/locales#errors.frontendCrashTitle",
+    "json:src/i18n/locales#errors.reloadInterface",
+    "json:src/i18n/locales#errors.usage_query_failed"
+  ],
+  "keys": [
+    "errors.configLoadFailedMessage",
+    "errors.configLoadFailedTitle",
+    "errors.frontendCrashMessage",
+    "errors.frontendCrashTitle",
+    "errors.reloadInterface",
+    "errors.usage_query_failed"
+  ]
+}

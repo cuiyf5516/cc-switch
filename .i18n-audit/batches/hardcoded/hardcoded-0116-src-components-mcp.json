@@ -1,0 +1,23 @@
+{
+  "batch_id": "hardcoded:0116:src-components-mcp",
+  "kind": "hardcoded",
+  "group": "src/components/mcp",
+  "ordinal": 1,
+  "record_count": 14,
+  "record_ids": [
+    "dynamic-i18n:src/components/mcp/McpFormModal.tsx:fieldErrorText:c2af3397f931d9d7:001",
+    "dynamic-i18n:src/components/mcp/McpFormModal.tsx:formatLabel:365b5da25b0130b9:001",
+    "dynamic-i18n:src/components/mcp/McpFormModal.tsx:McpFormModal:110e6c2fccad7e63:001",
+    "dynamic-i18n:src/components/mcp/McpFormModal.tsx:McpFormModal:b38b4246acafdcdc:001",
+    "hardcoded:src/components/mcp/McpFormModal.tsx:McpFormModal:7a930d27a3f5c464:001",
+    "hardcoded:src/components/mcp/McpFormModal.tsx:McpFormModal:c28bf4f117f283bc:001",
+    "hardcoded:src/components/mcp/McpFormModal.tsx:McpFormModal:66dfeeedabf1f022:001",
+    "hardcoded:src/components/mcp/McpFormModal.tsx:McpFormModal:66dfeeedabf1f022:002",
+    "hardcoded:src/components/mcp/UnifiedMcpPanel.tsx:UnifiedMcpPanel:53f13ae99ed53bd3:001",
+    "dynamic-i18n:src/components/mcp/UnifiedMcpPanel.tsx:UnifiedMcpPanel:947324ed6a00ba24:001",
+    "dynamic-i18n:src/components/mcp/UnifiedMcpPanel.tsx:UnifiedMcpPanel:d9d6a85445fe9b7e:001",
+    "hardcoded:src/components/mcp/formBits.tsx:FIELD_CLASS:21e107b21a425660:001",
+    "hardcoded:src/components/mcp/formBits.tsx:LABEL_CLASS:c87b37dfe56ae9fe:001",
+    "hardcoded:src/components/mcp/mcpDraft.ts:recognizePaste:7a24c8c64468bead:001"
+  ]
+}

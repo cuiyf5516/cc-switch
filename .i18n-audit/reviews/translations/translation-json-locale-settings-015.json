@@ -1,0 +1,388 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:settings:015",
+  "kind": "translation",
+  "namespace": "settings",
+  "reviewed_at": "2026-10-28T14:07:04.787286+00:00",
+  "review_count": 18,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#settings.webdavSync.saving",
+      "key": "settings.webdavSync.saving",
+      "status": "可保留",
+      "combined_fingerprint": "0f6572d6ff4a8a8caabe61edf19cb7dc20b4b06286af94fa6a593bb1778b69fa",
+      "content_fingerprints": {
+        "en": "dc85af8f2b1d0d6756547cd5f79557466e25e682b882f68d277bd7f125851321",
+        "ja": "917b1c1f18d0276baeafb8c124a3431b9000fe130f8dd8bb8add316001afb3a5",
+        "ko": "92c4796cf195d9606a93da4db80d67034023cf4474f2d447b833512d73021983",
+        "tr": "a089b934714c08713c37f2391508d3876b2e564aec73919af97703c494f3526e",
+        "zh": "917b1c1f18d0276baeafb8c124a3431b9000fe130f8dd8bb8add316001afb3a5",
+        "zh-TW": "211017bcf5bc00a2193e003383da478c1ea0bfe34b0f876001b13b49dd89b47b"
+      },
+      "reviewed_at": "2026-10-28T14:07:04.787286+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“保存中...”与韩文“저장 중...”在本条目所属 settings UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "settings",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#settings.webdavSync.test",
+      "key": "settings.webdavSync.test",
+      "status": "可保留",
+      "combined_fingerprint": "5a092b35de607ff09dd108805aac87e056a84ab204c75c6ee77a6a0e5b0d6092",
+      "content_fingerprints": {
+        "en": "c02977b07ec93816f236c57b4c30d4544904e87e0a43a1daf344c229594320b9",
+        "ja": "3ee76ae7045f1ff8fa156b6690b04f2aac92b7b8f01883b4b7d33791e9f82dfa",
+        "ko": "4b39bb1b291b0b3ad50d771fce49e694f1cdf211367b6f634358de165d4f8b90",
+        "tr": "35ad75e5d13b5d5e4470839774a92cc4f1941d28ad1c1730d05d510664edcdab",
+        "zh": "0a98a48eaaac417549f71ebe7afd2fd02c97d101930377385641726f2c8fc183",
+        "zh-TW": "565432cb6e479c65b12eb160fe66d3855f89bc13540e9f7e36c9558a7061ce2e"
+      },
+      "reviewed_at": "2026-10-28T14:07:04.787286+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“测试连接”与韩文“연결 테스트”在本条目所属 settings UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "settings",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#settings.webdavSync.testFailed",
+      "key": "settings.webdavSync.testFailed",
+      "status": "可保留",
+      "combined_fingerprint": "17e3b5dcc5e11f78b627adcf72805bb41524ed6ddff1b5281941dccdd4a9e1be",
+      "content_fingerprints": {
+        "en": "b3ed15030dcb364f76b47f718038969d0b1fae8da439b1e9bb0b5a6a20ee7645",
+        "ja": "ff5bc9c2bfdd68a62cc5e3c1b174ddec95b977c0d1afce7b2b9ee835bc6cee63",
+        "ko": "2b08e3a8c474d6d56ddece661427c04fa21eadbcfe7ff75c17ec5865b4fc10bd",
+        "tr": "e84ec19d75e23e97e810e67c36baae4cf04b70b9bc0496daef504acbccf406c9",
+        "zh": "1a411c5c30368da67b16985a4de44e17d95e27b3c080d26beecc1d85588b043e",
+        "zh-TW": "8cbaaef0949682da8a9f3a0bdd52c2e4ad4d0df5e066139eff9224094316bc92"
+      },
+      "reviewed_at": "2026-10-28T14:07:04.787286+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“连接失败：{{error}}”与韩文“연결 실패: {{error}}”在本条目所属 settings UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "settings",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#settings.webdavSync.testSuccess",
+      "key": "settings.webdavSync.testSuccess",
+      "status": "可保留",
+      "combined_fingerprint": "b857af4ce2c8e244663cb7e4c29035c6ad3181d9419a76fa8d42a46144b75aef",
+      "content_fingerprints": {
+        "en": "856dd8c8677b1f8fbe7d1094c78265495de0dc3bd60f391895837660d840eb03",
+        "ja": "5131e314da64b5395a90f44979c23fff8e756039d477eb729bad1613fa846de2",
+        "ko": "75693042ccb71fd05fcf4e41dbebe841216fd6ddc1912a581529c443f0f60ea8",
+        "tr": "ab64b3bd068f739caa14cde8dca66f218ee1b97df34b077b36cfd35981606623",
+        "zh": "4a19cb8a31d71f3388f0b3f3cc3a49ac1cb0aabf073d8eebb8809abcdb8f084b",
+        "zh-TW": "b2054dcab5b9a335021ed49c627fd09b68f4465c1d65344e509d79ec0f2bdb55"
+      },
+      "reviewed_at": "2026-10-28T14:07:04.787286+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“连接成功”与韩文“연결 성공”在本条目所属 settings UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "settings",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#settings.webdavSync.testing",
+      "key": "settings.webdavSync.testing",
+      "status": "可保留",
+      "combined_fingerprint": "2cd33836020c3c5769599a53e7753296b4c8fc81993675a131a129fc40dfafce",
+      "content_fingerprints": {
+        "en": "6c02a28421f8ad91e91756cb731bb47993bf529101135966b80128548a16d5b1",
+        "ja": "fb4045466882cefbd0bc7895940b06889c8cf6e5f2c0faffb73ebf0b43a2e3ba",
+        "ko": "6d1d4f038c975009dbe6afa9a0dd4c33b8cf0c28c1ca1c3dfa0632d2001e3ba2",
+        "tr": "6d1b663545d3cf923a5012fe8b2a542e3a87abf2a60df0ad0543383255ecd15f",
+        "zh": "7b6187c41e88b70cf8b14e4965d8cb99e89458f7cb014843994596a9d7e5708a",
+        "zh-TW": "b8dde98ce29d015cc9c1acd970f8a560a499b4305b5ada7fedca5bfff70ef72c"
+      },
+      "reviewed_at": "2026-10-28T14:07:04.787286+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“测试中...”与韩文“테스트 중...”在本条目所属 settings UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "settings",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#settings.webdavSync.title",
+      "key": "settings.webdavSync.title",
+      "status": "可保留",
+      "combined_fingerprint": "8ee6f0425682f0c0e2836266118d85a7facb187203aa096ef4e9d45a23b4eaeb",
+      "content_fingerprints": {
+        "en": "3cb13a522db0b717b096e51c2fc18d21b988df2d0c1926e15f2ffa9ecbf5d363",
+        "ja": "cd38e1f072b71508b614eead27c51fee7e17df8f34c8490e04fd79b7584f284f",
+        "ko": "89190faed3b3a09a1c2f4a8b609cdf8a92907b36ed582fd549b9b713185759de",
+        "tr": "6d43a3326b20cbfca3e44a11c8a30be0f0ed8ad2638c8bf4fe6ddc050aded069",
+        "zh": "9d0090fecf8f636fd939884ae48e726a6f0343546e273611f9b52cd267de6f61",
+        "zh-TW": "2cd8e75f0f307d427003a950466cef45defcda4e13c29e9f658040eebd6f14b9"
+      },
+      "reviewed_at": "2026-10-28T14:07:04.787286+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“WebDAV 云同步”与韩文“WebDAV 클라우드 동기화”在本条目所属 settings UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "settings",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#settings.webdavSync.unsaved",
+      "key": "settings.webdavSync.unsaved",
+      "status": "可保留",
+      "combined_fingerprint": "088f930a9b5064d72c04f5d0cc02fe4f8e508134ecc310992f6fd3ac876d045e",
+      "content_fingerprints": {
+        "en": "6250d5725dda6d9fa7aeab21eded4904a7dbbe66200b8035a03694217c7cb1b4",
+        "ja": "6a1be012c99c34e85ae2e24bbd53cec0bd47628ff67eaeb3212e4d00238acd61",
+        "ko": "357f9f66b81d466817c6323f54afe007ce8d3acae543df112cb4c6eeb4eb5cb0",
+        "tr": "ac1d5a2e4fc8c616db3daa9c5b740ee9994f7c0495fddff59877cc67c1707da3",
+        "zh": "6a1be012c99c34e85ae2e24bbd53cec0bd47628ff67eaeb3212e4d00238acd61",
+        "zh-TW": "63381d7c2b99463d0ab2259ed5d8f3be4e04aac18d666f16898cbb03c2c4f1a3"
+      },
+      "reviewed_at": "2026-10-28T14:07:04.787286+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“未保存”与韩文“저장되지 않음”在本条目所属 settings UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "settings",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#settings.webdavSync.unsavedChanges",
+      "key": "settings.webdavSync.unsavedChanges",
+      "status": "可保留",
+      "combined_fingerprint": "c09f7fe5845c5e3d538f9207503ffe3d4940559334f051637b34fafa3dbeaeb9",
+      "content_fingerprints": {
+        "en": "7f5dbec7fca0621c87aa5352a6f4bb48de218c2e678c3c8b3b4490557f6d2f16",
+        "ja": "8e4b3d120e81e6f10d516cc931ef4cf34bc3a3074bedc11b3044d9470cd4c3be",
+        "ko": "463aba3f14533d80222b80eeef3a77c375157ccd08a88fd5fde452bb12d4bffa",
+        "tr": "792fdbfd03bec2398190dcb47e0772c9fc8928e29c92c2f17ff8c6011f912f41",
+        "zh": "0ea42aa301304e75789030fa193c2b605feee0e8b35816b696ed673fe74a37f3",
+        "zh-TW": "07902d3010e4e06a272d83caf7dc79958ec0de866689510014d7877c9aafce3f"
+      },
+      "reviewed_at": "2026-10-28T14:07:04.787286+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“请先保存配置”与韩文“먼저 설정을 저장하세요.”在本条目所属 settings UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "settings",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#settings.webdavSync.upload",
+      "key": "settings.webdavSync.upload",
+      "status": "可保留",
+      "combined_fingerprint": "2631a0577248f959205ed12e33122f9418adab6616b48aed38235bdb164fa0a9",
+      "content_fingerprints": {
+        "en": "e3b8923519c2dcae06d7fe0316b660ab91228930b82f7e57bf5ecb348c85d167",
+        "ja": "f4b28823ec9d8f7e6e531d851a7983223acfed37f353aa8ff703f516844dee88",
+        "ko": "401aaefc3ce1d72c9d2e52ddeecc877eb6a564c391f049cd863f2041b8f996d0",
+        "tr": "7542fa47ec7f526748fd0270f2afb5a49cbdb26c6a9a7122bc7e3a3b4c24273c",
+        "zh": "279d607a8f0f452116f23ddef558d82df965a8780d36292cfa0a236a63f96c5c",
+        "zh-TW": "e711bcce7cdc5e9b7e725df094f0c144e3264f061070f42587ffb3e45a0c3dcd"
+      },
+      "reviewed_at": "2026-10-28T14:07:04.787286+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“上传到云端”与韩文“클라우드에 업로드”在本条目所属 settings UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "settings",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#settings.webdavSync.uploadFailed",
+      "key": "settings.webdavSync.uploadFailed",
+      "status": "可保留",
+      "combined_fingerprint": "d73f1f99a03bb0885dcf4d751fcbc18f45c02f0d3dd225d9d4853c140325137a",
+      "content_fingerprints": {
+        "en": "f3743632720814a0110d359df932f588a820e53c1d8839bfd906b8638c9e7769",
+        "ja": "173bfadae626a20910a0bd9e02c1411e59d6bd56d10f0b97d67d68d7b97c4c31",
+        "ko": "fe74c400dc3ed896e692d86f3d8fed092e63161dd54c3bf823203ed626170b01",
+        "tr": "cfc3601a5e2ad4bcdf61122e5c675e05b0a382e65b90f1b375620804c9a6b4c4",
+        "zh": "d6f7ad60ba2ded94285ce3cfe8c63d4a50dd6c930816e762b5684d1d0aa17513",
+        "zh-TW": "2cc5482686125988a20b2c315f9d7a0d8e028677b9e3bb0e3ef0f8810e3691ac"
+      },
+      "reviewed_at": "2026-10-28T14:07:04.787286+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“上传失败：{{error}}”与韩文“업로드 실패: {{error}}”在本条目所属 settings UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "settings",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#settings.webdavSync.uploadSuccess",
+      "key": "settings.webdavSync.uploadSuccess",
+      "status": "可保留",
+      "combined_fingerprint": "1b4006a67abf3b40f802833c83c13088ac489a9e692e0bdd39275fb6b019fe10",
+      "content_fingerprints": {
+        "en": "455a777e66cb9fa2f68b6960b81c6e7b9939147b8b82d274b668b48fefc5c292",
+        "ja": "40eb032caac133df9ffdd758c376af577e5f2ccdf73adcf9e17820d1777be6f0",
+        "ko": "541cc3d69c3aa4a5f376a89b5522bba3c85a17ac01de5b4e6ba181d9b7d3eb76",
+        "tr": "b33e6c368df447fa5f06f21942096fe4510987ed5c19341b3e1b2a6f12ba4b68",
+        "zh": "cc393582506cd035d042ce454b2c5910e820f85d3bb4e314963b2ad4b24fc871",
+        "zh-TW": "413039cc143f12ee230a82cba0a90223fb88c947713ea45bd272f4c13ad81fe0"
+      },
+      "reviewed_at": "2026-10-28T14:07:04.787286+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已上传到 WebDAV”与韩文“WebDAV에 업로드됨”在本条目所属 settings UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "settings",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#settings.webdavSync.uploading",
+      "key": "settings.webdavSync.uploading",
+      "status": "可保留",
+      "combined_fingerprint": "357cfa7a9e008476ebc080e391967af887c553a38491c42d04b5d6ecabe5403c",
+      "content_fingerprints": {
+        "en": "72cb29c90ccd8361ee82d02fabe81a3f01605c7b8fea4c9996fc01d84e3fbb48",
+        "ja": "014712e4008aaaa81db5f5527f188a9db86b01fc2913fb80d88190493bffe823",
+        "ko": "1a587579acc942c601580a4988b6cc6f0655213f4f3a4ac98ec3ea4a752f49fc",
+        "tr": "b2b464d79ad6b337638e5b41f04fe47622cdb41d11856fc5bbf5a16235e79883",
+        "zh": "593470c32d441106544f5411616e56a2fa284b027dfe9387d13ad0546edebb1d",
+        "zh-TW": "a9fe88833f82a376501766710bc559cb0baaf285fc7ab15c0a0e8e59fe7a2333"
+      },
+      "reviewed_at": "2026-10-28T14:07:04.787286+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“上传中...”与韩文“업로드 중...”在本条目所属 settings UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "settings",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#settings.webdavSync.username",
+      "key": "settings.webdavSync.username",
+      "status": "可保留",
+      "combined_fingerprint": "bb84a08557f873ad1e2a6b36c68732fc25445fbebef230e83ed917c48c1fb5f2",
+      "content_fingerprints": {
+        "en": "21b25bcb2f8184cd80da48458ec04c22d723df02d475edddabfdf94cbfc2f4c4",
+        "ja": "a7ba12bc530780250f1db8f351276c1e067f0724d268d48216fe6ab5f4756873",
+        "ko": "b7a42f54840d1d9391b79d2014306ba18c2081ef54a7f3d3fbbf0fd052ee2714",
+        "tr": "4ecbcf71ae5a33939e7bc15fd5fc91daf505ad64b93615f634ce42cd8d74170a",
+        "zh": "e31a41f9fe267a27f70cc976ab9f163005c3cfe80ae17a09deab91eea320a1a1",
+        "zh-TW": "76c7d3a2ca110d9a1ce4973cb1a8c86fbf134d9e5ccd77b423c4f59046afec74"
+      },
+      "reviewed_at": "2026-10-28T14:07:04.787286+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“WebDAV 账户”与韩文“WebDAV 계정”在本条目所属 settings UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "settings",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#settings.webdavSync.usernamePlaceholder",
+      "key": "settings.webdavSync.usernamePlaceholder",
+      "status": "可保留",
+      "combined_fingerprint": "2b735fa436b42e1711d84a91089d1b32ac271145ace9749f2d2c7f8797b693c4",
+      "content_fingerprints": {
+        "en": "2a347f1933d4835039b40bf0200b38fcf8dee7053485a92afefd2bb89804de7a",
+        "ja": "0c1370df6a06e09edccc0c119b3cccf05eed7b4b9379ea7780bfdd5706b60ee5",
+        "ko": "d9b0afa581944b9f792a88622fd04e5b0c55438e5d6fabb806e7e6cb297c9955",
+        "tr": "ab436e61512236cf46fab708e31345b90146a623b17527384dedfea5931a3616",
+        "zh": "9cf9c2b3f90bd40c8e882360b6eec557c3244aeb2036f2fbd41d487d60699098",
+        "zh-TW": "03579eced4abbfcf8d9f86dcac0b09af7150ae635b6baedefc91a6dd772190b8"
+      },
+      "reviewed_at": "2026-10-28T14:07:04.787286+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“邮箱账号”与韩文“이메일 계정”在本条目所属 settings UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "settings",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#settings.windowBehavior",
+      "key": "settings.windowBehavior",
+      "status": "可保留",
+      "combined_fingerprint": "ae6f4ef6d9c16d2e99f0b1247299bb0be4e7ea0120c1e582daaf5c7b0fe9cc0d",
+      "content_fingerprints": {
+        "en": "708fe63ca62683bba386bda4e3f21634ba563268b4e34b345b492c297eca2a30",
+        "ja": "82ea7b99112a098fa9ee52aa695716ac7cfcc4cec648632d8b4be36b48bb08b9",
+        "ko": "3e72ba16070238adbe35a4e7ff92a92637fb068d75f80540b7c39b5c70b2e6a3",
+        "tr": "61d35e918515d4fcb28b01c8f51fa00526c8dcf677066f6939b0c0e7eb87c307",
+        "zh": "983bb7c5c691e73e16728e7c2460b8ac2c204a7e668bc30f68bc927fb98ae9b8",
+        "zh-TW": "aad3500e66610d643697a79e8a9d9581f2c13c84046031b62fbbe5aca35c1aa1"
+      },
+      "reviewed_at": "2026-10-28T14:07:04.787286+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“窗口行为”与韩文“창 동작”在本条目所属 settings UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "settings",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#settings.windowBehaviorHint",
+      "key": "settings.windowBehaviorHint",
+      "status": "可保留",
+      "combined_fingerprint": "14de3545647e674e70b8c96480aac653bdc1e8d968f1c9c42408f95e50ddd1ca",
+      "content_fingerprints": {
+        "en": "cfd8c7a53d6af8b7e5ebaf685ee1d63db968a38ffdceae749f1c873d65033bba",
+        "ja": "620e9ee1dd2428c3167fe81a01d5870e4ceac2f90296345e4e1ef61b52655c7b",
+        "ko": "ace3763c723570adb1f5f37ba14d0b1da8e5397a8b913be4f34de87b52ead734",
+        "tr": "4aa75436f79903b96bd0ed5d73cbf2c5c06a4df841a340d1af43aaa621216e0b",
+        "zh": "67b286beb21164cc7971c8ff91bf3e197b7f6ea558430547f45d02280fa3573d",
+        "zh-TW": "2e52e7a1c55a232834c6de6a8969f24371a49cf4f94777fb3a865ac5a213d8ca"
+      },
+      "reviewed_at": "2026-10-28T14:07:04.787286+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“配置窗口最小化与 Claude 插件联动策略。”与韩文“창 최소화 및 Claude 플러그인 통합 정책을 설정합니다.”在本条目所属 settings UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "settings",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#settings.wslShell",
+      "key": "settings.wslShell",
+      "status": "可保留",
+      "combined_fingerprint": "0a49da5a495633f420b3b4ea3c2bb256fb75544bd0576af9adda39ccb70ef4e7",
+      "content_fingerprints": {
+        "en": "a733285486d5438327c37af6e6e84a69a6c6f22aae74b94d33cf88c6eeda93cc",
+        "ja": "a733285486d5438327c37af6e6e84a69a6c6f22aae74b94d33cf88c6eeda93cc",
+        "ko": "a733285486d5438327c37af6e6e84a69a6c6f22aae74b94d33cf88c6eeda93cc",
+        "tr": "b7865a0fdef0291d58d5be1ed902e328c56cf2cbd414acfea79b91f5a94f332f",
+        "zh": "a733285486d5438327c37af6e6e84a69a6c6f22aae74b94d33cf88c6eeda93cc",
+        "zh-TW": "a733285486d5438327c37af6e6e84a69a6c6f22aae74b94d33cf88c6eeda93cc"
+      },
+      "reviewed_at": "2026-10-28T14:07:04.787286+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Shell”与韩文“Shell”在本条目所属 settings UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "settings",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#settings.wslShellFlag",
+      "key": "settings.wslShellFlag",
+      "status": "可保留",
+      "combined_fingerprint": "5c322121d2b0c674a8fd90533c4a31f713662840c73c90ff09df3d4e01db2386",
+      "content_fingerprints": {
+        "en": "552127973f8424e17198e6078a0a52f1ad6804b2c2dc308a81b220e46a34f089",
+        "ja": "b778dfaf153b7d778062fec49f0c9bc66f65d317c8c4f4a80c07d169694f06b2",
+        "ko": "cd116dae91699eee79c97a75828525a424b65886a266703dc804468e7be1eea7",
+        "tr": "4f8bf3f6ee41d46d03eb68b37c1b8c7eea7f25a303c7150bcbd0eaf2b40aeeb7",
+        "zh": "91fc364b8582d39887faecf7eb5962154538b8a82e3d644b1e9d9b998cca4e69",
+        "zh-TW": "cd0cd18c1d41b85b3fb1964498def2138859f490819b95cfd021b86b39c16956"
+      },
+      "reviewed_at": "2026-10-28T14:07:04.787286+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“标志”与韩文“플래그”在本条目所属 settings UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "settings",
+      "round": 1
+    }
+  ]
+}

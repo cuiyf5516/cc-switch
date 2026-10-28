@@ -1,0 +1,8 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:universalProvider:001","default_status":"可保留","overrides":[
+{"key":"universalProvider.notesPlaceholder","status":"建议改","reason":"「선택사항」与项目统一写法「선택 사항」不一致。","suggestion":"선택 사항: 메모 추가","ui_context":"统一供应商备注输入框"}
+]},
+{"batch_id":"translation:json-locale:universalProvider:002","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:workspace:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:xaiOauth:001","default_status":"可保留","overrides":[]}
+]}

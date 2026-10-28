@@ -1,0 +1,16 @@
+{
+  "batch_id": "translation:json-locale:jsonEditor:001",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "jsonEditor",
+  "ordinal": 1,
+  "record_count": 2,
+  "record_ids": [
+    "json:src/i18n/locales#jsonEditor.invalidJson",
+    "json:src/i18n/locales#jsonEditor.mustBeObject"
+  ],
+  "keys": [
+    "jsonEditor.invalidJson",
+    "jsonEditor.mustBeObject"
+  ]
+}

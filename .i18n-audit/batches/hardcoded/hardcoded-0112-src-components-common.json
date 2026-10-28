@@ -1,0 +1,10 @@
+{
+  "batch_id": "hardcoded:0112:src-components-common",
+  "kind": "hardcoded",
+  "group": "src/components/common",
+  "ordinal": 1,
+  "record_count": 1,
+  "record_ids": [
+    "hardcoded:src/components/common/AppToggleGroup.tsx:AppToggleGroup:9082376c2ee7a698:001"
+  ]
+}

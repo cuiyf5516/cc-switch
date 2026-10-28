@@ -1,0 +1,32 @@
+{
+  "batch_id": "translation:json-locale:notifications:002",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "notifications",
+  "ordinal": 2,
+  "record_count": 10,
+  "record_ids": [
+    "json:src/i18n/locales#notifications.settingsSaveFailed",
+    "json:src/i18n/locales#notifications.settingsSaved",
+    "json:src/i18n/locales#notifications.skipClaudeOnboardingFailed",
+    "json:src/i18n/locales#notifications.switchFailed",
+    "json:src/i18n/locales#notifications.switchFailedTitle",
+    "json:src/i18n/locales#notifications.switchSuccess",
+    "json:src/i18n/locales#notifications.syncClaudePluginFailed",
+    "json:src/i18n/locales#notifications.updateFailed",
+    "json:src/i18n/locales#notifications.updateSuccess",
+    "json:src/i18n/locales#notifications.windowControlFailed"
+  ],
+  "keys": [
+    "notifications.settingsSaveFailed",
+    "notifications.settingsSaved",
+    "notifications.skipClaudeOnboardingFailed",
+    "notifications.switchFailed",
+    "notifications.switchFailedTitle",
+    "notifications.switchSuccess",
+    "notifications.syncClaudePluginFailed",
+    "notifications.updateFailed",
+    "notifications.updateSuccess",
+    "notifications.windowControlFailed"
+  ]
+}

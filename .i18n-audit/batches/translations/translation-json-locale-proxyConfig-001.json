@@ -1,0 +1,40 @@
+{
+  "batch_id": "translation:json-locale:proxyConfig:001",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "proxyConfig",
+  "ordinal": 1,
+  "record_count": 14,
+  "record_ids": [
+    "json:src/i18n/locales#proxyConfig.appTakeover",
+    "json:src/i18n/locales#proxyConfig.circuitBreaker",
+    "json:src/i18n/locales#proxyConfig.circuitBreakerSettings",
+    "json:src/i18n/locales#proxyConfig.errorRateThreshold",
+    "json:src/i18n/locales#proxyConfig.failureThreshold",
+    "json:src/i18n/locales#proxyConfig.minRequests",
+    "json:src/i18n/locales#proxyConfig.nonStreaming",
+    "json:src/i18n/locales#proxyConfig.perAppConfig",
+    "json:src/i18n/locales#proxyConfig.proxyEnabled",
+    "json:src/i18n/locales#proxyConfig.recoveryTimeout",
+    "json:src/i18n/locales#proxyConfig.streamingFirstByte",
+    "json:src/i18n/locales#proxyConfig.streamingIdle",
+    "json:src/i18n/locales#proxyConfig.successThreshold",
+    "json:src/i18n/locales#proxyConfig.timeoutConfig"
+  ],
+  "keys": [
+    "proxyConfig.appTakeover",
+    "proxyConfig.circuitBreaker",
+    "proxyConfig.circuitBreakerSettings",
+    "proxyConfig.errorRateThreshold",
+    "proxyConfig.failureThreshold",
+    "proxyConfig.minRequests",
+    "proxyConfig.nonStreaming",
+    "proxyConfig.perAppConfig",
+    "proxyConfig.proxyEnabled",
+    "proxyConfig.recoveryTimeout",
+    "proxyConfig.streamingFirstByte",
+    "proxyConfig.streamingIdle",
+    "proxyConfig.successThreshold",
+    "proxyConfig.timeoutConfig"
+  ]
+}

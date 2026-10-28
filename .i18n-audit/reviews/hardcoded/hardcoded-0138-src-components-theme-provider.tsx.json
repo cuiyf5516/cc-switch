@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0138:src-components-theme-provider.tsx",
+  "kind": "hardcoded",
+  "group": "src/components/theme-provider.tsx",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 2,
+  "records": [
+    {
+      "id": "hardcoded:src/components/theme-provider.tsx:updateNativeTheme:a9fcb0ce9098e64c:001",
+      "status": "无需国际化",
+      "content_fingerprint": "a9fcb0ce9098e64c00b9576403edbf6607d2b13992c793a2f7111872ab470f00",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/components/theme-provider.tsx",
+      "line": 128,
+      "function": "updateNativeTheme",
+      "expression": "Failed to set native window theme:",
+      "reason": "控制台日志或诊断信息，不作为界面文案。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0138:src-components-theme-provider.tsx",
+      "round": 1
+    },
+    {
+      "id": "hardcoded:src/components/theme-provider.tsx:useTheme:30675c2581679304:001",
+      "status": "无需国际化",
+      "content_fingerprint": "30675c258167930486d6344c584f79be88912f628147f4837171f282c4193721",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/components/theme-provider.tsx",
+      "line": 167,
+      "function": "useTheme",
+      "expression": "useTheme must be used within a ThemeProvider",
+      "reason": "技术标识、命令、路径、协议值、配置片段或内部数据，不面向用户展示。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0138:src-components-theme-provider.tsx",
+      "round": 1
+    }
+  ]
+}

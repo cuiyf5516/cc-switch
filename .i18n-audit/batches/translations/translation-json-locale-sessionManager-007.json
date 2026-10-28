@@ -1,0 +1,38 @@
+{
+  "batch_id": "translation:json-locale:sessionManager:007",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "sessionManager",
+  "ordinal": 7,
+  "record_count": 13,
+  "record_ids": [
+    "json:src/i18n/locales#sessionManager.showAll",
+    "json:src/i18n/locales#sessionManager.sourcePathCopied",
+    "json:src/i18n/locales#sessionManager.toolCalls",
+    "json:src/i18n/locales#sessionManager.toolOutput",
+    "json:src/i18n/locales#sessionManager.toolOutputMore",
+    "json:src/i18n/locales#sessionManager.toolOutputRegion",
+    "json:src/i18n/locales#sessionManager.totalCount",
+    "json:src/i18n/locales#sessionManager.unknownDirectory",
+    "json:src/i18n/locales#sessionManager.whereLead",
+    "json:src/i18n/locales#sessionManager.whereMenu",
+    "json:src/i18n/locales#sessionManager.whereNote",
+    "json:src/i18n/locales#sessionManager.whereTitle",
+    "json:src/i18n/locales#sessionManager.you"
+  ],
+  "keys": [
+    "sessionManager.showAll",
+    "sessionManager.sourcePathCopied",
+    "sessionManager.toolCalls",
+    "sessionManager.toolOutput",
+    "sessionManager.toolOutputMore",
+    "sessionManager.toolOutputRegion",
+    "sessionManager.totalCount",
+    "sessionManager.unknownDirectory",
+    "sessionManager.whereLead",
+    "sessionManager.whereMenu",
+    "sessionManager.whereNote",
+    "sessionManager.whereTitle",
+    "sessionManager.you"
+  ]
+}

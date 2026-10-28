@@ -1,0 +1,12 @@
+{
+  "batch_id": "hardcoded:0188:src-hooks-useTrayNavigation.ts",
+  "kind": "hardcoded",
+  "group": "src/hooks/useTrayNavigation.ts",
+  "ordinal": 1,
+  "record_count": 3,
+  "record_ids": [
+    "hardcoded:src/hooks/useTrayNavigation.ts:take:6e3ad6f786afdeb9:001",
+    "hardcoded:src/hooks/useTrayNavigation.ts:useTrayNavigation:0e8d178f300e72ef:001",
+    "hardcoded:src/hooks/useTrayNavigation.ts:report:4a488d2d8ba026cf:001"
+  ]
+}

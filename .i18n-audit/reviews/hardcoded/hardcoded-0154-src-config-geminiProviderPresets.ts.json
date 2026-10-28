@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0154:src-config-geminiProviderPresets.ts",
+  "kind": "hardcoded",
+  "group": "src/config/geminiProviderPresets.ts",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 1,
+  "records": [
+    {
+      "id": "hardcoded:src/config/geminiProviderPresets.ts:geminiProviderPresets:adc217dd32753992:001",
+      "status": "确认遗漏",
+      "content_fingerprint": "adc217dd3275399254b3aba37faa7150ec4e752f85dfe37af80fccbe4685bb7f",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/config/geminiProviderPresets.ts",
+      "line": 44,
+      "function": "geminiProviderPresets",
+      "expression": "Google 官方 Gemini API (OAuth)",
+      "reason": "该预设字段可能展示给用户，但仍是硬编码中文。",
+      "suggested_action": "核实展示位置后迁入 i18n 资源。",
+      "suggested_ko": null,
+      "severity": "中",
+      "review_batch": "hardcoded:0154:src-config-geminiProviderPresets.ts",
+      "round": 1
+    }
+  ]
+}

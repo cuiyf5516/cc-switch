@@ -1,0 +1,13 @@
+{
+  "batch_id": "hardcoded:0032:src-tauri-src-config.rs",
+  "kind": "hardcoded",
+  "group": "src-tauri/src/config.rs",
+  "ordinal": 1,
+  "record_count": 4,
+  "record_ids": [
+    "hardcoded:src-tauri/src/config.rs:read_json_file:aee7bf36cefac7fc:001",
+    "hardcoded:src-tauri/src/config.rs:stage_write:179a01a3b0edbf69:001",
+    "hardcoded:src-tauri/src/config.rs:commit_staged:1f28398f78f50eb4:001",
+    "hardcoded:src-tauri/src/config.rs:commit_staged:1f28398f78f50eb4:002"
+  ]
+}

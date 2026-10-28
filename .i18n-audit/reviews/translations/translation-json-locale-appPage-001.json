@@ -1,0 +1,241 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:appPage:001",
+  "kind": "translation",
+  "namespace": "appPage",
+  "reviewed_at": "2026-10-28T13:39:08.430575+00:00",
+  "review_count": 11,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#appPage.configDirectory",
+      "key": "appPage.configDirectory",
+      "status": "可保留",
+      "combined_fingerprint": "90847d735cd8cd359e32f062358fe9f96598626da652b2523d8aabaa500b3086",
+      "content_fingerprints": {
+        "en": "63ed28047f8007ebaa9a0c5c1619d2727b14acf7e8cbcecf09d7776d1e371f73",
+        "ja": "eb639e8922c424e087d43accf873b14ef08d5ca03820233378ccf8214db8235f",
+        "ko": "1037e88735ec3e83bd12f7ffe9cbcc44bdfdfe3e4438fa331be71f8933d1be92",
+        "tr": "a82fbb74f452306ca978e88f4baa0bc91af19741baca440814f3f25552eab8b0",
+        "zh": "9b74cba09bcf3582e83cb384e9ab8d8e9051d5abd3a626b7b99269f0825c3345",
+        "zh-TW": "5372d4edbf1525dda089d1c781119aee4b8716bddef7da88dca5f739083039c3"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.430575+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“配置目录”与韩文“설정 디렉터리”在本条目所属 appPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appPage.hideFromSidebar",
+      "key": "appPage.hideFromSidebar",
+      "status": "可保留",
+      "combined_fingerprint": "45ce209493828a2715a6f7485ba6026bfb1d4ae34205155ba4bdcac20faeb50c",
+      "content_fingerprints": {
+        "en": "a96ec22ac9bff95bac64f1acdbd3ba23eda7a14a1f56257c8529900cdd561d53",
+        "ja": "394d3b707a95ac2a13abe5c175dfc4314e98d90551142779bc9d4feb6cf4af19",
+        "ko": "16f7d6fd1016dbc23f5d6325fc7c1ca2363150259bf079accaab7fc548681488",
+        "tr": "e0edbe4f87b83580b2bb8e27884beb09db2d126e3b6aabd07de9384f14b4188e",
+        "zh": "1266209b80c60bc273f814adacd3dcab08e4ff4ff782a46bf2a1ebe58dacf5ce",
+        "zh-TW": "3e75e016fd5c1fa392cfd97a927dae32fe35cc8d749540a2b7bff3e7c0f3e0d6"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.430575+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“在侧栏隐藏”与韩文“사이드바에서 숨기기”在本条目所属 appPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appPage.installAndUpgrade",
+      "key": "appPage.installAndUpgrade",
+      "status": "可保留",
+      "combined_fingerprint": "09538979de49d6d26a11a9d10212d9157f90909d74f808c96531ca6cd202aa56",
+      "content_fingerprints": {
+        "en": "d0a596c788ba2e30a72dee25f4ca371c349cfda9f501149c158b22694d90852c",
+        "ja": "0fe6b682e8df182a52f1913bc35b0e979dcc027c29928f4b474449663ffd9020",
+        "ko": "c2e8687ae64e95ea9268ba9353a8ca1cf6dda922e6e9ca171360f0da26cefb59",
+        "tr": "680498925e3f8e0cb7abee1408c56eebe4bb5679a0e5a32736bee6d6eaed99e8",
+        "zh": "06426c56dbc41d990e8fd781c45e74e11bb0ae8ca4d60566eefa887aaae96f0a",
+        "zh-TW": "3addb6debcaa056f4f128d32870aae0e4ed65802590690508ef31ea64ee1cde9"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.430575+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“安装与升级”与韩文“설치 및 업그레이드”在本条目所属 appPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appPage.memory",
+      "key": "appPage.memory",
+      "status": "可保留",
+      "combined_fingerprint": "1fcf6d4fe418b47ed1bcc7dd4d489327fcf4489e6c47925c91180f4c1402012c",
+      "content_fingerprints": {
+        "en": "c3963aedaac6c83c04cf8fb997b479c61e66b3caeecfadd2f2d4bd5b0aef1778",
+        "ja": "220d4ae47d0dcb1d7d16576523b681c1f173ca5e0a2e180e0631c3698824f115",
+        "ko": "bc08b4c895b078086317fe922e496f2b4024d58dfb443deddb921de1c1c7583b",
+        "tr": "efbf14bafe7801bc28750c3c75c310a482e56f00f681d18e521e3b4c5ea72f12",
+        "zh": "7a6335b379b9a161a819877479740b9bee8b8d870f674a80523e319315c51df7",
+        "zh-TW": "2892879e37b97d1b65b47ede97b4c28fbb90ff88f55275be78a2aff6a0dd68c6"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.430575+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“记忆”与韩文“메모리”在本条目所属 appPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appPage.moreActions",
+      "key": "appPage.moreActions",
+      "status": "可保留",
+      "combined_fingerprint": "89fc306f0e92ba221faee6b34fe01aa70de128fb0b977c3a7f5223bf82c6dd75",
+      "content_fingerprints": {
+        "en": "db7ed5728eb0fd1b546762eff54577d054a4409b5b1394f07dbf8d667b7c1bd6",
+        "ja": "02b982930bd8934a27a2e8b95cc8d0d79b834e322381d3baedff7feca47077e9",
+        "ko": "e814f19df587e5454d89db1f9bd427e45e16a6081672deb7aa2ef95f06fa33ea",
+        "tr": "d724d146acf3eb61576f37cc15e8baef16509612d8b169681942f11b2eefbeeb",
+        "zh": "e31951f8ceabf23431a5213f2b4d24172078516d32dc15a3d185f74aec9f5f31",
+        "zh-TW": "e31951f8ceabf23431a5213f2b4d24172078516d32dc15a3d185f74aec9f5f31"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.430575+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{{name}} 的更多操作”与韩文“{{name}}에 대한 추가 작업”在本条目所属 appPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appPage.openclawConfig",
+      "key": "appPage.openclawConfig",
+      "status": "可保留",
+      "combined_fingerprint": "9033bf4d5c298acccbf5a59e87a89703dad3d7b33acc63e94d32362d4f741ccd",
+      "content_fingerprints": {
+        "en": "87e89abb4c1c551fe08d355d097f18b8de78edca5f556997085681662fce8eed",
+        "ja": "0d8619aae051ae343ea983e969d29b7bd7a618eb1b25a6c87c133c5e3ee25264",
+        "ko": "115bced49291a6a0df971e8cd50b00fad1ea43e34be6d37b41f7128b3cf6a65d",
+        "tr": "b95903f73bc63b858c6fbb7d05a30938d8a5a62df4a7a43ca9de131746fcf078",
+        "zh": "148d195e21b05db59551b5f85b09fed0c9b3b4c7562654815396d4f98af53328",
+        "zh-TW": "0d8619aae051ae343ea983e969d29b7bd7a618eb1b25a6c87c133c5e3ee25264"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.430575+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“配置”与韩文“설정”在本条目所属 appPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appPage.providers",
+      "key": "appPage.providers",
+      "status": "可保留",
+      "combined_fingerprint": "3adf57f0fe4a8eeab6e1000561aa908a5bbcb256e514e4483a6eb86c7821ffc2",
+      "content_fingerprints": {
+        "en": "996c32b35f2182a9c83815395113f92344269ebb4ab3525017c4cafaa3d1a8fd",
+        "ja": "a4f0a0c0bb9250a2c206ef9111034b40008f973be6203e6af93aacdfa114484e",
+        "ko": "b84abfbe481c601077ed077e171817362adf86ecbde138c4a69d61c520772ef6",
+        "tr": "5ec0b592ecec9b3436f5afa1913cdfddbcf3dde00785a04f9283dcdc29953ef9",
+        "zh": "033ed59452549c51e60665c88116f46ce24c62d9cb04983537906ae50199dd11",
+        "zh-TW": "cdb3e02e47ab7defe6767c5255caac2fa3fd9cf6eecfcd4a6c6bd66bae23c614"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.430575+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“供应商”与韩文“공급자”在本条目所属 appPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appPage.viewSessions",
+      "key": "appPage.viewSessions",
+      "status": "可保留",
+      "combined_fingerprint": "5fb23a2a0ce4b146b3b2de673665fa165d872d2f31bea544fa90066530da6bb0",
+      "content_fingerprints": {
+        "en": "e608b09160c6c91191f0705268fa0a2dd80df991653f3313458c134c7761aabb",
+        "ja": "c0502af7ac6934411b0c01e32b427996396a583b41cc787b91b7a83da9c36a21",
+        "ko": "9cb95d69bd7f3e13fa817d17b76e526f90c1fa7560a88dcca0d963ba16b8c67a",
+        "tr": "d3c06148ebef048ecbd7a023dd1c9c37c661d7331820be43116f2924d668acbf",
+        "zh": "f2b4237b35f0b3b2bec01c16906c6ea3244a4d8c67e092ebe3f91dec6a7c2e0c",
+        "zh-TW": "6dc64400f115c033b52cf11e343471c3f4b8bfdf4e90ba1325526f08833cc8e1"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.430575+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“查看会话”与韩文“세션 보기”在本条目所属 appPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appPage.viewUsage",
+      "key": "appPage.viewUsage",
+      "status": "可保留",
+      "combined_fingerprint": "bda7c94165f4bfe3842845cc6c5021a2bf68b3308cfa2b33dae9582dc50da39d",
+      "content_fingerprints": {
+        "en": "1d9d9b14bff1b1eeac17764169dbda158b51ccec6911f1be670e9f4705f617a8",
+        "ja": "576badf5d1f0bdc81aacc69c057b82ba62dfabe1c268aeb09f5860ab512088e2",
+        "ko": "03182fc2d447bcd3f32ecd29aefd53a3406aff7b97d3bb55ecdad13308e3c90e",
+        "tr": "98375c90105ffe5e9b192784a7f0ee511057d3e5393339b3ebd116ffdc995445",
+        "zh": "4f9f9f7aa8610782c5f8545a178b1153cf80018ca8829df51bcea88111eeb98c",
+        "zh-TW": "71da2ba0f1707e74a58dc9f702f34572db8c7ee737219aba9bbb25d85779d05d"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.430575+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“查看此应用的用量”与韩文“이 앱의 사용량 보기”在本条目所属 appPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appPage.webUi",
+      "key": "appPage.webUi",
+      "status": "可保留",
+      "combined_fingerprint": "5d564cf904ee340751e3dbd418b43d7d632385f02e0298450a4aecdb1a29e954",
+      "content_fingerprints": {
+        "en": "aadbcf9e94b123ed3b59d0a049bb4b82f26031d456e853913403fb9c85d4b0b1",
+        "ja": "aadbcf9e94b123ed3b59d0a049bb4b82f26031d456e853913403fb9c85d4b0b1",
+        "ko": "2cc97f4c3afe0b85fa6edb4aa36d08a03a04ecd389f61045b0584cdcaf940185",
+        "tr": "5cbf53e069036d173798451cd30062f93c19b18f381e0a860134952d6a66f540",
+        "zh": "aadbcf9e94b123ed3b59d0a049bb4b82f26031d456e853913403fb9c85d4b0b1",
+        "zh-TW": "aadbcf9e94b123ed3b59d0a049bb4b82f26031d456e853913403fb9c85d4b0b1"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.430575+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Web UI”与韩文“웹 UI”在本条目所属 appPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#appPage.workspace",
+      "key": "appPage.workspace",
+      "status": "可保留",
+      "combined_fingerprint": "5f325cef7486f49dd02b3b11004d2436fbc1c641b5db0483bc4f70f78b0d24c1",
+      "content_fingerprints": {
+        "en": "87bb59ba2f92f2a5a9f13e021fd58dd14ae5c065b1046146875e6e68d5ebc8b7",
+        "ja": "cae6357e5163161ef80814c43cc35446606f4d56c3b4bfda2efc3f87d94320e9",
+        "ko": "ffb5c2d141e0c4bf42c15067800d98ce4cc4cddbab1d767975c16def0035dc00",
+        "tr": "5321550f56c9a3c400cd2501507936db8714cc382c2beae50c4362a262f5f836",
+        "zh": "37979829426b0cdbdb27e2245218183472c78d8c43c3777fed77eb6edaba22bc",
+        "zh-TW": "1c5ab76e581d9a733314eb8a35496ff75fb1466713c9e88801c468fe60b8c9f5"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.430575+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“工作区”与韩文“작업 공간”在本条目所属 appPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appPage",
+      "round": 1
+    }
+  ]
+}

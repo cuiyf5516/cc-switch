@@ -1,0 +1,40 @@
+{
+  "batch_id": "translation:json-locale:mode:003",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "mode",
+  "ordinal": 3,
+  "record_count": 14,
+  "record_ids": [
+    "json:src/i18n/locales#mode.tabsLabel",
+    "json:src/i18n/locales#mode.toast.clientConfigChanged",
+    "json:src/i18n/locales#mode.toast.defaultRemembered",
+    "json:src/i18n/locales#mode.toast.enteredRoute",
+    "json:src/i18n/locales#mode.toast.enteredStack",
+    "json:src/i18n/locales#mode.toast.enteredStackDesktop",
+    "json:src/i18n/locales#mode.toast.enteredStackLive",
+    "json:src/i18n/locales#mode.toast.exited",
+    "json:src/i18n/locales#mode.toast.failed",
+    "json:src/i18n/locales#mode.toast.restartHint",
+    "json:src/i18n/locales#mode.toast.routeRemembered",
+    "json:src/i18n/locales#mode.toast.routeSwitched",
+    "json:src/i18n/locales#mode.toast.routeTargetChanged",
+    "json:src/i18n/locales#mode.toast.stackDefaultChanged"
+  ],
+  "keys": [
+    "mode.tabsLabel",
+    "mode.toast.clientConfigChanged",
+    "mode.toast.defaultRemembered",
+    "mode.toast.enteredRoute",
+    "mode.toast.enteredStack",
+    "mode.toast.enteredStackDesktop",
+    "mode.toast.enteredStackLive",
+    "mode.toast.exited",
+    "mode.toast.failed",
+    "mode.toast.restartHint",
+    "mode.toast.routeRemembered",
+    "mode.toast.routeSwitched",
+    "mode.toast.routeTargetChanged",
+    "mode.toast.stackDefaultChanged"
+  ]
+}

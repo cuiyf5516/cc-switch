@@ -1,0 +1,32 @@
+{
+  "batch_id": "translation:json-locale:opencode:002",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "opencode",
+  "ordinal": 2,
+  "record_count": 10,
+  "record_ids": [
+    "json:src/i18n/locales#opencode.providerKeyDuplicate",
+    "json:src/i18n/locales#opencode.providerKeyHint",
+    "json:src/i18n/locales#opencode.providerKeyInvalid",
+    "json:src/i18n/locales#opencode.providerKeyLockedHint",
+    "json:src/i18n/locales#opencode.providerKeyPlaceholder",
+    "json:src/i18n/locales#opencode.providerKeyRequired",
+    "json:src/i18n/locales#opencode.removeHeader",
+    "json:src/i18n/locales#opencode.sdkOptions",
+    "json:src/i18n/locales#opencode.selectPackage",
+    "json:src/i18n/locales#opencode.toggleModelDetails"
+  ],
+  "keys": [
+    "opencode.providerKeyDuplicate",
+    "opencode.providerKeyHint",
+    "opencode.providerKeyInvalid",
+    "opencode.providerKeyLockedHint",
+    "opencode.providerKeyPlaceholder",
+    "opencode.providerKeyRequired",
+    "opencode.removeHeader",
+    "opencode.sdkOptions",
+    "opencode.selectPackage",
+    "opencode.toggleModelDetails"
+  ]
+}

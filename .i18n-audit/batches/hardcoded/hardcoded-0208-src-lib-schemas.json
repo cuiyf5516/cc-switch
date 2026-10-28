@@ -1,0 +1,19 @@
+{
+  "batch_id": "hardcoded:0208:src-lib-schemas",
+  "kind": "hardcoded",
+  "group": "src/lib/schemas",
+  "ordinal": 1,
+  "record_count": 10,
+  "record_ids": [
+    "hardcoded:src/lib/schemas/provider.ts:parseJsonError:aecab70fa3eb4483:001",
+    "hardcoded:src/lib/schemas/provider.ts:parseJsonError:e61d4ec9a0fef58d:001",
+    "hardcoded:src/lib/schemas/provider.ts:parseJsonError:671699789965d764:001",
+    "hardcoded:src/lib/schemas/provider.ts:parseJsonError:d73db14d9074a0c0:001",
+    "hardcoded:src/lib/schemas/provider.ts:cleanMessage:97077e67b17ede29:001",
+    "hardcoded:src/lib/schemas/provider.ts:cleanMessage:e892654a499d52a7:001",
+    "hardcoded:src/lib/schemas/provider.ts:cleanMessage:c8cdcb6926a83554:001",
+    "hardcoded:src/lib/schemas/provider.ts:parseJsonError:871e44e90167d743:001",
+    "hardcoded:src/lib/schemas/provider.ts:providerSchema:427abb574107ec59:001",
+    "hardcoded:src/lib/schemas/provider.ts:providerSchema:e8867867bf2d0227:001"
+  ]
+}

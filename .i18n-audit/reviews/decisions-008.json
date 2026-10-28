@@ -1,0 +1,8 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:deeplink:002","default_status":"可保留","overrides":[
+{"key":"deeplink.skill.hint","status":"建议改","reason":"原文“此操作将…”在韩文中译为「그러면」缺少明确指代，单独作为确认提示时不够自然。","suggestion":"이 작업을 수행하면 스킬 저장소가 목록에 추가됩니다.","ui_context":"添加 Skill 仓库确认提示"}
+]},
+{"batch_id":"translation:json-locale:deeplink:003","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:hermes:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:hermes:002","default_status":"可保留","overrides":[]}
+]}

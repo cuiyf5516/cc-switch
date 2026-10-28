@@ -1,0 +1,17 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:profiles:001","default_status":"可保留","overrides":[
+{"key":"profiles.createDescription.claude-desktop","status":"建议改","reason":"同组其他两个 Claude/Codex 说明均用陈述句式，此处突然改为命令式「저장하세요」，弹窗内语气不一致。","suggestion":"현재 Claude Desktop 공급자를 나중에 전환할 수 있는 프로젝트로 저장합니다.","ui_context":"新建项目说明"}
+]},
+{"batch_id":"translation:json-locale:prompts:001","default_status":"可保留","overrides":[
+{"key":"prompts.deleteBlocked","status":"建议改","reason":"原文先说明“启用中的不能删除”，韩文只留下“先停用”，遗漏了不可删除的前提原因。","suggestion":"활성화된 항목은 삭제할 수 없습니다. 먼저 비활성화하세요.","ui_context":"提示词删除限制提示"}
+]},
+{"batch_id":"translation:json-locale:prompts:002","default_status":"可保留","overrides":[
+{"key":"prompts.helpHermesTitle","status":"建议改","reason":"原文问 SOUL.md“怎么生效”，韩文「효과」表示效果，没有表达生效机制。","suggestion":"SOUL.md 적용 방식","ui_context":"Hermes 提示词帮助标题"},
+{"key":"prompts.helpPiText","status":"建议改","reason":"「/명령어이름을」把说明词直接拼成命令形式，读起来不自然；应清楚说明在斜杠后输入命令名。","suggestion":"프롬프트 라이브러리에서는 한 번에 하나만 활성화되며, 그 내용이 AGENTS.md에 저장됩니다. 시스템 프롬프트 파일은 존재하면 적용되고, 템플릿은 Pi에서 슬래시와 명령 이름을 입력해 호출합니다. 이 두 유형은 별도로 활성화할 필요가 없습니다.","ui_context":"Pi 提示词生效说明"},
+{"key":"prompts.namePlaceholderHermes","status":"必改","reason":"示例“中文搭档”被译成「친절한 파트너」(friendly partner)，新增了“友好”含义且丢失“中文”语义。","suggestion":"예: 중국어 파트너","ui_context":"Hermes 提示词名称占位符"},
+{"key":"prompts.nameRequiredHermes","status":"必改","reason":"示例“中文搭档”被译成「친절한 파트너」并加入“友好”含义，未忠实保留中文搭档语义。","suggestion":"이름을 입력하세요. 예: 중국어 파트너","ui_context":"Hermes 提示词名称校验"}
+]},
+{"batch_id":"translation:json-locale:prompts:003","default_status":"可保留","overrides":[
+{"key":"prompts.updatedToday","status":"建议改","reason":"韩文语序不自然，「오늘 업데이트됨 {{time}}」应把时间放在更新时间之前。","suggestion":"오늘 {{time}}에 업데이트됨","ui_context":"提示词更新时间"}
+]}
+]}

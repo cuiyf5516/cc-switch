@@ -1,0 +1,18 @@
+{
+  "batch_id": "hardcoded:0056:src-tauri-src-pi_config",
+  "kind": "hardcoded",
+  "group": "src-tauri/src/pi_config",
+  "ordinal": 1,
+  "record_count": 9,
+  "record_ids": [
+    "hardcoded:src-tauri/src/pi_config/mod.rs:resolve_pi_agent_dir:29f0d1689903efda:001",
+    "hardcoded:src-tauri/src/pi_config/mod.rs:insert_pi_provider:da8b69f31905b3f6:001",
+    "hardcoded:src-tauri/src/pi_config/mod.rs:replace_pi_provider:4d6f482105915a23:001",
+    "hardcoded:src-tauri/src/pi_config/mod.rs:remove_pi_provider_inner:4d6f482105915a23:001",
+    "hardcoded:src-tauri/src/pi_config/mod.rs:restore_pi_provider_if_missing:669ed5d0e91440a7:001",
+    "hardcoded:src-tauri/src/pi_config/mod.rs:validate_provider_node:88f7e2381e543300:001",
+    "hardcoded:src-tauri/src/pi_config/mod.rs:providers:e49a654bc6009bcf:001",
+    "hardcoded:src-tauri/src/pi_config/mod.rs:ensure_models_revision:5e65ca9a00bc02d6:001",
+    "hardcoded:src-tauri/src/pi_config/mod.rs:optional_string:3ebba16e6f95a564:001"
+  ]
+}

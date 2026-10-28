@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0202:src-lib-modelsDev.ts",
+  "kind": "hardcoded",
+  "group": "src/lib/modelsDev.ts",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 1,
+  "records": [
+    {
+      "id": "hardcoded:src/lib/modelsDev.ts:fetchModelsDev:9e4495a2c8af0702:001",
+      "status": "待核实",
+      "content_fingerprint": "9e4495a2c8af0702e919e43187af73e35bcc45fe973b0698149f13bd8f8959f8",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/lib/modelsDev.ts",
+      "line": 68,
+      "function": "fetchModelsDev",
+      "expression": "`HTTP ${response.status}`",
+      "reason": "该英文字符串“`HTTP ${response.status}`”可能作为提示或错误展示，但静态上下文不足以确认展示链路。",
+      "suggested_action": "追踪调用方并确认是否需要本地化。",
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0202:src-lib-modelsDev.ts",
+      "round": 1
+    }
+  ]
+}

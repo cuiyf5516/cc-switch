@@ -1,0 +1,8 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:providerCard:001","default_status":"可保留","overrides":[
+{"key":"providerCard.reason.currentCannotRemove","status":"待核实","reason":"该键仅存在于 Turkish 资源，中文、英文、韩文均缺失；无法判断它是已废弃的土耳其语独有键，还是遗漏了其他语言资源。","ui_context":"供应商卡片状态/移除原因"}
+]},
+{"batch_id":"translation:json-locale:providerCard:002","default_status":"可保留","overrides":[
+{"key":"providerCard.status.current","status":"待核实","reason":"该键仅存在于 Turkish 资源，中文、英文、韩文均缺失；无法确认是否仍被当前界面引用。","ui_context":"供应商卡片当前状态"}
+]}
+]}

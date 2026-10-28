@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:header:001",
+  "kind": "translation",
+  "namespace": "header",
+  "reviewed_at": "2026-10-28T13:41:13.091780+00:00",
+  "review_count": 12,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#header.addProvider",
+      "key": "header.addProvider",
+      "status": "可保留",
+      "combined_fingerprint": "fde7867e0cdd47656d94131e50baf32289917940db799a761aaea6f8808d6a5f",
+      "content_fingerprints": {
+        "en": "6f4f0e79bd3a0d01501df53b3d486c0e8522423f7875bea3b540354371193cbf",
+        "ja": "cf6b1538898b887361d63a4143f0369e1504928b6a8398221bd6c000ff612795",
+        "ko": "19b13d88683517ed990db4076e4a4ae862c0b59e884ba8892b87786cf8e6de97",
+        "tr": "0baf9d7d07163805349741bf4455f9a2bb0766b11f1faf43ad4cf5ae4469efb1",
+        "zh": "fc7a472874bcbfb2ca6398090f35386ab760178d774adf3e142c2a1f9e875370",
+        "zh-TW": "d85e2fe279f3b5fac14c9e0174432feb2c5c223f57b3139f248d59d2eb4db231"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.091780+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“添加供应商”与韩文“공급자 추가”在本条目所属 header UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "header",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#header.enterEditMode",
+      "key": "header.enterEditMode",
+      "status": "可保留",
+      "combined_fingerprint": "5f844402296897fbbb64024c2e8ddf55a4b5174255e2c1c7c512e2208c3280de",
+      "content_fingerprints": {
+        "en": "77aa69929029be619ca1fb2d527818454a2e3c7fdb970ff472d34debe7d8c001",
+        "ja": "5cfc47d5b2ce8d5da468747cb050626aac4ead6cf993bde7611c37f128c47ffe",
+        "ko": "c43d45f230d44c442fb1ba19384bcbcc42ad0c6058d8a3eee0735f9a9e1b33ae",
+        "tr": "1e7b6e1ea354629c2c0d4c3bdfbba8df369101aaa5dfef726e5a5ebd75c20b0a",
+        "zh": "8549cc742d6a54fbba59ae491c83a387524242f9177e8f6eccf516ccda75a55b",
+        "zh-TW": "70407e6a5423f06935ce6832385833d26b0cb8cbae1bd7c1cd97b62bdacbb423"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.091780+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“进入编辑模式”与韩文“편집 모드로 들어가기”在本条目所属 header UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "header",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#header.exitEditMode",
+      "key": "header.exitEditMode",
+      "status": "可保留",
+      "combined_fingerprint": "88a7cccbf22fdb55920cdc894dfddc61dfb06cc6e5e9c0375b244daa4788c3d7",
+      "content_fingerprints": {
+        "en": "2276c1d4fc364503f56cc9500f4ba0c5f924a93f595ff02d23e64f9bb57b2388",
+        "ja": "e88bb957d192dbe4b5209dc593b199fbf527f292da44c6c3a05c92641c578fc0",
+        "ko": "cd67c4b0bcbc0e801d85a798c9d1077fcfff0adbb3672384093f5e84ba5b2536",
+        "tr": "b886672ef8a9567066a475aba842e0d3ac467f7c9bda8dfcedbaa4067ef4d1da",
+        "zh": "d6c0e5b8953dfb547c8a60fc3fa0e61a762a7670063e3760c440ec519bccc562",
+        "zh-TW": "1a9d0e37739d6869d49fc4aa871824a0a31e283a66caf9308dafdd2b77630b78"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.091780+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“退出编辑模式”与韩文“편집 모드 종료”在本条目所属 header UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "header",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#header.switchToChinese",
+      "key": "header.switchToChinese",
+      "status": "可保留",
+      "combined_fingerprint": "e560fef136d1e828896be61b0bfd8f92b1eafb6e2b9cd1b56c8e0951b80e1fad",
+      "content_fingerprints": {
+        "en": "7b8c71445d6e5bccd5a774f327bf878427f6f8599f11fc2f66a42958f718c523",
+        "ja": "559c7646a81f8fc0d4757b8760dec230f384f707e93e4cb4588109f9a049800a",
+        "ko": "ee69e9172928f19227989531125d688da359925aafbd54517bc972d35a09aa99",
+        "tr": "dea232f97c0dd8cc7167d43af7c9d6515a6cc7604b714da02a41c1d41c3949a0",
+        "zh": "871dbab0b1df0460d3a7edd5f37411d577e7f222106218e2a7c9d5e1218aa7ff",
+        "zh-TW": "b99c152dca00e61e70306b7b574e7915a4559e84a42c440d22db0811218d8fc6"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.091780+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“切换到中文”与韩文“중국어로 전환”在本条目所属 header UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "header",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#header.switchToEnglish",
+      "key": "header.switchToEnglish",
+      "status": "可保留",
+      "combined_fingerprint": "922039ddf316e9fe0f17084179ed91b4f0d0def78d5b3c8e91e6b332e95a87e3",
+      "content_fingerprints": {
+        "en": "5f434646ab9efeafc4354df10131f0ef2a4a8db3d301aba52f177cea9d0b4a9e",
+        "ja": "6858979b4418b475dd169b47e0a8295867de53edf02b21b0820ead581e8bfdec",
+        "ko": "666a8ca894e8149344c97d4e782d270be5cff2f386c3a0d73b0448c92b43d69e",
+        "tr": "457ee0dd2e67481294ff0cdb07cd8f12ff36b9ecdabac6e3768e3560efe72969",
+        "zh": "6a4ade78e614b5d0eac727894512efda8ad1b951944cadd10347c6bb060af94f",
+        "zh-TW": "8802f456fd1fea58278b63c7149fbca59160575d43815c949adb69a3da463202"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.091780+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“切换到英文”与韩文“영어로 전환”在本条目所属 header UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "header",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#header.toggleDarkMode",
+      "key": "header.toggleDarkMode",
+      "status": "可保留",
+      "combined_fingerprint": "4c07b682b0d2f3384be54193af7d160c9e21ae2cd4beda716e7c253a54ed6f97",
+      "content_fingerprints": {
+        "en": "721bb349fa390e00eb07af14e29a793e23d1540d9163d9fe222cf9b6c347f7db",
+        "ja": "808d4781108d119dc0b0559ad06dc1c1b70636657212b90a0d15b6a8ad22de1c",
+        "ko": "5f16552984bc49750efed4e3e119722bc6e29a8c8d370d6df8732bbf396f76a2",
+        "tr": "e93e526d5592cb9776c8c1b67f0d1b464da5c0540c4d58d85ccb88998611c49b",
+        "zh": "ec3abdb69f16166c8276a05e75d5c2d900559554f6033c3e0363249e93aa2ade",
+        "zh-TW": "b6f32c950b1b44931e88cc0464430107a68eec2af717d463a3f762901f79ae60"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.091780+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“切换到暗色模式”与韩文“다크 모드로 전환”在本条目所属 header UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "header",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#header.toggleLightMode",
+      "key": "header.toggleLightMode",
+      "status": "可保留",
+      "combined_fingerprint": "d6a097d502150c709536952b7d5b4da7b9c25ea7ed7bf20726ca39d518091a6c",
+      "content_fingerprints": {
+        "en": "d408801d283aa1b3d02460423896f0114f801053ae6a05a92262a70f5fccd8fc",
+        "ja": "f8554aecd0af507369b492616aafa3f468e7df8d8d2d4ee7a86ab303d46f992d",
+        "ko": "70315f4f5b86e1a8ec3c7f6022ab4fe29dd10cd499924310ce9999090e943e3e",
+        "tr": "ee2b82cbd5ed08ffc3da5db1e48119b6069679972b982dca47359b066b2cb92a",
+        "zh": "54d8e9e49bda9bed35d10fa4fa887da1da930481b7b5d32332dc7172f50b034a",
+        "zh-TW": "ee9341f74f8c24e51110a5ce9d3b0d119d68686748b331e8f41a26933446ae9f"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.091780+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“切换到亮色模式”与韩文“라이트 모드로 전환”在本条目所属 header UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "header",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#header.viewOnGithub",
+      "key": "header.viewOnGithub",
+      "status": "可保留",
+      "combined_fingerprint": "5972811b7f8a1a238eb56284b153c9116455dd7ac7f782a6845f15afa161de1f",
+      "content_fingerprints": {
+        "en": "20672423d71690888afb7caa922ea2a23592d49346341b1eee292de65189a296",
+        "ja": "762f68a6ed786b7e14dce85e5bf7bba880f635c89fc0417fea2d1de85e7172c6",
+        "ko": "0e711a48de8e4957588b16838febed868fec74286c75f65d3448de71272a03ca",
+        "tr": "0acd5d4618fc62910c7e23d0e9f44495e8ed5bd52878cd8656e50d549d7b55e4",
+        "zh": "9f0356c1d7b07f76dc0c4ec06838b436e477449c1c7023f2cfae35f5306705c5",
+        "zh-TW": "955efbefd4458e03f2a376ac9c32c57af462970d37c1c8d50a31348784cdb794"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.091780+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“在 GitHub 上查看”与韩文“GitHub에서 보기”在本条目所属 header UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "header",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#header.windowClose",
+      "key": "header.windowClose",
+      "status": "可保留",
+      "combined_fingerprint": "36b848ff2196006b910cbb0a78e0ed61a25bca0f5911814ed6ffa02fbedc1a2d",
+      "content_fingerprints": {
+        "en": "8b9de9c0c0a0b3b3abcbb9c5234065c37fde84dfd8b24479de43376197eb1de1",
+        "ja": "286b5f7afa80bb044f80a2d26d1082a2bda223df7df5a44cbe0363462a06ead5",
+        "ko": "f7041ae4118cdbe35e2c57c44d341a3b8db604feb6cbd48097bbb5a37e55c819",
+        "tr": "af528b75d0659b2cc31bb74f1a1b40c198a17233f72c94c2c8844ce403f623d7",
+        "zh": "1ae6b0a0f8266382ef7b04a4cef81f8efd425754f82636250305862c9829cd86",
+        "zh-TW": "511067d6387ecf21fbc849934d4e42fec3760ce1840f8ecb65d079822588e341"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.091780+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“关闭窗口”与韩文“창 닫기”在本条目所属 header UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "header",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#header.windowMaximize",
+      "key": "header.windowMaximize",
+      "status": "可保留",
+      "combined_fingerprint": "3ca8f994770c214e77c793ef738e76328c6fc36c0bb965e998866f7233e0a05f",
+      "content_fingerprints": {
+        "en": "45d239697ed00d46a0a09203c81908addeaaf4fecf10dfe0112ccdd5d6272d8b",
+        "ja": "6464f5d3e4ee7ffdf17409bd205a481d0e401035b4c8065610f01d64b50dff4b",
+        "ko": "819be3c0d13d152f8d506f2d0169c3512bc659f28aa993a3c20bf990660551f2",
+        "tr": "95b154d7734472915b077b170bcc61efda391317b2a4afffdcaa3328fa8694d9",
+        "zh": "1813d362a82fd4372d7a7a70bb9bba35c1409855fea1c1bfa4dfe4fa8dd392de",
+        "zh-TW": "cfdfaa29dea7669bfd9da343f38de2f4a41d8b264e19728c68918bcc230cf14a"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.091780+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“最大化窗口”与韩文“창 최대화”在本条目所属 header UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "header",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#header.windowMinimize",
+      "key": "header.windowMinimize",
+      "status": "可保留",
+      "combined_fingerprint": "8cd1dea9c108e8fa8d2523b38ffc1aefdec77adce8caf16ab6664bd704e04770",
+      "content_fingerprints": {
+        "en": "5cd543869aa4dee09e43c98cdf66db97d441194530c820e031e7cd46d33a3091",
+        "ja": "31e79715a3599a521fb62602469ddeeaafe1c6215a42542a015485e468d16886",
+        "ko": "c9193d5474bb7f51f0cc82adf9f663df54ec6103b06ffb4aced7d3c1d0177815",
+        "tr": "5870b7c4f59bfdcf27d4014f52bb84a3fe6d7563c8fd4e12ffcb697364afb61f",
+        "zh": "6ae80538c2b2572d3ba4d6d60d56f1938675c3d7dacb75cb17433a6d13100be5",
+        "zh-TW": "1aae174509fb56b525ce73432d61c7ec3b6e64c79d7e4fcb0191c8f1925f5e45"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.091780+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“最小化窗口”与韩文“창 최소화”在本条目所属 header UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "header",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#header.windowRestore",
+      "key": "header.windowRestore",
+      "status": "可保留",
+      "combined_fingerprint": "3018483943a4a8f9a9e4bd3f29fe81746d5286276630390f41ce824b410eb45c",
+      "content_fingerprints": {
+        "en": "0251e9d1a97afd1cab01b65c91f14dd18becf197ed3c6f31ce1dcfbcea4f58e6",
+        "ja": "4d44ef6196f6dbc0fdd8e1e70abf52a580df45059be9905d867c0e89ebea8569",
+        "ko": "2a59741077e8f93d3f2c0f446071e167d8769f8facaf5b9e39feab1525b969fc",
+        "tr": "e8817230db262f9b9a6dc2c528eb2bea272e5da5bf4f7da48e2c0591d2eebf49",
+        "zh": "7995087e5a3dfe66559a5e73672ad06ba6c76af7d6f8f515ef133aa0ca73970c",
+        "zh-TW": "ae24070967397843f0b0901df0df211e932479a6fc1d294af1b90edc5ed110c3"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.091780+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“还原窗口”与韩文“창 이전 크기로 복원”在本条目所属 header UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "header",
+      "round": 1
+    }
+  ]
+}

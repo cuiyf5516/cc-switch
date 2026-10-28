@@ -1,0 +1,10 @@
+{
+  "batch_id": "hardcoded:0101:src-components-FirstRunNoticeDialog.tsx",
+  "kind": "hardcoded",
+  "group": "src/components/FirstRunNoticeDialog.tsx",
+  "ordinal": 1,
+  "record_count": 1,
+  "record_ids": [
+    "hardcoded:src/components/FirstRunNoticeDialog.tsx:handleAcknowledge:0b63c4afa993a3e2:001"
+  ]
+}

@@ -1,0 +1,23 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:streamCheck:001","default_status":"可保留","overrides":[
+{"key":"streamCheck.error","status":"建议改","reason":"「확인 오류」容易被理解为“确认时出错”，原文是连通性检查本身出错。","suggestion":"{{providerName}} 검사 오류: {{error}}","ui_context":"端点连通性检查错误"},
+{"key":"streamCheck.unreachableHint","status":"建议改","reason":"「연결을 설정할 수 없습니다」会被理解为“无法配置连接”，原文是无法建立连接。","suggestion":"연결할 수 없습니다(DNS/연결/TLS/시간 초과). base_url과 네트워크를 확인하세요.","ui_context":"端点连通性测试失败提示"}
+]},
+{"batch_id":"translation:json-locale:omo:002","default_status":"可保留","overrides":[
+{"key":"omo.enabledModelsCount","status":"建议改","reason":"「선택 가능한 설정 모델」修饰关系生硬，容易被理解为“可设置的模型”。","suggestion":"선택 가능한 구성 모델 {{count}}개","ui_context":"OMO 模型数量提示"}
+]},
+{"batch_id":"translation:json-locale:omo:003","default_status":"可保留","overrides":[
+{"key":"omo.imported","status":"建议改","reason":"变量后的「로」是否成立取决于名称末音节，显示时可能产生错误助词；使用「항목으로」可稳定规避。","suggestion":"\"{{name}}\" 항목으로 가져옴","ui_context":"OMO 导入成功提示"}
+]},
+{"batch_id":"translation:json-locale:proxy:002","default_status":"可保留","overrides":[
+{"key":"proxy.panel.stats.totalRequests","status":"建议改","reason":"原文是“总请求数”，韩文「총 요청」遗漏数量含义。","suggestion":"총 요청 수","ui_context":"路由服务统计"}
+]},
+{"batch_id":"translation:json-locale:proxy:003","default_status":"可保留","overrides":[
+{"key":"proxy.settings.fields.nonStreamingTimeout.description","status":"建议改","reason":"「총 시간 초과」搭配不自然，时间限制应为「총 제한 시간」，与同页其他超时说明一致。","suggestion":"스트리밍되지 않는 요청의 총 제한 시간","ui_context":"非流式超时说明"},
+{"key":"proxy.settings.validation.portMin","status":"待核实","reason":"中文消息写“大于 1024”，但同页说明写 1024~65535，韩文写“1024 이상”（允许 1024）；原文与技术范围存在边界冲突，需确认端口 1024 是否合法。","ui_context":"路由服务端口校验"},
+{"key":"proxy.settings.validation.portMax","status":"待核实","reason":"中文消息写“小于 65535”，但同页说明写 1024~65535，韩文写“65535 이하”（允许 65535）；原文与技术范围存在边界冲突，需确认端口 65535 是否合法。","ui_context":"路由服务端口校验"}
+]},
+{"batch_id":"translation:json-locale:mcpPage:002","default_status":"可保留","overrides":[
+{"key":"mcpPage.drawer.jsonHelpTitle","status":"建议改","reason":"原文是“JSON 和表单的关系”，韩文只写「JSON과 양식」，遗漏关系/说明语义。","suggestion":"JSON과 양식의 관계","ui_context":"MCP JSON/表单帮助标题"}
+]}
+]}

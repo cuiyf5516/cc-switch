@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:providerForm:006",
+  "kind": "translation",
+  "namespace": "providerForm",
+  "reviewed_at": "2026-10-28T14:00:27.240639+00:00",
+  "review_count": 9,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#providerForm.stackModelsEmpty",
+      "key": "providerForm.stackModelsEmpty",
+      "status": "可保留",
+      "combined_fingerprint": "3d0e221683833590303eca99bede78077d56f85db143f27d2b293dc188676844",
+      "content_fingerprints": {
+        "en": "a2265eee5e84df3a2ba6e11d8e60b2c339238f95ea3f378d9bf25677996379c0",
+        "ja": "b2c2e4695222830dadddceab1424db85e596fc9108bbf170e959b1c939abe5d9",
+        "ko": "1189eeeee77fcab8f267806bec1c42092c136d6c6fa5fb1ada0559d53ca5a15a",
+        "tr": "57cc75d27b7b7d83764db92209b62f914aa1f1deb0b3d0bd70b1b8763910e1e4",
+        "zh": "98c26f4b73ec6ce17f5b01a22c189d0e01fb0bb7dd8d49b59372afa48bdda72b",
+        "zh-TW": "06d5b5848aa5d64966bfa4e0efe3dcdc82b4de3ee937c6498b4ff17ab78606c0"
+      },
+      "reviewed_at": "2026-10-28T14:00:27.240639+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“未配置模型：把这家加入聚合后，模型选择器里不会多出它的模型”与韩文“설정된 모델이 없습니다. 통합에 추가해도 모델 선택 메뉴에 이 공급자의 모델이 표시되지 않습니다”在本条目所属 providerForm UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "providerForm",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#providerForm.stackModelsLabel",
+      "key": "providerForm.stackModelsLabel",
+      "status": "可保留",
+      "combined_fingerprint": "2508c9afce0655e7f607e38efb8904f70d8a6b85cd34a4f27bcece0e2b5978e9",
+      "content_fingerprints": {
+        "en": "d17d2d78d76e6a6cd13048de225e107ac73de4aa5f8914e58a0cfaa9698c373e",
+        "ja": "c0fb4db4521c44f36f0072525516d0616c14fa8414a22e2b750d34a8d2f9c44c",
+        "ko": "b461aeb630563a5b67e365eda7ef68b09be70a163d0701945b6ba7ae64f0683b",
+        "tr": "1680a41d6556a3070981d8c08ae2d6d41cd5e21941d5f1748da7a6903f4df5d5",
+        "zh": "ea4bf042d1bc5eb8c92ae2327854bc87b1b1309d406a3e1ac6364fede3453cc6",
+        "zh-TW": "ea4bf042d1bc5eb8c92ae2327854bc87b1b1309d406a3e1ac6364fede3453cc6"
+      },
+      "reviewed_at": "2026-10-28T14:00:27.240639+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“模型列表”与韩文“모델 목록”在本条目所属 providerForm UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "providerForm",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#providerForm.supplierName",
+      "key": "providerForm.supplierName",
+      "status": "可保留",
+      "combined_fingerprint": "80762c944942f7428e5118b11a6b8546078206e58f291ca4449a531ad6e28f67",
+      "content_fingerprints": {
+        "en": "205df6629ec10a7e080b84c4f3f572300d751ad19fd22681206e774a2f3df67a",
+        "ja": "4828d667231d72cdf0bc5ebf00a171bf94b6ee23be59d965d98f931771ae7fd9",
+        "ko": "1c09ecce2c85f9cfc3f9f3d8e9315782f25912751bdf64d83c1461979f2e3c92",
+        "tr": "333923e21e0f95f987a47ce81c65e5604a02122c1f455d0dc916e91b5db193c1",
+        "zh": "cbb2ff384b747ed7ebf74eb7f5126f47baad10cb0b63a3897172432feaf20932",
+        "zh-TW": "23c1195add612bbd7cbc0e1006ef3e14b530d6df9f1e6cc2f14a672af9ace5c1"
+      },
+      "reviewed_at": "2026-10-28T14:00:27.240639+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“供应商名称”与韩文“공급자 이름”在本条目所属 providerForm UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "providerForm",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#providerForm.supplierNamePlaceholder",
+      "key": "providerForm.supplierNamePlaceholder",
+      "status": "可保留",
+      "combined_fingerprint": "f7000c8f1b000355aea57e5c8e710ba49fe2e0e3be5647b36a5c83bfa9328053",
+      "content_fingerprints": {
+        "en": "1f653e7ba323e02df0a5ee6f0e096cdb6ce6f6c1e593e8b4faff546319bc6fa4",
+        "ja": "0c056306e287d8a047632711a2b495f5f70c5e3c079a040bc908134d561638da",
+        "ko": "2ccf3e4c687a5b30d3e1825e95a7c83b46d4c8d5887c11f12f73b5be681a9ead",
+        "tr": "0e7ad9bb5b6a4a596d40bac3c58a888587809e9dde87a40ca9a89f6ac55a628d",
+        "zh": "537e3c2e7effa2922a0d3914ec0fc3287d5f199a9f988c5ab06a0d77b3dc4ef0",
+        "zh-TW": "537e3c2e7effa2922a0d3914ec0fc3287d5f199a9f988c5ab06a0d77b3dc4ef0"
+      },
+      "reviewed_at": "2026-10-28T14:00:27.240639+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“例如：Anthropic 官方”与韩文“예: Anthropic 공식”在本条目所属 providerForm UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "providerForm",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#providerForm.supplierNameRequired",
+      "key": "providerForm.supplierNameRequired",
+      "status": "可保留",
+      "combined_fingerprint": "8dfab572bf60bcafbf3d91392bfa712d3cb711b84649bd6769d81266c56f57af",
+      "content_fingerprints": {
+        "en": "b4ddc911fbb4feaf24cf0ed8edceb6d6edd809bb6ef91de843fd045ff49bb4f9",
+        "ja": "32b33bc973390379f1c550ce1c900bccda77604477e234c844e3667add7565b8",
+        "ko": "5c4da65f2cb36cbc4e9dd8ce20f6492c3367707ee6957aa0c7344fc1d122e964",
+        "tr": "e7d7a0af66580a589d2fa9b3e169a2682e45cda59c049f75e787bc2c3c0337f1",
+        "zh": "e4ff0418a57f3990d2e985091a8cd1d02309c40b24ddb6657822fec6429bddbc",
+        "zh-TW": "3dbcf11b034ba8b77b766be7c74883af5d2c805b007a2aabed41b46709484518"
+      },
+      "reviewed_at": "2026-10-28T14:00:27.240639+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“供应商名称 *”与韩文“공급자 이름 *”在本条目所属 providerForm UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "providerForm",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#providerForm.thirdPartyApiKeyHint",
+      "key": "providerForm.thirdPartyApiKeyHint",
+      "status": "可保留",
+      "combined_fingerprint": "a7acaec07136329ac8294d2756aa5a471e59ea93ec65e634db612bea375fd6eb",
+      "content_fingerprints": {
+        "en": "2a3b647cc3654785f79187ed46b005e2a5214af63032faa07e278821ce7297dc",
+        "ja": "6190cf3e971f8436e80d79710395518013d952e2f8483368358413f562596dc0",
+        "ko": "61797772a01071eeea89d4751256c00406ee827181ecb9bc6cc7c4b2dd33db64",
+        "tr": "a445b3ee9ac7ec197d20350e7150b7aeb4fe3552e09307a10e8f2de4cb10e097",
+        "zh": "473747f1dc80cbbe8b7c734409a8003957f3e93f5751dba0da2e7ef052ade254",
+        "zh-TW": "529be2a20de0b987ac7954bfb8c25cfbcd28ef3cfe1830d8fd4785b2e557ae05"
+      },
+      "reviewed_at": "2026-10-28T14:00:27.240639+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“💡 只需填写 API Key，请求地址已预设”与韩文“💡 API 키만 입력하면 됩니다. 엔드포인트는 미리 설정되어 있습니다.”在本条目所属 providerForm UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "providerForm",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#providerForm.visitWebsite",
+      "key": "providerForm.visitWebsite",
+      "status": "可保留",
+      "combined_fingerprint": "1ddcc57c1d4787851cabfd39b777373daaf293588093b40269c0aefd64958ab7",
+      "content_fingerprints": {
+        "en": "f54a9a5ecb317c4cbf604838f71428d909e90af876dfe25deba6b7dcf7296c28",
+        "ja": "12ad30f46dabce1646588aa764569c1d93b7a3d89026506d77ce49e7dc098894",
+        "ko": "2f15773f49988717648f0736dbd2f8822f8de00636129a91ce470cf94a20029b",
+        "tr": "1f6ca30ff51ef11357935c9b4d121b7bd2934f776bb1a137239ff0c5a497e099",
+        "zh": "9732f95b57383969993941a3322d0c330526cf98b603e0708c78007d64ef4a74",
+        "zh-TW": "e5b2466535534a415e9d87262c835aab157cc3abf9ba10b9e406fc55f353e5ff"
+      },
+      "reviewed_at": "2026-10-28T14:00:27.240639+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“访问 {{url}}”与韩文“{{url}} 방문”在本条目所属 providerForm UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "providerForm",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#providerForm.websiteUrl",
+      "key": "providerForm.websiteUrl",
+      "status": "可保留",
+      "combined_fingerprint": "1946a7755ef690139a7458a805ad4dec981aea56bb83eade5cd3780823e80381",
+      "content_fingerprints": {
+        "en": "eb650fa1243ee6cab8fef01ec47950d21268c4a98106dcbdfe8c378078fc25a4",
+        "ja": "5a58256eb6b59f4a79ffeff367074b5f1d284262346d2ba8d40c7358dc1ca58e",
+        "ko": "f739d45f75057557f2c775d301eeb84c010b2fa5afb6866a9a248500d5290c79",
+        "tr": "09ba55bc2a07b10aacbe96364dd4698a6361783db14b06da0efd2f6b42ead8a2",
+        "zh": "2ff44caa19c1c0e2b267829c6bbe57c6234d373661221cc418e642ae279e422e",
+        "zh-TW": "e67af56b44a09bb71d26541544a6959e68f951b11933ce321bdff0b29639c660"
+      },
+      "reviewed_at": "2026-10-28T14:00:27.240639+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“官网地址”与韩文“웹사이트 URL”在本条目所属 providerForm UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "providerForm",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#providerForm.websiteUrlPlaceholder",
+      "key": "providerForm.websiteUrlPlaceholder",
+      "status": "建议改",
+      "combined_fingerprint": "55dc121cd9c3498854e5898880c7f5592f84f278eaf2b2aded890e374c8b94e1",
+      "content_fingerprints": {
+        "en": "370949beb6adf442577cac3731c01db66e3a199a8a196e025849ac78aaee9ab1",
+        "ja": "5079bb95d7e0300d02c66a8fb217170e4c870a28b70f7190577304342fa9e005",
+        "ko": "faa11b14acdd72fe8f3692c909189e02344243126582c76362df6ddc3a413f2d",
+        "tr": "37251bbadfa377458496506135cfc94264195eeb93e10064522d5e373f977ef9",
+        "zh": "b2834b659807b41d38f4cd39f6aac439e8a029ea5c995789e3368d4be0e02927",
+        "zh-TW": "29a7f2bc2722df854c08b6aaf915c554f5b521ee755a0bc17d5d3ee1fdfb32f3"
+      },
+      "reviewed_at": "2026-10-28T14:00:27.240639+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“https://example.com（可选）”与韩文“https://example.com(옵션)”在本条目所属 providerForm UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": "同一项目统一使用「선택 사항」，此处「옵션」造成术语和样式不一致。",
+      "suggestion": "https://example.com(선택 사항)",
+      "ui_context": "官网 URL 输入框占位符",
+      "round": 1
+    }
+  ]
+}

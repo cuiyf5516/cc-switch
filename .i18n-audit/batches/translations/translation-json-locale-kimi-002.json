@@ -1,0 +1,14 @@
+{
+  "batch_id": "translation:json-locale:kimi:002",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "kimi",
+  "ordinal": 2,
+  "record_count": 1,
+  "record_ids": [
+    "json:src/i18n/locales#kimi.oauth.useAccount"
+  ],
+  "keys": [
+    "kimi.oauth.useAccount"
+  ]
+}

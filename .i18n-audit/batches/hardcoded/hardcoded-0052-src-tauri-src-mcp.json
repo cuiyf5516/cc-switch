@@ -1,0 +1,18 @@
+{
+  "batch_id": "hardcoded:0052:src-tauri-src-mcp",
+  "kind": "hardcoded",
+  "group": "src-tauri/src/mcp",
+  "ordinal": 2,
+  "record_count": 9,
+  "record_ids": [
+    "hardcoded:src-tauri/src/mcp/opencode.rs:convert_to_opencode_format:e83d0df42671aa7c:001",
+    "hardcoded:src-tauri/src/mcp/opencode.rs:convert_from_opencode_format:98d9020709bd8c14:001",
+    "hardcoded:src-tauri/src/mcp/validation.rs:validate_server_spec:6d5e61b8271a027f:001",
+    "hardcoded:src-tauri/src/mcp/validation.rs:validate_server_spec:1303c06b0b014d0c:001",
+    "hardcoded:src-tauri/src/mcp/validation.rs:validate_server_spec:cd5a094f235d66b4:001",
+    "hardcoded:src-tauri/src/mcp/validation.rs:validate_server_spec:eef74f394f855bdc:001",
+    "hardcoded:src-tauri/src/mcp/validation.rs:validate_server_spec:d03a3105c36ee824:001",
+    "hardcoded:src-tauri/src/mcp/validation.rs:validate_server_spec:f96daad60691836a:001",
+    "hardcoded:src-tauri/src/mcp/validation.rs:extract_server_spec:cb78bcb3a7223587:001"
+  ]
+}

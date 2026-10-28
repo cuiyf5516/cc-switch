@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0109:src-components-WhatsNewDialog.tsx",
+  "kind": "hardcoded",
+  "group": "src/components/WhatsNewDialog.tsx",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 3,
+  "records": [
+    {
+      "id": "hardcoded:src/components/WhatsNewDialog.tsx:openExternal:879d74555a6b7cbe:001",
+      "status": "无需国际化",
+      "content_fingerprint": "879d74555a6b7cbe3c483472a6540a1476bcd0c4285e454efc194d563a00e096",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/components/WhatsNewDialog.tsx",
+      "line": 58,
+      "function": "openExternal",
+      "expression": "Failed to open changelog:",
+      "reason": "控制台日志或诊断信息，不作为界面文案。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0109:src-components-WhatsNewDialog.tsx",
+      "round": 1
+    },
+    {
+      "id": "dynamic-i18n:src/components/WhatsNewDialog.tsx:WhatsNewDialog:3f85b3caaa1db65c:001",
+      "status": "待核实",
+      "content_fingerprint": "3f85b3caaa1db65c266a4b88be6939885791f7c36060642eee5f98ac55453a1d",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/components/WhatsNewDialog.tsx",
+      "line": 123,
+      "function": "WhatsNewDialog",
+      "expression": "`whatsNew.types.${item.type}`",
+      "reason": "翻译键由运行时表达式“`whatsNew.types.${item.type}`”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。",
+      "suggested_action": "核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。",
+      "suggested_ko": null,
+      "severity": "中",
+      "review_batch": "hardcoded:0109:src-components-WhatsNewDialog.tsx",
+      "round": 1
+    },
+    {
+      "id": "hardcoded:src/components/WhatsNewDialog.tsx:acknowledge:8d3ea93107420943:001",
+      "status": "无需国际化",
+      "content_fingerprint": "8d3ea93107420943fa631263acbfbb41f13956370a07290a72910e8fae66debe",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/components/WhatsNewDialog.tsx",
+      "line": 209,
+      "function": "acknowledge",
+      "expression": "Failed to save whatsNewSeenVersion:",
+      "reason": "控制台日志或诊断信息，不作为界面文案。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0109:src-components-WhatsNewDialog.tsx",
+      "round": 1
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "batch_id": "hardcoded:0137:src-components-skills",
+  "kind": "hardcoded",
+  "group": "src/components/skills",
+  "ordinal": 1,
+  "record_count": 18,
+  "record_ids": [
+    "hardcoded:src/components/skills/RepoManagerPanel.tsx:handleOpenRepo:785d12898f2f80e5:001",
+    "hardcoded:src/components/skills/SkillsPage.tsx:POPOVER_CLASS:b35351a6c3186104:001",
+    "hardcoded:src/components/skills/SkillsPage.tsx:installedKey:ba2a4878993628e8:001",
+    "hardcoded:src/components/skills/SkillsPage.tsx:SkillsPage:75cc974621739e45:001",
+    "hardcoded:src/components/skills/SkillsStorageSheet.tsx:LEGEND_CLASS:481db3b7f42a3fcd:001",
+    "hardcoded:src/components/skills/SkillsStorageSheet.tsx:RADIO_LABEL_CLASS:28d833901922662e:001",
+    "hardcoded:src/components/skills/SkillsStorageSheet.tsx:details:6085e88121d3f034:001",
+    "hardcoded:src/components/skills/SkillsStorageSheet.tsx:details:156af28af687edc8:001",
+    "dynamic-i18n:src/components/skills/SkillsStorageSheet.tsx:SkillsStorageSheet:0c9f9f16eb7882e5:001",
+    "dynamic-i18n:src/components/skills/SkillsStorageSheet.tsx:SkillsStorageSheet:36befa74dfbcc58f:001",
+    "hardcoded:src/components/skills/UnifiedSkillsPanel.tsx:filteredSkills:0c4237f14c86fc54:001",
+    "dynamic-i18n:src/components/skills/UnifiedSkillsPanel.tsx:text:dc4eb9bbc03ce6c2:001",
+    "hardcoded:src/components/skills/UnifiedSkillsPanel.tsx:uninstallIds:762c11e5b60e3e2c:001",
+    "hardcoded:src/components/skills/UnifiedSkillsPanel.tsx:updateIds:2278c54c92be3a89:001",
+    "hardcoded:src/components/skills/UnifiedSkillsPanel.tsx:confirmDeleteBackup:e2bf683991fc4d84:001",
+    "hardcoded:src/components/skills/UnifiedSkillsPanel.tsx:header:66d0f523a379b2de:001",
+    "hardcoded:src/components/skills/UnifiedSkillsPanel.tsx:statusLabel:0c4237f14c86fc54:001",
+    "dynamic-i18n:src/components/skills/UnifiedSkillsPanel.tsx:InstalledRow:947324ed6a00ba24:001"
+  ]
+}

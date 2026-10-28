@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:common:002",
+  "kind": "translation",
+  "namespace": "common",
+  "reviewed_at": "2026-10-28T13:40:51.877607+00:00",
+  "review_count": 7,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#common.unknown",
+      "key": "common.unknown",
+      "status": "可保留",
+      "combined_fingerprint": "bfe226d24c0cc9e7dc8dd03949adf43abc2a5e275fe8078b37d18f040bf28254",
+      "content_fingerprints": {
+        "en": "b764cdc0eab7137467211272fa539f1260d1bf2e71bcf6ff3bdc960f5c16aa14",
+        "ja": "bd5a8814a3635ecb4ebc9785cbc8223ae32444a5a07329a811526c29cd45f77c",
+        "ko": "dde574ea72941e0eba016048ff4c1f2eb627c54c27bba16020cdc404d6a8a918",
+        "tr": "1c5b653893e89d57e3dbf9294f531844bf07845dc9ea80ec757d5b34d96dd68b",
+        "zh": "4d8c1c5b42830791a4ce99f630fb9f02ba08c67c5299d46d6cf76661bfd03584",
+        "zh-TW": "4d8c1c5b42830791a4ce99f630fb9f02ba08c67c5299d46d6cf76661bfd03584"
+      },
+      "reviewed_at": "2026-10-28T13:40:51.877607+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“未知”与韩文“알 수 없음”在本条目所属 common UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "common",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#common.unsavedLeaveCancel",
+      "key": "common.unsavedLeaveCancel",
+      "status": "可保留",
+      "combined_fingerprint": "9bd7c68a12dd652b91bd9d38cf325e71a9ed79d3453f6909eabb40eb2222f81f",
+      "content_fingerprints": {
+        "en": "e76fd2add01005ae11754d75ec97923c1a20a5f42e37d469c80f06a14e433511",
+        "ja": "13838f50fdb953fcfacd092e38ffbcf7442cb6c408bb55ead21662714d5ecc90",
+        "ko": "0120b5eb9a8d6f42ef3a5ae5f69ce687291c40d54e7192b3b5bc29074c9773ac",
+        "tr": "a67625fbe26feb4cf3d01c779ffa7c209e97f8c3bedcf79ae554e0dc14a7ca51",
+        "zh": "fd4b9e3b6c685bae8320db0d59bf2cc60f927288988d98b5e53ca7aeba370bfc",
+        "zh-TW": "24a05e3c2c3bd8af4e76b7b77b454522f1484babeac2c22402b8fde308347d18"
+      },
+      "reviewed_at": "2026-10-28T13:40:51.877607+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“继续编辑”与韩文“계속 편집”在本条目所属 common UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "common",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#common.unsavedLeaveConfirm",
+      "key": "common.unsavedLeaveConfirm",
+      "status": "可保留",
+      "combined_fingerprint": "39f0183df87bda2dc5db3850319d006489679f3c8a47b48d4a55dc68fcc1a640",
+      "content_fingerprints": {
+        "en": "07e5b9156de3452c195f6573cc93eeea0a70ad2a8a2ead8ad34f8201c13bb8af",
+        "ja": "5caf3a81a92eecc486ba6d7b895e5b030ed14bff3303e6ba211b85d5558e5b97",
+        "ko": "db6f989e15627c2356177bdba3565a27b771001718d2e4d0a12a63839d641624",
+        "tr": "c1a8700c8a748be6cda552cb51052cfb2018607e0ce611bad2d61ba452dc04de",
+        "zh": "ccb06b8a183b0c3a6d23a9902e002b54c0da3ae45c910fd17332ed71b0a370f7",
+        "zh-TW": "90f28a70d4c84ad050ba7596e309b96f25b2deb79b1eb5d131660bdaa4d4590a"
+      },
+      "reviewed_at": "2026-10-28T13:40:51.877607+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“放弃修改并离开”与韩文“저장하지 않고 나가기”在本条目所属 common UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "common",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#common.unsavedLeaveMessage",
+      "key": "common.unsavedLeaveMessage",
+      "status": "可保留",
+      "combined_fingerprint": "1ae799e671b3b9d8eee63be1b5431243f51ba155f0e027aed434af636af8c7cc",
+      "content_fingerprints": {
+        "en": "a890a51e897484dd168a0dae73626fbcbd7e44b611ed86363daa9efc77327378",
+        "ja": "d18cee02676076b32fe1c7890012f510f58eea6c90529b824c6e3a33d6bbda26",
+        "ko": "a2828e9fae1146cd01890e0a0c42908b92b5ec1ecae46ec21ade8223d677112b",
+        "tr": "159f4b05ec0f082dc9ff02402d3472beb0d36790ca454b97e8fd0190cf9534b6",
+        "zh": "1314d519065aabd83818cd8bff7990c5cf1dc378944de034f7f88f6dbf2a396c",
+        "zh-TW": "af872db43c2d063e6597361d31083d1a10fe789116a823a3aa0a7637dfb9e2c2"
+      },
+      "reviewed_at": "2026-10-28T13:40:51.877607+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“离开后，当前编辑页里的修改不会保存。”与韩文“이 페이지를 나가면 변경 사항이 저장되지 않습니다.”在本条目所属 common UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "common",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#common.unsavedLeaveTitle",
+      "key": "common.unsavedLeaveTitle",
+      "status": "可保留",
+      "combined_fingerprint": "b3a9cbc7931829b6c004fdeffede941fb00a8567ee6d998aacb563fe73f84923",
+      "content_fingerprints": {
+        "en": "a710c2b90913b5375ca6ac865341e49dd6daa42f6d95182e6ed1a7b1b650ff4c",
+        "ja": "946c28fb4132ad418647043eeb4202a3b0963a0800bfc182f8077cc2a07c826e",
+        "ko": "b8ab8e31b536660c0b81e9d344c93eb212c82e67e6ff12d619897777dabb9359",
+        "tr": "688beea357c1a8fae200f4ecc510256b781473e9a7312e8cbb64dca9820aa17e",
+        "zh": "c2277872cdcec9e0bbb80d8a44733f10b2d0d92af34765d1717b66001e060dc4",
+        "zh-TW": "f5e6ca6961e24b476e5cf4ba74363b5fd7ba093830c4db974facc0bc331ae3ac"
+      },
+      "reviewed_at": "2026-10-28T13:40:51.877607+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“有未保存的修改”与韩文“저장되지 않은 변경 사항”在本条目所属 common UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "common",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#common.version",
+      "key": "common.version",
+      "status": "可保留",
+      "combined_fingerprint": "fedfe43344aa7bea20c1907c2546eb5555963b0a4f66ea7ae01f5b85a57a2c59",
+      "content_fingerprints": {
+        "en": "dd167905de0defcaf72de673ee44c07431770d129ccffab286bd2edfdaf62396",
+        "ja": "0a772e8a01e404b72fc4d9d29b74bc453ca9faa95789ef7c9b82c26f3a3d8364",
+        "ko": "002f73c32e440b7803e7b17a3644c5078faae42262ad4e7f6f3c7d6f41dcd68e",
+        "tr": "a0119b888c4221347fbe45314c0f5b8ccda19be70c0d7714c6abc9bfaaa51f21",
+        "zh": "5f76b2bf82dd2c5d820c26010d44246643f3010308e8821e7054c6c44f6c9f95",
+        "zh-TW": "5f76b2bf82dd2c5d820c26010d44246643f3010308e8821e7054c6c44f6c9f95"
+      },
+      "reviewed_at": "2026-10-28T13:40:51.877607+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“版本”与韩文“버전”在本条目所属 common UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "common",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#common.view",
+      "key": "common.view",
+      "status": "可保留",
+      "combined_fingerprint": "2650e16ec3142e5aefb0c26ff519339b8d67865702694c4c662346cc9c3f50ba",
+      "content_fingerprints": {
+        "en": "dcc839a4015c4b7dd9db959a8f757833b8adb92462a751b973386e453c6d58a3",
+        "ja": "17efc6654ed280c70117040bebd3d505951acc41c48335ad31e6c09ba86db84b",
+        "ko": "ac5b575fff0fa06549418c43fa668ef0102c44d9c99ee432a0ba60a0a47230e2",
+        "tr": "c0e2e6ad937b3a3e99899a455b2ebda76eedf1a38302ee3415d528908bf5eb1c",
+        "zh": "db8db0530432bd1596cd1ef21016dfc12392548a4b82019f1b1d7a315e0a55c0",
+        "zh-TW": "55f633268f476a199c388240cbeebe35f203228cdbf639efbc568d0325106840"
+      },
+      "reviewed_at": "2026-10-28T13:40:51.877607+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“查看”与韩文“보기”在本条目所属 common UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "common",
+      "round": 1
+    }
+  ]
+}

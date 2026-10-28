@@ -1,0 +1,11 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:proxy:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:proxy:002","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:proxy:003","default_status":"可保留","overrides":[
+{"key":"proxy.settings.validation.portMin","status":"待核实","reason":"中文消息写“大于 1024”，但同页说明写 1024~65535，韩文写“1024 이상”（允许 1024）；原文与技术范围存在边界冲突，需确认端口 1024 是否合法。","ui_context":"路由服务端口校验"},
+{"key":"proxy.settings.validation.portMax","status":"待核实","reason":"中文消息写“小于 65535”，但同页说明写 1024~65535，韩文写“65535 이하”（允许 65535）；原文与技术范围存在边界冲突，需确认端口 65535 是否合法。","ui_context":"路由服务端口校验"}
+]},
+{"batch_id":"translation:json-locale:proxy:004","default_status":"可保留","overrides":[
+{"key":"proxy.takeover.tooltip.inactive","status":"建议改","reason":"韩文只有名词短语，缺少“让请求走本地路由”的动作，作为 tooltip 不完整。","suggestion":"{{appLabel}}의 요청을 로컬 라우팅으로 전달하도록 라우팅합니다.","ui_context":"本地路由接管状态提示"}
+]}
+]}

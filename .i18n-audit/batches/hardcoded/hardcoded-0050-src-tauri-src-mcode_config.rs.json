@@ -1,0 +1,28 @@
+{
+  "batch_id": "hardcoded:0050:src-tauri-src-mcode_config.rs",
+  "kind": "hardcoded",
+  "group": "src-tauri/src/mcode_config.rs",
+  "ordinal": 1,
+  "record_count": 19,
+  "record_ids": [
+    "hardcoded:src-tauri/src/mcode_config.rs:write_and_commit:704c39763f3eef3c:001",
+    "hardcoded:src-tauri/src/mcode_config.rs:read:a535bb501624cf13:001",
+    "hardcoded:src-tauri/src/mcode_config.rs:read:cd8fd6a157ef04a0:001",
+    "hardcoded:src-tauri/src/mcode_config.rs:read:c914067e3d02fc71:001",
+    "hardcoded:src-tauri/src/mcode_config.rs:get_providers:3dce323909c075fd:001",
+    "hardcoded:src-tauri/src/mcode_config.rs:validate_provider:d1bf56fd33ec3210:001",
+    "hardcoded:src-tauri/src/mcode_config.rs:validate_provider:ef163aefd4dbf36b:001",
+    "hardcoded:src-tauri/src/mcode_config.rs:validate_provider:8f4f3375a28da1d1:001",
+    "hardcoded:src-tauri/src/mcode_config.rs:validate_provider:8edcc26c0f6c7256:001",
+    "hardcoded:src-tauri/src/mcode_config.rs:validate_provider:4fadcc415e2059c7:001",
+    "hardcoded:src-tauri/src/mcode_config.rs:write_entry:5751201935ec022a:001",
+    "hardcoded:src-tauri/src/mcode_config.rs:write_entry:0a512fcb74af8cf4:001",
+    "hardcoded:src-tauri/src/mcode_config.rs:write_entry:83486abbebffc4eb:001",
+    "hardcoded:src-tauri/src/mcode_config.rs:write_entry:2720b0419969fc02:001",
+    "hardcoded:src-tauri/src/mcode_config.rs:write_entry:a75fab4689e6a28b:001",
+    "hardcoded:src-tauri/src/mcode_config.rs:write_entry:953df3d6c62f3462:001",
+    "hardcoded:src-tauri/src/mcode_config.rs:write_entry:ed39463c4cce2e74:001",
+    "hardcoded:src-tauri/src/mcode_config.rs:write_entry:bcc30d2fa2e96f5d:001",
+    "hardcoded:src-tauri/src/mcode_config.rs:write_entry:e0f1382dd934d6f4:001"
+  ]
+}

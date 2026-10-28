@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:geminiConfig:001",
+  "kind": "translation",
+  "namespace": "geminiConfig",
+  "reviewed_at": "2026-10-28T13:41:13.088804+00:00",
+  "review_count": 7,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#geminiConfig.addToGlobalSettings",
+      "key": "geminiConfig.addToGlobalSettings",
+      "status": "可保留",
+      "combined_fingerprint": "f67cd709b90679792829a604c9186f787d03b0b4a02a950cedcb882e79035166",
+      "content_fingerprints": {
+        "en": "654977f3ad5704f9835c8c52ae5e83a87643324013666f3f097516af4184c57b",
+        "ja": "8327b5168ae85eb72ef777dd2f3f9296f2a85bec9689f96ce17856b77ae3e1b4",
+        "ko": "871e6717d5e40cda440fba6dbfee40d53363ca99bb1d5fd93249e9ab88a1ca57",
+        "tr": "57668005f9badf929fa52502adae52772b32413f462d6a4bcfce458875c92ac9",
+        "zh": "3ff49e431155dc18d37afcaabe9b967499d396db4de0ea0505af53031bb49801",
+        "zh-TW": "5f7294df268b8f4b68709eeea0a315c7fc20ef03634c96eaebd07a0884d66ee2"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.088804+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“加入全局设置”与韩文“전역 설정에 추가”在本条目所属 geminiConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "geminiConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#geminiConfig.configJson",
+      "key": "geminiConfig.configJson",
+      "status": "可保留",
+      "combined_fingerprint": "6ad7d771f354ff22d5d53944818a5663a47a8a05d569b961af2d357fd8fb01c3",
+      "content_fingerprints": {
+        "en": "d73fb86ecd7b5dfcdc4d49958a6a55339d4677feb3a97a9f5bd2d402573d4605",
+        "ja": "060f7460d8e3519901545e5268a5e4f724fce1ad3d98b8493744225e222c4d1d",
+        "ko": "12383df8bc3fc962b724839aa09acf4e337d81c21b9236b52266744176e59d21",
+        "tr": "09dead6ff7c4fb77d2eee766df2583db77816b5c2cfb03ba976fafc94997b065",
+        "zh": "98daffa970d8695226954075bc2f996f0283dc5f218b8504a1b55a3eb445cb2e",
+        "zh-TW": "3822d74331b7b6a834bee8c28b13ff5378f2390df6e6c3c7e088056927ea54ef"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.088804+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“配置文件 (settings.json)”与韩文“설정 파일(settings.json)”在本条目所属 geminiConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "geminiConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#geminiConfig.configJsonHint",
+      "key": "geminiConfig.configJsonHint",
+      "status": "可保留",
+      "combined_fingerprint": "72ffb1bc2eb00e50df1491101efce44ee1ce8b9b408857e35dba3cd90b2de865",
+      "content_fingerprints": {
+        "en": "1bdfee252d1d9a715bcddd453a51545ad7407de37d628cf69fd8e7790d6e3fd5",
+        "ja": "3dc4d27d5d4a5fbda1e67fd9e193b74a2feff18de9ec0e8ffe6945d86859eb84",
+        "ko": "0c407048d7195991df782d9604b1dd521cee6452aebcf9f39e2d2578c9847853",
+        "tr": "9d1cb216503fd38092cbec35b1a5ff6f34b81d6be56fea03eb9ad6f40048818c",
+        "zh": "ada4f2433ae329308f85435e733a20450a2d713441a113407519666a25273572",
+        "zh-TW": "3c4fefd4772b423d2660b3ee5eae8ad9bfb7c6e3dca5f3717422c77b9b086052"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.088804+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Gemini CLI 的 settings.json（MCP 服务器在 MCP 面板里管理）”与韩文“Gemini CLI의 settings.json(MCP 서버는 MCP 패널에서 관리됩니다)”在本条目所属 geminiConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "geminiConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#geminiConfig.envFile",
+      "key": "geminiConfig.envFile",
+      "status": "可保留",
+      "combined_fingerprint": "69664f7956b00af6963bd33e43df8ec37a8d9125a1f35c062c9be5d4314351f6",
+      "content_fingerprints": {
+        "en": "a94fff249a7f9ab21a451aaf14a451a4ecc79a7a1afc9a1c41034dc06ef82810",
+        "ja": "6a5d37f6c93286c1b975181de4b0ef75caf10b2ff3d605b062fae06cc8f7b0c1",
+        "ko": "1abdab705fd1b2f245f7d3e680d51164b89c9e38a8160c05e50d1adb1da7411f",
+        "tr": "6768626e8a7d99a64b13a1c098a8cd670438b02d88b9afa8c065be727737657d",
+        "zh": "60a142c8e235d06f7cdcb797303c893e2f356fbcf90951abb926c5f7b1af3db9",
+        "zh-TW": "c7b16116617f83058bfe08a748a7fadaef43d848de262520b2f236ef19516eb5"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.088804+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“环境变量 (.env)”与韩文“환경 변수(.env)”在本条目所属 geminiConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "geminiConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#geminiConfig.envFileHint",
+      "key": "geminiConfig.envFileHint",
+      "status": "可保留",
+      "combined_fingerprint": "f27f33d42a6e9bf657b848d714d768063ddd8d79bf5196faf32407e09a4d4e7c",
+      "content_fingerprints": {
+        "en": "ed6892e33e15050eed385802ea4916298c1cbdf63535ba31f6caabad27e5772d",
+        "ja": "0a085d46c1606df3ec25b1317911a7859f78191f99a6679f227a7b2da99c0e9b",
+        "ko": "0b90ecbb121f3cdc223105e61fa5e5d4acb20723612327c3aab43b6d7de5c60e",
+        "tr": "0843f597a56613ebf9d753464602ace636c0ef3f0cae1fa5a0d04afd24a5c69e",
+        "zh": "037fa0888310775aeedd677c1c7cd9ef78addbb0f27ff9f3897263a2e9f0fc96",
+        "zh-TW": "78b9807e2269eedb5dc27db406f30accfd0f543ced797af040a2eed1500909cd"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.088804+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“使用 .env 格式配置 Gemini 环境变量”与韩文“.env 형식으로 Gemini 환경 변수 설정”在本条目所属 geminiConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "geminiConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#geminiConfig.inactiveFieldsHint",
+      "key": "geminiConfig.inactiveFieldsHint",
+      "status": "可保留",
+      "combined_fingerprint": "71c139d5b5efc34300aa9a7246497dd7f7a322fad67366e18b4e08b6d16dc50f",
+      "content_fingerprints": {
+        "en": "694a2644f31b852ba9405279234bf3d1f515ba19407f71e990246216a052d60f",
+        "ja": "02748d2c62806f7ed529de4f45af1ea45c52f6b23a80db967abe92a883514d9a",
+        "ko": "69178e9b8110c7f7a96f01db5bc10e67865263d3f13d91e4cc1bfaa090f884aa",
+        "tr": "8b9818623ef9c5a9040b73b203f7b6252bc63c67d74110363e82f3952c78843a",
+        "zh": "323f25563cf9b34cac349934a90c0b40d253499d790ea00b4d5678ff6a9a1940",
+        "zh-TW": "5e398e1e06d173840f617f2521829151a3a5b3a28f3119e0cd04ce394f30e354"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.088804+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“这些是旧版存进卡里的设置，现在切换不会写出去。点一下加入上方，保存后对所有供应商生效。”与韩文“이전 버전에서 이 공급자에 저장한 설정으로, 이제 공급자를 전환해도 적용되지 않습니다. 항목을 선택하여 위에 추가한 후 저장하면 모든 공급자에 적용됩니다.”在本条目所属 geminiConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "geminiConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#geminiConfig.keyFieldsHint",
+      "key": "geminiConfig.keyFieldsHint",
+      "status": "可保留",
+      "combined_fingerprint": "5d7cef79f402d61dcf198f0abc7fa23025a9e626efedfebda07cd671e6e21434",
+      "content_fingerprints": {
+        "en": "6109fc968190e875b0d1c9581fc65a278d1e791b74fe07409d0bcf740105e202",
+        "ja": "223c62d080b0c8ff90d53f87522afc8daba2003730562c6afd03560d881ba894",
+        "ko": "246f70b48e5e70be791b41350baa12043a6e09b9ea0479f221362f6e49286fcc",
+        "tr": "1d2309faf38bfe8e6aacefa511147ed82423d137c11eebfd4bb09a67638ed915",
+        "zh": "b52439de5e74756541e0dde9a745e4ee60f2fe7c094ac3386b6a1b41456c34da",
+        "zh-TW": "e5b3b438cf8ddefb3f9ae54c4538b3790525990b70319bdc1a08343f48ce7a56"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.088804+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“地址、Key、模型名和认证方式随供应商切换；其余环境变量和 settings.json 是 Gemini CLI 全局设置，保存后对所有供应商生效。”与韩文“엔드포인트, API 키, 모델 이름 및 인증 방식은 공급자를 전환하면 함께 바뀝니다. 나머지 환경 변수와 settings.json은 Gemini CLI 전역 설정이며 저장하면 모든 공급자에 적용됩니다.”在本条目所属 geminiConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "geminiConfig",
+      "round": 1
+    }
+  ]
+}

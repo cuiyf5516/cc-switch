@@ -1,0 +1,304 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:mode:003",
+  "kind": "translation",
+  "namespace": "mode",
+  "reviewed_at": "2026-10-28T13:56:10.178890+00:00",
+  "review_count": 14,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#mode.tabsLabel",
+      "key": "mode.tabsLabel",
+      "status": "可保留",
+      "combined_fingerprint": "06dbc5b64a8101218236e965f55571ce0d213ee32b741928a04ccf351febfdd7",
+      "content_fingerprints": {
+        "en": "72c0943bd205e4b3b63dceca118cb9038daf287ef5363a2fcb03188dd2bf29bd",
+        "ja": "a95077954fa063840eb9454a8120a39a7ee0122ad47152cf3ef4a4dc465222c7",
+        "ko": "a303d8e0a7e43d2013aa2259ecec2e960cd5d419b38d1b9006d70f987235b7b4",
+        "tr": "dbe74b9cbff2387872e929b9815510396d04ddd9d28b51644c98218594635342",
+        "zh": "ebfdc49079d9655871c695e07473260572ef36281d99231c24c5f7458f613e5d",
+        "zh-TW": "46a49e9a481004709a053544738883fba7f823b6ff87463cb4458157c99a93a4"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.178890+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“连接模式”与韩文“연결 모드”在本条目所属 mode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "mode",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#mode.toast.clientConfigChanged",
+      "key": "mode.toast.clientConfigChanged",
+      "status": "可保留",
+      "combined_fingerprint": "24329f612a0250813184e791d6a331648eb1424fc6e988676366a34180b02733",
+      "content_fingerprints": {
+        "en": "af66d3a3507dbb1372ea6ce3dcb4ca5e012fd3f33d6de0cb7ddb9be4699f5199",
+        "ja": "f26c4c65b1a67c043a90211da76629b5aea603a5b65ce3929cfcb500c33c5d55",
+        "ko": "17a78f90473f64fd6c1a00a72c168485b3b873a47b6a08039e77b9de0b775020",
+        "tr": "5bc34b421e062a96eddc6f9a1420478f14c180e0725663a590ad557c9cabaeb4",
+        "zh": "91881a0384273912bfd2865fc6e69363714e13271b472efcb1834c6bd79bf28f",
+        "zh-TW": "caa752215f1d8f8d1352ee57a8bf2818eec99c64bdf65c1c27e4088505b5a9f7"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.178890+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“客户端配置也已更新；重启 {{app}} 以加载更新后的配置。”与韩文“ 클라이언트 설정도 변경되었습니다. 업데이트된 설정을 로드하려면 {{app}}을(를) 다시 시작하세요.”在本条目所属 mode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "mode",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#mode.toast.defaultRemembered",
+      "key": "mode.toast.defaultRemembered",
+      "status": "可保留",
+      "combined_fingerprint": "6a15fcc7f4ca4ce6ba8ae075dc5fadfba995ace66aca74247340629d0f1f48ad",
+      "content_fingerprints": {
+        "en": "f309325ee90a4d7f19a6dfb13733cf2cf986bf1913cf0e0fc4b8ecd4c3e07c5c",
+        "ja": "9d1015308fc57eb1298b6bc291bb47457fe55514f3b00f50f81ec4cdcc105ed0",
+        "ko": "8e2fa4d9f55b720629036d6bec01e6572ce7074bfb3e7c70f679a6acb84d9dd5",
+        "tr": "d3cc5f071524f64844586bca14269741acd8e2f9cc38bae97ae9baad42442c45",
+        "zh": "73486e3fa73740a1bcb3d97f0618fa50e38263ad90cee9c0794815b0bf69ae05",
+        "zh-TW": "bf22af5fe8091de22ca370d480b03279a45800fbfcf95edf4f5173e930880523"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.178890+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“切换到聚合模式后，默认供应商是 {{provider}}。”与韩文“통합 모드로 전환하면 {{provider}}이(가) 기본 공급자가 됩니다.”在本条目所属 mode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "mode",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#mode.toast.enteredRoute",
+      "key": "mode.toast.enteredRoute",
+      "status": "可保留",
+      "combined_fingerprint": "595dc46838b932ccfb87294ab42874bf4b386b00c1a7a878eaaab99aaf9a38f6",
+      "content_fingerprints": {
+        "en": "7e8cf9e7759e84f79f7f4e17bed08e271f4e1aa949fb17e36245e64e04002e46",
+        "ja": "36aa591976b64795b88e9ce532e646dd69ddb578f2136afee16456c3607f0d70",
+        "ko": "66f2b25fb257ee823588c7e36b144ed063604d133052c68bdd67089a80b1fe52",
+        "tr": "fdd12cb5adf2b408d64e607165097dbd6e70e61596cdce1a4ea264f72fc1a0e1",
+        "zh": "2549dbe786d4392f16475c6871e5a20c0c6a2b16f68281290bb5b01562d94e46",
+        "zh-TW": "80a1bc978866cf5873b25171c6ae6289bf238b6b3bf42d0bb3b0fd0f70821d1a"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.178890+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{{app}} 已开始路由 → {{provider}}。”与韩文“{{app}}에서 라우팅을 시작했습니다 → {{provider}}”在本条目所属 mode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "mode",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#mode.toast.enteredStack",
+      "key": "mode.toast.enteredStack",
+      "status": "可保留",
+      "combined_fingerprint": "6c1c5741878ecf96ffea22d7e3c87d0f294eef7b4c824a18e2e07ea9905f581f",
+      "content_fingerprints": {
+        "en": "41dd4fb00570bb79ad114666032e9bd915e87782e3c839f94db60ab5d5e72e3a",
+        "ja": "57fdea85c7beb5ce01890dcb48839534ea9f29bf905ca9df744d35e060423030",
+        "ko": "f8d17257eb2596d5cd4ab763a0aab828f8c97182ec3019892ce6e7b2e4b71b81",
+        "tr": "ff135846d77ea38ca0e2633613d92e55e87418a87bd43c03c4f6d88324623660",
+        "zh": "a3b891ff1be955f552b8330b204b50b9cf0c9b165255297f9d3140c08fcf1d7d",
+        "zh-TW": "5917977c3ee98635186bb62d30ff47909eeeaed9e4be3dbad58507da25ef6071"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.178890+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{{app}} 已切换到聚合模式。重启 {{app}} 后，聚合的模型出现在 /model 里。”与韩文“{{app}}을(를) 통합 모드로 전환했습니다. {{app}}을(를) 다시 시작하면 /model에 통합된 모델이 표시됩니다.”在本条目所属 mode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "mode",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#mode.toast.enteredStackDesktop",
+      "key": "mode.toast.enteredStackDesktop",
+      "status": "可保留",
+      "combined_fingerprint": "3b5a6a9feeceda207ca462ddd97220a66e01cce6657fe79b34dc3c3e00d9556d",
+      "content_fingerprints": {
+        "en": "1e70d47a7b0ab569ec973b1df779fab1e9bd4ae611ff1456b42bc2dbb0d3676e",
+        "ja": "8358fd27416e3448b1fea183419d8c3d448ac4e72fa1224a1a91eeb58df81c98",
+        "ko": "ee0ec8cdf82d113070de79176bc05e3dfd5d184938c47df0db50afd6ad71d8fb",
+        "tr": "dee1e8df1fa2e48f34a52ff64aa88c25199fe95dbb79d48616fec9316b613aee",
+        "zh": "ac9213949a07216f3660fee872b2929e31e65d621b88cf2941ab8997731d180e",
+        "zh-TW": "662efb47188eeb8513bbfd65b16b647befc87dfb795d7fdd2f2e6cb9b902c4ae"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.178890+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{{app}} 已切换到聚合模式。重启 {{app}} 后，聚合的模型出现在模型列表里。”与韩文“{{app}}을(를) 통합 모드로 전환했습니다. {{app}}을(를) 다시 시작하면 모델 목록에 통합된 모델이 표시됩니다.”在本条目所属 mode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "mode",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#mode.toast.enteredStackLive",
+      "key": "mode.toast.enteredStackLive",
+      "status": "可保留",
+      "combined_fingerprint": "eef1caa8976735c3682af602340a5e1f56168983c2f6ac66ff18ece2d4fc6360",
+      "content_fingerprints": {
+        "en": "3142ff6d3e4b96c015b0c1ccf82357607d358682891197cf8335666eab98bb09",
+        "ja": "3812dd6dfbd9028c247e5dddbf82ab74caecd0d6769bdfd34455c7cd50704947",
+        "ko": "d0bc85b5cf1542ebd7cf7dd6020a2e860e94512df95b143f489c22655604edc6",
+        "tr": "53d3ab18f08e0a1c000855dfce30ae8903c8bf387294bc36c969bbcebaaeda4c",
+        "zh": "3848bdda88ab99e76f32638920ada311ed14c17cba944eace68f3a87eb73ac82",
+        "zh-TW": "c7940984fd0f8d403ab205577d60dddc8fdafe61a2a3cdf61ca61fa961456d70"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.178890+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{{app}} 已切换到聚合模式，聚合的模型已出现在 /model 里。”与韩文“{{app}}을(를) 통합 모드로 전환했습니다. /model에 통합된 모델이 표시됩니다.”在本条目所属 mode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "mode",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#mode.toast.exited",
+      "key": "mode.toast.exited",
+      "status": "可保留",
+      "combined_fingerprint": "366479b37be7ef028eb4e59edc2e8719ab9a773a0d00c9913b464d08027d487b",
+      "content_fingerprints": {
+        "en": "8766725e4e06d652bdc57912219f6b3081276cf661061cd31889913b860d0c03",
+        "ja": "c81e3e03d117cea96285224e3a37cd0b6076d5ab4f8b2753e78e67aafb95a10a",
+        "ko": "7d626422efd8c8dce57e9082b7c088787cc727ae6eb2a9d9cdf8fd45581abff0",
+        "tr": "5bd162315c17a630fa275032c9cadc9fb64ddea3102412c1e240e2571832b77a",
+        "zh": "74ba0fa0ec228208e80a62eb7887ade7848174d30ee34fd03f0b98e4fe7cb958",
+        "zh-TW": "6c559d4f5d4763947a77177db3d68b89eb80663ecd078ca6ff0c7d1de22df0d8"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.178890+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已回到直连：{{app}} 现在直接连接 {{provider}}。”与韩文“직접 연결로 돌아왔습니다. 이제 {{app}}이(가) {{provider}}에 직접 연결됩니다.”在本条目所属 mode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "mode",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#mode.toast.failed",
+      "key": "mode.toast.failed",
+      "status": "可保留",
+      "combined_fingerprint": "4e77441898554edbf78dbc9be64cace3c6bcefa3b141b59a93e1aa68249bd849",
+      "content_fingerprints": {
+        "en": "05a226da66e6c242c73975e2328dc7c8f2583492294c5acfbf7e608e699cdd52",
+        "ja": "234803139a65d9b02804fa70b1419ce59cf620228c55ecff00dc7deef1629dfc",
+        "ko": "bdc6a3496083641d09f45c284684522e38b7c85c0bdd866a194761b15bfcf47a",
+        "tr": "054bbe0f0826cca8e25d74cc18481f541ae11c1c5a567b2fc775f62de610d4bd",
+        "zh": "240cc2d18b12beaf334fc92e3eb09110cd26aa131fe9d193a8b3379c72cb4728",
+        "zh-TW": "705126c1044f39dc5b3c4ef1c61a5100c247139c442398be9f6614a26ecfd776"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.178890+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“切换失败：{{detail}}”与韩文“전환할 수 없음: {{detail}}”在本条目所属 mode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "mode",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#mode.toast.restartHint",
+      "key": "mode.toast.restartHint",
+      "status": "可保留",
+      "combined_fingerprint": "5eacf0580287ca6990902f99c4a0a08580d8dccadd96cb3619b3544c57642d1f",
+      "content_fingerprints": {
+        "en": "ec499bd61caf82911d6f9a610fc12d1700d0c48ef7f4dfe8bbcd30751ddb1e3f",
+        "ja": "f96f03f0379bd4c44286321b4625bdfb8cb3fed593fa4d1973e4922f9d5b95ee",
+        "ko": "b7884f2937a8643e84b049bd53138d297893ea1dd87e82e1c573dd15acd0d51b",
+        "tr": "cfe197de56025189616344224a5f4bb29ee34cd125587c520f8c73ce35c463c1",
+        "zh": "04d31fff34f3d4e7a25a8300a7c0f08122101030342cf47be8453251b1ddc131",
+        "zh-TW": "cf1d022cad9e453386e82af8fb11c08a2a4e917791ea2059b1aa10a7e6c4b87a"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.178890+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“重启 {{app}} 后生效。”与韩文“적용하려면 {{app}}을(를) 다시 시작하세요.”在本条目所属 mode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "mode",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#mode.toast.routeRemembered",
+      "key": "mode.toast.routeRemembered",
+      "status": "可保留",
+      "combined_fingerprint": "fe2df69f28f731081906f706f08b04b4f28f8317da8b09be41463cf91dff1c91",
+      "content_fingerprints": {
+        "en": "4b9808e7fc3bff922876d78ecd80300af6cf53042caad8709d7eac8b9857af3d",
+        "ja": "b28adcf9e1c9a2293fb2401c7a260c4bd19c51d2b244ff68ba698e9c86b99532",
+        "ko": "abc368ce2f14a68833b4197e81a0fb4c26365184dd2853f4f404793159d8bf7f",
+        "tr": "652216b6e4166e3aab8d57758157b45abccbd5efdfbc3afa91681c6bdc36d7d5",
+        "zh": "3474f283fec00a7b9923fb5404c6dc70159339ddc874eee21bed11c24402b030",
+        "zh-TW": "8562ebde755f7ef38dff5169c877baae87ec165c9e3c0a1e1ee02df7af178a2c"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.178890+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已记住供应商 {{provider}}，客户端接入路由或聚合后使用。”与韩文“클라이언트가 라우팅 또는 통합 모드에 연결될 때 사용할 공급자 {{provider}}을(를) 저장했습니다.”在本条目所属 mode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "mode",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#mode.toast.routeSwitched",
+      "key": "mode.toast.routeSwitched",
+      "status": "可保留",
+      "combined_fingerprint": "da8fb0694b203dd3a2494ce79d1f7c88a9809d824f9e0346b5e1194c97ab152a",
+      "content_fingerprints": {
+        "en": "09740afef7d115e5af02da088456c92aca7fe77cd94e121f7bce86102973d65b",
+        "ja": "c04da047975923403ec3c3ef8c878a26c3282bbb2d949fa8dde8d68dd42af52a",
+        "ko": "3771fe455573c7ba869111537ce74803f9fbb806fee6b80bdae379fb2ea146fb",
+        "tr": "a71e6be082e823d784623e8ea09fc1cbc0c44fec95aefefe0e25318f3127322f",
+        "zh": "ccebaeb14733b68c634a697e74e9c37b6a5734ec44209f653fb4db5024c9fc3e",
+        "zh-TW": "030b2627d08473703f1c8bf4e408a3eb6c8ba696ce366fafac36d3016ae8614f"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.178890+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“路由已切换至 {{provider}}，后续新请求将使用该供应商。”与韩文“라우팅 대상을 {{provider}}(으)로 전환했습니다. 이후 새 요청은 이 공급자를 사용합니다.”在本条目所属 mode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "mode",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#mode.toast.routeTargetChanged",
+      "key": "mode.toast.routeTargetChanged",
+      "status": "可保留",
+      "combined_fingerprint": "3446b8352746937993814bfee1cadf168c4205af5172aa587139bfefe4f549e4",
+      "content_fingerprints": {
+        "en": "fc20162f379647e81aa697350daee8722df575d13a17dd408f3d91f3f0782dee",
+        "ja": "642ef3aff8f4b082a53c5ddb3990b1f4040b8d03ffda72efe24a0d1fdc6465d6",
+        "ko": "4882715509cc6ecfe0057ab81221d5d06f9ff5b6af675868cbab9f0547a28fe7",
+        "tr": "fe91de6e44bbf2fd7e18e7cd40c47b4071536bb3eb15ee6e4f1b681f4e6f6fd7",
+        "zh": "71f9839ecd7e9845581d1d6439bb52acdccf6949f4b65b6b974d368e4b8f96e9",
+        "zh-TW": "0b2434c789be02b303abb9e5f71bc8075755cf6629dad3b36a7598fc2bb2b0fe"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.178890+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“路由目标已设为 {{provider}}。”与韩文“라우팅 대상을 {{provider}}(으)로 설정했습니다.”在本条目所属 mode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "mode",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#mode.toast.stackDefaultChanged",
+      "key": "mode.toast.stackDefaultChanged",
+      "status": "可保留",
+      "combined_fingerprint": "995ef51be87dfb425ae26fc840788ef73a4a1fa8894786361f97d01375c67ea4",
+      "content_fingerprints": {
+        "en": "7cd9fc3f592e13dcfbad2714b4f6e75a72650dfab630a2e54b8f0815ba7f5f2b",
+        "ja": "147f48cb94466748f16e05fb3c00bae6daf67751054b8813a2622d83e0a268ab",
+        "ko": "5ed438a9cf1c8f30ba417ff456fbc3f48c7da58db5c70284e21509e547cd0e59",
+        "tr": "95e367cdf2e111ac01f9f3c61179bc64d2540d7f11d134b5cf698642f1ce9c92",
+        "zh": "b7609e81ff44bf7e07646d5d778fb71f73c247954a55c521030b8fff4d457f5a",
+        "zh-TW": "5c1744fff8f01cb2cf6b71f53c863dd6a47a2a25c26ee1571aaeb423abdfe51a"
+      },
+      "reviewed_at": "2026-10-28T13:56:10.178890+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“聚合默认供应商已设为 {{provider}}；已选聚合模型仍使用各自的供应商。”与韩文“통합 기본 공급자를 {{provider}}(으)로 설정했습니다. 이미 선택한 통합 모델은 각자의 공급자를 계속 사용합니다.”在本条目所属 mode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "mode",
+      "round": 1
+    }
+  ]
+}

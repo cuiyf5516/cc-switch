@@ -1,0 +1,13 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:opencode:001","default_status":"可保留","overrides":[
+{"key":"opencode.baseUrl","status":"必改","reason":"「Base URL」是基础地址，不是“默认 URL”；韩文「기본 URL」改变了字段语义。","suggestion":"Base URL","ui_context":"OpenCode 供应商 API 地址字段"}
+]},
+{"batch_id":"translation:json-locale:opencode:002","default_status":"可保留","overrides":[
+{"key":"opencode.providerKeyDuplicate","status":"建议改","reason":"原文明确要求更换标识，韩文只陈述已被占用，没有给出动作。","suggestion":"이 키는 이미 사용 중입니다. 다른 키를 사용하세요.","ui_context":"OpenCode 供应商标识重复错误"}
+]},
+{"batch_id":"translation:json-locale:openclaw:002","default_status":"可保留","overrides":[
+{"key":"openclaw.health.stringifiedEnvVars","status":"建议改","reason":"「문자열이거나」只表示“是字符串”，遗漏了原文“被字符串化/序列化”的诊断含义。","suggestion":"env.vars는 객체여야 하지만 현재 값이 문자열로 직렬화되었거나 손상된 것으로 보입니다.","ui_context":"OpenClaw 环境变量健康检查"},
+{"key":"openclaw.health.stringifiedShellEnv","status":"建议改","reason":"「문자열이거나」只表示“是字符串”，遗漏了原文“被字符串化/序列化”的诊断含义。","suggestion":"env.shellEnv는 객체여야 하지만 현재 값이 문자열로 직렬화되었거나 손상된 것으로 보입니다.","ui_context":"OpenClaw shellEnv 健康检查"},
+{"key":"openclaw.providerKeyDuplicate","status":"建议改","reason":"原文要求“请更换”，韩文只陈述该键已在使用，缺少可执行动作。","suggestion":"이 키는 이미 사용 중입니다. 다른 키를 사용하세요.","ui_context":"OpenClaw 供应商标识重复错误"}
+]}
+]}

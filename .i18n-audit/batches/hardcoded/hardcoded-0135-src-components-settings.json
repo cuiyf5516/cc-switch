@@ -1,0 +1,26 @@
+{
+  "batch_id": "hardcoded:0135:src-components-settings",
+  "kind": "hardcoded",
+  "group": "src/components/settings",
+  "ordinal": 2,
+  "record_count": 17,
+  "record_ids": [
+    "dynamic-i18n:src/components/settings/WebdavSyncSection.tsx:WebdavSyncSection:8387eb890b0f99fb:001",
+    "hardcoded:src/components/settings/WebdavSyncSection.tsx:WebdavSyncSection:ccfc8f0bb4e75dcd:001",
+    "hardcoded:src/components/settings/WebdavSyncSection.tsx:WebdavSyncSection:37a8eec1ce19687d:001",
+    "dynamic-i18n:src/components/settings/WebdavSyncSection.tsx:WebdavSyncSection:99f59962822de2ac:002",
+    "dynamic-i18n:src/components/settings/WebdavSyncSection.tsx:WebdavSyncSection:5dd4180e2514c9a4:001",
+    "hardcoded:src/components/settings/WebdavSyncSection.tsx:WebdavSyncSection:487d653406a6aebc:001",
+    "hardcoded:src/components/settings/WebdavSyncSection.tsx:WebdavSyncSection:ccfc8f0bb4e75dcd:002",
+    "hardcoded:src/components/settings/WebdavSyncSection.tsx:WebdavSyncSection:37a8eec1ce19687d:002",
+    "hardcoded:src/components/settings/auth/AccountQuota.tsx:ROW_CLASS:62556b1602c85b7c:001",
+    "hardcoded:src/components/settings/auth/AccountQuota.tsx:QuotaRowCells:f106c106761965c2:001",
+    "hardcoded:src/components/settings/auth/ManagedAccountsGroup.tsx:PILL:af87269d0dd50712:001",
+    "hardcoded:src/components/settings/auth/ManagedAccountsGroup.tsx:copyCode:49d23b0088fb3efd:001",
+    "dynamic-i18n:src/components/settings/sections/AppConfigSection.tsx:directoryRow:1743f9d9e477bf5f:001",
+    "dynamic-i18n:src/components/settings/sections/GeneralSection.tsx:GeneralSection:4b8d2a85ad692265:001",
+    "hardcoded:src/components/settings/sections/RoutingSection.tsx:RoutingSection:29e265bbbc49a036:001",
+    "hardcoded:src/components/settings/sections/RoutingSection.tsx:RoutingSection:12ca17b49af22894:001",
+    "dynamic-i18n:src/components/settings/sections/RoutingSection.tsx:RoutingSection:8594999185d253ca:001"
+  ]
+}

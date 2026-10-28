@@ -1,0 +1,25 @@
+{
+  "batch_id": "hardcoded:0053:src-tauri-src-mode",
+  "kind": "hardcoded",
+  "group": "src-tauri/src/mode",
+  "ordinal": 1,
+  "record_count": 16,
+  "record_ids": [
+    "hardcoded:src-tauri/src/mode/controller.rs:require_proxy_app:ffc9b443461f4fe3:001",
+    "hardcoded:src-tauri/src/mode/controller.rs:lock_settled:4cd95ce8419a1977:001",
+    "hardcoded:src-tauri/src/mode/controller.rs:lock_settled:8a4795465b171b08:001",
+    "hardcoded:src-tauri/src/mode/controller.rs:lock_settled:e273fe4529009f04:001",
+    "hardcoded:src-tauri/src/mode/controller.rs:try_enter_with_route:cbe04bae6f87107d:001",
+    "hardcoded:src-tauri/src/mode/controller.rs:exit_all:7817472218664eda:001",
+    "hardcoded:src-tauri/src/mode/controller.rs:switch_route_locked:f48a2fb5d8e415d2:001",
+    "hardcoded:src-tauri/src/mode/controller.rs:switch_route_checked:78f7c64912be2ab6:001",
+    "hardcoded:src-tauri/src/mode/controller.rs:reject_unsupported_official:5281d9220ffbccdb:001",
+    "hardcoded:src-tauri/src/mode/controller.rs:check_stack_member:e00cdcc5424ff1e7:001",
+    "hardcoded:src-tauri/src/mode/operation.rs:run:8d906d61f92c9696:001",
+    "hardcoded:src-tauri/src/mode/operation.rs:run:62a2fed3d6e08c44:001",
+    "hardcoded:src-tauri/src/mode/operation.rs:run:d9b2fe68b6c253e2:001",
+    "hardcoded:src-tauri/src/mode/operation.rs:run:6e5eaedfc250581c:001",
+    "hardcoded:src-tauri/src/mode/operation.rs:recover_before_write:7ea182674022e78a:001",
+    "hardcoded:src-tauri/src/mode/operation.rs:hit:fb1bae4316404e0d:001"
+  ]
+}

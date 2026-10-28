@@ -1,0 +1,12 @@
+{
+  "batch_id": "hardcoded:0106:src-components-SubscriptionQuotaFooter.tsx",
+  "kind": "hardcoded",
+  "group": "src/components/SubscriptionQuotaFooter.tsx",
+  "ordinal": 1,
+  "record_count": 3,
+  "record_ids": [
+    "dynamic-i18n:src/components/SubscriptionQuotaFooter.tsx:tierLabel:594c5d7f4330650b:001",
+    "dynamic-i18n:src/components/SubscriptionQuotaFooter.tsx:tierShortLabel:cc8832922601ce1f:001",
+    "dynamic-i18n:src/components/SubscriptionQuotaFooter.tsx:label:ad936fcbed631fa6:001"
+  ]
+}

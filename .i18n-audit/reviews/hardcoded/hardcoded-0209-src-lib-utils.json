@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0209:src-lib-utils",
+  "kind": "hardcoded",
+  "group": "src/lib/utils",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 2,
+  "records": [
+    {
+      "id": "hardcoded:src/lib/utils/base64.ts:decodeBase64Utf8:ebc25d15f5f8211a:001",
+      "status": "无需国际化",
+      "content_fingerprint": "ebc25d15f5f8211a2f34b001b97782e015685b347a2ed9a718a118daab401d61",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/lib/utils/base64.ts",
+      "line": 55,
+      "function": "decodeBase64Utf8",
+      "expression": "Base64 decode error:",
+      "reason": "控制台日志或诊断信息，不作为界面文案。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0209:src-lib-utils",
+      "round": 1
+    },
+    {
+      "id": "hardcoded:src/lib/utils/base64.ts:decodeBase64Utf8:1bf8da32168b6b02:001",
+      "status": "无需国际化",
+      "content_fingerprint": "1bf8da32168b6b02c6678ec1963ed1456ad650991a2f3ac79c29b3b1a93b2179",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/lib/utils/base64.ts",
+      "line": 55,
+      "function": "decodeBase64Utf8",
+      "expression": "Input:",
+      "reason": "控制台日志或诊断信息，不作为界面文案。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0209:src-lib-utils",
+      "round": 1
+    }
+  ]
+}

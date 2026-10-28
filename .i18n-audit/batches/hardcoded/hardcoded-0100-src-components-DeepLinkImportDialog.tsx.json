@@ -1,0 +1,22 @@
+{
+  "batch_id": "hardcoded:0100:src-components-DeepLinkImportDialog.tsx",
+  "kind": "hardcoded",
+  "group": "src/components/DeepLinkImportDialog.tsx",
+  "ordinal": 1,
+  "record_count": 13,
+  "record_ids": [
+    "hardcoded:src/components/DeepLinkImportDialog.tsx:API_FORMAT_LABELS:ff3cd3c3f7a9fb69:001",
+    "hardcoded:src/components/DeepLinkImportDialog.tsx:loadLinkIcon:2dd2e8bd8a3cf8fd:001",
+    "hardcoded:src/components/DeepLinkImportDialog.tsx:showPending:4110f62c091627f6:001",
+    "hardcoded:src/components/DeepLinkImportDialog.tsx:showPending:0183f206c3ae4d52:001",
+    "hardcoded:src/components/DeepLinkImportDialog.tsx:processOnce:d46541e218d51a5c:001",
+    "hardcoded:src/components/DeepLinkImportDialog.tsx:refreshTrayMenu:4edda44192351889:001",
+    "hardcoded:src/components/DeepLinkImportDialog.tsx:handleImport:320fc60ac0be5df8:001",
+    "hardcoded:src/components/DeepLinkImportDialog.tsx:maskedApiKey:1f0f80da914365a2:001",
+    "dynamic-i18n:src/components/DeepLinkImportDialog.tsx:DeepLinkImportDialog:dfdad65bcce899e6:001",
+    "hardcoded:src/components/DeepLinkImportDialog.tsx:DeepLinkImportDialog:7de02e7f919bd514:001",
+    "hardcoded:src/components/DeepLinkImportDialog.tsx:DeepLinkImportDialog:4922fc9dd3ca2b64:001",
+    "hardcoded:src/components/DeepLinkImportDialog.tsx:DeepLinkImportDialog:4689fe1c9f813640:001",
+    "hardcoded:src/components/DeepLinkImportDialog.tsx:DeepLinkImportDialog:dd1cb78915b1fd59:001"
+  ]
+}

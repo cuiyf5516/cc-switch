@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:codex:001",
+  "kind": "translation",
+  "namespace": "codex",
+  "reviewed_at": "2026-10-28T13:40:18.220302+00:00",
+  "review_count": 12,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#codex.accountLoading",
+      "key": "codex.accountLoading",
+      "status": "可保留",
+      "combined_fingerprint": "b81683ede9dd9944727c3040fd33255062ad0606ad32e3c3fc56d88b67c774f9",
+      "content_fingerprints": {
+        "en": "e1802082fa4390875307a18f814df1f0db902f50c418bd960461d110964a9023",
+        "ja": "f6f9264f5b190e0ecad216d96fbc8530ba4b17e20989948e3e139c697fde0135",
+        "ko": "9b2227c31738a2ade4f3f99c67a9b36e145030fbbb6df1e0d09f23b237d83ae1",
+        "tr": "aa5727355af04885304a357b6efb7e52ae3752f1e74b894e80629cd59394f8a6",
+        "zh": "fc05624a9cce30e46cbb77028e11f89a4fc47cb42ac9cdad03c5184410e64533",
+        "zh-TW": "3e09041aaf0ab4747a2c29dccf7d5674d2f03bfa43c16ff6bb04636deb2c8594"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.220302+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“正在加载账号…”与韩文“계정 로드 중…”在本条目所属 codex UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "codex",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#codex.accountNotSelected",
+      "key": "codex.accountNotSelected",
+      "status": "可保留",
+      "combined_fingerprint": "c1dd86834d1438179edde1c10cb892aa6c715e4a3c5c00f02056d927faa59abc",
+      "content_fingerprints": {
+        "en": "b363e5f44515909e667e5e4b24f9690b87a202de3c6b1f1f7b8b597205461ad6",
+        "ja": "f7c5b081cf16a3a4a66eb7dc99c1a6f250bee74e84518850e17dd1f55ff08651",
+        "ko": "a2b98cbfb4745bcd2c85754b98fba776fcd871749c6a2680b8f91e2822f7c8e3",
+        "tr": "4eed865eec1a46eece3dfdbfda2cb259fd544d261a9d9338a1c4c13a23ce737a",
+        "zh": "4e534de41f1aa9974fe801aa137504a80150244526d0b122eee5040e7e4b4964",
+        "zh-TW": "0597254a3d7b722431fa35c9b4c980538390f04b250d568781a5b07d76a7d271"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.220302+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“尚未选择账号”与韩文“선택한 계정이 없습니다.”在本条目所属 codex UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "codex",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#codex.accountStatusUnavailable",
+      "key": "codex.accountStatusUnavailable",
+      "status": "可保留",
+      "combined_fingerprint": "fe8d25200886796a102b52b528a492bdadf548b1fbca27d9d7043b42465b4194",
+      "content_fingerprints": {
+        "en": "00a17eed452342659520604772bcf242f0bb647282727da1ac71e1eeaef13c97",
+        "ja": "d4ebf7e4a5bc298a4678d1a215667f8eb6b01ebbca27af5fc4d7b90a3dcca675",
+        "ko": "9b5597b9b8737318f617b753115f9af4a838a1a2343be785b1b4aee84e90dfc7",
+        "tr": "02d63c6ff3294290ab312c7bccf9946b76ee36777f8f0be628b9e7dae38ed9a4",
+        "zh": "5c63e65bc23ada4534efca0113797e64a83f33604f00939dcf360a920452f40f",
+        "zh-TW": "e249faa0c53229a7261ac17a2e9fc4dc4c2da039ec18f2ef3c94cf279d5e0f56"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.220302+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“无法读取账号信息”与韩文“계정 세부정보를 로드할 수 없습니다.”在本条目所属 codex UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "codex",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#codex.boundAccountUnavailable",
+      "key": "codex.boundAccountUnavailable",
+      "status": "可保留",
+      "combined_fingerprint": "e93f742d0331d94663a5f9411c70588f35e672c22fc5774dfd6fb0852d6cd563",
+      "content_fingerprints": {
+        "en": "812c067d15617cf330f59a6c6ea2df6c0d5a0de4d8a7fb233dc0f84a9c1c4937",
+        "ja": "2079508e53087d66e648e6b3de6cc2a5799c3beb0560cb7065dc198d097b39df",
+        "ko": "c7e45316cc2ac0c6491c87540b67cb8f63b10912f3f1eb254a6053723eecc962",
+        "tr": "63f80894225ef3ac1777a5b0a7b9e2de77517db37e35928d98cd9f34a416f72a",
+        "zh": "7542d2894a4e2ed03fb7ffa85c3457ec215f9478f96524be3eafeafb44925902",
+        "zh-TW": "a4b99ed8ae5f131e01b37e5d62546d28bc535c7459ce9555bf3913b4b7163ffb"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.220302+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“绑定的账号不可用”与韩文“연결된 계정을 사용할 수 없습니다.”在本条目所属 codex UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "codex",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#codex.chooseAccount",
+      "key": "codex.chooseAccount",
+      "status": "可保留",
+      "combined_fingerprint": "0c35a696dd8ffd6e6c3381781733ba76598ac405bee328e86d20a04d8ca20a42",
+      "content_fingerprints": {
+        "en": "3be320316097c1076e4842eb3926493cd0603f05802d89f0833591e90527271e",
+        "ja": "4dc2551e7b2ca4a9f95fb3d85bf28c75cec7237a930384f0c01f9265cca358ec",
+        "ko": "4405a281d0044a10ddc3a8b94b7de9df026d1032a95a09502bf68815cb3493c5",
+        "tr": "4db9a196ce1de2257fa45432ff1fa87c70a58d285341fe338bc2f6d8b4265f0f",
+        "zh": "d0e6a1a28308848226fe49a70e2355e759e08130c0486a8b286b986f4bf3ce39",
+        "zh-TW": "4a791e6a12b3c21ecff04765608415865e067ec3ffee56f05b69d1be847142fa"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.220302+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“选择账号”与韩文“계정 선택”在本条目所属 codex UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "codex",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#codex.followCodexLogin",
+      "key": "codex.followCodexLogin",
+      "status": "可保留",
+      "combined_fingerprint": "d21b64911a298be5f6bd6e53957fd3ef4addc47f8cc6b94e95f5596964b07671",
+      "content_fingerprints": {
+        "en": "2e7ace157657fea24513a8442c13316984c9207a8abc7156e47457dfc4400d7e",
+        "ja": "bae7b5e905147763aa1e87183b1daceb645b2466623dfe73d4cce0ac83549acf",
+        "ko": "7fb4a826a526aa08f0b7b83a75be3840a852013bb85b23720bd52fb600cde3c3",
+        "tr": "e79defd8522e51b897523af0f7bf78b7c128c22a88cf5904b71ad37a7ee82974",
+        "zh": "058014cc82c6fcb0980e784fca6075b5564f6a6ae1a7836fd3f7fc67b615bdbf",
+        "zh-TW": "3fe2a9e997137c71942ce8fdd9b85bdbec2bb60822e4ae97aa25d468426fe281"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.220302+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“跟随 Codex 登录”与韩文“Codex에 로그인된 계정 사용”在本条目所属 codex UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "codex",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#codex.followCodexLoginDescription",
+      "key": "codex.followCodexLoginDescription",
+      "status": "可保留",
+      "combined_fingerprint": "a43733a78278be995eae6fcb526a10f6b6dfbad703c95f0d54af579744c07b3d",
+      "content_fingerprints": {
+        "en": "ea9fc8259e9dc452591700e9dd106122a8bb63e17394c0b9da6ad90069442f0e",
+        "ja": "e24ec96fe2a95cf0272197a6f66b93f7964c7a9685acf658f9090ee97ad447ae",
+        "ko": "46bfc9bd4b63287e60d3a0a71c979083f614127953e15cf2d7f4dd58576636bc",
+        "tr": "dc830a6ec6735572198afcd92532d48c50808cf4a018dfc3bd6319bf58fda9a2",
+        "zh": "eb17d66a4b2401610d6d15880e2760449cc5c1404347fe9f90031cc8aa812823",
+        "zh-TW": "3506a8fbdd221da72c2b242c1f885a5b7e8f5595a757c6b0332a79ece03145fe"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.220302+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“账号会随 Codex CLI 当前登录变化”与韩文“Codex CLI에 로그인된 계정이 바뀌면 사용하는 계정도 함께 바뀝니다.”在本条目所属 codex UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "codex",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#codex.nativeLogin",
+      "key": "codex.nativeLogin",
+      "status": "可保留",
+      "combined_fingerprint": "192fbdd7da3b51129d0c2632b7267a91908a4e1e53549b6f74f4ab0963e6aab9",
+      "content_fingerprints": {
+        "en": "872eb320f1644c0bc65099d402fb9e39fdbc9d2e9c56a9089ace7d8d4022eb42",
+        "ja": "96edf13d6fbb1b5e3675ae9756dd1c2b05e832d4ae7d172758b17354b21f5d21",
+        "ko": "043ded0d3f76cb624897fafd8c7334cbe6ac756e84391985113cdcc1e649e090",
+        "tr": "87f4c1bcf10bffbaf224530280688822ac4278cc82037c5a3656f0ebb5e596bf",
+        "zh": "311422ec622546739fecaecacc6d57f4e8bdba2efd3a0fc3aa9389ac81e31220",
+        "zh-TW": "ef635b3ea4b04f2a1a74ab748c941192fcd76629c1a0952de033a9eb0c402b83"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.220302+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Codex 登录”与韩文“Codex 로그인”在本条目所属 codex UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "codex",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#codex.needsRouting",
+      "key": "codex.needsRouting",
+      "status": "可保留",
+      "combined_fingerprint": "71c44fb590ffca84c2873d36b691ea3f9c38e289576d03298dc7daad7c8aab45",
+      "content_fingerprints": {
+        "en": "dda5f518ac19452036d5b965c90940e73206e0ea8efe0d1d5a651f61207fd184",
+        "ja": "2107b97fb1b6d4979772c9ce0d329fd483026617f15e9d4a9911b076c94dd65b",
+        "ko": "5592e9f0d4a2ad690185f0e564ea8ee65be01c7d65411fae6c1ea9a1893d1895",
+        "tr": "8de62cb9e19a87a80fb7e7384313fdb37b9249159fe4b9bf88086c1ddf290f6c",
+        "zh": "18253fad82e6d1dea1b81c136ab6647f47e43743a0c7b8b8fb5dddf8ca85753f",
+        "zh-TW": "18253fad82e6d1dea1b81c136ab6647f47e43743a0c7b8b8fb5dddf8ca85753f"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.220302+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“需要路由”与韩文“라우팅 필요”在本条目所属 codex UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "codex",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#codex.noRoutingSupport",
+      "key": "codex.noRoutingSupport",
+      "status": "可保留",
+      "combined_fingerprint": "32443371ea2624db24245d276a315af62afea81f7a0d9a2c36ebd568567fe98e",
+      "content_fingerprints": {
+        "en": "e3861a79a1c73f9b298b202c1b9f23b92ae875d60999f653c50e2d740fbd4924",
+        "ja": "0f055ace580078b948bc1efe985fd4aa5ea23f9c3de4e46b0d023f78e0d36000",
+        "ko": "8550dc9fc2812c3d2f506be00833d83f486f29b6123606c503055e9e56a5b65f",
+        "tr": "aca452b64368c86b784df9f25b634e7b0265b99a6b645574ccb465e3c3be4546",
+        "zh": "a6ab4d187499a4573ae24fb0e288ef11e59cada296da679aac39fb38390a6eb6",
+        "zh-TW": "93b75872ea94a9870de78237c7da9ae46172a09ec1466df1eca74203525129df"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.220302+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“不支持路由”与韩文“라우팅 지원 없음”在本条目所属 codex UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "codex",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#codex.officialRouting",
+      "key": "codex.officialRouting",
+      "status": "可保留",
+      "combined_fingerprint": "67b839361de6cffdaf460560916192e3ab7440db142482d671915e191a57879b",
+      "content_fingerprints": {
+        "en": "ccd37e1a40463a9219ed2a27505c171aa4ddcaef28b50fda3f8f575abdf20985",
+        "ja": "0c7c5a034acab71ec1c5a98dcb2beaf2c79eb35462113826258a5441761f17b3",
+        "ko": "ef7296de02b70655886c911a2b608cf64249dea6d8337e102314172a68f49b5f",
+        "tr": "b3af13c1feecdabd1f0ce5c0f34139206d9c7402cfe486083ff02375c124ce8f",
+        "zh": "735a2fc104cfdb43049d083f50475f477ede83b95b46e067947c1dcfe4e97c35",
+        "zh-TW": "8e95211fa98953d49d1d2185be675915af19f2cc7867a69327a86efe8de5069f"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.220302+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“官方账号路由”与韩文“공식 계정 라우팅”在本条目所属 codex UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "codex",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#codex.openAiAccount",
+      "key": "codex.openAiAccount",
+      "status": "可保留",
+      "combined_fingerprint": "37cd8a00a4ae72811338665813c05c72290002b9fb267044d75d6417af371e03",
+      "content_fingerprints": {
+        "en": "a37468a7a823e85a54eed5bab51f6eb0df921338bf8283748389789be2b60beb",
+        "ja": "0c49c63bcb7e6b98eb0463af21d7fe5205e32db14f18e545330aa47ffe089852",
+        "ko": "5983aaeeda6521071f932b0eeac1280fac60fb946332ed78c3b59f24a2340b4c",
+        "tr": "1a8917de6b43144e11886d74cdd268836e7fe0df663643e7b0fc42a5d627cb4c",
+        "zh": "d67c35796752bf6ad5c5bf4c0e862a1284a50d1d1abcee818a587aa41b3f3c69",
+        "zh-TW": "8aaec0fdf04f2ca4758bde3f0b2d4a54172ffeb30191a0417e57644663a966aa"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.220302+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“OpenAI 账号”与韩文“OpenAI 계정”在本条目所属 codex UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "codex",
+      "round": 1
+    }
+  ]
+}

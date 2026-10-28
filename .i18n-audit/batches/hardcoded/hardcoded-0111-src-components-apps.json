@@ -1,0 +1,30 @@
+{
+  "batch_id": "hardcoded:0111:src-components-apps",
+  "kind": "hardcoded",
+  "group": "src/components/apps",
+  "ordinal": 2,
+  "record_count": 21,
+  "record_ids": [
+    "hardcoded:src/components/apps/useToolManagement.ts:KIMI_WINDOWS_INSTALL_COMMAND:f56dac5c58fa85df:001",
+    "hardcoded:src/components/apps/useToolManagement.ts:KIMI_WINDOWS_INSTALL_COMMAND:e30ca1e94fd4ceef:001",
+    "hardcoded:src/components/apps/useToolManagement.ts:AGY_WINDOWS_INSTALL_COMMAND:2fbd97be8e0b20e9:001",
+    "hardcoded:src/components/apps/useToolManagement.ts:AGY_WINDOWS_INSTALL_COMMAND:58690d86ff0bfe2b:001",
+    "hardcoded:src/components/apps/useToolManagement.ts:CLAUDE_NPM_INSTALL_COMMAND:ca3830c36d9f3cb9:001",
+    "hardcoded:src/components/apps/useToolManagement.ts:MCODE_NPM_INSTALL_COMMAND:6f64ecd0cbd433ff:001",
+    "hardcoded:src/components/apps/useToolManagement.ts:OPENCODE_NPM_INSTALL_COMMAND:76fb680f98a96cc7:001",
+    "hardcoded:src/components/apps/useToolManagement.ts:GROK_NPM_INSTALL_COMMAND:38844453140dad1b:001",
+    "hardcoded:src/components/apps/useToolManagement.ts:POSIX_ONE_CLICK_INSTALL_COMMANDS:a9aef025f3545d24:001",
+    "hardcoded:src/components/apps/useToolManagement.ts:WINDOWS_ONE_CLICK_INSTALL_COMMANDS:1f7dbcff407c6de1:001",
+    "hardcoded:src/components/apps/useToolManagement.ts:TOOL_DISPLAY_NAMES:40f5bd93e8d06737:001",
+    "hardcoded:src/components/apps/useToolManagement.ts:checkToolUpdatesInBackground:0c5e75105de20311:001",
+    "hardcoded:src/components/apps/useToolManagement.ts:refreshToolVersions:68ed547d691cb652:001",
+    "hardcoded:src/components/apps/useToolManagement.ts:loadInstallations:715f50a6eb2dcc62:001",
+    "hardcoded:src/components/apps/useToolManagement.ts:handleCopyInstallCommands:39ec84ddf3bc34fe:001",
+    "hardcoded:src/components/apps/useToolManagement.ts:diagnoseToolSilently:fd7e1a2c56743888:001",
+    "hardcoded:src/components/apps/useToolManagement.ts:handleDiagnoseAll:5b641b488c2fb773:001",
+    "hardcoded:src/components/apps/useToolManagement.ts:executeRun:99f2ebcff5307245:001",
+    "hardcoded:src/components/apps/useToolManagement.ts:failureDescription:e82e31794a97d93d:001",
+    "dynamic-i18n:src/components/apps/useToolManagement.ts:executeRun:fa889cec796591ae:001",
+    "hardcoded:src/components/apps/useToolManagement.ts:handleRunToolAction:715f50a6eb2dcc62:001"
+  ]
+}

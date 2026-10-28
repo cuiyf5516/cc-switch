@@ -1,0 +1,22 @@
+{
+  "batch_id": "hardcoded:0023:src-tauri-src-codex_config.rs",
+  "kind": "hardcoded",
+  "group": "src-tauri/src/codex_config.rs",
+  "ordinal": 1,
+  "record_count": 13,
+  "record_ids": [
+    "hardcoded:src-tauri/src/codex_config.rs:codex_managed_oauth_marker_bytes:f0fe94dd6b4b04be:001",
+    "hardcoded:src-tauri/src/codex_config.rs:migrate_legacy_codex_managed_oauth_live_auth_marker:b2115bf591d83caa:001",
+    "hardcoded:src-tauri/src/codex_config.rs:ensure_codex_live_auth_unchanged_for_managed_account:cb561175ef36d876:001",
+    "hardcoded:src-tauri/src/codex_config.rs:ensure_codex_live_auth_unchanged_for_managed_account:978e8417a4fc459b:001",
+    "hardcoded:src-tauri/src/codex_config.rs:clear_codex_live_auth_for_managed_account_if_unchanged:88c926df5719cf84:001",
+    "hardcoded:src-tauri/src/codex_config.rs:validate_config_toml:28043ff911f28a5c:001",
+    "hardcoded:src-tauri/src/codex_config.rs:read_limited_string:a5f18a7832980399:001",
+    "hardcoded:src-tauri/src/codex_config.rs:read_codex_live_settings:5a33146b27789640:001",
+    "hardcoded:src-tauri/src/codex_config.rs:read_codex_live_settings:91fe215325983a09:001",
+    "hardcoded:src-tauri/src/codex_config.rs:read_codex_live_settings:949bc93f44d35c9e:001",
+    "hardcoded:src-tauri/src/codex_config.rs:read_codex_live_settings:99b15ae93aa94db5:001",
+    "hardcoded:src-tauri/src/codex_config.rs:strip_codex_unified_session_bucket:06766f5abc8847b6:001",
+    "hardcoded:src-tauri/src/codex_config.rs:strip_codex_unified_session_bucket:51c1bf73f128711c:001"
+  ]
+}

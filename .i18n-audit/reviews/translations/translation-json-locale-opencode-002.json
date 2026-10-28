@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:opencode:002",
+  "kind": "translation",
+  "namespace": "opencode",
+  "reviewed_at": "2026-10-28T13:57:29.818186+00:00",
+  "review_count": 10,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#opencode.providerKeyDuplicate",
+      "key": "opencode.providerKeyDuplicate",
+      "status": "建议改",
+      "combined_fingerprint": "30251f856893e97a731ba1768414b37a596ddd781212b139ecafc7f26159a7c9",
+      "content_fingerprints": {
+        "en": "7d835bd212de87b82c03ae7acce7f9edec65e7a1d6d734d0c849993192f9ab3a",
+        "ja": "d1b5f6795ee88085b19d27e5aa7987830f92d494d970192ec3fc8034d7366bd3",
+        "ko": "60ec043ae640ba2ee35795160aa3b6459cc2b23d50bc469be92cb93dde8126e7",
+        "tr": "8de92ce08bff2b7d45fb8760babdeba01ebf73a54b9ae92b4cda9647c5749861",
+        "zh": "c60845dafd0f56f8ada006115771a9df791a2566ca7e6e583bb88c28871f274f",
+        "zh-TW": "6b63b86d3752fc600777eaf9257f125f73933c40e249b7fb494f988fed5ed37d"
+      },
+      "reviewed_at": "2026-10-28T13:57:29.818186+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“此标识已被使用，请更换”与韩文“이 키는 이미 사용 중입니다.”在本条目所属 opencode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": "原文明确要求更换标识，韩文只陈述已被占用，没有给出动作。",
+      "suggestion": "이 키는 이미 사용 중입니다. 다른 키를 사용하세요.",
+      "ui_context": "OpenCode 供应商标识重复错误",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#opencode.providerKeyHint",
+      "key": "opencode.providerKeyHint",
+      "status": "可保留",
+      "combined_fingerprint": "882ec6dd11877fa221694dce077a78a7de7fc752be51319652032b131cd6fc77",
+      "content_fingerprints": {
+        "en": "29d752697a77043f01def6eae9f70b42d7bd9b4e0e9a4131b0d34a26a09d21f7",
+        "ja": "54383705f55fa9d684fabb06993b2a8178a592e36a74d1e7787ba06ebd04028d",
+        "ko": "383b806f4247c557b3f06fa7985692225273795cde968666643b97626bdf5cb9",
+        "tr": "d4a6dcac49a6c3fb25624eaf881287a362ac72ad9929c8dc4adeb437d410ec3c",
+        "zh": "9a91f3ec41791043445d31c76c1b6fe9008ea42a353de5193071de1d9578e098",
+        "zh-TW": "712194138fc08aa9a9e7a201ba16fd3556fc9b21bb076ddf0bb35337dbdeabcb"
+      },
+      "reviewed_at": "2026-10-28T13:57:29.818186+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“配置文件中的唯一标识符，只能使用小写字母、数字和连字符”与韩文“설정 파일의 고유 식별자입니다. 소문자, 숫자, 하이픈만 사용하세요.”在本条目所属 opencode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "opencode",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#opencode.providerKeyInvalid",
+      "key": "opencode.providerKeyInvalid",
+      "status": "可保留",
+      "combined_fingerprint": "c4185ad0e7215f81a77677a07778fb98b77dc91952acb4e10314f4f01ec816cd",
+      "content_fingerprints": {
+        "en": "adeccfcd0279c590fb1467ce9a9cf17f43dc0555c837c29835de19fd09b3f74e",
+        "ja": "a1d049b5c5a3579d686c38d33864d0651b552c8944c43ed1f108a052c1c5b67b",
+        "ko": "f4410cf5c2f9002137895fde70772481fb8159976eb4ff7ce0022b08a1b8dcb0",
+        "tr": "bc9653631ca1e23134cb6c1394b58f65e51bb7b880cbaa585a46d7073ddbdd7a",
+        "zh": "82e1ef859fa4a48e467b543f0d77328201f60f6316d754962ff1f3fdca865b21",
+        "zh-TW": "e145693f27abe642126b65f3051b16c04eccd3c296e05ec2790159c279bc4cb2"
+      },
+      "reviewed_at": "2026-10-28T13:57:29.818186+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“标识格式无效，只能使用小写字母、数字和连字符”与韩文“형식이 잘못되었습니다. 소문자, 숫자, 하이픈만 사용하세요.”在本条目所属 opencode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "opencode",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#opencode.providerKeyLockedHint",
+      "key": "opencode.providerKeyLockedHint",
+      "status": "可保留",
+      "combined_fingerprint": "a1457503b3564b2116aa0e7721b03f3354d80622d758dbd9d68bd69d5fad8b8f",
+      "content_fingerprints": {
+        "en": "3820034a6226f0079dcd1a462cbee3a91da166683e4ee487873df5db86bba1f8",
+        "ja": "a07d383a58f6029275f670f90353bccc6d92a9915535a5d8a7774a28f3cc4631",
+        "ko": "7138e6a53e4425d100589ee09d29184d88dd1753f61a5e0d2d6bbd3903823f63",
+        "tr": "9b87176044a593e2f4de89063fd884d3f244ef7badb17b6b1df2ed17cba9c06b",
+        "zh": "082a89a7cd99d4dd17e80cc848467be19d303b1d650e218ec3ec526512f99d74",
+        "zh-TW": "dec9f2c8d071f51a345c7205eb74455fb5f3b26c641d31deadb42feffde2bf72"
+      },
+      "reviewed_at": "2026-10-28T13:57:29.818186+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“该供应商已添加到应用配置中，供应商标识不可修改”与韩文“이 공급자는 이미 앱 설정에 추가되었으므로 해당 키를 더 이상 변경할 수 없습니다.”在本条目所属 opencode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "opencode",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#opencode.providerKeyPlaceholder",
+      "key": "opencode.providerKeyPlaceholder",
+      "status": "可保留",
+      "combined_fingerprint": "265bdc1c8459f712d15276bfa3cf70dd67990fb661b629e8e8f868b13cc2648f",
+      "content_fingerprints": {
+        "en": "3c1d9c2e9337c73735c1255550da3a8b0b34f955cba9d61d6147947945ef3080",
+        "ja": "3c1d9c2e9337c73735c1255550da3a8b0b34f955cba9d61d6147947945ef3080",
+        "ko": "3c1d9c2e9337c73735c1255550da3a8b0b34f955cba9d61d6147947945ef3080",
+        "tr": "3c1d9c2e9337c73735c1255550da3a8b0b34f955cba9d61d6147947945ef3080",
+        "zh": "3c1d9c2e9337c73735c1255550da3a8b0b34f955cba9d61d6147947945ef3080",
+        "zh-TW": "3c1d9c2e9337c73735c1255550da3a8b0b34f955cba9d61d6147947945ef3080"
+      },
+      "reviewed_at": "2026-10-28T13:57:29.818186+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“my-provider”与韩文“my-provider”在本条目所属 opencode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "opencode",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#opencode.providerKeyRequired",
+      "key": "opencode.providerKeyRequired",
+      "status": "可保留",
+      "combined_fingerprint": "0e1575a1ee0a9dbe7f0b7ee47e082d6b3f883e28938b96d34962b515bf2bedf6",
+      "content_fingerprints": {
+        "en": "5e919d4b9bfcc39543279df25e5cc03d83d405ff5d6e642fbba5f69e9bf125d2",
+        "ja": "8c67fde9e564e1d6f579daaf9dc96ae84ed4b70b8711e96453f7ef718f7c52dc",
+        "ko": "7763ba739404fbdb648a2c8d4ff56e0eca3c5dee2ac740d74bb443c7de4db3f0",
+        "tr": "ecbd8d183e92606c7d9f228e8eb9b6934e37dc9b2bf9cc9400f2e6dd257d5635",
+        "zh": "3146687e510aca0f85118bab449e10381c631abd92f082dcc2d0644e174577a8",
+        "zh-TW": "139082860e783ef55125f8b53be216860e6ccf2dd24ae5488a6e6873a7c8d8c5"
+      },
+      "reviewed_at": "2026-10-28T13:57:29.818186+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“请填写供应商标识”与韩文“공급자 키가 필요합니다.”在本条目所属 opencode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "opencode",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#opencode.removeHeader",
+      "key": "opencode.removeHeader",
+      "status": "可保留",
+      "combined_fingerprint": "543ee82f70cc45af0b49be2c5a1460e05688219ed3b252640098105614351a89",
+      "content_fingerprints": {
+        "en": "e42db5eb1789af39f3ce15a6796e41acddbc7c638a7fdd3a7ec32aa5a8de0fe2",
+        "ja": "d27c4c51e566df9197018c06169cf97db348919bb49701a5042a8074e9f33c90",
+        "ko": "94b473b1f25b879bb3f0587f14964fc998e4779fb81e63fabf1caf43775519fc",
+        "tr": "8521ba3c445a81171ccb4ab663bbfdbf1a4a664e0cdbf4e4e189d5c5868d9b11",
+        "zh": "89806916e424110972bd10ed19a2a8536f9ecace8dcaefd4e15d4691007a9b3b",
+        "zh-TW": "4c23153e8a6592ec472cea1de7e6f8e1af65bdf1d9545262bd9fbc7671d9cf93"
+      },
+      "reviewed_at": "2026-10-28T13:57:29.818186+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“删除请求头”与韩文“헤더 제거”在本条目所属 opencode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "opencode",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#opencode.sdkOptions",
+      "key": "opencode.sdkOptions",
+      "status": "可保留",
+      "combined_fingerprint": "d03fa2a023d5c5ee47ba68ea4dcda9db09e7b8145973255449b56048351415c5",
+      "content_fingerprints": {
+        "en": "8b4e935ff59d305ae8db095f15a5adff406c9555d7a3dbaa2572d310e354aac7",
+        "ja": "ae74098d99d6c115239b06e45c867ac557b79a5dbddc12d78c2ed678a6fcfaf7",
+        "ko": "467aec40ece3cc9d0b304ecb64739a59f9b43115d60c2aa8a6f3baea1a125616",
+        "tr": "38a524bbcea15a3b5d9797d97983637f7d962f1bb177c4566c3a9caa2b1d0f4c",
+        "zh": "05ab17f680476dbb014a9ed77f97b628be47aa163d9ed0fda53807bdbc7b4208",
+        "zh-TW": "72381a773464a2354e740e6ac881db8948e770b257a9c8b7ed17bf9c8642b8bf"
+      },
+      "reviewed_at": "2026-10-28T13:57:29.818186+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“SDK 选项”与韩文“SDK 옵션”在本条目所属 opencode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "opencode",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#opencode.selectPackage",
+      "key": "opencode.selectPackage",
+      "status": "可保留",
+      "combined_fingerprint": "ef9554c0ced9f68fabc94cbc557c8200e8f16e4506e409949aa24cfaaa48b29e",
+      "content_fingerprints": {
+        "en": "3bc2ddfd4f6b572d84e238657d3b8b1b10497028d89916c457204a3707c0e2a7",
+        "ja": "9e1c22085577d7966efbafd495c0ac18c350bca60ac0494eee5969d629a0ef49",
+        "ko": "50a07fc7d77d01993c7126fe0d2ac448cd7e1a98ad515bba1dded3ddf0d6db08",
+        "tr": "a85bfae8e68bf46022bd5b85e65abcef24dd25d76f6091bf66fa27fe774c165b",
+        "zh": "d827630ea1dd07c05e99aaef3a982958dcac0edfb1db730f088681935bf4260b",
+        "zh-TW": "81c7fd0e2cef9a81fb07eb229d7a806b7cabcca9b75778c558a56518788a3b86"
+      },
+      "reviewed_at": "2026-10-28T13:57:29.818186+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“选择接口格式”与韩文“API 형식 선택”在本条目所属 opencode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "opencode",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#opencode.toggleModelDetails",
+      "key": "opencode.toggleModelDetails",
+      "status": "可保留",
+      "combined_fingerprint": "41b0b2be22d455740982461ab9287c10ecd13595b581729c6e630d6a26d90c61",
+      "content_fingerprints": {
+        "en": "32c6ef730c03660731851399b973cf6d166178649797fb340e5f329daed83c45",
+        "ja": "0b5d9f14dd79ebe75f345e9f7fcfdc390bee3525df7314341f8987bc38cc255d",
+        "ko": "29d242aef9f67bc6ae60e8899459ea775dbb07b18c9625a0de9e89245a957e74",
+        "tr": "89a3bf9e8fd4e8884e41392e0a16b60181d986aeb31e529aebb75d819090d9f5",
+        "zh": "8590411ad115d7172c8e226d807491b514cb5dc39c782a1c71f36b12187dfba5",
+        "zh-TW": "6cf1a2c6c221f756819ffcc9ddab7ec32e4275a94e53329b6116376dbe00b025"
+      },
+      "reviewed_at": "2026-10-28T13:57:29.818186+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“展开或收起模型详情”与韩文“모델 세부 정보 펼치기/접기”在本条目所属 opencode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "opencode",
+      "round": 1
+    }
+  ]
+}

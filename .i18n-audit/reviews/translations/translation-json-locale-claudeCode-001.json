@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:claudeCode:001",
+  "kind": "translation",
+  "namespace": "claudeCode",
+  "reviewed_at": "2026-10-28T13:39:08.435039+00:00",
+  "review_count": 2,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#claudeCode.needsRouting",
+      "key": "claudeCode.needsRouting",
+      "status": "可保留",
+      "combined_fingerprint": "71c44fb590ffca84c2873d36b691ea3f9c38e289576d03298dc7daad7c8aab45",
+      "content_fingerprints": {
+        "en": "dda5f518ac19452036d5b965c90940e73206e0ea8efe0d1d5a651f61207fd184",
+        "ja": "2107b97fb1b6d4979772c9ce0d329fd483026617f15e9d4a9911b076c94dd65b",
+        "ko": "5592e9f0d4a2ad690185f0e564ea8ee65be01c7d65411fae6c1ea9a1893d1895",
+        "tr": "8de62cb9e19a87a80fb7e7384313fdb37b9249159fe4b9bf88086c1ddf290f6c",
+        "zh": "18253fad82e6d1dea1b81c136ab6647f47e43743a0c7b8b8fb5dddf8ca85753f",
+        "zh-TW": "18253fad82e6d1dea1b81c136ab6647f47e43743a0c7b8b8fb5dddf8ca85753f"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.435039+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“需要路由”与韩文“라우팅 필요”在本条目所属 claudeCode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "claudeCode",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#claudeCode.noRoutingSupport",
+      "key": "claudeCode.noRoutingSupport",
+      "status": "可保留",
+      "combined_fingerprint": "32443371ea2624db24245d276a315af62afea81f7a0d9a2c36ebd568567fe98e",
+      "content_fingerprints": {
+        "en": "e3861a79a1c73f9b298b202c1b9f23b92ae875d60999f653c50e2d740fbd4924",
+        "ja": "0f055ace580078b948bc1efe985fd4aa5ea23f9c3de4e46b0d023f78e0d36000",
+        "ko": "8550dc9fc2812c3d2f506be00833d83f486f29b6123606c503055e9e56a5b65f",
+        "tr": "aca452b64368c86b784df9f25b634e7b0265b99a6b645574ccb465e3c3be4546",
+        "zh": "a6ab4d187499a4573ae24fb0e288ef11e59cada296da679aac39fb38390a6eb6",
+        "zh-TW": "93b75872ea94a9870de78237c7da9ae46172a09ec1466df1eca74203525129df"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.435039+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“不支持路由”与韩文“라우팅 지원 없음”在本条目所属 claudeCode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "claudeCode",
+      "round": 1
+    }
+  ]
+}

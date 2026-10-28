@@ -1,0 +1,22 @@
+{
+  "batch_id": "hardcoded:0184:src-hooks-useSettings.ts",
+  "kind": "hardcoded",
+  "group": "src/hooks/useSettings.ts",
+  "ordinal": 1,
+  "record_count": 13,
+  "record_ids": [
+    "hardcoded:src/hooks/useSettings.ts:syncClaudePluginIfChanged:b347c5e93e39dd6b:001",
+    "hardcoded:src/hooks/useSettings.ts:syncClaudePluginIfChanged:3b74124f9ad6726a:001",
+    "hardcoded:src/hooks/useSettings.ts:autoSaveSettings:e2dc6d811257c426:001",
+    "hardcoded:src/hooks/useSettings.ts:autoSaveSettings:29f91dd4885383a5:001",
+    "hardcoded:src/hooks/useSettings.ts:autoSaveSettings:15072303125dc784:001",
+    "hardcoded:src/hooks/useSettings.ts:autoSaveSettings:ab269b45de779b0f:001",
+    "hardcoded:src/hooks/useSettings.ts:autoSaveSettings:39b948cd4589a8e2:001",
+    "hardcoded:src/hooks/useSettings.ts:saveSettings:e2dc6d811257c426:001",
+    "hardcoded:src/hooks/useSettings.ts:saveSettings:29f91dd4885383a5:001",
+    "hardcoded:src/hooks/useSettings.ts:saveSettings:15072303125dc784:001",
+    "hardcoded:src/hooks/useSettings.ts:saveSettings:ab269b45de779b0f:001",
+    "hardcoded:src/hooks/useSettings.ts:saveSettings:318071c12e204ee2:001",
+    "hardcoded:src/hooks/useSettings.ts:saveSettings:a19e3d96d9ac4d78:001"
+  ]
+}

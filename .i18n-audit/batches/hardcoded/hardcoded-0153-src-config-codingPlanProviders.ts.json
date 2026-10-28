@@ -1,0 +1,13 @@
+{
+  "batch_id": "hardcoded:0153:src-config-codingPlanProviders.ts",
+  "kind": "hardcoded",
+  "group": "src/config/codingPlanProviders.ts",
+  "ordinal": 1,
+  "record_count": 4,
+  "record_ids": [
+    "hardcoded:src/config/codingPlanProviders.ts:CODING_PLAN_PROVIDERS:775230d71bc3b333:001",
+    "hardcoded:src/config/codingPlanProviders.ts:CODING_PLAN_PROVIDERS:3db0e7b4fbcf5a89:001",
+    "hardcoded:src/config/codingPlanProviders.ts:CODING_PLAN_PROVIDERS:b1d2aaa46c82135e:001",
+    "hardcoded:src/config/codingPlanProviders.ts:CODING_PLAN_PROVIDERS:63c6e0bb0efb7b2f:001"
+  ]
+}

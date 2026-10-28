@@ -1,0 +1,34 @@
+{
+  "batch_id": "translation:native-tray:tray:002",
+  "kind": "translation",
+  "source_kind": "native-tray",
+  "namespace": "tray",
+  "ordinal": 2,
+  "record_count": 11,
+  "record_ids": [
+    "rust:src-tauri/src/tray.rs#tier_gemini_flash_lite",
+    "rust:src-tauri/src/tray.rs#tier_gemini_pro",
+    "rust:src-tauri/src/tray.rs#tier_left",
+    "rust:src-tauri/src/tray.rs#tier_monthly",
+    "rust:src-tauri/src/tray.rs#tier_premium",
+    "rust:src-tauri/src/tray.rs#tier_thirty_day",
+    "rust:src-tauri/src/tray.rs#tier_used",
+    "rust:src-tauri/src/tray.rs#tier_used_up",
+    "rust:src-tauri/src/tray.rs#tier_weekly",
+    "rust:src-tauri/src/tray.rs#tooltip_problem",
+    "rust:src-tauri/src/tray.rs#used_amount"
+  ],
+  "keys": [
+    "tier_gemini_flash_lite",
+    "tier_gemini_pro",
+    "tier_left",
+    "tier_monthly",
+    "tier_premium",
+    "tier_thirty_day",
+    "tier_used",
+    "tier_used_up",
+    "tier_weekly",
+    "tooltip_problem",
+    "used_amount"
+  ]
+}

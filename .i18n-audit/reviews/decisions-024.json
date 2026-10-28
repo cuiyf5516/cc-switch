@@ -1,0 +1,9 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:proxyConfig:001","default_status":"可保留","overrides":[
+{"key":"proxyConfig.circuitBreaker","status":"建议改","reason":"原文为“熔断器配置”，韩文遗漏「설정」，且与相邻键「서킷 브레이커 설정」不一致。","suggestion":"서킷 브레이커 설정","ui_context":"路由熔断器配置标题"},
+{"key":"proxyConfig.minRequests","status":"建议改","reason":"原文是“最小请求数”，韩文「최소 요청」遗漏数量含义。","suggestion":"최소 요청 수","ui_context":"路由熔断器字段"}
+]},
+{"batch_id":"translation:json-locale:routingSettings:001","default_status":"可保留","overrides":[
+{"key":"routingSettings.totalRequests","status":"建议改","reason":"原文是“总请求数”，韩文「요청 수」遗漏“总计”，与同项目其他统计标签不一致。","suggestion":"총 요청 수","ui_context":"路由服务统计"}
+]}
+]}

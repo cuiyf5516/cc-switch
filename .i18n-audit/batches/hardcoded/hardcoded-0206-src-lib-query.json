@@ -1,0 +1,24 @@
+{
+  "batch_id": "hardcoded:0206:src-lib-query",
+  "kind": "hardcoded",
+  "group": "src/lib/query",
+  "ordinal": 1,
+  "record_count": 15,
+  "record_ids": [
+    "hardcoded:src/lib/query/mutations.ts:useAddProviderMutation:5a99841bd8136920:001",
+    "hardcoded:src/lib/query/mutations.ts:useAddProviderMutation:da200209ed0ab32d:001",
+    "hardcoded:src/lib/query/mutations.ts:useAddProviderMutation:e23d98e6f193147b:001",
+    "hardcoded:src/lib/query/mutations.ts:useAddProviderMutation:460bfa91b1bcb044:001",
+    "hardcoded:src/lib/query/mutations.ts:useDeleteProviderMutation:8e358db9e71e8638:001",
+    "hardcoded:src/lib/query/mutations.ts:useSwitchProviderMutation:421e43fc95f3b2be:001",
+    "hardcoded:src/lib/query/profiles.ts:updateTrayMenuSafely:4eceb08674acd486:001",
+    "dynamic-i18n:src/lib/query/proxy.ts:useSetProxyStackMember:2e6460788eddf87d:001",
+    "dynamic-i18n:src/lib/query/proxy.ts:useSetProxyStackMember:7f3542671de62631:001",
+    "dynamic-i18n:src/lib/query/proxy.ts:useAdoptCodexStackCatalog:7f3542671de62631:001",
+    "hardcoded:src/lib/query/queries.ts:providersQueryOptions:fe182a8fb5001522:001",
+    "hardcoded:src/lib/query/queries.ts:providersQueryOptions:71985b33739db838:001",
+    "hardcoded:src/lib/query/queries.ts:isTransientUsageError:126fbf59cf043830:001",
+    "hardcoded:src/lib/query/queries.ts:isTransientUsageError:4f4b36f4357d5ac1:001",
+    "hardcoded:src/lib/query/queries.ts:isTransientUsageError:1fd8511c4d2c6733:001"
+  ]
+}

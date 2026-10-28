@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0105:src-components-ProviderIcon.tsx",
+  "kind": "hardcoded",
+  "group": "src/components/ProviderIcon.tsx",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 1,
+  "records": [
+    {
+      "id": "hardcoded:src/components/ProviderIcon.tsx:fallbackFontSize:0295b0c36d914862:001",
+      "status": "待核实",
+      "content_fingerprint": "0295b0c36d91486239274f3ce34d8a756ced28b7bbd728d6ac60b506da3fcd0d",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/components/ProviderIcon.tsx",
+      "line": 121,
+      "function": "fallbackFontSize",
+      "expression": "`${Math.max(size * 0.5, 12)}px`",
+      "reason": "该英文字符串“`${Math.max(size * 0.5, 12)}px`”可能作为提示或错误展示，但静态上下文不足以确认展示链路。",
+      "suggested_action": "追踪调用方并确认是否需要本地化。",
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0105:src-components-ProviderIcon.tsx",
+      "round": 1
+    }
+  ]
+}

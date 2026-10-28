@@ -1,0 +1,24 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:quota:001","default_status":"可保留","overrides":[
+{"key":"quota.resetCredits.label","status":"建议改","reason":"同一组 resetCredits 文案其余条目统一使用「초기화」，此处却使用「재설정」，在重置次数弹层中造成术语不一致。","suggestion":"초기화","ui_context":"额度重置次数标签"},
+{"key":"quota.resetCredits.title","status":"建议改","reason":"「재설정」与该组其他文案的「초기화」不一致，且「저장된 한도 초기화」更准确表达“存下的限额重置”。","suggestion":"저장된 한도 초기화","ui_context":"额度重置次数弹层标题"}
+]},
+{"batch_id":"translation:json-locale:subscription:001","default_status":"可保留","overrides":[
+{"key":"subscription.expiredHint","status":"建议改","reason":"「로그인을 새로 고치세요」在韩语中不自然，登录通常说「갱신하다」或「다시 로그인하다」；命令用途是刷新登录凭据。","suggestion":"{{tool}} 명령을 실행해 로그인을 갱신하세요.","ui_context":"订阅额度失效提示"}
+]},
+{"batch_id":"translation:json-locale:subscription:002","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:streamCheck:001","default_status":"可保留","overrides":[
+{"key":"streamCheck.unreachableHint","status":"建议改","reason":"「연결을 설정할 수 없습니다」会被理解为“无法配置连接”，原文是无法建立连接。","suggestion":"연결할 수 없습니다(DNS/연결/TLS/시간 초과). base_url과 네트워크를 확인하세요.","ui_context":"端点连通性测试失败提示"}
+]},
+{"batch_id":"translation:json-locale:whatsNew:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:presetSelector:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:managedAuth:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:providerIcon:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:firstRunNotice:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:dbUpgrade:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:endpointTest:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:env:001","default_status":"可保留","overrides":[
+{"key":"env.source.systemRegistry","status":"建议改","reason":"「환경변수」与同命名空间及其他界面的标准写法「환경 변수」不一致。","suggestion":"시스템 환경 변수(레지스트리)","ui_context":"环境变量来源枚举"},
+{"key":"env.source.userRegistry","status":"建议改","reason":"「환경변수」与同命名空间及其他界面的标准写法「환경 변수」不一致。","suggestion":"사용자 환경 변수(레지스트리)","ui_context":"环境变量来源枚举"}
+]}
+]}

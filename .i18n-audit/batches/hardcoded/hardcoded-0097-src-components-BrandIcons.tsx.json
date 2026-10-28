@@ -1,0 +1,18 @@
+{
+  "batch_id": "hardcoded:0097:src-components-BrandIcons.tsx",
+  "kind": "hardcoded",
+  "group": "src/components/BrandIcons.tsx",
+  "ordinal": 1,
+  "record_count": 9,
+  "record_ids": [
+    "hardcoded:src/components/BrandIcons.tsx:ClaudeIcon:0615570f9ea13694:001",
+    "hardcoded:src/components/BrandIcons.tsx:CodexIcon:616efbe96852d8c9:001",
+    "hardcoded:src/components/BrandIcons.tsx:GeminiIcon:f6ece80b88d6dfbd:001",
+    "hardcoded:src/components/BrandIcons.tsx:OpenClawIcon:a7b90ee8facf0aed:001",
+    "hardcoded:src/components/BrandIcons.tsx:SkillsIcon:806eaccf5e5a9495:001",
+    "hardcoded:src/components/BrandIcons.tsx:SkillsIcon:1ebe414b1ee28d02:001",
+    "hardcoded:src/components/BrandIcons.tsx:SkillsIcon:ee9c5cd382b7cad3:001",
+    "hardcoded:src/components/BrandIcons.tsx:McpIcon:3237dd442887e2be:001",
+    "hardcoded:src/components/BrandIcons.tsx:McpIcon:bbf548dc0aa2fb6d:001"
+  ]
+}

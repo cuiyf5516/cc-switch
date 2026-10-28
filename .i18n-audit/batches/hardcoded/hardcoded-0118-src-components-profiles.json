@@ -1,0 +1,12 @@
+{
+  "batch_id": "hardcoded:0118:src-components-profiles",
+  "kind": "hardcoded",
+  "group": "src/components/profiles",
+  "ordinal": 1,
+  "record_count": 3,
+  "record_ids": [
+    "dynamic-i18n:src/components/profiles/ProfileSwitcher.tsx:ProfileSwitcher:bf07f0e194763ea6:001",
+    "dynamic-i18n:src/components/profiles/ProfileSwitcher.tsx:ProfileSwitcher:bf07f0e194763ea6:002",
+    "dynamic-i18n:src/components/profiles/ProfileSwitcher.tsx:ProfileSwitcher:1ea05b4ee91472f2:001"
+  ]
+}

@@ -1,0 +1,19 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:providerForm:001","default_status":"可保留","overrides":[
+{"key":"providerForm.anthropicModel","status":"建议改","reason":"同项目其他位置用「주 모델」表示 primary model，「주요 모델」会与普通“主要模型”混淆。","suggestion":"주 모델","ui_context":"Anthropic 主模型字段"}
+]},
+{"batch_id":"translation:json-locale:providerForm:002","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:providerForm:003","default_status":"可保留","overrides":[
+{"key":"providerForm.haikuModelPlaceholder","status":"可保留","semantic_trace":"该输入框在中文、英文、韩文中均有意留空以展示字段默认提示，并非遗漏韩译文。","ui_context":"Haiku 模型输入框占位符"},
+{"key":"providerForm.mainModel","status":"建议改","reason":"「主模型」在项目其他位置统一为「주 모델」；「주요 모델」语义偏离 primary model。","suggestion":"주 모델(선택 사항)","ui_context":"供应商主模型字段"},
+{"key":"providerForm.modelHelper","status":"建议改","reason":"「선택사항」未按项目统一写法「선택 사항」分写。","suggestion":"선택 사항: 사용할 기본 Claude 모델을 지정하고, 시스템 기본값을 사용하려면 비워 두세요.","ui_context":"模型选择说明"},
+{"key":"providerForm.modelPlaceholder","status":"可保留","semantic_trace":"该输入框在中文、英文、韩文中均有意留空以展示字段默认提示，并非遗漏韩译文。","ui_context":"模型输入框占位符"}
+]},
+{"batch_id":"translation:json-locale:providerForm:004","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:providerForm:005","default_status":"可保留","overrides":[
+{"key":"providerForm.smallModelPlaceholder","status":"可保留","semantic_trace":"该输入框在中文、英文、韩文中均有意留空以展示字段默认提示，并非遗漏韩译文。","ui_context":"快速模型输入框占位符"}
+]},
+{"batch_id":"translation:json-locale:providerForm:006","default_status":"可保留","overrides":[
+{"key":"providerForm.websiteUrlPlaceholder","status":"建议改","reason":"同一项目统一使用「선택 사항」，此处「옵션」造成术语和样式不一致。","suggestion":"https://example.com(선택 사항)","ui_context":"官网 URL 输入框占位符"}
+]}
+]}

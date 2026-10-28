@@ -1,0 +1,14 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:sessionManager:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:sessionManager:002","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:sessionManager:003","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:sessionManager:004","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:sessionManager:005","default_status":"可保留","overrides":[
+{"key":"sessionManager.reader.status.success","status":"建议改","reason":"同组状态均为简短名词「실패/중단됨/실행 중」，「성공함」是动词化完成形，与其他状态徽标风格不一致。","suggestion":"성공","ui_context":"会话步骤状态徽标"}
+]},
+{"batch_id":"translation:json-locale:sessionManager:006","default_status":"可保留","overrides":[
+{"key":"sessionManager.selectSessionLabel","status":"建议改","reason":"该资源用于选择控件的无障碍标签，韩文使用带句号的命令句；标签应简洁描述动作对象。","suggestion":"{{title}} 선택","ui_context":"会话选择控件 aria-label"},
+{"key":"sessionManager.sessionList","status":"建议改","reason":"原文是“会话列表”，韩文只有「세션」，遗漏列表语义，作为标题/标签不够准确。","suggestion":"세션 목록","ui_context":"会话列表标题"}
+]},
+{"batch_id":"translation:json-locale:sessionManager:007","default_status":"可保留","overrides":[]}
+]}

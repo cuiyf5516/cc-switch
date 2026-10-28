@@ -1,0 +1,23 @@
+{
+  "batch_id": "hardcoded:0061:src-tauri-src-proxy",
+  "kind": "hardcoded",
+  "group": "src-tauri/src/proxy",
+  "ordinal": 4,
+  "record_count": 14,
+  "record_ids": [
+    "hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:parse_token_response:3aebecd0ea168cf6:001",
+    "hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:parse_discovery_document:a19550b0a3612c69:001",
+    "hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:validate_xai_endpoint:fb76de080641f085:001",
+    "hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:validate_xai_endpoint:3e1943522517e813:001",
+    "hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:validate_xai_endpoint:96bc95eee44450b9:001",
+    "hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:validate_xai_endpoint:0ee62ae8d052fbd7:001",
+    "hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:read_json_response:9e802efcf135f60e:001",
+    "hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:read_json_response:9e802efcf135f60e:002",
+    "hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:read_json_response:ebd9550e10ef3ca8:001",
+    "hardcoded:src-tauri/src/proxy/response_processor.rs:read_decoded_body:70f876f10acead0a:001",
+    "hardcoded:src-tauri/src/proxy/response_processor.rs:log_usage_internal:151303d6876275a9:001",
+    "hardcoded:src-tauri/src/proxy/response_processor.rs:create_logged_passthrough_stream:70d6ac580a3c62b2:001",
+    "hardcoded:src-tauri/src/proxy/response_processor.rs:create_logged_passthrough_stream:7cea794de606b064:001",
+    "hardcoded:src-tauri/src/proxy/server.rs:start:596e2f65f8dbcea2:001"
+  ]
+}

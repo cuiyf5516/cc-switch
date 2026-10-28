@@ -1,0 +1,30 @@
+{
+  "batch_id": "hardcoded:0055:src-tauri-src-opencode_config.rs",
+  "kind": "hardcoded",
+  "group": "src-tauri/src/opencode_config.rs",
+  "ordinal": 1,
+  "record_count": 21,
+  "record_ids": [
+    "hardcoded:src-tauri/src/opencode_config.rs:provider_fragment:a9049ee09c525ccd:001",
+    "hardcoded:src-tauri/src/opencode_config.rs:provider_fragment:e81a9faceea7eeb8:001",
+    "hardcoded:src-tauri/src/opencode_config.rs:provider_fragment:53f5f74176ce3e0d:001",
+    "hardcoded:src-tauri/src/opencode_config.rs:provider_fragment:59365e45c557ab0f:001",
+    "hardcoded:src-tauri/src/opencode_config.rs:validate_native_provider:ace2c4f995ffc920:001",
+    "hardcoded:src-tauri/src/opencode_config.rs:validate_native_provider:b32a7e3d8454ae9a:001",
+    "hardcoded:src-tauri/src/opencode_config.rs:validate_native_provider:2fb41c44fcdefe04:001",
+    "hardcoded:src-tauri/src/opencode_config.rs:validate_native_provider:c783128f2626915e:001",
+    "hardcoded:src-tauri/src/opencode_config.rs:validate_native_provider:fbb590dee71b1731:001",
+    "hardcoded:src-tauri/src/opencode_config.rs:validate_native_provider:bae08e7abf3ce18e:001",
+    "hardcoded:src-tauri/src/opencode_config.rs:validate_native_provider:8b9f6a1565dd389a:001",
+    "hardcoded:src-tauri/src/opencode_config.rs:validate_native_provider:8be2d3986aa5a82a:001",
+    "hardcoded:src-tauri/src/opencode_config.rs:set_provider_with_format:bdaa19c09cfecc2d:001",
+    "hardcoded:src-tauri/src/opencode_config.rs:set_provider_with_format:30cbd3ab57139615:001",
+    "hardcoded:src-tauri/src/opencode_config.rs:set_provider_with_format:24d0c61f5802811a:001",
+    "hardcoded:src-tauri/src/opencode_config.rs:set_provider_with_format:80a94f4873580686:001",
+    "hardcoded:src-tauri/src/opencode_config.rs:set_provider_with_format:5cf499416b128a84:001",
+    "hardcoded:src-tauri/src/opencode_config.rs:set_provider_with_format:5dd0c340fd6885f2:001",
+    "hardcoded:src-tauri/src/opencode_config.rs:set_provider_with_format:7e5193c17e03c79b:001",
+    "hardcoded:src-tauri/src/opencode_config.rs:set_provider_with_format:2cfadde05db3b6c9:001",
+    "hardcoded:src-tauri/src/opencode_config.rs:set_default_model:eef5d75f1f78908c:001"
+  ]
+}

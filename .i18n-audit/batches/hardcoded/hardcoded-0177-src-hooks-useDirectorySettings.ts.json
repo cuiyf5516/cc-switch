@@ -1,0 +1,15 @@
+{
+  "batch_id": "hardcoded:0177:src-hooks-useDirectorySettings.ts",
+  "kind": "hardcoded",
+  "group": "src/hooks/useDirectorySettings.ts",
+  "ordinal": 1,
+  "record_count": 6,
+  "record_ids": [
+    "hardcoded:src/hooks/useDirectorySettings.ts:computeDefaultAppConfigDir:f4fbad2c3a688709:001",
+    "hardcoded:src/hooks/useDirectorySettings.ts:computeDefaultConfigDir:227687bdd152976b:001",
+    "hardcoded:src/hooks/useDirectorySettings.ts:load:f0fba8d4624347a6:001",
+    "hardcoded:src/hooks/useDirectorySettings.ts:useDirectorySettings:b258a00b5af2665a:001",
+    "hardcoded:src/hooks/useDirectorySettings.ts:browseDirectory:03848181f72d50b2:001",
+    "hardcoded:src/hooks/useDirectorySettings.ts:browseAppConfigDir:977d24870ebc0549:001"
+  ]
+}

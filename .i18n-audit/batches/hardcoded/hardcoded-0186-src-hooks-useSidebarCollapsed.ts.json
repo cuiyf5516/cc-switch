@@ -1,0 +1,13 @@
+{
+  "batch_id": "hardcoded:0186:src-hooks-useSidebarCollapsed.ts",
+  "kind": "hardcoded",
+  "group": "src/hooks/useSidebarCollapsed.ts",
+  "ordinal": 1,
+  "record_count": 4,
+  "record_ids": [
+    "hardcoded:src/hooks/useSidebarCollapsed.ts:TOGGLE_EASING:7e5b5efabcadf337:001",
+    "hardcoded:src/hooks/useSidebarCollapsed.ts:animateToggle:5e55e877e79ae833:001",
+    "hardcoded:src/hooks/useSidebarCollapsed.ts:animateToggle:1f988455b2ef4d24:001",
+    "hardcoded:src/hooks/useSidebarCollapsed.ts:animation:b4bf486120a6db3d:001"
+  ]
+}

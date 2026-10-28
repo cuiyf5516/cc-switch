@@ -1,0 +1,9 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:proxy:004","default_status":"可保留","overrides":[
+{"key":"proxy.takeover.tooltip.inactive","status":"建议改","reason":"韩文只有名词短语，缺少“让请求走本地路由”的动作，作为 tooltip 不完整。","suggestion":"{{appLabel}}의 요청을 로컬 라우팅으로 전달합니다.","ui_context":"本地路由接管状态提示"}
+]},
+{"batch_id":"translation:json-locale:skills:002","default_status":"可保留","overrides":[
+{"key":"skills.installFromZip.skippedItem","status":"建议改","reason":"「{{name}}에서 사용」缺少状态词，且“在名称中”搭配不自然；应明确该目录已被同名技能占用。","suggestion":"{{directory}}(사용 중인 이름: {{name}})","ui_context":"ZIP 安装目录冲突列表"},
+{"key":"skills.installFromZip.successMultiple","status":"建议改","reason":"「{{count}} 스킬」量词和语序不自然，项目其他位置统一为「스킬 N개」。","suggestion":"스킬 {{count}}개를 설치했습니다.","ui_context":"ZIP 多技能安装成功提示"}
+]}
+]}

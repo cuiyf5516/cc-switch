@@ -1,0 +1,10 @@
+{
+  "batch_id": "hardcoded:0210:src-lib-windowActivity.ts",
+  "kind": "hardcoded",
+  "group": "src/lib/windowActivity.ts",
+  "ordinal": 1,
+  "record_count": 1,
+  "record_ids": [
+    "hardcoded:src/lib/windowActivity.ts:initializeWindowActivity:777ef1608e1697f7:001"
+  ]
+}

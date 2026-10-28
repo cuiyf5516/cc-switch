@@ -1,0 +1,31 @@
+{
+  "batch_id": "hardcoded:0140:src-components-universal",
+  "kind": "hardcoded",
+  "group": "src/components/universal",
+  "ordinal": 1,
+  "record_count": 22,
+  "record_ids": [
+    "hardcoded:src/components/universal/UniversalProviderFormModal.tsx:codexBaseUrl:eeb319d869b51907:001",
+    "hardcoded:src/components/universal/UniversalProviderFormModal.tsx:configToml:fb9c4d37398e05bc:001",
+    "hardcoded:src/components/universal/UniversalProviderFormModal.tsx:UniversalProviderFormModal:137b9e5e4e13211c:001",
+    "hardcoded:src/components/universal/UniversalProviderFormModal.tsx:UniversalProviderFormModal:6946d3ffe03d648c:001",
+    "hardcoded:src/components/universal/UniversalProviderFormModal.tsx:UniversalProviderFormModal:246ef8c1130d56f5:001",
+    "hardcoded:src/components/universal/UniversalProviderFormModal.tsx:UniversalProviderFormModal:92add1b35468c360:001",
+    "hardcoded:src/components/universal/UniversalProviderFormModal.tsx:UniversalProviderFormModal:731732835cd76be6:001",
+    "hardcoded:src/components/universal/UniversalProviderFormModal.tsx:UniversalProviderFormModal:8cb50e5cf14a42a3:001",
+    "hardcoded:src/components/universal/UniversalProviderFormModal.tsx:UniversalProviderFormModal:8fd6d2eb5a8d899f:001",
+    "hardcoded:src/components/universal/UniversalProviderFormModal.tsx:UniversalProviderFormModal:8cb50e5cf14a42a3:002",
+    "hardcoded:src/components/universal/UniversalProviderFormModal.tsx:UniversalProviderFormModal:8cb50e5cf14a42a3:003",
+    "hardcoded:src/components/universal/UniversalProviderFormModal.tsx:UniversalProviderFormModal:419255f2bb4c6801:001",
+    "hardcoded:src/components/universal/UniversalProviderFormModal.tsx:UniversalProviderFormModal:6f71800c93bd916e:001",
+    "hardcoded:src/components/universal/UniversalProviderFormModal.tsx:UniversalProviderFormModal:6ef7c9b15ecdd690:001",
+    "hardcoded:src/components/universal/UniversalProviderFormModal.tsx:UniversalProviderFormModal:6d734050d5ff0566:001",
+    "hardcoded:src/components/universal/UniversalProviderPanel.tsx:loadProviders:3b15985ece3cc126:001",
+    "hardcoded:src/components/universal/UniversalProviderPanel.tsx:handleSave:7cf912a2405ced98:001",
+    "hardcoded:src/components/universal/UniversalProviderPanel.tsx:handleSaveAndSync:db44a055ea3c5174:001",
+    "hardcoded:src/components/universal/UniversalProviderPanel.tsx:handleDelete:bf6370c9af5b86cd:001",
+    "hardcoded:src/components/universal/UniversalProviderPanel.tsx:handleSync:9984ead22f02ca65:001",
+    "hardcoded:src/components/universal/UniversalProviderPanel.tsx:duplicated:efdc2dc862a451d8:001",
+    "hardcoded:src/components/universal/UniversalProviderPanel.tsx:handleDuplicate:1df16123daa3a05e:001"
+  ]
+}

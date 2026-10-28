@@ -1,0 +1,10 @@
+{
+  "batch_id": "hardcoded:0181:src-hooks-useMoneyFormat.ts",
+  "kind": "hardcoded",
+  "group": "src/hooks/useMoneyFormat.ts",
+  "ordinal": 1,
+  "record_count": 1,
+  "record_ids": [
+    "hardcoded:src/hooks/useMoneyFormat.ts:useMoneyFormat:59a5fc6fd4cd053a:001"
+  ]
+}

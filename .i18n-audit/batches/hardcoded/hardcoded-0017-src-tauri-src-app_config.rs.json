@@ -1,0 +1,20 @@
+{
+  "batch_id": "hardcoded:0017:src-tauri-src-app_config.rs",
+  "kind": "hardcoded",
+  "group": "src-tauri/src/app_config.rs",
+  "ordinal": 1,
+  "record_count": 11,
+  "record_ids": [
+    "hardcoded:src-tauri/src/app_config.rs:from_str:106c194e215cd0d0:001",
+    "hardcoded:src-tauri/src/app_config.rs:from_str:f5a776ab87ce4278:001",
+    "hardcoded:src-tauri/src/app_config.rs:from_str:31fd2cc9d9e99450:001",
+    "hardcoded:src-tauri/src/app_config.rs:from_str:c25dee0325cd41ca:001",
+    "hardcoded:src-tauri/src/app_config.rs:load:1e19bab29bc6432a:001",
+    "hardcoded:src-tauri/src/app_config.rs:load:97b0560280ed60a5:001",
+    "hardcoded:src-tauri/src/app_config.rs:load:66201917674952d5:001",
+    "hardcoded:src-tauri/src/app_config.rs:load:0042864fa4a59a7d:001",
+    "hardcoded:src-tauri/src/app_config.rs:load:a8f45c9792f0d2cf:001",
+    "hardcoded:src-tauri/src/app_config.rs:load:3c77aa34ee210dbc:001",
+    "hardcoded:src-tauri/src/app_config.rs:load:f3fb81924bf01121:001"
+  ]
+}

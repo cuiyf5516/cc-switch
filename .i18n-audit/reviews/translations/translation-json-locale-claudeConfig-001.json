@@ -1,0 +1,325 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:claudeConfig:001",
+  "kind": "translation",
+  "namespace": "claudeConfig",
+  "reviewed_at": "2026-10-28T13:40:18.216830+00:00",
+  "review_count": 15,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#claudeConfig.addToGlobalSettings",
+      "key": "claudeConfig.addToGlobalSettings",
+      "status": "可保留",
+      "combined_fingerprint": "f67cd709b90679792829a604c9186f787d03b0b4a02a950cedcb882e79035166",
+      "content_fingerprints": {
+        "en": "654977f3ad5704f9835c8c52ae5e83a87643324013666f3f097516af4184c57b",
+        "ja": "8327b5168ae85eb72ef777dd2f3f9296f2a85bec9689f96ce17856b77ae3e1b4",
+        "ko": "871e6717d5e40cda440fba6dbfee40d53363ca99bb1d5fd93249e9ab88a1ca57",
+        "tr": "57668005f9badf929fa52502adae52772b32413f462d6a4bcfce458875c92ac9",
+        "zh": "3ff49e431155dc18d37afcaabe9b967499d396db4de0ea0505af53031bb49801",
+        "zh-TW": "5f7294df268b8f4b68709eeea0a315c7fc20ef03634c96eaebd07a0884d66ee2"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.216830+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“加入全局设置”与韩文“전역 설정에 추가”在本条目所属 claudeConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "claudeConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#claudeConfig.configLabel",
+      "key": "claudeConfig.configLabel",
+      "status": "可保留",
+      "combined_fingerprint": "12763d7d484b00ff9cf0c344fc0a0774ba4ae82e3563d3de2294813fd3f3c39c",
+      "content_fingerprints": {
+        "en": "4273f1a6692b3f43b52b71492ccb343146531107e207b04b05732f83cae7f0fa",
+        "ja": "4273f1a6692b3f43b52b71492ccb343146531107e207b04b05732f83cae7f0fa",
+        "ko": "85286195e9c99f59f82b27e38baf4949e679f5d61731c6fe346138eeb74b9c3d",
+        "tr": "4273f1a6692b3f43b52b71492ccb343146531107e207b04b05732f83cae7f0fa",
+        "zh": "aab270a4472ad3e61273a8c831659a403f1aae9dc8b9527c60976c098e9de8a2",
+        "zh-TW": "8611a8fe88d4a7b1dde5719e9a8092edbf4699a0c0d634ed0056255bb55d64cd"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.216830+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Claude Code 配置 (JSON) *”与韩文“Claude Code 설정 (JSON) *”在本条目所属 claudeConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "claudeConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#claudeConfig.disableArtifact",
+      "key": "claudeConfig.disableArtifact",
+      "status": "可保留",
+      "combined_fingerprint": "cb9ae89b5b5648ad7e9b1b043b87414e7d34136ec6860b974dfd92a99c15ac63",
+      "content_fingerprints": {
+        "en": "7d9e7afeb40acbe09a306ac665d37f8b6957a56b284983725db189607355a37b",
+        "ja": "3efbf8a0985e98353a8175ad2f16baf299b0bcf0a33c159a8484d5bb6d51b871",
+        "ko": "f80c900f1663e314648199ebb780ba735d8d2e6f465ed271c8fab954deb3a270",
+        "tr": "578e8bf708df4e4c920238b2a70e3e48527c9ab7454a74c9fdb89dc7eda5e931",
+        "zh": "5070af5c63b275ee3ba92ea565629dc56566dcf90dec24c022f021f6c231421c",
+        "zh-TW": "9556b373a0b3e0c966dc4bafc0e9dfb8fc1de93a8ccda520659528d9225287c2"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.216830+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“禁用 Artifact 工具”与韩文“Artifact Tool 비활성화”在本条目所属 claudeConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "claudeConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#claudeConfig.disableArtifactHelp",
+      "key": "claudeConfig.disableArtifactHelp",
+      "status": "可保留",
+      "combined_fingerprint": "26ba3585b05b3874ff999b427c03f476419a796ccae6a4a2793f276678877118",
+      "content_fingerprints": {
+        "en": "40f6335e086c283f76caf2e922a4ca49958e89984f887977520e758ccbe1d0da",
+        "ja": "114c56831adbb30c99f4caf97274b32973cc61350edbcf89982ecddca2d468f2",
+        "ko": "9f68139e2ae5937d41c5da19406d9e7156f1d6b9a36e2c0e79b65cf6d25084b4",
+        "tr": "28ab33ab8d04c5f6cfe21f53b07e0e49bd1e8e465a339f766e84a5882ff8fba3",
+        "zh": "cfb441cdccd6055aaebcdb171c0ed725e8b12d42d01a28d4f85e601e4a8b5a40",
+        "zh-TW": "2378d7b85ef27436d26984d3da78d6ac7d6a694374206cab4a35bd5c432bc14b"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.216830+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“不把 Artifact 工具发给模型。部分第三方网关会因它的 schema 对每个请求报 400。随供应商切换。”与韩文“요청에서 Artifact Tool을 제외합니다. 일부 타사 게이트웨이는 이 도구의 스키마를 거부하여 모든 요청에 400 오류를 반환합니다. 공급자를 전환하면 이 설정도 함께 바뀝니다.”在本条目所属 claudeConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "claudeConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#claudeConfig.disableAutoModeServer",
+      "key": "claudeConfig.disableAutoModeServer",
+      "status": "可保留",
+      "combined_fingerprint": "9427e312d7a2d4147c626a67670a9a64c257ba87337c8306b6d9de118f032abc",
+      "content_fingerprints": {
+        "en": "9952a40fca8faf84da786fad17259a1b9ad8c9b28cfc4e9983c44311df6ae20c",
+        "ja": "2a55337256f03132b9b565376738777ae65c3cd2408c07135f6a0543e21ac597",
+        "ko": "eebffe0341ed9be75eaf9d058bdfb11e7a123648f1af881e9cab1495b8b291b9",
+        "tr": "65638de900cb96a8fccd66fc482f9ab79e1dd4058ba0733e241629ccf13d956d",
+        "zh": "cfaa2625445a661817854b58604e73b2d7febeb17af6e700aabc2bb6df76d986",
+        "zh-TW": "40f399d9435ca02f6a202adf8215660e86a259cca2a9baccee14cc9d6a6fd1ee"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.216830+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“关闭 auto mode 服务端检查”与韩文“자동 모드 서버 검사 비활성화”在本条目所属 claudeConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "claudeConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#claudeConfig.disableAutoModeServerHelp",
+      "key": "claudeConfig.disableAutoModeServerHelp",
+      "status": "可保留",
+      "combined_fingerprint": "aa440ef735a7c8eb2acdd63913710a137bc61cae3a212ad6a2be8099014ac16c",
+      "content_fingerprints": {
+        "en": "e376d4069eb6826b22f953e788ddffb0e88b8a31c6a81fe0fcebeefbac76b2a1",
+        "ja": "96063988c9ec5dc91afc37feec802c4e746a1f2b0b6999900b79ede29a092008",
+        "ko": "b9b63acd5509703e4e6fd32eaf8e42727acf712d5cd70ff0c7eac90ec36d5f35",
+        "tr": "4f29b57dcf2ce158a0861a1f006ddd2ab2968dd9a528246fcf814f36c81b3e0c",
+        "zh": "109bcf15fb3cd4975f58785c1ef1f67232954b377656ffa6ece613f5297a357b",
+        "zh-TW": "e01a1f9e8b271b02277181ff187a7b68664387bfc4edb56073c356a2e7424304"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.216830+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“网关不支持服务端检查，auto mode 每个会话会先停下提示一次「不符合条件」，回车后改用本机检查。勾选后直接用本机检查，不再提示。官方端点不要勾选。”与韩文“게이트웨이는 서버 측 검사를 실행할 수 없어 자동 모드가 세션마다 한 번씩 ‘사용 자격 없음’ 알림과 함께 일시 중지됩니다. Enter를 누르면 로컬 검사로 전환됩니다. 이 옵션을 켜면 알림 없이 바로 로컬 검사를 사용합니다. 공식 엔드포인트에서는 꺼 두세요.”在本条目所属 claudeConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "claudeConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#claudeConfig.disableAutoUpgrade",
+      "key": "claudeConfig.disableAutoUpgrade",
+      "status": "可保留",
+      "combined_fingerprint": "cb55219cac0832028b7580686f47e1b60baac7601da08eb78c3da1171ef7edaa",
+      "content_fingerprints": {
+        "en": "01e5ca2411ce30ac609f3bb9296eacf1206f971cd7aab2709e5ed659810c6cec",
+        "ja": "c4cb755da2e9f3ad143e7dd06bbbea6061fdcb298c88fca1dbacc3d1d6068974",
+        "ko": "950889cc5d60de15a64c893f0d637b9c970ddcb0ce575f8d240d66ae2286daa5",
+        "tr": "3739b5140d6617fe67dd6659e524618d6e8925df356f23e15de918b12f54436e",
+        "zh": "14dee347ce843c35171c5f5da88d6fda73705df798f66dce7931a46dbe81e012",
+        "zh-TW": "6227d73fde3ab2e821d656aefe49db0156f11a2f50a60792f46fbc19e1bd80e7"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.216830+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“禁用自动升级”与韩文“자동 업그레이드 비활성화”在本条目所属 claudeConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "claudeConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#claudeConfig.disableAutoUpgradeHelp",
+      "key": "claudeConfig.disableAutoUpgradeHelp",
+      "status": "可保留",
+      "combined_fingerprint": "c3a4fece423392e89d027da029cacada00e39926016ff81c66871791bfb8809c",
+      "content_fingerprints": {
+        "en": "14eca40da177a99f229db31e8e6fd89748ab4e6e9a9e4a943c21929b00739b31",
+        "ja": "512a1a0d391e063a565815f6366f6626700008fe7c74baf6b9351945a2e8e5ec",
+        "ko": "877319a99d9afafee3662684f5947a1e43fa81edb976bb1974d06ff7c34daf5f",
+        "tr": "92626fe4b2574b02cc75f892bef75f09f0c3fa7b89453b436173b3242e954dd5",
+        "zh": "a135e2e697f67cc11fbb4dfce225f24c0d54c4d5244e107959e040c485b82b31",
+        "zh-TW": "e6d0982f1208bae4e9175626d62a8697ee8d65237774e8dd7c1f6ccf604fb3b0"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.216830+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Claude Code 保持当前版本，不再自动更新，需要时手动运行 claude update。全局设置。”与韩文“자동 업데이트를 끄고 Claude Code를 현재 버전으로 유지합니다. 필요할 때 claude update를 직접 실행하세요. 전역 설정입니다.”在本条目所属 claudeConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "claudeConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#claudeConfig.enableToolSearch",
+      "key": "claudeConfig.enableToolSearch",
+      "status": "可保留",
+      "combined_fingerprint": "3a82224c58e8667762e7fad7abce76adcbcf70f00662fe3fe043d784fddf8006",
+      "content_fingerprints": {
+        "en": "1a235b8f61f7846adfc85b8913aec6f030ef6cf1f2be93dc92b9f81b88c2b426",
+        "ja": "2fb4ca19dbdc31655be4294ab48fc4c970129b39fd69c9fe6632d88066ba6877",
+        "ko": "89aaa40e41d57d5d014b98336dcc04dcb5f7ff9e6c38aea84c6339b23ab0c1b8",
+        "tr": "9754ab06bf65e892747fa8140bceac09b0e6080ea58297900cbeba2a9df6f7ac",
+        "zh": "539ab8cb598a70c7c14ca4b8e27c80ce9691f6aab9654c3c751597c58a029f25",
+        "zh-TW": "f6da4da0158d938a0d6ff23a8280d520633549e4831b1efd403b1b3852e70520"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.216830+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“启用 Tool Search”与韩文“Tool Search 활성화”在本条目所属 claudeConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "claudeConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#claudeConfig.enableToolSearchHelp",
+      "key": "claudeConfig.enableToolSearchHelp",
+      "status": "可保留",
+      "combined_fingerprint": "159b7c9792ee91c1124c5f65b80617ae6da8ba277b6c4c329bb3010c25f7fd15",
+      "content_fingerprints": {
+        "en": "555f2aba32872d71a885bfc15c1893af8e0b07932131b4a75eb12c4cfe4c934d",
+        "ja": "b3a3d0161af83c356bb8de63058498e60eef3ac11f4811626edbe202a5deb42e",
+        "ko": "172ebdf65f575fed271399b7f41adc04bb88cc59220a14b55228f17af2957a3f",
+        "tr": "3368132c9bbc7f3a8feaafd3d6287844f9a840e435b6981bbed9e4c9a9f77037",
+        "zh": "58fcbd0725edc5d44f24ac858078e0caf1e6b84a90ff66877c3ca3a77524c467",
+        "zh-TW": "368c6dda061699c78b625cf55b30917d47649ac429ed72d011826b91c177a623"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.216830+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“MCP 工具多时按需加载工具定义，节省上下文。第三方地址默认关闭，上游支持 tool_reference 才能开。随供应商切换。”与韩文“컨텍스트 사용량을 줄이기 위해 필요할 때 MCP 도구 정의를 불러옵니다. 타사 엔드포인트에서는 기본으로 꺼져 있습니다. 업스트림이 tool_reference를 지원할 때만 켜세요. 공급자를 전환하면 이 설정도 함께 바뀝니다.”在本条目所属 claudeConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "claudeConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#claudeConfig.fullSettingsHint",
+      "key": "claudeConfig.fullSettingsHint",
+      "status": "可保留",
+      "combined_fingerprint": "044dcca89bf01f2e91a1311b8e2e71cd38bbcc1b83405c0195f129c5c3d637ad",
+      "content_fingerprints": {
+        "en": "ce7affc5cec7e989ebac24b8115b79912c47d81818df79a6ec0b8d0f8e5c0f60",
+        "ja": "da29bf93e393bbda3aa1985cac1b31084f93a8e8e801a942c3a04404faad0c53",
+        "ko": "ba7bb15f59b66d1654ba7b0594d6e7a0f3e993329dc4490eebffc77cc0befa4c",
+        "tr": "ce9f2aee35c62651c5978ca945346272932953398b97c1e0226f62e12b860566",
+        "zh": "3fed7777de5d7d8d7e15bec4c17846a6357b2cb370a089f76cf4add91e9be930",
+        "zh-TW": "3dce035ceaef44649c943b7e39f95ae02909165bfff29f5ea2a8ca7b9867179d"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.216830+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“完整的 Claude Code settings.json 配置内容”与韩文“Claude Code settings.json 파일의 전체 설정 내용”在本条目所属 claudeConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "claudeConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#claudeConfig.hideAttribution",
+      "key": "claudeConfig.hideAttribution",
+      "status": "可保留",
+      "combined_fingerprint": "061b8620150f12aec4eddcaf65f352f59c6bdbbe36d3a8ef211c35d1e5a30abe",
+      "content_fingerprints": {
+        "en": "24736f897b882a0a67e835382e360d41fb7b44d81638fc34aae9d56cf499deaf",
+        "ja": "a2ee4d399e6d1247f6f115de2dd502d384a7f7ba908c0b125b4031f8f39d55c2",
+        "ko": "0e3e9ba7bfa16f764d41b3a47b86548a63a72ab7185fe26b561bc9db959d899c",
+        "tr": "7a9138f5ab22bdff13c1b5689d03aa47ce037a9484e2c1f81f5a289511b701db",
+        "zh": "428393fab533d5f05ffe104d5651bef786e2ca14a1afe915ad0246a39d3e0987",
+        "zh-TW": "10eca184c830b93618190de43c65ab2e708b9b5e7a75781ee06f6d6035405bff"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.216830+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“隐藏 AI 署名”与韩文“AI 기여 표시 숨기기”在本条目所属 claudeConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "claudeConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#claudeConfig.hideAttributionHelp",
+      "key": "claudeConfig.hideAttributionHelp",
+      "status": "可保留",
+      "combined_fingerprint": "4f7c90f37634e1d44c4a559273363d565d04ac51339f020bb6d070aef602f663",
+      "content_fingerprints": {
+        "en": "8041a21cca0b74817145d7273041b0fd6d17ff8e04c3b771874aec7ca16120f8",
+        "ja": "0b749ea8f143a05cfdee3410f53a94d7d29d18dd1d1fcb2ca917d54b43603a09",
+        "ko": "c4053af7a37053436a428d6961990812617548781810fe26571cf730e9de44c9",
+        "tr": "d13913db55caeefc3e56dfff360feb361b5249f26bca31e0b09354c06f566dd6",
+        "zh": "6e65b379587973defad96cc32a560265e213158ee662fd30a7b07ffa54b55efd",
+        "zh-TW": "2504804adffe19ff4b10eba9c92485edf70da9faad6b17ab5fc89214902a6237"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.216830+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Claude Code 生成的提交和 PR 不再带 Co-Authored-By 署名和会话链接。全局设置，对所有供应商生效。”与韩文“Claude Code가 생성한 커밋과 PR에서 Co-Authored-By 표시와 세션 링크를 제외합니다. 모든 공급자에 적용되는 전역 설정입니다.”在本条目所属 claudeConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "claudeConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#claudeConfig.inactiveFieldsHint",
+      "key": "claudeConfig.inactiveFieldsHint",
+      "status": "可保留",
+      "combined_fingerprint": "3e000343a67044d45dab8a75d5834209fd515d20f6039f0a6bb3139395873d60",
+      "content_fingerprints": {
+        "en": "694a2644f31b852ba9405279234bf3d1f515ba19407f71e990246216a052d60f",
+        "ja": "02748d2c62806f7ed529de4f45af1ea45c52f6b23a80db967abe92a883514d9a",
+        "ko": "b86dbd9b7849c90da3bcbfe00ac648ff297efd7dbd178a0ef59ed3e6bc674cc0",
+        "tr": "8b9818623ef9c5a9040b73b203f7b6252bc63c67d74110363e82f3952c78843a",
+        "zh": "323f25563cf9b34cac349934a90c0b40d253499d790ea00b4d5678ff6a9a1940",
+        "zh-TW": "5e398e1e06d173840f617f2521829151a3a5b3a28f3119e0cd04ce394f30e354"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.216830+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“这些是旧版存进卡里的设置，现在切换不会写出去。点一下加入上方，保存后对所有供应商生效。”与韩文“이전 버전에서 이 공급자에 저장한 설정으로, 이제 공급자를 전환해도 적용되지 않습니다. 항목을 선택하면 위의 전역 설정에 추가됩니다. 저장한 후에는 모든 공급자에 적용됩니다.”在本条目所属 claudeConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "claudeConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#claudeConfig.keyFieldsHint",
+      "key": "claudeConfig.keyFieldsHint",
+      "status": "可保留",
+      "combined_fingerprint": "068146aa46bf535ecd3ec6e54a6497b4908b1b7ad2860cd8a7e3e40a787fcd46",
+      "content_fingerprints": {
+        "en": "6497e188ae9277f6c7890847e11ee0dd8dc57fc1e4d243eb650a639884b70007",
+        "ja": "02f86e72c0cc7cc79ad480441c7a863bc782b3e956264005a55b3e30a5f77b58",
+        "ko": "3fc670ff8d72795bb3044da54245cf428b6476f3e72cc649970fad05d80f4faa",
+        "tr": "269023d1bdf9297465ef09c50c83bdc836c488ee26d84d3fb95f2990dbf4a11b",
+        "zh": "fb8b9d0dbf38a51faf7cf40813ecad4988288a635d1b6bccbf0ded2739def8a5",
+        "zh-TW": "5e313cf8b4581b066f48db6619eb4316bee20a0ae8bd5c60835db916e83bf218"
+      },
+      "reviewed_at": "2026-10-28T13:40:18.216830+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“地址、Key、模型、上下文窗口和兼容开关随供应商切换；其余字段是 Claude Code 全局设置，保存后对所有供应商生效。”与韩文“엔드포인트, API 키, 모델, 컨텍스트 창 및 호환성 옵션은 공급자를 전환하면 함께 바뀝니다. 나머지 필드는 Claude Code 전역 설정이며 저장하면 모든 공급자에 적용됩니다.”在本条目所属 claudeConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "claudeConfig",
+      "round": 1
+    }
+  ]
+}

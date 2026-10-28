@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:streamCheck:001",
+  "kind": "translation",
+  "namespace": "streamCheck",
+  "reviewed_at": "2026-10-28T14:11:53.918333+00:00",
+  "review_count": 5,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#streamCheck.error",
+      "key": "streamCheck.error",
+      "status": "建议改",
+      "combined_fingerprint": "3984ae48efe7425b8d1f2671e2436398495dad66b713821e3c1e306ac7bc6f71",
+      "content_fingerprints": {
+        "en": "d78ec27210bfea877f65ed6d34043d5e10695decbdd5c109059da5bdd2db1a92",
+        "ja": "ac77ad427fd8261b63180d869cd5885648cd79eb08e7a97908cee5cfc07d0155",
+        "ko": "45052d3aea34777180b9023bceed955b1b8ab22ee7a2c7e697e6cf7befd03f18",
+        "tr": "a91b092d65a250325e3bbe73f2f0a906e91cab1b4a6be3a47486033813481c8c",
+        "zh": "063ac3df96703ac677ac06a24571ab602adcc9c82742f45b211a36867a690980",
+        "zh-TW": "3264588a10e4b4b4ccf306c9b4fe287cf3f802e2bbae98e7ffba6f8abc7ab5a5"
+      },
+      "reviewed_at": "2026-10-28T14:11:53.918333+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{{providerName}} 检查出错: {{error}}”与韩文“{{providerName}} 확인 오류: {{error}}”在本条目所属 streamCheck UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": "「확인 오류」容易被理解为“确认时出错”，原文是连通性检查本身出错。",
+      "suggestion": "{{providerName}} 검사 오류: {{error}}",
+      "ui_context": "端点连通性检查错误",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#streamCheck.reachable",
+      "key": "streamCheck.reachable",
+      "status": "可保留",
+      "combined_fingerprint": "badae93531e28e02db22d6b49cd2d16738e680c7e49ac5fdd6338fe4720f2bf7",
+      "content_fingerprints": {
+        "en": "b3ea92ec49cf99ea936374c2b9f4528459a4a42cf9ebd112c493bc8716538c5d",
+        "ja": "dd9af3215e27df88ef8c94739680915339bb0b03f174b47e32df36baaa943f7b",
+        "ko": "58eb05e2ea41bc7c218e652d80b8e947ef7aa81a7a0bb3e518f0ea048413e528",
+        "tr": "94be390ecf0cabcffbfec0e5b534d68091c1498862d72909581f3468d2634a94",
+        "zh": "3406db7f39415a1f515600763216a668d4bb15d20d288e71eb0eb2a53580e083",
+        "zh-TW": "51fd4963c6d092b77912203a0faa46e13bda5598d658fd18941e50ae2932f383"
+      },
+      "reviewed_at": "2026-10-28T14:11:53.918333+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{{providerName}} 连通正常 ({{responseTimeMs}}ms)”与韩文“{{providerName}}에 연결할 수 있습니다({{responseTimeMs}}ms).”在本条目所属 streamCheck UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "streamCheck",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#streamCheck.reachableSlow",
+      "key": "streamCheck.reachableSlow",
+      "status": "可保留",
+      "combined_fingerprint": "d8857ccbf55db138e4c81098eb6699b0c5f72a2c014b34f721b4e33bb4687127",
+      "content_fingerprints": {
+        "en": "4763f075842796e611c4cf92ded58b659380d054d7bd61aee0b78259701aa664",
+        "ja": "9d8487b761e31faaea3813630c64bd3633b05672ddab951b3b14e81cdd0b2636",
+        "ko": "831696b443a61332f50815da93b50d7be1a75ef212a4a2d12fd68ea8678ac143",
+        "tr": "df013d8884d1e7a939193b444822562237424f49358d1ab6a8f561f84c857be7",
+        "zh": "efc4145fe23d5e339fb7fe684f5c68144818c61719c31de4a5fa9dc388e7c68f",
+        "zh-TW": "50c08bc2b4e76c1236a0941864b91b00ff4efce14edd99f0bb1d1662314cb965"
+      },
+      "reviewed_at": "2026-10-28T14:11:53.918333+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{{providerName}} 连通但较慢 ({{responseTimeMs}}ms)”与韩文“{{providerName}}에 연결할 수 있지만 응답이 느립니다({{responseTimeMs}}ms).”在本条目所属 streamCheck UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "streamCheck",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#streamCheck.unreachable",
+      "key": "streamCheck.unreachable",
+      "status": "可保留",
+      "combined_fingerprint": "887a4681dbdfba6ecc2afb29e81316258589729a4d1f918fce4425902b4d2c44",
+      "content_fingerprints": {
+        "en": "48224fdf84c54d02bcd797d4b6abdb1e60905b321dffd3f7bae10df7abe65bda",
+        "ja": "5ac197fa118c8f63656389ed97709aa8240e5c870e1715cf042758fa57f50720",
+        "ko": "2f151279872fee6423b9718a38e1ce32c7db33f4664792440ac9be0f9095b299",
+        "tr": "d9ea14321371e970c01bce9cc775a003a4cb158aed9aa61e39d2437b0aff6ce6",
+        "zh": "a60aa00c60777bb3a9e73f349adbfff040cb6b8b26a03b3d5d866d788e94f053",
+        "zh-TW": "c30b6dcb49ed72839883014ad6445e6000148de83ddc7de68076716db6fa98e5"
+      },
+      "reviewed_at": "2026-10-28T14:11:53.918333+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{{providerName}} 无法连通: {{message}}”与韩文“{{providerName}}에 연결할 수 없음: {{message}}”在本条目所属 streamCheck UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "streamCheck",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#streamCheck.unreachableHint",
+      "key": "streamCheck.unreachableHint",
+      "status": "建议改",
+      "combined_fingerprint": "519283f7059a06ca259cf6101d45389feab1099c679a189481ad4ff7b70551d1",
+      "content_fingerprints": {
+        "en": "97f8e8da2f86f66867a5ead9ed1d7c95f7301023ab0cab8dc90090221ba4d594",
+        "ja": "8eed540a8f700af03169bb182023336adca87e458cd71c620788e2253627a93d",
+        "ko": "be9acf0dfc48f934606e302fea09234c0ecb25900ed9560a88be0f690a051b3b",
+        "tr": "34067e21a0f71078fb9d08ba363a50839004ddaa342e1f68f60cfec11a31b38e",
+        "zh": "ee9844544c49f0e766562b10b6c6141f01eb2a0b1f55808b52164427b110f552",
+        "zh-TW": "35f41dfdf8f92bb083ac88e6e518c9c5c49e0a9c5999b6d41f43ab556df2ed13"
+      },
+      "reviewed_at": "2026-10-28T14:11:53.918333+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“无法建立连接（DNS / 连接 / TLS / 超时）。请检查 base_url 与网络。”与韩文“연결을 설정할 수 없습니다(DNS/연결/TLS/시간 초과). base_url과 네트워크를 확인하세요.”在本条目所属 streamCheck UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": "「연결을 설정할 수 없습니다」会被理解为“无法配置连接”，原文是无法建立连接。",
+      "suggestion": "연결할 수 없습니다(DNS/연결/TLS/시간 초과). base_url과 네트워크를 확인하세요.",
+      "ui_context": "端点连通性测试失败提示",
+      "round": 1
+    }
+  ]
+}

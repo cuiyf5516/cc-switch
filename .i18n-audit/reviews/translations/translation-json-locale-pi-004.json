@@ -1,0 +1,304 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:pi:004",
+  "kind": "translation",
+  "namespace": "pi",
+  "reviewed_at": "2026-10-28T13:58:11.784907+00:00",
+  "review_count": 14,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#pi.prompts.templateSlugExists",
+      "key": "pi.prompts.templateSlugExists",
+      "status": "可保留",
+      "combined_fingerprint": "be98f0a7878c825e43040c71baa0f64bcfb66f508c224d0be94f80e4c0b2bdc9",
+      "content_fingerprints": {
+        "en": "06efb036a7561d64a8879d79cc986f1d739b89e991b79b12f3096d632400fb05",
+        "ja": "d2d4612353595804c03ce44c2040713f1e68200c832327c664c875ef218d3582",
+        "ko": "cd456073b1da2bab1506f2d13d198003fcf7cc75acc44efae0231cca05f55ab6",
+        "tr": "46ef9752fcb36fdef91381087960965a5bc1431fe14b30aeb2de6ac9b076e057",
+        "zh": "abeec43a86d18cad2b02f9b66c22b77b0b1e9d6f776800f5e7162c76bd10fdae",
+        "zh-TW": "d8fd103c2d1a58d5d037a6b8c79a815761a38365a88fac0115ef433b99c28d43"
+      },
+      "reviewed_at": "2026-10-28T13:58:11.784907+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已经有 /{{slug}} 了，换一个名字”与韩文“이미 등록된 명령: /{{slug}}. 다른 이름을 선택하세요.”在本条目所属 pi UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "pi",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#pi.prompts.templateSlugInvalid",
+      "key": "pi.prompts.templateSlugInvalid",
+      "status": "可保留",
+      "combined_fingerprint": "2776ab8e1bc22eef1231efb331e06d1bc21c786c38285b10047d1fbe7dcf86c8",
+      "content_fingerprints": {
+        "en": "5fb7dda39224352cdb65a6533462900c3d903b278229be42986031af51b15176",
+        "ja": "03629239c9902f11082907676dc710a11f278fe1285f10d01f6518fb16ec799a",
+        "ko": "32b7093c4efe6eaacfe761e16d537f5c214cf9d781d48415b435490ad38793aa",
+        "tr": "535b93026bc33aa8da421090534fa8b2b02170212c0c09898a97db6d3b2ca001",
+        "zh": "b9f1afb6d6d6d7f4aaa6a3c7a546eb1fa96d722f5d7ebbc0fb53716280d7e39c",
+        "zh-TW": "35ea370244755317e6ddc24fb5a2835eb07c4a33eb625c287aa01fc6abdda655"
+      },
+      "reviewed_at": "2026-10-28T13:58:11.784907+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“只能是一个词：字母、数字、- _ .，不能有空格或 / \\ : * ? 等字符”与韩文“영문자, 숫자, - _ .으로 된 한 단어를 사용하세요. 공백이나 / \\ : * ? 등의 문자는 사용할 수 없습니다.”在本条目所属 pi UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "pi",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#pi.prompts.templateSlugRequired",
+      "key": "pi.prompts.templateSlugRequired",
+      "status": "可保留",
+      "combined_fingerprint": "c0c6fbf4f0b645562dd7505dcafaa1658a0605d26a4a2a63b5f97b2cc254cb69",
+      "content_fingerprints": {
+        "en": "521d8ee903f43fe1cb4f82652ecde23ea6c94ce33aa7c55798870be202a15bf1",
+        "ja": "54e3c717ed25a0575be955a3e1e30657c4ea890978379e12bf6bea8262882114",
+        "ko": "9f08f348b1d3e3f8ebc60e56a3136c1a1b144cd2285437ac04299e62b30818a9",
+        "tr": "34b3c517cd751f96e50cef6107db2b42593bcacc075e95ce94372d090eee5cc2",
+        "zh": "f74a3e5678e8520496f224055212d14fd84598c5d5942c19671069652bb7edf6",
+        "zh-TW": "b028f06c2e88727680e8925720567f6c46a01a7b8118a38351d5c27ebacc9b6b"
+      },
+      "reviewed_at": "2026-10-28T13:58:11.784907+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“填写命令名，例如 review”与韩文“명령 이름을 입력하세요 (예: review)”在本条目所属 pi UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "pi",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#pi.prompts.templateSyntax",
+      "key": "pi.prompts.templateSyntax",
+      "status": "可保留",
+      "combined_fingerprint": "4d73c30feee89b737a9d6b607e3cc7d28fd199129fe985d58503f8c0e46da942",
+      "content_fingerprints": {
+        "en": "931ae833eaf9105eb7845ce9e33debe76b6f255c27742782b745f334ab16b466",
+        "ja": "aef50cdb0bf04b62ba86f061849efb566fc8c4916fb5e7724b6f3084f9f7d1a6",
+        "ko": "f096e97c3b9f523e49e6c4b7556a076acbcd96583499d29f314509fc0e6db83b",
+        "tr": "5e2c362f8bfdafccbb2e4fd23d6077232172feafe7ab680d6ce35fccb0e86f1f",
+        "zh": "41c388315a6c570f86058c179046b3340bd0ea08bf66306d0d5dc6f66bf292ec",
+        "zh-TW": "38db7b833c0b19023a28a60d660b8fc935bd7657a27b555e73dbcf5dcfa7a08e"
+      },
+      "reviewed_at": "2026-10-28T13:58:11.784907+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“模板正文怎么写”与韩文“템플릿 텍스트 작성”在本条目所属 pi UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "pi",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#pi.prompts.templateSyntaxDescription",
+      "key": "pi.prompts.templateSyntaxDescription",
+      "status": "可保留",
+      "combined_fingerprint": "36b746cc5e42b79d11387037efe34f64e60b5b453e7b708173fa133b70fddc8d",
+      "content_fingerprints": {
+        "en": "c2de479178257823010189657febcab194602ee95c1c21580a9a94f1c257e6c9",
+        "ja": "eabd5043bf9dee1fe6008734cead7ae3534731ead218a0585af8c7e541e28c93",
+        "ko": "4a0ee802479b36936735fdefdea66bc0b009d33454eb890d35bd24d0609ecaf6",
+        "tr": "95412bed133d9e7c7b2e00a7ce3c0ccbe8ce84beafc7d152ed355c76eb5bd7b8",
+        "zh": "c434591d5ffbafea35d5bd1f5790c5e472f1a609d33126123d17e9f742a0efa5",
+        "zh-TW": "1d363e5eaf0b720340d4c320cbb8e0df183361b3d8fc32711cfdfa471b639aa6"
+      },
+      "reviewed_at": "2026-10-28T13:58:11.784907+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“可用 $1、$2、$@ 或 $ARGUMENTS 替换参数；开头可以写 frontmatter（description、argument-hint）。”与韩文“인수에 $1, $2, $@ 또는 $ARGUMENTS를 사용할 수 있습니다. 문서 시작에 frontmatter(description, argument-hint)를 작성할 수도 있습니다.”在本条目所属 pi UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "pi",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#pi.prompts.templatesDescription",
+      "key": "pi.prompts.templatesDescription",
+      "status": "可保留",
+      "combined_fingerprint": "5c147278990ccfa3673ce5ca31a21b620ca0fa59cf55367b77932827e3ad4469",
+      "content_fingerprints": {
+        "en": "f0a9711cc95b23d3db0337108d04d2af42c72acd09ed7d23ce2e87c34318231f",
+        "ja": "da3e6557239da44f263a6fe851f8ecbd72623d00e1a9d945c62a91dd8b504212",
+        "ko": "6e219d950857d9d77d53004eb5d9dfef702ff36fd5229354a35a2ee5b53d5c94",
+        "tr": "29c7e33f35dc69023f080aa7852ecb22adc206970aa5967b8d327eb20c8375d3",
+        "zh": "78189f738647fe09be83982d9ce17c3480dcfb00c0b31840f0984e6e5b2b7781",
+        "zh-TW": "540205ba916adcce73dd01e7d4c9bfab27a103c52528547d962a9cc7e63384d4"
+      },
+      "reviewed_at": "2026-10-28T13:58:11.784907+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“模板保存后可在 Pi 中通过 /命令名 调用，无需启用。”与韩文“저장된 템플릿은 Pi에서 /command-name으로 사용할 수 있습니다. 활성화 단계가 필요하지 않습니다.”在本条目所属 pi UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "pi",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#pi.prompts.templatesLabel",
+      "key": "pi.prompts.templatesLabel",
+      "status": "可保留",
+      "combined_fingerprint": "20fb5d8c726fef056d12dbae01731428a053a8835beb49852f2ad9d39398a22f",
+      "content_fingerprints": {
+        "en": "0d1bacb155f40997227bc42681c687f0b5647c12692561122fdc477d096c5f43",
+        "ja": "a2204263a58255b4e8f13d2f7568a1a826c0b9a19238232fa60cc536f32425de",
+        "ko": "b3c270b6eb945545e4b2b2df420e9e26f9cc52e98b0ce75b1178cf6566874c14",
+        "tr": "fc8cde0caf476fbbc29a6b86cdcf8a7c64bcf5d2cdbcd600dca0b82a81f775b2",
+        "zh": "420192e83044de56ce377d1318703e176427a3d25bf8dabc3879e692a3feb2c2",
+        "zh-TW": "85b9a9c2e290150ad091825f07b2c22ac75e67789e5c71ad9d72b82f880b84d8"
+      },
+      "reviewed_at": "2026-10-28T13:58:11.784907+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Pi 的提示词模板”与韩文“Pi 프롬프트 템플릿”在本条目所属 pi UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "pi",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#pi.prompts.templatesTab",
+      "key": "pi.prompts.templatesTab",
+      "status": "可保留",
+      "combined_fingerprint": "0feeceae0993c906409e0b522eb6748a7f4989d3abc8734bc91142252e284462",
+      "content_fingerprints": {
+        "en": "56b564b75c7fdb488865f2198ec362f9c0f5c0b631b28c15eb387b43029f28dc",
+        "ja": "ee5b8eef33fb2c2d20e0a301509ad261490664218d9c1ecde7c707141f0b4d06",
+        "ko": "203cc67e9f1085fd5bd037d66f7114e99f45e7f8bc40c69a91d209bcb09dfe05",
+        "tr": "7856aa3c2171808c1b16aebe7ad8fedb07a1cdd4f558a746083fae0bac7b9261",
+        "zh": "62b95daecb7f81da79fcd57572efc8582ecbebc8121f562e6ac37d547ac2f1e7",
+        "zh-TW": "3800e34f4ea1d222f96c22d3c06a7faf6f3d44a3878199f05f1c653e2227ae6f"
+      },
+      "reviewed_at": "2026-10-28T13:58:11.784907+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“模板”与韩文“템플릿”在本条目所属 pi UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "pi",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#pi.prompts.unavailable",
+      "key": "pi.prompts.unavailable",
+      "status": "可保留",
+      "combined_fingerprint": "59dbee8d5523edea75760f383f3b31df147f7e1fa17665eb519a7a85c02fa509",
+      "content_fingerprints": {
+        "en": "ca184496974204a0bd3fd4925e0540bc4b0df6fcc232994d29754272b7183812",
+        "ja": "619c696e89bce41c5e71bfe1640cb988785b6fb36d9cbba1d904e0c422ddfd01",
+        "ko": "cd03e985018df600588d051b93cbdd4ce15d1e7eedbf7210833db6d2ec9328e0",
+        "tr": "de96e46c0c3d3ff2fb47aa18e59753326e6b9af071ee024a5b6a6fc968bf0128",
+        "zh": "6aa27f14bff16faad05a7738cdb8abda5697c6b241791a6e850b02ed45eaebaf",
+        "zh-TW": "88cd4f4d97f1bdfe9fd687f5d2f2055f05a237d63fca613b1c86ecf280fb218a"
+      },
+      "reviewed_at": "2026-10-28T13:58:11.784907+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“读取失败”与韩文“읽기 실패”在本条目所属 pi UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "pi",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#pi.prompts.usePromptSuccess",
+      "key": "pi.prompts.usePromptSuccess",
+      "status": "可保留",
+      "combined_fingerprint": "91601780b0f76993a4c503c22019050dc522823690d09a0b343e041132e35ac7",
+      "content_fingerprints": {
+        "en": "0ca2c88747db5882069c7db44c99b0da1866df2c112884531e8716c2d07a2904",
+        "ja": "3fdbf2cc6c294ae69ec77ed09a342fa837ef6063a824d0c93e12bb6482b79629",
+        "ko": "854edb87008535150245874ea879135d95e79d4a45d9b210756607f5f89ecf2b",
+        "tr": "bf4baf20967623571152ed7a70bead33fc6a33ce5edbe442e7b6cf186ff19e7d",
+        "zh": "ecf1e0e8c24167d4ef3919b2861de0b383cc4775a5df949ef75c9a52c8b8db6b",
+        "zh-TW": "f4cebd52e77939a91bebac6611bc8abe475a9243d72f3cd78513e6aa8b2ebb51"
+      },
+      "reviewed_at": "2026-10-28T13:58:11.784907+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已写入全局 AGENTS.md”与韩文“전역 AGENTS.md에 저장했습니다”在本条目所属 pi UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "pi",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#pi.provider.enableFailed",
+      "key": "pi.provider.enableFailed",
+      "status": "可保留",
+      "combined_fingerprint": "6fed8250eb1549cd256e648e2f72f2490607027ddeb8f7e26a030ff8a827ba43",
+      "content_fingerprints": {
+        "en": "84e055fe2c60db37ad8d1955d28403e825547e71ae31ba87c14d38ebd6c35650",
+        "ja": "00de8071f16fe144b24ad83b34a5bedcc0f938b6c46c0eaf1c4659388e6f5245",
+        "ko": "a1a0019f7f34d8bec6ac5bb2b7fb5aa9dbd1489d88625a54753a17f096f82cdf",
+        "tr": "d12ee274d747ef6b5e95cf0504cb32c129cc3d0027322802058fc08dfeeefc79",
+        "zh": "9adc71bd4dba12fcb1d65e1b654c3d0d8bb7106aa991ce61580975d739d44082",
+        "zh-TW": "67b476d7e9f802b144b790660377fa394f2b21c9bee63d3d3033695e520f77e2"
+      },
+      "reviewed_at": "2026-10-28T13:58:11.784907+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“无法在 Pi 中启用此供应商”与韩文“Pi에서 이 공급자를 활성화할 수 없습니다.”在本条目所属 pi UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "pi",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#pi.provider.enabled",
+      "key": "pi.provider.enabled",
+      "status": "可保留",
+      "combined_fingerprint": "5e18702624c2622932362cec3aa52a4ec6431f1c8aa671d0d73327ca1a163d48",
+      "content_fingerprints": {
+        "en": "c3e3e2e0b267a8d0758e5ebbd69e1b5810b99ceebba5d9558cced7f929296606",
+        "ja": "b8fae387468a6b1787ae697c8335a42ffaa611cdaf00a669a35a9c80929550f3",
+        "ko": "e420378da2918633436ab60013367577b6e5422101eebb76555151c2d8448d30",
+        "tr": "661f2bfdf43e4b8c4a9e576182bf9c45aede3f94cd02fe7fd4d9b2a7cd42e028",
+        "zh": "1c103ebf34470d4308527b667ffb15d67e0874a19247b1917520208f49d804c5",
+        "zh-TW": "a07e82e6205463afd3e5215322839d971a38b66c3da759ed589f150fa6177414"
+      },
+      "reviewed_at": "2026-10-28T13:58:11.784907+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已在 Pi 中启用”与韩文“Pi에서 활성화됨”在本条目所属 pi UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "pi",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#pi.provider.removed",
+      "key": "pi.provider.removed",
+      "status": "可保留",
+      "combined_fingerprint": "5895aa04420d9e471eb873489f9189b5ee5055b25fc0bb76339184c24a46488f",
+      "content_fingerprints": {
+        "en": "e7eab34c08a079ae5521349e101ed406d6d88d474d57faae6d89b2cbf04444fb",
+        "ja": "18564499ae5e06c678c6880f4527cd501695582ddddb501bc6e32ad8521dc26e",
+        "ko": "dff919cbba056d6d82e02781f0586adbfa8b3cbad804bcbc6fadc62e8443cfa6",
+        "tr": "13b6228f86ee23e1b32a7b40340bbccb1fd8c3bea5327efee4845e683f5d4806",
+        "zh": "c64c9ce693a53a7b9d3b31ced23c76fad78d90d4d78c94a68be6ece708678d7e",
+        "zh-TW": "23113ec2f7ca3d585eaea6d76809fe60a58955e71ce58acf7fcb969821c17464"
+      },
+      "reviewed_at": "2026-10-28T13:58:11.784907+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已从 Pi 移除”与韩文“Pi에서 제거됨”在本条目所属 pi UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "pi",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#pi.provider.writeConflict",
+      "key": "pi.provider.writeConflict",
+      "status": "可保留",
+      "combined_fingerprint": "5fb45834ccc77d4a37018e2013f667e3e578c213f2772bf817ce186fad267ede",
+      "content_fingerprints": {
+        "en": "3be205fbce8ae0085e073f4dd490a6cc53b3c6bd1547a230958436b8e031c29e",
+        "ja": "8c7aaf8912cb0566eca3c090414211c04267129d2c4800333849aa5f498c757d",
+        "ko": "8d66d3179d4a2f1edb8e62022279fb2a416e1ce8fe861f3bf6cc3e0999c10c40",
+        "tr": "884bf413015ce6e046392d43675dc0c377c7946cdb507e3c9fc3822df66b4074",
+        "zh": "9b42352ea12434768a31615eb85ecb1e0ed69318b5b8593dfed23ed86536ee81",
+        "zh-TW": "7b2fa7a4ac506ef9426a121ef334ebcda9145079e66c457c0e4561966b65c654"
+      },
+      "reviewed_at": "2026-10-28T13:58:11.784907+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Pi 配置正在被其他进程修改，请稍后再试。”与韩文“다른 프로세스가 Pi 설정을 수정 중입니다. 잠시 후 다시 시도하세요.”在本条目所属 pi UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "pi",
+      "round": 1
+    }
+  ]
+}

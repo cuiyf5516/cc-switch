@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:jsonEditor:001",
+  "kind": "translation",
+  "namespace": "jsonEditor",
+  "reviewed_at": "2026-10-28T13:39:08.437023+00:00",
+  "review_count": 2,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#jsonEditor.invalidJson",
+      "key": "jsonEditor.invalidJson",
+      "status": "可保留",
+      "combined_fingerprint": "cdcba7bfee07fbdcb8de0e934833769cfc396d4fd993d7b0281fc3ecf0725c4e",
+      "content_fingerprints": {
+        "en": "70410685471d05773e9e78906f633185f632fb133a15a591e3e3136ed8ba2b14",
+        "ja": "c1f0b1913e807d37532975029cc037d8f289d072c77e6f73d103efd3ed113ccd",
+        "ko": "dd0903b66d8979641a04e4d46dae4f80adb200223316fc26dbf8cd98ffb9e480",
+        "tr": "33e1dfe729e15553ff5f435608f95da56a9bf821a17e1c7dbe5a48f2ea21d7a0",
+        "zh": "f0d0929ce33c0bb900b7c2aaa60fc0b37d382aac83503dacbef17e380c1caa29",
+        "zh-TW": "1019f3ea1548dd0abb9128664121d613f55fe954df96fa5e477e757c819c8253"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.437023+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“JSON格式错误”与韩文“잘못된 JSON 형식”在本条目所属 jsonEditor UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "jsonEditor",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#jsonEditor.mustBeObject",
+      "key": "jsonEditor.mustBeObject",
+      "status": "可保留",
+      "combined_fingerprint": "079e401c564ff8e5ba9c99aad8ba6ddce37cee3962558b13f37058c1102c9655",
+      "content_fingerprints": {
+        "en": "870659a700ba43b9f594e33377e387ca508127764c55821bcc7c6441eed91bf6",
+        "ja": "38a50f4a2860b284185d584a6643181438b5b2fb8be0bea6dae067206b342d7d",
+        "ko": "637fa2063981b8e3553bc669bc1473c17eaa2063a1de5cd57e0ab879323b4d3c",
+        "tr": "5aa1e7ff5a3374c7b4b13b518dfe67063aaf5ba3cd54b65c4bf8ce05c3ffa2b4",
+        "zh": "7193a5e04b5a8f617001f89fae5f4c0a73f222d43196f54a7f96a43344cf4a8a",
+        "zh-TW": "5388783f48dfacc901603f882c32faf84640cc4b0466fd198846c4f5aa8fc0bd"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.437023+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“配置必须是JSON对象，不能是数组或其他类型”与韩文“설정은 배열이나 다른 유형이 아닌 JSON 객체여야 합니다.”在本条目所属 jsonEditor UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "jsonEditor",
+      "round": 1
+    }
+  ]
+}

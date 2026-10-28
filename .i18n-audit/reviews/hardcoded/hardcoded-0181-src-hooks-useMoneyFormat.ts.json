@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0181:src-hooks-useMoneyFormat.ts",
+  "kind": "hardcoded",
+  "group": "src/hooks/useMoneyFormat.ts",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 1,
+  "records": [
+    {
+      "id": "hardcoded:src/hooks/useMoneyFormat.ts:useMoneyFormat:59a5fc6fd4cd053a:001",
+      "status": "待核实",
+      "content_fingerprint": "59a5fc6fd4cd053ad8359ed8da1b2799b65d66a5ae4c473f3cf4d200f7d68f4f",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/hooks/useMoneyFormat.ts",
+      "line": 38,
+      "function": "useMoneyFormat",
+      "expression": "`${formatMoney(usd, digits, display)} (${formatMoney(usd, digits, USD_DISPLAY)})`",
+      "reason": "该英文字符串“`${formatMoney(usd, digits, display)} (${formatMoney(usd, digits, USD_DISPLAY)})`”可能作为提示或错误展示，但静态上下文不足以确认展示链路。",
+      "suggested_action": "追踪调用方并确认是否需要本地化。",
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0181:src-hooks-useMoneyFormat.ts",
+      "round": 1
+    }
+  ]
+}

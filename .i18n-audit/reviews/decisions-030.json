@@ -1,0 +1,26 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:usage:001","default_status":"可保留","overrides":[
+{"key":"usage.costBreakdown","status":"建议改","reason":"原文是“成本明细”，韩文「비용 분석」表示成本分析，不是明细拆分。","suggestion":"비용 내역","ui_context":"用量成本明细标题"}
+]},
+{"batch_id":"translation:json-locale:usage:002","default_status":"可保留","overrides":[
+{"key":"usage.detail.costTitle","status":"建议改","reason":"原文是“成本明细”，韩文「비용 분석」改变了含义；应与明细类标题统一为「비용 내역」。","suggestion":"비용 내역({{currency}})","ui_context":"请求详情成本明细"},
+{"key":"usage.detail.sourceProxy","status":"建议改","reason":"原文是“状态码”，韩文只写「상태」，遗漏 code。","suggestion":"라우팅 서비스 · 상태 코드 {{code}}","ui_context":"请求来源详情"}
+]},
+{"batch_id":"translation:json-locale:usage:003","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:usage:004","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:usage:005","default_status":"可保留","overrides":[
+{"key":"usage.modelsDevAutoSync.selectionHint","status":"建议改","reason":"「동일한 선택 항목을 한 번 가져옵니다」把“相同模型 ID 的选项只导入一次”译得主谓不清。","suggestion":"정규화된 모델 ID가 같은 항목은 한 번만 가져옵니다.","ui_context":"models.dev 自动同步选择规则"}
+]},
+{"batch_id":"translation:json-locale:usage:006","default_status":"可保留","overrides":[
+{"key":"usage.perMillion","status":"建议改","reason":"「백만개당」未按韩语数量单位规范分写。","suggestion":"(백만 개당)","ui_context":"定价单位"}
+]},
+{"batch_id":"translation:json-locale:usage:007","default_status":"可保留","overrides":[
+{"key":"usage.realTotalHint","status":"建议改","reason":"原文最后一项是缓存命中，韩文写成「캐시 읽기」，与本项目统一的「캐시 적중」术语不一致。","suggestion":"입력 + 출력 + 캐시 쓰기 + 캐시 적중","ui_context":"真实消耗 Token 说明"},
+{"key":"usage.rebuildCodex.confirmAction","status":"建议改","reason":"同组其他文案使用「재구성」，此处按钮却用「재구축」，同一功能术语不一致。","suggestion":"백업 및 재구성","ui_context":"Codex 用量重建确认按钮"}
+]},
+{"batch_id":"translation:json-locale:usage:008","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:usage:009","default_status":"可保留","overrides":[
+{"key":"usage.timeRangeTooLarge","status":"建议改","reason":"「좁혀주세요」应按项目统一写法分写为「좁혀 주세요」。","suggestion":"시간 범위가 너무 큽니다. 범위를 좁혀 주세요.","ui_context":"用量时间范围校验"},
+{"key":"usage.totalRequests","status":"建议改","reason":"原文是“总请求数”，韩文「총 요청」遗漏数量含义。","suggestion":"총 요청 수","ui_context":"用量统计指标"}
+]}
+]}

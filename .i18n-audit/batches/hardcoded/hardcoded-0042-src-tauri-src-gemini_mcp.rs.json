@@ -1,0 +1,10 @@
+{
+  "batch_id": "hardcoded:0042:src-tauri-src-gemini_mcp.rs",
+  "kind": "hardcoded",
+  "group": "src-tauri/src/gemini_mcp.rs",
+  "ordinal": 1,
+  "record_count": 1,
+  "record_ids": [
+    "hardcoded:src-tauri/src/gemini_mcp.rs:set_mcp_servers_map:3aa384326118160d:001"
+  ]
+}

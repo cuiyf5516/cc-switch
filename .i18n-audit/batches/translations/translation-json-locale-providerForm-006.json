@@ -1,0 +1,30 @@
+{
+  "batch_id": "translation:json-locale:providerForm:006",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "providerForm",
+  "ordinal": 6,
+  "record_count": 9,
+  "record_ids": [
+    "json:src/i18n/locales#providerForm.stackModelsEmpty",
+    "json:src/i18n/locales#providerForm.stackModelsLabel",
+    "json:src/i18n/locales#providerForm.supplierName",
+    "json:src/i18n/locales#providerForm.supplierNamePlaceholder",
+    "json:src/i18n/locales#providerForm.supplierNameRequired",
+    "json:src/i18n/locales#providerForm.thirdPartyApiKeyHint",
+    "json:src/i18n/locales#providerForm.visitWebsite",
+    "json:src/i18n/locales#providerForm.websiteUrl",
+    "json:src/i18n/locales#providerForm.websiteUrlPlaceholder"
+  ],
+  "keys": [
+    "providerForm.stackModelsEmpty",
+    "providerForm.stackModelsLabel",
+    "providerForm.supplierName",
+    "providerForm.supplierNamePlaceholder",
+    "providerForm.supplierNameRequired",
+    "providerForm.thirdPartyApiKeyHint",
+    "providerForm.visitWebsite",
+    "providerForm.websiteUrl",
+    "providerForm.websiteUrlPlaceholder"
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:providerIcon:001",
+  "kind": "translation",
+  "namespace": "providerIcon",
+  "reviewed_at": "2026-10-28T13:40:03.249895+00:00",
+  "review_count": 7,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#providerIcon.change",
+      "key": "providerIcon.change",
+      "status": "可保留",
+      "combined_fingerprint": "22f1aa2d64f664db714bdde7036a376f25b3077b2440ab7c0b0ad22fb8642f12",
+      "content_fingerprints": {
+        "en": "87f2c4e6223c2e8df93cfd746637219d24a96ed1238e91b0fbefeb88d3bb1922",
+        "ja": "5df3b4f70938806a84eb08e2adfcbe39b9f8e8457cbaef104fb10ce4a4289b1e",
+        "ko": "5fe9f6409c9dda39376ec334b5f75423bf7f6c135ac150dae3a5c6f97c31bbd2",
+        "tr": "bcdadc39b62a567283487b22119728452353ffb956be5c254beb49e13584a953",
+        "zh": "ea9fbf028a9b1e4851a556a5e6e6095009eba585708ad75716ce4d430662be9c",
+        "zh-TW": "239e4b27dd39b34678a200d251a5ce54ebecbcfc4a479ea91f6250d7dababdca"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.249895+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“更换图标”与韩文“아이콘 변경”在本条目所属 providerIcon UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "providerIcon",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#providerIcon.clickToChange",
+      "key": "providerIcon.clickToChange",
+      "status": "可保留",
+      "combined_fingerprint": "4b501a078d25d854f8261492dd51847b492c52f231d92e6cb822e4001e11430f",
+      "content_fingerprints": {
+        "en": "99487e8dca9a0fb65eafce7569a3fe8fec8ce90254a83cd1b7c7f4e5b4a37d6d",
+        "ja": "e957a3b1905936dca6dddf4d6f3fd97480f97878cbca62aff02e49ca6c3183fc",
+        "ko": "e2279f1eb8e82b00037a769d8e34ca9547c49c8a8d4c32384dd65bee6b7164c8",
+        "tr": "cbe76930a3e31fb87e43839ab21d2fa9cee89e6c47783b2465ac60dbf27772d6",
+        "zh": "b0d6272001f6a1db79a947b114818a51d699416a7385eb55f25fa57f7efec24d",
+        "zh-TW": "e6c537200ce4e2394dae4b5c5c07e76d24834faadf42d8384b2f3ba367605582"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.249895+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“点击更换图标”与韩文“아이콘을 변경하려면 클릭하세요.”在本条目所属 providerIcon UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "providerIcon",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#providerIcon.clickToSelect",
+      "key": "providerIcon.clickToSelect",
+      "status": "可保留",
+      "combined_fingerprint": "2fc914006a2cbb2143fd1111ff1abd37523a7d03a395612a856029a5ec16c7a9",
+      "content_fingerprints": {
+        "en": "4e3c81563a60a3834d84fdd8ada3c65076da92f1bfd76d830044ee0ddfe3a67d",
+        "ja": "830d6d47d2abdfe1a6b9d290825b81ed80f4e1b2e3123450589c2b1195590b25",
+        "ko": "a468320bf264d5b6e8a9ecb2bafd723e315030a38aa779fa1098c96a61192ac3",
+        "tr": "bc8f5ac239e5fafdeabc82dd1c2a12cb84bb661350087ab2baee9f2aa74f1333",
+        "zh": "cf6312d08b3f5c968e274cec2d92d19d29d2f148cb1baed1c101b420e194625a",
+        "zh-TW": "5f4d2ebb175024169bad737a6adfd8ad3a7243ee9d8d2b363489ec10b4c78f89"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.249895+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“点击选择图标”与韩文“아이콘을 선택하려면 클릭하세요.”在本条目所属 providerIcon UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "providerIcon",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#providerIcon.colorLabel",
+      "key": "providerIcon.colorLabel",
+      "status": "可保留",
+      "combined_fingerprint": "12f31285d015eb24cf5c7e3eb4d5ac9765a341b31b32805fbf02bf38ad495bd9",
+      "content_fingerprints": {
+        "en": "5933bc456a055d56201588e2985da5bb059b6e92a1a2516fc83551b67cdfb58c",
+        "ja": "71e4ae7b347461db50d2e14a0faa8d5b9c25699281208ab746fc182efdeaa628",
+        "ko": "31982bd653c5b9456f49571d86f6e2299fed67551de0792bbe1dc892011e868b",
+        "tr": "47b699e2b5340e1279df4a1371086d11efd11d081332dd8cd48bdfd461d32856",
+        "zh": "52c15454e2682d1ed2c1146c66a7d1f948957c054386767a5b320259aa488a0f",
+        "zh-TW": "9cf392d25fc96345ea886939a91feaab2be7c528de351e81bebed98992a1dfa2"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.249895+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“图标颜色”与韩文“아이콘 색상”在本条目所属 providerIcon UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "providerIcon",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#providerIcon.label",
+      "key": "providerIcon.label",
+      "status": "可保留",
+      "combined_fingerprint": "71dd9049e836372853427b466e7cbffa945fe409dccf391662ca78b63be48a5f",
+      "content_fingerprints": {
+        "en": "a35abcd6dac9a2e5c1d7d6a58b9bcd2e7b00cad33a8aa63b75766f1ba6ce207b",
+        "ja": "ca2b6e7e511e19cc8b35e1d92f13d3da1e35f852a3c2a1ddbf85268c7c3b495d",
+        "ko": "1d080437d8462ce9b30624a871269a492495dbdf166030b3f6a4378c3a041bb6",
+        "tr": "459a85c9febb1183fb4c39256e63bc5aefbec74ddd8c3a12589f89589187f776",
+        "zh": "0d720eeea26466dd99f0c1d3b0bb9876f58d64885aba1d629cf76b760d850875",
+        "zh-TW": "4d467daed49bbdbcd3680ff5f1d7115f7d984273bcce820397bea33a838220e9"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.249895+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“图标”与韩文“아이콘”在本条目所属 providerIcon UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "providerIcon",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#providerIcon.preview",
+      "key": "providerIcon.preview",
+      "status": "可保留",
+      "combined_fingerprint": "aa0752c50d3926dbe52a8e2a8d0d02f93e080e421b397614fc7b5406f84d0348",
+      "content_fingerprints": {
+        "en": "324b134f57c70c729ae3dc4d298bb451656717d70523e942c1ce667b8024ea07",
+        "ja": "03607b4fd09b6bc6f7b2afae133202c7b16b63556ae07bf384062645fba982a2",
+        "ko": "dcb06beb51a409a511a2a43071d5a892b0fae57eef69b918b311ef7a24e4e4b9",
+        "tr": "0fa5590881e5e7710afe54b8a776e455dc74d58c1c0f47fdcf2350266be64046",
+        "zh": "13d61fea9f1749051d111b55aec36b315ea6729576e78b3cb29c5e17d7da2d2f",
+        "zh-TW": "88638a3f4b7ff730aaad7ed36ce82f6135bd5cc864e1c76996b738b2372552d1"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.249895+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“预览”与韩文“미리보기”在本条目所属 providerIcon UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "providerIcon",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#providerIcon.selectIcon",
+      "key": "providerIcon.selectIcon",
+      "status": "可保留",
+      "combined_fingerprint": "52788f4636eb1b09a1ce416f9448ad4f90c2ea092ecccb63ec402938086c2c5c",
+      "content_fingerprints": {
+        "en": "bdbea4f85d940d4a1cf433fc39926e2e647dcd0ec14405ae0e2e2dd10447122c",
+        "ja": "6d2c58c1689c44be7dcbab23c20dc2ad2781ebffb3783fa4d14c612d630e0e07",
+        "ko": "7a853dc1e0a1754a137d9a8ce0b8966bcea8ae737fd98e0bf84c706d296259df",
+        "tr": "b71117c0466d6f350064e530f588bf65ad5ebeb3aa5aaf6b7f6bb19c38d5f597",
+        "zh": "6d8adad124d0987fc716dca4786a45ed3914c33044ef6c4d78cdece9a9609524",
+        "zh-TW": "38da438692e9dffc3c63f945770c9784054ab7c85fde7304e6937f716cf8ac5f"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.249895+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“选择图标”与韩文“아이콘 선택”在本条目所属 providerIcon UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "providerIcon",
+      "round": 1
+    }
+  ]
+}

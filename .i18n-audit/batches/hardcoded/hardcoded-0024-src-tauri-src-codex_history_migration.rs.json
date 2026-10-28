@@ -1,0 +1,19 @@
+{
+  "batch_id": "hardcoded:0024:src-tauri-src-codex_history_migration.rs",
+  "kind": "hardcoded",
+  "group": "src-tauri/src/codex_history_migration.rs",
+  "ordinal": 1,
+  "record_count": 10,
+  "record_ids": [
+    "hardcoded:src-tauri/src/codex_history_migration.rs:write_backup_generation_meta:61e02d96a75c79ab:001",
+    "hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:bda73b874802c8cd:001",
+    "hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:806823400909fcb4:001",
+    "hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:4cc500db62ede737:001",
+    "hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:4cc500db62ede737:002",
+    "hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:51c1bf73f128711c:001",
+    "hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:b71f3e1795a52210:001",
+    "hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:d47c129040dde6e9:001",
+    "hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:22a83e7d9706ee08:001",
+    "hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:0295eef4f8df24e1:001"
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:deeplink:003",
+  "kind": "translation",
+  "namespace": "deeplink",
+  "reviewed_at": "2026-10-28T13:54:43.818825+00:00",
+  "review_count": 6,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#deeplink.usageScriptCode",
+      "key": "deeplink.usageScriptCode",
+      "status": "可保留",
+      "combined_fingerprint": "3915cc70f43d0f3bd4f7aea489e4a8b753bad176d48795a50e8444cab00ed492",
+      "content_fingerprints": {
+        "en": "8387113a5ebe37aa3475fae863266e6bce06124ca475d5b397328326f0b07112",
+        "ja": "9e89e7f16cde019ef655308e91f1370f239f31f11446243acbf28eda1d72e38c",
+        "ko": "c6377b817942e015487bd8d3b36c2e2ac919111325033dc2f179c251a8c50da0",
+        "tr": "e1cb65c11dc5129047cb259412830853fa8c480628063a70fde9f06104668ef7",
+        "zh": "a81a4a28034fd1256519d56e1bed466aec9e9669a31bff479f56023b2effd91f",
+        "zh-TW": "91931a80d044d0dcde92eb8e976a185f4faa92aa95b3de7c96e1fa18fab7ad7c"
+      },
+      "reviewed_at": "2026-10-28T13:54:43.818825+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“脚本代码”与韩文“스크립트 코드”在本条目所属 deeplink UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "deeplink",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#deeplink.usageScriptDisabled",
+      "key": "deeplink.usageScriptDisabled",
+      "status": "可保留",
+      "combined_fingerprint": "65277685a1e3daf45c233f3a6b5314b6969a7f72b2ad7a4d5a0c45a359e36475",
+      "content_fingerprints": {
+        "en": "75081b593d15cf6e631971bc6768723f593b88b172477e40ae7d363e4829816d",
+        "ja": "383bbb5e8490445a209b509cb1df049413a7b9a53a859c268ffbd3e841b46a9d",
+        "ko": "cb0f8c54ddc9dd4d28df8086b0fe1c75d9f500737ea3eba3b0fc0b7ca45df793",
+        "tr": "e12596901e9ded439e873eb055b419c1eb07625bf8dc06da2d335c05bb037d29",
+        "zh": "f95ea7f4c063eea7e863c6e43d471dc0bac0d3870a2640bc3b0ee530531406e9",
+        "zh-TW": "14a99dace84e9d5a807bb830f806121b16789d46d924ea9aa3f6b649db5cd7e0"
+      },
+      "reviewed_at": "2026-10-28T13:54:43.818825+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“未启用”与韩文“비활성화됨”在本条目所属 deeplink UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "deeplink",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#deeplink.usageScriptEnabled",
+      "key": "deeplink.usageScriptEnabled",
+      "status": "可保留",
+      "combined_fingerprint": "23bc63126f03e7651e70ba5ae1b0d7cd8001eac95b84c0036340ea96cd3ff345",
+      "content_fingerprints": {
+        "en": "92c1cdfdf4cb9cf6fcca962f206de36fd5d60db1178bc9461052f8de703a0e06",
+        "ja": "3ac909bffc994b065cfcab040b7ea03c48e81a273ce8a227722d31e2318af3cc",
+        "ko": "e86b580008f5e123d2d72ba69184fdf861d868c02174e409d143483ac60b0f74",
+        "tr": "de913131041341f1f32b322b62fd14d99c4c0a086b767aa1439361f3ac46f5ca",
+        "zh": "dfb802238b38fbd49560b461d3ff1ee5cef3a72077c37a1325cb4892c10fd1c8",
+        "zh-TW": "af5eb2248daf033dcc337c7a02abd03ad596746a019a6fe70c215f1cf553f384"
+      },
+      "reviewed_at": "2026-10-28T13:54:43.818825+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已启用”与韩文“활성화됨”在本条目所属 deeplink UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "deeplink",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#deeplink.usageScriptWarning",
+      "key": "deeplink.usageScriptWarning",
+      "status": "可保留",
+      "combined_fingerprint": "0cfecd516f802c4ef32cbfdc5f2930b50eb829122370655a0c51858c86e131b4",
+      "content_fingerprints": {
+        "en": "4e7159e558682829a4365512ed31fbb096f19f6c887dcc6a04b00d78ef89640b",
+        "ja": "450d3d71338724b29f18d95b6e3bbec4f0d5b8b666e077928295fc2f5bbe0205",
+        "ko": "ac7ecec5ea3cf30401ef95113eeecd1a98946d21808d4cddb1dcf5ce34f41a74",
+        "tr": "4034be0914525493605dfe4bb85d529147cafe69c90b58760d2bbd19e6f48bcc",
+        "zh": "810d673167163c4548f338d5b021bbd67ddd4739a5a810e34f5fee77288d6d0d",
+        "zh-TW": "dadea2ae116d4ba39650cbc2358e1a2677f055f2c694457f8c6a1b0caa16025e"
+      },
+      "reviewed_at": "2026-10-28T13:54:43.818825+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“这是一段 JavaScript 代码，启用后会在查询用量时执行。请确认来源可信后再导入。”与韩文“활성화하면 사용량을 조회할 때 실행되는 JavaScript 코드입니다. 출처를 신뢰할 수 있을 때만 가져오세요.”在本条目所属 deeplink UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "deeplink",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#deeplink.usageUserId",
+      "key": "deeplink.usageUserId",
+      "status": "可保留",
+      "combined_fingerprint": "8a466eaa838b32cc1b3f81c6a899261b3bb50cdcc402b4800074e8685fa87892",
+      "content_fingerprints": {
+        "en": "afce08fe76145b9f7871b845acb3d24ce92b2dc082d69149c4c8fe676b57f8aa",
+        "ja": "175cead25299d4cc8070dccd0fa096e7042dc1fd00541f131d5419f0a32a40de",
+        "ko": "d184cce43161f1a4d43a82d73095b2445675d3a2df4b15fd1ff89ece2226ed48",
+        "tr": "5955db5f62a25c20ce32952c9b9ac560ac6f8cccb00649e0100a32fc491e6851",
+        "zh": "06ef4ee2992b49f469f7521f0e831bc21657daff849bd0c312471240f3637f4a",
+        "zh-TW": "163503da7f14d40524fd5203941e1df1e15d950976781060d6a709bc4de06cfb"
+      },
+      "reviewed_at": "2026-10-28T13:54:43.818825+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“用量用户 ID”与韩文“사용량 조회 사용자 ID”在本条目所属 deeplink UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "deeplink",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#deeplink.warning",
+      "key": "deeplink.warning",
+      "status": "可保留",
+      "combined_fingerprint": "aed1b8719d20b6aad0f631357f5208e1ecffc3db0c29c24e510cf7b14fde5774",
+      "content_fingerprints": {
+        "en": "7d059a8839f14c9762f60cb279f34279b9f02476c303eb9d040bab5b7ea02249",
+        "ja": "b97ace74f6354099c1e93c3198a0b180bdc396dcbdd53f23371a7bd84fa035ad",
+        "ko": "3328d7df56261c91f60ce8aa66240ff2474445f28a4d6634dc1fafed0e6d987c",
+        "tr": "0e39dcc1f06c45419dc771a628f13b65bd00ddd4495ef2202101a19ce557cbf9",
+        "zh": "c0832c4bb31aebf5d59d791558e0fd5ceaa49020ba1226a3053a389eb0f83ff7",
+        "zh-TW": "2f8fb1446ba0fff40c97d8da001f0c231f5d1387c3f68368c3a1b66bf09dc56a"
+      },
+      "reviewed_at": "2026-10-28T13:54:43.818825+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“请确认以上信息准确无误后再导入。导入后可在供应商列表中编辑或删除。”与韩文“가져오기 전에 위의 정보가 올바른지 확인하세요. 나중에 공급자 목록에서 편집하거나 삭제할 수 있습니다.”在本条目所属 deeplink UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "deeplink",
+      "round": 1
+    }
+  ]
+}

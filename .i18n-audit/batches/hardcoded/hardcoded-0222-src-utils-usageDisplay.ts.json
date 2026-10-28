@@ -1,0 +1,17 @@
+{
+  "batch_id": "hardcoded:0222:src-utils-usageDisplay.ts",
+  "kind": "hardcoded",
+  "group": "src/utils/usageDisplay.ts",
+  "ordinal": 1,
+  "record_count": 8,
+  "record_ids": [
+    "hardcoded:src/utils/usageDisplay.ts:formatValue:b628b45c26dd70c9:001",
+    "hardcoded:src/utils/usageDisplay.ts:formatUsed:982a7b3b5da93ed4:001",
+    "hardcoded:src/utils/usageDisplay.ts:formatUsed:0330f89ad7c5df76:001",
+    "hardcoded:src/utils/usageDisplay.ts:formatUsed:e7ca37fa7de7d20a:001",
+    "hardcoded:src/utils/usageDisplay.ts:planPrefix:4896130fd53d476b:001",
+    "hardcoded:src/utils/usageDisplay.ts:formatUsageDataSummary:27f679f4313c4c95:001",
+    "hardcoded:src/utils/usageDisplay.ts:parts:4104163cefe6bd2b:001",
+    "hardcoded:src/utils/usageDisplay.ts:formatUsageDataSummary:d9c1ae1c8ba031a5:001"
+  ]
+}

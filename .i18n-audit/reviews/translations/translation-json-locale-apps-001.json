@@ -1,0 +1,304 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:apps:001",
+  "kind": "translation",
+  "namespace": "apps",
+  "reviewed_at": "2026-10-28T13:39:08.433551+00:00",
+  "review_count": 14,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#apps.agy",
+      "key": "apps.agy",
+      "status": "可保留",
+      "combined_fingerprint": "a8c9e68f798d1ddc902995508171ae04b13d7a5e02c5a6a5463432c4b45813a9",
+      "content_fingerprints": {
+        "en": "4da276f5f11d050f83c5b576ab967b88eb7bf200f21cdf4830a482529af183d4",
+        "ja": "4da276f5f11d050f83c5b576ab967b88eb7bf200f21cdf4830a482529af183d4",
+        "ko": "4da276f5f11d050f83c5b576ab967b88eb7bf200f21cdf4830a482529af183d4",
+        "tr": "4da276f5f11d050f83c5b576ab967b88eb7bf200f21cdf4830a482529af183d4",
+        "zh": "4da276f5f11d050f83c5b576ab967b88eb7bf200f21cdf4830a482529af183d4",
+        "zh-TW": "4da276f5f11d050f83c5b576ab967b88eb7bf200f21cdf4830a482529af183d4"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.433551+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Antigravity”与韩文“Antigravity”在本条目所属 apps UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "apps",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#apps.claude",
+      "key": "apps.claude",
+      "status": "可保留",
+      "combined_fingerprint": "2b985a1e30f632ac4149d87ab98563d3fa36449761697ad532760bb65c7e0a7f",
+      "content_fingerprints": {
+        "en": "0615570f9ea136946c5dc08a250010320707646f57f72cedab1dfb73d95eade6",
+        "ja": "0615570f9ea136946c5dc08a250010320707646f57f72cedab1dfb73d95eade6",
+        "ko": "0615570f9ea136946c5dc08a250010320707646f57f72cedab1dfb73d95eade6",
+        "tr": "0615570f9ea136946c5dc08a250010320707646f57f72cedab1dfb73d95eade6",
+        "zh": "0615570f9ea136946c5dc08a250010320707646f57f72cedab1dfb73d95eade6",
+        "zh-TW": "0615570f9ea136946c5dc08a250010320707646f57f72cedab1dfb73d95eade6"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.433551+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Claude”与韩文“Claude”在本条目所属 apps UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "apps",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#apps.claude-desktop",
+      "key": "apps.claude-desktop",
+      "status": "可保留",
+      "combined_fingerprint": "f7fa56a80ba994b72714278b7b30b657a85dd8102be6a7fdf737c6dfe4fd2412",
+      "content_fingerprints": {
+        "en": "6a7fb1177a81f4cfd7d8dabf994bf878e1538b33566b4f87633fc39a3c56478b",
+        "ja": "6a7fb1177a81f4cfd7d8dabf994bf878e1538b33566b4f87633fc39a3c56478b",
+        "ko": "6a7fb1177a81f4cfd7d8dabf994bf878e1538b33566b4f87633fc39a3c56478b",
+        "tr": "6a7fb1177a81f4cfd7d8dabf994bf878e1538b33566b4f87633fc39a3c56478b",
+        "zh": "6a7fb1177a81f4cfd7d8dabf994bf878e1538b33566b4f87633fc39a3c56478b",
+        "zh-TW": "6a7fb1177a81f4cfd7d8dabf994bf878e1538b33566b4f87633fc39a3c56478b"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.433551+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Claude Desktop”与韩文“Claude Desktop”在本条目所属 apps UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "apps",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#apps.claudeCode",
+      "key": "apps.claudeCode",
+      "status": "可保留",
+      "combined_fingerprint": "cadb54dd6bbc4b60df8aa4808f9b940fb664c0ddc3a78c1aa7db653c1ea1612d",
+      "content_fingerprints": {
+        "en": "246ef8c1130d56f5d9df740a4b26c033a8b9c064daba9bb0a052d18993e87373",
+        "ja": "246ef8c1130d56f5d9df740a4b26c033a8b9c064daba9bb0a052d18993e87373",
+        "ko": "246ef8c1130d56f5d9df740a4b26c033a8b9c064daba9bb0a052d18993e87373",
+        "tr": "246ef8c1130d56f5d9df740a4b26c033a8b9c064daba9bb0a052d18993e87373",
+        "zh": "246ef8c1130d56f5d9df740a4b26c033a8b9c064daba9bb0a052d18993e87373",
+        "zh-TW": "246ef8c1130d56f5d9df740a4b26c033a8b9c064daba9bb0a052d18993e87373"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.433551+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Claude Code”与韩文“Claude Code”在本条目所属 apps UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "apps",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#apps.claudeDesktop",
+      "key": "apps.claudeDesktop",
+      "status": "可保留",
+      "combined_fingerprint": "f7fa56a80ba994b72714278b7b30b657a85dd8102be6a7fdf737c6dfe4fd2412",
+      "content_fingerprints": {
+        "en": "6a7fb1177a81f4cfd7d8dabf994bf878e1538b33566b4f87633fc39a3c56478b",
+        "ja": "6a7fb1177a81f4cfd7d8dabf994bf878e1538b33566b4f87633fc39a3c56478b",
+        "ko": "6a7fb1177a81f4cfd7d8dabf994bf878e1538b33566b4f87633fc39a3c56478b",
+        "tr": "6a7fb1177a81f4cfd7d8dabf994bf878e1538b33566b4f87633fc39a3c56478b",
+        "zh": "6a7fb1177a81f4cfd7d8dabf994bf878e1538b33566b4f87633fc39a3c56478b",
+        "zh-TW": "6a7fb1177a81f4cfd7d8dabf994bf878e1538b33566b4f87633fc39a3c56478b"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.433551+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Claude Desktop”与韩文“Claude Desktop”在本条目所属 apps UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "apps",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#apps.codex",
+      "key": "apps.codex",
+      "status": "可保留",
+      "combined_fingerprint": "d54f7fc41498a0852c58901264600e9f21ef50584efd70ae2608a0469cdecfa3",
+      "content_fingerprints": {
+        "en": "616efbe96852d8c957d6be5634ed41e871cf1ecf134c9b9693f614daeb15137c",
+        "ja": "616efbe96852d8c957d6be5634ed41e871cf1ecf134c9b9693f614daeb15137c",
+        "ko": "616efbe96852d8c957d6be5634ed41e871cf1ecf134c9b9693f614daeb15137c",
+        "tr": "616efbe96852d8c957d6be5634ed41e871cf1ecf134c9b9693f614daeb15137c",
+        "zh": "616efbe96852d8c957d6be5634ed41e871cf1ecf134c9b9693f614daeb15137c",
+        "zh-TW": "616efbe96852d8c957d6be5634ed41e871cf1ecf134c9b9693f614daeb15137c"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.433551+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Codex”与韩文“Codex”在本条目所属 apps UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "apps",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#apps.gemini",
+      "key": "apps.gemini",
+      "status": "可保留",
+      "combined_fingerprint": "8ae5f7e7a662caccdfdd9673da8d72e58a7774ab152643b0c36a58260abd77ca",
+      "content_fingerprints": {
+        "en": "f6ece80b88d6dfbd2f65dad5ccde8e5ec2a0d4dbfadc2fe87bdf58642f17e446",
+        "ja": "f6ece80b88d6dfbd2f65dad5ccde8e5ec2a0d4dbfadc2fe87bdf58642f17e446",
+        "ko": "f6ece80b88d6dfbd2f65dad5ccde8e5ec2a0d4dbfadc2fe87bdf58642f17e446",
+        "tr": "f6ece80b88d6dfbd2f65dad5ccde8e5ec2a0d4dbfadc2fe87bdf58642f17e446",
+        "zh": "f6ece80b88d6dfbd2f65dad5ccde8e5ec2a0d4dbfadc2fe87bdf58642f17e446",
+        "zh-TW": "f6ece80b88d6dfbd2f65dad5ccde8e5ec2a0d4dbfadc2fe87bdf58642f17e446"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.433551+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Gemini”与韩文“Gemini”在本条目所属 apps UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "apps",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#apps.grokbuild",
+      "key": "apps.grokbuild",
+      "status": "可保留",
+      "combined_fingerprint": "a0e369b0ed1451d4dfe20278915381f6c454be361443751b548c8122e99d3ab6",
+      "content_fingerprints": {
+        "en": "fd3bf01ac1dbce93bdf66c1bdf6b0a4e8fde7eab1b6b16b3c7ce2c69bc6da8f6",
+        "ja": "fd3bf01ac1dbce93bdf66c1bdf6b0a4e8fde7eab1b6b16b3c7ce2c69bc6da8f6",
+        "ko": "fd3bf01ac1dbce93bdf66c1bdf6b0a4e8fde7eab1b6b16b3c7ce2c69bc6da8f6",
+        "tr": "fd3bf01ac1dbce93bdf66c1bdf6b0a4e8fde7eab1b6b16b3c7ce2c69bc6da8f6",
+        "zh": "fd3bf01ac1dbce93bdf66c1bdf6b0a4e8fde7eab1b6b16b3c7ce2c69bc6da8f6",
+        "zh-TW": "fd3bf01ac1dbce93bdf66c1bdf6b0a4e8fde7eab1b6b16b3c7ce2c69bc6da8f6"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.433551+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Grok Build”与韩文“Grok Build”在本条目所属 apps UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "apps",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#apps.hermes",
+      "key": "apps.hermes",
+      "status": "可保留",
+      "combined_fingerprint": "7a4bb0dd989e4c245c2865945d2d43ab5fe3e63b45fdfff9c3551d6b0fbb5e57",
+      "content_fingerprints": {
+        "en": "66e0988d1198afe049f2a5fedbb6e89c20c12dc3bc01ab3f5c13576d624f6e9b",
+        "ja": "66e0988d1198afe049f2a5fedbb6e89c20c12dc3bc01ab3f5c13576d624f6e9b",
+        "ko": "66e0988d1198afe049f2a5fedbb6e89c20c12dc3bc01ab3f5c13576d624f6e9b",
+        "tr": "66e0988d1198afe049f2a5fedbb6e89c20c12dc3bc01ab3f5c13576d624f6e9b",
+        "zh": "66e0988d1198afe049f2a5fedbb6e89c20c12dc3bc01ab3f5c13576d624f6e9b",
+        "zh-TW": "66e0988d1198afe049f2a5fedbb6e89c20c12dc3bc01ab3f5c13576d624f6e9b"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.433551+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Hermes”与韩文“Hermes”在本条目所属 apps UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "apps",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#apps.mcode",
+      "key": "apps.mcode",
+      "status": "可保留",
+      "combined_fingerprint": "5f4f7811b41dd30203c300fa9fae8e64ace0e3af203cf9f9dd729e3d6d63df92",
+      "content_fingerprints": {
+        "en": "b0213532208336462f48b0c4e37185b6611b1935d2bf7c443f0f6bcce8963325",
+        "ja": "b0213532208336462f48b0c4e37185b6611b1935d2bf7c443f0f6bcce8963325",
+        "ko": "b0213532208336462f48b0c4e37185b6611b1935d2bf7c443f0f6bcce8963325",
+        "tr": "b0213532208336462f48b0c4e37185b6611b1935d2bf7c443f0f6bcce8963325",
+        "zh": "b0213532208336462f48b0c4e37185b6611b1935d2bf7c443f0f6bcce8963325",
+        "zh-TW": "b0213532208336462f48b0c4e37185b6611b1935d2bf7c443f0f6bcce8963325"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.433551+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“MiniMax Code”与韩文“MiniMax Code”在本条目所属 apps UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "apps",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#apps.omp",
+      "key": "apps.omp",
+      "status": "可保留",
+      "combined_fingerprint": "a259266a0dfd3e9a014d4c9bad8ccca5056f6ec2a3d83ed7edebc14f9ed014a8",
+      "content_fingerprints": {
+        "en": "40f5bd93e8d06737af050e6aabc6a9e3168d62a4f8fd622b03efd0e3b8b4d4f7",
+        "ja": "40f5bd93e8d06737af050e6aabc6a9e3168d62a4f8fd622b03efd0e3b8b4d4f7",
+        "ko": "40f5bd93e8d06737af050e6aabc6a9e3168d62a4f8fd622b03efd0e3b8b4d4f7",
+        "tr": "40f5bd93e8d06737af050e6aabc6a9e3168d62a4f8fd622b03efd0e3b8b4d4f7",
+        "zh": "40f5bd93e8d06737af050e6aabc6a9e3168d62a4f8fd622b03efd0e3b8b4d4f7",
+        "zh-TW": "40f5bd93e8d06737af050e6aabc6a9e3168d62a4f8fd622b03efd0e3b8b4d4f7"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.433551+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Oh My Pi”与韩文“Oh My Pi”在本条目所属 apps UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "apps",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#apps.openclaw",
+      "key": "apps.openclaw",
+      "status": "可保留",
+      "combined_fingerprint": "08e929d7aea6503a262fb629f4bcb9e91236ecf842d0dbafcbe954bea179fffe",
+      "content_fingerprints": {
+        "en": "a7b90ee8facf0aed66654381629a6ae2983257dfe5daad4ae455dbf49fc6d39b",
+        "ja": "a7b90ee8facf0aed66654381629a6ae2983257dfe5daad4ae455dbf49fc6d39b",
+        "ko": "a7b90ee8facf0aed66654381629a6ae2983257dfe5daad4ae455dbf49fc6d39b",
+        "tr": "a7b90ee8facf0aed66654381629a6ae2983257dfe5daad4ae455dbf49fc6d39b",
+        "zh": "a7b90ee8facf0aed66654381629a6ae2983257dfe5daad4ae455dbf49fc6d39b",
+        "zh-TW": "a7b90ee8facf0aed66654381629a6ae2983257dfe5daad4ae455dbf49fc6d39b"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.433551+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“OpenClaw”与韩文“OpenClaw”在本条目所属 apps UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "apps",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#apps.opencode",
+      "key": "apps.opencode",
+      "status": "可保留",
+      "combined_fingerprint": "da8a91188321f11a7b9337eec39f5f21cbc9f431d4bee4349be4d19764e2835b",
+      "content_fingerprints": {
+        "en": "3af0e55ccc96d87ce0f167c9b1bdf63212d20aece6aa24eeac88ec438674dfb0",
+        "ja": "3af0e55ccc96d87ce0f167c9b1bdf63212d20aece6aa24eeac88ec438674dfb0",
+        "ko": "3af0e55ccc96d87ce0f167c9b1bdf63212d20aece6aa24eeac88ec438674dfb0",
+        "tr": "3af0e55ccc96d87ce0f167c9b1bdf63212d20aece6aa24eeac88ec438674dfb0",
+        "zh": "3af0e55ccc96d87ce0f167c9b1bdf63212d20aece6aa24eeac88ec438674dfb0",
+        "zh-TW": "3af0e55ccc96d87ce0f167c9b1bdf63212d20aece6aa24eeac88ec438674dfb0"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.433551+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“OpenCode”与韩文“OpenCode”在本条目所属 apps UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "apps",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#apps.pi",
+      "key": "apps.pi",
+      "status": "可保留",
+      "combined_fingerprint": "881109719e73931e68d1d7675c90543a9acc0cc63d1e8a397cb7376135c2c3d4",
+      "content_fingerprints": {
+        "en": "4d87941d681ca4e89ca303d033b7d383d3acfbb6d9d9616bd88d7c19cf92c3dd",
+        "ja": "4d87941d681ca4e89ca303d033b7d383d3acfbb6d9d9616bd88d7c19cf92c3dd",
+        "ko": "4d87941d681ca4e89ca303d033b7d383d3acfbb6d9d9616bd88d7c19cf92c3dd",
+        "tr": "4d87941d681ca4e89ca303d033b7d383d3acfbb6d9d9616bd88d7c19cf92c3dd",
+        "zh": "4d87941d681ca4e89ca303d033b7d383d3acfbb6d9d9616bd88d7c19cf92c3dd",
+        "zh-TW": "4d87941d681ca4e89ca303d033b7d383d3acfbb6d9d9616bd88d7c19cf92c3dd"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.433551+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Pi”与韩文“Pi”在本条目所属 apps UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "apps",
+      "round": 1
+    }
+  ]
+}

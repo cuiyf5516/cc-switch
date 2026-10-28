@@ -1,0 +1,13 @@
+{
+  "batch_id": "hardcoded:0213:src-tray-panel-UsageTab.tsx",
+  "kind": "hardcoded",
+  "group": "src/tray-panel/UsageTab.tsx",
+  "ordinal": 1,
+  "record_count": 4,
+  "record_ids": [
+    "hardcoded:src/tray-panel/UsageTab.tsx:bucketize:fcc75ca0e6b68396:001",
+    "hardcoded:src/tray-panel/UsageTab.tsx:UsageTab:ff9484a2eb27a630:001",
+    "hardcoded:src/tray-panel/UsageTab.tsx:UsageTab:e616355cec9d85e9:001",
+    "hardcoded:src/tray-panel/UsageTab.tsx:UsageTab:60f562bafec64a0d:001"
+  ]
+}

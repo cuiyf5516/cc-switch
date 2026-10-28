@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0194:src-icons-extracted",
+  "kind": "hardcoded",
+  "group": "src/icons/extracted",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 3,
+  "records": [
+    {
+      "id": "hardcoded:src/icons/extracted/metadata.ts:iconMetadata:e6e4af5f0673a2da:001",
+      "status": "无需国际化",
+      "content_fingerprint": "e6e4af5f0673a2daf5a4c256f5233b40476fbf1e65a9d12774eec92126531cfc",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/icons/extracted/metadata.ts",
+      "line": 1101,
+      "function": "iconMetadata",
+      "expression": "优刻得",
+      "reason": "图标元数据中的中文是搜索别名，不直接渲染为界面文案；保留有助于中文品牌检索。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0194:src-icons-extracted",
+      "round": 1
+    },
+    {
+      "id": "hardcoded:src/icons/extracted/metadata.ts:iconMetadata:7a4802781ef8a96c:001",
+      "status": "无需国际化",
+      "content_fingerprint": "7a4802781ef8a96cafb9a63a14b21862a9d6b71de0a7065d25e47ac44a4ba377",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/icons/extracted/metadata.ts",
+      "line": 1101,
+      "function": "iconMetadata",
+      "expression": "优云智算",
+      "reason": "图标元数据中的中文是搜索别名，不直接渲染为界面文案；保留有助于中文品牌检索。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0194:src-icons-extracted",
+      "round": 1
+    },
+    {
+      "id": "hardcoded:src/icons/extracted/metadata.ts:iconMetadata:bfdf8d751b905efb:001",
+      "status": "无需国际化",
+      "content_fingerprint": "bfdf8d751b905efb210b13a64d70350d89351d65aa205fd9b534518c1d15cfb3",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/icons/extracted/metadata.ts",
+      "line": 1115,
+      "function": "iconMetadata",
+      "expression": "词元工厂",
+      "reason": "图标元数据中的中文是搜索别名，不直接渲染为界面文案；保留有助于中文品牌检索。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0194:src-icons-extracted",
+      "round": 1
+    }
+  ]
+}

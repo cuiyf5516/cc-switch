@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0195:src-index.html",
+  "kind": "hardcoded",
+  "group": "src/index.html",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 2,
+  "records": [
+    {
+      "id": "hardcoded:src/index.html:<html>:ede110c10283e660:001",
+      "status": "无需国际化",
+      "content_fingerprint": "ede110c10283e66095fb9d4aae5c93d782b368cde15a194377d5453d5aeea9cf",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/index.html",
+      "line": 5,
+      "function": "<html>",
+      "expression": "width=device-width, initial-scale=1.0",
+      "reason": "URL、模型 ID、路径、示例值或纯技术属性，不承载自然语言。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0195:src-index.html",
+      "round": 1
+    },
+    {
+      "id": "hardcoded:src/index.html:<html>:25446063f4c3bc2c:001",
+      "status": "确认遗漏",
+      "content_fingerprint": "25446063f4c3bc2c4ce81522b40c699107700afcbbd0d794b4a8ec0e13978833",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/index.html",
+      "line": 6,
+      "function": "<html>",
+      "expression": "Claude Code 供应商切换器",
+      "reason": "HTML 文档标题硬编码中文，窗口首次加载或读取文档标题时不会随语言切换。",
+      "suggested_action": "在运行时根据 i18n 设置 document.title，并使用资源键。",
+      "suggested_ko": null,
+      "severity": "中",
+      "review_batch": "hardcoded:0195:src-index.html",
+      "round": 1
+    }
+  ]
+}

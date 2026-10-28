@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0022:src-tauri-src-claude_plugin.rs",
+  "kind": "hardcoded",
+  "group": "src-tauri/src/claude_plugin.rs",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 2,
+  "records": [
+    {
+      "id": "hardcoded:src-tauri/src/claude_plugin.rs:write_claude_config:e0e237d68619aa81:001",
+      "status": "无需国际化",
+      "content_fingerprint": "e0e237d68619aa814fcb350af9b8f55516807466c26f6224bd3f2906623ac3df",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src-tauri/src/claude_plugin.rs",
+      "line": 83,
+      "function": "write_claude_config",
+      "expression": "{serialized}",
+      "reason": "协议字段、配置键、SQL、路径、命令或内部标识，不属于用户可见文案。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0022:src-tauri-src-claude_plugin.rs",
+      "round": 1
+    },
+    {
+      "id": "hardcoded:src-tauri/src/claude_plugin.rs:clear_claude_config:e0e237d68619aa81:001",
+      "status": "无需国际化",
+      "content_fingerprint": "e0e237d68619aa814fcb350af9b8f55516807466c26f6224bd3f2906623ac3df",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src-tauri/src/claude_plugin.rs",
+      "line": 117,
+      "function": "clear_claude_config",
+      "expression": "{serialized}",
+      "reason": "协议字段、配置键、SQL、路径、命令或内部标识，不属于用户可见文案。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0022:src-tauri-src-claude_plugin.rs",
+      "round": 1
+    }
+  ]
+}

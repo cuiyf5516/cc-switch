@@ -1,0 +1,36 @@
+{
+  "batch_id": "translation:json-locale:header:001",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "header",
+  "ordinal": 1,
+  "record_count": 12,
+  "record_ids": [
+    "json:src/i18n/locales#header.addProvider",
+    "json:src/i18n/locales#header.enterEditMode",
+    "json:src/i18n/locales#header.exitEditMode",
+    "json:src/i18n/locales#header.switchToChinese",
+    "json:src/i18n/locales#header.switchToEnglish",
+    "json:src/i18n/locales#header.toggleDarkMode",
+    "json:src/i18n/locales#header.toggleLightMode",
+    "json:src/i18n/locales#header.viewOnGithub",
+    "json:src/i18n/locales#header.windowClose",
+    "json:src/i18n/locales#header.windowMaximize",
+    "json:src/i18n/locales#header.windowMinimize",
+    "json:src/i18n/locales#header.windowRestore"
+  ],
+  "keys": [
+    "header.addProvider",
+    "header.enterEditMode",
+    "header.exitEditMode",
+    "header.switchToChinese",
+    "header.switchToEnglish",
+    "header.toggleDarkMode",
+    "header.toggleLightMode",
+    "header.viewOnGithub",
+    "header.windowClose",
+    "header.windowMaximize",
+    "header.windowMinimize",
+    "header.windowRestore"
+  ]
+}

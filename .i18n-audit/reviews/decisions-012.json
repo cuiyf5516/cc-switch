@@ -1,0 +1,6 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:mode:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:mode:002","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:mode:003","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:nav:001","default_status":"可保留","overrides":[]}
+]}

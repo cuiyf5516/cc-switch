@@ -1,0 +1,15 @@
+{
+  "batch_id": "hardcoded:0057:src-tauri-src-prompt_files.rs",
+  "kind": "hardcoded",
+  "group": "src-tauri/src/prompt_files.rs",
+  "ordinal": 1,
+  "record_count": 6,
+  "record_ids": [
+    "hardcoded:src-tauri/src/prompt_files.rs:validate_prompt_content:a25653173c4ffef9:001",
+    "hardcoded:src-tauri/src/prompt_files.rs:prompt_file_path:270a6eaf162ceb81:001",
+    "hardcoded:src-tauri/src/prompt_files.rs:prompt_file_path:af3a427b87668195:001",
+    "hardcoded:src-tauri/src/prompt_files.rs:prompt_file_path:6610f66e415def23:001",
+    "hardcoded:src-tauri/src/prompt_files.rs:prompt_file_path:84b3d135852467ee:001",
+    "hardcoded:src-tauri/src/prompt_files.rs:get_base_dir_with_fallback:4ba692aafee48fa6:001"
+  ]
+}

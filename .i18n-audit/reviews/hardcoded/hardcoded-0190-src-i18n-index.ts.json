@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0190:src-i18n-index.ts",
+  "kind": "hardcoded",
+  "group": "src/i18n/index.ts",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 2,
+  "records": [
+    {
+      "id": "hardcoded:src/i18n/index.ts:getInitialLanguage:e05adec2efb0b77f:001",
+      "status": "无需国际化",
+      "content_fingerprint": "e05adec2efb0b77f778d05f2510d61c6c5b2c2d78edb5877a6119ea6c196aec1",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/i18n/index.ts",
+      "line": 31,
+      "function": "getInitialLanguage",
+      "expression": "[i18n] Failed to read stored language preference",
+      "reason": "控制台日志或诊断信息，不作为界面文案。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0190:src-i18n-index.ts",
+      "round": 1
+    },
+    {
+      "id": "hardcoded:src/i18n/index.ts:syncLanguageFromSettings:8cc8adeccdef2826:001",
+      "status": "无需国际化",
+      "content_fingerprint": "8cc8adeccdef2826f205e0375490f7301179b5cf89607d89ec026c7dc86a7159",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/i18n/index.ts",
+      "line": 131,
+      "function": "syncLanguageFromSettings",
+      "expression": "[i18n] Failed to persist language preference",
+      "reason": "控制台日志或诊断信息，不作为界面文案。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0190:src-i18n-index.ts",
+      "round": 1
+    }
+  ]
+}

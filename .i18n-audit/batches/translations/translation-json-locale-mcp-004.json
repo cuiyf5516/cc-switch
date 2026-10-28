@@ -1,0 +1,30 @@
+{
+  "batch_id": "translation:json-locale:mcp:004",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "mcp",
+  "ordinal": 4,
+  "record_count": 9,
+  "record_ids": [
+    "json:src/i18n/locales#mcp.wizard.preview",
+    "json:src/i18n/locales#mcp.wizard.title",
+    "json:src/i18n/locales#mcp.wizard.type",
+    "json:src/i18n/locales#mcp.wizard.typeHttp",
+    "json:src/i18n/locales#mcp.wizard.typeSse",
+    "json:src/i18n/locales#mcp.wizard.typeStdio",
+    "json:src/i18n/locales#mcp.wizard.url",
+    "json:src/i18n/locales#mcp.wizard.urlPlaceholder",
+    "json:src/i18n/locales#mcp.wizard.urlRequired"
+  ],
+  "keys": [
+    "mcp.wizard.preview",
+    "mcp.wizard.title",
+    "mcp.wizard.type",
+    "mcp.wizard.typeHttp",
+    "mcp.wizard.typeSse",
+    "mcp.wizard.typeStdio",
+    "mcp.wizard.url",
+    "mcp.wizard.urlPlaceholder",
+    "mcp.wizard.urlRequired"
+  ]
+}

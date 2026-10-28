@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0098:src-components-ConfirmDialog.tsx",
+  "kind": "hardcoded",
+  "group": "src/components/ConfirmDialog.tsx",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 2,
+  "records": [
+    {
+      "id": "hardcoded:src/components/ConfirmDialog.tsx:iconClass:b50fb4944fe1e27c:001",
+      "status": "无需国际化",
+      "content_fingerprint": "b50fb4944fe1e27c99a1b54de94ae2a94bf29f0f09e97a225807656f96bfc8b7",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/components/ConfirmDialog.tsx",
+      "line": 58,
+      "function": "iconClass",
+      "expression": "h-5 w-5 text-fg-1",
+      "reason": "技术标识、命令、路径、协议值、配置片段或内部数据，不面向用户展示。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0098:src-components-ConfirmDialog.tsx",
+      "round": 1
+    },
+    {
+      "id": "hardcoded:src/components/ConfirmDialog.tsx:iconClass:1b042d9285edbc6b:001",
+      "status": "无需国际化",
+      "content_fingerprint": "1b042d9285edbc6be8ad1f38520ee149b6bc05e1166b887ed19df2de0a17fcc5",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/components/ConfirmDialog.tsx",
+      "line": 58,
+      "function": "iconClass",
+      "expression": "h-5 w-5 text-destructive",
+      "reason": "技术标识、命令、路径、协议值、配置片段或内部数据，不面向用户展示。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0098:src-components-ConfirmDialog.tsx",
+      "round": 1
+    }
+  ]
+}

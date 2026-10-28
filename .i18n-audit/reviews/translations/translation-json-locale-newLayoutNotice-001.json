@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:newLayoutNotice:001",
+  "kind": "translation",
+  "namespace": "newLayoutNotice",
+  "reviewed_at": "2026-10-28T13:39:08.439503+00:00",
+  "review_count": 4,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#newLayoutNotice.body",
+      "key": "newLayoutNotice.body",
+      "status": "可保留",
+      "combined_fingerprint": "8fcc9a7a2e1d73c6fda979178e6b4e0f831d84f07def3cf7c954052b4efa179d",
+      "content_fingerprints": {
+        "en": "4be75d543b0d5b411cce45409a7f65ab12db3e8ca313efcf2794e767128d7761",
+        "ja": "e49236fb2fe4d110f062a5e9123e5cb689d3a25600a45b0a4fb1e705ced7c7f0",
+        "ko": "ce8357caa3209e8681494cd0b463c4eda7fc243acd92936b72ead39f6838052b",
+        "tr": "48e01aff73aa3742bb8081ee46ca736a12bb0c05ba5e115de1a701a41645312e",
+        "zh": "d5db60b55fbbd02915c5aad6386e435b161210a4aec76ca6aa50488d8378e0da",
+        "zh-TW": "c0afd4a249e90792f6cffe6918586db3b8569b902f536f046635e9264e2c435a"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.439503+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“CC Switch 这一版重新设计了界面，常用功能的位置有变化： / • 模式移到了每个应用页的顶部 / • 用量统计和授权中心移到了左侧边栏 / 想了解全部变化，可以看看这一版的更新说明。”与韩文“이번 버전에서 CC Switch의 인터페이스를 새롭게 디자인하여 자주 사용하는 기능의 위치가 바뀌었습니다: / • 연결 모드는 각 앱 페이지 상단으로 이동했습니다 / • 사용량 통계와 인증 센터는 왼쪽 사이드바로 이동했습니다 / 전체 변경 사항은 이번 버전의 릴리스 노트를 확인하세요.”在本条目所属 newLayoutNotice UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "newLayoutNotice",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#newLayoutNotice.confirm",
+      "key": "newLayoutNotice.confirm",
+      "status": "可保留",
+      "combined_fingerprint": "edc73deffbca2accd74e8930ce7b18dcfe905192c1523c42f9fe9ed6c2c86e75",
+      "content_fingerprints": {
+        "en": "5ad3dbd1242a4cea217e8b68a9fd2c8187f2c337258279193f6d9a31a9f1a69c",
+        "ja": "565339bc4d33d72817b583024112eb7f5cdf3e5eef0252d6ec1b9c9a94e12bb3",
+        "ko": "d0b5eebde68b9538543cf2f617e06b636664d443157bf575215722044574e0fd",
+        "tr": "52fd345da1dc95b96b4334b4043b2e406a7bf96c864024fe985ba641189e7cfd",
+        "zh": "348f1cf1243e74bc40ca0788530d6e72653e75544a25a8262a96b9f37d24c2ca",
+        "zh-TW": "348f1cf1243e74bc40ca0788530d6e72653e75544a25a8262a96b9f37d24c2ca"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.439503+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“我知道了”与韩文“알겠습니다”在本条目所属 newLayoutNotice UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "newLayoutNotice",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#newLayoutNotice.title",
+      "key": "newLayoutNotice.title",
+      "status": "可保留",
+      "combined_fingerprint": "15542b5a349bb2ef90eab03de126304edf7a98883a655aaa218c165510c3c0ae",
+      "content_fingerprints": {
+        "en": "24b8f4fbce4aa190564393276f421953297fb152747a0ceb97f7e7096d149eec",
+        "ja": "6d6d7cd7de382fbc789176ea77fab299dacde5d653b6f98d2fc980a3be699277",
+        "ko": "f7e665d793c6da75c17581d78c4669b77115e3ce48a7b0eb3e0651fdf1ff956d",
+        "tr": "8c5c643cff1d4827bbf6ef81518d48278daa2141f53372c4736c5cb5e7349d88",
+        "zh": "cfc1d4e9bd22a8ae98cd3cfef5270e5a3240b020e9e114a3a817adb21d3f4cfb",
+        "zh-TW": "6c9bfd7e145fced30c43a21616956a6ef7cba54dc2d6d201a749e4334756588a"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.439503+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“界面改版了”与韩文“CC Switch의 디자인이 새로워졌습니다”在本条目所属 newLayoutNotice UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "newLayoutNotice",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#newLayoutNotice.viewReleaseNotes",
+      "key": "newLayoutNotice.viewReleaseNotes",
+      "status": "可保留",
+      "combined_fingerprint": "982a94bab2c963d82153dc388a8c4d74671c6d8deea98ec5f861b935a83ea96b",
+      "content_fingerprints": {
+        "en": "959277cecafbca06a302cfb36325c8a1a69ee5a55f7a625ce01bf8cbe971f620",
+        "ja": "bcad8b8d474ed7b7bd4775e8614a3391d36cfd8ea44d28a86f5adb96d8cb58ad",
+        "ko": "c57ae88177b533813304d05849bedda1dbd2e37e65360ddbff4935e110ac9c37",
+        "tr": "c57a10d3c9e89d50c65b17c930fdd0c17c24744a32944fee9a5038eba7aee069",
+        "zh": "00ed9eef1b6e07586c6563d8ef7f5ebb969631c51b7e8dd01c18461af287c6e2",
+        "zh-TW": "0cc9522a40190dc228aeb65551a43263700036c70cc406c462e409853054d258"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.439503+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“查看更新说明”与韩文“릴리스 노트 보기”在本条目所属 newLayoutNotice UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "newLayoutNotice",
+      "round": 1
+    }
+  ]
+}

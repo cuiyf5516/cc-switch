@@ -1,0 +1,28 @@
+{
+  "batch_id": "hardcoded:0220:src-utils-providerConfigUtils.ts",
+  "kind": "hardcoded",
+  "group": "src/utils/providerConfigUtils.ts",
+  "ordinal": 1,
+  "record_count": 19,
+  "record_ids": [
+    "hardcoded:src/utils/providerConfigUtils.ts:validateJsonConfig:148d195e21b05db5:001",
+    "hardcoded:src/utils/providerConfigUtils.ts:validateJsonConfig:639cb148b070e7fe:001",
+    "hardcoded:src/utils/providerConfigUtils.ts:validateJsonConfig:f97bc449d16f097d:001",
+    "hardcoded:src/utils/providerConfigUtils.ts:escapeTomlBasicString:516bec71bbaf826e:001",
+    "hardcoded:src/utils/providerConfigUtils.ts:tomlBasicString:f3eb14006baad446:001",
+    "hardcoded:src/utils/providerConfigUtils.ts:replacementLine:5ab4b4b418e05191:001",
+    "hardcoded:src/utils/providerConfigUtils.ts:setCodexWireApi:95f1d8e9da125259:001",
+    "hardcoded:src/utils/providerConfigUtils.ts:replacementLine:93061c9c98eaf6b5:001",
+    "hardcoded:src/utils/providerConfigUtils.ts:setCodexRemoteCompaction:8a223a43504866df:001",
+    "hardcoded:src/utils/providerConfigUtils.ts:setCodexRemoteCompaction:95f1d8e9da125259:001",
+    "hardcoded:src/utils/providerConfigUtils.ts:updateCodexExperimentalBearerToken:53c1066dc50410fb:001",
+    "hardcoded:src/utils/providerConfigUtils.ts:moveCodexBaseUrlIntoCustomTable:197baa1b9def32c8:001",
+    "hardcoded:src/utils/providerConfigUtils.ts:moveCodexBaseUrlIntoCustomTable:380b67c28817030e:001",
+    "hardcoded:src/utils/providerConfigUtils.ts:moveCodexBaseUrlIntoCustomTable:37fe628929bb5c1c:001",
+    "hardcoded:src/utils/providerConfigUtils.ts:replacementLine:011e9b9739f7e9c9:001",
+    "hardcoded:src/utils/providerConfigUtils.ts:setCodexBaseUrl:95f1d8e9da125259:001",
+    "hardcoded:src/utils/providerConfigUtils.ts:replacementLine:247b8e6aae05a404:001",
+    "hardcoded:src/utils/providerConfigUtils.ts:replacementLine:9afea93a49bda3e7:001",
+    "hardcoded:src/utils/providerConfigUtils.ts:replacementLine:ff4a18a669b4fb37:001"
+  ]
+}

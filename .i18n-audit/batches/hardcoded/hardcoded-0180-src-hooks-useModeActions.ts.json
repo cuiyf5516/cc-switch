@@ -1,0 +1,10 @@
+{
+  "batch_id": "hardcoded:0180:src-hooks-useModeActions.ts",
+  "kind": "hardcoded",
+  "group": "src/hooks/useModeActions.ts",
+  "ordinal": 1,
+  "record_count": 1,
+  "record_ids": [
+    "dynamic-i18n:src/hooks/useModeActions.ts:enter:883829e896b1bc8a:001"
+  ]
+}

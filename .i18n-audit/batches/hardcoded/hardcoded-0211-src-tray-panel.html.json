@@ -1,0 +1,11 @@
+{
+  "batch_id": "hardcoded:0211:src-tray-panel.html",
+  "kind": "hardcoded",
+  "group": "src/tray-panel.html",
+  "ordinal": 1,
+  "record_count": 2,
+  "record_ids": [
+    "hardcoded:src/tray-panel.html:<html>:ede110c10283e660:001",
+    "hardcoded:src/tray-panel.html:<html>:8ed2ae598541c9ba:001"
+  ]
+}

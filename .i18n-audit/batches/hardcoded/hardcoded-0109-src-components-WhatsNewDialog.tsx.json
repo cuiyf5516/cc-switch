@@ -1,0 +1,12 @@
+{
+  "batch_id": "hardcoded:0109:src-components-WhatsNewDialog.tsx",
+  "kind": "hardcoded",
+  "group": "src/components/WhatsNewDialog.tsx",
+  "ordinal": 1,
+  "record_count": 3,
+  "record_ids": [
+    "hardcoded:src/components/WhatsNewDialog.tsx:openExternal:879d74555a6b7cbe:001",
+    "dynamic-i18n:src/components/WhatsNewDialog.tsx:WhatsNewDialog:3f85b3caaa1db65c:001",
+    "hardcoded:src/components/WhatsNewDialog.tsx:acknowledge:8d3ea93107420943:001"
+  ]
+}

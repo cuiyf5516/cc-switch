@@ -1,0 +1,11 @@
+{
+  "batch_id": "hardcoded:0209:src-lib-utils",
+  "kind": "hardcoded",
+  "group": "src/lib/utils",
+  "ordinal": 1,
+  "record_count": 2,
+  "record_ids": [
+    "hardcoded:src/lib/utils/base64.ts:decodeBase64Utf8:ebc25d15f5f8211a:001",
+    "hardcoded:src/lib/utils/base64.ts:decodeBase64Utf8:1bf8da32168b6b02:001"
+  ]
+}

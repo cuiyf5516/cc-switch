@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:mcp:004",
+  "kind": "translation",
+  "namespace": "mcp",
+  "reviewed_at": "2026-10-28T13:55:16.439244+00:00",
+  "review_count": 9,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#mcp.wizard.preview",
+      "key": "mcp.wizard.preview",
+      "status": "可保留",
+      "combined_fingerprint": "ef73f0ca90816c0258e95c18056d3fb08754facbd6b652e1f478b6a274c7cde3",
+      "content_fingerprints": {
+        "en": "500afccff5aab8dcc3c3e46b58825e6b09fd9808d717d18680504ac5b7ad2419",
+        "ja": "2f5b9d1f59e348bc317b804570430d71a6e57682f27508fed23342416283212b",
+        "ko": "1fccdbdf61e4ac037f6f677a2640b53a29c641626f3ac15020c835c3d72343a2",
+        "tr": "70893616305b8e4a8f6eaf4854b611e78ee2157a03b0ea93415e8caaa6265e2f",
+        "zh": "6c425af86e27ee5c22d22e59d15db4ff4719c12f7ee8306e4813eef867395277",
+        "zh-TW": "7dae27783c76bd1493c73f6f9f6831cb3cb72e195ac97d626a936f99619eec3d"
+      },
+      "reviewed_at": "2026-10-28T13:55:16.439244+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“配置预览”与韩文“설정 미리보기”在本条目所属 mcp UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "mcp",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#mcp.wizard.title",
+      "key": "mcp.wizard.title",
+      "status": "可保留",
+      "combined_fingerprint": "b29fdc3f6e5c611f83b3c91438d29ddfbd294d2614780ff0e2deb7329596d05b",
+      "content_fingerprints": {
+        "en": "639d5dd55a751206032107b2c20bbe9f6a7658b2d2d45d6eef2762a2e6ff3008",
+        "ja": "cbdcd05ea67266ac29509c5183a35c2adfb7c90dba64868138ed88340646d1aa",
+        "ko": "55b213179cbcb1a9f1b9e11e47212064f5d3c0d8c5e6525f05ba4691d86df554",
+        "tr": "3e3df4409d9fa1e5dba15a5f92826fc005dbfe147f3e82bea56ac8ecbdb9a1da",
+        "zh": "e6499d3a61185b7b5d1719ccd15b55671b4808284e52b02f7cad0fbdbb82c27b",
+        "zh-TW": "4e57eaa680fc93408c0f9b9eb3a8b12edcbd2e3700522845775005bf4f3a7af4"
+      },
+      "reviewed_at": "2026-10-28T13:55:16.439244+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“MCP 配置向导”与韩文“MCP 설정 마법사”在本条目所属 mcp UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "mcp",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#mcp.wizard.type",
+      "key": "mcp.wizard.type",
+      "status": "可保留",
+      "combined_fingerprint": "e6c42b9588f03e76074c1ac4fc214c4d9cf37e54e6a6953ca98200bd640075c6",
+      "content_fingerprints": {
+        "en": "baaddf70fb5d432b8bd948ef91d6f910124a6d138edae4d5f000c4610ddc8eae",
+        "ja": "572a6a52e9a6e8ae7e47849da19b36d05c97bf2b072078e01a9add4358604cd3",
+        "ko": "5cf2792b3fab357833fbe130aac4664a39e2eb340f49e0ec1d6938e6494f94dc",
+        "tr": "1cff8a95c840c89adb7b2cdbfc63d228355d76ec79cab441a86568ae4a0ef76d",
+        "zh": "ba40014ff496f64e755492a5c6243cc0222a5d3e4b795ecfea7c9bed809adaab",
+        "zh-TW": "1588dd8c9e731787ac2d1c1d8bdb277e6b54dd514ba91784f2c7f22b234e4cfd"
+      },
+      "reviewed_at": "2026-10-28T13:55:16.439244+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“类型”与韩文“유형”在本条目所属 mcp UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "mcp",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#mcp.wizard.typeHttp",
+      "key": "mcp.wizard.typeHttp",
+      "status": "可保留",
+      "combined_fingerprint": "46eaf7c0438711426d5f8cb8ed8359d85d1efa8c32938ea54c3a343f33540ae6",
+      "content_fingerprints": {
+        "en": "e0603c499aae47eb89343ad0ef3178e044c62e70ae2309b35591d1d49a3211ec",
+        "ja": "e0603c499aae47eb89343ad0ef3178e044c62e70ae2309b35591d1d49a3211ec",
+        "ko": "e0603c499aae47eb89343ad0ef3178e044c62e70ae2309b35591d1d49a3211ec",
+        "tr": "e0603c499aae47eb89343ad0ef3178e044c62e70ae2309b35591d1d49a3211ec",
+        "zh": "e0603c499aae47eb89343ad0ef3178e044c62e70ae2309b35591d1d49a3211ec",
+        "zh-TW": "e0603c499aae47eb89343ad0ef3178e044c62e70ae2309b35591d1d49a3211ec"
+      },
+      "reviewed_at": "2026-10-28T13:55:16.439244+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“http”与韩文“http”在本条目所属 mcp UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "mcp",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#mcp.wizard.typeSse",
+      "key": "mcp.wizard.typeSse",
+      "status": "可保留",
+      "combined_fingerprint": "b77cbd50786306841a72ca7120333896da0be8cbca38b45413f70148339266e1",
+      "content_fingerprints": {
+        "en": "fe3811fe21af748f53a05a169da84013d11253a53e3ef80355d20419fd89042e",
+        "ja": "fe3811fe21af748f53a05a169da84013d11253a53e3ef80355d20419fd89042e",
+        "ko": "fe3811fe21af748f53a05a169da84013d11253a53e3ef80355d20419fd89042e",
+        "tr": "fe3811fe21af748f53a05a169da84013d11253a53e3ef80355d20419fd89042e",
+        "zh": "fe3811fe21af748f53a05a169da84013d11253a53e3ef80355d20419fd89042e",
+        "zh-TW": "fe3811fe21af748f53a05a169da84013d11253a53e3ef80355d20419fd89042e"
+      },
+      "reviewed_at": "2026-10-28T13:55:16.439244+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“sse”与韩文“sse”在本条目所属 mcp UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "mcp",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#mcp.wizard.typeStdio",
+      "key": "mcp.wizard.typeStdio",
+      "status": "可保留",
+      "combined_fingerprint": "324836e036563b669a3969c822b2aa185148e5720e3a8d9dc8f2318257d8fe13",
+      "content_fingerprints": {
+        "en": "0708da13dbf9147832ad69ec76e5b96831328a8a9abd031e7e3ccaec9541d171",
+        "ja": "0708da13dbf9147832ad69ec76e5b96831328a8a9abd031e7e3ccaec9541d171",
+        "ko": "0708da13dbf9147832ad69ec76e5b96831328a8a9abd031e7e3ccaec9541d171",
+        "tr": "0708da13dbf9147832ad69ec76e5b96831328a8a9abd031e7e3ccaec9541d171",
+        "zh": "0708da13dbf9147832ad69ec76e5b96831328a8a9abd031e7e3ccaec9541d171",
+        "zh-TW": "0708da13dbf9147832ad69ec76e5b96831328a8a9abd031e7e3ccaec9541d171"
+      },
+      "reviewed_at": "2026-10-28T13:55:16.439244+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“stdio”与韩文“stdio”在本条目所属 mcp UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "mcp",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#mcp.wizard.url",
+      "key": "mcp.wizard.url",
+      "status": "可保留",
+      "combined_fingerprint": "158620e6532c16603986eeaf06ccf739aa9d242981250874a2d857d5484a75b6",
+      "content_fingerprints": {
+        "en": "e7a241debad56609ee660a5d2ef258a1aceb7357ff210ac66d7280b3add02a9a",
+        "ja": "e7a241debad56609ee660a5d2ef258a1aceb7357ff210ac66d7280b3add02a9a",
+        "ko": "e7a241debad56609ee660a5d2ef258a1aceb7357ff210ac66d7280b3add02a9a",
+        "tr": "c821137a0c21fe9a128f96a2f8eed728b6f0f6870a9e44fc650b13b3875a4381",
+        "zh": "e7a241debad56609ee660a5d2ef258a1aceb7357ff210ac66d7280b3add02a9a",
+        "zh-TW": "e7a241debad56609ee660a5d2ef258a1aceb7357ff210ac66d7280b3add02a9a"
+      },
+      "reviewed_at": "2026-10-28T13:55:16.439244+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“URL”与韩文“URL”在本条目所属 mcp UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "mcp",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#mcp.wizard.urlPlaceholder",
+      "key": "mcp.wizard.urlPlaceholder",
+      "status": "可保留",
+      "combined_fingerprint": "5c81989b553cb1bfd92074746d4d97f8d984e7b0114937c29d34d787284e1f15",
+      "content_fingerprints": {
+        "en": "2d60569de0f1f385c856ca3f894e7d6e980cb7c2f68661f904875a92425e30fd",
+        "ja": "2d60569de0f1f385c856ca3f894e7d6e980cb7c2f68661f904875a92425e30fd",
+        "ko": "2d60569de0f1f385c856ca3f894e7d6e980cb7c2f68661f904875a92425e30fd",
+        "tr": "2d60569de0f1f385c856ca3f894e7d6e980cb7c2f68661f904875a92425e30fd",
+        "zh": "2d60569de0f1f385c856ca3f894e7d6e980cb7c2f68661f904875a92425e30fd",
+        "zh-TW": "2d60569de0f1f385c856ca3f894e7d6e980cb7c2f68661f904875a92425e30fd"
+      },
+      "reviewed_at": "2026-10-28T13:55:16.439244+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“https://api.example.com/mcp”与韩文“https://api.example.com/mcp”在本条目所属 mcp UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "mcp",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#mcp.wizard.urlRequired",
+      "key": "mcp.wizard.urlRequired",
+      "status": "可保留",
+      "combined_fingerprint": "654da63d86b488a2a35eabc5f8f7f21cbd8abe225beb832a797da31cddd4fac0",
+      "content_fingerprints": {
+        "en": "d192d0eb9b4a283c848a24d992810b3b36a77008a513f6955b287ef4efa13299",
+        "ja": "c1b728f4754973a1ffa0caf14c1f8ccaea8e173a70da813cfc16d0c8f07d14ca",
+        "ko": "b4a302e6eabf422bdb36ae8df3da37aaa2c1b4e539397738c3187b3bb350e12c",
+        "tr": "02e90ae4af8c61ac537de96959825e29df185dc3127d81c34999661c7390f139",
+        "zh": "82ee5b033b818fd22a8923d2cedfe4ec2fd42b04dc977a6c57d185e08fa3044c",
+        "zh-TW": "108a4d58891d4434d44afb0abedf61e82ab22b3a8a13ff8d4ed6fdbfa9d21472"
+      },
+      "reviewed_at": "2026-10-28T13:55:16.439244+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“请输入 URL”与韩文“URL을 입력하세요”在本条目所属 mcp UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "mcp",
+      "round": 1
+    }
+  ]
+}

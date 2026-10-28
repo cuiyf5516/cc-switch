@@ -1,0 +1,19 @@
+{
+  "batch_id": "hardcoded:0125:src-components-providers",
+  "kind": "hardcoded",
+  "group": "src/components/providers",
+  "ordinal": 6,
+  "record_count": 10,
+  "record_ids": [
+    "dynamic-i18n:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:814432bf883e93e6:001",
+    "dynamic-i18n:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:5183420e5cea98fb:001",
+    "dynamic-i18n:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:63b0f1c3e4f1b584:002",
+    "hardcoded:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:5067328e35b0d0f2:001",
+    "hardcoded:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:5067328e35b0d0f2:002",
+    "dynamic-i18n:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:63b0f1c3e4f1b584:003",
+    "hardcoded:src/components/providers/presentation.ts:queueItems:493b07f1bebf4d7b:001",
+    "dynamic-i18n:src/components/providers/presentation.ts:buildSwitchSectionsByView:952b41156d70dc1d:001",
+    "dynamic-i18n:src/components/providers/presentation.ts:piBlocked:770eceac0b7cd3f8:001",
+    "dynamic-i18n:src/components/providers/presentation.ts:buildAdditiveSections:2eb4a51baae54d37:001"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "batch_id": "translation:native-inline-error:nativeErrors:001",
+  "kind": "translation",
+  "source_kind": "native-inline-error",
+  "namespace": "nativeErrors",
+  "ordinal": 1,
+  "record_count": 2,
+  "record_ids": [
+    "rust:src-tauri/src/commands/config.rs#invalid_json_format_error",
+    "rust:src-tauri/src/commands/config.rs#invalid_toml_format_error"
+  ],
+  "keys": [
+    "invalid_json_format_error",
+    "invalid_toml_format_error"
+  ]
+}

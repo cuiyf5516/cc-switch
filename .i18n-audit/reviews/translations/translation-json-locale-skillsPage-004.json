@@ -1,0 +1,388 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:skillsPage:004",
+  "kind": "translation",
+  "namespace": "skillsPage",
+  "reviewed_at": "2026-10-28T14:08:15.813850+00:00",
+  "review_count": 18,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#skillsPage.toast.backupAt",
+      "key": "skillsPage.toast.backupAt",
+      "status": "可保留",
+      "combined_fingerprint": "a8261f89de8b785b1027ecf015081fa8b4340f0b039a2b38af28d9bc42d2b5bc",
+      "content_fingerprints": {
+        "en": "ba0a4f1b6066ffee1973f9a5773723ac5a5f01acd3c72ee0add432d70f097ccd",
+        "ja": "021ca2e0e20ad40d15eaff53447a26ff174c61a55d4c5c1250d4b3b539f11089",
+        "ko": "e270a9e553bf5b0133c62944bce994ea887754d6ed9ff5fba08528f6f91d1010",
+        "tr": "dc67fd582c919b8a85ccfe093e1afb139f693b7641bff9ef9597dfa7f76520aa",
+        "zh": "6eacc52c4f8d2208f614435cde1ce25e5ba35fccc0a6ba7d87feed42df689dbb",
+        "zh-TW": "8bd416c6cab789d4a4ee7644d5a226935e5ceae429553ddd186604b65fea690a"
+      },
+      "reviewed_at": "2026-10-28T14:08:15.813850+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“备份在 {{path}}”与韩文“{{path}}에 백업했습니다”在本条目所属 skillsPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skillsPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skillsPage.toast.copiedName",
+      "key": "skillsPage.toast.copiedName",
+      "status": "可保留",
+      "combined_fingerprint": "a18d5d234fbdedb58041c5ae8d6da6573db04de9a1fed36dca293e280f9e5ab7",
+      "content_fingerprints": {
+        "en": "6efae1011e1d1485afaa5b9d40657ef26287b918de3498a6d38924a21eda0b71",
+        "ja": "33f6c5b7d3b3b622f1b259e05b4c44408ed4ee877dc03e9a72cfbba09da03fee",
+        "ko": "0d500cf4fa76f8d06e4ff41bdeaadf2396040b927973d3d1c5e0a3f1e19d01e6",
+        "tr": "455d3ddf04079ac2ce8a8d4b8eb1366a7a1de848e4102b6ebaec0beb54f265a5",
+        "zh": "da935f88d57d9d723b60d68325eacae951f64d22fa244b4d571ecc826e4f2af7",
+        "zh-TW": "e6f195cbaf81ae62d888765e299647870b33134c9477640c4f81dd8c917b5beb"
+      },
+      "reviewed_at": "2026-10-28T14:08:15.813850+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已复制 {{name}}”与韩文“스킬 이름을 복사했습니다: {{name}}”在本条目所属 skillsPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skillsPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skillsPage.toast.disabledSelection",
+      "key": "skillsPage.toast.disabledSelection",
+      "status": "可保留",
+      "combined_fingerprint": "41d81756c8cac62ba5bcbb231446af3b065dffe6dc37d160755cff8b8457a7bd",
+      "content_fingerprints": {
+        "en": "ba1e032fc368360700e1835b80546147bbe8a08fc3f1f4dbcff0f591ead4cc7e",
+        "ja": "7ece5cbc0faadaf47fac62c08c11305b6abe70a7887fcbc4a2c40633ba9eeafb",
+        "ko": "13cbd7e5ef527bb2ed6bb7548086282fd9542fd236a9fe10201ab8cebdeb29c0",
+        "tr": "ab1411a4771a6eb0ee875550fd262a348a120877a1f6653b3516084692178471",
+        "zh": "567801bc49eccada36b5ad7d6327d02459a918e0f3cbe32a277d50b0ad29384c",
+        "zh-TW": "836eade57ee35e3e3510c0db6e5822ee5b5c69f4f6ba4c2c9064099b9681babc"
+      },
+      "reviewed_at": "2026-10-28T14:08:15.813850+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已在 {{app}} 停用 {{count}} 个 {{noun}}”与韩文“{{app}}에서 {{noun}} {{count}}개를 비활성화했습니다.”在本条目所属 skillsPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skillsPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skillsPage.toast.enableFailed",
+      "key": "skillsPage.toast.enableFailed",
+      "status": "可保留",
+      "combined_fingerprint": "ca236c2787506d3902f85f5530a2474225f8ae9f39941f4063737c5eea8a8f58",
+      "content_fingerprints": {
+        "en": "5475f3c7157ec32314228e6d94a150ec2ea628fd5da64970fcd99d4fb1bf2b01",
+        "ja": "e6157d1970469bc83fc148dc274d735da80df7b2520ca5a20268f6515f4ccb9d",
+        "ko": "014dc660f3c1da4391f1d21fd9eff44f10434b054be82d5f9c029806d8052f1d",
+        "tr": "77c82c35045fd4adf0086a14832fdaaf147769e28e65655f96250ab06fb81943",
+        "zh": "bb59e3a15bd21b60c5a7b0a1d02b81c5e96a4f4878f82768dd17606ad651cf42",
+        "zh-TW": "0db70d1c5674d1409bf43a7695ff5244ce50e974daec181d59366fa36841fa6a"
+      },
+      "reviewed_at": "2026-10-28T14:08:15.813850+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“没能在 {{apps}} 启用，已在列表里标出”与韩文“{{apps}}에서 활성화하지 못했습니다. 목록에 표시했습니다”在本条目所属 skillsPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skillsPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skillsPage.toast.installed",
+      "key": "skillsPage.toast.installed",
+      "status": "可保留",
+      "combined_fingerprint": "1e30819e044fc3455104b138f2c0307ce4a76a51b6361b0cea286ac18aede8d7",
+      "content_fingerprints": {
+        "en": "955625507e85a7459d0bafffd1601555e3079a03543c2448b5e95fb6ba024672",
+        "ja": "e7676828586e938e68155d65bc1299aa2b28c76c84abdd926253def23bfd2b6a",
+        "ko": "47a20da2773840fbd402273cf7d92ad2e98ed3084c987f8aa965ff40afaca6ea",
+        "tr": "bc5616abb568cd70eedba10775eb7e3d3440547b848b7706e00a254caa7beac3",
+        "zh": "8931ebba58dd1b03d4bc5901cc0b2b267204fb3288e76f2a694e254e96148e8c",
+        "zh-TW": "31c398b1a87451f1034ac23f1bbf9426350550a4231ef94436ea23239b7ab027"
+      },
+      "reviewed_at": "2026-10-28T14:08:15.813850+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已安装 {{name}}，并在 {{apps}} 启用”与韩文“{{name}}을(를) 설치하고 {{apps}}에서 활성화했습니다”在本条目所属 skillsPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skillsPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skillsPage.toast.installedMany",
+      "key": "skillsPage.toast.installedMany",
+      "status": "可保留",
+      "combined_fingerprint": "ea7ea4795f72af60b9ef0449ab8088cc3975080a9f2dbf7f6e16d1549b0bb576",
+      "content_fingerprints": {
+        "en": "b128775cb738ebbc1fd4530dc773e3d467b934fe48a5fbacbad19c7ff0c4edaa",
+        "ja": "0fa719b603c71b2e8688ec1d0bd8e0f0271eac8dcd8f5284e97d2f64e0072eb8",
+        "ko": "43bb37996811f886a5a8b98080cc42d2f2c0a3863b9c7c8aada0d6aecbb20ffb",
+        "tr": "e44a924e0b5ce29ed34c2e85ff84bcd8bb316bf51b39ea8df25d607079ff0132",
+        "zh": "56fb0c112c23b91f6214f5d3f0d0a6e26859d6c9f4d0065ad79d1cb3ca38a2f8",
+        "zh-TW": "6e2913583efff8a0d812607c44a87d7442e993c350d4eb5dc70f056f15a81509"
+      },
+      "reviewed_at": "2026-10-28T14:08:15.813850+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已安装 {{count}} 个 Skill，并在 {{apps}} 启用”与韩文“스킬 {{count}}개를 설치하고 {{apps}}에서 활성화했습니다”在本条目所属 skillsPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skillsPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skillsPage.toast.noUpdatesInSelection",
+      "key": "skillsPage.toast.noUpdatesInSelection",
+      "status": "可保留",
+      "combined_fingerprint": "819673b3cf26ac658fd429b279184bd736fbe59671c7cac959ced4fc1c910e11",
+      "content_fingerprints": {
+        "en": "6a3f4721ee5db9a043482d71289ffa9fc381636a6a59d920b94dce65886ee850",
+        "ja": "ca1340ba6f32c8ea6328381e2aca7c3c09ce5b3d07ad0ae3472b59b8ff974f0b",
+        "ko": "213c8d22968ee617c6afd88f7d596b5af41f12ef62b47501b407cfbaef0c66ca",
+        "tr": "8aef65e806c7e164dbe4149afb19a1e3eab6b456002464cbbd8311f504f8845c",
+        "zh": "b81f1d49b0936bab42ec9ed308cc45c83da683bd1ba8bfea59da441a90c69f58",
+        "zh-TW": "cd99cd12b485466f7934c7516651f27e70870f669edc79bde6ce347c3821dbc1"
+      },
+      "reviewed_at": "2026-10-28T14:08:15.813850+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“选中的 Skill 没有可用的更新”与韩文“선택한 스킬에 업데이트가 없습니다”在本条目所属 skillsPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skillsPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skillsPage.toast.openDirFailed",
+      "key": "skillsPage.toast.openDirFailed",
+      "status": "可保留",
+      "combined_fingerprint": "1f28c5a388c4aa2e2ed34cf9e4594f1b4f7e620c5170208dc4f4c4f65119bea8",
+      "content_fingerprints": {
+        "en": "16f3ede1a445e3622a8a18808715044b86ae66d99997b5d91ff23bd9c8d24feb",
+        "ja": "cdd98f9ac910f7e2cba53c134d87cb0a611cf5071b86580f824d3003bd6be1b5",
+        "ko": "e92c19ba02d048ac34d84001440bc6c74bb41c52e877bc3de93c3a3e1c152daf",
+        "tr": "4b2ba1214a9638a38b9d96173e8455092c0646e7e22e317bc87e324de970eff5",
+        "zh": "9c9b31b9d374d893bc9b5939ba9dfa4284c3a96f0d81c122e9ec4fb63995d8d1",
+        "zh-TW": "2b706e623419d92a6e6cce234eaf6ca635cfec51fa66761d1af363d440c787cc"
+      },
+      "reviewed_at": "2026-10-28T14:08:15.813850+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“没能打开目录”与韩文“폴더를 열지 못했습니다.”在本条目所属 skillsPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skillsPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skillsPage.toast.selectionAlreadyOff",
+      "key": "skillsPage.toast.selectionAlreadyOff",
+      "status": "可保留",
+      "combined_fingerprint": "4039fe87cf55c3ec5dbb46a718f733a63c76e082662ee5471a45f891fa35fc92",
+      "content_fingerprints": {
+        "en": "f3c101a657953b7b58d62c8434639d03e460dad36d1da2983d14f84cc76213b5",
+        "ja": "d0be33c118a22251a690a67a0efef715e9258aad7aab0255554609ce606e13d8",
+        "ko": "d46787acb4c984f7d513f2112e0165cf9ebd3e000bf631b1b4732cd5d4cea4b4",
+        "tr": "d141334f6378ef9a108f3ce4f2dbcf9e8f250b2601b5df8219ebc6a62670f13b",
+        "zh": "d5ac1f084da85fb7271f9918d9c921f3d0fb007216ed74d3eed7c8dd9a9e39f0",
+        "zh-TW": "ebd359e5fee0012aba1c031b293a4aaa7ca4faf10df7d7e6a248da6e1faceb4b"
+      },
+      "reviewed_at": "2026-10-28T14:08:15.813850+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“选中的 {{count}} 个 Skill 都没有在 {{app}} 启用”与韩文“선택한 스킬 {{count}}개 중 {{app}}에서 활성화된 항목이 없습니다”在本条目所属 skillsPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skillsPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skillsPage.toast.selectionAlreadyOn",
+      "key": "skillsPage.toast.selectionAlreadyOn",
+      "status": "可保留",
+      "combined_fingerprint": "20cbf99047519f456bfe6442c59391c39b8fc4a8b0a3e82e9f533aeaddf8c9f8",
+      "content_fingerprints": {
+        "en": "42f91ddfcb5d9641a9407f1dc0e64cbf1f533a80a777b5cb82a5e96f23c89d17",
+        "ja": "fe5ef6b51806e8f1dfb7a79e3ac1adf1e41342d526ae12ef3c6d191deae14af5",
+        "ko": "c6970da513711f1b848d918ddacf56038d17d11d0c0bee646d693cffb36679e2",
+        "tr": "b3c71674c01cf1adf42aef1abe659a97cbbb249623a30554a689a6d1dc5da40e",
+        "zh": "c348e0f687342127032b5a3a512040cbe8692ffcaefd14ea1a91b5afe56b75a3",
+        "zh-TW": "7375d5e89f0dbf3e56f09f3018e25a1bf794d0a715e146c7bad66a79074e4ed8"
+      },
+      "reviewed_at": "2026-10-28T14:08:15.813850+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“选中的 {{count}} 个 Skill 已经在 {{app}} 启用”与韩文“선택한 스킬 {{count}}개가 이미 {{app}}에서 활성화되어 있습니다”在本条目所属 skillsPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skillsPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skillsPage.toast.uninstalledMany",
+      "key": "skillsPage.toast.uninstalledMany",
+      "status": "可保留",
+      "combined_fingerprint": "8260ca84a82941ce5b36031389b183840818644b6d030ad2c0c188653f2577fd",
+      "content_fingerprints": {
+        "en": "7afd77971f9c0695206e90668ddb21638f3f5eb7f813c98af76357ced95793d3",
+        "ja": "8e55a076e90b1465af3e46be7d96c4fc10f655ac9ff3091e972c1fc86f49ddb2",
+        "ko": "0090995c471c94829a62756e620e9273ba5e01f818db1a8fd3da68531f6679d4",
+        "tr": "cb21bc5f9c9e46b089f646a58c8994c40fd22071f75616c7da9975861409a808",
+        "zh": "fb1c133455e61cbacc5182e1a8115fe3a113c1b86ecd1c5ccc6be603585dda00",
+        "zh-TW": "7ae5a400bd1298c459aed551dc6ba9990f049f57af8e5f9a68c69d48269dbda3"
+      },
+      "reviewed_at": "2026-10-28T14:08:15.813850+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已卸载 {{count}} 个 Skill”与韩文“스킬 {{count}}개를 제거했습니다”在本条目所属 skillsPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skillsPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skillsPage.uninstallEllipsis",
+      "key": "skillsPage.uninstallEllipsis",
+      "status": "可保留",
+      "combined_fingerprint": "1e4d8dea7aecce492d39775fd9ac6a11a22ab566defc7f2e932b645ecbc82d2c",
+      "content_fingerprints": {
+        "en": "fe199528850a4e24c14d9ece87a07b40bdcfa5fe504c175c117b997c29259ca6",
+        "ja": "0612e88f2939897d0ea3a76689ee0e2b4081af94b42a0cbb06dd2f0d463ceb7a",
+        "ko": "ab6625092d13f484dfb0d40fc543574d5d5114db2d05b3d696a4de72b64b86c7",
+        "tr": "b88019aa289e7800050498119a65b2d00e37bbd8e57d13339dfcc7d2d6184630",
+        "zh": "06bc14b60f3598a3fde833340ee93e8c934fa6eff21bbd6a6df354528b53af01",
+        "zh-TW": "66046513e3ca694e8f11251dcdf24ef0aadf9e711d29ec3a6785fcc9bfcb185b"
+      },
+      "reviewed_at": "2026-10-28T14:08:15.813850+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“卸载”与韩文“제거”在本条目所属 skillsPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skillsPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skillsPage.updateAllCount",
+      "key": "skillsPage.updateAllCount",
+      "status": "可保留",
+      "combined_fingerprint": "216d628907dc8b07daa89c8e81f84611f8c0875e25feb1a614db07ba1ebbcdd6",
+      "content_fingerprints": {
+        "en": "6c8deb1ca872e0e33eaa8942048b877f1621136107bf77635bfe5c3ba5fa8aa8",
+        "ja": "a93e3ba8d36d4cad62b01f052dcd725f6b26ceac0b5270caf8652bae485987aa",
+        "ko": "c0a3924ffd49bb2f3f050acf1f4af9827a1df192f3174f61479af1d0c17facdf",
+        "tr": "414ad72f39fabf7283685ce6b49b131d28532a22ab2760fcc1700a144be5bd5e",
+        "zh": "86fae532058ca83d1c7fee0401d9e971c1dcf3fee7ba5520b761ac518186dd9c",
+        "zh-TW": "08b19404df1cb5502726b33805949e0ca7afc7d5907a80dfac6ad4c27f07192b"
+      },
+      "reviewed_at": "2026-10-28T14:08:15.813850+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“全部更新（{{count}} 个）”与韩文“모두 업데이트 ({{count}}개)”在本条目所属 skillsPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skillsPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skillsPage.updatingProgress",
+      "key": "skillsPage.updatingProgress",
+      "status": "可保留",
+      "combined_fingerprint": "855dd1760c592ef0783fc59d574bbf71606bd7a7656ead0536dd29165cb3b903",
+      "content_fingerprints": {
+        "en": "01921908bdc98e59e95980ac0374e24d44ddf23a4bc0c8d04c9ea57890531f62",
+        "ja": "370fc42c8f7a520eba92e8e20177a1b769309cccf15ab5b52829d01782e8c30d",
+        "ko": "affcbc30e618c9db01c9cc5bfd817363089c49a840e16ff8d8337cb7c55ea34c",
+        "tr": "8fa0f16023c7b0f0affbdd5023c3a5ba48600f032d916bd14d553d065572fc41",
+        "zh": "2b4e8681cdd0b771283328e7ebcb935c34cdc85980bbba7c126d53bd41005ff1",
+        "zh-TW": "2b4e8681cdd0b771283328e7ebcb935c34cdc85980bbba7c126d53bd41005ff1"
+      },
+      "reviewed_at": "2026-10-28T14:08:15.813850+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“正在更新 {{done}}/{{total}}…”与韩文“업데이트 중 {{done}}/{{total}}…”在本条目所属 skillsPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skillsPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skillsPage.viewAria",
+      "key": "skillsPage.viewAria",
+      "status": "可保留",
+      "combined_fingerprint": "55c1d7d0f82a02222e788f684c09c00e915883910f6266df402f8fe0e5e9c3a5",
+      "content_fingerprints": {
+        "en": "1d74364ddb17b0ab874d8d11b8390eae9e187ddecba17541640ce3c922b61018",
+        "ja": "b190506b82d19a2dca3d6d977a5dfa0d6b74d65398275c01868b979162f69a3b",
+        "ko": "2fd2f2ae385d386737b391314b5d1914cbe9a4f5466fc74b830855754d92ca74",
+        "tr": "3375c4c3f5140912f044c1c2c01c6c4d27c7e552e4bb6b5886bf24d36a4af17f",
+        "zh": "e8c383f864a0be82f2e9a82508f3312fb6fce9831814b5548dc7e1d15d76e017",
+        "zh-TW": "77a39255a0d6f12c7104837408f7ef84ffb713ab453c1ee60ea7196236839028"
+      },
+      "reviewed_at": "2026-10-28T14:08:15.813850+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Skills 视图”与韩文“스킬 보기”在本条目所属 skillsPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skillsPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skillsPage.viewDiscover",
+      "key": "skillsPage.viewDiscover",
+      "status": "可保留",
+      "combined_fingerprint": "e672be5a75b3a557c5eb70f16a5171d4da7d6fc9f43bcf8d2da659f570e90772",
+      "content_fingerprints": {
+        "en": "d4a33d5b78bccebe3f16843dc30e6c0f73b4eb6efb4e7114ddfebde7fa2c9954",
+        "ja": "94c43d3cf47a7479483b8719b623e90ec99581117ac7be941a4f854f685ac834",
+        "ko": "4ea159b30a6bc07340f02a6234863504adea0f9a92dd7986f13717a8cceb14c4",
+        "tr": "45d0d89ac96446ba8df3696b2ddbe14d4fea714be921a28d5a4323c5df8cc114",
+        "zh": "10493d06b90f6b186f60556f8a597819b8e4ba9dcaf18b97f7d467a2e948fc50",
+        "zh-TW": "98ceb57fd8c4192a9a808808a2660b34bb3092570b7c582b9961b4dfa6c94119"
+      },
+      "reviewed_at": "2026-10-28T14:08:15.813850+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“发现”与韩文“탐색”在本条目所属 skillsPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skillsPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skillsPage.viewInstalled",
+      "key": "skillsPage.viewInstalled",
+      "status": "可保留",
+      "combined_fingerprint": "2611812999c8ff143ab1b7d9ec329a564371f68891edd948ce592c837d368462",
+      "content_fingerprints": {
+        "en": "f8b32f4e92bd84ce1fcd177bec17d43093de3ee8303bb40c1b9ea521ed6a70f6",
+        "ja": "c0593e3d8543bdf219869e849235b06b2450cf6caa5f51e2fc89acc469aea8fd",
+        "ko": "d1c4f4f5ff721043e11d93a260960b4297a546a11838d13a20363d1262874e40",
+        "tr": "3c5051422434341d1b721a52f4f1c1a4757a4d5a17d7e1a0a963013d8b02e38a",
+        "zh": "a8b6c39dcabfc14bb136596e34a95b424257b82d54c3ac49a7728b876ae58526",
+        "zh-TW": "1e8b9769df7005a5a17781311980c39813b3f86549aa7bcb27e47e3ed7c4e658"
+      },
+      "reviewed_at": "2026-10-28T14:08:15.813850+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已安装”与韩文“설치됨”在本条目所属 skillsPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skillsPage",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#skillsPage.viewInstalledCount",
+      "key": "skillsPage.viewInstalledCount",
+      "status": "可保留",
+      "combined_fingerprint": "30cc3e2948ca5919f4627d554f6c548059cd908bfe4df0cb54efd85a6559f0d5",
+      "content_fingerprints": {
+        "en": "75706c4c85130ed73ee5a9bfe9f488c1e9c260244fe171d56f0a826e1151dd10",
+        "ja": "a317587e258fd3acc4fc03bfd0b945f2392363af18e570ac78da05473220a02d",
+        "ko": "f8d81bf595067c9e43a6680aec9e3f64eccb5d33de0b5492b533204ed4fb599b",
+        "tr": "b7b9dcba907d6c15b40afdda79ae64e5e69691318f7e56d901482c927e6d046e",
+        "zh": "45ce37081789bb09a553bd92da15ac3312d7d21182624f74cf59fde2d1b3dd64",
+        "zh-TW": "1fdce5979148056dc6c03b7c42cb0c5002620bd7fc8ce98a863163afa7ad1050"
+      },
+      "reviewed_at": "2026-10-28T14:08:15.813850+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已安装 {{count}}”与韩文“{{count}}개 설치됨”在本条目所属 skillsPage UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "skillsPage",
+      "round": 1
+    }
+  ]
+}

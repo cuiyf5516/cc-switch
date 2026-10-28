@@ -1,0 +1,18 @@
+{
+  "batch_id": "translation:json-locale:subscription:002",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "subscription",
+  "ordinal": 2,
+  "record_count": 3,
+  "record_ids": [
+    "json:src/i18n/locales#subscription.title",
+    "json:src/i18n/locales#subscription.utilization",
+    "json:src/i18n/locales#subscription.weeklyLimit"
+  ],
+  "keys": [
+    "subscription.title",
+    "subscription.utilization",
+    "subscription.weeklyLimit"
+  ]
+}

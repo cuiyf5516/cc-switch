@@ -1,0 +1,18 @@
+{
+  "batch_id": "translation:json-locale:codexConfig:003",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "codexConfig",
+  "ordinal": 3,
+  "record_count": 3,
+  "record_ids": [
+    "json:src/i18n/locales#codexConfig.upstreamFormatHint",
+    "json:src/i18n/locales#codexConfig.upstreamFormatLabel",
+    "json:src/i18n/locales#codexConfig.upstreamFormatResponses"
+  ],
+  "keys": [
+    "codexConfig.upstreamFormatHint",
+    "codexConfig.upstreamFormatLabel",
+    "codexConfig.upstreamFormatResponses"
+  ]
+}

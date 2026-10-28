@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0185:src-hooks-useSettingsMetadata.ts",
+  "kind": "hardcoded",
+  "group": "src/hooks/useSettingsMetadata.ts",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 1,
+  "records": [
+    {
+      "id": "hardcoded:src/hooks/useSettingsMetadata.ts:load:130282db800e3a5a:001",
+      "status": "无需国际化",
+      "content_fingerprint": "130282db800e3a5a136e701cf6b8132d640c8cd075364842c24770641a8f2a10",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/hooks/useSettingsMetadata.ts",
+      "line": 36,
+      "function": "load",
+      "expression": "[useSettingsMetadata] Failed to load metadata",
+      "reason": "控制台日志或诊断信息，不作为界面文案。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0185:src-hooks-useSettingsMetadata.ts",
+      "round": 1
+    }
+  ]
+}

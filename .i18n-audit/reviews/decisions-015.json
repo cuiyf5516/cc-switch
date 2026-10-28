@@ -1,0 +1,14 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:omp:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:openclaw:001","default_status":"可保留","overrides":[
+{"key":"openclaw.agents.fallbackModelsHint","status":"建议改","reason":"「대체가 시도됩니다」中的「대체」指代不清；原文是逐个尝试回退模型。","suggestion":"기본 모델을 사용할 수 없는 경우 대체 모델을 우선순위 순서대로 시도합니다.","ui_context":"OpenClaw 回退模型说明"}
+]},
+{"batch_id":"translation:json-locale:openclaw:002","default_status":"可保留","overrides":[
+{"key":"openclaw.health.stringifiedEnvVars","status":"建议改","reason":"「문자열이거나」只表示“是字符串”，遗漏了原文“被字符串化/序列化”的诊断含义。","suggestion":"env.vars는 객체여야 하지만 현재 값이 문자열로 직렬화되었거나 손상된 것으로 보입니다.","ui_context":"OpenClaw 环境变量健康检查"},
+{"key":"openclaw.health.stringifiedShellEnv","status":"建议改","reason":"「문자열이거나」只表示“是字符串”，遗漏了原文“被字符串化/序列化”的诊断含义。","suggestion":"env.shellEnv는 객체여야 하지만 현재 값이 문자열로 직렬화되었거나 손상된 것으로 보입니다.","ui_context":"OpenClaw shellEnv 健康检查"}
+]},
+{"batch_id":"translation:json-locale:openclaw:003","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:openclawConfig:001","default_status":"可保留","overrides":[
+{"key":"openclawConfig.defaultModel.primary","status":"建议改","reason":"原文是「主模型」，但韩文「기본 모델」与同组「默认模型」完全同义，导致主/默认概念混淆；项目其他位置使用「주 모델」表示 primary。","suggestion":"주 모델","ui_context":"OpenClaw 默认模型字段"}
+]}
+]}

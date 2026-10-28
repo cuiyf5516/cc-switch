@@ -1,0 +1,367 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:native-panel:panel:001",
+  "kind": "translation",
+  "namespace": "panel",
+  "reviewed_at": "2026-10-28T14:10:35.144832+00:00",
+  "review_count": 17,
+  "records": [
+    {
+      "id": "rust:src-tauri/src/tray_panel.rs#config_tab",
+      "key": "config_tab",
+      "status": "可保留",
+      "combined_fingerprint": "a6adfde5a105359380113a4ce3717d50da227acd931e4f805d562743cb57f5b6",
+      "content_fingerprints": {
+        "en": "b332c3492d5eb10a118eb6d8b0dcd689bc2477ce2ae16b303753b942b54377bc",
+        "tr": "b332c3492d5eb10a118eb6d8b0dcd689bc2477ce2ae16b303753b942b54377bc",
+        "zh": "148d195e21b05db59551b5f85b09fed0c9b3b4c7562654815396d4f98af53328",
+        "ja": "530b9f2fd16c7f9fb78486935e600f8289c42bcc80ce4e5a8069829a11b1bbd6",
+        "zh-TW": "148d195e21b05db59551b5f85b09fed0c9b3b4c7562654815396d4f98af53328",
+        "ko": "115bced49291a6a0df971e8cd50b00fad1ea43e34be6d37b41f7128b3cf6a65d"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.144832+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“配置”与韩文“설정”在本条目所属 panel UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "panel",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/tray_panel.rs#duration_days",
+      "key": "duration_days",
+      "status": "可保留",
+      "combined_fingerprint": "f50459902fd8bbf4772a0a988d07ce095331769e22295e4c554bfcd223a3505e",
+      "content_fingerprints": {
+        "en": "02900176607f91683c9ee736716c809b4376b68b81be6ab5e354d4f3a5491297",
+        "tr": "02900176607f91683c9ee736716c809b4376b68b81be6ab5e354d4f3a5491297",
+        "zh": "8a7f73aeca11f3589624dab29e92ebf427d77a8bcda45b5f32b58ef111c81123",
+        "ja": "60d60ff9959b86c50ff8182bb3dea067ad3f85345cdb48bb5558055a8c2b6574",
+        "zh-TW": "8a7f73aeca11f3589624dab29e92ebf427d77a8bcda45b5f32b58ef111c81123",
+        "ko": "3533b4c7ac6dc5bb7f9fb2b87ff0c485250a4373b0049b04d0c014a19c2f86b7"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.144832+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{n}天”与韩文“{n}일”在本条目所属 panel UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "panel",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/tray_panel.rs#duration_hours",
+      "key": "duration_hours",
+      "status": "可保留",
+      "combined_fingerprint": "52292f2c48832d5005cf9445e3ef6e3854274bdc4de871798658962a4f64e0e7",
+      "content_fingerprints": {
+        "en": "9a2ff106940980b7cbfcfd5d8fe424ad64ea6e205993bf1cffbc75b5c234ee52",
+        "tr": "9a2ff106940980b7cbfcfd5d8fe424ad64ea6e205993bf1cffbc75b5c234ee52",
+        "zh": "3875fd1a1c032073e5a4e7e83771315a0e616a1f3670dffdd0e3fa9ac7dd2a91",
+        "ja": "5421e07843a556d41709eead2386f284d023d31f67583c43f6c30863a333f0fa",
+        "zh-TW": "faf39773afccccd4098738fcb210207593438f317c7db014250a99ccd03ce186",
+        "ko": "9ca3e06082ca12a37f8fcaf3f83166407e591ea1b66bee06d58a3ebe3eb63f14"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.144832+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{n}小时”与韩文“{n}시간”在本条目所属 panel UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "panel",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/tray_panel.rs#duration_minutes",
+      "key": "duration_minutes",
+      "status": "可保留",
+      "combined_fingerprint": "9afdd03c2a2b3363e0666db1374828063a0c315fee84b7836c6159ee65ef0a0f",
+      "content_fingerprints": {
+        "en": "dad7071c42184b333fb6620a5a293e4ddf401075056bbcfb630a497c5dad2e5c",
+        "tr": "dad7071c42184b333fb6620a5a293e4ddf401075056bbcfb630a497c5dad2e5c",
+        "zh": "e82d6559efb3acc4ae306f4d634df563d7d7d7de003dbdfa7cdbb2aca73f2fbe",
+        "ja": "e82d6559efb3acc4ae306f4d634df563d7d7d7de003dbdfa7cdbb2aca73f2fbe",
+        "zh-TW": "e82d6559efb3acc4ae306f4d634df563d7d7d7de003dbdfa7cdbb2aca73f2fbe",
+        "ko": "4b9a1f6b063f0c6bcc00304c12a79c2298b40859de47d8ba93b3237e19c37fd7"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.144832+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{n}分”与韩文“{n}분”在本条目所属 panel UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "panel",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/tray_panel.rs#duration_sep",
+      "key": "duration_sep",
+      "status": "可保留",
+      "combined_fingerprint": "9846172a6124e487268f71a201327a3dd623ab44ad96ce695cdcaba6b39fc0d4",
+      "content_fingerprints": {
+        "en": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+        "tr": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+        "zh": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "ja": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "zh-TW": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "ko": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.144832+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“”与韩文“ ”在本条目所属 panel UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "panel",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/tray_panel.rs#in_use",
+      "key": "in_use",
+      "status": "可保留",
+      "combined_fingerprint": "1fb00e8fa98dba1c507af5695a3421170f5bdf98e20e68d07d650ac27fc8d14b",
+      "content_fingerprints": {
+        "en": "750af77aa42eea62726061b574cf8ab011cf3f7f60926532aad4b0da028ed046",
+        "tr": "750af77aa42eea62726061b574cf8ab011cf3f7f60926532aad4b0da028ed046",
+        "zh": "fa48e89389404e60ab8cddfd37fd015db72bccf0495ac695340c1eb4a30685b2",
+        "ja": "fa48e89389404e60ab8cddfd37fd015db72bccf0495ac695340c1eb4a30685b2",
+        "zh-TW": "fa48e89389404e60ab8cddfd37fd015db72bccf0495ac695340c1eb4a30685b2",
+        "ko": "81c5fc4a67c782154f7cbe403668a32a7035f4011c48baefc6053a094aeef2dd"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.144832+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“使用中”与韩文“사용 중”在本条目所属 panel UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "panel",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/tray_panel.rs#lightweight_mode",
+      "key": "lightweight_mode",
+      "status": "可保留",
+      "combined_fingerprint": "d6192b03adc6b6f95a95cb5ef8427292a142967f2f575f723d1c494a03107ef9",
+      "content_fingerprints": {
+        "en": "77934196291550aa3159790c97b5fa208325c36ad692693d3a9a1933a3ef71fe",
+        "tr": "f2b761d6038e4868f55d5d75f790f2ca94ad2e92ab2fd709544684f80e1d3d56",
+        "zh": "fc7af93e5d683d6e51363c8a0f68d78426ca2957eb99ce38cc99efd42d32833a",
+        "ja": "e1875ff2dd581dbc72a66b9c8fb53dbf205271749bb756260e004c4bffe46d8f",
+        "zh-TW": "89acbc176f373dc6377ce4d40a34d3059c6473ecd1b1e9e99661b5e01c108d46",
+        "ko": "53a6da1fc4f40a1841ecc73321289e3cb1c9990a13886c2d05f904a2dd62173a"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.144832+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“轻量模式”与韩文“경량 모드”在本条目所属 panel UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "panel",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/tray_panel.rs#no_match",
+      "key": "no_match",
+      "status": "可保留",
+      "combined_fingerprint": "edda44db9e2a5d7ab6186494f195d29e70ddfc4847814b74e5fa9e1bf4960e6d",
+      "content_fingerprints": {
+        "en": "9c82379afa4faf6e48122ba5cab25503a00efeacb290c10b694980e0c25bcf9c",
+        "tr": "9c82379afa4faf6e48122ba5cab25503a00efeacb290c10b694980e0c25bcf9c",
+        "zh": "3f8b58ae13d86050e8e64cc54a4f8411e59ed005b444b14812c28814a75ebd52",
+        "ja": "6843d07164454eb0d2a1101933be956f27e731edb01e8ac925e7b1695316a7e2",
+        "zh-TW": "bf4553e1c77df09a6aaf71abb66b09d0499b90730acdcca1834a4e9d6c944fb8",
+        "ko": "dfbcd1efcbf150d295756cb2644ffc5c17dde15d77393001f70650c258bb99de"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.144832+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“没有匹配的供应商”与韩文“일치하는 공급자 없음”在本条目所属 panel UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "panel",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/tray_panel.rs#open_main",
+      "key": "open_main",
+      "status": "可保留",
+      "combined_fingerprint": "bb760ebb43c04710ec39e70f08b085c21c932fc49ed81258eb4510841e31846c",
+      "content_fingerprints": {
+        "en": "f8ccd95f5dbb1626d1d7ab8c5ec3e94328da6d8174cacb90bb28ec2d8a4d6bd7",
+        "tr": "f8ccd95f5dbb1626d1d7ab8c5ec3e94328da6d8174cacb90bb28ec2d8a4d6bd7",
+        "zh": "f6b64b637ba7098a38c7605ef14f7506e59599f199f40dcc8b07f655a189edc3",
+        "ja": "72e57b6d0b8003d100aa99b30883a52f39598487f6f58d16f440f2d96853177a",
+        "zh-TW": "444d10ba6425bb98f43d070e34c345169bbc71f628cc7b20ca4c8dee7df3ebff",
+        "ko": "2e26fbe5bfb3813b759b508b2f14887f82ae6f33adbb2bc6827cc30d51f53cec"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.144832+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“打开主窗口”与韩文“메인 창 열기”在本条目所属 panel UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "panel",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/tray_panel.rs#open_panel",
+      "key": "open_panel",
+      "status": "可保留",
+      "combined_fingerprint": "26748addf9be1d97c09b86456204c7a084bec18308113dcc34c1304137e4a39c",
+      "content_fingerprints": {
+        "en": "10b35b098ab3a4bc0cf21eed4cbfaee4491aed0067edca33cedadc6c2cc53a05",
+        "tr": "10b35b098ab3a4bc0cf21eed4cbfaee4491aed0067edca33cedadc6c2cc53a05",
+        "zh": "af91a997fb907d9417a55a5f0149fb9b1d2b75a5d7a44901f7967c16d267be4d",
+        "ja": "94f1c45cc1b70bacbc2702238036792941f40d131b705c1a5251ab8261693fca",
+        "zh-TW": "3a053ee9067c0d06b1495e700a9f5be7451c17c57d67be339f84c8d3a609de17",
+        "ko": "809d58292c0aa3d07244c9f3d1dcec0f35e386aa9f1b641e903eba1ced3549cd"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.144832+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“打开快捷面板”与韩文“빠른 패널 열기”在本条目所属 panel UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "panel",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/tray_panel.rs#quit",
+      "key": "quit",
+      "status": "可保留",
+      "combined_fingerprint": "a59f7edf37a33612b902675eda23f3edcc44071bcdfa869c8dfd55760a95db6c",
+      "content_fingerprints": {
+        "en": "b3eb37acb66ba4bbe8fb1ba296815daf194be94f5a5fb50dab2fb5e4a57ba29e",
+        "tr": "b3eb37acb66ba4bbe8fb1ba296815daf194be94f5a5fb50dab2fb5e4a57ba29e",
+        "zh": "498e1d59b4d787ee29cafe969574585589db49a4c02c093e8fca5e3b50600764",
+        "ja": "8f26d438109c877447c80b84eb7e4ba1e6768ebcfc5408f0bc3c0725956bf039",
+        "zh-TW": "ee1f5ad7d73a5229a545ba219baec273c60ced5d0d7dd342f3d95df86bb6035d",
+        "ko": "086bb5335d174a9a330cd69a7a8162436e2551fc0d8b8f304e718cfebafa3dd4"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.144832+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“退出”与韩文“종료”在本条目所属 panel UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "panel",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/tray_panel.rs#reset_credits",
+      "key": "reset_credits",
+      "status": "可保留",
+      "combined_fingerprint": "5015658bc7c346bbf8732e919d80b38cbd83080b63ee17c86cd9e91ca0f182e4",
+      "content_fingerprints": {
+        "en": "af6c80116b5e01d2f8c3e569307dc1f9857c4c2f7a9a41d869d300120bc871df",
+        "tr": "af6c80116b5e01d2f8c3e569307dc1f9857c4c2f7a9a41d869d300120bc871df",
+        "zh": "e3f19ef585a22e961947600645716bb3886e3da48e8ea6325ab00f130da2db6f",
+        "ja": "07a3289c6686282f7ebd9cdcbd8d4c5f8725fa14ab7a7cd16c3a43f8814c7df6",
+        "zh-TW": "e3f19ef585a22e961947600645716bb3886e3da48e8ea6325ab00f130da2db6f",
+        "ko": "fcb36ea272ae17cf87d4594fb9aa51502d8977d0e7c135d027c3bc84fb1ffd3e"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.144832+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“可重置 {count} 次”与韩文“초기화 {count}회 가능”在本条目所属 panel UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "panel",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/tray_panel.rs#resets_in",
+      "key": "resets_in",
+      "status": "可保留",
+      "combined_fingerprint": "69f39aac53c1887d67910fe1c01c5a949a0f59c1613b9a48922bfc14818a92c2",
+      "content_fingerprints": {
+        "en": "63a23135d5f8ab78ea45212d3bddc8d45dc80c67921ffffd0057bf8164f17705",
+        "tr": "63a23135d5f8ab78ea45212d3bddc8d45dc80c67921ffffd0057bf8164f17705",
+        "zh": "9125f2ecab9c397940f29311e3655ec7fafeb19a15c6364c5752c0032caec331",
+        "ja": "cea25565db5800817748f2d95788c551c355e4b548f769f440b3fd083795f220",
+        "zh-TW": "be7751493aa0d13b114acc5bc46c9585a0d5f077819af0473d4179239e44086a",
+        "ko": "0f4115b9e6d50d4eff5f3765d53bc85f92e97f0ccad2c006eec3f01de35e14e8"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.144832+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{when}后重置”与韩文“{when} 후 초기화”在本条目所属 panel UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "panel",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/tray_panel.rs#search_placeholder",
+      "key": "search_placeholder",
+      "status": "可保留",
+      "combined_fingerprint": "dc1c8b098a758df5e50d83bd573d163ee756137fe4bad87e7b56d9adebac1eff",
+      "content_fingerprints": {
+        "en": "bc9b8850d73ec4836e45884cb5862fd27ba748eddcb1f17c0e2f41809e32fc39",
+        "tr": "bc9b8850d73ec4836e45884cb5862fd27ba748eddcb1f17c0e2f41809e32fc39",
+        "zh": "569ff61d76055b55a594ccf15219bd3d462ddd0583cfb691846304851348b013",
+        "ja": "ad0419a859161ed8eb1db2d431fae3b72b9d495bffa4e6adb036a8d5d6288b4d",
+        "zh-TW": "7e8ec37469b6abec49334dfd38e47a7f2a352e56c41a413ed20f0ad1ccdca05b",
+        "ko": "3120dcffe7b458f018d72e376351c6911479210dfa54a0a8c5f8096a28140aa9"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.144832+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“搜索供应商…”与韩文“공급자 검색…”在本条目所属 panel UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "panel",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/tray_panel.rs#settings",
+      "key": "settings",
+      "status": "可保留",
+      "combined_fingerprint": "b45153c9999188d2d11fd49b788e012e83726c3aee6a8eed812ae42b6ba69416",
+      "content_fingerprints": {
+        "en": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+        "tr": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+        "zh": "df3d58c7d84b85f2037cdd20ffca0f386668645ea53008c11b0c8887182b0356",
+        "ja": "0d8619aae051ae343ea983e969d29b7bd7a618eb1b25a6c87c133c5e3ee25264",
+        "zh-TW": "0d8619aae051ae343ea983e969d29b7bd7a618eb1b25a6c87c133c5e3ee25264",
+        "ko": "115bced49291a6a0df971e8cd50b00fad1ea43e34be6d37b41f7128b3cf6a65d"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.144832+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“设置”与韩文“설정”在本条目所属 panel UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "panel",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/tray_panel.rs#switch_provider",
+      "key": "switch_provider",
+      "status": "可保留",
+      "combined_fingerprint": "5be1135e7ceacf5ecc8eb30e793fd9e5a4202b2a1afa04d51b5087edc700fc44",
+      "content_fingerprints": {
+        "en": "58cd1446063a494b8046daec2cb38aa837542db0ebc0d564bc6a5193aa2d789d",
+        "tr": "58cd1446063a494b8046daec2cb38aa837542db0ebc0d564bc6a5193aa2d789d",
+        "zh": "0f3a6fc3537d127e6cefccc9133f7876e51d00be9028cd454663814511f4dfca",
+        "ja": "52decf6a96910e075e6f4db1454d613c20a57d857685aa2569945c20e8196f42",
+        "zh-TW": "f7c75b07cd58baee449a371d6c79440e49e65fb9c9d880cd44f7fb9f0efee630",
+        "ko": "8f2d3ae57bba80c3bbc1a8ddbc68c8f4efe8914fac9ab7cd608081c3f5edccd3"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.144832+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“切换供应商”与韩文“공급자 전환”在本条目所属 panel UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "panel",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/tray_panel.rs#usage_tab",
+      "key": "usage_tab",
+      "status": "可保留",
+      "combined_fingerprint": "fe01298e1f017a85a494c2bf59f650d19e4348a45f399916b01f24afd065308c",
+      "content_fingerprints": {
+        "en": "8d59829c1e15afe1a7fae93e8e5e32d8511bec5fd598a09f4fea6033b31e8a66",
+        "tr": "8d59829c1e15afe1a7fae93e8e5e32d8511bec5fd598a09f4fea6033b31e8a66",
+        "zh": "42723e8b498c601c149705e4c54799efb6951d41f571253d56b77119c2e2b61c",
+        "ja": "2f90e400fdb41833d3c38de0c099e0ab15e2c3106bebe602097f22ff5168c16c",
+        "zh-TW": "42723e8b498c601c149705e4c54799efb6951d41f571253d56b77119c2e2b61c",
+        "ko": "eeb3eeedf4d3dffc1e6c66c3d59a8b3ac6cf7af75808a1679c43969ae636948d"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.144832+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“用量”与韩文“사용량”在本条目所属 panel UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "panel",
+      "round": 1
+    }
+  ]
+}

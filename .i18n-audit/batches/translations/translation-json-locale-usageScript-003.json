@@ -1,0 +1,28 @@
+{
+  "batch_id": "translation:json-locale:usageScript:003",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "usageScript",
+  "ordinal": 3,
+  "record_count": 8,
+  "record_ids": [
+    "json:src/i18n/locales#usageScript.tokenPlanHint",
+    "json:src/i18n/locales#usageScript.userId",
+    "json:src/i18n/locales#usageScript.userIdPlaceholder",
+    "json:src/i18n/locales#usageScript.variablesHint",
+    "json:src/i18n/locales#usageScript.volcengineAkSkHint",
+    "json:src/i18n/locales#usageScript.volcengineKeyConsoleLink",
+    "json:src/i18n/locales#usageScript.zhipuTeamConsoleLink",
+    "json:src/i18n/locales#usageScript.zhipuTeamHint"
+  ],
+  "keys": [
+    "usageScript.tokenPlanHint",
+    "usageScript.userId",
+    "usageScript.userIdPlaceholder",
+    "usageScript.variablesHint",
+    "usageScript.volcengineAkSkHint",
+    "usageScript.volcengineKeyConsoleLink",
+    "usageScript.zhipuTeamConsoleLink",
+    "usageScript.zhipuTeamHint"
+  ]
+}

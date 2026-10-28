@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:appSwitcher:001",
+  "kind": "translation",
+  "namespace": "appSwitcher",
+  "reviewed_at": "2026-10-28T13:39:08.432063+00:00",
+  "review_count": 1,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#appSwitcher.more",
+      "key": "appSwitcher.more",
+      "status": "可保留",
+      "combined_fingerprint": "5813b8df15c8468e475168172c87918dd90bbab9626afeeb884d4e99f117220e",
+      "content_fingerprints": {
+        "en": "ea224e3aebf2412414f3ca8c8bda668882b8f599a35fb5b9d8986e2c28272649",
+        "ja": "ee88d270771691e5e8ac319706d795fe509f39833261b968ee5bd8fe56298672",
+        "ko": "bd19ff803b0d4c2720a82614d93681873e6165700be91cf076571c98bd2f4288",
+        "tr": "6188036717100fdef7b2a56f19d460f80a7d79c84f409b1a4f5fc7e9360c6de8",
+        "zh": "66b98b6577637c4932e63af76a50e2d426d010e002c4b1ba8e7c207812396e1c",
+        "zh-TW": "c69308c8b6c6ab1c85f56b1427242afa176cb4a874616e115738065a0eccfefd"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.432063+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“更多应用”与韩文“더 많은 앱”在本条目所属 appSwitcher UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "appSwitcher",
+      "round": 1
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "batch_id": "hardcoded:0143:src-components-usage",
+  "kind": "hardcoded",
+  "group": "src/components/usage",
+  "ordinal": 3,
+  "record_count": 17,
+  "record_ids": [
+    "hardcoded:src/components/usage/format.ts:formatTokensShort:6d2024a86c35bb0d:001",
+    "hardcoded:src/components/usage/format.ts:formatTokensShort:943d3fd712684a3e:001",
+    "hardcoded:src/components/usage/providerLabel.ts:SESSION_PROVIDER_APPS:01f4e2433ec4be24:001",
+    "hardcoded:src/components/usage/providerLabel.ts:SESSION_PROVIDER_APPS:8fe6db86f3c11f21:001",
+    "hardcoded:src/components/usage/providerLabel.ts:SESSION_PROVIDER_APPS:0f38be253cd29be7:001",
+    "hardcoded:src/components/usage/settingsStyles.ts:settingsGroupTitleClass:e4db2ce07291fada:001",
+    "hardcoded:src/components/usage/settingsStyles.ts:settingsCardClass:b9b5c0e9c847c6bb:001",
+    "hardcoded:src/components/usage/usageTable.ts:usageTable:cc57be0dd05f2101:001",
+    "hardcoded:src/components/usage/usageTable.ts:usageTable:82fd35680446c652:001",
+    "hardcoded:src/components/usage/usageTable.ts:usageTable:4636b8a900b65a34:001",
+    "hardcoded:src/components/usage/usageTable.ts:usageTable:7b50091269eb5e92:001",
+    "hardcoded:src/components/usage/usageTable.ts:usageTable:bbd2127178da5347:001",
+    "hardcoded:src/components/usage/usageTable.ts:usageTable:4b9020d3e17a18d5:001",
+    "hardcoded:src/components/usage/usageTable.ts:usageTable:112d6ab50b929ccb:001",
+    "hardcoded:src/components/usage/usageTable.ts:usageTable:6d3844909a0ff750:001",
+    "hardcoded:src/components/usage/usageTable.ts:usageTable:727c40ceae5a552b:001",
+    "hardcoded:src/components/usage/usageTable.ts:stickyCol:f81b0feba411a07d:001"
+  ]
+}

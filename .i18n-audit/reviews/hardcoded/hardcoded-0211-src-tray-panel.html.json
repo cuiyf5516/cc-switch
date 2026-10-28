@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0211:src-tray-panel.html",
+  "kind": "hardcoded",
+  "group": "src/tray-panel.html",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 2,
+  "records": [
+    {
+      "id": "hardcoded:src/tray-panel.html:<html>:ede110c10283e660:001",
+      "status": "无需国际化",
+      "content_fingerprint": "ede110c10283e66095fb9d4aae5c93d782b368cde15a194377d5453d5aeea9cf",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/tray-panel.html",
+      "line": 5,
+      "function": "<html>",
+      "expression": "width=device-width, initial-scale=1.0",
+      "reason": "URL、模型 ID、路径、示例值或纯技术属性，不承载自然语言。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0211:src-tray-panel.html",
+      "round": 1
+    },
+    {
+      "id": "hardcoded:src/tray-panel.html:<html>:8ed2ae598541c9ba:001",
+      "status": "无需国际化",
+      "content_fingerprint": "8ed2ae598541c9ba886e247d917a0946ab84b2da9c729de1ca6e4b99f6bc4e76",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/tray-panel.html",
+      "line": 6,
+      "function": "<html>",
+      "expression": "CC Switch",
+      "reason": "技术标识、命令、路径、协议值、配置片段或内部数据，不面向用户展示。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0211:src-tray-panel.html",
+      "round": 1
+    }
+  ]
+}

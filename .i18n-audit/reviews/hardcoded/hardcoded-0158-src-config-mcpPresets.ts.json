@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0158:src-config-mcpPresets.ts",
+  "kind": "hardcoded",
+  "group": "src/config/mcpPresets.ts",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 1,
+  "records": [
+    {
+      "id": "dynamic-i18n:src/config/mcpPresets.ts:getMcpPresetWithDescription:0c1d1c92eda0e772:001",
+      "status": "待核实",
+      "content_fingerprint": "0c1d1c92eda0e772769c808027e639ef98b15ace47087dabe50c20f4036b633e",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/config/mcpPresets.ts",
+      "line": 102,
+      "function": "getMcpPresetWithDescription",
+      "expression": "descriptionKey",
+      "reason": "翻译键由运行时表达式“descriptionKey”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。",
+      "suggested_action": "核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。",
+      "suggested_ko": null,
+      "severity": "中",
+      "review_batch": "hardcoded:0158:src-config-mcpPresets.ts",
+      "round": 1
+    }
+  ]
+}

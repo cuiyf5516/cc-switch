@@ -1,0 +1,15 @@
+{
+  "batch_id": "hardcoded:0018:src-tauri-src-auto_launch.rs",
+  "kind": "hardcoded",
+  "group": "src-tauri/src/auto_launch.rs",
+  "ordinal": 1,
+  "record_count": 6,
+  "record_ids": [
+    "hardcoded:src-tauri/src/auto_launch.rs:get_auto_launch:07a4b2b03712a79b:001",
+    "hardcoded:src-tauri/src/auto_launch.rs:get_auto_launch:a0c0485eff9c817d:001",
+    "hardcoded:src-tauri/src/auto_launch.rs:get_auto_launch:82c71eeea906f9a4:001",
+    "hardcoded:src-tauri/src/auto_launch.rs:enable_auto_launch:d307952c56a1c4d5:001",
+    "hardcoded:src-tauri/src/auto_launch.rs:disable_auto_launch:c19144dbe2f390e9:001",
+    "hardcoded:src-tauri/src/auto_launch.rs:is_auto_launch_enabled:6692dc0f7647d368:001"
+  ]
+}

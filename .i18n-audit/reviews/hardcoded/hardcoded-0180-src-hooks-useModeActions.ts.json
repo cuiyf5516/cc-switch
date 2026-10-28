@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0180:src-hooks-useModeActions.ts",
+  "kind": "hardcoded",
+  "group": "src/hooks/useModeActions.ts",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 1,
+  "records": [
+    {
+      "id": "dynamic-i18n:src/hooks/useModeActions.ts:enter:883829e896b1bc8a:001",
+      "status": "待核实",
+      "content_fingerprint": "883829e896b1bc8aef277f4a21d15d6836060d521592f467337d15a69965bd90",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/hooks/useModeActions.ts",
+      "line": 62,
+      "function": "enter",
+      "expression": "app === \"codex\"\n                  ? \"mode.toast.enteredStack\"\n                  : app === \"claude-desktop\"\n                    ? \"mode.toast.enteredStackDesktop\"\n                    : \"mode.toast.enteredStackLive\"",
+      "reason": "翻译键由运行时表达式“app === \"codex\"\n                  ? \"mode.toast.enteredStack\"\n                  : app === \"claude-desktop\"\n                    ? \"mode.toast.enteredStackDesktop\"\n                    : \"mode.toast.enteredStackLive\"”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。",
+      "suggested_action": "核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。",
+      "suggested_ko": null,
+      "severity": "中",
+      "review_batch": "hardcoded:0180:src-hooks-useModeActions.ts",
+      "round": 1
+    }
+  ]
+}

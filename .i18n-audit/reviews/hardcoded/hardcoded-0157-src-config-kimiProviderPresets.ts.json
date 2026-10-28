@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0157:src-config-kimiProviderPresets.ts",
+  "kind": "hardcoded",
+  "group": "src/config/kimiProviderPresets.ts",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 1,
+  "records": [
+    {
+      "id": "hardcoded:src/config/kimiProviderPresets.ts:kimiProviderPresets:88b4a1b24ec630e2:001",
+      "status": "无需国际化",
+      "content_fingerprint": "88b4a1b24ec630e2f96c431c11a8ce9d6bbd4add16bf84abd83faea13c47ac87",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/config/kimiProviderPresets.ts",
+      "line": 160,
+      "function": "kimiProviderPresets",
+      "expression": "`${baseUrl.replace(/\\/$/, \"\")}/v1`",
+      "reason": "预设品牌/技术标识或内部配置值，不需要翻译。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0157:src-config-kimiProviderPresets.ts",
+      "round": 1
+    }
+  ]
+}

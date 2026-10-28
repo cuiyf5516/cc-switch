@@ -1,0 +1,5 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:authCenter:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:authCenter:002","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:deeplink:001","default_status":"可保留","overrides":[]}
+]}

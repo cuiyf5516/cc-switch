@@ -1,0 +1,12 @@
+{
+  "batch_id": "hardcoded:0176:src-contexts-UpdateContext.tsx",
+  "kind": "hardcoded",
+  "group": "src/contexts/UpdateContext.tsx",
+  "ordinal": 1,
+  "record_count": 3,
+  "record_ids": [
+    "hardcoded:src/contexts/UpdateContext.tsx:checkUpdate:8a721474fd137ec7:001",
+    "hardcoded:src/contexts/UpdateContext.tsx:checkUpdate:d07abfb11e7e0d48:001",
+    "hardcoded:src/contexts/UpdateContext.tsx:useUpdate:57ba9a1d38057203:001"
+  ]
+}

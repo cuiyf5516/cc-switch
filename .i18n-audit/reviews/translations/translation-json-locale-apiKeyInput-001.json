@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:apiKeyInput:001",
+  "kind": "translation",
+  "namespace": "apiKeyInput",
+  "reviewed_at": "2026-10-28T13:39:08.427103+00:00",
+  "review_count": 3,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#apiKeyInput.hide",
+      "key": "apiKeyInput.hide",
+      "status": "可保留",
+      "combined_fingerprint": "f56e61ec92c4035d3a3255e1a5ef71c296c59702d3ecc5a6e1e631c15491e92c",
+      "content_fingerprints": {
+        "en": "c2c77161f20104a833d6b62b30bdb029d2918fcc5be4e183b10b4cb6b6f6c2cb",
+        "ja": "613d66acbddc0d0f49a8392905fc6833cc2bc0d296aa4b758d1ec2f37c202718",
+        "ko": "ce6f84136d24d7d31f738aa05607210d53a1d6e5dab6b8c9d720d92082c7c08c",
+        "tr": "a694c51a48bce4597d11211e90fd3c373ed5fe4b19fd86a965bf15703d43f177",
+        "zh": "358bb0affcfdecb647a609905835a6b4c2401d68754c7804f3da870e3a0ce50b",
+        "zh-TW": "2c96159bed45e0e4ac7ac35076b338a27dac5b4396104e7677218ca921b6e5e9"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.427103+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“隐藏API Key”与韩文“API 키 숨기기”在本条目所属 apiKeyInput UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "apiKeyInput",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#apiKeyInput.placeholder",
+      "key": "apiKeyInput.placeholder",
+      "status": "可保留",
+      "combined_fingerprint": "65b8e9379b0ada4915679bf5abf701e1bf7efdfd1f7cea7bb19b3dd4c78a096b",
+      "content_fingerprints": {
+        "en": "895f77e86e47475c0852b4357358453145d163e3c0392fe83eeeea146a8004ed",
+        "ja": "27fd746723a292ebbe8a40946fc68df00b63ea251dbe825998372085b6708916",
+        "ko": "42edea81eb2eb77ef92c3b47d8bcdce213f6cbc7167743d07e1574e231296bd9",
+        "tr": "b079d0606273e53b81113598abba2172fe56075711b9f44ea9b600c4c5bdb589",
+        "zh": "9c7d7f27e6d96b7d0a804513ca6ef09681b4cdd0bbc3072b062f8d4a42703292",
+        "zh-TW": "7479c288a54212b713be2fe3f193f8373a342cfa629356d089d9c38b4af98d24"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.427103+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“请输入API Key”与韩文“API 키를 입력하세요”在本条目所属 apiKeyInput UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "apiKeyInput",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#apiKeyInput.show",
+      "key": "apiKeyInput.show",
+      "status": "可保留",
+      "combined_fingerprint": "ea5d77aa173fe98ca6dd7387d687599bd57240a09f4cdb4e953e54c298d4ffad",
+      "content_fingerprints": {
+        "en": "840a0f2eb5f2e404e17d33c1868fda9361a0a9a286e91db5c7740c70c05171d0",
+        "ja": "39ad871cd65e499e36635962ea6317c1b633c6c06f0e240162c698eb053d5be3",
+        "ko": "70f11ca1abda72a6ad3eecec8f7eda3a4d553181b935d16a607fd1ff7ee50426",
+        "tr": "4df669d7afd47215da4199e1c70f412a5acc7cb0f013b71efcda879bcf88fb71",
+        "zh": "fafbf85023a058dd4987fcf2147d8f67ac925dbc65acd9ad6696233325e6b777",
+        "zh-TW": "9aae2b2ff300eae43e78f1eb1fd6589056e4f50a1d025ac381c73dccd4604a49"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.427103+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“显示API Key”与韩文“API 키 표시”在本条目所属 apiKeyInput UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "apiKeyInput",
+      "round": 1
+    }
+  ]
+}

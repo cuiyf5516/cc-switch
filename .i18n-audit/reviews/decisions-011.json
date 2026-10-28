@@ -1,0 +1,12 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:mcpPage:001","default_status":"可保留","overrides":[
+{"key":"mcpPage.drawer.cwdPlaceholder","status":"建议改","reason":"「비워두세요」应按韩语辅助动词规范分写为「비워 두세요」。","suggestion":"앱이 결정하도록 하려면 비워 두세요.","ui_context":"MCP 工作目录输入框占位符"}
+]},
+{"batch_id":"translation:json-locale:mcpPage:002","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:mcpPage:003","default_status":"可保留","overrides":[
+{"key":"mcpPage.drawer.revealValue","status":"建议改","reason":"该资源用于按钮 aria-label；原文是操作命令，韩文的「표시합니다」是陈述句，不利于辅助技术准确播报按钮动作。","suggestion":"{{name}} 값 표시","ui_context":"MCP 值显示按钮 aria-label"}
+]},
+{"batch_id":"translation:json-locale:mcpPage:004","default_status":"可保留","overrides":[
+{"key":"mcpPage.listLabel","status":"建议改","reason":"该资源是 MCP 列表的无障碍标签，韩文只写「MCP 서버」，遗漏「목록」，不能准确描述控件。","suggestion":"MCP 서버 목록","ui_context":"MCP 列表 aria-label"}
+]}
+]}

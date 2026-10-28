@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:codexOauth:002",
+  "kind": "translation",
+  "namespace": "codexOauth",
+  "reviewed_at": "2026-10-28T13:40:51.874631+00:00",
+  "review_count": 2,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#codexOauth.useDefaultAccount",
+      "key": "codexOauth.useDefaultAccount",
+      "status": "可保留",
+      "combined_fingerprint": "a21d4457589f759a8711abd026729c67050b858bdab024ead00f33405427fff2",
+      "content_fingerprints": {
+        "en": "0a553e37dbbe365a1a6b7ba69cd553b9a3dcd9b89d0e259983d829663e50c19b",
+        "ja": "c8f767cce496d2cf20471312202697b6cc74761359e61a1234bcc4bc99eaa970",
+        "ko": "4675434f31db720a572b8959dba65180e93de07fe3ae5fc28463dde150205c17",
+        "tr": "5c32881fe88329c12e7e8c368aad302822427d15c5ae37bc32c052adae6afc3e",
+        "zh": "d6f05e4ba3786d2a3e5bf983ebf2ee103bbe0288f28fa5c7638d70e994068032",
+        "zh-TW": "a37551e5d0280344b2f3ba1741baae7902b445ad533096b90c5418ad6308188a"
+      },
+      "reviewed_at": "2026-10-28T13:40:51.874631+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“使用默认账号”与韩文“기본 계정 사용”在本条目所属 codexOauth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "codexOauth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#codexOauth.waitingForAuth",
+      "key": "codexOauth.waitingForAuth",
+      "status": "可保留",
+      "combined_fingerprint": "f8ef4568301c7eb9a47191e49961675b055e97f3f2fa42b766e9114cbdb1508c",
+      "content_fingerprints": {
+        "en": "349f8287035893dae5acfb43639821ceb589cf97476c9c17ab7ce9e1c264b799",
+        "ja": "9fd76c5aa2c970f2e5b49f57d25f97b86e5140fc531e14ee92309ee3e66848bb",
+        "ko": "13b0185044db563b6b541ffbcc083bc5efa4c0d23923e2ca36aa84eebbf313ec",
+        "tr": "2035d1aeeb1fbf7f2bfb6b8f4b92df343d9e068e319e44d2c9ca96ccd11c3bf6",
+        "zh": "b5eb74670a0d7bcab2545cd021e3fd7a3605bab05f9b59971786e35c7dfbe3e3",
+        "zh-TW": "fd7820896d04b89bcc56c17e03da74869d5a82e283779b554d1daef45efdc55c"
+      },
+      "reviewed_at": "2026-10-28T13:40:51.874631+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“等待授权中...”与韩文“승인을 기다리는 중...”在本条目所属 codexOauth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "codexOauth",
+      "round": 1
+    }
+  ]
+}

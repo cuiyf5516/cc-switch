@@ -1,0 +1,33 @@
+# Korean i18n audit workspace
+
+This directory contains a reproducible, resumable audit of:
+
+- Existing Korean translations in JSON, native tray/panel code, and backend inline messages.
+- User-visible production strings that bypass the i18n system.
+
+No project-owned source, locale, dependency, or configuration file is modified by these tools.
+
+## Commands
+
+```powershell
+python .i18n-audit/scripts/extract.py
+python .i18n-audit/scripts/plan_batches.py
+python .i18n-audit/scripts/scan_hardcoded.py
+python .i18n-audit/scripts/plan_hardcoded_batches.py
+python .i18n-audit/scripts/apply_reviews.py .i18n-audit/reviews/decisions-EXAMPLE.json
+python .i18n-audit/scripts/review_hardcoded.py
+python .i18n-audit/scripts/verify.py
+python .i18n-audit/scripts/generate_report.py
+```
+
+All generated state is under `.i18n-audit/`. `verify.py` exits non-zero while required records are incomplete or stale.
+
+## Latest audit state
+
+- Existing translation resources: 4,448 / 4,448 reviewed.
+- Translation batches: 158 / 158 complete.
+- Translation outcomes: 3 must-fix, 79 suggested changes, 4 pending verification, 4,362 keep.
+- Production source files: 802 scanned, 0 failed, 26 test/non-production files explicitly excluded.
+- Hardcoded candidates: 4,990 reviewed; 1,160 confirmed omissions, 1,256 pending verification, 2,574 no-i18n.
+- Dynamic translation keys: 162 registered and reviewed as pending runtime-key risks.
+- Second round: 655 keep samples plus all 86 translation issues; 1,160 confirmed and 1,256 pending hardcoded candidates rechecked; 391 no-i18n samples checked.

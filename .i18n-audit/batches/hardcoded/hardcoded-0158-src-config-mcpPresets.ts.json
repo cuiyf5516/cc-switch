@@ -1,0 +1,10 @@
+{
+  "batch_id": "hardcoded:0158:src-config-mcpPresets.ts",
+  "kind": "hardcoded",
+  "group": "src/config/mcpPresets.ts",
+  "ordinal": 1,
+  "record_count": 1,
+  "record_ids": [
+    "dynamic-i18n:src/config/mcpPresets.ts:getMcpPresetWithDescription:0c1d1c92eda0e772:001"
+  ]
+}

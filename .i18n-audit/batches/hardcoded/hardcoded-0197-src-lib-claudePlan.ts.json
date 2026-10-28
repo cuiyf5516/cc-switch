@@ -1,0 +1,16 @@
+{
+  "batch_id": "hardcoded:0197:src-lib-claudePlan.ts",
+  "kind": "hardcoded",
+  "group": "src/lib/claudePlan.ts",
+  "ordinal": 1,
+  "record_count": 7,
+  "record_ids": [
+    "dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:c948ad90dbb56786:001",
+    "dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:e6d34e9dad987f63:001",
+    "dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:526dea196aee52d7:001",
+    "dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:0643f8d5c2a7a4d6:001",
+    "dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:73cc9395a6dcb325:001",
+    "dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:8047060929970a87:001",
+    "dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:906c5699182dee61:001"
+  ]
+}

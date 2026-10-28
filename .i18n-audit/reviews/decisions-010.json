@@ -1,0 +1,13 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:mcp:002","default_status":"可保留","overrides":[
+{"key":"mcp.presets.fetch.description","status":"建议改","reason":"「HTTP 방법」是直译，韩语软件术语通常使用「HTTP 메서드」。","suggestion":"GET/POST 등 HTTP 메서드를 지원하는 범용 HTTP 요청 도구로, API를 빠르게 호출하거나 웹 데이터를 가져오는 데 적합합니다.","ui_context":"MCP fetch 预设说明"},
+{"key":"mcp.presets.sequential-thinking.description","status":"建议改","reason":"原文是把复杂问题“分解为多个步骤”，韩文「분류」表示分类，改变了动作含义。","suggestion":"AI가 복잡한 문제를 여러 단계로 나누어 차례로 깊이 생각하도록 돕는 순차적 사고 도구","ui_context":"MCP sequential-thinking 预设说明"}
+]},
+{"batch_id":"translation:json-locale:mcp:003","default_status":"可保留","overrides":[
+{"key":"mcp.serverList","status":"建议改","reason":"原文为“服务器列表”，韩文只写「서버」，遗漏列表语义并弱化区块标题。","suggestion":"서버 목록","ui_context":"MCP 服务器列表标题"},
+{"key":"mcp.unifiedPanel.noSearchResults","status":"建议改","reason":"「검색과 일치하는」搭配不自然，寻找结果时应对应「검색어와 일치하는」。","suggestion":"검색어와 일치하는 MCP 서버가 없습니다.","ui_context":"MCP 搜索空状态"},
+{"key":"mcp.userLevelPath","status":"建议改","reason":"原文是“用户级 MCP 配置路径”，韩文遗漏「설정」，字段含义不完整。","suggestion":"사용자 수준 MCP 설정 경로","ui_context":"MCP 配置路径标签"},
+{"key":"mcp.wizard.headers","status":"建议改","reason":"「선택사항」未按项目统一写法「선택 사항」分写。","suggestion":"헤더(선택 사항)","ui_context":"MCP 向导请求头字段"}
+]},
+{"batch_id":"translation:json-locale:mcp:004","default_status":"可保留","overrides":[]}
+]}

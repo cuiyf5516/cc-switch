@@ -1,0 +1,17 @@
+{
+  "batch_id": "hardcoded:0117:src-components-openclaw",
+  "kind": "hardcoded",
+  "group": "src/components/openclaw",
+  "ordinal": 1,
+  "record_count": 8,
+  "record_ids": [
+    "hardcoded:src/components/openclaw/AgentsDefaultsPanel.tsx:AgentsDefaultsPanel:18fc6e9e894173f4:001",
+    "hardcoded:src/components/openclaw/AgentsDefaultsPanel.tsx:AgentsDefaultsPanel:983bd614bb5afece:001",
+    "hardcoded:src/components/openclaw/AgentsDefaultsPanel.tsx:AgentsDefaultsPanel:b552e632666bbf61:001",
+    "hardcoded:src/components/openclaw/AgentsDefaultsPanel.tsx:AgentsDefaultsPanel:4b227777d4dd1fc6:001",
+    "hardcoded:src/components/openclaw/OpenClawHealthBanner.tsx:OpenClawHealthBanner:7fadb5dcf32dcf48:001",
+    "hardcoded:src/components/openclaw/OpenClawHealthBanner.tsx:OpenClawHealthBanner:2f1ba34341eb3cec:001",
+    "hardcoded:src/components/openclaw/ToolsPanel.tsx:ToolsPanel:5dc3c4b05218ca74:001",
+    "hardcoded:src/components/openclaw/hooks/useOpenClawModelOptions.ts:label:4e413c3de11f55c5:001"
+  ]
+}

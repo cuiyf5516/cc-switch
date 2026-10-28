@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0178:src-hooks-useDragSort.ts",
+  "kind": "hardcoded",
+  "group": "src/hooks/useDragSort.ts",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 2,
+  "records": [
+    {
+      "id": "hardcoded:src/hooks/useDragSort.ts:handleDragEnd:f850fbbdab316afc:001",
+      "status": "无需国际化",
+      "content_fingerprint": "f850fbbdab316afc469ed43f2b884990dc1a2894252457c884b1ecd0a2a88419",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/hooks/useDragSort.ts",
+      "line": 98,
+      "function": "handleDragEnd",
+      "expression": "Failed to update tray menu after sort",
+      "reason": "控制台日志或诊断信息，不作为界面文案。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0178:src-hooks-useDragSort.ts",
+      "round": 1
+    },
+    {
+      "id": "hardcoded:src/hooks/useDragSort.ts:handleDragEnd:0ddac9afc3cef708:001",
+      "status": "无需国际化",
+      "content_fingerprint": "0ddac9afc3cef7088c898a169a3e135838df56e47d26a425983c1ac1c53bd440",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/hooks/useDragSort.ts",
+      "line": 109,
+      "function": "handleDragEnd",
+      "expression": "Failed to update provider sort order",
+      "reason": "控制台日志或诊断信息，不作为界面文案。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0178:src-hooks-useDragSort.ts",
+      "round": 1
+    }
+  ]
+}

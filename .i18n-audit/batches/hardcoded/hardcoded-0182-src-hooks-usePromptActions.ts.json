@@ -1,0 +1,12 @@
+{
+  "batch_id": "hardcoded:0182:src-hooks-usePromptActions.ts",
+  "kind": "hardcoded",
+  "group": "src/hooks/usePromptActions.ts",
+  "ordinal": 1,
+  "record_count": 3,
+  "record_ids": [
+    "hardcoded:src/hooks/usePromptActions.ts:cacheKey:3830fffc72e9e63f:001",
+    "hardcoded:src/hooks/usePromptActions.ts:toggleEnabled:7dddff38555ef878:001",
+    "dynamic-i18n:src/hooks/usePromptActions.ts:toggleEnabled:0a592ddbd2de0f49:001"
+  ]
+}

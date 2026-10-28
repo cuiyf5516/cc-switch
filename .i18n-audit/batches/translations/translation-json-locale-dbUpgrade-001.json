@@ -1,0 +1,42 @@
+{
+  "batch_id": "translation:json-locale:dbUpgrade:001",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "dbUpgrade",
+  "ordinal": 1,
+  "record_count": 15,
+  "record_ids": [
+    "json:src/i18n/locales#dbUpgrade.checking",
+    "json:src/i18n/locales#dbUpgrade.dbPath",
+    "json:src/i18n/locales#dbUpgrade.description",
+    "json:src/i18n/locales#dbUpgrade.downloading",
+    "json:src/i18n/locales#dbUpgrade.incompatibleDescription",
+    "json:src/i18n/locales#dbUpgrade.incompatibleTitle",
+    "json:src/i18n/locales#dbUpgrade.openConfigDir",
+    "json:src/i18n/locales#dbUpgrade.openReleases",
+    "json:src/i18n/locales#dbUpgrade.preparing",
+    "json:src/i18n/locales#dbUpgrade.quit",
+    "json:src/i18n/locales#dbUpgrade.retry",
+    "json:src/i18n/locales#dbUpgrade.title",
+    "json:src/i18n/locales#dbUpgrade.updateAvailable",
+    "json:src/i18n/locales#dbUpgrade.upgradeNow",
+    "json:src/i18n/locales#dbUpgrade.versionInfo"
+  ],
+  "keys": [
+    "dbUpgrade.checking",
+    "dbUpgrade.dbPath",
+    "dbUpgrade.description",
+    "dbUpgrade.downloading",
+    "dbUpgrade.incompatibleDescription",
+    "dbUpgrade.incompatibleTitle",
+    "dbUpgrade.openConfigDir",
+    "dbUpgrade.openReleases",
+    "dbUpgrade.preparing",
+    "dbUpgrade.quit",
+    "dbUpgrade.retry",
+    "dbUpgrade.title",
+    "dbUpgrade.updateAvailable",
+    "dbUpgrade.upgradeNow",
+    "dbUpgrade.versionInfo"
+  ]
+}

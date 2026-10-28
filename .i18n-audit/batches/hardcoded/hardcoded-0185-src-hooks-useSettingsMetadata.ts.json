@@ -1,0 +1,10 @@
+{
+  "batch_id": "hardcoded:0185:src-hooks-useSettingsMetadata.ts",
+  "kind": "hardcoded",
+  "group": "src/hooks/useSettingsMetadata.ts",
+  "ordinal": 1,
+  "record_count": 1,
+  "record_ids": [
+    "hardcoded:src/hooks/useSettingsMetadata.ts:load:130282db800e3a5a:001"
+  ]
+}

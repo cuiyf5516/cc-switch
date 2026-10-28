@@ -1,0 +1,40 @@
+{
+  "batch_id": "translation:json-locale:pi:004",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "pi",
+  "ordinal": 4,
+  "record_count": 14,
+  "record_ids": [
+    "json:src/i18n/locales#pi.prompts.templateSlugExists",
+    "json:src/i18n/locales#pi.prompts.templateSlugInvalid",
+    "json:src/i18n/locales#pi.prompts.templateSlugRequired",
+    "json:src/i18n/locales#pi.prompts.templateSyntax",
+    "json:src/i18n/locales#pi.prompts.templateSyntaxDescription",
+    "json:src/i18n/locales#pi.prompts.templatesDescription",
+    "json:src/i18n/locales#pi.prompts.templatesLabel",
+    "json:src/i18n/locales#pi.prompts.templatesTab",
+    "json:src/i18n/locales#pi.prompts.unavailable",
+    "json:src/i18n/locales#pi.prompts.usePromptSuccess",
+    "json:src/i18n/locales#pi.provider.enableFailed",
+    "json:src/i18n/locales#pi.provider.enabled",
+    "json:src/i18n/locales#pi.provider.removed",
+    "json:src/i18n/locales#pi.provider.writeConflict"
+  ],
+  "keys": [
+    "pi.prompts.templateSlugExists",
+    "pi.prompts.templateSlugInvalid",
+    "pi.prompts.templateSlugRequired",
+    "pi.prompts.templateSyntax",
+    "pi.prompts.templateSyntaxDescription",
+    "pi.prompts.templatesDescription",
+    "pi.prompts.templatesLabel",
+    "pi.prompts.templatesTab",
+    "pi.prompts.unavailable",
+    "pi.prompts.usePromptSuccess",
+    "pi.provider.enableFailed",
+    "pi.provider.enabled",
+    "pi.provider.removed",
+    "pi.provider.writeConflict"
+  ]
+}

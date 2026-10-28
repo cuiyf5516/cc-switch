@@ -1,0 +1,19 @@
+{
+  "batch_id": "hardcoded:0016:src-tauri-src-agy_config.rs",
+  "kind": "hardcoded",
+  "group": "src-tauri/src/agy_config.rs",
+  "ordinal": 1,
+  "record_count": 10,
+  "record_ids": [
+    "hardcoded:src-tauri/src/agy_config.rs:read_live_settings:87722d8042d6cd5a:001",
+    "hardcoded:src-tauri/src/agy_config.rs:read_live_settings:272ec9739e18d77c:001",
+    "hardcoded:src-tauri/src/agy_config.rs:read_live_settings:4fb29d8bce3b84f0:001",
+    "hardcoded:src-tauri/src/agy_config.rs:read_live_settings:3901ee116379a6d7:001",
+    "hardcoded:src-tauri/src/agy_config.rs:read_live_settings:e3f5daf347d1ba72:001",
+    "hardcoded:src-tauri/src/agy_config.rs:read_live_settings:9372c470eeadd5ec:001",
+    "hardcoded:src-tauri/src/agy_config.rs:read_live_settings:b77349bf1fa9b26d:001",
+    "hardcoded:src-tauri/src/agy_config.rs:read_live_settings:b79606fb3afea5bd:001",
+    "hardcoded:src-tauri/src/agy_config.rs:release_model_provider:ec454fd949762aca:001",
+    "hardcoded:src-tauri/src/agy_config.rs:remove:b77349bf1fa9b26d:001"
+  ]
+}

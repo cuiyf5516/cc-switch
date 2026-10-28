@@ -1,0 +1,11 @@
+{
+  "batch_id": "hardcoded:0223:src-utils-uuid.ts",
+  "kind": "hardcoded",
+  "group": "src/utils/uuid.ts",
+  "ordinal": 1,
+  "record_count": 2,
+  "record_ids": [
+    "hardcoded:src/utils/uuid.ts:generateUUID:9a9f4bf4aeae48b2:001",
+    "hardcoded:src/utils/uuid.ts:generateUUID:5dc10448349e3c3f:001"
+  ]
+}

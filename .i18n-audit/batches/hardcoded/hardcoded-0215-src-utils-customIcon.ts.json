@@ -1,0 +1,11 @@
+{
+  "batch_id": "hardcoded:0215:src-utils-customIcon.ts",
+  "kind": "hardcoded",
+  "group": "src/utils/customIcon.ts",
+  "ordinal": 1,
+  "record_count": 2,
+  "record_ids": [
+    "hardcoded:src/utils/customIcon.ts:PNG_HEADER_PREFIX:14463a37223c3105:001",
+    "hardcoded:src/utils/customIcon.ts:readAsDataUrl:60d9e332f1d677e8:001"
+  ]
+}

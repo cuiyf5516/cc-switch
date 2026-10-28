@@ -1,0 +1,42 @@
+{
+  "batch_id": "translation:json-locale:claudeConfig:001",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "claudeConfig",
+  "ordinal": 1,
+  "record_count": 15,
+  "record_ids": [
+    "json:src/i18n/locales#claudeConfig.addToGlobalSettings",
+    "json:src/i18n/locales#claudeConfig.configLabel",
+    "json:src/i18n/locales#claudeConfig.disableArtifact",
+    "json:src/i18n/locales#claudeConfig.disableArtifactHelp",
+    "json:src/i18n/locales#claudeConfig.disableAutoModeServer",
+    "json:src/i18n/locales#claudeConfig.disableAutoModeServerHelp",
+    "json:src/i18n/locales#claudeConfig.disableAutoUpgrade",
+    "json:src/i18n/locales#claudeConfig.disableAutoUpgradeHelp",
+    "json:src/i18n/locales#claudeConfig.enableToolSearch",
+    "json:src/i18n/locales#claudeConfig.enableToolSearchHelp",
+    "json:src/i18n/locales#claudeConfig.fullSettingsHint",
+    "json:src/i18n/locales#claudeConfig.hideAttribution",
+    "json:src/i18n/locales#claudeConfig.hideAttributionHelp",
+    "json:src/i18n/locales#claudeConfig.inactiveFieldsHint",
+    "json:src/i18n/locales#claudeConfig.keyFieldsHint"
+  ],
+  "keys": [
+    "claudeConfig.addToGlobalSettings",
+    "claudeConfig.configLabel",
+    "claudeConfig.disableArtifact",
+    "claudeConfig.disableArtifactHelp",
+    "claudeConfig.disableAutoModeServer",
+    "claudeConfig.disableAutoModeServerHelp",
+    "claudeConfig.disableAutoUpgrade",
+    "claudeConfig.disableAutoUpgradeHelp",
+    "claudeConfig.enableToolSearch",
+    "claudeConfig.enableToolSearchHelp",
+    "claudeConfig.fullSettingsHint",
+    "claudeConfig.hideAttribution",
+    "claudeConfig.hideAttributionHelp",
+    "claudeConfig.inactiveFieldsHint",
+    "claudeConfig.keyFieldsHint"
+  ]
+}

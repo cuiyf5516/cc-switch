@@ -1,0 +1,14 @@
+{
+  "batch_id": "hardcoded:0196:src-lib-api",
+  "kind": "hardcoded",
+  "group": "src/lib/api",
+  "ordinal": 1,
+  "record_count": 5,
+  "record_ids": [
+    "hardcoded:src/lib/api/env.ts:checkAllEnvConflicts:6179672b0e44e495:001",
+    "hardcoded:src/lib/api/model-fetch.ts:showFetchModelsError:ce8bfd4f9ef161e2:001",
+    "hardcoded:src/lib/api/model-fetch.ts:showFetchModelsError:4db7fea974ed743a:001",
+    "hardcoded:src/lib/api/settings.ts:syncCurrentProvidersLive:55d960fe732358ec:001",
+    "hardcoded:src/lib/api/settings.ts:openExternal:69e1efdb433faf0f:001"
+  ]
+}

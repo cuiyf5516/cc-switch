@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0152:src-config-codexTemplates.ts",
+  "kind": "hardcoded",
+  "group": "src/config/codexTemplates.ts",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 1,
+  "records": [
+    {
+      "id": "hardcoded:src/config/codexTemplates.ts:config:21015629573c1f9e:001",
+      "status": "无需国际化",
+      "content_fingerprint": "21015629573c1f9eb7d45f29ee6328317f66a392dd3ad977094fd9c8202b69f5",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/config/codexTemplates.ts",
+      "line": 16,
+      "function": "config",
+      "expression": "model_provider = \"custom\"\nmodel = \"gpt-5.6-sol\"\nmodel_reasoning_effort = \"high\"\ndisable_response_storage = true\n\n[model_providers.custom]\nname = \"custom\"\nwire_api = \"responses\"\nrequires_openai_auth = true",
+      "reason": "预设中的配置片段、模型标识、User-Agent 或系统提示词，不属于界面自然语言。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0152:src-config-codexTemplates.ts",
+      "round": 1
+    }
+  ]
+}

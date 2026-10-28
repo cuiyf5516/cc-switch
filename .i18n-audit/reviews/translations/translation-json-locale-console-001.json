@@ -1,0 +1,367 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:console:001",
+  "kind": "translation",
+  "namespace": "console",
+  "reviewed_at": "2026-10-28T13:41:13.084340+00:00",
+  "review_count": 17,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#console.autoImportFailed",
+      "key": "console.autoImportFailed",
+      "status": "可保留",
+      "combined_fingerprint": "2e0b8932edbd0c30f35bfc8fb05987cba2914d3755f518a99258abd14119a2c7",
+      "content_fingerprints": {
+        "en": "7b889c950a501158618d57a2428dd17c4677db49c74e957d9d58f53e410b0bf7",
+        "ja": "fe31537da79dd8a5965b4d14149bd1196e417ba2a58e833c9c4e2592de8fef1b",
+        "ko": "9a0df21e0db72a1f9d56d0800c7cbaf0ebee5890ca77fe04ec55e041ae14ff58",
+        "tr": "491bd0307a2bc2d88f1f1265fc64d48061d58012038a8b3ca23585b85d25d3f9",
+        "zh": "5fe22ffb90774cd54ac6e70eeaeafd7c2f8ce52e203f81535eb0349707949b16",
+        "zh-TW": "5445bbce1877d64105460d92bc1b93d2f7640658622ad1561bd42d931683242c"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.084340+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“自动导入默认配置失败:”与韩文“기본 설정 자동 가져오기 실패:”在本条目所属 console UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "console",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#console.checkUpdateFailed",
+      "key": "console.checkUpdateFailed",
+      "status": "可保留",
+      "combined_fingerprint": "72a8b01b445a58941de84c31fa44137054187122a5abbe589928657e5fe8bc4c",
+      "content_fingerprints": {
+        "en": "6042e90db3fb7b2e6c3ba77c52b9ffeaa3467bedbf10c5e9aa038c353c53c9e0",
+        "ja": "8541c1298e387553e649cf5ea6f6c8b99d886e845699e3af9c31fb509e651f12",
+        "ko": "86b0335ee4e9cd26a531e6956b7efbb6e7c99198e701ce1375bbff4ee691becf",
+        "tr": "ea12e1082ffe2beaad5bd48b2d1097f95c8ea1a63dafbaae531f96774948b1d2",
+        "zh": "8a721474fd137ec752f0bb4a83b5ff6810f767a6943d87bac90a3c50b97991c7",
+        "zh-TW": "2217bfbc5c51a3499ffb688c44e7b183c9ca4fe47f7c2ae943eab7b38b783b7e"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.084340+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“检查更新失败:”与韩文“업데이트 확인 실패:”在本条目所属 console UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "console",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#console.detectPortableFailed",
+      "key": "console.detectPortableFailed",
+      "status": "可保留",
+      "combined_fingerprint": "63d5d2aab1794f86b6dbfab53a8b43de03f2118bdbba869aa05e64fc7bb44950",
+      "content_fingerprints": {
+        "en": "9928e571e20dcb38bc0a3563856c888887c15f43e6b390ecd8d95fc989b5c0ca",
+        "ja": "cb7425406abda2027c36340c4cfe1a7fd090892cb95085ba5a85bacf2d8357cf",
+        "ko": "e0246485064f7407531a4e9f605dc0242ccff0af6bb20efefb3809249a059cc7",
+        "tr": "2830b953fb4201140c45c0d7a31fe47b8d1c36de1937eddad4c9ea8d420db37f",
+        "zh": "03bbb95f45fcbb431acb84b6bbc956f3726203ed40fa0c72f66fee11c105744b",
+        "zh-TW": "1d1cc39ae3cc85a45fe2952396013123194af6690014a7241f44dd2f5e2de347"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.084340+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“检测便携模式失败:”与韩文“휴대용 모드를 감지하지 못했습니다.”在本条目所属 console UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "console",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#console.getConfigDirFailed",
+      "key": "console.getConfigDirFailed",
+      "status": "可保留",
+      "combined_fingerprint": "6af9e82214282c747a34ba2f23cc99f98cdf68038b2e49c4e2c2a49352e862c5",
+      "content_fingerprints": {
+        "en": "f36e6cafb43900c3446f06f1e004eb72f23079b12d27132939872be99574f14e",
+        "ja": "597ad49a2c1b92e0996908fb8cf865bda10447fe8e62647e0bcfd6a0eb5d8f4f",
+        "ko": "8d12f1fe4da7d0d28ef3da0bc1f1254a601ff2279b1c6886640fceef4e9fa817",
+        "tr": "da57ed8d2a4a65888008d949e9b528664e4045b9839e5db4a170b5a261b8bf51",
+        "zh": "c0d5ff15c827de1b926e60d0b20753d29d77b24cad012b9f42bbe4b55c5c9e5c",
+        "zh-TW": "7e2ca59a25e62f4f0276056bdf1ef48a686751181321a43ae18653c31981e34f"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.084340+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“获取配置目录失败:”与韩文“설정 디렉터리를 가져오지 못했습니다.”在本条目所属 console UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "console",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#console.getConfigPathFailed",
+      "key": "console.getConfigPathFailed",
+      "status": "可保留",
+      "combined_fingerprint": "7ea76020ef28aa8d26bf510facf250cce2f65d2204cf615d6875e8e6acd01c76",
+      "content_fingerprints": {
+        "en": "897197a4042fe4b326d9a9be6c5679a17d0042ae8ae7f77af70d1e141165a6d0",
+        "ja": "2b4c1f782025270178488c8b4c635ea6851ec614ac5b55501739d2c8315fd94b",
+        "ko": "57c2d78491ddbd51509f3c9d9454db82671946d3feb3eb5db538d248a20421f2",
+        "tr": "b2d4fb62b584c5c8e14db9dafa2f9a86aebf7f2bacd2c5e45dde0f96d05b5768",
+        "zh": "d3401f61c61f9e9677dc770d62db29f01fb7d96be290dfc2b48e306b46ee085d",
+        "zh-TW": "fc148402576f101e32a1c63187c0cfc4d83127d7c0696395eb56e6f968c0a6b5"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.084340+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“获取配置路径失败:”与韩文“설정 경로를 가져오지 못했습니다.”在本条目所属 console UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "console",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#console.getDefaultConfigDirFailed",
+      "key": "console.getDefaultConfigDirFailed",
+      "status": "可保留",
+      "combined_fingerprint": "617f5d6b713e8f93c750e1039cea295072a6afdee617c787992003d055f359df",
+      "content_fingerprints": {
+        "en": "04ca3ae7318eaa0750ab4e58fd66acb7d07d3c151a14dc7c3724145526ef9961",
+        "ja": "79e7461a44d28eb8c8365e31c2cdda3cdc77e6ded9a479cc09119da12bafa0e9",
+        "ko": "e2f44c50262b7dd0e20a228d3f44c120455dea150827ffef80c772c91bc8bf5a",
+        "tr": "1fdef34fcc325c92abaae1dcc4f920df1d17c832ff5e0ff95f84df5841b6106a",
+        "zh": "372e7b11870ea0a92f5bce9bd5409b86f6e89e1ea5e65a99cfe3b66e7a1e5a0f",
+        "zh-TW": "404d5a852173ed37cbdffeea1a71a6ef95837891dd0c7b25b7dfc62f1eba8806"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.084340+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“获取默认配置目录失败:”与韩文“기본 설정 디렉터리를 가져오지 못했습니다.”在本条目所属 console UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "console",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#console.getVersionFailed",
+      "key": "console.getVersionFailed",
+      "status": "可保留",
+      "combined_fingerprint": "13fb1c10111ec2c855e8581744182e3aeb8c03bf72b5368ccdb05280c1ce9d70",
+      "content_fingerprints": {
+        "en": "fc270e60063c0175a49f1fd54b1c4fe2ab7b2ad95ac48cfaf5a859cca1b9bc8a",
+        "ja": "afabc7ad3238c16f792e417927e621ccc4d9b56132c024db29454a449bf4ebdb",
+        "ko": "16e1344aab6654aa68bba72cdb9b9099a4927e4dae7908587b08437f7f35e43a",
+        "tr": "4df1f9f9cc245b56d14dffcf5570ac46a1833e79eb81204aa75ede15416e3121",
+        "zh": "ada04429ab5c763cc268e7142535829f04a706a57affe9e043dae6ef0fb89523",
+        "zh-TW": "8aec04b0de81f6c9aaebb4ceed885b3c0664fa08ace3160593233e24c1cbcf1d"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.084340+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“获取版本信息失败:”与韩文“버전 정보를 가져오지 못했습니다:”在本条目所属 console UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "console",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#console.loadSettingsFailed",
+      "key": "console.loadSettingsFailed",
+      "status": "可保留",
+      "combined_fingerprint": "15af850945131ad0b4b1d8f922fa41713f240d9e1f4feb24d04c1effa5f3c2e0",
+      "content_fingerprints": {
+        "en": "90b418a4a3c8968a00a50b84ea36c4921f14433cd25b09463dd5461ea7724b62",
+        "ja": "aaf98710a99797c5cd23602102639517f29c87a4c568ac57802d3e8c313cb2d8",
+        "ko": "39ab1e51ddf7862b6bf77d60889c6d0c26c30030b1b0245ebc1be0c0ea83ea62",
+        "tr": "14f3e1abd35cce990e81d44fc994909b068adb36b4da76f398ab05257f5570cb",
+        "zh": "f253213e8f8537427cbe5da393b51e827daca028d396a15c050412bf9a3ee800",
+        "zh-TW": "cca7766b3784f65aa45a48e19c317936858929d5c2fe4bad317e271669c23be5"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.084340+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“加载设置失败:”与韩文“설정을 로드하지 못했습니다:”在本条目所属 console UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "console",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#console.openConfigFolderFailed",
+      "key": "console.openConfigFolderFailed",
+      "status": "可保留",
+      "combined_fingerprint": "79cf85fbb4e4efaca06e10620abe73fcb52162407a9430f55b1b659556eb8a58",
+      "content_fingerprints": {
+        "en": "04626ea9edf9edbaab1fcea5a45d4436656b7c21994b250dd9fead922dc663b2",
+        "ja": "61be8843f732db83e6aeebb20245855611492e0e419a1a485503e06f3dbac60c",
+        "ko": "e550f3d198b3a307a670b006757fb27912c6b7054e3ba8a1495b92fef15003a0",
+        "tr": "a9fe6d1d0d27d791c807b86e402fffe4ca1b08f90c2a7d4b743d8d10c0bf12e9",
+        "zh": "c3af9a517263491690c1b81dd580a8672e6e560898f41d4916878cfd42c5814f",
+        "zh-TW": "b38d9667488cc131c4dff291e02fa7afa8e5451e4aac5b611a67895a70d62278"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.084340+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“打开配置文件夹失败:”与韩文“설정 폴더를 열지 못했습니다:”在本条目所属 console UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "console",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#console.openLinkFailed",
+      "key": "console.openLinkFailed",
+      "status": "可保留",
+      "combined_fingerprint": "c0ca144b7f43c92c6116663cc7891080d3a9f6cdfb4b444861de8bf71dcb11f0",
+      "content_fingerprints": {
+        "en": "a5f61117062dde148f27e6e3ead240046c8ebd3732e6043ace1419bf9793dabc",
+        "ja": "32ab55ca10c0b4659fc1c9770fb277b24ee87c446bb85eaedab0b0a24023eac2",
+        "ko": "a9a87c10feae46a5facff2f7e8246c60f5776f77b7162bfddaa61a2e2f885730",
+        "tr": "8b1aedf7d12cf42d3b0c8cd101f7e0bcf65367df1f03bd91661aa8c6bd10e05d",
+        "zh": "0c25d8760fa6b4f34c5538905d58c70c6233963d42a1fd148826af0350f2f682",
+        "zh-TW": "670509db44d1a6982955f9f5617318a7c8c1e94dbadd12ff1c8f5e396b8e4198"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.084340+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“打开链接失败:”与韩文“링크를 열지 못했습니다:”在本条目所属 console UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "console",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#console.openReleaseNotesFailed",
+      "key": "console.openReleaseNotesFailed",
+      "status": "可保留",
+      "combined_fingerprint": "ec48d73763e431c9b424eb070caa8d22f46df010d3b973be43010fdc2461fc59",
+      "content_fingerprints": {
+        "en": "b7234250036d89137677f568509a791e99fae51a331cf866b67bbd92e2baf178",
+        "ja": "32cf7f5cdd48cc546c09b13eb49f48fa6195d237f56a65df17d6cfd53a040dfa",
+        "ko": "7ca5411c156c548d8650de5efa9b4796ef5528ebde01e76ce79f0c00de0a2105",
+        "tr": "b0fba788572819ec54ca32e2f5d2b6f499cac61c75a218f7013513f8977a658d",
+        "zh": "3707178f4da2c1fbe3523c9a13bde14661c2624fa6ae182c68f34a19211afbd4",
+        "zh-TW": "84ffbc8691331f45eeae0a07f41890195bc66324b7a2120124242ae292e7f236"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.084340+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“打开更新日志失败:”与韩文“릴리스 노트를 열지 못했습니다:”在本条目所属 console UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "console",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#console.providerSwitchReceived",
+      "key": "console.providerSwitchReceived",
+      "status": "可保留",
+      "combined_fingerprint": "6d48e354b1d06db20b7115798f1d17e96acbde252262f2a822b88c93af7dc93c",
+      "content_fingerprints": {
+        "en": "188ce3bca3f754eee2f22e8d4725a8e2dc412c492e3e4e104ece104f2c6ed12d",
+        "ja": "0356c7645bdd6955c21d9984240151cb97c8951c144ee9dfa9e0e076ad1e5c9c",
+        "ko": "91d2821ca9e01365686f09fc7c1f6dc4aabb28f9b697ca3582d6eab7ed2825d6",
+        "tr": "312f1507214a8f65cfc9987e3c2127168fd1a5a5eca8242514deadb4da6915e7",
+        "zh": "085069c116ea22cd80cdfd9a42f0dcb43e56719f66d1b0a6dbb3d0f3407f0a58",
+        "zh-TW": "ff89187c3fe84ee2f903c95b1f0677c3dbf77e2de411bed765079c38da6157bb"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.084340+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“收到供应商切换事件:”与韩文“수신된 공급자 전환 이벤트:”在本条目所属 console UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "console",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#console.saveSettingsFailed",
+      "key": "console.saveSettingsFailed",
+      "status": "可保留",
+      "combined_fingerprint": "8aa021972d104b9dc1903d334799601fdd2a23edbb5b5bf5d9ff36110bdc2eb0",
+      "content_fingerprints": {
+        "en": "9d20bf69be07d6124f8baceccaa2f9531efc6501378f0f365483ee8153542f5d",
+        "ja": "0559a7012e215388370e8318225b7484b150ac9083d1a4231fa94124bd955cdf",
+        "ko": "525df8d036e8a160d815ea2c40a44c945d9e9375ad316947d28e7e71ed5cf70b",
+        "tr": "252ebf527466d57b67eac2505ac3e621e9d8e40cc8ea8a566f96c7f8c968365f",
+        "zh": "4b3b90d2706a1570b0ddcae6b0f094415d895d25abc02eca86947219f5c82067",
+        "zh-TW": "ebb7c67904f82b88e2dec6ceae732841d121c0a67452cc9ca3656ceac30446f7"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.084340+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“保存设置失败:”与韩文“설정을 저장하지 못했습니다.”在本条目所属 console UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "console",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#console.selectConfigDirFailed",
+      "key": "console.selectConfigDirFailed",
+      "status": "可保留",
+      "combined_fingerprint": "b6a3a74fe44d0f5d51e0a8a5e8358cd6d24cf672b8cd3b23cd11db832f04429f",
+      "content_fingerprints": {
+        "en": "9f7c1efb89da289178925a97bba63c69130d09c22205b9d1be990a2dfc14d480",
+        "ja": "adde69fe970ec1257569247caeeb33800560700f17f443ef8ba791f9dbb0d789",
+        "ko": "c67c8129ec08fd451ddd4f2ec602ca702b2b9cfa5875220cb438ae243c5e94d0",
+        "tr": "6a4740b9a03fc510a31ce365860076c5a5e6b9914c1e10b8c0fbf87f7a12d8c5",
+        "zh": "42c1eb559396ace25db48f6b164152af5e0ccd2debeab65f0547aacad346a480",
+        "zh-TW": "d9cc708f3257afcf64ebb747171761ae46512c4fecb22ddac609c5f5103a0b72"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.084340+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“选择配置目录失败:”与韩文“설정 디렉터리를 선택하지 못했습니다.”在本条目所属 console UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "console",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#console.setupListenerFailed",
+      "key": "console.setupListenerFailed",
+      "status": "可保留",
+      "combined_fingerprint": "524972b288f74ffbfa0d5da89661053cfc75d416c4c6bd8650b4876ffe5f56b7",
+      "content_fingerprints": {
+        "en": "783a84d492ed1d09cdfd4cb8fe5c96d1480e63f2a8d08c829997b68250102ead",
+        "ja": "41b063ddf15ca7e8f72d6f1f47de6c867181b707258943b7ef27ab48283d5332",
+        "ko": "246bb20b8f32a1e0a21a67c11c426925b373be421f07c042ddb967c77d23252e",
+        "tr": "72059b0fab33768ca6d50cf3ed99b8b587a5f99a97bd8a42ed1287000214408c",
+        "zh": "ac2e950bf4a2488e496581d8d4a111b32ef7bbe068a2985070a67bb88dd2d10f",
+        "zh-TW": "124d590392334f273e862188de79cf37896a8c91af12c60a6db8a28caea6d4db"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.084340+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“设置供应商切换监听器失败:”与韩文“공급자 전환 이벤트 수신기 설정 실패:”在本条目所属 console UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "console",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#console.updateFailed",
+      "key": "console.updateFailed",
+      "status": "可保留",
+      "combined_fingerprint": "b23da9c9c1b9cc59cfd652a4ac554e2356ff8fb83974f523d80712decca51c1a",
+      "content_fingerprints": {
+        "en": "db087001ba78f12a410861e16e56e34e429f852dea2cd5c215af2f52d6338686",
+        "ja": "f571cd56b8e001b1c8dab93918d923787b893395ba81f6617be995f6205ec47c",
+        "ko": "d2c17ec2ff7f297ddba5a99fba2199c85214d351c815e0c3ba100eb034ba8ab6",
+        "tr": "e8155e1559a9dbc859766d8a8e9529e25e82bb9d73ffd815ea9f9fc5b3ac7c24",
+        "zh": "99d99ef784102147c6b85340d7c4d30780ca16b9a6bc6420e9ccffb265a3feb9",
+        "zh-TW": "2998fc59101ff9cb12ce516103759e3449bb86d218630f4dd185c37c14675a9c"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.084340+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“更新失败:”与韩文“업데이트 실패:”在本条目所属 console UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "console",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#console.updateProviderFailed",
+      "key": "console.updateProviderFailed",
+      "status": "可保留",
+      "combined_fingerprint": "83b50781d0b5b10ee07bd9a6af9e021c89df0d68899709b4afa8f112b28b0427",
+      "content_fingerprints": {
+        "en": "da2a47e3e6b2540e810e5029156cae63af351c909f6b3607a1ada4e8b67d4588",
+        "ja": "3acbefbc7de3266fd4709772baf00bf4f764762fcffc02ab760b304b2e106f84",
+        "ko": "5ca18316273cd409ee021a0d036aeb10dfebf197c99be7db2f5bd98a1e119229",
+        "tr": "813c2280629d1a65743e8b1b569656be0326a3c283fc9778713bae8ffa35b0b4",
+        "zh": "6eb0d67f06c1d612dd72b2b4b935d873ffbd835cb15ca73aa58b93a5551c347a",
+        "zh-TW": "eaed54e3f18f248d21a30f986e5b75c67db71f7e12709e84dc4b3687fb4fe688"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.084340+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“更新供应商失败:”与韩文“공급자 업데이트 실패:”在本条目所属 console UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "console",
+      "round": 1
+    }
+  ]
+}

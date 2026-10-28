@@ -1,0 +1,13 @@
+{
+  "batch_id": "hardcoded:0102:src-components-IconPicker.tsx",
+  "kind": "hardcoded",
+  "group": "src/components/IconPicker.tsx",
+  "ordinal": 1,
+  "record_count": 4,
+  "record_ids": [
+    "hardcoded:src/components/IconPicker.tsx:GRID_CLASS:19453b20c43799ff:001",
+    "hardcoded:src/components/IconPicker.tsx:tileClass:171a531ba0607c0b:001",
+    "hardcoded:src/components/IconPicker.tsx:tileClass:da7bf91b1fa7401f:001",
+    "dynamic-i18n:src/components/IconPicker.tsx:handleFileChange:16fefef2206f4fc1:001"
+  ]
+}

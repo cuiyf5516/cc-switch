@@ -1,0 +1,16 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:codexConfig:001","default_status":"可保留","overrides":[
+{"key":"codexConfig.anthropicAuthFieldHint","status":"必改","reason":"原文是让用户根据网关读取 API Key 的请求头进行选择；韩文写成“网关选择请求头”，错误改变了动作主体。","suggestion":"게이트웨이가 API 키를 읽는 헤더에 맞춰 선택하세요. 둘 중 하나만 전송됩니다.","ui_context":"Codex 认证字段选择提示"}
+]},
+{"batch_id":"translation:json-locale:codexConfig:002","default_status":"可保留","overrides":[
+{"key":"codexConfig.promptCacheRoutingHint","status":"建议改","reason":"同一控件选项分别使用「활성화됨/비활성화됨」，说明文字却用「켜짐/꺼짐」，控件内术语不一致。","suggestion":"자동: 호환성이 확인된 업스트림에만 prompt_cache_key를 보냅니다. 활성화: 다른 호환 게이트웨이에 사용할 수 있습니다. 비활성화: 알 수 없는 필드를 거부하는 엄격한 게이트웨이의 400 오류를 방지합니다.","ui_context":"提示词缓存路由选项说明"},
+{"key":"codexConfig.subagentModelNotInCatalog","status":"建议改","reason":"「Anthropic로」不符合韩语助词规则，且「Chat / Anthropic로」表达生硬。","suggestion":"이 모델은 모델 목록에 없습니다. Codex는 컨텍스트 창을 가져올 수 없으며 라우팅이 요청을 Chat 또는 Anthropic 프로토콜로 변환할 때 기본 모델로 대체됩니다.","ui_context":"子代理模型配置警告"}
+]},
+{"batch_id":"translation:json-locale:codexConfig:003","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:codexOauth:001","default_status":"可保留","overrides":[
+{"key":"codexOauth.loginExpired","status":"建议改","reason":"「로그인 시간이 만료되었습니다」表达不自然，登录本身或登录信息会过期，而不是“登录时间”过期。","suggestion":"로그인이 만료되었습니다. 다시 시도해 주세요.","ui_context":"Codex 登录状态错误"}
+]},
+{"batch_id":"translation:json-locale:codexOauth:002","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:common:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:common:002","default_status":"可保留","overrides":[]}
+]}

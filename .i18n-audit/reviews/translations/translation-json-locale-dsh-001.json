@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:dsh:001",
+  "kind": "translation",
+  "namespace": "dsh",
+  "reviewed_at": "2026-10-28T13:41:13.087812+00:00",
+  "review_count": 3,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#dsh.deleteSessionHint",
+      "key": "dsh.deleteSessionHint",
+      "status": "可保留",
+      "combined_fingerprint": "4dd7a91ee921583dee4800ab20a7dbf238db151b5684605800c3b111c15d0aa6",
+      "content_fingerprints": {
+        "en": "2c3ed23a1d43c795d86b0b3acb7dcb3a54cffe0c3391093b92eafb6f1b5f32ce",
+        "ja": "21562f039da170e065357abd0d75d1bffb8b56fdc2495d4ae79dec0389248eb3",
+        "ko": "6b2c1d04a19d98480a498ed8f4817c7502ff4ae41c141f9b2b2d9d5da880a342",
+        "tr": "d449bb02e0e8530574752bdcd14abe7e0827255feef3f3a360532448a50db2be",
+        "zh": "8e64571b30125f76536fb55759a28f1e60fac542052bb2eac707f827e49654e6",
+        "zh-TW": "74938c9919651fea27686a58546d9c87e60c454038d94ae9661593a332d21af9"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.087812+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“请在 DeepSeek Harness 中删除此会话，以保持原生历史记录一致。”与韩文“기본 세션 기록과의 일관성을 유지하려면 DeepSeek Harness에서 이 세션을 삭제하세요.”在本条目所属 dsh UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "dsh",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#dsh.empty.description",
+      "key": "dsh.empty.description",
+      "status": "可保留",
+      "combined_fingerprint": "532d905908655ca54988e6b8f9e09e6a3c5d7b769c410b8280b99d5f415654fb",
+      "content_fingerprints": {
+        "en": "436e6de102c6d8fbdb3c213cdd9a7f4b5a67673bfee05687ed64683239704bf6",
+        "ja": "f4a6f04b1ec421a0c35353b7ac3160392c9cd5811a5440374e8a3d81b233a245",
+        "ko": "d7f8bcd665fa399aa20da7a120d28089f64e3e3058576ebec1a44a61ce9303d2",
+        "tr": "936369019c58acf9ae82a7fb97839bb2fb01949288e1c9082b3391bc12c0db2c",
+        "zh": "75526401317dfbe2e2aad26798088c35cf86651ae9b687347ba5aafb9c4eb6f9",
+        "zh-TW": "f4650c691cebc6ac9c947453a03c3bd121bd878eb6714ea352d28ce364e67178"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.087812+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“配置请求地址、API Key 和模型。已有的自定义供应商会自动显示在这里。”与韩文“API 엔드포인트, API 키, 모델을 설정하세요. 기존 사용자 지정 공급자는 여기에 자동으로 표시됩니다.”在本条目所属 dsh UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "dsh",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#dsh.empty.title",
+      "key": "dsh.empty.title",
+      "status": "可保留",
+      "combined_fingerprint": "5f0871453cfabcd20166a4d66eacf6b418b3d8c17e9be7441db264bbc4597a30",
+      "content_fingerprints": {
+        "en": "52df08175638163fe84010aa5e07a8933d6211031ea11f99ed4a24bdd22bc65b",
+        "ja": "37be170c435871459ecf43a79f80916c76a5d7dfab758c293c5e1aeb3f4febaf",
+        "ko": "ad36bcb324c1608f4cd949923ad778b0d73fc263ceaded0e733e3a9badc5c86a",
+        "tr": "c9f24b608c684a4a6ca2e3f53b8873034dce51df21258077543e686bdaa4bb1c",
+        "zh": "30a14dbd6661d8b174ecf46bf268b369be2ef58ba4f008d47123c70b0b26569b",
+        "zh-TW": "ef153dacc179f7d092f308c77e87d83c7bd5940770aa036d00f744b16fa4d9e9"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.087812+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“添加 DeepSeek Harness 供应商”与韩文“DeepSeek Harness 공급자 추가”在本条目所属 dsh UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "dsh",
+      "round": 1
+    }
+  ]
+}

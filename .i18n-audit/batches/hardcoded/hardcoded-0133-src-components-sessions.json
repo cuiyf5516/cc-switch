@@ -1,0 +1,25 @@
+{
+  "batch_id": "hardcoded:0133:src-components-sessions",
+  "kind": "hardcoded",
+  "group": "src/components/sessions",
+  "ordinal": 6,
+  "record_count": 16,
+  "record_ids": [
+    "dynamic-i18n:src/components/sessions/reader/i18n.ts:useReaderT:a18b869b2e81c0c5:001",
+    "hardcoded:src/components/sessions/reader/rowStyles.tsx:ROW_BUTTON:680867512500a7d0:001",
+    "hardcoded:src/components/sessions/reader/rowStyles.tsx:ROW_STATIC:f885621cba32ab20:001",
+    "hardcoded:src/components/sessions/reader/toolSummary.ts:formatTokens:7dbe023cf61c59b6:001",
+    "hardcoded:src/components/sessions/reader/toolSummary.ts:formatTokens:7a48cf6e342704df:001",
+    "dynamic-i18n:src/components/sessions/reader/toolSummary.ts:translate:982d9e3eb996f559:001",
+    "dynamic-i18n:src/components/sessions/reader/toolSummary.ts:verbFor:6806f86a17f0ae04:001",
+    "hardcoded:src/components/sessions/reader/toolSummary.ts:codexDiffTitle:f938069fea1084c8:001",
+    "dynamic-i18n:src/components/sessions/reader/toolSummary.ts:verb:5c4db77b4c3c9984:001",
+    "hardcoded:src/components/sessions/reader/toolSummary.ts:formatStepTitle:ee224bf2b6d49e47:001",
+    "hardcoded:src/components/sessions/reader/toolSummary.ts:formatStepTitle:66b7272067fcf5d1:001",
+    "hardcoded:src/components/sessions/reader/toolSummary.ts:verb:aedfb50ca5b5bf02:001",
+    "hardcoded:src/components/sessions/reader/turns.ts:LEGACY_CALL_PREFIX:fb916ece96f3bc33:001",
+    "hardcoded:src/components/sessions/reader/turns.ts:previewText:4943d47188735c57:001",
+    "hardcoded:src/components/sessions/utils.ts:getSessionKey:1a02f51450160eb2:001",
+    "hardcoded:src/components/sessions/utils.ts:buildCdResumeCommand:8e6824ca5b8aa702:001"
+  ]
+}

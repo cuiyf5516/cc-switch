@@ -1,0 +1,32 @@
+{
+  "batch_id": "translation:json-locale:openclaw:003",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "openclaw",
+  "ordinal": 3,
+  "record_count": 10,
+  "record_ids": [
+    "json:src/i18n/locales#openclaw.tools.profileMinimal",
+    "json:src/i18n/locales#openclaw.tools.profileUnset",
+    "json:src/i18n/locales#openclaw.tools.saveFailed",
+    "json:src/i18n/locales#openclaw.tools.saveSuccess",
+    "json:src/i18n/locales#openclaw.tools.title",
+    "json:src/i18n/locales#openclaw.tools.unsupportedProfileDescription",
+    "json:src/i18n/locales#openclaw.tools.unsupportedProfileLabel",
+    "json:src/i18n/locales#openclaw.tools.unsupportedProfileTitle",
+    "json:src/i18n/locales#openclaw.userAgent",
+    "json:src/i18n/locales#openclaw.userAgentHint"
+  ],
+  "keys": [
+    "openclaw.tools.profileMinimal",
+    "openclaw.tools.profileUnset",
+    "openclaw.tools.saveFailed",
+    "openclaw.tools.saveSuccess",
+    "openclaw.tools.title",
+    "openclaw.tools.unsupportedProfileDescription",
+    "openclaw.tools.unsupportedProfileLabel",
+    "openclaw.tools.unsupportedProfileTitle",
+    "openclaw.userAgent",
+    "openclaw.userAgentHint"
+  ]
+}

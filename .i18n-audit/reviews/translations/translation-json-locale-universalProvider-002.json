@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:universalProvider:002",
+  "kind": "translation",
+  "namespace": "universalProvider",
+  "reviewed_at": "2026-10-28T14:08:37.325154+00:00",
+  "review_count": 6,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#universalProvider.syncError",
+      "key": "universalProvider.syncError",
+      "status": "可保留",
+      "combined_fingerprint": "fc9350e454229c803c01f4a50aef976eccc5c0e63d8c491d36c6687da16c8434",
+      "content_fingerprints": {
+        "en": "abf3e80b5b4ceb363785b0064bb1747b459c5fdddaa090f49ea7b9ce41d83b16",
+        "ja": "7ea5a8c0f5fd86c482e3399e51e778015b8bee02150b1caf7f0bef43de8e0abd",
+        "ko": "4553848ab952cef2080693a2fcf9e8a5b62e63d8c7e88701742e86ab49af4294",
+        "tr": "be9580f3d4679ad8bd9dd70a1b7c01b00ca9b4bcde995b503d2303270d5572da",
+        "zh": "336e8460fd284629b0712892b701d89a4293d9bad24c38ba51c55c74028413ef",
+        "zh-TW": "449405c514b74cf6724d9ae1fcc28dddc0680dfd4ada4652e5620c7610a26185"
+      },
+      "reviewed_at": "2026-10-28T14:08:37.325154+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“同步失败”与韩文“동기화 실패”在本条目所属 universalProvider UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "universalProvider",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#universalProvider.synced",
+      "key": "universalProvider.synced",
+      "status": "可保留",
+      "combined_fingerprint": "201c5f4ca6454791942ec63f6a5eea38a64e15e4514d33bb82080d12e052aab0",
+      "content_fingerprints": {
+        "en": "4d504373868bea23bafbff22fb63a5ed98dc9cc0be763176b6ecdbb4e5ddc687",
+        "ja": "b74d2a904961c7369eb174c962248b4b65b628ed8b2018bbc0933dbe05c586f4",
+        "ko": "e04a6cded0b1bd28882e9f7b3e0c520c326a5faca5be3acaa27e1ca5091f30d6",
+        "tr": "e016cae74b3323690ee1c2f3601f90b26fd895e34d69f708ae4f092c7a1ff654",
+        "zh": "1c9566472802db411c20b7fb65e4caa71028e5a7e5a2bdb88aad3fcd348f0719",
+        "zh-TW": "cf385ac018eb83462a866dd642c9e7c67bbc4a77982eca94b48507cd1cfaf50a"
+      },
+      "reviewed_at": "2026-10-28T14:08:37.325154+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已同步到所有应用”与韩文“모든 앱에 동기화됨”在本条目所属 universalProvider UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "universalProvider",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#universalProvider.title",
+      "key": "universalProvider.title",
+      "status": "可保留",
+      "combined_fingerprint": "0195f482b7173d4dcdb7e91bdfe926e04121e9f6fca42df28ac4f6b3ccef923f",
+      "content_fingerprints": {
+        "en": "1cac53175940a63398ecf7fe4bd22d2325871d02427d7894027d39b7d63af8a1",
+        "ja": "66229e9e42383e05fb59c8f93fe1b95b6d9c954a45ee2da54b13eed9ee63b0a1",
+        "ko": "ce18b72b04d7cfca93e27728b83b24d53b7624dcf39e3581796498a3342270f9",
+        "tr": "be4c5551f360e79abdcf4033d7cab3d7c0fd9c9a3bf25fbc78fdc2d6d82b8f14",
+        "zh": "1e1f1d76221422ce2381bb13b0e69abd351aff9dcbda9c79b5c6bc7373cb76f6",
+        "zh-TW": "ed253935918dc1da0bd96a64b1b16ab7b3ebb9ea5e36144cbad7995c03903f63"
+      },
+      "reviewed_at": "2026-10-28T14:08:37.325154+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“统一供应商”与韩文“범용 공급자”在本条目所属 universalProvider UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "universalProvider",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#universalProvider.updated",
+      "key": "universalProvider.updated",
+      "status": "可保留",
+      "combined_fingerprint": "17bb6ca8d024b369fe7577422f8b68ff89d4da9ff7431bf8b371f50b072f5062",
+      "content_fingerprints": {
+        "en": "be2a6c29dbe2f0d429c4a5f6d03c9281c575a994fdd00c8e481d91bc4d7f621e",
+        "ja": "351a44f754153cc1d7b66d3e7a21bdc5beef24f397db86a7f51e7fe573ab2d4f",
+        "ko": "dc65c629327c66087484d7d450c9df88b78376433de1ecb641d21d7d70ca2436",
+        "tr": "979581ebcd97a25520145b532d464f316b3c1f9c3fa40458401f40a031b09836",
+        "zh": "f8d049c533711a07f7c0ba2b68bc634e2a8b054dc9c2db27697293a37d99bff7",
+        "zh-TW": "6f77aa1b8820adb87a380b98cde57bdfbedcca598ead8f4e9028220824330a5a"
+      },
+      "reviewed_at": "2026-10-28T14:08:37.325154+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“统一供应商已更新”与韩文“범용 공급자가 업데이트되었습니다.”在本条目所属 universalProvider UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "universalProvider",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#universalProvider.websiteUrl",
+      "key": "universalProvider.websiteUrl",
+      "status": "可保留",
+      "combined_fingerprint": "fc133266ff8bdadb54c50663b1f0468bccd17d30daf0cb1d378f0e2c7e1441c1",
+      "content_fingerprints": {
+        "en": "eb650fa1243ee6cab8fef01ec47950d21268c4a98106dcbdfe8c378078fc25a4",
+        "ja": "ab2c6dd317740d12e3688291217d82043d80ff6cc6727dd07279643d4b5c113e",
+        "ko": "f739d45f75057557f2c775d301eeb84c010b2fa5afb6866a9a248500d5290c79",
+        "tr": "09ba55bc2a07b10aacbe96364dd4698a6361783db14b06da0efd2f6b42ead8a2",
+        "zh": "2ff44caa19c1c0e2b267829c6bbe57c6234d373661221cc418e642ae279e422e",
+        "zh-TW": "e67af56b44a09bb71d26541544a6959e68f951b11933ce321bdff0b29639c660"
+      },
+      "reviewed_at": "2026-10-28T14:08:37.325154+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“官网地址”与韩文“웹사이트 URL”在本条目所属 universalProvider UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "universalProvider",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#universalProvider.websiteUrlPlaceholder",
+      "key": "universalProvider.websiteUrlPlaceholder",
+      "status": "可保留",
+      "combined_fingerprint": "97717d9df0e760353fc8182dea3683a6243543e012b1f87246f2126dee79fa7d",
+      "content_fingerprints": {
+        "en": "bc6d4dd3c5ad1473084c4c6af33483113ff04ee1364a04fbc94e8c43fbb54082",
+        "ja": "d10f60f2cb67a5aad2cac674d5ae8db13b62f542da12ed2c21f8216e3ae5e745",
+        "ko": "7a0e90cfb8bd6929be89e2f2925737489c2b844b8f7e535aa3e07d7fd38cee24",
+        "tr": "3c3c31af01976b057f8df32152660c569948423c15e7abda847d757fcd312bac",
+        "zh": "00be94eae45a6cfae5e46fe002337c0596a376270b1d6a62932b20f4f947fe09",
+        "zh-TW": "991732609e69f5660d69160896db9d7a44f961fe1a3d6074e806ceb8415dc5e3"
+      },
+      "reviewed_at": "2026-10-28T14:08:37.325154+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“https://example.com（可选，用于在列表中显示）”与韩文“https://example.com(선택 사항, 목록에 표시됨)”在本条目所属 universalProvider UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "universalProvider",
+      "round": 1
+    }
+  ]
+}

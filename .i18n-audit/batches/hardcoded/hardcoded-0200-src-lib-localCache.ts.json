@@ -1,0 +1,10 @@
+{
+  "batch_id": "hardcoded:0200:src-lib-localCache.ts",
+  "kind": "hardcoded",
+  "group": "src/lib/localCache.ts",
+  "ordinal": 1,
+  "record_count": 1,
+  "record_ids": [
+    "hardcoded:src/lib/localCache.ts:PREFIX:b59e5db84eabdb1f:001"
+  ]
+}

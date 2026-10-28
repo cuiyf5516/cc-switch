@@ -1,0 +1,15 @@
+{
+  "batch_id": "hardcoded:0221:src-utils-tomlUtils.ts",
+  "kind": "hardcoded",
+  "group": "src/utils/tomlUtils.ts",
+  "ordinal": 1,
+  "record_count": 6,
+  "record_ids": [
+    "hardcoded:src/utils/tomlUtils.ts:tomlToMcpServer:240c7ff86f1aecbb:001",
+    "hardcoded:src/utils/tomlUtils.ts:tomlToMcpServer:d98de4c622938e59:001",
+    "hardcoded:src/utils/tomlUtils.ts:normalizeServerConfig:b6499972805a260f:001",
+    "hardcoded:src/utils/tomlUtils.ts:normalizeServerConfig:7a31ea38d57de345:001",
+    "hardcoded:src/utils/tomlUtils.ts:normalizeServerConfig:628993c2cd0e3bf1:001",
+    "hardcoded:src/utils/tomlUtils.ts:normalizeServerConfig:36486ce84613bdea:001"
+  ]
+}

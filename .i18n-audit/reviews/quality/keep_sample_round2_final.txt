@@ -1,0 +1,5 @@
+001	providerForm.modelPicker.lead	勾选的模型会加入列表，取消勾选会从列表中移除。	선택한 모델이 목록에 추가됩니다. 모델을 선택 취소하면 목록에서 해당 모델이 제거됩니다.
+002	authCenter.pending.copy	复制验证码	코드 복사
+003	claudeConfig.addToGlobalSettings	加入全局设置	전역 설정에 추가
+004	mcp.unifiedPanel.enabledApps	启用的应用	활성화된 앱
+005	sessionManager.reader.filterLabel	视图	보기

@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0175:src-config-userAgentPresets.ts",
+  "kind": "hardcoded",
+  "group": "src/config/userAgentPresets.ts",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 1,
+  "records": [
+    {
+      "id": "hardcoded:src/config/userAgentPresets.ts:USER_AGENT_PRESETS:22004d7e79879d6d:001",
+      "status": "无需国际化",
+      "content_fingerprint": "22004d7e79879d6d694ab0b499f08583ff512ae6f65efb7183f89000be92d3dd",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/config/userAgentPresets.ts",
+      "line": 18,
+      "function": "USER_AGENT_PRESETS",
+      "expression": "claude-cli/2.1.161 (external, cli)",
+      "reason": "预设中的配置片段、模型标识、User-Agent 或系统提示词，不属于界面自然语言。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0175:src-config-userAgentPresets.ts",
+      "round": 1
+    }
+  ]
+}

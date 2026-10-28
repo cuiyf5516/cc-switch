@@ -1,0 +1,26 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:settings:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:settings:002","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:settings:003","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:settings:004","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:settings:005","default_status":"可保留","overrides":[
+{"key":"settings.codexSessionCompressionUsage","status":"建议改","reason":"原文统计的是“会话目录当前占用”，韩文写成“세션 파일의 디스크 사용량”，把目录范围收窄为文件。","suggestion":"세션 디렉터리 사용량: {{size}}","ui_context":"Codex 会话压缩设置容量信息"}
+]},
+{"batch_id":"translation:json-locale:settings:006","default_status":"可保留","overrides":[
+{"key":"settings.globalProxy.hint","status":"建议改","reason":"「비워두세요」应按韩语辅助动词规范分写为「비워 두세요」。","suggestion":"모든 요청(API, 스킬 다운로드 등)을 프록시합니다. 로컬 라우팅이 활성화되면 앱 트래픽도 이 프록시를 통해 라우팅됩니다. 직접 연결하려면 비워 두세요.","ui_context":"全局出站代理说明"},
+{"key":"settings.globalProxy.password","status":"建议改","reason":"「선택사항」与项目统一写法「선택 사항」不一致。","suggestion":"비밀번호(선택 사항)","ui_context":"全局代理密码字段"}
+]},
+{"batch_id":"translation:json-locale:settings:007","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:settings:008","default_status":"可保留","overrides":[
+{"key":"settings.oneClickInstall","status":"可保留","semantic_trace":"该键在中文、英文、韩文中均为空，且只出现在繁中资源；当前韩语界面没有可核对的目标文案，属于多语言结构异常而非韩语漏译。","ui_context":"设置项标题，跨语言资源不一致"}
+]},
+{"batch_id":"translation:json-locale:settings:009","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:settings:010","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:settings:011","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:settings:012","default_status":"可保留","overrides":[
+{"key":"settings.toolUninstallReinstalledByUpdater","status":"建议改","reason":"原文表示“这份副本是工具自动更新时一并安装的”，韩文主语变成 updater 主动安装副本，语义不够准确。","suggestion":"{{tool}} 자동 업데이트 과정에서 함께 설치된 복사본입니다. 이 복사본만 제거하면 다음 업데이트에서 다시 설치됩니다.","ui_context":"工具卸载说明"}
+]},
+{"batch_id":"translation:json-locale:settings:013","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:settings:014","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:settings:015","default_status":"可保留","overrides":[]}
+]}

@@ -1,0 +1,325 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:dbUpgrade:001",
+  "kind": "translation",
+  "namespace": "dbUpgrade",
+  "reviewed_at": "2026-10-28T13:40:03.252372+00:00",
+  "review_count": 15,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#dbUpgrade.checking",
+      "key": "dbUpgrade.checking",
+      "status": "可保留",
+      "combined_fingerprint": "11feee3608b947a11dfe829cd934fb0f11972d285cc525099c8a61d37f84c3a6",
+      "content_fingerprints": {
+        "en": "ef58de465a993452ed107853c8da0e2b6a0caa96ff4f4794b74aff973525bcb1",
+        "ja": "0a6f22d9b4b0451b576c4556d7794cfdb327bd6fc4fd754ffaa01dcfa29944c3",
+        "ko": "df27c08a1fa16cca5dfe056976787e902be1ec189f7b1acca168020fae53513b",
+        "tr": "59632f0aabc27150f2a03d15ece94452b8c08ef955065e8020c129a9f6b93cea",
+        "zh": "11d54e3d7842b620a225e9eb4546344f2bc7269dbae87e3a604bf11f094b762a",
+        "zh-TW": "b58f983e21f21d8cf69a4304c0aaa05884112ac786037ac5d511d47801ed242c"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.252372+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“正在检查可用更新…”与韩文“사용 가능한 업데이트를 확인하는 중…”在本条目所属 dbUpgrade UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "dbUpgrade",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#dbUpgrade.dbPath",
+      "key": "dbUpgrade.dbPath",
+      "status": "可保留",
+      "combined_fingerprint": "93368c2000a7ca2119b71a495b104f37b5a80d85fa4032ec702ca8d9a16e3d02",
+      "content_fingerprints": {
+        "en": "812d995bccaf4574313cb122c100ce672454af58d4375ce725be475c06db583b",
+        "ja": "9942cfbab9766a23d7912984a452e89de97601b2c6d4e7fb0eaa8bb7b0e6ab88",
+        "ko": "6a3a46e6dbb495fa97e5ce7e6047c9118aad89bc93300d59b38ff216359fc88f",
+        "tr": "1162e85779ef487b1a86f5cbe5a97362ac90c794ce861ffe6ac078b3c30616a2",
+        "zh": "309d746e8b7fbb3a0744d7eec73c992bde205a1728a72ae4ca90bc8b74da2843",
+        "zh-TW": "42499eac7e39d0655f7dfc4575a24c3527d36dc7ee96708ce252ea66045753f2"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.252372+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“数据库文件”与韩文“데이터베이스 파일”在本条目所属 dbUpgrade UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "dbUpgrade",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#dbUpgrade.description",
+      "key": "dbUpgrade.description",
+      "status": "可保留",
+      "combined_fingerprint": "9614f2e603a391e1ecde0befadb674a586774d8a176852349a9f679a52c6020d",
+      "content_fingerprints": {
+        "en": "dab25d69085bbab61d7d4264ce6552af253e1e5f0339bc635a637c3b19ddbc9b",
+        "ja": "bc9b957dbc3b0f6833d52817aa491c8c0f9925d7f5a2412e4466d0f5a0557828",
+        "ko": "2675951f0aedb50dedbe8a5175b1052ba0368106fc9bbeb13f5255cd4186b330",
+        "tr": "b6a03aa2f2a1285720d5783ee46dcaf1676860bfe063c6a6aaa8ee8ca4da078b",
+        "zh": "3759bc60ca8ea91143a0c66e60221360fac5a0b8f342ae662785118c5733d387",
+        "zh-TW": "32603376e59b5c70fad06aa33f92b2847a06e61be5ebf38282c60519920747ea"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.252372+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“当前数据库由更新版本的 CC Switch 创建，需要升级应用后才能继续使用。升级不会删除你的数据。”与韩文“이 데이터베이스는 현재 앱보다 새로운 버전의 CC Switch에서 생성되었습니다. 계속 사용하려면 앱을 업그레이드하세요. 업그레이드해도 데이터는 삭제되지 않습니다.”在本条目所属 dbUpgrade UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "dbUpgrade",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#dbUpgrade.downloading",
+      "key": "dbUpgrade.downloading",
+      "status": "可保留",
+      "combined_fingerprint": "e40f481202ab3e7e7777b9d2eb499291a2aaaa437ed4fa85ca4f0131956ad423",
+      "content_fingerprints": {
+        "en": "b99a39070daf5a5b0d83240ab5233774f4312580f60d1e5c61f416daf8a19b3d",
+        "ja": "b06b3572d6986156655dfba6e24a8c247484b352c17d59b10992796dc1055054",
+        "ko": "19b6ad33b03dd365ec36c4b9edc3a535657f110dacd4347d200aa3ef22101e16",
+        "tr": "fa0e3dedc2728bc2849b6580d7d511a51e6b2754ea830d2928eb4f065fc0bc49",
+        "zh": "b2857363096ffd5ea038f8b6d43cd9449ab7875b9ea2f45a7bb5ff907e5c8fd7",
+        "zh-TW": "78f95a97388c0bb6765119eaf9d5b2694a9355ac5871d2449aa5d276395a31c9"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.252372+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“正在下载更新…”与韩文“업데이트 다운로드 중…”在本条目所属 dbUpgrade UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "dbUpgrade",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#dbUpgrade.incompatibleDescription",
+      "key": "dbUpgrade.incompatibleDescription",
+      "status": "可保留",
+      "combined_fingerprint": "ade8f7102d07a4ae9b2fd551e3521f8e6167784606e1b18f235cc13bf307e005",
+      "content_fingerprints": {
+        "en": "be48b06e8440f4a01d7e7fc3687ac05be3d22b23f2caa11526eabb4ac664e9b8",
+        "ja": "1bab65f8445adb9bda598eff955a9acd5d8ddc2751a1a754b485b80b866195b2",
+        "ko": "6007639d7c8afbe849a87d73e8acb4f836fb814f9a7fbdc6ec5f7de1e2f8e018",
+        "tr": "3865cf2c213a1d4ca90d332c85b37fc40ddd73bab1ca0574abbbcaaf568e5bdd",
+        "zh": "95aea8ad70c32ded0a35206dc7a43093a388b6025eb647dd3aa7defd4c468529",
+        "zh-TW": "f775911192c4baef3f0fc897e52666f99a5c9d792da3e6f5059b97559063958c"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.252372+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“你已是最新版本，但数据库版本（v{{db}}）仍高于本应用支持的版本（v{{supported}}）。该数据库可能由第三方客户端或更高版本创建，升级当前官方应用也无法兼容。”与韩文“이미 최신 버전을 사용하고 있지만 데이터베이스(v{{db}})는 이 앱이 지원하는 것(v{{supported}})보다 여전히 최신 버전입니다. 타사 클라이언트나 최신 빌드에서 생성되었을 가능성이 높으므로 공식 앱을 업그레이드해도 호환되지 않습니다.”在本条目所属 dbUpgrade UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "dbUpgrade",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#dbUpgrade.incompatibleTitle",
+      "key": "dbUpgrade.incompatibleTitle",
+      "status": "可保留",
+      "combined_fingerprint": "6a1fe7cc4f3c2c0d0aa698b8d69b5a45df78609ad1074e22c94295cd56e53433",
+      "content_fingerprints": {
+        "en": "86b34f5ebb92f1352f39866ce56065eb947e68c65fd2147a0ba0915d4d7d4b46",
+        "ja": "9de74abb2799ad5bb17c43e545c69072bf395f25f8723861cb5b6ed26f64f1d4",
+        "ko": "7f923f48ca71952a3fe946aafc2dc45a22cb2a49661ff799bf80236704334945",
+        "tr": "d24094577d6408f262522549709623b612017db1b7cd91e04a1e5af7550f17cc",
+        "zh": "6f0644dc4595e26527c292228182a9dad04a7808ce35a85e365bbedf09853073",
+        "zh-TW": "59aa33c7864c958f10f198e0dbfdff40443464ac633bf10d412a7ef58f2ebef2"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.252372+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“升级也无法解决”与韩文“업그레이드해도 이 문제가 해결되지 않습니다”在本条目所属 dbUpgrade UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "dbUpgrade",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#dbUpgrade.openConfigDir",
+      "key": "dbUpgrade.openConfigDir",
+      "status": "可保留",
+      "combined_fingerprint": "dc6b789b98066ed92b9ddfb0d88bcc71794ccd28a7e7332764968f92fd4c8a4f",
+      "content_fingerprints": {
+        "en": "dfa7029514da21cc925649d6d86c9fb040324bc46c417bce799bf7d982891968",
+        "ja": "21898cd3bfcb572d41480b83fbb181aac557e41bf2b2a83725ee13e84b70675b",
+        "ko": "1f0459db11dbd619bd7ce04cf4780724735c722bc7d36a4413e8056a9d3bc17f",
+        "tr": "cc72b41be3d9d4142a7e71a619ebfd3b05d0480ce9088111112a59da84c3e739",
+        "zh": "9b051ede250684f15a7a05822a1ae6506e4fd32be2459da9b0248e5c72720205",
+        "zh-TW": "58f2ee5e5020cdadf3a5bfb356f06b72e7c921ff7b85ecac93c04512de187bd1"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.252372+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“打开配置目录”与韩文“설정 폴더 열기”在本条目所属 dbUpgrade UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "dbUpgrade",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#dbUpgrade.openReleases",
+      "key": "dbUpgrade.openReleases",
+      "status": "可保留",
+      "combined_fingerprint": "a6412b9658ab912abe828d25c70643598486c1ef1f5b0f40ad9420da04186725",
+      "content_fingerprints": {
+        "en": "88e3dd0bd4ca8628fae401c2139d9e26f5d5fa48a008a67273c5b1d22589a210",
+        "ja": "6fdb67eb15739d44eddde2490e48999d708d96bdeeeb449c96d2fa7c6ba08a2d",
+        "ko": "0676d4e7153f768b22cb1208c60cdec4b5b97bd4dae41cd38c33151d614280e0",
+        "tr": "15ee08a75edceeb0a9158b2fed1a3bfe556e59fee0945decbb74875f54e002b8",
+        "zh": "7eb97e5b947ecf3305df317b159468a312184c09b9a22a8eb4cd9184b4750e21",
+        "zh-TW": "ed272f1498a6500d38ff294d52f5b9cee90ad4d35d74836a231a75b59024f30f"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.252372+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“打开发布页”与韩文“릴리스 페이지 열기”在本条目所属 dbUpgrade UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "dbUpgrade",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#dbUpgrade.preparing",
+      "key": "dbUpgrade.preparing",
+      "status": "可保留",
+      "combined_fingerprint": "10caf1b7212c8aeafe286cb2b5c7e758b9233a2598382765344dd9b178118a74",
+      "content_fingerprints": {
+        "en": "864a1c2d59c589391f12adc322c253a3dbc1eff9495ce84f14200a3450728bc2",
+        "ja": "730858eb2a34315191930a51a55538d16a4ad7ca477ad0872739f2fdff13918e",
+        "ko": "b059c4058e3befac55a498ee5968bd7aa895ad38bbddbb3ebf277d58a9a26775",
+        "tr": "8725df30db0948066844b65bd023d6b3643c274a8732905b3a1e4cbcd8ef17ea",
+        "zh": "8e9a5caab6166c5771eaea443d76e720e249dab01d917cd5f95e0e434f7dacfd",
+        "zh-TW": "843f9f3c526bd273518f2c1e3c8ce7d2f69ffde599834d73b988084f05f03af7"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.252372+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“正在准备更新…”与韩文“업데이트 준비 중…”在本条目所属 dbUpgrade UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "dbUpgrade",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#dbUpgrade.quit",
+      "key": "dbUpgrade.quit",
+      "status": "可保留",
+      "combined_fingerprint": "27be3bf141971a167a01d48eb49bebdfbd0b9b753d7fc8035ba925154eee3442",
+      "content_fingerprints": {
+        "en": "b3eb37acb66ba4bbe8fb1ba296815daf194be94f5a5fb50dab2fb5e4a57ba29e",
+        "ja": "8f26d438109c877447c80b84eb7e4ba1e6768ebcfc5408f0bc3c0725956bf039",
+        "ko": "086bb5335d174a9a330cd69a7a8162436e2551fc0d8b8f304e718cfebafa3dd4",
+        "tr": "f8b7b7752da2bc23b02fb20f7f8413da6066625ff594b168e4d959e63012b5c3",
+        "zh": "498e1d59b4d787ee29cafe969574585589db49a4c02c093e8fca5e3b50600764",
+        "zh-TW": "ee1f5ad7d73a5229a545ba219baec273c60ced5d0d7dd342f3d95df86bb6035d"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.252372+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“退出”与韩文“종료”在本条目所属 dbUpgrade UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "dbUpgrade",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#dbUpgrade.retry",
+      "key": "dbUpgrade.retry",
+      "status": "可保留",
+      "combined_fingerprint": "198e33a76e8f33d5c6aaff96c5fae6ffb3ff0199c8919255177f6640c8c61b8b",
+      "content_fingerprints": {
+        "en": "c9b1fa6082e3fdbbf95cef1788fb39b29600a2b9fc2740180062492bbe9302e9",
+        "ja": "833ef56e0c3770832fa90226db17305521467e591d47bcdfcb0200217ade481b",
+        "ko": "3187f45a48c12417ac6771ae0a9690d24dac71aa8c834dcc5c6de6fd6c833ead",
+        "tr": "c803137db0638b7cf758c20936f0c165d530a124af2d6e62832e7491b5fefc9b",
+        "zh": "25bc6c7df28c9ee2562350dc7c9563bc926ec01abc57e52235dec311af1516c1",
+        "zh-TW": "246f3cdd3ec716e98acd599aa41f9668ce4f71f715c55fabff6a8b874f8105a4"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.252372+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“重试升级”与韩文“업그레이드 재시도”在本条目所属 dbUpgrade UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "dbUpgrade",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#dbUpgrade.title",
+      "key": "dbUpgrade.title",
+      "status": "可保留",
+      "combined_fingerprint": "5d83e1868f6f2362426388061e953b33ce9f6f2f860d1ca91f025b6475d536cb",
+      "content_fingerprints": {
+        "en": "8d4f5bc6bdfb0ab1d21a22a761a3267f19d5648e86820b9d90e5cd5fb58b726a",
+        "ja": "d5117b1d58425d7a6af6b5f621a8c74b998037c90d19fd296fc55b05f3131fb4",
+        "ko": "5482003b5034c00eba8d7c8ba6107d6b2ecfcf76ca6fc71c4eb39372d4b88a23",
+        "tr": "2501260c761a72b57019b2ec3436f9b78f55c1d99093a36387d0da313527fe62",
+        "zh": "9abf23ccdbf040d3f87ff2250546991ccea0c6eb9f9c7173f0262974c42d7c1c",
+        "zh-TW": "a121dfa5d31065f4250a7f4804ce841f73eee11c4d577c6fdb9f14750302df39"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.252372+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“数据库版本过新”与韩文“데이터베이스 버전이 너무 최신입니다.”在本条目所属 dbUpgrade UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "dbUpgrade",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#dbUpgrade.updateAvailable",
+      "key": "dbUpgrade.updateAvailable",
+      "status": "可保留",
+      "combined_fingerprint": "fcfe5a1f4601efa9fb24418525733e05795700b9377cd341714953ae08acf259",
+      "content_fingerprints": {
+        "en": "7c17ab9369c6a315ae1f1d26feae4e5cce168967686be8b60f09c05d3982fdb2",
+        "ja": "7b449ac060780515846e9511e352b04c03bef5263bd96e82fc68fe74f1d2f980",
+        "ko": "ecf83308226ea284f886a282e6713d164689aa2476565d732afb92a9b81c8e78",
+        "tr": "f8c42af815fcdb82565fc74058e037fc00cdbf70c5cc939892b2944e09490b60",
+        "zh": "22fe50001d9d4cac2f3d2aced5a6fcb6ddb15450a8a57ef92e8e79d617f04393",
+        "zh-TW": "0dd27a8f0004fdf64a47a66f2ba2c8873bf4c1df27c74d8ce1d00c625fbf0ff6"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.252372+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“发现新版本 v{{version}}，升级后即可继续使用。”与韩文“버전 v{{version}}을(를) 사용할 수 있습니다. 업그레이드하면 계속할 수 있습니다.”在本条目所属 dbUpgrade UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "dbUpgrade",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#dbUpgrade.upgradeNow",
+      "key": "dbUpgrade.upgradeNow",
+      "status": "可保留",
+      "combined_fingerprint": "5af10c52f099129ccf58830a5c7afc656d69a706f4cf86c5da29e05468c21a85",
+      "content_fingerprints": {
+        "en": "ac4cc2f79c0ee92c5371f29f0202287e815eecc4a09cf7e09e18896d8bc1f903",
+        "ja": "15c72e24ba16429a9e57f5f57a49186af25c90999d129374f0fa18d3e222aaa4",
+        "ko": "835d907f70c37cb480d0c7702e92761cd82f31be55912c80b4d0a9e4153d9c90",
+        "tr": "cfdf825d918757e95f9bf3270ad379d93e18015976d1bd5f758e0de79c24c992",
+        "zh": "8b623f2ccc430b2ab40fcfc9929a7a937310a5e1eed7a9a7728a15d6238a060a",
+        "zh-TW": "7da7b3468942d966075ed1551bd4e381e8293760dfcaa81d8bec8232a0bf4d44"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.252372+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“升级应用”与韩文“앱 업그레이드”在本条目所属 dbUpgrade UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "dbUpgrade",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#dbUpgrade.versionInfo",
+      "key": "dbUpgrade.versionInfo",
+      "status": "可保留",
+      "combined_fingerprint": "c9aca1d59ead698e0869f921cb486d6a23a8802e6dc15ed88030a64b26f94a38",
+      "content_fingerprints": {
+        "en": "43e972fd153212847c39a388adf2ed954706f734ec78c20a062c08fc01336407",
+        "ja": "a1caa29589e67463d07947e2ef3806789fe1bd83d727aeba592ad246e728bed1",
+        "ko": "fba4e25f46d6d08d01235757316265bc332779c5bead1c30cdadbc9f454b7f56",
+        "tr": "c498113ef5bcf72cf5d67afd73164bf86fd48b6041846a19290387cb2059f08a",
+        "zh": "dc1b6dc4fe96f220d98a24627d87258effeb530b24f1f4649c30dffcd1b33aaf",
+        "zh-TW": "a71881c68efb4f0b0576c38530e7c5b387314099fccc74f48203c513c97d12a6"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.252372+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“数据库版本 v{{db}} · 应用支持 v{{supported}}”与韩文“데이터베이스 v{{db}} · 앱은 v{{supported}}을(를) 지원합니다”在本条目所属 dbUpgrade UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "dbUpgrade",
+      "round": 1
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:migration:001",
+  "kind": "translation",
+  "namespace": "migration",
+  "reviewed_at": "2026-10-28T13:39:08.438015+00:00",
+  "review_count": 4,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#migration.skillsFailed",
+      "key": "migration.skillsFailed",
+      "status": "可保留",
+      "combined_fingerprint": "14ea86a41a0f07eb5610f82f1115bce1b75cb92f2995c263fb51c7409f8393c1",
+      "content_fingerprints": {
+        "en": "42489264b06e77bd2bc62ef60d261ca8609fcd926d423205cfe0a8afffd6f021",
+        "ja": "16dc1a64f2512ee521b9ce3983b531b2eca3fcb4f7d36d45ea179b61dccd1460",
+        "ko": "2f613ddfc041c06914734ce82d9816f6eb37686e30a9f0bea0f0ca787bdc1198",
+        "tr": "7860b3e90cd245e403eedf401fb864f4af1345b3368ab3020245b1d7430aecfd",
+        "zh": "add30220760fee7a01b9eb9b8004c025071ae4d0754a05898d9bb7411f958a9d",
+        "zh-TW": "6397f2d48248742b42c429ed60da052de781f519dfa9e608ef8cc9b51750f3ec"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.438015+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“自动导入技能失败”与韩文“스킬 자동 가져오기 실패”在本条目所属 migration UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "migration",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#migration.skillsFailedDescription",
+      "key": "migration.skillsFailedDescription",
+      "status": "可保留",
+      "combined_fingerprint": "d096e1c7a6ce2b9c95215bca9949c05e6826a291d27c4f0bf5761d173eab9a4d",
+      "content_fingerprints": {
+        "en": "5d3564bfe6c33f2be83e2aa260515e66d084c6870616a30a7cd353cd6c7c4036",
+        "ja": "303f4c8d63608c15196257041795f4ea1c5589c75260c971233262d955c42d12",
+        "ko": "a8fb207489fc3025c1456a6f3b45fe2dd86ffca76bbde9fae7d3644a6cd2e2c9",
+        "tr": "d86b14b47f139492f72b2ce76c32259d4bbc33aea193d75b360a0cb98c886350",
+        "zh": "e24e1602e0d3aec35903cf30b6247fac794408bcf78a11b778de90e0260b2240",
+        "zh-TW": "11b90d350f228f9dd172ce2465fa297fa422e22568761b3cea5c1404ea488bd3"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.438015+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“请打开 Skills 页面点击“导入已有”手动导入（或重启后再试）。”与韩文“스킬 페이지를 열고 \"기존 항목 가져오기\"를 클릭하여 수동으로 가져오거나 다시 시작한 후 다시 시도하세요.”在本条目所属 migration UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "migration",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#migration.skillsSuccess",
+      "key": "migration.skillsSuccess",
+      "status": "可保留",
+      "combined_fingerprint": "1ceb9d24ebfc99494312153a3b5454f01370406f1a26e1e484d0f1e8993d5111",
+      "content_fingerprints": {
+        "en": "913ae4e4b0f896b0335475d8395fda2e7d72d4574eb17c5ca47af6481791d091",
+        "ja": "5a15a853123126889f63878e3b48b11a257298b31795d0c5fbc22fd83a3b9c18",
+        "ko": "1dc2b123831c2c1bb0033b4a9f939bb5ca656539fa4b7ceb49975852ea05942a",
+        "tr": "37d1ba211579fbe2dedff6826dcfa5e174306ed5984916da7588322254f1700b",
+        "zh": "dc51e65b88f5e350cfe8265db1ad0f04d70c25ec03367ccd1ad14f2d5e49fd78",
+        "zh-TW": "2d6684a6a859fcdfc512ffd27a29ecdc680ca01165d766f17a30e5a3e8ec7ab1"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.438015+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已自动导入 {{count}} 个技能到统一管理”与韩文“스킬 {{count}}개를 통합 관리에 자동으로 가져왔습니다”在本条目所属 migration UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "migration",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#migration.success",
+      "key": "migration.success",
+      "status": "可保留",
+      "combined_fingerprint": "998061761a5c6843a43a8d5d953be00aae7aeb299adee00db01ced69c714a0bb",
+      "content_fingerprints": {
+        "en": "a046262ff87f15ea3fc520d5690a30bf1e4090cd3934429e901caed4fef33b69",
+        "ja": "79c8d775d6acb3ac421ce3c946e64a3da64d037c796e6ce1549c2a2be816410f",
+        "ko": "33bfa721dbee47ec21a7cc567e06682352c709b5329e3348b4f7d5eeef1a927e",
+        "tr": "1a3fc7e5804c78b5f808f3f13170b19cfad655dc6952340038943719b797e7b3",
+        "zh": "68347bddadff1df71a066e0cf4e960e53ecb5c649e4e7f809b0449ace88ae4d4",
+        "zh-TW": "bfcf83742dd19ba247fb90b667b21d2ccbb6b15b336384f8733b2dc42555fdd0"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.438015+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“配置迁移成功”与韩文“설정이 성공적으로 마이그레이션되었습니다.”在本条目所属 migration UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "migration",
+      "round": 1
+    }
+  ]
+}

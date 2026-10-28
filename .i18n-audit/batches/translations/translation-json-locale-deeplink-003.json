@@ -1,0 +1,24 @@
+{
+  "batch_id": "translation:json-locale:deeplink:003",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "deeplink",
+  "ordinal": 3,
+  "record_count": 6,
+  "record_ids": [
+    "json:src/i18n/locales#deeplink.usageScriptCode",
+    "json:src/i18n/locales#deeplink.usageScriptDisabled",
+    "json:src/i18n/locales#deeplink.usageScriptEnabled",
+    "json:src/i18n/locales#deeplink.usageScriptWarning",
+    "json:src/i18n/locales#deeplink.usageUserId",
+    "json:src/i18n/locales#deeplink.warning"
+  ],
+  "keys": [
+    "deeplink.usageScriptCode",
+    "deeplink.usageScriptDisabled",
+    "deeplink.usageScriptEnabled",
+    "deeplink.usageScriptWarning",
+    "deeplink.usageUserId",
+    "deeplink.warning"
+  ]
+}

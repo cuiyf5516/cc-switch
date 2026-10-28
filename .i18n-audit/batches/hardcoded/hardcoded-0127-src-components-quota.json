@@ -1,0 +1,20 @@
+{
+  "batch_id": "hardcoded:0127:src-components-quota",
+  "kind": "hardcoded",
+  "group": "src/components/quota",
+  "ordinal": 1,
+  "record_count": 11,
+  "record_ids": [
+    "hardcoded:src/components/quota/QuotaLines.tsx:className:24ea28558154b40e:001",
+    "hardcoded:src/components/quota/QuotaLines.tsx:SplitQuotaColumn:52887338717ba4d5:001",
+    "hardcoded:src/components/quota/QuotaLines.tsx:BAR_ROW_CLASS:62556b1602c85b7c:001",
+    "hardcoded:src/components/quota/QuotaLines.tsx:cells:3e2975c92c22ea2e:001",
+    "hardcoded:src/components/quota/quotaRules.ts:labelParams:13794833d43f5449:001",
+    "hardcoded:src/components/quota/quotaRules.ts:countdownStr:5d56a877614b75c9:001",
+    "dynamic-i18n:src/components/quota/quotaRules.ts:tierLine:02df858ef720e28a:001",
+    "dynamic-i18n:src/components/quota/quotaRules.ts:tierLine:b5286d080dc232bd:001",
+    "hardcoded:src/components/quota/quotaRules.ts:lineHint:8c3eea1cee4a76b7:001",
+    "hardcoded:src/components/quota/quotaRules.ts:value:fb1c80078c42c46d:001",
+    "hardcoded:src/components/quota/quotaRules.ts:value:6b28d9e03de17ad9:001"
+  ]
+}

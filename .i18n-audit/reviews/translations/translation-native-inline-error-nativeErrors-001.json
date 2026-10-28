@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:native-inline-error:nativeErrors:001",
+  "kind": "translation",
+  "namespace": "nativeErrors",
+  "reviewed_at": "2026-10-28T14:10:35.142846+00:00",
+  "review_count": 2,
+  "records": [
+    {
+      "id": "rust:src-tauri/src/commands/config.rs#invalid_json_format_error",
+      "key": "invalid_json_format_error",
+      "status": "可保留",
+      "combined_fingerprint": "0fc38148f5805d743b6c59561eb2ad0f840ec97a5b29161021c9efb9464bdf6e",
+      "content_fingerprints": {
+        "en": "87f66ba35178b3cb5900ba2ab82f93a58416fb18cfb04ec6dead4ff606590905",
+        "ko": "6cfd01065996c36af68636f2ba7dbab748d775c339c9a22a6c297b95154f74d9",
+        "tr": "75139e0a6f25eaa0cc378ad9e7a9d4b334404a2966fb675f4799a6b3e21809f6",
+        "ja": "1f5e569e970eb121041012c51979b6f83603f78214461b4a6911df265fdd5d14",
+        "zh": "1a892d349607c54a512997f13c49b7cc074f9d9b161d5e89d4adc5557c668b2d"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.142846+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“无效的 JSON 格式: {{error}}”与韩文“잘못된 JSON 형식: {{error}}”在本条目所属 nativeErrors UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "nativeErrors",
+      "round": 1
+    },
+    {
+      "id": "rust:src-tauri/src/commands/config.rs#invalid_toml_format_error",
+      "key": "invalid_toml_format_error",
+      "status": "可保留",
+      "combined_fingerprint": "4323a263d702356bffa12507f0d76ac435711255aac3d7de8c501a8d27cd5c40",
+      "content_fingerprints": {
+        "en": "19f2c1429c223ea94f52680a23aa782ee4154397ee422b12ff11d85c99e43269",
+        "ko": "5a020bb758d0f7303290d2b0d21bc1043f7a03bc6f49acdbe4995ab1f0f94c61",
+        "tr": "bd18825be2f7dd1f37103e34caac6421ccc27bac616f2ca301cd4288bd37b068",
+        "ja": "52b9cb31846e16198cc8504be6fc6b5564a078cccfe1336cec7519a474ed9cea",
+        "zh": "18716c581a8226797c800d772e0d88db91f257d991774cd0a2dcdfcbe21b3753"
+      },
+      "reviewed_at": "2026-10-28T14:10:35.142846+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“无效的 TOML 格式: {{error}}”与韩文“잘못된 TOML 형식: {{error}}”在本条目所属 nativeErrors UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "nativeErrors",
+      "round": 1
+    }
+  ]
+}

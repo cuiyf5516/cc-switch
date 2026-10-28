@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:notifications:002",
+  "kind": "translation",
+  "namespace": "notifications",
+  "reviewed_at": "2026-10-28T13:38:52.450725+00:00",
+  "review_count": 10,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#notifications.settingsSaveFailed",
+      "key": "notifications.settingsSaveFailed",
+      "status": "可保留",
+      "combined_fingerprint": "692258f270b005cb2f46b1e0e7e53a8a247f2480064393ed9897d8a6ee2df0c2",
+      "content_fingerprints": {
+        "en": "9a8b6ee5ab892db09c8ae6766100b91b8c113ef6d66e2524801bc8a6dde70ec3",
+        "ja": "9818a10aa7e23275a063d8366ee12c8ee413df56a9cfc99ef13c415eae8e49c7",
+        "ko": "261c483b79272d9675c6ef7c94fae9cb1f6e212b8fbce5e18b581025e29ca1e3",
+        "tr": "4c01084672fbeee21f0b13f34eaa9181b0d4376224dee21e4a8427e02c70a3b0",
+        "zh": "9d8b1561262b2a473ea89e29aeb98dc321f87f289c5a41a544d2706d17a35358",
+        "zh-TW": "523f5172aa5d9d14c46ded4f301b8c9026dcd84b8a9aeed06905b4941e23c1cb"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.450725+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“保存设置失败：{{error}}”与韩文“설정 저장 실패: {{error}}”在本条目所属 notifications UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "notifications",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#notifications.settingsSaved",
+      "key": "notifications.settingsSaved",
+      "status": "可保留",
+      "combined_fingerprint": "4cb59e7895ba62c2ed0561ba36c8ffe49f88ac30e7dcd7cbaed00e7289eda100",
+      "content_fingerprints": {
+        "en": "74a7f53bad3999738fb6ce7cab835cb4b93aa2a42a33ed7cba9676af019658b7",
+        "ja": "e13eb5d078550eb00ad1ac4086cfdfd7c14e4249bd8af646a7fab009978f7bae",
+        "ko": "c4763b498921aface6341e5ca1c859e7dd32fc8ff78a40176972293b1ae2df74",
+        "tr": "8de8b8362f5e70bd1f8bfffe25208595fac3100d3bf97768f8c7d39b6385f1af",
+        "zh": "bd03c0aad701a8ca82f2f2b048665c143b980762973c6e2cc1c0c6bd7026ac7d",
+        "zh-TW": "8fe414b1c387749a44695685d5f2be80d928e54c9aed8691b74f27f834a3e27e"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.450725+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“设置已保存”与韩文“설정이 저장되었습니다.”在本条目所属 notifications UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "notifications",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#notifications.skipClaudeOnboardingFailed",
+      "key": "notifications.skipClaudeOnboardingFailed",
+      "status": "可保留",
+      "combined_fingerprint": "1c3e9aab587068bd5b60fb7b80ae0a243d30855d6f08ef347364d9a9a8fd1e1f",
+      "content_fingerprints": {
+        "en": "4d59d02f54d34a9180be545bae17b452318d04d60a4d18e12a410e907077f2ba",
+        "ja": "f3421dc4d9bbc5559abecb7da2e2c783a49bcb5bb547424a1eeb15ad099ea5ba",
+        "ko": "8e631f52874c023b56b10e8ac320093498277cdb38a524ac67f172d3f430344c",
+        "tr": "e9e743a3c1ee9cbc354c6f78943b461916e254c214e1b1050aeacd950ef6d908",
+        "zh": "33a618518bfed0c80147cd6ea11eae46380daf2898379accd3199b36552f4859",
+        "zh-TW": "4894ae5503287916c39263619a88b580bad5d9a6263e9ef7f8def4788c0a1533"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.450725+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“跳过 Claude Code 初次安装确认失败”与韩文“Claude Code 첫 실행 확인을 건너뛰지 못했습니다.”在本条目所属 notifications UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "notifications",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#notifications.switchFailed",
+      "key": "notifications.switchFailed",
+      "status": "可保留",
+      "combined_fingerprint": "c36f4472663104cf78bad021df217f8eb5ca7f60e9b09c08fa69b2f00c562bbf",
+      "content_fingerprints": {
+        "en": "2d3bbc2b9ac86086d2c87d9c14e820d4754445328b9c739248d5fc2ae50b56c4",
+        "ja": "50f043ddbc3ce408b5101c3ac2045302e54e9d8160a9adc650faed5a2d73763f",
+        "ko": "6768257c67f3dc8cb2e31ed454a1709eea2c341bad9e83483497d846fbf2b5fd",
+        "tr": "1b167de166f04f739065b39a35028b0b522638d28a9c490f97e46eb25ccc30ee",
+        "zh": "e37c14104126dee09ee057bad0a16d477493c44d2e8e75a3f5ebbd9d38753120",
+        "zh-TW": "35c3a47a6d98c5c3bcfe3a0cc1e3abc9fd71f702796f7a886fb359025608f54e"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.450725+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“切换失败：{{error}}”与韩文“전환 실패: {{error}}”在本条目所属 notifications UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "notifications",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#notifications.switchFailedTitle",
+      "key": "notifications.switchFailedTitle",
+      "status": "可保留",
+      "combined_fingerprint": "7be329d8240759569ac5423a888345dfb0284bffe7bf9ee784eeeaff3e6b9cd2",
+      "content_fingerprints": {
+        "en": "a78caba8b7efcb8c057f38e1771dad57d01f0ac1776d73e1d6ba6f8bb5f6d90c",
+        "ja": "3a714fc2ed524867a9e902053801eb31a7a64a2cf90a27385f58995b199e383f",
+        "ko": "34dd2ed9983c02fa0aa10356a5f0564a7c38811e41adda104f9626900cb27c58",
+        "tr": "d82c3bc0c0fd1f0050c2e93c06ff2ed241cef28800c58e7c62594414a9f77408",
+        "zh": "d08fd4224abcd69de52d56b78f4a8fe9a4e64cbe05052ea8d9761e22b6c3dab7",
+        "zh-TW": "9a8f8840eb28b63e43ae371827701c0bbd2c1e382520ba17200f1f86f32b3a06"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.450725+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“切换失败”与韩文“전환 실패”在本条目所属 notifications UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "notifications",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#notifications.switchSuccess",
+      "key": "notifications.switchSuccess",
+      "status": "可保留",
+      "combined_fingerprint": "b099920752c011e6112e576faf6f9a9695e66f52ecb36f8270fb8799624de032",
+      "content_fingerprints": {
+        "en": "42f054ca0349c858a8e1ca093c7119ec6b86923104a49df6890d17a5712f911d",
+        "ja": "147bfd00c29a573cf847bfc5090f8aa15add81c854b156711fa52b5bc69231cc",
+        "ko": "9b1685147e7fe0576e1344ebd8cf3468c5ca92460d4047990156f6264d01127b",
+        "tr": "727793ce49d50b2144a153abb49fa68ce339a7e42e866e723809f2b6929b1c7b",
+        "zh": "c5dcde6ac770eac5cc5df65d657a8034dee4bc81fb7c1ffdd8bd4f8c26f0a09d",
+        "zh-TW": "ddbd5b8958fb50f210fa5da2b15155968013781f301f7e23abeed0a534dc6e33"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.450725+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“切换成功！”与韩文“전환 성공!”在本条目所属 notifications UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "notifications",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#notifications.syncClaudePluginFailed",
+      "key": "notifications.syncClaudePluginFailed",
+      "status": "可保留",
+      "combined_fingerprint": "956b707fc865f6074701ec223b507eade0193ceeef3ffbb15c05a20274aeeeb1",
+      "content_fingerprints": {
+        "en": "ea267e739f0bff742df5b9cc795d0501cf0cea5a3621fd2c15beda375aee1dfd",
+        "ja": "fd7989d46534a3263b2ed0c85388b4d8cb8dfbb7e5f7b1f3b1ba90dfff708fcc",
+        "ko": "e5cb6b80ce9e2459fcc0d2d120a285228987a63433f168e19e88b7cf24388954",
+        "tr": "c4fd4eecdf7bfada9d204e0bd313963c49f759158980ca43cb0cb807de0b4035",
+        "zh": "1f486cd75053b298343f5ad68f219c99458de4d035e7017d59bf3a2e068eee9d",
+        "zh-TW": "20e44f5a19b0cf731b4250b7715971c4605034f03f80f2e9a77e07cce0875497"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.450725+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“同步 Claude 插件失败”与韩文“Claude 플러그인 동기화 실패”在本条目所属 notifications UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "notifications",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#notifications.updateFailed",
+      "key": "notifications.updateFailed",
+      "status": "可保留",
+      "combined_fingerprint": "033ead6aa396bdc862c9dc2d24369e3c719e703e2d82a5d9edc98346257b4f9e",
+      "content_fingerprints": {
+        "en": "164e0f0374f4a806835364a4a84f507adc1315618c69ca490ef3ad19687c6296",
+        "ja": "fe5b92342c681c526f508892ad8ac9f3cfdd765132f6daad7c099d8058aaf795",
+        "ko": "3843fa90502eb71fd4383b67c6621dd32bcee8947beb11276edc58895abe9a0e",
+        "tr": "ae7d27d8ffb426fa1bcefbd3da140dbd3c9c943e5d2e07d3410a60deafde760c",
+        "zh": "b6f4bf6a144eaec43f59db3820ea361a3736fb263b04397ec4da3db7a07b60ef",
+        "zh-TW": "bd3ce6b773d2d30a9b1ebfdb26667407d30b9570cf270d9d808f87ccfe7f42fd"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.450725+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“更新供应商失败：{{error}}”与韩文“공급자 업데이트 실패: {{error}}”在本条目所属 notifications UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "notifications",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#notifications.updateSuccess",
+      "key": "notifications.updateSuccess",
+      "status": "可保留",
+      "combined_fingerprint": "6139faecd0a23754512ff59377b6787469b4eea3258060a942c654714ad229c3",
+      "content_fingerprints": {
+        "en": "84d0d95f1d4b488e5641c6bdaa0650a497521018f446171c0e9104df3d42f30c",
+        "ja": "e9628956dbad8b4adc46fc05fe830c5d561b5f07d7b4354390e9642d894f37b6",
+        "ko": "add1d7594ecad333916cb6b238281a39e5fcac04255e68cbc14d2c1006d57761",
+        "tr": "42abc52babf941d30b4bd064f9ad4e6cd8d5555b4b041e1d58d06ad2147c3e64",
+        "zh": "049c46b9f400229cdd190e8ca778707361227af6315eff4c37ffc16892ca374f",
+        "zh-TW": "45d0893c9537f110e6423d471ab69c817bec73aa814a439c71a5ba9b98b9954e"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.450725+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“供应商更新成功”与韩文“공급자가 업데이트되었습니다.”在本条目所属 notifications UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "notifications",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#notifications.windowControlFailed",
+      "key": "notifications.windowControlFailed",
+      "status": "可保留",
+      "combined_fingerprint": "e86c283308eef08186e9e067cadba3595746179ba5c5a1fc63c599e281693a3d",
+      "content_fingerprints": {
+        "en": "c4378dd349aef0596cb074280e34eb0c01bd92c42b80452c862825ad63b86dca",
+        "ja": "c17f9768bc425b93009ed84314f807cc85a89505ebb047f694102a74b16b8084",
+        "ko": "8563c0a68c4957ed37ab6830f3a64019411081a0b4f4e4bafde03d81ae80292a",
+        "tr": "b605ee7b4507c58c548e34f94095d397f9cfb3dfe2c83348e4feb03546b4ff00",
+        "zh": "440f186667894fbb43ef4d89f5425d660854788ba4bd668f79b339dd7c14ff0f",
+        "zh-TW": "c764d27237bdc030a596b9d7816a0fd79e14ef8540bd21a5000058f021eb390d"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.450725+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“窗口控制失败：{{error}}”与韩文“창 제어 실패: {{error}}”在本条目所属 notifications UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "notifications",
+      "round": 1
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0176:src-contexts-UpdateContext.tsx",
+  "kind": "hardcoded",
+  "group": "src/contexts/UpdateContext.tsx",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 3,
+  "records": [
+    {
+      "id": "hardcoded:src/contexts/UpdateContext.tsx:checkUpdate:8a721474fd137ec7:001",
+      "status": "无需国际化",
+      "content_fingerprint": "8a721474fd137ec752f0bb4a83b5ff6810f767a6943d87bac90a3c50b97991c7",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/contexts/UpdateContext.tsx",
+      "line": 94,
+      "function": "checkUpdate",
+      "expression": "检查更新失败:",
+      "reason": "控制台日志或诊断信息，不作为界面文案。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0176:src-contexts-UpdateContext.tsx",
+      "round": 1
+    },
+    {
+      "id": "hardcoded:src/contexts/UpdateContext.tsx:checkUpdate:d07abfb11e7e0d48:001",
+      "status": "无需国际化",
+      "content_fingerprint": "d07abfb11e7e0d48b98d8cea335ccc7704af02416344d287db9eac336ea05ee3",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/contexts/UpdateContext.tsx",
+      "line": 95,
+      "function": "checkUpdate",
+      "expression": "检查更新失败",
+      "reason": "控制台日志或诊断信息，不作为界面文案。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0176:src-contexts-UpdateContext.tsx",
+      "round": 1
+    },
+    {
+      "id": "hardcoded:src/contexts/UpdateContext.tsx:useUpdate:57ba9a1d38057203:001",
+      "status": "无需国际化",
+      "content_fingerprint": "57ba9a1d3805720343e06487cdfa5949ff5e698c721160b4fa93268e478b6166",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/contexts/UpdateContext.tsx",
+      "line": 148,
+      "function": "useUpdate",
+      "expression": "useUpdate must be used within UpdateProvider",
+      "reason": "组件使用约束的开发期异常，不面向最终用户。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0176:src-contexts-UpdateContext.tsx",
+      "round": 1
+    }
+  ]
+}

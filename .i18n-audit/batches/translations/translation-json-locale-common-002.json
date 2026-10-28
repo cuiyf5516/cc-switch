@@ -1,0 +1,26 @@
+{
+  "batch_id": "translation:json-locale:common:002",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "common",
+  "ordinal": 2,
+  "record_count": 7,
+  "record_ids": [
+    "json:src/i18n/locales#common.unknown",
+    "json:src/i18n/locales#common.unsavedLeaveCancel",
+    "json:src/i18n/locales#common.unsavedLeaveConfirm",
+    "json:src/i18n/locales#common.unsavedLeaveMessage",
+    "json:src/i18n/locales#common.unsavedLeaveTitle",
+    "json:src/i18n/locales#common.version",
+    "json:src/i18n/locales#common.view"
+  ],
+  "keys": [
+    "common.unknown",
+    "common.unsavedLeaveCancel",
+    "common.unsavedLeaveConfirm",
+    "common.unsavedLeaveMessage",
+    "common.unsavedLeaveTitle",
+    "common.version",
+    "common.view"
+  ]
+}

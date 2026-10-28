@@ -1,0 +1,9 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:pi:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:pi:002","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:pi:003","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:pi:004","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:opencode:001","default_status":"可保留","overrides":[
+{"key":"opencode.baseUrl","status":"建议改","reason":"「Base URL」是通用的技术标识，韩文「기본 URL」也可能被理解为“默认 URL”；保留原术语或使用「베이스 URL」更不易产生歧义。","suggestion":"Base URL","ui_context":"OpenCode 供应商 API 地址字段"}
+]}
+]}

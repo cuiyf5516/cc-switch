@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:health:001",
+  "kind": "translation",
+  "namespace": "health",
+  "reviewed_at": "2026-10-28T13:38:52.455190+00:00",
+  "review_count": 5,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#health.circuitOpen",
+      "key": "health.circuitOpen",
+      "status": "可保留",
+      "combined_fingerprint": "8ae6b82c310e1d06dc969e5fa13474c18e28d09b1f4ec1c336da86cf7ab4913e",
+      "content_fingerprints": {
+        "en": "fb4cdd8c69f99c811fcc180ec18d5b1229d5bd865762da1a86a107567de2a88e",
+        "ja": "fdc661d364c070900865d9fff93fb18a627d659c9a3b6642946dae14eb30ac7e",
+        "ko": "ccd54da7a46cd858b47c29823e2d309e4332873e3ae136a8392ff0eacf09e1ac",
+        "tr": "5276bd73f71575a2f1aa5e344f3dbbe47788e730dae8e0c73f436543f7702a5b",
+        "zh": "c8e080a821cf470978c6b3d55aa607e633cb8e584918e8b7159ea304f2193c7e",
+        "zh-TW": "0ecda58a6108a3cbb1b60fdc07b7afdec1e23df9f9b258b59a91b2ecbab5b642"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.455190+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“熔断”与韩文“서킷 브레이커 열림”在本条目所属 health UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "health",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#health.consecutiveFailures",
+      "key": "health.consecutiveFailures",
+      "status": "可保留",
+      "combined_fingerprint": "91881e0dc9805c89be795264802a49d14f5e38464374bb64c2ed4b5fe55b5278",
+      "content_fingerprints": {
+        "en": "34cbe3afe2d198fe8a26249c60fd07d3d0388f591c94cdc5586f03408aac250d",
+        "ja": "6d137a8f2528b95a46e6234061bc3edb0ea5641ffbe8ac8fce3fb70cfed328cc",
+        "ko": "f7399e975c5111a798e4435460bbf9a250cd4a534ef135c5c890c48a19d9181f",
+        "tr": "40a88a943e31857ae118f597558ea61ff71ddfc7f9f677bbe4830347acd041ea",
+        "zh": "772f759ec1fd778afc023bd360cbe9570079a5dae3947e114332b7690770b1ce",
+        "zh-TW": "d701306d8db6f1d296b79b211c0ef2af7218d80a2d7600edc068aa21b3bbae07"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.455190+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“连续失败 {{count}} 次”与韩文“{{count}}회 연속 실패”在本条目所属 health UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "health",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#health.degraded",
+      "key": "health.degraded",
+      "status": "可保留",
+      "combined_fingerprint": "d5fca1b0f0c2e85636024856c734af3facbcd3e7b2ac12499f8cf26c58da32ea",
+      "content_fingerprints": {
+        "en": "a8494c12f2243903aef9b01ba16142e6a4e592304f981d4b6ea5f46d99036cba",
+        "ja": "87a1f3aef531379deae27f4d0986c5b669315724bc8371c259815aca71e2260a",
+        "ko": "4c78d049a22e2fbe7761b7cef90890b12c4aa0a00eda4a32b91534761f1c2db1",
+        "tr": "8a99df7a121da60f95c10a734d1bbd2393bc53d825ad20c972259c2612b91aa9",
+        "zh": "9f22b41cf5d7559ae3aa9e5bef64f5865a189e624355e87641ffc60ea7be254e",
+        "zh-TW": "fab617a78117575a244f9352ceb8a3e8114034291b3f64f76bd8b9a876eca8a6"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.455190+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“降级”与韩文“성능 저하”在本条目所属 health UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "health",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#health.failed",
+      "key": "health.failed",
+      "status": "可保留",
+      "combined_fingerprint": "dde4dfb7e91b1b4558d2c993c147337b9277029826d50f4a8f2c6f16863d456b",
+      "content_fingerprints": {
+        "en": "031a8f0f659df890dfd53c92e45295b0f14c997185bae46e168831e403b273f7",
+        "ja": "37d266e0ab124f44141e5892ea39271b392d87f9d264e5d41f45f3289dc820a8",
+        "ko": "2743911f83e1da696cb0821bbb3698ac205610fc98b960fe9956f4b5f4c9c191",
+        "tr": "f0873175a8812f943db0bbdb8f2420c46a4eb022b28e0ac6aa81bb831ca1000e",
+        "zh": "28384d7afd2e4fa66084f6803b9d3cb3b1c1ebb0a4ecc4cc97706745405e5df4",
+        "zh-TW": "37d266e0ab124f44141e5892ea39271b392d87f9d264e5d41f45f3289dc820a8"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.455190+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“失败”与韩文“실패”在本条目所属 health UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "health",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#health.operational",
+      "key": "health.operational",
+      "status": "可保留",
+      "combined_fingerprint": "29aae367a25148a4d7e8d6e83ef4be38fb936efdb77afe79c6f331888a16df15",
+      "content_fingerprints": {
+        "en": "996bf57d15be4ec3dc244c7cfed0fd8da07e3e55fb2028c92d6905605101cf49",
+        "ja": "296de0e31f8c22d9343c1f07f7fcd2e88a425d769cb0c88d8b24cc865f2c0685",
+        "ko": "35688a85f0be1c636cd83847b4bbb23350a19d0c185f3ed7ee86684a01467352",
+        "tr": "e66883573284b57386a1e0be4073feecf196b8e5564b08395ad8961a1dcca65e",
+        "zh": "296de0e31f8c22d9343c1f07f7fcd2e88a425d769cb0c88d8b24cc865f2c0685",
+        "zh-TW": "296de0e31f8c22d9343c1f07f7fcd2e88a425d769cb0c88d8b24cc865f2c0685"
+      },
+      "reviewed_at": "2026-10-28T13:38:52.455190+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“正常”与韩文“정상”在本条目所属 health UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "health",
+      "round": 1
+    }
+  ]
+}

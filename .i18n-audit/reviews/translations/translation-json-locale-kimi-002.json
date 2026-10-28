@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:kimi:002",
+  "kind": "translation",
+  "namespace": "kimi",
+  "reviewed_at": "2026-10-28T13:54:59.902418+00:00",
+  "review_count": 1,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#kimi.oauth.useAccount",
+      "key": "kimi.oauth.useAccount",
+      "status": "可保留",
+      "combined_fingerprint": "ca7f943fe5f9a51c9abfcdbf37be117c6894a8bb7366a241f8d7d9385a7e9488",
+      "content_fingerprints": {
+        "en": "cdc5a35adb825acb6620db220bdbfd3ef354a2b41cb2209dced309a7a670d6a6",
+        "ja": "56daf0b9148bf10581aae9200c210f27bc320f00d1734c55b0e15537836b12a8",
+        "ko": "9e7b40d0e2f315731c10ae844cd692ce493740a79e5062ccff9f866bc382ce04",
+        "tr": "7c7c4edee81a1e4a52479ee8a01d26cba298a91ff95cbbeb00a4b6aad4ad07b0",
+        "zh": "f3c1c197e6c604e235e05dc0e3bf95ae4e235b878cd4bb7d2f37060cd6749aa2",
+        "zh-TW": "be9837a7c75eaedb990b275c687f5bb9669ab509ed09865b987ced117fbc42fd"
+      },
+      "reviewed_at": "2026-10-28T13:54:59.902418+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“使用此账号”与韩文“이 계정 사용”在本条目所属 kimi UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "kimi",
+      "round": 1
+    }
+  ]
+}

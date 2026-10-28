@@ -1,0 +1,25 @@
+{
+  "batch_id": "hardcoded:0103:src-components-JsonEditor.tsx",
+  "kind": "hardcoded",
+  "group": "src/components/JsonEditor.tsx",
+  "ordinal": 1,
+  "record_count": 16,
+  "record_ids": [
+    "hardcoded:src/components/JsonEditor.tsx:baseTheme:b526669093ff1ced:001",
+    "hardcoded:src/components/JsonEditor.tsx:baseTheme:b526669093ff1ced:002",
+    "hardcoded:src/components/JsonEditor.tsx:baseTheme:00079d61aabef6cd:001",
+    "hardcoded:src/components/JsonEditor.tsx:baseTheme:f2ce477a87688125:001",
+    "hardcoded:src/components/JsonEditor.tsx:baseTheme:133c9f619bb5ead3:001",
+    "hardcoded:src/components/JsonEditor.tsx:baseTheme:c4b4a4d89aa6ed5e:001",
+    "hardcoded:src/components/JsonEditor.tsx:baseTheme:c4b4a4d89aa6ed5e:002",
+    "hardcoded:src/components/JsonEditor.tsx:sizingTheme:094105772e66e892:001",
+    "hardcoded:src/components/JsonEditor.tsx:sizingTheme:e32cda8c0d120e75:001",
+    "hardcoded:src/components/JsonEditor.tsx:JsonEditor:b526669093ff1ced:001",
+    "hardcoded:src/components/JsonEditor.tsx:JsonEditor:b526669093ff1ced:002",
+    "hardcoded:src/components/JsonEditor.tsx:JsonEditor:00079d61aabef6cd:001",
+    "hardcoded:src/components/JsonEditor.tsx:JsonEditor:f2ce477a87688125:001",
+    "hardcoded:src/components/JsonEditor.tsx:JsonEditor:133c9f619bb5ead3:001",
+    "hardcoded:src/components/JsonEditor.tsx:JsonEditor:c4b4a4d89aa6ed5e:001",
+    "hardcoded:src/components/JsonEditor.tsx:JsonEditor:c4b4a4d89aa6ed5e:002"
+  ]
+}

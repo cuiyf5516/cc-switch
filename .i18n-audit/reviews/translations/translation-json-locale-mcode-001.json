@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:mcode:001",
+  "kind": "translation",
+  "namespace": "mcode",
+  "reviewed_at": "2026-10-28T13:54:59.903410+00:00",
+  "review_count": 2,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#mcode.empty.description",
+      "key": "mcode.empty.description",
+      "status": "建议改",
+      "combined_fingerprint": "d55b4e0b541a41314a98452704be3f130c8c05ce47e1532915df334f03cfe615",
+      "content_fingerprints": {
+        "en": "21a2b2d6a238c39cbbeea7db08218214d7ad118fcb8bda3d6303ca2742281e56",
+        "ja": "c348d9f27176a8d867f4853928991c2f6b444644ecd157c850869afb6628c104",
+        "ko": "f0abcf83032fdcaf745609d14ec35562b32f350896be9e52738dea9e8098f66b",
+        "tr": "a66f309c400a090b7e84f25a9d1ce085cefa281212896926cfad534c75f79643",
+        "zh": "681d0b630afa402d2c756ed6abcf9b1de7bd78a1c1d6ef87bf66c7218d9a0e0f",
+        "zh-TW": "25ae64daa84a52dfce56ea6f9e7544ab4e492453e9ecab5251cb62f48f53958b"
+      },
+      "reviewed_at": "2026-10-28T13:54:59.903410+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“MiniMax 官方账号登录由 MiniMax Code 自行管理，无需导入；config.yaml 里已有的自定义供应商会自动显示在这里。点击右上角 +，从预设或自定义配置添加供应商。”与韩文“MiniMax 계정 로그인은 MiniMax Code 자체에서 관리되므로 가져올 것이 없습니다. 이미 config.yaml에 있는 사용자 지정 공급자가 여기에 자동으로 표시됩니다. 프리셋 또는 사용자 지정 공급자를 추가하려면 오른쪽 상단에 있는 + 버튼을 사용하세요.”在本条目所属 mcode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": "中文明确写的是“MiniMax 官方账号登录”，韩文遗漏了“공식”，弱化了账号类型。",
+      "suggestion": "MiniMax 공식 계정 로그인은 MiniMax Code 자체에서 관리되므로 가져올 필요가 없습니다. 이미 config.yaml에 있는 사용자 지정 공급자가 여기에 자동으로 표시됩니다. 프리셋 또는 사용자 지정 공급자를 추가하려면 오른쪽 상단의 + 버튼을 사용하세요.",
+      "ui_context": "MiniMax Code 空状态说明",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#mcode.empty.title",
+      "key": "mcode.empty.title",
+      "status": "可保留",
+      "combined_fingerprint": "9f038ec8fbfa611b51ff32e46955e2e111945926c8b3bc69a5e65cfdceb05c6f",
+      "content_fingerprints": {
+        "en": "8fdcb5d1bd24c23722db86ddd5a1de75dea92e205cd6bbadb1e75e2161c59cb2",
+        "ja": "b1abbf92b08caa327702c27b73e12c111f1f7c0155e9d9f91e18e75293c3e5a8",
+        "ko": "9d87256e3b2aea097078089318da012e56b037a91b0dbf10dd28d41bc62c7d3f",
+        "tr": "be5035681e0a3ea8f52d6696b54c271b819fd48f722d918fbc902d823b5fd058",
+        "zh": "5d2181a9312454eae45d929b78d9d6e88109916314ffa8ff62a8acf4bfcde232",
+        "zh-TW": "011b5f69376b1b9c00ee3cb0881b642a2455ab4d430985656dbe6dafef354803"
+      },
+      "reviewed_at": "2026-10-28T13:54:59.903410+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“还没有添加自定义供应商”与韩文“아직 사용자 지정 공급자가 없습니다.”在本条目所属 mcode UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "mcode",
+      "round": 1
+    }
+  ]
+}

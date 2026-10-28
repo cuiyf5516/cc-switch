@@ -1,0 +1,11 @@
+{
+  "batch_id": "hardcoded:0205:src-lib-piPromptTemplate.ts",
+  "kind": "hardcoded",
+  "group": "src/lib/piPromptTemplate.ts",
+  "ordinal": 1,
+  "record_count": 2,
+  "record_ids": [
+    "hardcoded:src/lib/piPromptTemplate.ts:truncateSummary:db463380373038b7:001",
+    "hardcoded:src/lib/piPromptTemplate.ts:descriptionLine:ac32575ae8489a16:001"
+  ]
+}

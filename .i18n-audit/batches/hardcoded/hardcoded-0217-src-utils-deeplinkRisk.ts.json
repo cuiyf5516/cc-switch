@@ -1,0 +1,10 @@
+{
+  "batch_id": "hardcoded:0217:src-utils-deeplinkRisk.ts",
+  "kind": "hardcoded",
+  "group": "src/utils/deeplinkRisk.ts",
+  "ordinal": 1,
+  "record_count": 1,
+  "record_ids": [
+    "hardcoded:src/utils/deeplinkRisk.ts:maskSensitiveValue:a62c2e494eb6da49:001"
+  ]
+}

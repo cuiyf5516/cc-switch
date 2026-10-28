@@ -1,0 +1,13 @@
+{
+  "batch_id": "hardcoded:0048:src-tauri-src-lightweight.rs",
+  "kind": "hardcoded",
+  "group": "src-tauri/src/lightweight.rs",
+  "ordinal": 1,
+  "record_count": 4,
+  "record_ids": [
+    "hardcoded:src-tauri/src/lightweight.rs:enter_lightweight_mode:2405fe2aec78ac25:001",
+    "hardcoded:src-tauri/src/lightweight.rs:exit_lightweight_mode:9253bb74ed46475f:001",
+    "hardcoded:src-tauri/src/lightweight.rs:exit_lightweight_mode:0117ee43954a9116:001",
+    "hardcoded:src-tauri/src/lightweight.rs:exit_lightweight_mode:0d6e4079e36703eb:001"
+  ]
+}

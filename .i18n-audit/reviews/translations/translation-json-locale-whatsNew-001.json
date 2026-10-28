@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:whatsNew:001",
+  "kind": "translation",
+  "namespace": "whatsNew",
+  "reviewed_at": "2026-10-28T13:40:03.246420+00:00",
+  "review_count": 10,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#whatsNew.confirm",
+      "key": "whatsNew.confirm",
+      "status": "可保留",
+      "combined_fingerprint": "c21c3d11467c321a908cc261baef180ac67709a07a260f472da3e5d0542c75cb",
+      "content_fingerprints": {
+        "en": "5ad3dbd1242a4cea217e8b68a9fd2c8187f2c337258279193f6d9a31a9f1a69c",
+        "ja": "565339bc4d33d72817b583024112eb7f5cdf3e5eef0252d6ec1b9c9a94e12bb3",
+        "ko": "1aacb54c499242964cc07e606bd5b1d628a56b6dd22267ae14202fbd35884fc4",
+        "tr": "52fd345da1dc95b96b4334b4043b2e406a7bf96c864024fe985ba641189e7cfd",
+        "zh": "de32e20193ad104208b76827aba34935d0f9864e271733f85915c19fbfacf902",
+        "zh-TW": "de32e20193ad104208b76827aba34935d0f9864e271733f85915c19fbfacf902"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.246420+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“知道了”与韩文“확인”在本条目所属 whatsNew UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "whatsNew",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#whatsNew.recentTitle",
+      "key": "whatsNew.recentTitle",
+      "status": "可保留",
+      "combined_fingerprint": "70ae819720d8d811d2f4251086d9e9d86b6557c4ea1bd77d6822d395bcc7a0f9",
+      "content_fingerprints": {
+        "en": "fc97bdd4e44573a571c9164e1bc33a82a85003f0a9f3682f1afbdb4a7fe3e86b",
+        "ja": "4bb3e1b4a06780d500f8af8b6992f2587a096c4b49b5d775a160fdc92e91a691",
+        "ko": "45b3de2ebd0ab3e8e1a81db896e2de11dc466a1a99a03b302ed847cbf9db5cc9",
+        "tr": "2d78577e8e67b20dda3e984c8e33c7a5477f42e7be3f81e2a112cfcddccdc635",
+        "zh": "8c39ff77b1b8f30bbcd006c9e62fabac1c93b69b49cfb563c9c78f3ffaed03bb",
+        "zh-TW": "8c39ff77b1b8f30bbcd006c9e62fabac1c93b69b49cfb563c9c78f3ffaed03bb"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.246420+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“近期更新”与韩文“최근 업데이트”在本条目所属 whatsNew UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "whatsNew",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#whatsNew.showEarlier",
+      "key": "whatsNew.showEarlier",
+      "status": "可保留",
+      "combined_fingerprint": "c1eed49308de64d842fff618ba8e788b7478276b153aa40bee025fe3c515b38c",
+      "content_fingerprints": {
+        "en": "0da61d29c7a2c0ef1f16d825edad2ebab76d1010dd81977495bb9b27e1cb3991",
+        "ja": "0a22175c480ea0bd831f652621b38e8d6144f7c787ce981a363b77349e476f7c",
+        "ko": "11f792f8addf83dd42f43982abdee3354f4d89a8e023e0ad382bce2b47ee2101",
+        "tr": "e5374020f0e86c9ce87d16d5eabef7ef7c5642740955c34fb34d2aed4bd6f8a2",
+        "zh": "599d40b12c877d7b69d0ba3de91f1da5e595853afc659f1bbf870c4ca39d43cb",
+        "zh-TW": "467b6e537ef5dc7ba9817852608a8451d618e4c302f7a5fe67dafe26ca4b0456"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.246420+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“还有 {{count}} 个更早的版本”与韩文“이전 버전 {{count}}개”在本条目所属 whatsNew UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "whatsNew",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#whatsNew.since",
+      "key": "whatsNew.since",
+      "status": "可保留",
+      "combined_fingerprint": "8f66255e9158d4992080d1874a11c51eef1648dc9e39c7e4b3e9acd26349a455",
+      "content_fingerprints": {
+        "en": "d6e39456913e299897cad6f9b2d5fdbe3e3a30672b85193a9792530a4d02b435",
+        "ja": "2665cec72ef4389b24e53ace1cb35af03a81da2bccdbed221e314d81bc4f152d",
+        "ko": "9eefb786b91dff09165f408b318e8745d279caa2ab15195202b8155bff22f43d",
+        "tr": "57591db89138e031a570a4ee483a8fea384c5b30052043dcec1c31a08e3d0b75",
+        "zh": "ae275d20f6c33e68ac0d1cbc67c16bb6edbe24b0177332c232cdee94c0756339",
+        "zh-TW": "1b1b8b901f0c19645fc77212bbf6119a0d0e78c57ff8de5e69bd60843a421e57"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.246420+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“自 v{{version}} 以来的更新”与韩文“v{{version}} 이후 변경 사항”在本条目所属 whatsNew UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "whatsNew",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#whatsNew.types.fix",
+      "key": "whatsNew.types.fix",
+      "status": "可保留",
+      "combined_fingerprint": "a2de43958fc97efd4938f5e3fa07ff1c540732d6bb81bedddf14b397611d3f66",
+      "content_fingerprints": {
+        "en": "21f1595b614ffc31c2693545a5ccb27559edf20c53cdd21099bc83b743313fd8",
+        "ja": "a05e98af3a821b31b5e8b5762f98e93fba0e1c9c54fd840ad7acafb3ead7540b",
+        "ko": "3537f0cc3ec9fa10bc0d21c80b1a61ea361e337f84f41cfac7749d691668441d",
+        "tr": "6db8a3b408897c1d29b5deb05ec8985c18809f22f8c3a4d3da95966732818c14",
+        "zh": "37a6939250543f0aad3e9c0c4067e40e48e4453cca242ad2ad6750c34e1575cb",
+        "zh-TW": "64e5c2ddb18bc1e014919e6f4f39e54e9dea924fad5c640869c04e6beedd36a3"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.246420+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“修复”与韩文“수정”在本条目所属 whatsNew UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "whatsNew",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#whatsNew.types.improve",
+      "key": "whatsNew.types.improve",
+      "status": "可保留",
+      "combined_fingerprint": "6a3cee7f8ca0015e1dfc514acf4b1cc5873ff1df12f4ffaee840eec96cc8afbb",
+      "content_fingerprints": {
+        "en": "c3b959224fda63f1a093723b5e8e6a2e4a4989893b59882a5aed30ea6b05aee1",
+        "ja": "e0951339ae5ac26110ed07bc9dc2789ee77085b2375c58c96ed1ac2be782a31c",
+        "ko": "99c38307c1418bc212f90f1e4e2f922a763e1328fa603eaabeac670e3a29a18f",
+        "tr": "cd7dcf070c47980f79e2af4599d16c010852532b61ab7ab2be55084213fda7aa",
+        "zh": "c5d3067c551fa34deadfaae99b9e55be74ab37f048c6ab7692d5d4ad80925f13",
+        "zh-TW": "f7c8e4779f5aefe1623241de3dd59ea5d869e54ce3ac345228681c275d0d448d"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.246420+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“改进”与韩文“개선”在本条目所属 whatsNew UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "whatsNew",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#whatsNew.types.new",
+      "key": "whatsNew.types.new",
+      "status": "可保留",
+      "combined_fingerprint": "cd17b85814ec6fe95ce287ecb409df3006a071a95dcd5b22f83b1b5044c00df7",
+      "content_fingerprints": {
+        "en": "18fdd549b2ed367ac0c74cbec1214644728515b30edbcb78e7d322757a7c8359",
+        "ja": "affbcfaaf5c856bdcaa926cbcd6aedea3742f17ea745ee6a9154517aa353547e",
+        "ko": "113ce17492d363d2ce1fa7b42130280d5d973a61c33678373127b1f38b5f912e",
+        "tr": "e17ccb1e9466019c5ae7a237831a3f2839cd88a0a159a1b3f18826cb67c474f0",
+        "zh": "0006d696d8e1ec28a134667ab0b633e632f11501e4938a9c617ba7212e2e1bf3",
+        "zh-TW": "0006d696d8e1ec28a134667ab0b633e632f11501e4938a9c617ba7212e2e1bf3"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.246420+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“新增”与韩文“신규”在本条目所属 whatsNew UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "whatsNew",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#whatsNew.updatedTo",
+      "key": "whatsNew.updatedTo",
+      "status": "可保留",
+      "combined_fingerprint": "8370ce4f9c423fcb56a736fd68acc024073702dac7c04f113b27a06b8121333b",
+      "content_fingerprints": {
+        "en": "bf36f939c0efc58cd3226a200752ffa9127ac029bd151a033037cd318e3305ed",
+        "ja": "b71d9d32588e737bcc43d540a82128e8a15b964e36c2327fe0b6e35eec4fcb2d",
+        "ko": "e8bb071f2a3d06fd54a9018240ca5caf4dc4a84f54e556817e7a374aa9712ab7",
+        "tr": "0151393f89355f8e988a660d0cc6c0260b531f24c78c62c9a3cd7ca9634c7c92",
+        "zh": "6512205d2292937322261fa0b734f0dec4a71160e5ea79118e286a0b52b71f44",
+        "zh-TW": "498837aaf868da42168ba2b99af5a42c4555a2443f7d8d9a4bc89525bf0d4701"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.246420+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已更新到 v{{version}}”与韩文“v{{version}}(으)로 업데이트됨”在本条目所属 whatsNew UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "whatsNew",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#whatsNew.versionDetails",
+      "key": "whatsNew.versionDetails",
+      "status": "可保留",
+      "combined_fingerprint": "35fe530cbb55fb28a99c5ea87ddfa49d1823376c9e5e7861531e263a1a5440b6",
+      "content_fingerprints": {
+        "en": "45989de49fb7f66dfe17a8fc26f3a02c7abcd74f7e8e6cf9f39fa0e3775780df",
+        "ja": "9652e7b5f69922bdce983e3534b7b370bd965dce40e4f7ec2f39a443eed006d6",
+        "ko": "26d0ffcf9d367e79534ede50d3b4b8dfab89838c11fef2519ed93183ead3edb5",
+        "tr": "70aab7b9b7e313d2088811329ec23818c2fe1462afcfed5b12a888a6c3dfbbbf",
+        "zh": "979a332955c855bf1b800021f3e645b9f555b4e2da354b14c5810d6621d8375b",
+        "zh-TW": "16b1a92a36adf8561d5028f605c913abfae67fefa5e0f0bf3f6b70a14dd28f3c"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.246420+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“详情”与韩文“세부 정보”在本条目所属 whatsNew UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "whatsNew",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#whatsNew.viewFull",
+      "key": "whatsNew.viewFull",
+      "status": "可保留",
+      "combined_fingerprint": "137acc34ce694780c0d070515dbf24c89b050a4a4abc366cc891b9ededc4f59b",
+      "content_fingerprints": {
+        "en": "490e02a1acbc661c5ed4315522736fedd52758653cf80ce8da178482b665bcf2",
+        "ja": "9115dd7b8e27daedd7ee834d3faa9697ad06386bb831da0e2daa4a108d805861",
+        "ko": "bc427275aee33753087102263624e53e0507655c4c5cf90f256f6bdf81a0e775",
+        "tr": "6d843b3e6c967f0e1954dc5b0bc8b1c7aec120e246b3d5c2d5ee12fd44d50811",
+        "zh": "97f23689353d6a9de45c86726f17cb5f4b49ed377107c860b97baf741bc1eb5e",
+        "zh-TW": "c42365393d409f1ea98debc7f2dae5be603a8b94396997dc45b613cccbdc6539"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.246420+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“查看完整更新内容”与韩文“전체 변경 기록 보기”在本条目所属 whatsNew UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "whatsNew",
+      "round": 1
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "batch_id": "hardcoded:0126:src-components-proxy",
+  "kind": "hardcoded",
+  "group": "src/components/proxy",
+  "ordinal": 1,
+  "record_count": 5,
+  "record_ids": [
+    "hardcoded:src/components/proxy/AutoFailoverConfigPanel.tsx:checkRange:4fd9cb179be0fe0c:001",
+    "hardcoded:src/components/proxy/AutoFailoverConfigPanel.tsx:AutoFailoverConfigPanel:917a105fab94452c:001",
+    "hardcoded:src/components/proxy/AutoFailoverConfigPanel.tsx:AutoFailoverConfigPanel:917a105fab94452c:002",
+    "hardcoded:src/components/proxy/AutoFailoverConfigPanel.tsx:AutoFailoverConfigPanel:94797bd793593484:001",
+    "hardcoded:src/components/proxy/AutoFailoverConfigPanel.tsx:AutoFailoverConfigPanel:94797bd793593484:002"
+  ]
+}

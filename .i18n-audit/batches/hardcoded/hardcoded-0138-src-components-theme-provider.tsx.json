@@ -1,0 +1,11 @@
+{
+  "batch_id": "hardcoded:0138:src-components-theme-provider.tsx",
+  "kind": "hardcoded",
+  "group": "src/components/theme-provider.tsx",
+  "ordinal": 1,
+  "record_count": 2,
+  "record_ids": [
+    "hardcoded:src/components/theme-provider.tsx:updateNativeTheme:a9fcb0ce9098e64c:001",
+    "hardcoded:src/components/theme-provider.tsx:useTheme:30675c2581679304:001"
+  ]
+}

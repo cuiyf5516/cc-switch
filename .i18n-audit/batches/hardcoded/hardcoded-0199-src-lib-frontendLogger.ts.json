@@ -1,0 +1,25 @@
+{
+  "batch_id": "hardcoded:0199:src-lib-frontendLogger.ts",
+  "kind": "hardcoded",
+  "group": "src/lib/frontendLogger.ts",
+  "ordinal": 1,
+  "record_count": 16,
+  "record_ids": [
+    "hardcoded:src/lib/frontendLogger.ts:truncateForProcessing:cbfda67ba8d01c49:001",
+    "hardcoded:src/lib/frontendLogger.ts:normalizeForSerialization:aec169c0ab82b403:001",
+    "hardcoded:src/lib/frontendLogger.ts:normalizeForSerialization:240a7349df5725a8:001",
+    "hardcoded:src/lib/frontendLogger.ts:normalizeForSerialization:b61c5f4904ca310d:001",
+    "hardcoded:src/lib/frontendLogger.ts:normalizeForSerialization:ca525422b0710ea8:001",
+    "hardcoded:src/lib/frontendLogger.ts:normalizeForSerialization:a0a98ec84c47b2b0:001",
+    "hardcoded:src/lib/frontendLogger.ts:normalizeForSerialization:a6a59f2d7f4301b2:001",
+    "hardcoded:src/lib/frontendLogger.ts:normalizeForSerialization:320f0288df6f9b9d:001",
+    "hardcoded:src/lib/frontendLogger.ts:redactStructuredString:07a7a381e326ec8c:001",
+    "hardcoded:src/lib/frontendLogger.ts:redactStructuredString:95fdfbbeae5c2a3e:001",
+    "hardcoded:src/lib/frontendLogger.ts:head:bc0589bd3d32ff23:001",
+    "hardcoded:src/lib/frontendLogger.ts:describeError:0dcceff676974cdc:001",
+    "hardcoded:src/lib/frontendLogger.ts:describeError:8a25aa7e91c34786:001",
+    "hardcoded:src/lib/frontendLogger.ts:raw:30f72c0662eb6970:001",
+    "hardcoded:src/lib/frontendLogger.ts:message:20b547b100be9460:001",
+    "hardcoded:src/lib/frontendLogger.ts:redacted:2fea502f9894e0a4:001"
+  ]
+}

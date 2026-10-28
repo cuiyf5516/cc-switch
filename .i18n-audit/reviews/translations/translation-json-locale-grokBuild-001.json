@@ -1,0 +1,304 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:grokBuild:001",
+  "kind": "translation",
+  "namespace": "grokBuild",
+  "reviewed_at": "2026-10-28T13:41:13.090291+00:00",
+  "review_count": 14,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#grokBuild.apiBackend",
+      "key": "grokBuild.apiBackend",
+      "status": "可保留",
+      "combined_fingerprint": "c4965d034bd5edd259b5c3f411a960e33d1290812ac44ccb9aa7d9cbab987ef4",
+      "content_fingerprints": {
+        "en": "9de811bcdcf1c8eed354aa582e91de8de7abeecd7ce37bda222a4eff61bb4419",
+        "ja": "33c55e4cb9f8d0629eb181485072fbfe3cc9079cdda03b8cabeba4956e459806",
+        "ko": "74a53f6cd57c5e00f4311a0a314d7ac56463f7c7ccd31305e0159db746aae754",
+        "tr": "ec0f34ae2a291b9bd411ae643d657f362dc33b0a9631c08bc743e816e26d0777",
+        "zh": "33c55e4cb9f8d0629eb181485072fbfe3cc9079cdda03b8cabeba4956e459806",
+        "zh-TW": "33c55e4cb9f8d0629eb181485072fbfe3cc9079cdda03b8cabeba4956e459806"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.090291+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“API Backend”与韩文“API 백엔드”在本条目所属 grokBuild UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "grokBuild",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#grokBuild.contextWindow",
+      "key": "grokBuild.contextWindow",
+      "status": "可保留",
+      "combined_fingerprint": "4287a0f51d66e1b455234d5fdde73a385b60b4e1d03728d2c70950145f67b285",
+      "content_fingerprints": {
+        "en": "7696d0855331622dc12438057f5509348f9d6f0ec2eb3580e18a99d31eba86db",
+        "ja": "70b566f1025685890a4c9e621195b39d56e422d49839e0e6c48c23b04093cae5",
+        "ko": "b8743927f6bcda1300f88db1006e63743d30087ea95c64a0376bec818fa2b3f1",
+        "tr": "5adf9d67a4a2a5b169227e000553f9325666736c0eaed7751a36428db7086b0b",
+        "zh": "bb074b86a98f69119f12f42b3b08036f90ddad1cab835704b9d5292bbd108a5d",
+        "zh-TW": "b299a879ae78be4fa71fcace4cb0cb7d987c3af36b319e975a272b4c4ac5481a"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.090291+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“上下文窗口”与韩文“컨텍스트 창”在本条目所属 grokBuild UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "grokBuild",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#grokBuild.contextWindowInvalid",
+      "key": "grokBuild.contextWindowInvalid",
+      "status": "可保留",
+      "combined_fingerprint": "d410675c064ad29f31449c39c29feab1c4fff67a0c5cef1bf908f8cd1e1cfeff",
+      "content_fingerprints": {
+        "en": "cffc4513abb7bbb324fdf53ff842fcc8ea46bf7132a47f3cc78d37cfdef5fa10",
+        "ja": "7cbf14e886692c93032a582f79b0c47c75637c3a252e98f5e3cfca928e8772ff",
+        "ko": "60f5dad49513927ecc3c744a44e333c6764a96990d526b3acc77113952b42dd6",
+        "tr": "ed2e2caf029f829d70c5c1966db42a6bb7ed967758cbdc4ea3e468d844356376",
+        "zh": "ed4c5b7d67112bd81879be21163ba38c2eab12e62c5f52efd9caa5dde29ede03",
+        "zh-TW": "1dcab9450ed87b3deb04bb87d23fbb530614d2b1f95c6cbdc15c06e6a811dba0"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.090291+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“上下文窗口必须是正整数”与韩文“컨텍스트 창은 양의 정수여야 합니다.”在本条目所属 grokBuild UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "grokBuild",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#grokBuild.defaultModelHint",
+      "key": "grokBuild.defaultModelHint",
+      "status": "可保留",
+      "combined_fingerprint": "22e007bdb5aa419876a815c36a0f98fcec153c81b15cb211c5258454c3cc207e",
+      "content_fingerprints": {
+        "en": "a08d4848be76634af254e496d6c66e59a5363d101661dc2b11a9e0945e1e6967",
+        "ja": "aad6f5f2bc5aaebd25c8f3beb526e25b720fcc6a2bbcebdfb6d4c881ac4bd4de",
+        "ko": "7910958f31624f9d3b6111c71bd99835f31a3f9197280503f8dbdaa22a0f53d4",
+        "tr": "da9c8532b97a23fa531a21458ba2ee3b13491abfe6db9f3aff5990be872c6510",
+        "zh": "8db6851d4badcf1d22a208ddea669eea9e8184f89d8873ee78ef977fd39dbce9",
+        "zh-TW": "cddb164a762bdb64c9d155ff14abb8a7321e9078f9acb473fa00b375a5d43515"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.090291+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Grok Build 默认请求的模型，随时可改。”与韩文“Grok Build가 기본으로 요청할 모델입니다. 언제든지 변경할 수 있습니다.”在本条目所属 grokBuild UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "grokBuild",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#grokBuild.defaultModelPlaceholder",
+      "key": "grokBuild.defaultModelPlaceholder",
+      "status": "可保留",
+      "combined_fingerprint": "aa703af9ef856273b71e31dd74db31fb0d62188962ee77f4580acdea500c5980",
+      "content_fingerprints": {
+        "en": "b567c52b9ca26c853b190467e98e27d645b850a21e9ba1d1810811de5deea68f",
+        "ja": "8606ad5de41601219c908d4afd2405bf66e8547248950c6a7ab943491f12aa35",
+        "ko": "e5dedb496cd7aeb64ddd769b0cf9001ca82097bad52e549ce7c6f06001557376",
+        "tr": "ca62c96351bf253bfc93e7a6767d4106d98ee20e064ee61680abfbe137697e48",
+        "zh": "cb90b2a0eb75b53dc55c17f4ac931772129a187ca13767affd4d56b2bfa8340b",
+        "zh-TW": "cb90b2a0eb75b53dc55c17f4ac931772129a187ca13767affd4d56b2bfa8340b"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.090291+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“例如: grok-4.5”与韩文“예: grok-4.5”在本条目所属 grokBuild UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "grokBuild",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#grokBuild.inactiveFieldCopied",
+      "key": "grokBuild.inactiveFieldCopied",
+      "status": "可保留",
+      "combined_fingerprint": "7a3ceb413c7dd088873d4b0756406a80aab8c0e51f9f9a6ba1dc5456cca71039",
+      "content_fingerprints": {
+        "en": "8d525e5f158b9afe05f3122af363ac67763bdc4e1395b46597b320c289766ce3",
+        "ja": "1ec775aad70eb9462007b63b9adcc19cc4e28f461f22084a61a875a1a13a7b11",
+        "ko": "9693e1eb3edb1291eb33d04471b0e546fbc0c789095623a03158b35da32f9074",
+        "tr": "02af74b2f0d6a427d02a834221de7486e5ff7d260f85b0f60cd8a071d03c9a98",
+        "zh": "8f6f8d979c981ced1cf17ae96e27690b8a33b9dff1c98c8ce651764ffe9cf235",
+        "zh-TW": "fcce450c45f401a80a36c3b33bb86fc688a0be9dac6ba53f1655c0335c237498"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.090291+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已复制”与韩文“복사됨”在本条目所属 grokBuild UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "grokBuild",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#grokBuild.inactiveFieldsHint",
+      "key": "grokBuild.inactiveFieldsHint",
+      "status": "可保留",
+      "combined_fingerprint": "5ed49f63a2e7d89d5df3d3255ead3202e89f5ef458d777801a2885668ced51fd",
+      "content_fingerprints": {
+        "en": "7fb8ec9eb96cb63544832a20e201ddfa8f7646730d30e5ada88446374671662a",
+        "ja": "0cd228bea038f3fe69308f0579f449bd231cc4d24eb4bfcc84bf984e97ca5d4e",
+        "ko": "a3bb9a523ead93c70ce2cb497e5228f636a2322f5302ce2d7e1567b2d82258cf",
+        "tr": "5b554a37d24efe975d8753035ab2a8c2cd9432bf55eda2f0d28ba6583333ee54",
+        "zh": "7f703db1a531a152ec4cf527097e2be22bd352346552edab8838ac6476adbd7c",
+        "zh-TW": "19aed85d0895bd8fc31d6e2b36b094c038ccd41d62fd8ac04c4d9c294021626e"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.090291+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“这些是旧版存进卡里的设置，现在切换不会写出去。点一下复制 TOML，需要时粘贴到上方。”与韩文“이전 버전에서 이 공급자에 저장한 설정으로, 이제 공급자를 전환해도 적용되지 않습니다. 항목을 선택하여 TOML을 복사한 뒤 필요한 경우 위에 붙여 넣으세요.”在本条目所属 grokBuild UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "grokBuild",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#grokBuild.invalidToml",
+      "key": "grokBuild.invalidToml",
+      "status": "可保留",
+      "combined_fingerprint": "b79cded00d12a139ca95a3aab866e87e6f64d3103f6d72145178c7dd5a2c5738",
+      "content_fingerprints": {
+        "en": "ccbdd7dd9f004871f9e45f035fd56f0aaa7fe53457b8b78e45b7da606d204b1e",
+        "ja": "247eb7f845b99f0cb1f8328e1876037ea229d83c06f1a10da6520a55346af84c",
+        "ko": "9a58f609f4a626eed0d87f64a763621f098a9606a1f3d98940094573e0c061b0",
+        "tr": "bb690d83118ce9087bed63b7a15788da76adc27d07d5958061568002a150d49a",
+        "zh": "2ad94a350659b52dfd30ad7ba5c9c2a5516ff8e631c73aff5a33f683024419f5",
+        "zh-TW": "179c7e91f5201878d5a9fe7df3607b598384c60a783b4906a92928d016b90e21"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.090291+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“config.toml 格式错误：{{error}}”与韩文“잘못된 config.toml: {{error}}”在本条目所属 grokBuild UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "grokBuild",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#grokBuild.keyFieldsHint",
+      "key": "grokBuild.keyFieldsHint",
+      "status": "可保留",
+      "combined_fingerprint": "9b4a209a76e7d6a461ee7f320edfa84c8aa62dcfec85fc8c47347d0e9a256fb8",
+      "content_fingerprints": {
+        "en": "7a24c6c6d9007eefeac03836bb59e4106b62655e54e08e4a5b9ebcdc586c0f67",
+        "ja": "533d63eb70800a1bf56b80aaa4aac4d7a28587d3282556a8a2ef9bd8fcfecd35",
+        "ko": "2d719aa30759f25967a34822075716705b6ce6a95e055ee1d19f6c892db461db",
+        "tr": "a06ce96e0271e5ac06c59e1dd42f3e19b9dd2515a6264adf67c2e33fc5a700cc",
+        "zh": "4e90eb79555f5542108a56e9a6fb7abf56fd3232cec46c208004444c3bd672ee",
+        "zh-TW": "a07a8da430f8f0e9b0b57b876dc181ae5260012c7c4ce17765db8e9fdfc25892"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.090291+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“默认模型（models.default）和它指向的模型表随供应商切换；其余是 Grok Build 全局设置，保存后对所有供应商生效。”与韩文“기본 모델(models.default)과 해당 모델 테이블은 공급자를 전환하면 함께 바뀝니다. 나머지는 Grok Build 전역 설정이며 저장하면 모든 공급자에 적용됩니다.”在本条目所属 grokBuild UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "grokBuild",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#grokBuild.maxOutputTokensHint",
+      "key": "grokBuild.maxOutputTokensHint",
+      "status": "可保留",
+      "combined_fingerprint": "45a14c28ee80c19350d87988f90851dba332983647852ea58ef10d45251ec3f1",
+      "content_fingerprints": {
+        "en": "fcd0b39c4f18a3b5a5f23e6c69aa8353f3a428c865262948c1b0e00d24726731",
+        "ja": "84cc3b2a0f831fb3aac3c4cbe404576d474cc96cb93b753ddbdb6b2bb4197eb1",
+        "ko": "e7da0bf52d9e6cf9a231b2db707929c12ed93afb2d504a5409af862605fe0a41",
+        "tr": "9bee7abd11b8af38d6b700f111f2f73d9d59ee74cd587675031928273f0cc2b2",
+        "zh": "e4ab07f3e92abf50c264150b0578c4568c8877fd8bbd8579f91174fa3efa4984",
+        "zh-TW": "d34e5dbf8f3430d6927601841583e674d079d36d5f0c1a20a7579524aa150caa"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.090291+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“默认上限 8192，长回答或深度思考容易被截断。这里的值会作为 Anthropic 的 max_tokens 发出。”与韩文“기본 제한인 8192에서는 긴 답변이나 깊은 추론이 잘릴 수 있습니다. 이 값은 Anthropic의 max_tokens로 전송됩니다.”在本条目所属 grokBuild UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "grokBuild",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#grokBuild.profile",
+      "key": "grokBuild.profile",
+      "status": "可保留",
+      "combined_fingerprint": "4490e80e27f790213374615c04c7b6f6177c99aacfefa6fe746a23c43d74d8b9",
+      "content_fingerprints": {
+        "en": "a5f786953c17f3dc9689eb08bdf54682932811138a33671f15dca57630732d79",
+        "ja": "46974ac07d5400fad6da5bece9ef66a3604e80c2e366895e361e4c80d69da3a7",
+        "ko": "536f15f6bfbe4113f7cca37fc171b1dd2e0f5c18a242703f25dd0aab87c4d002",
+        "tr": "173b6ecca0bd0612f80f87557250659832a223d356b3143dca6ea46f43e848a6",
+        "zh": "9bfdbe81c2d22033377fe9d1ee778c911255a461a94d48cdc7e4e4af3702d1ac",
+        "zh-TW": "4cfdee821893039c4a286ed92c1a21bbeb9259a73a568027100a3e58cf7efddd"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.090291+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“客户端模型档位”与韩文“클라이언트 모델 프로필”在本条目所属 grokBuild UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "grokBuild",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#grokBuild.rawConfig",
+      "key": "grokBuild.rawConfig",
+      "status": "可保留",
+      "combined_fingerprint": "90b36d1da73992f89a7ba0f673194c03325a51a00863c0dda5d6b6d7f46d3527",
+      "content_fingerprints": {
+        "en": "28043ff911f28a5cb5742f7638363546311225a63eabc365af5356c70d4deb77",
+        "ja": "28043ff911f28a5cb5742f7638363546311225a63eabc365af5356c70d4deb77",
+        "ko": "28043ff911f28a5cb5742f7638363546311225a63eabc365af5356c70d4deb77",
+        "tr": "28043ff911f28a5cb5742f7638363546311225a63eabc365af5356c70d4deb77",
+        "zh": "28043ff911f28a5cb5742f7638363546311225a63eabc365af5356c70d4deb77",
+        "zh-TW": "28043ff911f28a5cb5742f7638363546311225a63eabc365af5356c70d4deb77"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.090291+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“config.toml”与韩文“config.toml”在本条目所属 grokBuild UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "grokBuild",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#grokBuild.reasoningEffortHint",
+      "key": "grokBuild.reasoningEffortHint",
+      "status": "可保留",
+      "combined_fingerprint": "063fe21a3de4ebbfc0fae4d03c9a7f5beb10b9e00627bb8b064741b3a961e482",
+      "content_fingerprints": {
+        "en": "c594dced713f2af213de2c71096cdb85949438b5811c5d2a38a86509a7ce0ae2",
+        "ja": "3279149ac7f34f4b8ea716819fbe4cb2e937123d0e4fb9dad0c3bfde51226f1b",
+        "ko": "f4951aaee68fac4682e6553130894abc5bf05b1b0337737b949a3e5557f46146",
+        "tr": "49ddfd1642f2aad802a0b758801b56d2d39faf4dc8c9e1a2e7b7ddb83454e076",
+        "zh": "84522e7a3dc63f10421e9eb7f5493c0b5a39470d0728ff67dabcb956d2a6c323",
+        "zh-TW": "25bce9ad31e7d50b64555bae7c21283b57f695bae035575060db7404c9037ef8"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.090291+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“上游支持 low/high/max 等思考深度时打开。会同时打开思考模式，并把请求中的 reasoning effort 转成上游 Chat 参数。”与韩文“업스트림이 low/high/max 같은 추론 수준을 지원할 때 켜세요. 추론 모드도 함께 켜고 요청의 reasoning effort를 업스트림 Chat 매개변수로 변환합니다.”在本条目所属 grokBuild UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "grokBuild",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#grokBuild.routeOnlySettingsHint",
+      "key": "grokBuild.routeOnlySettingsHint",
+      "status": "可保留",
+      "combined_fingerprint": "99575cb6e229594f1bfd1b024bee793d2b69cadec7061eccbdeb8d4b59786c20",
+      "content_fingerprints": {
+        "en": "517c5bd9eef4ff4c31076f5e814b896a958a43f6142306735401de8ceaab8be4",
+        "ja": "4310d88ba605ba9a61326fddb2b1c2dca5b26eb3801129dda124331a210af005",
+        "ko": "89ab22a6f5e9e0cb45c1a5e2e4bd0731d6e3c49af6a089ed78600d83c02ceebb",
+        "tr": "3a0395a07d46cdc18cd8bbe86963858fc556bd9227508a7036d4383034eb8f28",
+        "zh": "8f1090cd1c04f6081fb320a0f4a56db71fb9d7865e38d50699e76c74e44fbc33",
+        "zh-TW": "483f6f71f54a3bd1a98d59e2dc355eec7770e59c0a05fde5fd0ad6dcefe0d036"
+      },
+      "reviewed_at": "2026-10-28T13:41:13.090291+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“以下两项只在路由模式下生效。”与韩文“아래 두 가지 설정은 라우팅 모드에서만 적용됩니다.”在本条目所属 grokBuild UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "grokBuild",
+      "round": 1
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:openclaw:003",
+  "kind": "translation",
+  "namespace": "openclaw",
+  "reviewed_at": "2026-10-28T13:57:11.223705+00:00",
+  "review_count": 10,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#openclaw.tools.profileMinimal",
+      "key": "openclaw.tools.profileMinimal",
+      "status": "可保留",
+      "combined_fingerprint": "9408f5993b7fdc27aa88c34c444c1714bdcd8668d918c34e6009f343b09fbcf6",
+      "content_fingerprints": {
+        "en": "057b5de48d7b90f123ec28d7e15f65d99b508d6b7cc2958c39472070f0f0f6bb",
+        "ja": "d80c21a204909f441d26f94818222eb68eb9f6fe811e3a5b054a7237cca1ee22",
+        "ko": "d31f029f715ef11b3be8896020b4918653b58bfaf5d4e8e27642e2a32ecb880c",
+        "tr": "0d86ed7e65491fa390d1b4c9971e9261437a5cb86a6321904cd331d072f44461",
+        "zh": "db23783b3988c8d7eeebd7fbca4296e70c20005db9ce0e8e9cdafa853e0c8005",
+        "zh-TW": "3b31cf7f919905634792388626caef2923cf9863c291e4ca53f2e47cd3ce62ea"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.223705+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“最小权限”与韩文“최소 권한”在本条目所属 openclaw UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclaw",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclaw.tools.profileUnset",
+      "key": "openclaw.tools.profileUnset",
+      "status": "可保留",
+      "combined_fingerprint": "aefa37171a176f6b4a621c933a7702cc96810a4c45bc48f244785ed1d6b0e411",
+      "content_fingerprints": {
+        "en": "4895f73177ab5d67c30c183a49d2477e014a2ef69b65150762d17e877f4f5b95",
+        "ja": "6213305916949e4cb658c65cce44c82b2db645dce0b3d4a4e8dc6783abc4ba9a",
+        "ko": "9182f8fe0e7c868e9976af1c12e1325b6f27b4da6295e08d266208a513a0b534",
+        "tr": "7a7c3c8a089088a222e416af1f01cb4a00c4357b7c669997721c3dca094774e6",
+        "zh": "2f5f1d6fbfb061ed02def5f4a3a151303da034681e38179744c7d1b1401f1caf",
+        "zh-TW": "6213305916949e4cb658c65cce44c82b2db645dce0b3d4a4e8dc6783abc4ba9a"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.223705+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“未设置”与韩文“설정되지 않음”在本条目所属 openclaw UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclaw",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclaw.tools.saveFailed",
+      "key": "openclaw.tools.saveFailed",
+      "status": "可保留",
+      "combined_fingerprint": "8b0bfbc3e033768ab435700d8f726b650591e0b9eb3f1c10e4a7a3e149203899",
+      "content_fingerprints": {
+        "en": "cb3200ca9cccfa54e8f0858e2fbd835b79f6865a4b5afb360e990a297e10227c",
+        "ja": "8f9fbdc548fbc0b1c823609e1b0c3ef1b6c29a2d6698af539d5f8174ee22fa22",
+        "ko": "c42abf2d7b1537b29ce84c9a3ebbfcd8bf48274e7e5f50f0bb9ed9cc1162e2d1",
+        "tr": "48e91ae6da092c156a1e4fd98ab9beb6b57b41365b941729b63afc21c576a78c",
+        "zh": "ac712a950fe4ad73f717e6507cc842322ec98114065f9889bcf94abfcef873b2",
+        "zh-TW": "36b9842435982c60fab86c2140d00d3e257fc5921d2e3749d7446e57b4ec5da3"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.223705+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“保存工具权限失败”与韩文“도구 권한을 저장하지 못했습니다.”在本条目所属 openclaw UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclaw",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclaw.tools.saveSuccess",
+      "key": "openclaw.tools.saveSuccess",
+      "status": "可保留",
+      "combined_fingerprint": "004c7a042201e403118645b6a993e57e391bd59b18d66fa01496d5cdadf0c106",
+      "content_fingerprints": {
+        "en": "48339b2122ec10cb031dbb6ea103d1c9c4c2205c67c4c19396cf5e5d0fd14194",
+        "ja": "2868338c1c909bf556153c83b5339833b3dc989104172330dd79c8af958c9752",
+        "ko": "863236be97f4da6b1337a147fcd7fbce9e6aa0a17d1647c5554b9de031bf48c6",
+        "tr": "6ff5611aa162a18e62ce9b2350abe84d8b78ccd76b7b7b27f8ec0de73a64a95d",
+        "zh": "02e62bd3e62c066adaa92ced2977b5e5f2c7640a19cd0cb818c3923a132f1b40",
+        "zh-TW": "21c1e235c03b7bef132edf6d78fb48ca347f10b0cbb7d4c66205f9e9b961b1ad"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.223705+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“工具权限已保存”与韩文“도구 권한이 저장되었습니다.”在本条目所属 openclaw UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclaw",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclaw.tools.title",
+      "key": "openclaw.tools.title",
+      "status": "可保留",
+      "combined_fingerprint": "c87329c273464b1af69cc729c1f27e98794ca2681cb980c27d8181308cd9eb03",
+      "content_fingerprints": {
+        "en": "afd9ad5ca21de7c02b2e72500cdb978ff22df17dbc55a0e22e24338324039396",
+        "ja": "952e7c0f1c00a54190d7a318cdbb9a69053a911e42ebb890c692cc987a9713a6",
+        "ko": "0bcd53f6db7d15bfd203950ec39c7b96f907e5a117bd337bb61adef2171655c1",
+        "tr": "52cd14e712e0c980c7cabd95e8c962501905f8a8be70e134b8fac96858e31ade",
+        "zh": "a2b60a34a75b7a8e98a15bb626949f2245b0cd1c8e984d734f80a60d2e977530",
+        "zh-TW": "88b5f590483306ae47dbc1e6d3cbb0bf2f7aa3314582f097cc4c3e022fe15c69"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.223705+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“工具权限”与韩文“도구 권한”在本条目所属 openclaw UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclaw",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclaw.tools.unsupportedProfileDescription",
+      "key": "openclaw.tools.unsupportedProfileDescription",
+      "status": "可保留",
+      "combined_fingerprint": "0cf123ad7c6bc6ca48b7417d64ec90f89ef0acd22145b613fb5fd6ac19d85b3f",
+      "content_fingerprints": {
+        "en": "82e3072bfdf690a86b443ed3a981d53108d6dad70ebe36ab9fc73905be8c32b9",
+        "ja": "ef731c2f1e60586f1577a6b2f0151862b8a5bf4afde36f7e86f4c573e576fac5",
+        "ko": "92105653f8b2ad19243ad2f6363cf526107d8de047c1c0f71b213a363587083d",
+        "tr": "0f536b92da45c1192087b22fd9d14dba623ada6d2b34945a5aea04de58e02e74",
+        "zh": "fbffea7de297b67d1dd90452806c66b7956c57f3419706fe601a46248de46b4d",
+        "zh-TW": "03c3633beccd7a029591343b973fefa62a96a377cdb281c1c21f5320e88d3bf9"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.223705+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“当前 tools.profile 的值“{{value}}”不在 OpenClaw 支持列表内。在你手动选择新值之前，它会被保留。”与韩文“OpenClaw에서 지원하지 않는 tools.profile 값입니다: '{{value}}'. 새 값을 직접 선택하기 전까지 기존 값을 유지합니다.”在本条目所属 openclaw UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclaw",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclaw.tools.unsupportedProfileLabel",
+      "key": "openclaw.tools.unsupportedProfileLabel",
+      "status": "可保留",
+      "combined_fingerprint": "425a7322e34b956874187be11b487ee176800ab6433ad314281aa55b3c4cec14",
+      "content_fingerprints": {
+        "en": "60945d49535300be8e42108658dba31fcd5d665fc40d6f186798e7e0682320ae",
+        "ja": "7dda74a93bfac682b4f016600f70117f86df1e99a50d24b32c34ad2f63531e59",
+        "ko": "d11843eddfe1feac21a14ad82973f21e4d51e8f6734f16d6fbf5d3907e6d2d18",
+        "tr": "3dac53eab0dcbb9d20ed3a15baee6adab8f96e2ec25a35dbea182b81a1e28740",
+        "zh": "adbae141c8dd7d7aab15fcffba1a27c505ab8cd7294b8a9fd8ee650b4b0487de",
+        "zh-TW": "c4b04ae6a2fa4fe9008dc3b96db2ef5e34a23624d537c34afc6c8249feaa3904"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.223705+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“不受支持”与韩文“지원되지 않음”在本条目所属 openclaw UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclaw",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclaw.tools.unsupportedProfileTitle",
+      "key": "openclaw.tools.unsupportedProfileTitle",
+      "status": "可保留",
+      "combined_fingerprint": "b9e4bdece141c67da3f2509422416e3fe821c61f1e45046f64ebf3a860c228e9",
+      "content_fingerprints": {
+        "en": "766c667f648ab36028d8456659e6a1a236638e9fa8166d743eda6f1dae10dcbe",
+        "ja": "983b19c7ad1dcc20b7f7017373b36ddf0b40e95b23603bdfaf6622d29f0f356b",
+        "ko": "f4828bfc74b6c23b8b6ba90fe1d7ada4746d0f0123e8889e31db176cc8a0ff22",
+        "tr": "5dd783814d2a1375a7fa32846d2cb72512c815f6e1288c933c261daebbd2a59f",
+        "zh": "e264d3ed7e6ee9cea2b9a73e0b722c43b2050296abab1f24f0e7f52f999cec4d",
+        "zh-TW": "444169c4c946a950a0430a87cd78f1eec95fe16ebde4fb3d042af76b69707956"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.223705+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“检测到不受支持的工具配置”与韩文“지원되지 않는 도구 프로필이 감지되었습니다.”在本条目所属 openclaw UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclaw",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclaw.userAgent",
+      "key": "openclaw.userAgent",
+      "status": "可保留",
+      "combined_fingerprint": "cd7a721b6dceab50e0fa0868d1cbf3d3a16c2b46ed506e7a7bdc71fb659ebc20",
+      "content_fingerprints": {
+        "en": "78a4415ddd2af6e056564ff831f1e67a195fc124c343c711e53cbce7b81741f2",
+        "ja": "b0d370d5f1d240b9f8176dbfe44885fd20dddda936c694ed15bf5ddd1043c274",
+        "ko": "3851d3c72017bd5ccb8d725beaec2000570cbe92b09cefada4e3d522003926ad",
+        "tr": "e048447d298745a042e2172267306a81f8a3a5b1d9d824c4f9cbd17deb8ec92c",
+        "zh": "0d9328688fd1305df476923e811b9f9828994875049c6747af68443f01e9c0d4",
+        "zh-TW": "35de4d734824a42e38526be2c7f05484ccf1a893deda17d7dca25f0940190f96"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.223705+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“发送 User-Agent”与韩文“User-Agent 전송”在本条目所属 openclaw UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclaw",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#openclaw.userAgentHint",
+      "key": "openclaw.userAgentHint",
+      "status": "可保留",
+      "combined_fingerprint": "055ccfece8cc9b713e157226340773c93c0ad4580fa33e9bd11724478c7bb4f5",
+      "content_fingerprints": {
+        "en": "3a0a0eda09bee2daf494c3b8bcac97c27a62c04d8f2d4a19dad2dbdecf72b446",
+        "ja": "a0154745384fd88678251c22e3b4201908d26f914a2d34df5f7d88be075a3a06",
+        "ko": "e2ce6941ed48ee5817421135126fb48ef02d09e4a1ffc7c57726d802580a86a4",
+        "tr": "615a7c09bee31a05b14bbc8a603c6ed1d1cab919c6e0ebf8b4cfa066f3f5fe00",
+        "zh": "0d072cc6fafd3cd861a343624074acd5ee042d0d32eb8cc7006aba6767d4e56f",
+        "zh-TW": "44dbc5ec1aacc872b32bad435b42c1392110e56d6b5f6ecd0f09783e129105f1"
+      },
+      "reviewed_at": "2026-10-28T13:57:11.223705+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“部分供应商需要浏览器 User-Agent 才能正常访问。”与韩文“일부 공급자는 브라우저 User-Agent 헤더가 있어야 정상적으로 작동합니다.”在本条目所属 openclaw UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "openclaw",
+      "round": 1
+    }
+  ]
+}

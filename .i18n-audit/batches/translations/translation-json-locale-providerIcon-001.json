@@ -1,0 +1,26 @@
+{
+  "batch_id": "translation:json-locale:providerIcon:001",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "providerIcon",
+  "ordinal": 1,
+  "record_count": 7,
+  "record_ids": [
+    "json:src/i18n/locales#providerIcon.change",
+    "json:src/i18n/locales#providerIcon.clickToChange",
+    "json:src/i18n/locales#providerIcon.clickToSelect",
+    "json:src/i18n/locales#providerIcon.colorLabel",
+    "json:src/i18n/locales#providerIcon.label",
+    "json:src/i18n/locales#providerIcon.preview",
+    "json:src/i18n/locales#providerIcon.selectIcon"
+  ],
+  "keys": [
+    "providerIcon.change",
+    "providerIcon.clickToChange",
+    "providerIcon.clickToSelect",
+    "providerIcon.colorLabel",
+    "providerIcon.label",
+    "providerIcon.preview",
+    "providerIcon.selectIcon"
+  ]
+}

@@ -1,0 +1,451 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:env:001",
+  "kind": "translation",
+  "namespace": "env",
+  "reviewed_at": "2026-10-28T13:40:03.255350+00:00",
+  "review_count": 21,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#env.actions.clearSelection",
+      "key": "env.actions.clearSelection",
+      "status": "可保留",
+      "combined_fingerprint": "5956eef7681142e5b7b30c29fabeaa5405020d4ed190e5ac4922ca18c647edf3",
+      "content_fingerprints": {
+        "en": "c52ff5ea803d577544a8224d1404ecefa836b803f029d87cd7450af6c18a70ef",
+        "ja": "618a09c130d312bf0ff5d8548bdcecb9610f30f4052f142602a3c779cabf164f",
+        "ko": "9ac3a0bebb2fdd90f6af5846546bd8be784982e80abfe04c7c75f12d74c7e64a",
+        "tr": "815201cebf00716c747bbe96a6abea873a691ea74ea5def18ff73bccebddd833",
+        "zh": "74966e20df2ea9fd21dd61461d942048fd5d6670374d3cc4b6b476d7234d79fe",
+        "zh-TW": "88dd6f12883040f4734d013482058a1712f7c78bd6a76999c7a50f67913b00ac"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.255350+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“取消选择”与韩文“선택 해제”在本条目所属 env UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "env",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#env.actions.collapse",
+      "key": "env.actions.collapse",
+      "status": "可保留",
+      "combined_fingerprint": "cb32bf4555dacc939750d93bc90d0904fd3c746cbf177694d7e948c2b1c84ed3",
+      "content_fingerprints": {
+        "en": "be6eb1fc3b05bf9dceebad2eac7841d1b2f40bda9aa2da34df8ca22af02bc3ed",
+        "ja": "8ab5d1f1fa80b0786919bd00250cdb5ef06f54d0210dbb184c61a41c3659a8ad",
+        "ko": "aba0885359f9179b5e6bcdc32f24d226cfdb3987fa93b634ff5eedf93ef667a9",
+        "tr": "a4802fa0b8fd819d491f31f6050798e9084a5856b235ccc11c1000b08ca23c60",
+        "zh": "afd4b783536b8297bb2506836727af1ccae7626a7d04e89de7ad402360e0a970",
+        "zh-TW": "afd4b783536b8297bb2506836727af1ccae7626a7d04e89de7ad402360e0a970"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.255350+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“收起”与韩文“접기”在本条目所属 env UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "env",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#env.actions.deleteSelected",
+      "key": "env.actions.deleteSelected",
+      "status": "可保留",
+      "combined_fingerprint": "d824a961d22e18181b7c2bdb474267b530a9dc468b5c85bbf299b00182ed16a3",
+      "content_fingerprints": {
+        "en": "f7ad0073e7510879e622329e269b5a132ed4d8b18080f311d919216fb07348cf",
+        "ja": "bd8b2df8c1a472e4243e63448ae2d8ea49fb48b8004176d1d68038e4d7c6dde5",
+        "ko": "264d17ded0fc1c2ddc3fe342bba8a1e797e3cb20dbaf86ec060cc3cb58c4908d",
+        "tr": "cd22d37d98e91dc05f69d696c357e89425a036f915513089231816fbd15856c7",
+        "zh": "40ab4292c186612b2a5e8396b6395b3de05caf79cbe561fd9cc7dc9af911dad1",
+        "zh-TW": "7fe9ecf135706e4fd8775f88a8762dbf0107a24fd36cafd24e71c28299fa3d44"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.255350+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“删除选中 ({{count}})”与韩文“선택 항목 삭제({{count}})”在本条目所属 env UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "env",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#env.actions.deleting",
+      "key": "env.actions.deleting",
+      "status": "可保留",
+      "combined_fingerprint": "126aa7580c582a4eb4ceae40f10808d69fb92d97eb35a2d43d7e35a0d92fccb3",
+      "content_fingerprints": {
+        "en": "685ecb984ac29ce868b226a6599304fa3a6635a640749836ea12d1da8eb8689c",
+        "ja": "109378d58db4d71a4f45721e7f36d7c1a6122d0e1c94ecc80c33bd9c09603b76",
+        "ko": "d37f24fb4e0d7b1d7d922c257ba862ee3f7dc94c163effd287fbf814cc052983",
+        "tr": "400f783c19fc374dbf12557eef3136521349f8547b92057ee8c0be59c407e9ae",
+        "zh": "4669785ade95898d3346174931b70b578f377571788d75fcee1aeb45943611f8",
+        "zh-TW": "2297aebfb76d119e745c54456e74eb9d8a7b9d675b7556361efc79c8de97c858"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.255350+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“删除中...”与韩文“삭제 중...”在本条目所属 env UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "env",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#env.actions.expand",
+      "key": "env.actions.expand",
+      "status": "可保留",
+      "combined_fingerprint": "91f135342d16d71fb51112e85b4ae31e4cea91a1dc06715328d8579d4706615b",
+      "content_fingerprints": {
+        "en": "90789c12d0731b4405f2065d3dc5a31651f31ff7c84edef11c0e9c97eab4a75b",
+        "ja": "a491cb78dca18ebb53eb4ceeb620cf4295dd9710731ba00355c91e28bbf8f171",
+        "ko": "868a603c240af49713e5f1c2f6de2746d822cce0cdbde20b57d59fd74f172d9b",
+        "tr": "2e579a1b4689b6702e01c7b4009a16e3ad4cfb4c7d86fa02df0a692ff9fabc53",
+        "zh": "a748cc074f78de007c4bef142398aedad1a4aa5ff6366d939135aa68e3b058dc",
+        "zh-TW": "fe94100ede5c4794841b1adc87dc0d4f4315a5c731b4f2153b7061bf261a964b"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.255350+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“查看详情”与韩文“세부정보 보기”在本条目所属 env UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "env",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#env.actions.selectAll",
+      "key": "env.actions.selectAll",
+      "status": "可保留",
+      "combined_fingerprint": "f5df7eefa0cd26a1b722de90e711557d456e0bf6b15417d08bb0b4c4ac5226c1",
+      "content_fingerprints": {
+        "en": "d1ec69e64b9609d089aae09f7adc5c566d2cd222f8d8325f0ab3b523f0ac2690",
+        "ja": "757abcf425c82b0e3d2529c068d615e2f9fe2862e507b0b254f09c46e943c2c9",
+        "ko": "f5e5d0487d4a50425da7de3abdc686ed02c8731ce00e826de3468d2cc9120aa4",
+        "tr": "6107727b3f26f1d57f881ae0d1a3cf1dd058473b33a3d977af98d002987f23d4",
+        "zh": "3a5040b68abf75f96f27ffe441fe8876250befeb6b51b0232c347e58fc42bb28",
+        "zh-TW": "1ffe5f02d5b3ad3025ecaa053439f21ec7750a8d300a4be24950a0e3970bae3f"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.255350+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“全选”与韩文“모두 선택”在本条目所属 env UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "env",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#env.backup.location",
+      "key": "env.backup.location",
+      "status": "可保留",
+      "combined_fingerprint": "52ab2b564681dd1c9b60774a43134dd6dd59dbb0ab8583517e54bc5fc113b932",
+      "content_fingerprints": {
+        "en": "78c18bf1dc08bb48f6ca1a81e804249e795b11e7548e13f489e13d1ada4c4995",
+        "ja": "f641d8d3b503208263a06aae08a115bdb89ce53c15cfa7c7a12d87308621ac59",
+        "ko": "7fbd7e726127c6b8ddee4fe5c78505779c4440cd329515e61cd01963e65d19c6",
+        "tr": "d03b28b68117dbc79e9e4916bb5873bc9938a627125b26ccafecefaa70c3e3dc",
+        "zh": "50a19e05c524370c3defe8e4d9546bac3b6e6b356a13202bb16bee090846ea29",
+        "zh-TW": "38a65dd645268ce19ff5427ca81c4bf055648909ceadbb73d16e5b490480bf5b"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.255350+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“备份位置: {{path}}”与韩文“백업 위치: {{path}}”在本条目所属 env UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "env",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#env.confirm.backupNotice",
+      "key": "env.confirm.backupNotice",
+      "status": "可保留",
+      "combined_fingerprint": "b77b8587364798e7afa557de9ddf94b45bcd6e7dd476b53c8aee54c48b2d4b3c",
+      "content_fingerprints": {
+        "en": "2a01643afb918d9e15fff7064a3c726e0ae76753ad789ed031bef033c254c6e0",
+        "ja": "0ea20ef96bf67db49a22ba0d5521df6faf4e708831c209f1abee9b328a806fd4",
+        "ko": "ab9c17a90dbd57f04968ba17514abadc0d4d3e8096056a8989699492a191a493",
+        "tr": "f5547d15c8f8f44390d65183a2e378ee3de5ad6fd927b594e8a42a67b0d8c2b0",
+        "zh": "a3ac5b03a6770d97ebdb582424ec11ec621dd75d012473778e42568aa08be390",
+        "zh-TW": "182dfafce79a579300d0aeb1640a26baae849e1df752c761dd9622446c29c300"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.255350+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“删除前将自动备份,您可以稍后恢复。删除后需要重启应用或终端才能生效。”与韩文“삭제하기 전에 백업이 자동으로 생성됩니다. 나중에 복원할 수 있습니다. 변경 사항은 애플리케이션이나 터미널을 다시 시작한 후에 적용됩니다.”在本条目所属 env UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "env",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#env.confirm.confirm",
+      "key": "env.confirm.confirm",
+      "status": "可保留",
+      "combined_fingerprint": "c302d45ad7705eaeb10192f96f2c7b07fead2a89840455e6779a0386ce3eba1f",
+      "content_fingerprints": {
+        "en": "a7f54311a3e625f580ca3f8beb8e4b4871f57acaac1f9c8aa621d5a67f968a22",
+        "ja": "8c926e24a8825c0a9dcbb29e3a20b8406c0c617884b736122874ff5d4057630f",
+        "ko": "e856b9bd3615d13e747211673955072bdfc6c2e6d75c52c3e4f4ac11d021bf83",
+        "tr": "480c3406354e60239b4fb48e2a1e193d7641297c84ab79a79c66245ff1ca39d3",
+        "zh": "a3ea3c17b401bd2f446e0c98b3af398b1e3ded13fade1ce82cf8a71ccb0d6fcb",
+        "zh-TW": "1b2bf36a73b0e913e9cfc5f85358a731d9c5727f37143786132356f8a9b97b9b"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.255350+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“确认删除”与韩文“삭제 확인”在本条目所属 env UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "env",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#env.confirm.message",
+      "key": "env.confirm.message",
+      "status": "可保留",
+      "combined_fingerprint": "a7d6d83cf774154371db89c2ceca0064c1ec66e177f6534ebabd0e03d8ebcb4c",
+      "content_fingerprints": {
+        "en": "fc5fa6da006a538551b2900bada93ea89b976163d60da6587fe9d4d23693271e",
+        "ja": "0bb1294aef80ca9725a41565bc4abb1e9b8a8e0e7af99f0a2b85313c33f00dd8",
+        "ko": "ac85f2d082828cbea009c2af31c16efad0ad0845760081f086e4547e01f2e06c",
+        "tr": "afc17a73e6098c558205e36e59eaddb37f83fc81451159d2e4cd222404663df6",
+        "zh": "e89391689b6181adb39d1e685845baa277a525aceaf07832073504821fadc97c",
+        "zh-TW": "c541c9067cad29c559734cddf133ee49606f0534f6c89ca523b6723bc5bcc2f2"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.255350+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“确定要删除 {{count}} 个环境变量吗？”与韩文“환경 변수 {{count}}개를 삭제하시겠습니까?”在本条目所属 env UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "env",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#env.confirm.title",
+      "key": "env.confirm.title",
+      "status": "可保留",
+      "combined_fingerprint": "4cad78f77dd19b93c00cff399a9f9ccbeeefe7bd2f480821031b51e98c5d78a9",
+      "content_fingerprints": {
+        "en": "2afa21bbbaf28fb79080728df783290192a19e5cef2f87759ec7facd571edf8d",
+        "ja": "a0ad4811ce828fd65074b68eea1fdc40870a82db0cf97f2e6d65783e07e39e3e",
+        "ko": "0788f89a3bdc0a3f0eb34080f1e62ec872f3f052f1975e7384460806d2d0e321",
+        "tr": "1d3e009722fc5c966debb26d42960a0ad05c76ab9a0cd060586e5670f3e21bab",
+        "zh": "b2b3ccb7705033efba0a8e214906a80b76cbe7f95e2bbf1a1f9289e34a2815c7",
+        "zh-TW": "13e22842c5dbac2ee21bd74791214db27142623e233fedf2b35a5ec2076e51b5"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.255350+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“确认删除环境变量”与韩文“환경 변수 삭제 확인”在本条目所属 env UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "env",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#env.delete.error",
+      "key": "env.delete.error",
+      "status": "可保留",
+      "combined_fingerprint": "2cd2a16fa67b79afd74b19ed698c7aeca59e1f554e5d9f94826e0826c615dce9",
+      "content_fingerprints": {
+        "en": "a14f980e4bc8a5e5073e74abb47bba09e0e269102c8fdd5b63252daa79669889",
+        "ja": "eb87ff696486ea892d0a213bb60e1c37ebca84c4710d78d90c869fb6ff260acb",
+        "ko": "b0031f851803d6ca5048b60d077e9b5d032ab6a5446d6e40a15289de8f418381",
+        "tr": "792fda09e2748b4e2a1c7911a0d113a71ad5d34e3c0fba7296f7767b301f13fa",
+        "zh": "24d1b7f40bebf14a95f791f89b007f829f52d3f94ba77f94790048e5aa9165f5",
+        "zh-TW": "c19e5080a625d7d889f72bde430340862c4b118259c1e04a3eec9750c0928d1c"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.255350+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“删除环境变量失败”与韩文“환경 변수를 삭제하지 못했습니다.”在本条目所属 env UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "env",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#env.delete.success",
+      "key": "env.delete.success",
+      "status": "可保留",
+      "combined_fingerprint": "0440b5e18c8ddfc34602e75f89e0f6d840c71347ec52497505c59faa24f06b42",
+      "content_fingerprints": {
+        "en": "dd889fa3c8e1f91a5e969876a01abd1970f464c4645fac1fdb26ff1f47cf22ba",
+        "ja": "b3d9831ed3064c6528d2d913653e3d93842d74154fb6a8ce1b5768134f3c0ad4",
+        "ko": "624a04f697d2e2301865b0210fc35389622ab2b35e56bbb0ab00c52960181650",
+        "tr": "e8fd9317ac50535cf587eddca8207df59bc43bdaa6dac4710e2b84b3b2f739f6",
+        "zh": "cebd53a7ccbc061d5908c9cdbdbda27ad67163510617255f104e5ec7ccfaa4f2",
+        "zh-TW": "94b1aef922c344d6ed8d30b0645ce31c81e58e072adac9c12541c9be7d370598"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.255350+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“环境变量已成功删除”与韩文“환경 변수가 삭제되었습니다.”在本条目所属 env UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "env",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#env.error.noSelection",
+      "key": "env.error.noSelection",
+      "status": "可保留",
+      "combined_fingerprint": "c59ad2a76d4bab3ca36e645d484bdcd1e17bfcc2b274511f23f3df9ddfeaeebe",
+      "content_fingerprints": {
+        "en": "f23b35ec7e4743d94d95b60303184845039a44faea66c35c7076b7deb5518976",
+        "ja": "8221319556fe9c5f0f1f11b45e4e1fc673164db29b0e41ae61b573b65ab5a831",
+        "ko": "22dd1b040158a29c2a6b56297f8aeb8b95afbf84564b16ea92155169894a546a",
+        "tr": "de4ef9108ed9787ba9819d269cea3e0c04a38227a585b513644d459df6f01159",
+        "zh": "29d82cc2830ca27005febcb147b339033312830849bd353387a29fd1783c563c",
+        "zh-TW": "69daafbf86375699f73d34b193ceced87432620e58cf660ab06ef6d54d09206c"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.255350+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“请选择要删除的环境变量”与韩文“삭제할 환경 변수를 선택하세요.”在本条目所属 env UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "env",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#env.field.source",
+      "key": "env.field.source",
+      "status": "可保留",
+      "combined_fingerprint": "4537b6202186147875f532d3b678e45ba6f0a46c724dea3d460d0821f20435e2",
+      "content_fingerprints": {
+        "en": "0e570ca6fabe24f94e52c1833f3ffd25567022beb826fa16891f3322051bc221",
+        "ja": "003741059728c399ec945632c3c80506c9d9370de65c7b9752b1bf67dd7af672",
+        "ko": "fa543a9d6cf324986fbddb6c88daa7ef9429d0666ed9171203019529a656be77",
+        "tr": "2f0db590c3dcd1da8f12ee13d66578fab5dd2e84e4fd983e0deb3d2ad53ce2dd",
+        "zh": "a488e93d69cc12961ea26e97b7d246d03a9af7334d2d84881dd7f702e801bf74",
+        "zh-TW": "c21db84c06536abcb38a72002035bcd2a55e8c7f04b5de73a545566cff908ede"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.255350+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“来源”与韩文“출처”在本条目所属 env UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "env",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#env.field.value",
+      "key": "env.field.value",
+      "status": "可保留",
+      "combined_fingerprint": "aee73ee852e7201b34d6e7cf96b3da3d90b1863c3a0944e1f30dda86c133bdd4",
+      "content_fingerprints": {
+        "en": "8e37953d23daca5ff01b8282c33f4e0a2152f1d1885f94c06418617e3ee1d24e",
+        "ja": "19126213b0d126380f5fc7474be08db05389f4dda440a030a522448b7b2ea084",
+        "ko": "b19ddf94b4c9896bb5c6460d4b4acb5870b075afd6f168fda0c69f55ac5804f8",
+        "tr": "4cfa2b03d54b06ff8ae5e37619c82059df8c592624f3a98a8cfa893c05776bd2",
+        "zh": "cda1d55c5231b853cd7c8d49f2440ec35b8267b97b848865de889e53c8fe47ce",
+        "zh-TW": "cda1d55c5231b853cd7c8d49f2440ec35b8267b97b848865de889e53c8fe47ce"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.255350+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“值”与韩文“값”在本条目所属 env UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "env",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#env.source.systemEnv",
+      "key": "env.source.systemEnv",
+      "status": "可保留",
+      "combined_fingerprint": "f1677421fec79962cde5e0d902a02b6ff90c7db6217c59c8ff345b1f75a9580a",
+      "content_fingerprints": {
+        "en": "7b3dbc7bec0f6aea2649ff0f0c1e2c958abc7159a45a51f1d59c36dd3cbc4365",
+        "ja": "d26f81a2a2cfb2d6e134675625785d1755011c0aed6668c7ce854bfcf96e6a9e",
+        "ko": "cb119f1ce098c99453727b0fbb156c232b9e8f0efc7540bb6997c56b8e3f600d",
+        "tr": "51407d8fc916efd41551195dd3ea5c0371f9f31c8224337c03d42cb980845530",
+        "zh": "68199e2f141f0c764cfd40c10cc2c791209de31fc325669dd4f860e430a957e6",
+        "zh-TW": "f72fd3ad4b64d4c7b3a19565755107495aeab9bc8f3bf160614928a3ccaab92a"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.255350+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“系统环境变量”与韩文“시스템 환경 변수”在本条目所属 env UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "env",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#env.source.systemRegistry",
+      "key": "env.source.systemRegistry",
+      "status": "建议改",
+      "combined_fingerprint": "84ac3731ab2df73aa828e66a41defc4acca8b4503a959399de4f3e276fb73dc4",
+      "content_fingerprints": {
+        "en": "9cc1f0037a41730aac94a45399d2be16cf9a106c0ab05bec58f9c7d381757ad3",
+        "ja": "68ede4029489c760e2a2ad944a84d29003df0ec8869fa5af96be72bfb5aa1ec8",
+        "ko": "057f9f5edfcb3b7b51b1e0fef4b1aa2b9385632a03523c4423005666b4c3da6c",
+        "tr": "74170d6c3f2ffff2f3a73fce471e8a06cfd03cc101cb23164617b6da2f4054f2",
+        "zh": "98e0ed91918df633cd694df04b92c01983fac52b29a71c96e824947fba21f2fb",
+        "zh-TW": "d9deda09aecca71ea712f08f5286c95d69fbd30a276fcf08ad4b15fa855efe88"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.255350+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“系统环境变量 (注册表)”与韩文“시스템 환경변수(레지스트리)”在本条目所属 env UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": "「환경변수」与同命名空间及其他界面的标准写法「환경 변수」不一致。",
+      "suggestion": "시스템 환경 변수(레지스트리)",
+      "ui_context": "环境变量来源枚举",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#env.source.userRegistry",
+      "key": "env.source.userRegistry",
+      "status": "建议改",
+      "combined_fingerprint": "17722de23ae4a043995eafada14f266e6984e3e62b93da6a23490c62a1c7c836",
+      "content_fingerprints": {
+        "en": "111aeb334324d652f126c73488a11742f98683cef1c9ad4486104186a5fadd1e",
+        "ja": "90bf43c1b6c1edf316c15b3795750b888bc01f0f371474f2f5e9bef2b44ea438",
+        "ko": "d49c91c333f4b2c99a33f3263e2f1babb72e0918e8faa9b89233ebbe9ed597c2",
+        "tr": "f62853caf8e5bd08bc33ce81975793b672a26ab65cdf24542a326738127e90b4",
+        "zh": "6059f75efa59a90ed5c82482da3e11966ab288344bc2f3bd9c623a33bce6aaae",
+        "zh-TW": "07b2a259a85fe0e9c886e9945251d644cf26b2c18ba090f50e1b979dab58e0af"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.255350+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“用户环境变量 (注册表)”与韩文“사용자 환경변수(레지스트리)”在本条目所属 env UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": "「환경변수」与同命名空间及其他界面的标准写法「환경 변수」不一致。",
+      "suggestion": "사용자 환경 변수(레지스트리)",
+      "ui_context": "环境变量来源枚举",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#env.warning.description",
+      "key": "env.warning.description",
+      "status": "可保留",
+      "combined_fingerprint": "bfa735f01224f79bd7f88d1f51f11aa5566db3ca8b9486081e4628e61159ef8f",
+      "content_fingerprints": {
+        "en": "0e6ef98585d976d4744f84f3ad144d304e59bdc1721ebeca82c3d1876a6f33df",
+        "ja": "1ebb275e1dd69dfcf287b69f521a6e7ae3ae4c8fab990d8722c6709af3b66af4",
+        "ko": "30aeb9d4b04d277ad4b7046920965fd2fe6e91815af449e47846574b29001bd7",
+        "tr": "686d9c9928b5d2a745343c3b41d4c4e0c0af52ed3866a59fae13703ccec48ffa",
+        "zh": "00acb57ddd95ee7189ec124837c4c8282f96a5edd68bc27dbeeca777fd61c94f",
+        "zh-TW": "4a97902d4345a774313416796840f394022637c61182e537eb2c3b9736fe831c"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.255350+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“发现 {{count}} 个环境变量可能会覆盖您的配置”与韩文“설정을 재정의할 수 있는 환경 변수 {{count}}개가 발견되었습니다.”在本条目所属 env UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "env",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#env.warning.title",
+      "key": "env.warning.title",
+      "status": "可保留",
+      "combined_fingerprint": "d6ebd4d4bb258f8f83306d56db112f6de4a31176f205e8b40865a2f056e1d8a0",
+      "content_fingerprints": {
+        "en": "72aaad1a0f9d5426f5edc07ac62acc8f3ee8b8794907884ba67ef7ba34ec8528",
+        "ja": "1157b652a597373f83bd99374a9b9d9795c99fd6400f0ba3969380f15125f521",
+        "ko": "6308c732593606f4d25aa2d49ebc0f467db153c62784f7a1eac90ee85685e9de",
+        "tr": "c12d163e6bc26c873b4ecd69a15311606d94168456b7d6eaf33f75ec63a87a71",
+        "zh": "73433fc938b3cc06a16e1549460dbde6e0cd06ea45c4f8ccbc84059d8df6a9d0",
+        "zh-TW": "306c2a24d2d88e6af206b46b8877b6615817c0041b534f990534fa9309da0143"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.255350+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“检测到系统环境变量冲突”与韩文“환경 변수 충돌이 감지되었습니다.”在本条目所属 env UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "env",
+      "round": 1
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "batch_id": "hardcoded:0105:src-components-ProviderIcon.tsx",
+  "kind": "hardcoded",
+  "group": "src/components/ProviderIcon.tsx",
+  "ordinal": 1,
+  "record_count": 1,
+  "record_ids": [
+    "hardcoded:src/components/ProviderIcon.tsx:fallbackFontSize:0295b0c36d914862:001"
+  ]
+}

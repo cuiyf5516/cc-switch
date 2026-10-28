@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:usageScript:003",
+  "kind": "translation",
+  "namespace": "usageScript",
+  "reviewed_at": "2026-10-28T14:10:09.588384+00:00",
+  "review_count": 8,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#usageScript.tokenPlanHint",
+      "key": "usageScript.tokenPlanHint",
+      "status": "可保留",
+      "combined_fingerprint": "bcb438a91a87e3333488d6994e3220f5fac2bc8e847cb70e9be1ea5f11138a04",
+      "content_fingerprints": {
+        "en": "d8f710e37db95ec6d9ea4de8e6aad618a48f29f8444677e051587fbbc12fd551",
+        "ja": "d8e7523956e5761250f5fe9573b88c0a03ec42c285e41dcc2aab5fbd28277fd5",
+        "ko": "8837d76af629bd4e3f6f8ad666078c65b65dc32399d12052555fa163e979df71",
+        "tr": "19ef8350224a71b1358c764fe27f7d16468b53f0b46be57688836f78749518e1",
+        "zh": "794e28bdf8cc593a90d16d0e6b44d87c1d20ad64b48f5aa4a1464ef27548ce06",
+        "zh-TW": "02706dc913f0d5a58dac1b742910db014ef87fa7bb07bb66616e8fe0342a2c3e"
+      },
+      "reviewed_at": "2026-10-28T14:10:09.588384+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“自动使用供应商的 API Key 和 Base URL 查询 Token Plan 额度”与韩文“공급자의 API 키와 기본 URL을 자동으로 사용하여 Token Plan 할당량을 조회합니다”在本条目所属 usageScript UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "usageScript",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#usageScript.userId",
+      "key": "usageScript.userId",
+      "status": "可保留",
+      "combined_fingerprint": "d2ce2453e905e4f3e968b3b084b76f509928ce6a3ab2b0748b69ba2e2b8f3f05",
+      "content_fingerprints": {
+        "en": "7967e089a7b94464ee1b0c6d4b8271e99bcf36f9e5481e40a5eec5c5a5108d01",
+        "ja": "83de77df1dd8579e4e9adcdd5e4c319bf13267b25b2f287d3bcecf45aafaa8f7",
+        "ko": "85f6a450a02dcda1f9f83e44cafb9ce7887903acee3a4e8c7a21f860dba76982",
+        "tr": "bb7faf5c4eb7df86891bc6f0e69b8be883874ef12b9f35b391f83de2d2522e53",
+        "zh": "0fe5ee2cee4e9b732d2f5122c2cb0289d351f206e7d35572929a249573f35eb8",
+        "zh-TW": "93578eb643e338a18bae985e10b873713a26e86a325bdac04fda370489b8f13f"
+      },
+      "reviewed_at": "2026-10-28T14:10:09.588384+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“用户 ID”与韩文“사용자 ID”在本条目所属 usageScript UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "usageScript",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#usageScript.userIdPlaceholder",
+      "key": "usageScript.userIdPlaceholder",
+      "status": "可保留",
+      "combined_fingerprint": "064f9f14a2053234489c476226e36871dc05936d792a2dbdc2b17d11b6a88900",
+      "content_fingerprints": {
+        "en": "96b01778acdcda8b6a9f66afa19d41c60a569e8b7a44539f0412e5090321887a",
+        "ja": "36cb35d5ac28edd735f6772e0641c120fb0f908bd1ed437dace9d05ea6ed5a19",
+        "ko": "6eb0163ecdb189e6598b63c4a0df2350f29464e8a9a91beb38b22118d8906867",
+        "tr": "52ad4e40a9855a3ccdd1f19d2bde7ac6e67e3143c72dade67a3f6d4823e957e3",
+        "zh": "05e54c05656fe790d6df2ac9db37099fc3d8fbe0b887cd4bf4d6dd0f75c6b3e3",
+        "zh-TW": "05e54c05656fe790d6df2ac9db37099fc3d8fbe0b887cd4bf4d6dd0f75c6b3e3"
+      },
+      "reviewed_at": "2026-10-28T14:10:09.588384+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“例如：114514”与韩文“예: 114514”在本条目所属 usageScript UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "usageScript",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#usageScript.variablesHint",
+      "key": "usageScript.variablesHint",
+      "status": "可保留",
+      "combined_fingerprint": "2e9fd06548edf679c700a3ca94c4320ea3308369b7a81a535592153b904d9c3f",
+      "content_fingerprints": {
+        "en": "ded40990bf3b96175ffe1cc4debf35066e045469dac87750947131f854e32ebf",
+        "ja": "2a5413c96b52f97c1f5cf50a9fc981678797ba1ee0c0bcb970adcb7b92d18070",
+        "ko": "8ef75c1f9d301756092d43be41a35332d37d4820f1724bbdb9ffbcf9440e289f",
+        "tr": "b5fc2b7f011bbc4b78fe93dc5f3426c4cddefbf952eacfc0e13c78380e91e0ae",
+        "zh": "230a67f55897c4e21ad4d5d646a8e914497a23f6a5c4f03cff40268071cd2e4e",
+        "zh-TW": "5ea82fcdccaf9d38dfade825b7fded1b336fbca70682810e96b8a549cf042a51"
+      },
+      "reviewed_at": "2026-10-28T14:10:09.588384+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“支持变量: {{apiKey}}, {{baseUrl}} | extractor 函数接收 API 响应的 JSON 对象”与韩文“지원 변수: {{apiKey}}, {{baseUrl}} | extractor 함수는 API 응답 JSON 객체를 받습니다”在本条目所属 usageScript UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "usageScript",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#usageScript.volcengineAkSkHint",
+      "key": "usageScript.volcengineAkSkHint",
+      "status": "可保留",
+      "combined_fingerprint": "0ff395716871c8f1ce6fe0580a6edc293b22d3ff8f6fa09dc3866e93fc454eae",
+      "content_fingerprints": {
+        "en": "9e9dc6e8b9982adcd2323effade8e1a38f1fa2eea59894bcb5500bba97e1e346",
+        "ja": "7d403fc43de0d251b8e643fc3b3d91d78260ffe23ee0e6dfe08ef4e765df65c6",
+        "ko": "3fd77cb449a6cecc3250c977d3983c1f2959669b731d5023f825dfd74587e917",
+        "tr": "695e58f0cb219bb1c1cfdfddee919cce044830ea39bb970415f855878e97c73b",
+        "zh": "6bdd9f836125078be1dc5ff075f39e983f49655112cb9e25013f36583aab19f5",
+        "zh-TW": "59a8a168d835186c33b84d2a445f8a75241175f6485bf2dea8861fa65634c594"
+      },
+      "reviewed_at": "2026-10-28T14:10:09.588384+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“火山用量查询需账号级 AccessKey ID / Secret（与推理 API Key 不同）。请在火山引擎控制台右上角账号菜单 →「API访问密钥」中创建。”与韩文“Volcengine 사용 조회에는 계정 수준 AccessKey ID/Secret(추론 API 키와 다름)이 필요합니다. 오른쪽 상단 계정 메뉴 → 'API 액세스 키'를 통해 Volcengine 콘솔에서 생성하세요.”在本条目所属 usageScript UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "usageScript",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#usageScript.volcengineKeyConsoleLink",
+      "key": "usageScript.volcengineKeyConsoleLink",
+      "status": "可保留",
+      "combined_fingerprint": "5926df09bd5861717a490fe52288aa6888a66892d7b261cf4ebade901b4b4772",
+      "content_fingerprints": {
+        "en": "90365a2c3756383492701f7c3d3102e9986bfcb1ecb50f7043c8444781ea5b36",
+        "ja": "8946f2cb02f6f4a2b025a0dc5e1d50a1071ae48a43f3b376ab13901198d1b692",
+        "ko": "5a560a747271554632711f5b22e708c83bfd69580448eb584039a1f299811fa0",
+        "tr": "981ed5f18176a8c41050e657b9c8c2de7de7c4533e7b979af45d2b27fbe42867",
+        "zh": "c0806084068e833e485456fa5b3f11a9a01912be7db3c23b01c76ca851da9e76",
+        "zh-TW": "177427b2c1d30d656e9eb5f0d8ca9651dcd16ff074c230205526b08063f3b67a"
+      },
+      "reviewed_at": "2026-10-28T14:10:09.588384+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“密钥创建地址：”与韩文“다음 위치에서 키를 생성하세요.”在本条目所属 usageScript UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "usageScript",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#usageScript.zhipuTeamConsoleLink",
+      "key": "usageScript.zhipuTeamConsoleLink",
+      "status": "可保留",
+      "combined_fingerprint": "fac191d3711e214e7cff28b4eb93aa5b21fca3281250b7ffaf686c3455cf2ce4",
+      "content_fingerprints": {
+        "en": "ae1c914a8c607c890a4f0aa29b3371e64de20e7da022cb3d68a452b3eb90cec8",
+        "ja": "e97ba7e1c8545a2123b0a708fe0e13eabc9a681465b7c432b97a9e09b6c438bf",
+        "ko": "de2cbcc47c5fd0f0f7c8cfacb48e26839a03aca1641df26179a0a9e77db6f662",
+        "tr": "434da0c00595d820470e83e6096587bfb4d104ecce5cefe0e84a1c2ff6a95405",
+        "zh": "8b93cc22ecb2d64a711b9df5a9a6a57fc91f8ce06cccb2eaea78618c96ae7e1c",
+        "zh-TW": "258bbd6f660945d68df17ce5c93c045a435de58d65818a0d99e927b58007e346"
+      },
+      "reviewed_at": "2026-10-28T14:10:09.588384+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“团队用量页：”与韩文“팀 사용량 페이지:”在本条目所属 usageScript UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "usageScript",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#usageScript.zhipuTeamHint",
+      "key": "usageScript.zhipuTeamHint",
+      "status": "可保留",
+      "combined_fingerprint": "dc6031643b66d0ca30a6dca270b6953bc416353a022c749d416afb622f129a40",
+      "content_fingerprints": {
+        "en": "b8fa64371226d7542dee5fa69ac88deb34389232bcfd00b1bdc717d40e4c6b42",
+        "ja": "231a98fce7112eb0fc8578c3d391687f21671a2b8ec813a1a27f2d23532df1a2",
+        "ko": "0ad8735549216810f12f50d79eb1aec973ce09c2e9d12fec758dcaa58b61debb",
+        "tr": "7355a77b942bb21ca67300dbc6989abc66a88f09064da4474ca808327c5d18e6",
+        "zh": "c55cb0271083d395b19572a6159bb1f7b5c54b2d329353826fd631edd4187e95",
+        "zh-TW": "8e3fd141cd10c7113089f7954109a2c861c38a5c7c3d77c5d736bc9a370fe552"
+      },
+      "reviewed_at": "2026-10-28T14:10:09.588384+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“智谱团队套餐用量查询需团队 API Key（沿用本供应商凭据）+ 组织 ID + 项目 ID（作为请求头 bigmodel-organization / bigmodel-project）。组织与项目 ID 可在团队管理后台用量页的 URL 中找到。”与韩文“Zhipu 팀 요금제의 사용량을 조회하려면 팀 API 키(이 공급자의 자격 증명 사용), 조직 ID 및 프로젝트 ID가 필요합니다. 조직 ID와 프로젝트 ID는 bigmodel-organization / bigmodel-project 요청 헤더로 전송됩니다. 두 ID는 팀 관리 콘솔의 사용량 페이지 URL에서 확인할 수 있습니다.”在本条目所属 usageScript UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "usageScript",
+      "round": 1
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:codexConfig:003",
+  "kind": "translation",
+  "namespace": "codexConfig",
+  "reviewed_at": "2026-10-28T13:40:51.871159+00:00",
+  "review_count": 3,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#codexConfig.upstreamFormatHint",
+      "key": "codexConfig.upstreamFormatHint",
+      "status": "可保留",
+      "combined_fingerprint": "7e665eb59d9e35f6387eeae46eeb4d515090554bb2552d9aa89ff920db9c3f1f",
+      "content_fingerprints": {
+        "en": "9e4882a6046e1dbe77d0c0438e319d4ce1aef2ed9df9aa778f002957284d3b4b",
+        "ja": "c4044ef38305902fe627c6887957d21d56041bc11a6ac9a460fecc9826b92a77",
+        "ko": "194cabc5a35a775eafc2db19b8b03721ef13ffcca43e59dcf1dac00b6a416973",
+        "tr": "94d59f5a79a8dbc114ac9c7f9414111ca19324254f7892cefca94dd700a3b72d",
+        "zh": "d4083853dec8b3d826f8e7c5d74b5072ab263d71f27c53e0b44debf740a4a624",
+        "zh-TW": "68ef177061c26cb32114fd36e234f0ef7b018078c0e83ba00179c8c8d817fd1a"
+      },
+      "reviewed_at": "2026-10-28T13:40:51.871159+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“看供应商原生支持哪种协议：Responses 原样转发、不转换格式；Chat 或 Anthropic 由路由转成 Responses。”与韩文“공급자가 지원하는 API 형식을 선택하세요. Responses는 변환 없이 전달합니다. Chat Completions 또는 Anthropic Messages를 선택하면 요청은 해당 형식으로, 응답은 Responses 형식으로 변환합니다.”在本条目所属 codexConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "codexConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#codexConfig.upstreamFormatLabel",
+      "key": "codexConfig.upstreamFormatLabel",
+      "status": "可保留",
+      "combined_fingerprint": "4032fa2e62ddf60a1e08246bf7afb28cc0e936d5875592d406a7c48cec09620c",
+      "content_fingerprints": {
+        "en": "d4c89ca463a728400505adfdd7d487726f66159429d357b528e3b120481cef79",
+        "ja": "19839a7eaf1b5797accb4ac22d87292685ebe0eb4a2540b22e98e28562b0c67e",
+        "ko": "b03ca0e2cde3652698f58df55ea349c7be9f8a074a4822f32dbe6f6cfbf88751",
+        "tr": "7056d857f30f7e55a7c286494bb3e54ae55401a9b0c04823129625216bf461b0",
+        "zh": "9343c45177fcd9a12b5c4fa139f289a741479b0e59302d97345b427bffa6ed1c",
+        "zh-TW": "9343c45177fcd9a12b5c4fa139f289a741479b0e59302d97345b427bffa6ed1c"
+      },
+      "reviewed_at": "2026-10-28T13:40:51.871159+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“上游格式”与韩文“업스트림 형식”在本条目所属 codexConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "codexConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#codexConfig.upstreamFormatResponses",
+      "key": "codexConfig.upstreamFormatResponses",
+      "status": "可保留",
+      "combined_fingerprint": "ad9885779daec64989424a1b58413618e615904f1d3cf46cd807a11cac0cdb56",
+      "content_fingerprints": {
+        "en": "7d0344b97dba407956feeb26dc787759eab50e52428c0bc801f423f2888357f8",
+        "ja": "8fd991d3968a90e1c2f807a4b4fafe9c780612091b4582e21d9c7f2386f1a0e4",
+        "ko": "fa3a5e86cd468c07c27fd4f050b7b347ca838de03b0380f6ecc244613f6b94fe",
+        "tr": "f8b281c308c606f77f2cecc45c4bbdb8f617cce278475b7057254dae33f354f6",
+        "zh": "79ca0e71a4b7eef873a21564b8e1525a3d3f034d8bf8a740ca24495f6eaf4476",
+        "zh-TW": "79ca0e71a4b7eef873a21564b8e1525a3d3f034d8bf8a740ca24495f6eaf4476"
+      },
+      "reviewed_at": "2026-10-28T13:40:51.871159+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Responses（原生）”与韩文“Responses (네이티브)”在本条目所属 codexConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "codexConfig",
+      "round": 1
+    }
+  ]
+}

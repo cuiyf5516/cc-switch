@@ -1,0 +1,304 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:proxyConfig:001",
+  "kind": "translation",
+  "namespace": "proxyConfig",
+  "reviewed_at": "2026-10-28T14:01:39.943545+00:00",
+  "review_count": 14,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#proxyConfig.appTakeover",
+      "key": "proxyConfig.appTakeover",
+      "status": "可保留",
+      "combined_fingerprint": "109dc2238e416347b4a9a71045b60329563ce1598b6ec071ad0ec8d49649a9f7",
+      "content_fingerprints": {
+        "en": "02325aa07503291ee099a828212030ed5a1eef8b2dde9d3f63daf4cd828c57f0",
+        "ja": "0b97337dc95dc3f0358565c903731b38a7e27506ea40902a773e73de0d339066",
+        "ko": "01f38f304fdab265d7fbcbf2ec271f14e9454578b94425c88e28bdd47a90353d",
+        "tr": "e4ac1316a8f74d0addaa21df2ff8c119ca7bf77472234b127ed962db93a69a9a",
+        "zh": "01c053a2a549babea3c480dab29b8d808584710cf1eb2e929ecb0f961d55cba1",
+        "zh-TW": "52b32e834e18071f4f01d3a569fa35e95d876e67d2ddd31f4a56a6c9ef4c15dc"
+      },
+      "reviewed_at": "2026-10-28T14:01:39.943545+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“路由启用”与韩文“라우팅 활성화됨”在本条目所属 proxyConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "proxyConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#proxyConfig.circuitBreaker",
+      "key": "proxyConfig.circuitBreaker",
+      "status": "建议改",
+      "combined_fingerprint": "f0906ed4f9335d3e5ff5036b298c0ed7cf82a6c2d1adf4f7ee5da229a4089d6c",
+      "content_fingerprints": {
+        "en": "a316128169a55f5b8afb8e25bf1fc1f3046a3034e1f14aeac703c77bc6643a8c",
+        "ja": "aea7320c35f47e1419ab7f80473faf274cdf0a95a0e0ce5a0cbdcb766a85973e",
+        "ko": "202d8e4cf829b39b1f55e7cdc9e6685aeb1ad38532cbabb6b3d1efe694fb31bd",
+        "tr": "acde271906ecbd9cceab26da4629d7dfdd188797d612644b7e9819da5753c71b",
+        "zh": "a9f2fb44e6bac745f3e30d724cbe4fd73fba973b032f79b3f86725fd2b882c66",
+        "zh-TW": "8d987812c2f729d91985c523b2f414c3a1e7378b4541233423d7e42fb901072a"
+      },
+      "reviewed_at": "2026-10-28T14:01:39.943545+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“熔断器配置”与韩文“서킷 브레이커”在本条目所属 proxyConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": "原文为“熔断器配置”，韩文遗漏「설정」，且与相邻键「서킷 브레이커 설정」不一致。",
+      "suggestion": "서킷 브레이커 설정",
+      "ui_context": "路由熔断器配置标题",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#proxyConfig.circuitBreakerSettings",
+      "key": "proxyConfig.circuitBreakerSettings",
+      "status": "可保留",
+      "combined_fingerprint": "a70d3b1c365007df981def2d0fc337225b5fd014bdf4aaeb6e12e3271d28b3b3",
+      "content_fingerprints": {
+        "en": "a32722d107064b2a3529315981561b6c4582e06edd75621557495e83de43635f",
+        "ja": "39fa0a970cfcbab196611f7c08dedb92c7ae19ac51e05a8318e1f728a2bcbf84",
+        "ko": "5e2185e01036c1776fd0ec84040935551acc6e5e2c1e3e18170c976e9f031f75",
+        "tr": "d03b16b2f3c3fefc532ba1873a9ec475afc27724e3c73677f6fc0f2fd5c3ab8b",
+        "zh": "b56afea173b8c9e6252dc8213b2699a2f53e5f47f3a5d6eee25824dc202a1b95",
+        "zh-TW": "8d987812c2f729d91985c523b2f414c3a1e7378b4541233423d7e42fb901072a"
+      },
+      "reviewed_at": "2026-10-28T14:01:39.943545+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“熔断器设置”与韩文“서킷 브레이커 설정”在本条目所属 proxyConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "proxyConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#proxyConfig.errorRateThreshold",
+      "key": "proxyConfig.errorRateThreshold",
+      "status": "可保留",
+      "combined_fingerprint": "7b9f9e47f67b8459413c0ab5fe68b1a66c9d24822066c5fc7c5564bde23b1911",
+      "content_fingerprints": {
+        "en": "6b50eaf931546499a9023863eb36e823e228c369acfe6e5b97fa355ae162c428",
+        "ja": "09aed049a0eaaac6140527207b8a6d33cb0b1d68cbe8590f22a4c68df5ac28b3",
+        "ko": "82ec362f34d500be79581b6fab853b4768bc84835290b3548cbbb36742ca4142",
+        "tr": "258e5f26afa8d95804dc5d5bff7d334436d167e5d5f370ec0bba8225eb873344",
+        "zh": "f21cd23d8a39e11f9d058609ac1a2df6995c55fade725ebf73d3fbe6220f3189",
+        "zh-TW": "50ed3d986fa627adc79364ea148e7e8b90c12a38a677a21aee0664942a5c3044"
+      },
+      "reviewed_at": "2026-10-28T14:01:39.943545+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“错误率阈值”与韩文“오류율 임계값”在本条目所属 proxyConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "proxyConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#proxyConfig.failureThreshold",
+      "key": "proxyConfig.failureThreshold",
+      "status": "可保留",
+      "combined_fingerprint": "dc4946d991b5a75e4f0e5e7792fac97ded836900aa3aa33b8758363eda1e06fb",
+      "content_fingerprints": {
+        "en": "254b01cad3b7a5e87b5d999bc6e1f1d34948fa9221dcb1ab7ce0d1962b5dfa26",
+        "ja": "d2ebf7ef72ceaa289dd499ee3f713e7314b9e00b090ccd5bac6b1eb954e8ce1a",
+        "ko": "d8184f9a95c9a9f836cadf2cdd95adaddc714880c6746f5873f2f6ad857be2fe",
+        "tr": "9f88f22536f8b716c85596fce5af7ff33bfec4b8209df24aa15ae874ed72b684",
+        "zh": "74106a5df0467c4fb7fb7d2d0e67f6891535a9dbd3034a6fbd724b566e3b6026",
+        "zh-TW": "8294a7975f1c3cab5b8cdd50ed2f750fb0ca3ecc52973c9560ddf1e0792b4174"
+      },
+      "reviewed_at": "2026-10-28T14:01:39.943545+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“失败阈值”与韩文“실패 임계값”在本条目所属 proxyConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "proxyConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#proxyConfig.minRequests",
+      "key": "proxyConfig.minRequests",
+      "status": "建议改",
+      "combined_fingerprint": "7bac87e9e380db81b1b15a1cc585dd3622e003f0d9a2993cc3df1468ab5383b7",
+      "content_fingerprints": {
+        "en": "6e816f98f340b7479ce12ea4b228b373346fa79a75d2d796cac41faaf6c61652",
+        "ja": "9c8b3ed0121f5a4de0b4eb6a47ad98e19222c8b394470f02d01afcae98020597",
+        "ko": "2d5c0e19a76f2a5c59b0c3acc267878488ac4333f6c3f3693650e15701dcf07d",
+        "tr": "4e9ba8bb52909dcb04257e920dc5d9f5f13027e2c4b1a5be70f2c8abcb87a38c",
+        "zh": "627e68c11acc548ff4ab2696511e634b9fb87fec5d64ae785f09f01cf6284a6e",
+        "zh-TW": "d25dff3b0c7ee8fa3bcbd62516f41b48b0cd7be52153765e66ef631383a6650d"
+      },
+      "reviewed_at": "2026-10-28T14:01:39.943545+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“最小请求数”与韩文“최소 요청”在本条目所属 proxyConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": "原文是“最小请求数”，韩文「최소 요청」遗漏数量含义。",
+      "suggestion": "최소 요청 수",
+      "ui_context": "路由熔断器字段",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#proxyConfig.nonStreaming",
+      "key": "proxyConfig.nonStreaming",
+      "status": "可保留",
+      "combined_fingerprint": "bb2d506422799c6b68c45876c086efe0e8e8d18dacf7a795173296ef4349d9e0",
+      "content_fingerprints": {
+        "en": "d7c25e0297e7e7bdec39a11726ad172872fc33cda351597398d4d621f16e24f8",
+        "ja": "c76e3c09a30343fa3d5ec51baebd76f5247a270c7cdf5db29d00100b2516b521",
+        "ko": "65e1921b2bcf5bde09e78e04568fc5202c3862591d1a606c371e66ceac2ebd10",
+        "tr": "07b7a11f74c205ab09067e2c1b04b89b0e1ead1487e2a4b1defea5373e036032",
+        "zh": "43c62553e1a7225f6e92b1a63228a0262872f1a4ec91e1f8a5fdcd7d6fe80620",
+        "zh-TW": "a7b748ad17b67ce14527a1a31ec032b5d5632edfda953a8583026747ad90ba55"
+      },
+      "reviewed_at": "2026-10-28T14:01:39.943545+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“非流式超时”与韩文“비스트리밍 시간 초과”在本条目所属 proxyConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "proxyConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#proxyConfig.perAppConfig",
+      "key": "proxyConfig.perAppConfig",
+      "status": "可保留",
+      "combined_fingerprint": "914c3321e5b72b3e7d7ab4242005edccd3f9742425acf3330efa6aafd3ad861c",
+      "content_fingerprints": {
+        "en": "d4ea01e65b8992dc3000336490bad937825b258e651e8fe92f26c65280804210",
+        "ja": "83c538c9d91400ab808716aa68a8ba3911608345c1ce93c51c9b15b6248b08ad",
+        "ko": "07a4191af759c6134f1c4e2287c84e2c2736cd46cd5ca596b95e0ef8fa1108e5",
+        "tr": "9c840809806eed9e92c512f3beeaea0ec86ee9f1a7198e10f635c55fc83b6afa",
+        "zh": "670f0a1d31c0e2a5d4b1ac05fc47866d5809569b5265b9fff18291c790a1449c",
+        "zh-TW": "4214c57d323a3ba71362e3c888e39f10e4cf587d1b743dcc8b1b1f59dc920d6d"
+      },
+      "reviewed_at": "2026-10-28T14:01:39.943545+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“应用配置”与韩文“앱별 설정”在本条目所属 proxyConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "proxyConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#proxyConfig.proxyEnabled",
+      "key": "proxyConfig.proxyEnabled",
+      "status": "可保留",
+      "combined_fingerprint": "e4778ca818dcdacfa067e56db58552fd4e9d8c4d0fe42fd2a54ecff6d8d1f3f6",
+      "content_fingerprints": {
+        "en": "9c798dd34ec4737b13e0f7a41d860b080e5d980ebd92be632d782a52907fef36",
+        "ja": "59e344eeb7c1d671abd739d9577fe66d7403cdf0c1093dc2aea46d547b3bb0b1",
+        "ko": "ace6014837be1528f65d77b1fee745dadca5dcf5b5e031e7c86abe1ae7239d54",
+        "tr": "71af3556ac80ff41ba1b2593819252fa8f1c5b82cb48daa2a6786c3dd9d238ce",
+        "zh": "b29e986b672253c2dd61db52abc9fa7b122e9248bba30ef9f524cdf2c9eb4874",
+        "zh-TW": "05f92260200b4f24f2c64dc03592aa3e9dfa40d6b574fe8eb2e89359d4f78798"
+      },
+      "reviewed_at": "2026-10-28T14:01:39.943545+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“路由总开关”与韩文“라우팅 마스터 스위치”在本条目所属 proxyConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "proxyConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#proxyConfig.recoveryTimeout",
+      "key": "proxyConfig.recoveryTimeout",
+      "status": "可保留",
+      "combined_fingerprint": "a969e1ba87cbc894dfd63e2368e996f409e45a748e93de54d28e175d46ab868a",
+      "content_fingerprints": {
+        "en": "4bf0e4de5b6c91a360fd1c86d7deb62e152feea3a62b700e66a2ecbebb708fd6",
+        "ja": "e2f7e8df50e92e9ffcf1bd4bf4f1c7e52a0ef28718e7de96260b9b588690ca90",
+        "ko": "55e162b2e8acb750eda52b13e2d2ca4a97d18c38b8441a3f776307e613f33211",
+        "tr": "f82638acfb9bae2480e8d9bb33fac0c7bfb64ace556595c6a9b45ad800f860f1",
+        "zh": "b9d408b92027b8174a82b289b786f1ac2f7d1e3de17e426145ebbba3d2a29496",
+        "zh-TW": "49af8bc61ee8ad1333fb31e7a570c97852b90ce146aa6d21d265c8ba117e73e4"
+      },
+      "reviewed_at": "2026-10-28T14:01:39.943545+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“恢复等待时间”与韩文“복구 대기 시간”在本条目所属 proxyConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "proxyConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#proxyConfig.streamingFirstByte",
+      "key": "proxyConfig.streamingFirstByte",
+      "status": "可保留",
+      "combined_fingerprint": "03d7f0306e6ab1703254fa734f8c1f529ce5f38a9164d5097d1733564d11e9db",
+      "content_fingerprints": {
+        "en": "353255fa2cc136396008c65d5181292b2a1bc9895aebed63c9bdd67fafdb64d1",
+        "ja": "0b0c8e56fde421a3999415f41464362c7344c7721e791f026566ca13a485591e",
+        "ko": "7f87dc09c1cbf547f5cc83abf760cff01313a361d8b6b2240c2abf28747c8a3a",
+        "tr": "c7998fd4527aa12042d9bb381738dca27c2853979f53f8ddedc3a65d436f8dbd",
+        "zh": "a94bd472ecc8029ea0287da41b507c5fc0920aade0530ce9f6461da81399c7cf",
+        "zh-TW": "ea8af46212de1aaff2d048bbf8905122056cac18e4e13709b8fef7f5ddbe8b75"
+      },
+      "reviewed_at": "2026-10-28T14:01:39.943545+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“流式首字节超时”与韩文“스트리밍 첫 번째 바이트 시간 초과”在本条目所属 proxyConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "proxyConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#proxyConfig.streamingIdle",
+      "key": "proxyConfig.streamingIdle",
+      "status": "可保留",
+      "combined_fingerprint": "503ab66dc8035e44a9c4b2869ee2969b8d16c4a9e3088922958248dc9157947c",
+      "content_fingerprints": {
+        "en": "99c7a48b510dfb1e2920d0c0bb302c738775210b5f59962fc7142474836b0e3d",
+        "ja": "2b498293abe48b8147f1da5740d1dda156cb7d0190dafe11f3da45284d80bbe8",
+        "ko": "7067d079263a86dace4506709f3fa677e8f2fbbf51ca156b0a8537e8b97c7688",
+        "tr": "2e440e8ca9761c4dc99aebc8676977b34a8b71c9da8ee795c9e5644d752396e0",
+        "zh": "871b901a968b93c3d26bd6a7c1f36c8fe0734dc659e0e15a790826c39d75dc3d",
+        "zh-TW": "8defd1866cc568a60308a6e8c67b40b7f4861066707e1d4b829f344fb454fa21"
+      },
+      "reviewed_at": "2026-10-28T14:01:39.943545+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“流式静默超时”与韩文“스트리밍 유휴 시간 초과”在本条目所属 proxyConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "proxyConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#proxyConfig.successThreshold",
+      "key": "proxyConfig.successThreshold",
+      "status": "可保留",
+      "combined_fingerprint": "73e5ebf6befcf0e17a2566246db0d7e595f00c07c893cd73a4bb8f0ab8a0d6f3",
+      "content_fingerprints": {
+        "en": "c0af4bd01b912c250b9eefe2ceffa39d72235a45147adccd86d5cf90fa6b816c",
+        "ja": "e853c4228608eeb254abda1fc302bfbf2fdd2dfe7de8a29944251c15a87c7afe",
+        "ko": "e6ea6790fb073efebc313c2bc653058fc8310b3aabe115abdceb720ded4e59bf",
+        "tr": "f0b36335232fa858dbd5be4a6a908923e853c0d042ca4ca84b5115c9defeb9b9",
+        "zh": "20e7768e148dfbee9c82257d0b704acb10be3e4a657ae442d26564debebd5d91",
+        "zh-TW": "faa38c1172b421464d6581033e0b4eb53d8b7976038330da37c54bac44f3e2ac"
+      },
+      "reviewed_at": "2026-10-28T14:01:39.943545+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“恢复阈值”与韩文“복구 성공 임계값”在本条目所属 proxyConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "proxyConfig",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#proxyConfig.timeoutConfig",
+      "key": "proxyConfig.timeoutConfig",
+      "status": "可保留",
+      "combined_fingerprint": "4ac8083e3a3ffc5b70669c0dbbd93d82bf2367bd8aec83bb946be402860a5725",
+      "content_fingerprints": {
+        "en": "a30d22ac8d7224ad72776f1422db69603ff00dafaaace269effd4029d84eed14",
+        "ja": "8bdef4dff0c935e647a8313e5353bc63d46e069642c95a60ed028bea60613046",
+        "ko": "c485a5a6b8c49dcfa8addcdaa04a82896173ab398b6c24d6443bf7fab78c1f7d",
+        "tr": "eafe59b8682e45033d380dc7d26ad6418d0d9f6a5e2b541b663c0ee0bfebbf33",
+        "zh": "b83a819ef05e897ffa4f32dd3752dc9bca2f7c5ea95ea86ecbf4c7a6f1426b09",
+        "zh-TW": "83d194df70f222e2b2265aade23aa80b497b059d140db5660f3cf3f6126c10e3"
+      },
+      "reviewed_at": "2026-10-28T14:01:39.943545+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“超时配置”与韩文“시간 초과 설정”在本条目所属 proxyConfig UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "proxyConfig",
+      "round": 1
+    }
+  ]
+}

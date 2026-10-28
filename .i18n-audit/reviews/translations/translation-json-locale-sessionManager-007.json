@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:sessionManager:007",
+  "kind": "translation",
+  "namespace": "sessionManager",
+  "reviewed_at": "2026-10-28T14:02:32.129368+00:00",
+  "review_count": 13,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#sessionManager.showAll",
+      "key": "sessionManager.showAll",
+      "status": "可保留",
+      "combined_fingerprint": "35b25ef8cd98da0954e3b4feb284bfed0e8b1f0fd1ccb5dabea67c717b7fc6f3",
+      "content_fingerprints": {
+        "en": "2150d8df37e489573fb8f0f19ef89d2eda2ba4b49b3beb36333e5096a99a6dc0",
+        "ja": "c600793bec9baab63226ea6c0ca1a7277a3f84f0fe2d93e6cab182c9adf80245",
+        "ko": "0cf412ff85526976c03dd15690e901d4f0c1e30d1822cc2204ed9ab95399a186",
+        "tr": "3f2d68ebbb4ed71436e4b9ccc7006b9c1381ed3061cf88fa5da4ed626329bfb0",
+        "zh": "84941ac6e844e7afe087dd3c674195f60b757c2dc107092271d1dbd86fa4f533",
+        "zh-TW": "b3c5d7de47cbad7be166328ded30191424779a80ed0f223aec0a529831530878"
+      },
+      "reviewed_at": "2026-10-28T14:02:32.129368+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“显示全部”与韩文“모두 표시”在本条目所属 sessionManager UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "sessionManager",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#sessionManager.sourcePathCopied",
+      "key": "sessionManager.sourcePathCopied",
+      "status": "可保留",
+      "combined_fingerprint": "f241cfae1386d80048d8b1960d686440f3ecb1d1dca8567b2bf470c19bfcea38",
+      "content_fingerprints": {
+        "en": "85547860a450de98ddb732261812b5086f20416a39c62006b25dd36eb4c064d4",
+        "ja": "60bfab20fc6fa6f6e40b3ebc6b1f6f6c54eef7b57270d3fd7210dfe940b60454",
+        "ko": "d6b4ec9546f3f416ab591e80ea9ed0b951b740e259fadb099db0cc09a73a0b24",
+        "tr": "3f2d536024a6a92043c4126b34d78b3341d1ffb30643c7d29ac4d1cc3cb4ba5d",
+        "zh": "efd241e710ea9de8c2d33d76f3e2f17812220e1ddb29d4bc912d29048f1b5f47",
+        "zh-TW": "e7d2294446ed259231c0cfb15e48b9dbc1788cd682b002d7f3dde00c4e12590b"
+      },
+      "reviewed_at": "2026-10-28T14:02:32.129368+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已复制源文件路径”与韩文“소스 파일 경로가 복사되었습니다.”在本条目所属 sessionManager UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "sessionManager",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#sessionManager.toolCalls",
+      "key": "sessionManager.toolCalls",
+      "status": "可保留",
+      "combined_fingerprint": "ccc7308fef02d64e24e3fa2b085b0ba4cd09368a9f5aaf59c34de632d7e74bc7",
+      "content_fingerprints": {
+        "en": "833d7c411630cda223a3cce130d61669d759e3187b01e7cedaa97bc7028bbbee",
+        "ja": "e01e7de7040443b382c37be176a6aca84f3e3638822ae78a7f40882806735bfc",
+        "ko": "32c3a34bf936d2aa02316a45e5b9aec8f0afa7308af0b6d7e2ea0ef955103818",
+        "tr": "dcf4743a31c333ce425fb61a29ad964023dc145371790ebc001864a0ac565fec",
+        "zh": "5af2d8df5c44ac543d9ec89512f4ec865463ab1744edd09445268c010852e753",
+        "zh-TW": "103c75a8dee96f5d590a8962ae1b1eaf34d26829931c30d417df1999de1189ec"
+      },
+      "reviewed_at": "2026-10-28T14:02:32.129368+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“工具调用：”与韩文“도구 호출:”在本条目所属 sessionManager UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "sessionManager",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#sessionManager.toolOutput",
+      "key": "sessionManager.toolOutput",
+      "status": "可保留",
+      "combined_fingerprint": "4710d18dcfb8dac39128ced0e0e5e5279a03b05c74734d0fef43043d8ea32f60",
+      "content_fingerprints": {
+        "en": "ee37eb06a8d9be33c09c9a2ccae2f949c7e37cda6902659d907788d0b8f0b8a6",
+        "ja": "a147bcedc0d3d78eee5c7872643f1f6f4c1a1ef81369abfa29c0d9c1c73ffba0",
+        "ko": "2c6c985b492bfb3adb3d0a92e545755d3b43c23a259ae7fabba69c2236306e52",
+        "tr": "1c4462b15f180015997f5f691b3769d35bc3c2ae1aae5346881acdcfc01db418",
+        "zh": "df8261a9dfae8761d1ec61531b7dd54817f9148694fd28f69b9e641c1a07834c",
+        "zh-TW": "db61ebbe440fbbff4bcd8f16717c07d88948d278a98b3e8782a7eeee340064c9"
+      },
+      "reviewed_at": "2026-10-28T14:02:32.129368+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“工具输出 · {{size}} 字”与韩文“도구 출력 · {{size}}자”在本条目所属 sessionManager UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "sessionManager",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#sessionManager.toolOutputMore",
+      "key": "sessionManager.toolOutputMore",
+      "status": "可保留",
+      "combined_fingerprint": "0af3b7111888b9e8e28ab180b4210b7a11e07d41f13f2639081c82e96e7fa7bc",
+      "content_fingerprints": {
+        "en": "6f17297f8b784d7657d21fb49f269a6454340e24943e6f5ab71dab908fa19924",
+        "ja": "eecc3936e686749b67063003106bfd4d23bf980a7503ed288e9dbaaba9a98bd8",
+        "ko": "ec10598ff889ffea831c04b22572f2baaf4934948c3cedf105c1162e562e04a4",
+        "tr": "5a34fe533cc2d46bd140d9c109c267b7e9fe18d26fa2c3168a61f185b7ed84d6",
+        "zh": "0694b5cf7dbbb349931a45775ad2b062cdc81be3cc70de8ab0cb946b65c7ffc4",
+        "zh-TW": "b3e646556c55c06702d10ce749ad537aa74371d82ebaab96768ae8429a90bd36"
+      },
+      "reviewed_at": "2026-10-28T14:02:32.129368+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“还有 {{count}} 行”与韩文“{{count}}줄 더 있음”在本条目所属 sessionManager UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "sessionManager",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#sessionManager.toolOutputRegion",
+      "key": "sessionManager.toolOutputRegion",
+      "status": "可保留",
+      "combined_fingerprint": "0fa72a304ae21ddbed1fea6c5cc6fbfd9b55fd95055bbc155d4f4d082d195c1f",
+      "content_fingerprints": {
+        "en": "c44d6ed5f6ffe345bf6065abfee652354524d79146a1e0271a60389c37b2a81c",
+        "ja": "a0c9563d0e02408d6034e029dac15cc7b9a1a392ff5e5bbdb3d5f1e72b9b924a",
+        "ko": "b77ac03dfa48b2e0c2b63f698cbdde776c3ee354c139f47e758c251ff3d5d1cd",
+        "tr": "b8952d099358c851489f14c6bc7845c6bfd84b9616bfffccb8676e7f07dbeb93",
+        "zh": "d15e8edc823e30055b6f6b9325d8e8526d5ee39d24f97eeab6010f1ec74982b3",
+        "zh-TW": "f5a366ed4fa407b77fd4e0bb2cc015b0c37945fec5b237faf3c5d258977eda77"
+      },
+      "reviewed_at": "2026-10-28T14:02:32.129368+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“工具输出”与韩文“도구 출력”在本条目所属 sessionManager UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "sessionManager",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#sessionManager.totalCount",
+      "key": "sessionManager.totalCount",
+      "status": "可保留",
+      "combined_fingerprint": "e1235ef603d724a9705f942958781e3c87ce04f45f840da82876438803a908a3",
+      "content_fingerprints": {
+        "en": "3268b0fe8c5b9d4925beb34995f430ad909524fdcd3e85359682f97844ec7c18",
+        "ja": "0e801512858440bf46260b3333e1096958da472bdc2e85f81ace7ec882feb2ec",
+        "ko": "4482f5477a357a5897dcb2cb4636e6100bda6edafbd7a1fa46e9b8bd9f83cfde",
+        "tr": "962dbfdfefa914fbb47f1fd6a3b288fa34d023a70f7b83d3c12ce4e23efb4a00",
+        "zh": "79332a5841d225d7551fb9ba56dd5738ece1829d523656f5d93f2d3fe58cb36a",
+        "zh-TW": "1664ca5f41906e1dbef387ff29c2bc21df01982de68324b720729515eb883da9"
+      },
+      "reviewed_at": "2026-10-28T14:02:32.129368+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“共 {{count}} 个会话”与韩文“세션 {{count}}개”在本条目所属 sessionManager UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "sessionManager",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#sessionManager.unknownDirectory",
+      "key": "sessionManager.unknownDirectory",
+      "status": "可保留",
+      "combined_fingerprint": "3fe890e00d46ac42442a106f0e4a2f8e014226e51cd040852bded202576dcc9d",
+      "content_fingerprints": {
+        "en": "3365ab5c9beee6a7451cfa3d23217924dcd0b0b4006d15fdb8a5180c69ddede3",
+        "ja": "bbb0968720db7dc4bbe564560b25af0b77863b0ba0230446ef7dd3dd04d4220d",
+        "ko": "12963541a2f016456fa84398ab7cf6245a23b872ad0bb7bb835d2c187786e15f",
+        "tr": "7a6bfe3877d2185c6275f33199c71eec082458121e4f5650c76e04f97e7307d7",
+        "zh": "e89982ec332f8608f855231a3cd833b78e841c5c998bbc619d528ad5d95654db",
+        "zh-TW": "308aa6631d6c07e173c4611bf5037fdb1aea177111c66d34c6ecf4448314b2c8"
+      },
+      "reviewed_at": "2026-10-28T14:02:32.129368+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“未知目录”与韩文“알 수 없는 디렉터리”在本条目所属 sessionManager UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "sessionManager",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#sessionManager.whereLead",
+      "key": "sessionManager.whereLead",
+      "status": "可保留",
+      "combined_fingerprint": "66aa5d2a77f667275a777ea250b0bd588ad924fe50305d4479d403b49a3aedbd",
+      "content_fingerprints": {
+        "en": "54653abefe7fba816ebd25004a91edc2fb17b53da65cccf46e9baa45a626c892",
+        "ja": "a0da914674afe79b928123b613e8ffa3cda5f2e4f8d9ce2cd11d4f258ce972a9",
+        "ko": "80cb6fe1cb138190020a4975dc50c9a37f022dcac9c7b651e36550456a19f6e9",
+        "tr": "d06785070f54c5000dce9c3e8fbdc856bc3bc6de0de3808968bbff77adf47c6d",
+        "zh": "f334e2d424c486da3495806daf2087220ec48282894e0c0441e12bdd673cf007",
+        "zh-TW": "93cb73d021d04755bdaa58a4b46d71a15027f4eb2204e59b82edbb6a2d56c076"
+      },
+      "reviewed_at": "2026-10-28T14:02:32.129368+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“CC Switch 从这些位置读取会话。Claude Desktop 没有单独的会话记录。”与韩文“CC Switch는 이러한 위치에서 세션을 읽습니다. Claude Desktop에는 자체 세션 기록이 없습니다.”在本条目所属 sessionManager UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "sessionManager",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#sessionManager.whereMenu",
+      "key": "sessionManager.whereMenu",
+      "status": "可保留",
+      "combined_fingerprint": "f2e7ecb518dc7df985180546b14da75427b5456330ddbc044243fe071ccd5b86",
+      "content_fingerprints": {
+        "en": "bf822e1fff34597689afd4d3c0febd8700b1836f681019d472aed31b6e939392",
+        "ja": "d041b6ccd719c5992da1c45f666471d3bb977873f61724671ef600ea888efdf2",
+        "ko": "3590f27dee13d5a903b98cdb85f84c609c146f80b197c44ac9b9b580c32fb443",
+        "tr": "5c3da76e65080b44cd702617af1c23adbc6208d205dcd6bfbdcce46e55308e64",
+        "zh": "0d039d90f9f43eba7e39175e89db95ea5e0aaee0ec26c0060579b35eeeee5f52",
+        "zh-TW": "8f370ac7c2e35cafc58b294287918a61215140b948e9097fd7172d1c3c4048bb"
+      },
+      "reviewed_at": "2026-10-28T14:02:32.129368+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“会话记录在哪里”与韩文“세션이 저장되는 위치”在本条目所属 sessionManager UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "sessionManager",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#sessionManager.whereNote",
+      "key": "sessionManager.whereNote",
+      "status": "可保留",
+      "combined_fingerprint": "5133e16450f3dc49af0cb2d011f4c955b07b45bf6306ba0af99819f9a294744d",
+      "content_fingerprints": {
+        "en": "2bc1579ae82d43017514251c650e4751b7428b01b10f35ca6331cbc6e0022d49",
+        "ja": "47c6aa049e89e6efa9060eaa4ec3014042ecfd62169845fed896ad6e3f3a5370",
+        "ko": "86bbba505a228fd845c68e2737cb3b92f683a2b2ebcba820d8bf60ee6adae623",
+        "tr": "a57a126bec538f6de875bf789fc77c42fd0889b241f0a9dc05dfcf07ea9f7d56",
+        "zh": "788d3b417768d391b2df3ce77ddb9b85fa7e1ed15fdca20562e73bd7680864a2",
+        "zh-TW": "62a4ad539f3815435e436f87dc54e421cffdd840f249ffa82b6a28581b4e73ed"
+      },
+      "reviewed_at": "2026-10-28T14:02:32.129368+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“在设置里改过配置目录的应用，按改过的目录读取。”与韩文“설정에서 앱의 설정 디렉터리를 변경한 경우 변경된 디렉터리에서 세션을 읽습니다.”在本条目所属 sessionManager UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "sessionManager",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#sessionManager.whereTitle",
+      "key": "sessionManager.whereTitle",
+      "status": "可保留",
+      "combined_fingerprint": "f2e7ecb518dc7df985180546b14da75427b5456330ddbc044243fe071ccd5b86",
+      "content_fingerprints": {
+        "en": "bf822e1fff34597689afd4d3c0febd8700b1836f681019d472aed31b6e939392",
+        "ja": "d041b6ccd719c5992da1c45f666471d3bb977873f61724671ef600ea888efdf2",
+        "ko": "3590f27dee13d5a903b98cdb85f84c609c146f80b197c44ac9b9b580c32fb443",
+        "tr": "5c3da76e65080b44cd702617af1c23adbc6208d205dcd6bfbdcce46e55308e64",
+        "zh": "0d039d90f9f43eba7e39175e89db95ea5e0aaee0ec26c0060579b35eeeee5f52",
+        "zh-TW": "8f370ac7c2e35cafc58b294287918a61215140b948e9097fd7172d1c3c4048bb"
+      },
+      "reviewed_at": "2026-10-28T14:02:32.129368+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“会话记录在哪里”与韩文“세션이 저장되는 위치”在本条目所属 sessionManager UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "sessionManager",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#sessionManager.you",
+      "key": "sessionManager.you",
+      "status": "可保留",
+      "combined_fingerprint": "cadf64de875ab7dbe3cd29810f932462affd61cd59b3158343abb5fea3bd83ca",
+      "content_fingerprints": {
+        "en": "08b041935798fbf6fd6ff51099ffedb140a475889986d14f5559ff8e7fc571dd",
+        "ja": "e640f55e0224b22ed2d20a143007da7048aa09437cd832314423803783549180",
+        "ko": "1ac6e422b7dc00bbcdc352a09ec908cb8f56264824fe6c9ce03c6a574ee02890",
+        "tr": "64fd299554bf714b4bddcc35e7e2827625d540bca8eec82dcd7202436d3c3c5d",
+        "zh": "a0c7716669b5ded0d8051abfc232b828d489f7d889b2928eefcf43f0b8f495d6",
+        "zh-TW": "a0c7716669b5ded0d8051abfc232b828d489f7d889b2928eefcf43f0b8f495d6"
+      },
+      "reviewed_at": "2026-10-28T14:02:32.129368+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“你”与韩文“사용자”在本条目所属 sessionManager UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "sessionManager",
+      "round": 1
+    }
+  ]
+}

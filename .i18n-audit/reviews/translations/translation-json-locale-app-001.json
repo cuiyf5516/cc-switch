@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:app:001",
+  "kind": "translation",
+  "namespace": "app",
+  "reviewed_at": "2026-10-28T13:39:08.428095+00:00",
+  "review_count": 2,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#app.description",
+      "key": "app.description",
+      "status": "可保留",
+      "combined_fingerprint": "9d37762c711eeff4cf33dce69a8b60501c4903d0f28e194b2521a6817f2a6cc1",
+      "content_fingerprints": {
+        "en": "8593125c7766bad56efb68c2c782fb622abe201d9e38b911c30822d9ab818a35",
+        "ja": "ff4369ab0adc48c4f7f93ce4ed83a675407dc8b14e8b4f622a3ca84b85bf9af1",
+        "ko": "075ec547a876b3044734cbca714dc10f9afd06b3227fc9911d8bc8c6945da52a",
+        "tr": "edd95422adb5496ecaa652da51e2e65563206eafcb3f0c67abb299f0d9ab386b",
+        "zh": "7939dd2e399799dc18d82b38fc248026a478e03a97adea0dc2b40e21b92348ae",
+        "zh-TW": "042d917dd4b77c362d0ac1e32ec309c5d3faf3925949c1390ae57f0e0175232c"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.428095+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“Claude Code / Codex / Gemini CLI 全方位辅助工具”与韩文“Claude Code / Codex / Gemini CLI용 종합 지원 도구”在本条目所属 app UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "app",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#app.title",
+      "key": "app.title",
+      "status": "可保留",
+      "combined_fingerprint": "c958ca975033c3c12f91ac08b0f14b701fe906930d529255f52cdee869c5648e",
+      "content_fingerprints": {
+        "en": "8ed2ae598541c9ba886e247d917a0946ab84b2da9c729de1ca6e4b99f6bc4e76",
+        "ja": "8ed2ae598541c9ba886e247d917a0946ab84b2da9c729de1ca6e4b99f6bc4e76",
+        "ko": "8ed2ae598541c9ba886e247d917a0946ab84b2da9c729de1ca6e4b99f6bc4e76",
+        "tr": "8ed2ae598541c9ba886e247d917a0946ab84b2da9c729de1ca6e4b99f6bc4e76",
+        "zh": "8ed2ae598541c9ba886e247d917a0946ab84b2da9c729de1ca6e4b99f6bc4e76",
+        "zh-TW": "8ed2ae598541c9ba886e247d917a0946ab84b2da9c729de1ca6e4b99f6bc4e76"
+      },
+      "reviewed_at": "2026-10-28T13:39:08.428095+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“CC Switch”与韩文“CC Switch”在本条目所属 app UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "app",
+      "round": 1
+    }
+  ]
+}

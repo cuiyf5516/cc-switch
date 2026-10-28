@@ -1,0 +1,11 @@
+{
+  "batch_id": "hardcoded:0189:src-hooks-useUsageAutoRefresh.ts",
+  "kind": "hardcoded",
+  "group": "src/hooks/useUsageAutoRefresh.ts",
+  "ordinal": 1,
+  "record_count": 2,
+  "record_ids": [
+    "hardcoded:src/hooks/useUsageAutoRefresh.ts:scan:4b846084ab2eb6b1:001",
+    "hardcoded:src/hooks/useUsageAutoRefresh.ts:scan:402775b805d7ab9d:001"
+  ]
+}

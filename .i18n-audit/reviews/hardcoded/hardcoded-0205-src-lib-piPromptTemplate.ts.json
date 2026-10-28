@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0205:src-lib-piPromptTemplate.ts",
+  "kind": "hardcoded",
+  "group": "src/lib/piPromptTemplate.ts",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 2,
+  "records": [
+    {
+      "id": "hardcoded:src/lib/piPromptTemplate.ts:truncateSummary:db463380373038b7:001",
+      "status": "待核实",
+      "content_fingerprint": "db463380373038b742c7e038aed6bdb9f411005723079438ee96baead242968e",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/lib/piPromptTemplate.ts",
+      "line": 92,
+      "function": "truncateSummary",
+      "expression": "`${compact.slice(0, MAX_SUMMARY_LENGTH - 1).trimEnd()}…`",
+      "reason": "该英文字符串“`${compact.slice(0, MAX_SUMMARY_LENGTH - 1).trimEnd()}…`”可能作为提示或错误展示，但静态上下文不足以确认展示链路。",
+      "suggested_action": "追踪调用方并确认是否需要本地化。",
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0205:src-lib-piPromptTemplate.ts",
+      "round": 1
+    },
+    {
+      "id": "hardcoded:src/lib/piPromptTemplate.ts:descriptionLine:ac32575ae8489a16:001",
+      "status": "待核实",
+      "content_fingerprint": "ac32575ae8489a162b7d449a83b84fbca77e7879583c741616e0d22655a52936",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/lib/piPromptTemplate.ts",
+      "line": 131,
+      "function": "descriptionLine",
+      "expression": "`description: ${JSON.stringify(normalizedDescription)}`",
+      "reason": "该英文字符串“`description: ${JSON.stringify(normalizedDescription)}`”可能作为提示或错误展示，但静态上下文不足以确认展示链路。",
+      "suggested_action": "追踪调用方并确认是否需要本地化。",
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0205:src-lib-piPromptTemplate.ts",
+      "round": 1
+    }
+  ]
+}

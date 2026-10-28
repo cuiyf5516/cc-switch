@@ -1,0 +1,668 @@
+001	deeplink.icon	图标	아이콘
+002	omo.slimAgentDesc.explorer	探索者	탐색자
+003	settings.s3Sync.missingBucket	请填写 S3 存储桶	S3 버킷을 입력하세요.
+004	usage.modelsDevAutoSync.configure	选择模型	모델 선택
+005	pi.prompts.saveFailed	保存 Pi 指令文件失败	Pi 지침 파일을 저장하지 못했습니다.
+006	providerForm.officialNoApiKey	官方登录无需填写 API Key，直接保存即可	공식 로그인에는 API 키가 필요하지 않습니다. 바로 저장하세요
+007	omo.slimAgentTooltip.orchestrator	编写执行代码，编排多代理工作流，召唤专家	실행 가능한 코드 작성, 다중 에이전트 워크플로 조정, 전문가 소환
+008	needs_attention	需要处理	확인 필요
+009	deeplink.prompt.enabledWarning	导入后将立即启用此提示词，其他提示词将被禁用	가져온 후에는 이 프롬프트가 즉시 활성화되고 다른 프롬프트는 비활성화됩니다.
+010	settings.openReleaseNotesFailed	打开更新日志失败	릴리스 노트를 열지 못했습니다
+011	common.collapse	收起	접기
+012	mcp.error.idRequired	请填写标识	식별자를 입력하세요
+013	usageScript.enableUsageQuery	启用用量查询	사용량 조회 활성화
+014	provider.addToConfig	添加	추가
+015	skillsPage.toast.enableFailed	没能在 {{apps}} 启用，已在列表里标出	{{apps}}에서 활성화하지 못했습니다. 목록에 표시했습니다
+016	health.degraded	降级	성능 저하
+017	endpointTest.testing	测速中	테스트 중
+018	mcp.error.jsonInvalid	JSON 格式错误，请检查	잘못된 JSON 형식
+019	universalProvider.loadError	加载统一供应商失败	범용 공급자를 로드하지 못했습니다.
+020	settings.backupManager.namePlaceholder	输入新名称	새 이름을 입력하세요
+021	mode.dialog.stackDefault	默认供应商	기본 공급자
+022	provider.adoptCatalogDone	已改用 CC Switch 的模型目录，重启 Codex 后生效	이제 CC Switch의 모델 카탈로그를 사용하고 있습니다. 적용하려면 Codex를 다시 시작하세요.
+023	settings.starOnGithub	去点 Star	GitHub에 별표 표시
+024	kimi.modelSelectionHint	点击供应商卡片的切换按钮选择默认供应商；需要指定其他模型时，在 Kimi Code 中使用 /model。	공급자 카드의 전환 버튼을 눌러 기본 공급자를 선택하세요. 다른 모델을 지정하려면 Kimi Code에서 /model을 사용하세요.
+025	streamCheck.error	{{providerName}} 检查出错: {{error}}	{{providerName}} 확인 오류: {{error}}
+026	prompts.copiedContent	已复制「{{name}}」的正文	"{{name}}" 텍스트를 복사했습니다.
+027	settings.geminiConfigDir	Gemini 配置目录	Gemini 설정 디렉터리
+028	omo.agentDesc.hephaestus	自主深度工作者	자율적인 심층 작업자
+029	skillsPage.rowFail	在 {{app}} 启用失败：{{error}}	{{app}}에서 활성화 실패: {{error}}
+030	failover.tooltip.takeoverRequired	请先接管 {{app}}，再启用故障转移	먼저 {{app}}의 요청을 라우팅 서비스에서 관리하도록 설정한 뒤 장애 조치를 켜세요
+031	mcp.unifiedPanel.editServer	编辑服务器	서버 편집
+032	env.source.systemEnv	系统环境变量	시스템 환경 변수
+033	universalProvider.configJsonPreview	配置 JSON 预览	JSON 설정 미리보기
+034	proxy.settings.configSaved	路由配置已保存	라우팅 설정이 저장되었습니다.
+035	skillsPage.confirm.uninstallBody	会从所有应用中移除，并删除 CC Switch 里的主副本。卸载前会自动备份到 {{path}}。	모든 앱에서 제거되고 CC Switch의 원본도 삭제됩니다. 먼저 {{path}}에 백업을 저장합니다.
+036	prompts.importSuccess	导入成功	성공적으로 가져왔습니다
+037	mcp.wizard.preview	配置预览	설정 미리보기
+038	usage.stream	流	스트리밍
+039	hermes.form.modelNamePlaceholder	Claude Opus 5	Claude Opus 5
+040	openclaw.cacheReadCost	缓存读取	캐시 읽기
+041	usageScript.commentResponseIsJson	response 是 API 返回的 JSON 数据	response는 API가 반환하는 JSON 데이터입니다
+042	providerCard.chip.official	官方	공식
+043	sessionManager.reader.verb.search	搜索	검색
+044	settings.claudeConfigDirDescription	覆盖 Claude 配置目录 (settings.json)。真正自定义目录会在目录内存放 Claude MCP 的 .claude.json；默认 ~/.claude 目录仍使用 Claude 默认的 ~/.claude.json。	Claude 설정 디렉터리(settings.json)를 변경합니다. 사용자 지정 디렉터리에서는 그 안에 .claude.json(MCP)을 저장합니다. 기본 ~/.claude 디렉터리에서는 Claude Code의 기본 동작대로 별도 경로인 ~/.claude.json을 사용합니다.
+045	subscription.geminiPro	Pro	Pro
+046	usage.requestsLabel	次请求	요청
+047	usage.statusFilter.all	全部状态码	모든 상태 코드
+048	iconPicker.namePlaceholder	例如：我的中转站	예를 들어 나의 릴레이
+049	providerPreset.searchTooltip	搜索预设	프리셋 검색
+050	openclaw.selectProtocol	选择 API 协议	API 프로토콜 선택
+051	workspace.dailyMemory.confirmDeleteMessage	确定删除 {{date}} 的每日记忆吗？此操作不可撤销。	{{date}}의 일일 메모리를 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.
+052	skillsPage.toast.uninstalledMany	已卸载 {{count}} 个 Skill	스킬 {{count}}개를 제거했습니다
+053	pi.form.modelIdRequired	第 {{index}} 个模型缺少 ID	{{index}}번째 모델의 ID를 입력하세요.
+054	codexOauth.defaultAccount	默认	기본값
+055	deeplink.switchAfterImport	导入后立即切换到这个供应商	가져온 후 이 공급자로 전환
+056	env.actions.selectAll	全选	모두 선택
+057	prompts.toast.joiner	。	. 
+058	usage.metrics.more	更多指标	더 많은 지표
+059	skills.filter.all	全部	모두
+060	appMatrix.pop.scopeAll	只作用于当前列表里的 {{count}} 个	이 목록의 항목 {{count}}개에 적용됩니다.
+061	opencode.extraOptionValuePlaceholder	600000	600000
+062	providerForm.codexApiEndpointPlaceholder	https://your-api-endpoint.com/v1	https://your-api-endpoint.com/v1
+063	settings.preserveCodexOfficialAuthOnSwitchDescription	控制未开启路由接管时切换第三方供应商是否保留 Codex 官方登录；路由接管期间始终保留	라우팅이 앱 설정을 관리하지 않는 상태에서 타사 공급자로 전환할 때 Codex 공식 로그인을 유지할지 정합니다. 라우팅이 앱 설정을 관리하는 동안에는 항상 공식 로그인을 유지합니다.
+064	settings.appVisibility.showProviderSearchDescription	在供应商页顶部显示搜索按钮，可按名称、备注、官网和请求地址查找。关掉后仍可用 ⌘F / Ctrl+F 打开搜索	공급자 페이지 상단에 검색 버튼을 표시합니다. 이름, 메모, 웹사이트 또는 API 주소로 검색할 수 있습니다. 꺼도 ⌘F / Ctrl+F로 검색을 열 수 있습니다.
+065	hermes.memory.noChanges	没有未保存的修改	저장되지 않은 변경사항 없음
+066	endpointTest.updateLastUsedFailed	更新端点使用时间失败	엔드포인트 마지막 사용 시간을 업데이트하지 못했습니다.
+067	skills.uninstalling	卸载中...	제거 중...
+068	mcpPage.import.failedTitle	有应用没有读到	일부 앱을 읽을 수 없습니다
+069	providerCard.chip.models	{{count}} 个模型	모델 {{count}}개
+070	omo.imported	已导入为 "{{name}}"	"{{name}}"로 가져옴
+071	appMatrix.pop.enableRest	启用其余 {{count}} 个	나머지 {{count}}개 활성화
+072	common.version	版本	버전
+073	omo.enabledModelsCount	可选已配置模型 {{count}} 个	선택 가능한 설정 모델 {{count}}개
+074	deeplink.mcp.command	命令	명령
+075	settings.envBadge.wsl	WSL	WSL
+076	usageScript.organizationIdPlaceholder	例如：org-xxxxxx	예: org-xxxxxx
+077	usage.minutesAgo	{{count}} 分钟前	{{count}}분 전
+078	proxy.settings.toast.saved	路由配置已保存	라우팅 설정이 저장되었습니다.
+079	usageScript.configFormat	配置格式：	설정 형식:
+080	settings.toolUpgradeUnmanagedDetail	{{tool}}（{{path}}）不是通过 npm 或可识别的安装器安装的，CC Switch 无法判断如何升级它。请用你原来的安装方式升级（例如 winget、Scoop 或重新运行官方安装脚本）。	{{tool}} ({{path}}) 항목은 npm이나 인식 가능한 설치 프로그램으로 설치되지 않아 CC Switch에서 업그레이드 방법을 판단할 수 없습니다. 처음 설치할 때 사용한 방식으로 업그레이드하세요(예: winget, Scoop 또는 공식 설치 스크립트 다시 실행).
+081	omo.agentTooltip.sisyphusJunior	类别生成的执行器，由 category 参数自动生成，专注于执行分配的任务且不能再委派，防止无限委派循环。	category 매개변수로 자동 생성되는 실행자입니다. 할당된 작업만 수행하며 재위임할 수 없어 무한 위임 루프를 방지합니다.
+082	skillsPage.toast.installedMany	已安装 {{count}} 个 Skill，并在 {{apps}} 启用	스킬 {{count}}개를 설치하고 {{apps}}에서 활성화했습니다
+083	usage.hoursAgo	{{count}} 小时前	{{count}}시간 전
+084	skills.refreshing	刷新中...	새로 고치는 중...
+085	mcpPage.drawer.jsonBlocksForm	修好后才能切回表单。	오류를 수정하면 양식으로 돌아갈 수 있습니다.
+086	usage.sources.on	已开启	켜짐
+087	sessionManager.back	返回	뒤로
+088	authCenter.pending.reopen	重新打开登录页	로그인 페이지 다시 열기
+089	claudeConfig.hideAttributionHelp	Claude Code 生成的提交和 PR 不再带 Co-Authored-By 署名和会话链接。全局设置，对所有供应商生效。	Claude Code가 생성한 커밋과 PR에서 Co-Authored-By 표시와 세션 링크를 제외합니다. 모든 공급자에 적용되는 전역 설정입니다.
+090	mode.failover	故障转移	장애 조치
+091	apps.claudeCode	Claude Code	Claude Code
+092	mcp.form.tags	标签（逗号分隔）	태그(쉼표로 구분)
+093	skillsPage.installTo.helpTitle	选好的应用会记住吗	이 선택이 저장되나요?
+094	migration.skillsSuccess	已自动导入 {{count}} 个技能到统一管理	스킬 {{count}}개를 통합 관리에 자동으로 가져왔습니다
+095	mode.toast.failed	切换失败：{{detail}}	전환할 수 없음: {{detail}}
+096	skills.storageSheet.moving	正在移动…	이동 중…
+097	provider.configJsonHint	请填写完整的 Claude Code 配置	전체 Claude Code 설정을 입력하세요.
+098	prompts.openFolderFailed	没能打开文件夹	폴더를 열 수 없습니다.
+099	proxy.panel.stats.totalRequests	总请求数	총 요청
+100	usage.pricing.moreActions	更多定价操作	요금 관련 추가 작업
+101	skillsPage.discover.onlyUninstalled	只看未安装	미설치 항목만
+102	skills.storageSheet.moveConfirmTitle	把 {{count}} 个 Skill 移到 {{path}}？	스킬 {{count}}개를 다음 경로로 이동하시겠습니까? {{path}}
+103	settings.backupStorage.items.codexHistoryProviderMigration.hint	会话分组迁移前留的副本，CC Switch 不会再读取。	세션 그룹이 마이그레이션되기 전에 보관된 복사본입니다. CC Switch는 더 이상 읽지 않습니다.
+104	mcp.form.description	描述	설명
+105	settings.advanced.optimizer.description	在请求发送前自动优化 Thinking 和 Cache 配置（仅 Bedrock 供应商生效）	요청을 보내기 전에 Thinking 및 Cache 설정을 자동으로 최적화합니다(Bedrock 공급자에만 적용).
+106	prompts.copyDialog.pickOne	至少勾选一个应用	앱을 하나 이상 선택하세요.
+107	notifications.removeFromConfigSuccess	已从配置移除	설정에서 제거됨
+108	providerPreset.loginWith.xai	用 xAI 账号登录	xAI 계정으로 로그인
+109	usageScript.extractorFormat	extractor 返回格式（所有字段均为可选）：	extractor 반환 형식 (모든 필드 선택 사항):
+110	mcp.editServer	编辑 MCP	MCP 편집
+111	appMatrix.clearSearch	清空搜索	검색 지우기
+112	providerForm.modelRoleSonnet	Sonnet	Sonnet
+113	settings.tabGeneral	通用	일반
+114	codexOauth.selectAccountPlaceholder	选择一个 ChatGPT 账号	ChatGPT 계정 선택
+115	header_stack	聚合 · 默认供应商	통합 · 기본 공급자
+116	pi.prompts.activateOverrideMessage	创建 {{filename}} 会替换 Pi 内置基础提示。上下文、AGENTS.md 和 Skills 等仍由 Pi 按自身规则加入。	{{filename}}을(를) 생성하면 Pi의 내장 기본 프롬프트가 대체됩니다. Pi는 여전히 자체 규칙에 따라 컨텍스트, AGENTS.md, 스킬 및 기타 리소스를 추가합니다.
+117	claudeDesktop.supports1mShort	1M	1M
+118	kimi.oauth.manageAccounts	管理 Kimi 账号	Kimi 계정 관리
+119	sessionManager.onlyChat	只看对话	대화만 보기
+120	xaiOauth.reauthRequired	需要重新登录	다시 로그인 필요
+121	proxy.settings.fields.listenAddress.label	监听地址	수신 주소
+122	omo.advancedBackgroundTask	后台任务	백그라운드 작업
+123	skillsPage.clearFilters	清除筛选	필터 초기화
+124	prompts.noSearchResults	没有名称、说明或正文匹配“{{query}}”的提示词	이름, 설명 또는 본문이 검색어와 일치하는 프롬프트가 없습니다: "{{query}}"
+125	mcpPage.resync	按这里的开关重写各应用配置	이 스위치 상태에 따라 모든 앱의 설정 다시 쓰기
+126	mcp.id	标识 (唯一)	식별자(고유)
+127	settings.updating	更新中...	업데이트 중...
+128	usageScript.defaultPlan	默认套餐	기본 요금제
+129	usage.empty.body	会话日志和经路由服务的请求都会记在这里。	세션 로그 및 라우팅 서비스를 통한 요청의 사용량이 여기에 표시됩니다.
+130	provider.noProviders	还没有供应商	아직 공급자가 없습니다.
+131	managedAuth.remove.noneAll	没有供应商在用这些账号。	이 계정들을 사용하는 공급자가 없습니다.
+132	opencode.modelOptionValuePlaceholder	{"order": ["baseten"]}	{"order": ["baseten"]}
+133	iconPicker.category.tool	开发工具	개발 도구
+134	hermes.form.removeModel	移除模型	모델 제거
+135	routingSettings.exitAll	全部回到直连	모두 직접 연결로 되돌리기
+136	provider.openTerminalDialog.agySwitchRunning	检测到 agy 正在运行：已打开的 agy 仍用原账号，还可能把原账号写回去，最好先退出它们。	실행 중인 agy가 감지되었습니다. 이미 실행 중인 agy는 기존 계정을 계속 사용하며, 기존 계정 정보를 로그인 설정에 다시 저장할 수도 있습니다. 먼저 해당 agy를 모두 종료하는 것이 좋습니다.
+137	usage.app	应用	앱
+138	common.search	查询	검색
+139	copilot.copyCode	复制代码	코드 복사
+140	authCenter.pending.copied	验证码已复制。	코드를 복사했습니다.
+141	settings.webdavSync.confirmUpload.content	将同步以下内容到 WebDAV 服务器：	다음은 WebDAV 서버에 동기화됩니다.
+142	skillsPage.addMenu.import	导入本机已有	이 컴퓨터에서 가져오기
+143	appMatrix.cell.fail	{{name}} · {{app}}：写入失败，点按重试	{{name}} · {{app}}: 저장 실패, 클릭하여 다시 시도
+144	mcpPage.noMatch	没有名称、命令或地址匹配“{{query}}”的 MCP	이름, 명령 또는 URL이 검색어와 일치하는 MCP 서버가 없습니다: "{{query}}"
+145	pi.prompts.fileRestored	已写回 ~/.pi/agent/{{filename}}	~/.pi/agent/{{filename}}에 원래 내용을 복원했습니다.
+146	settings.backupStorage.deleteConfirmTitle	删除「{{name}}」？	'{{name}}'을(를) 삭제하시겠습니까?
+147	openclaw.agents.primaryModelHint	从已配置供应商的模型中选择默认模型	설정된 공급자의 모델 중에서 기본 모델 선택
+148	providerForm.codexApiHint	💡 填写兼容 OpenAI Response 格式的服务端点地址	💡 OpenAI Responses 형식과 호환되는 서비스 엔드포인트를 입력하세요
+149	quota.resetCredits.times	{{count}} 次	×{{count}}
+150	prompts.helpText	每个应用同时只启用一条，它就是目标文件的内容。在别处改了文件，下次打开本页时会收进启用中的那条；文件里有本页没有的内容，启用前先存成「原始提示词」。	앱마다 한 번에 하나의 프롬프트만 활성화할 수 있으며, 그 내용이 대상 파일에 저장됩니다. 외부에서 수정한 내용은 다음에 이 페이지를 열 때 활성화된 프롬프트에 반영됩니다. 목록에 없는 파일 내용은 다른 프롬프트를 활성화하기 전에 ‘원본 프롬프트’로 저장됩니다.
+151	usage.queryFailed	查询失败	조회 실패
+152	appsPage.desktopConnected	已接入	연결됨
+153	providerForm.localProxyBodyOverrides	Body 覆盖	본문 재정의
+154	settings.backupStorage.items.openclaw.name	OpenClaw 配置备份	OpenClaw 설정 백업
+155	skillsPage.filter.all	全部	모두
+156	providerCard.action.add	添加	추가
+157	provider.officialModelsReason.nothingUsable	Codex 自带列表：里面没有能用的模型，请把 Codex 升级到最新版	Codex 내장 목록: 사용 가능한 모델이 없습니다. Codex를 최신 버전으로 업데이트하세요
+158	providerForm.partnerPromotion.apikeyfun	APIKEY.FUN 为 CC Switch 的用户提供了特别优惠，通过专属链接注册，可享受最高充值永久 95 折优惠。	APIKEY.FUN은 CC Switch 사용자에게 특별 혜택을 제공합니다. 전용 링크로 가입하면 충전 시 최대 5% 할인을 영구적으로 받을 수 있습니다.
+159	mode.dialog.stackNoteNoFailover	聚合模式不做故障转移；队列和设置会保留，回到路由模式后恢复。	통합 모드에서는 장애 조치를 사용하지 않습니다. 대기열과 설정은 유지되며 라우팅 모드로 돌아가면 다시 적용됩니다.
+160	iconPicker.saveAndUse	保存并使用	저장 및 사용
+161	mcp.error.saveFailed	保存失败	저장 실패
+162	opencode.extraOptions	额外选项	추가 옵션
+163	skills.restoreFromBackup.title	从备份中恢复	백업에서 복원
+164	apps.grokbuild	Grok Build	Grok Build
+165	prompts.toast.disabledPi	已停用「{{name}}」，已删除 AGENTS.md	"{{name}}"을(를) 비활성화하고 AGENTS.md를 삭제했습니다.
+166	settings.codexStackClassicSubagentsForcedV2	Codex 的 config.toml 里打开了 [features] multi_agent_v2，它比这个开关优先，开关不会生效	Codex의 config.toml에서 [features] multi_agent_v2가 켜져 있습니다. 이 설정보다 우선하므로 해당 스위치는 적용되지 않습니다.
+167	codexOauth.authStatus	认证状态	인증 상태
+168	skillsPage.discover.skillsShHint	在上面输入至少 2 个字，按回车搜索 skills.sh。	위에 2자 이상 입력하고 Enter를 눌러 skills.sh를 검색하세요.
+169	settings.manualUninstallOpenClawHint	请先成功执行 openclaw uninstall --service --yes --non-interactive，仅卸载 Gateway 服务并保留配置和工作区，再执行下方命令移除 CLI。	먼저 openclaw uninstall --service --yes --non-interactive를 실행하여 설정과 작업 공간은 유지하고 게이트웨이 서비스만 제거하세요. 명령이 정상적으로 완료되면 아래 명령으로 CLI를 제거하세요.
+170	providerPreset.sortNameAscTooltip	按名称 A-Z 排序	이름 A-Z로 정렬
+171	settings.s3Sync.testSuccess	S3 连接成功	S3 연결 성공
+172	notifications.settingsSaveFailed	保存设置失败：{{error}}	설정 저장 실패: {{error}}
+173	mcpPage.noun	MCP	MCP 서버
+174	usage.trend.tokens	Tokens	토큰
+175	providerCard.action.routeHere	路由到此	여기로 라우팅
+176	skillsPage.discover.manageRepos	管理仓库	저장소 관리
+177	opencode.headersHint	随供应商请求发送的可选 HTTP 请求头，如 HTTP-Referer 或 X-Title。	HTTP-Referer 또는 X-Title과 같은 공급자 요청과 함께 전송되는 선택적 HTTP 헤더입니다.
+178	opencode.modelOptionKeyPlaceholder	provider	provider
+179	skills.importSuccess	成功导入 {{count}} 个技能	스킬 {{count}}개를 가져왔습니다
+180	providerCard.chip.hermesManaged	Hermes 托管	Hermes에서 관리함
+181	usage.heatmap.title	用量热力图	사용량 히트맵
+182	sessionManager.emptyAll	还没有会话记录	아직 세션이 없습니다.
+183	hermes.memory.unsaved	有未保存的修改	저장되지 않은 변경사항
+184	settings.advanced.cloudSync.title	云同步	클라우드 동기화
+185	usage.detail.noTimingSession	会话日志没有计时数据	세션 로그에는 타이밍 데이터가 없습니다.
+186	mcp.serverCount	已配置 {{count}} 个 MCP 服务器	{{count}} MCP 서버 설정됨
+187	codexConfig.defaultModelHint	Codex 默认请求的模型。添加模型列表后，列表第一行就是默认模型。	Codex가 기본으로 요청할 모델입니다. 모델 목록을 추가하면 첫 번째 행이 기본 모델이 됩니다.
+188	invalid_json_format_error	无效的 JSON 格式: {{error}}	잘못된 JSON 형식: {{error}}
+189	env.delete.success	环境变量已成功删除	환경 변수가 삭제되었습니다.
+190	settings.themeHint	选择应用的外观主题，立即生效。	앱의 모양 테마를 선택하면 즉시 적용됩니다.
+191	settings.tabAdvanced	高级	고급
+192	provider.form.gemini.apiKeyPlaceholder	请输入 Gemini API Key	Gemini API 키를 입력하세요
+193	routingSettings.stopBlocked	还有应用在用路由服务，先让它们回到直连。	일부 앱이 아직 라우팅 서비스를 사용 중입니다. 먼저 직접 연결로 전환하세요.
+194	pi.empty.description	点击右上角 +，从预设或自定义配置添加供应商。	프리셋 또는 사용자 지정 공급자를 추가하려면 오른쪽 상단에 있는 + 버튼을 사용하세요.
+195	omo.advancedBrowserAutomation	浏览器自动化	브라우저 자동화
+196	settings.s3Sync.disabled	S3 同步未启用	S3 동기화가 비활성화되었습니다
+197	codexConfig.reasoningLevelsSearch	搜索思考等级...	추론 수준 검색...
+198	sessionManager.reader.turnCopied	已复制这一轮	이번 턴을 복사했습니다
+199	proxy.server.startFailed	启动路由服务失败: {{detail}}	라우팅 서비스를 시작하지 못했습니다: {{detail}}
+200	omo.currentValueUnavailable	{{value}}（当前值，不可用）	{{value}}(현재 값, 사용 불가)
+201	skillsPage.moreMenu.restore	从备份恢复	백업에서 복원
+202	copilot.waitingForAuth	等待授权中...	승인을 기다리는 중...
+203	appsPage.dragHandle	拖动调整 {{name}} 的顺序	드래그하여 {{name}} 순서 변경
+204	header.windowMaximize	最大化窗口	창 최대화
+205	prompts.enableSuccess	启用成功	성공적으로 활성화되었습니다
+206	profiles.updateSuccess	项目已更新	프로젝트가 업데이트되었습니다.
+207	header.windowRestore	还原窗口	창 이전 크기로 복원
+208	no_match	没有匹配的供应商	일치하는 공급자 없음
+209	skills.import	导入已有	기존 항목 가져오기
+210	proxy.settings.advanced.title	高级参数	고급 매개변수
+211	settings.s3Sync.remoteRoot	远程根目录	원격 루트 디렉터리
+212	skills.storageSheet.syncCopy	只用复制	복사만 사용
+213	sessionManager.noResumeOpenclaw	OpenClaw 会话由网关管理，不能在终端恢复	OpenClaw 세션은 게이트웨이에서 관리하므로 터미널에서 이어갈 수 없습니다.
+214	provider.importCurrentDescription	将当前正在使用的配置导入为默认供应商	현재 적용 중인 설정을 기본 공급자로 가져왔습니다
+215	usage.settings.title	用量设置	사용량 설정
+216	kimi.oauth.help	可添加多个 Kimi 编程套餐账号，每个号在 Kimi Code 里有自己的供应商和模型。「使用此账号」会把 Kimi Code 的默认模型换成这个号的，之后新开的会话都用它。Kimi Code 自己登着的号会自动出现在这里，联网搜索和网页抓取始终用它；在这里删掉它只会移出列表，不会让 Kimi Code 退出登录。	Kimi 코딩 요금제 계정을 여러 개 추가할 수 있습니다. 각 계정에는 Kimi Code의 개별 공급자와 모델이 생깁니다. “이 계정 사용”을 누르면 Kimi Code의 기본 모델이 해당 계정의 모델로 변경되며 이후 새 세션에서 사용됩니다. Kimi Code 자체 로그인 계정은 자동으로 표시되며 웹 검색과 웹 페이지 가져오기에 항상 사용됩니다. 여기에서 제거해도 목록에서만 숨겨지며 Kimi Code에서 로그아웃되지 않습니다.
+217	subscription.short.copilotPremium	高级请求	프리미엄 요청
+218	sessionManager.reader.outlineToggle	对话目录	대화 목차
+219	settings.unifyCodexHistoryRestoreNothing	当前 Codex 目录没有可恢复的迁移备份	현재 Codex 디렉터리에 대한 복원 가능한 마이그레이션 백업이 없습니다.
+220	omo.agentTooltip.multimodalLooker	视觉内容专家，分析 PDF、图片、图表等非文本媒体，提取其中的信息与洞察。	PDF, 이미지, 차트 및 기타 텍스트가 아닌 미디어를 분석하여 정보와 통찰력을 추출하는 시각적 콘텐츠 전문가입니다.
+221	proxy.logging.disabled	日志记录已关闭	로깅이 비활성화되었습니다.
+222	mcp.unifiedPanel.apps.openclaw	OpenClaw	OpenClaw
+223	settings.checkForUpdates	检查更新	업데이트 확인
+224	nav.mode.stack	聚合	통합
+225	providerPreset.planLabel	套餐	요금제
+226	subscription.title	订阅额度	구독 할당량
+227	settings.s3Sync.uploadFailed	S3 上传失败：{{error}}	S3 업로드 실패: {{error}}
+228	kimi.oauth.statusFailed	无法读取登录状态	로그인 상태를 읽을 수 없음
+229	settings.advanced.rectifier.thinkingSignature	Thinking 签名整流	Thinking 서명 보정
+230	providerCard.action.remove	移除	제거
+231	authCenter.claude.removeNote	只删除 CC Switch 为这个账号保存的登录，不会让它在其他地方退出；Claude Code 现在的登录（~/.claude）不受影响。绑定它的卡片会改用 Claude Code 现在的登录。	CC Switch에 저장된 이 계정의 로그인 정보만 삭제합니다. 다른 곳에서는 로그아웃되지 않으며, Claude Code의 현재 로그인 상태(~/.claude)에도 영향을 주지 않습니다. 이 계정에 연결된 카드는 Claude Code에 현재 로그인된 계정을 사용하도록 변경됩니다.
+232	deeplink.importSuccess	导入成功	가져오기 성공
+233	provider.officialModelsReason.cliFailed	Codex 自带列表：Codex 命令行没能输出模型列表（详情见日志）	Codex 내장 목록: Codex CLI가 모델 목록을 출력하지 않았습니다(자세한 내용은 로그 참조).
+234	codexConfig.upstreamFormatCopilotResponses	Responses（需开启路由）	Responses (라우팅 필요)
+235	mcp.form.title	MCP 标题（唯一）	MCP 제목(고유)
+236	universalProvider.websiteUrl	官网地址	웹사이트 URL
+237	mode.dialog.exitLead	{{app}} 会直接连接 {{provider}}，请求不再经过 CC Switch。	{{app}}에서 {{provider}}에 직접 연결합니다. 요청은 더 이상 CC Switch를 거치지 않습니다.
+238	providerForm.partnerPromotion.apinebula	APINEBULA 为 CC Switch 用户提供特别优惠：使用专属链接注册并在充值时填写 "ccswitch" 优惠码，可享九折优惠。	APINEBULA는 CC Switch 사용자에게 특별 할인을 제공합니다. 전용 링크로 가입하고 충전 시 "ccswitch" 할인 코드를 입력하면 10% 할인을 받을 수 있습니다.
+239	settings.backupManager.restoring	恢复中...	복원 중...
+240	pi.prompts.libraryLabel	Pi 的提示库	Pi 프롬프트 라이브러리
+241	usage.allSources	全部来源	모든 소스
+242	provider.officialModelsReason.invalidList	官方列表：返回的数据不完整（详情见日志）	공식 목록: 반환된 데이터가 불완전합니다(자세한 내용은 로그 참조).
+243	universalProvider.enabledApps	启用的应用	활성화된 앱
+244	universalProvider.syncConfirm	同步	동기화
+245	settings.globalProxy.saved	代理设置已保存	프록시 설정이 저장되었습니다.
+246	prompts.rowMoreActions	{{name}} 的更多操作	{{name}}에 대한 추가 작업
+247	provider.connectivityCheck	检测连通	연결 확인
+248	skills.updateAvailable	可更新	업데이트 있음
+249	sessionManager.mcodeDeleteHint	请在 MiniMax Code 中删除	MiniMax Code에서 삭제하세요.
+250	settings.backupManager.description	自动备份的数据库快照，可用于恢复到之前的状态	이전 상태로 복원하기 위한 자동 데이터베이스 스냅샷
+251	claudeDesktop.modeProxy	需要路由	라우팅 필요
+252	profiles.clearSuccess	已切换为不使用项目	프로젝트 없음으로 전환됨
+253	skills.repo.add	添加仓库	저장소 추가
+254	settings.s3Sync.confirmDownload.warning	恢复将覆盖本地所有数据和技能配置	모든 로컬 데이터와 스킬 설정을 덮어씁니다
+255	prompts.toast.enabled	已启用「{{name}}」，已覆盖 {{path}}	"{{name}}"을(를) 활성화하고 {{path}}을(를) 덮어썼습니다.
+256	settings.advanced.rectifier.thinkingSignatureDescription	当 Anthropic 类型供应商返回 thinking 签名不兼容或非法请求等错误时，自动移除不兼容的 thinking 相关块并对同一供应商重试一次	Anthropic 유형 공급자가 thinking 서명 비호환 또는 잘못된 요청 등의 오류를 반환하면 호환되지 않는 thinking 관련 블록을 자동으로 제거한 뒤 같은 공급자로 한 번 다시 시도합니다.
+257	subscription.short.sevenDayFable	Fable	Fable
+258	skillsPage.noMatch	没有匹配“{{query}}”的 Skill	검색어와 일치하는 스킬이 없습니다: "{{query}}"
+259	hermes.form.rateLimitDelayHint	连续请求间的最小间隔秒数（可选）。留空表示无限制。	연속 요청 간의 최소 지연 시간(초)입니다(선택 사항). 제한이 없으면 비워 두세요.
+260	provider.form.claudeAccount.missing	不在这台电脑上的账号	이 컴퓨터에 없는 계정
+261	prompts.contentPlaceholder	# {{filename}}
+
+用 Markdown 写给 {{appName}} 的长期说明…	# {{filename}}
+
+{{appName}}에 적용할 지속적인 지침을 Markdown으로 작성하세요…
+262	proxyConfig.nonStreaming	非流式超时	비스트리밍 시간 초과
+263	common.edit	编辑	편집
+264	codex.followCodexLoginDescription	账号会随 Codex CLI 当前登录变化	Codex CLI에 로그인된 계정이 바뀌면 사용하는 계정도 함께 바뀝니다.
+265	providerCard.action.backToDirectAndUse	回到直连并使用	직접 연결로 돌아가서 사용
+266	claudeConfig.keyFieldsHint	地址、Key、模型、上下文窗口和兼容开关随供应商切换；其余字段是 Claude Code 全局设置，保存后对所有供应商生效。	엔드포인트, API 키, 모델, 컨텍스트 창 및 호환성 옵션은 공급자를 전환하면 함께 바뀝니다. 나머지 필드는 Claude Code 전역 설정이며 저장하면 모든 공급자에 적용됩니다.
+267	opencode.noModelExtraFields	模型属性 (variants, cost 等)，点击 + 添加	모델 속성(variants, cost 등). +를 눌러 추가하세요
+268	provider.addProvider	添加供应商	공급자 추가
+269	settings.toolConflictNotRunnable	无法运行	실행할 수 없습니다
+270	settings.backupManager.rename	重命名	이름 바꾸기
+271	omo.saveGlobalConfig	保存全局配置	전역 설정 저장
+272	omo.fillRecommendedMostlyUnmatched	仅填充了 {{filled}} 个，{{unmatched}} 个未匹配（如 {{examples}}）。请配置提供这些模型的供应商，或手动选择替代项。	{{filled}}개만 채웠으며 {{unmatched}}개는 일치하지 않습니다 (예: {{examples}}). 해당 모델을 제공하는 공급자를 설정하거나 대체 모델을 직접 선택하세요.
+273	provider.notConfigured	未配置官网地址	공식 웹사이트가 설정되지 않았습니다
+274	openclaw.agents.legacyTimeoutDescription	当前配置仍在使用 agents.defaults.timeout。保存本页面时会迁移为 timeoutSeconds。	현재 설정은 여전히 agents.defaults.timeout을 사용합니다. 이 페이지에서 저장하면 timeoutSeconds로 이전합니다.
+275	settings.webdavSync.presets.jianguoyun	坚果云	Jianguoyun
+276	skillsPage.toast.backupAt	备份在 {{path}}	{{path}}에 백업했습니다
+277	providerForm.requestModelLabel	实际请求模型	실제 요청에 사용할 모델
+278	authCenter.pending.browserNote	已在浏览器打开 {{service}} 的登录页，登录并同意授权后这里会自动更新。	브라우저에 {{service}} 로그인 페이지가 열렸습니다. 로그인 후 접근을 허용하면 자동으로 업데이트됩니다.
+279	skills.repo.removeFailed	删除失败	제거하지 못했습니다.
+280	providerForm.customUserAgent	自定义 User-Agent	사용자 지정 User-Agent
+281	codexConfig.saveFailed	保存失败: {{error}}	저장 실패: {{error}}
+282	subscription.short.agyThirdPartyFiveHour	Claude 5 小时	Claude 5시간
+283	sessionManager.reader.moreLines	还有 {{count}} 行	{{count}}줄 더 있음
+284	deeplink.opusModel	Opus 模型	Opus 모델
+285	prompts.updatedOn	{{month}} 月 {{day}} 日更新	{{date}}에 업데이트됨
+286	sessionManager.reader.image.actualSize	原始大小	실제 크기
+287	omo.fillRecommendedSuccess	已填充 {{count}} 个推荐模型	권장 모델 {{count}}개를 채웠습니다
+288	skills.restoreFromBackup.delete	删除	삭제
+289	skillsPage.discover.searchAria	搜索发现里的 Skill	탐색에서 스킬 검색
+290	mode.dialog.needsRouteTitle	{{provider}} 需要路由	{{provider}}에는 라우팅이 필요합니다
+291	hermes.memory.userPlaceholder	称呼：octocat。
+§
+用中文交流，代码注释用英文。	호칭: octocat.
+§
+중국어로 대화하고 코드 주석은 영어로 작성합니다.
+292	whatsNew.types.new	新增	신규
+293	providerForm.fillSupplierName	请填写供应商名称	공급자 이름을 입력하세요.
+294	pi.form.noCompatibilityOptions	未设置，按默认处理	설정되지 않음 · 기본값 적용
+295	workspace.dailyMemory.noSearchResults	没有找到匹配的每日记忆。	검색어와 일치하는 일일 메모리가 없습니다
+296	settings.backupStorage.items.liveFirstWrite.name	配置文件首次写入备份	설정 파일 최초 저장 전 백업
+297	proxy.settings.fields.listenPort.placeholder	15721	15721
+298	provider.form.claudeAccount.plan.team	Team	Team
+299	provider.form.claudeAccount.default	跟随 Claude Code 登录	Claude Code에 로그인된 계정 사용
+300	routingSettings.stopped	已停止	중지됨
+301	skills.error.skillDirNotFound	技能目录不存在：{{path}}	스킬 디렉터리를 찾을 수 없습니다: {{path}}
+302	openclaw.agents.noModels	暂无已配置的供应商模型。请先添加 OpenClaw 供应商。	설정된 공급자 모델이 없습니다. 먼저 OpenClaw 공급자를 추가하세요.
+303	sessionManager.reader.expandTimeline	展开执行过程	실행 단계 펼치기
+304	prompts.targetFile	目标文件	대상 파일
+305	mode.stackSettings.followMain	跟随主模型	주 모델 따르기
+306	appMatrix.ompDiscovery.help	Oh My Pi 除了 ~/.omp/agent 自己的配置，还会从其他 Agent 的目录发现 MCP 服务器、技能、命令、钩子、规则和设置（如 Claude 的 ~/.claude、Codex 的 ~/.codex 等）。要让 Oh My Pi 的实际生效内容与 CC Switch 界面一致，请在 ~/.omp/agent/config.yml 用 disabledProviders 关闭不需要的发现来源（id 与文档一致，如 claude、codex、gemini、opencode、github、agents）。	Oh My Pi는 자체 설정 디렉터리인 ~/.omp/agent 외에도 다른 에이전트의 디렉터리(예: Claude의 ~/.claude, Codex의 ~/.codex)에서 MCP 서버, 스킬, 명령어, 훅, 규칙 및 설정을 자동으로 찾습니다. Oh My Pi에 실제로 적용되는 항목이 CC Switch 화면과 일치하도록 하려면 ~/.omp/agent/config.yml의 disabledProviders에서 불필요한 검색 소스를 비활성화하세요. ID는 문서에 명시된 값(예: claude, codex, gemini, opencode, github, agents)을 사용합니다.
+307	omo.modelSourcePartialWarning	部分供应商模型配置无效，已自动跳过。	일부 공급자 모델 설정이 잘못되어 건너뛰었습니다.
+308	omo.categoryTooltip.writing	写作类别，专注于文档、散文和技术写作，默认使用 Kimi K2.5 模型。	문서, 산문 및 기술 문서 작성 카테고리입니다. 기본값은 Kimi K2.5 모델입니다.
+309	settings.backupManager.creating	备份中...	백업 중...
+310	settings.saveFailedGeneric	保存失败，请重试	저장하지 못했습니다. 다시 시도해 주세요.
+311	proxy.stackMode.codexStale.notRunning	Codex 守护进程没有在运行，下次启动时会载入当前登录和模型列表	Codex 데몬이 실행되고 있지 않습니다. 다음에 시작할 때 현재 로그인 및 모델 목록을 로드합니다.
+312	appPage.workspace	工作区	작업 공간
+313	usage.cacheReadCost	缓存命中	캐시 적중
+314	settings.webdavSync.password	WebDAV 密码	WebDAV 비밀번호
+315	appsPage.installHint.mcode	安装时运行官方安装脚本，失败时改用 npm	공식 스크립트로 설치하며, 실패하면 npm을 사용합니다
+316	hermes.form.providerKeyBuiltinLocked	「{{key}}」是 Hermes 内置供应商的标识。Hermes 会改用内置供应商，这张卡的地址和 Key 不会生效。标识已锁定无法修改，请用其他标识（例如 cc-switch-{{key}}）重新添加这个供应商，再删除这张卡。	Hermes 내장 공급자 식별자입니다: ‘{{key}}’. Hermes는 내장 공급자를 사용하므로 이 카드의 엔드포인트와 API 키는 적용되지 않습니다. 식별자가 잠겨 있어 변경할 수 없습니다. 다른 식별자(예: cc-switch-{{key}})로 이 공급자를 다시 추가한 다음 이 카드를 삭제하세요.
+317	sessionManager.resumeCommandCopied	已复制恢复命令	이어가기 명령을 복사했습니다.
+318	omo.searchModel	搜索模型...	모델 검색...
+319	mcpPage.drawer.errors.commandRequired	填写要运行的命令，例如 npx 或 uvx	실행할 명령을 입력하세요 (예: npx 또는 uvx)
+320	omo.categories	分类	카테고리
+321	providerForm.configContent	配置内容	설정 내용
+322	skills.uninstallInMainPanel	请在主面板中卸载技能	메인 패널에서 스킬을 제거하세요
+323	dsh.deleteSessionHint	请在 DeepSeek Harness 中删除此会话，以保持原生历史记录一致。	기본 세션 기록과의 일관성을 유지하려면 DeepSeek Harness에서 이 세션을 삭제하세요.
+324	common.import	导入	가져오기
+325	copilot.removeAccount	移除账号	계정 삭제
+326	deeplink.prompt.app	应用	앱
+327	proxy.settings.fields.nonStreamingTimeout.description	非流式请求的总超时时间	스트리밍되지 않는 요청의 총 시간 초과
+328	usage.sessionSync.syncCompleted	同步完成：新增 {{imported}} 条，扫描 {{files}} 个文件，错误 {{errors}}	동기화 완료: {{imported}}개 가져옴, 파일 {{files}}개 검사, 오류 {{errors}}개
+329	providerCard.action.moveUp	{{name}} 上移一位	{{name}} 한 칸 위로 이동
+330	mcpPage.drawer.sseRejectedTitle	{{apps}} 不支持 SSE	{{apps}}에서 SSE를 지원하지 않습니다
+331	settings.browsePlaceholderGemini	例如：/home/<你的用户名>/.gemini	예: /home/<사용자 이름>/.gemini
+332	duration_days	{n}天	{n}일
+333	skills.updateAll	全部更新 ({{count}})	모두 업데이트({{count}})
+334	openclaw.modelId	模型 ID	모델 ID
+335	skills.loadFailed	加载失败	로드하지 못했습니다.
+336	usage.trend.requestsLegend	请求数	요청 수
+337	nav.mainLabel	主导航	메인 네비게이션
+338	openclaw.env.loadFailed	读取环境变量失败	환경 변수를 로드하지 못했습니다.
+339	settings.s3Sync.mutualExclusionTitle	切换同步方式	동기화 유형 전환
+340	console.updateProviderFailed	更新供应商失败:	공급자 업데이트 실패:
+341	settings.github	GitHub	GitHub
+342	usageScript.tokenPlanHint	自动使用供应商的 API Key 和 Base URL 查询 Token Plan 额度	공급자의 API 키와 기본 URL을 자동으로 사용하여 Token Plan 할당량을 조회합니다
+343	provider.form.agy.endpointHelp	留空用 Google 默认 API。第三方地址须兼容 Gemini API，并支持 agy 内置的 Gemini 模型。	비워 두면 Google 기본 API를 사용합니다. 타사 엔드포인트는 Gemini API와 호환되어야 하며 agy에 내장된 Gemini 모델을 지원해야 합니다.
+344	settings.webdavSync.confirmUpload.targetPath	目标路径	대상 경로
+345	openclawConfig.defaultModel.title	默认模型	기본 모델
+346	mcp.wizard.urlPlaceholder	https://api.example.com/mcp	https://api.example.com/mcp
+347	prompts.copyDialog.go	复制到 {{count}} 个应用	앱 {{count}}개에 복사
+348	codexConfig.configToml	config.toml (TOML)	config.toml (TOML)
+349	openclaw.addModel	添加模型	모델 추가
+350	usageScript.projectId	项目 ID	프로젝트 ID
+351	settings.silentStartup	静默启动	백그라운드 시작
+352	profiles.createSuccess	项目已创建	프로젝트가 생성되었습니다.
+353	settings.authCenter.xaiOauthDescription	管理 xAI / Grok 账号	xAI/Grok 계정 관리
+354	profiles.deleteSuccess	项目已删除	프로젝트가 삭제되었습니다.
+355	iconPicker.search	搜索图标	아이콘 검색
+356	omp.form.discoveryTypes.openaiModelsList	OpenAI 模型列表（大多数在线服务）	OpenAI 모델 목록 (대부분의 온라인 서비스)
+357	endpointTest.enterValidUrl	请输入有效的 URL	유효한 URL을 입력하세요.
+358	omo.disabledItems	禁用项设置	비활성화된 항목
+359	settings.toolUninstallConfirmTitle	卸载 {{tool}}？	{{tool}}을(를) 제거하시겠습니까?
+360	subscription.short.fiveHour	5 小时	5시간
+361	hermes.form.apiModeChatCompletions	OpenAI Chat Completions	OpenAI Chat Completions
+362	pi.form.credentialRequired	请填写此预设的 API Key	이 프리셋에 대해 API 키를 입력하세요.
+363	settings.s3Sync.region	区域 (Region)	리전
+364	usage.display.sidebarTodayItems.none	不显示	숨김
+365	omo.disabledMcps	MCPs	MCP
+366	providerForm.customUserAgentInvalid	User-Agent 不能包含控制字符（如换行符），否则将被忽略。	User-Agent에 줄 바꿈 등의 제어 문자가 있으면 무시됩니다.
+367	provider.form.claudeAccount.reauthBadge	需要重新登录	다시 로그인 필요
+368	universalProvider.selectPreset	选择预设类型	프리셋 유형 선택
+369	copilot.enterpriseDomainPlaceholder	例如：company.ghe.com	예를 들어 company.ghe.com
+370	usage.providerFilter.title	按供应商筛选	공급자별로 필터링
+371	authCenter.needsReauth	需要重新登录	다시 로그인 필요
+372	skillsPage.importCount	导入本机已有（{{count}}）	이 컴퓨터에서 가져오기 ({{count}}개)
+373	claudeConfig.disableArtifact	禁用 Artifact 工具	Artifact Tool 비활성화
+374	provider.notes	备注	메모
+375	settings.s3Sync.secretAccessKeyPlaceholder	留空则保持现有密钥	비워 두면 기존 비밀 키 유지
+376	skillsPage.bulk.enableToAria	把选中的 {{count}} 个 Skill 启用到	선택한 스킬 {{count}}개를 활성화할 앱
+377	authCenter.setDefault	设为默认	기본값으로 설정
+378	mcp.unifiedPanel.addServer	添加服务器	서버 추가
+379	feedback_profile	已把项目「{name}」用到 {app}	{app}에 {name} 프로젝트를 적용했습니다
+380	common.formatSuccess	格式化成功	포맷팅이 완료되었습니다
+381	codexConfig.routeOnlySettingsHint	以下两项只在路由、聚合模式下生效。	아래 두 설정은 라우팅 및 통합 모드에서만 적용됩니다.
+382	prompts.requiredMark	（必填）	(필수)
+383	providerPreset.hint	选择预设后可继续调整下方字段。	프리셋을 선택한 후에도 아래 필드를 계속해서 조정할 수 있습니다.
+384	proxy.settings.validation.timeoutMax	超时时间最多600秒	시간 초과는 600초를 초과할 수 없습니다.
+385	prompts.importReason.missing	{{file}} 不存在，没有可导入的内容	{{file}} 파일이 없어 가져올 내용이 없습니다.
+386	deeplink.prompt.title	导入系统提示词	시스템 프롬프트 가져오기
+387	usage.refreshUsage	刷新用量	사용량 새로 고침
+388	failover.priority.tooltip	故障转移优先级 {{priority}}	장애 조치 우선 순위 {{priority}}
+389	apps.mcode	MiniMax Code	MiniMax Code
+390	pi.form.models	模型配置	모델 설정
+391	nav.prompts	提示词	프롬프트
+392	mode.dialog.desktopStackNoteMembers	另有 {{names}} 共 {{count}} 个模型，会加进 Claude Desktop 的模型列表，显示为「供应商 / 模型」。	추가로 {{names}}의 모델 총 {{count}}개가 Claude Desktop 모델 목록에 "공급자 / 모델" 형식으로 표시됩니다.
+393	sessionManager.resumeCopiedNoLaunch	已复制恢复命令。这个平台暂不支持一键恢复，请在项目目录下粘贴到终端运行	이어가기 명령을 복사했습니다. 이 플랫폼에서는 한 번의 클릭으로 세션을 이어갈 수 없습니다. 프로젝트 폴더에서 터미널을 열어 명령을 붙여 넣어 실행하세요.
+394	skillsPage.import.searchPlaceholder	搜索名称或位置	이름 또는 위치 검색
+395	omo.categoryDesc.artistry	创意/文艺	창의적/예술적
+396	opencode.headers	请求头	헤더
+397	settings.advanced.rectifier.mediaFallbackDescription	当供应商不支持图片输入时（已声明纯文本能力，或上游返回不支持图片的错误），自动将图片块替换为 [Unsupported Image] 标记，使对话不中断	공급자가 텍스트 전용 기능을 선언하거나 업스트림이 이미지 미지원 오류를 반환하면 이미지 블록을 [Unsupported Image] 표시로 자동 교체하여 대화가 중단되지 않게 합니다.
+398	settings.webdavSync.confirmDownload.title	从云端恢复	클라우드에서 복원
+399	pi.prompts.systemOverrideWarning	SYSTEM.md 会替换 Pi 内置的基础提示；不需要完全控制基础指令时，用 APPEND_SYSTEM.md。	SYSTEM.md는 Pi의 내장 기본 프롬프트를 대체합니다. 기본 명령어에 대한 전체 제어가 필요하지 않은 경우 APPEND_SYSTEM.md를 사용하세요.
+400	omo.fillRecommendedPartial	已填充 {{filled}} 个推荐模型，{{unmatched}} 个未匹配	권장 모델 {{filled}}개를 채웠으며 {{unmatched}}개는 일치하지 않습니다
+401	providerForm.anthropicDefaultHaikuModel	Haiku 默认模型	기본 Haiku 모델
+402	usage.pricing.edit	修改	변경
+403	providerForm.presets.doubaoseed	火山 豆包AI	Volcengine Doubao
+404	usageScript.balanceHint	自动使用供应商的 API Key 查询账户余额	공급자의 API 키를 자동으로 사용하여 계정 잔액을 조회합니다.
+405	skills.error.httpError	HTTP 错误 {{status}}	HTTP 오류 {{status}}
+406	proxyConfig.successThreshold	恢复阈值	복구 성공 임계값
+407	mcpPage.deleteBodyApps	会从 CC Switch 以及 {{apps}} 的配置文件里删除这一项，无法撤销。	이렇게 하면 CC Switch 및 {{apps}}의 설정 파일에서 제거됩니다. 이 작업은 취소할 수 없습니다.
+408	omo.categoryTooltip.deep	深度自主问题解决类别，目标导向执行，行动前进行彻底研究，适用于需要深度理解的棘手问题。	목표 지향적 실행을 통한 심층적인 자율적 문제 해결 카테고리입니다. 행동하기 전에 철저한 조사를 수행하므로 깊은 이해가 필요한 어려운 문제에 적합합니다.
+409	mcp.msg.templateAdded	已添加模板	템플릿이 추가됨
+410	codexConfig.catalogColumnContext	上下文窗口	컨텍스트 창
+411	skillsPage.selectAria	选择 {{name}}	{{name}} 선택
+412	prompts.enableAria	启用 {{name}}	{{name}} 활성화
+413	settings.latestVersion	最新版本	최신 버전
+414	copilot.setAsDefault	设为默认	기본값으로 설정
+415	apps.omp	Oh My Pi	Oh My Pi
+416	endpointTest.noEndpoints	暂无端点	엔드포인트 없음
+417	usage.syncStatus.tip	点击立即同步	지금 동기화하려면 클릭하세요.
+418	authCenter.agy.statusLoadFailed	无法读取 Antigravity 账号，请重试。	Antigravity 계정을 읽을 수 없습니다. 다시 시도하세요.
+419	omo.customCategories	自定义分类	사용자 지정 카테고리
+420	settings.minimizeToTrayDescription	勾选后点击关闭按钮会隐藏到系统托盘，取消则直接退出应用。	켜면 닫기 버튼을 눌러도 앱이 종료되지 않고 시스템 트레이로 숨겨집니다. 끄면 앱이 바로 종료됩니다.
+421	mode.status.stackValue	{{name}} · 另有 {{count}} 家共 {{models}} 个模型	{{name}} · 그 외 공급자 {{count}}곳, 총 모델 {{models}}개
+422	settings.webdavSync.baseUrlPlaceholder	https://dav.jianguoyun.com/dav/	https://dav.example.com/dav/
+423	settings.backupManager.createFailed	备份创建失败	백업 실패
+424	provider.openTerminalDialog.description	会在你选的目录里打开一个终端，并用「{{name}}」的配置启动 {{app}}。一般选你的项目文件夹。	선택한 폴더에서 터미널을 열고 "{{name}}"의 설정으로 {{app}} 실행을 시작합니다. 보통 프로젝트 폴더를 선택하면 됩니다.
+425	mcp.form.additionalInfo	附加信息	추가 정보
+426	hermes.form.modelIdPlaceholder	anthropic/claude-opus-5	anthropic/claude-opus-5
+427	codexOauth.removeAccount	移除账号	계정 삭제
+428	skillsPage.discover.sourceAria	发现来源	탐색 출처
+429	providerPreset.plan.coding	编程订阅	코딩 구독
+430	codexOauth.deviceCodeLogin	设备代码登录	디바이스 코드 로그인
+431	pi.prompts.recommended	推荐	추천
+432	proxyConfig.circuitBreakerSettings	熔断器设置	서킷 브레이커 설정
+433	presetSelector.title	选择配置类型	설정 유형 선택
+434	settings.backupManager.safetyBackupId	安全备份ID	안전 백업 ID
+435	mcpPage.emptyBody	已经在应用里配过的 MCP，可以直接导入	앱에 이미 설정된 MCP 서버를 가져올 수 있습니다
+436	settings.resetDefault	恢复默认目录（需保存后生效）	기본 디렉터리로 재설정(저장 후 적용)
+437	appMatrix.ompDiscovery.docsLink	怎样让 Oh My Pi 不读取其他 Agent 的配置	Oh My Pi가 다른 에이전트의 설정을 불러오지 않도록 하는 방법
+438	providerForm.modelPicker.title	选择模型	모델 선택
+439	skills.error.archiveDownloadTooLarge	仓库压缩包下载超过 {{limit_mb}} MB 上限，已中止	저장소 아카이브 다운로드가 {{limit_mb}} MB 제한을 초과했습니다. 중단됨
+440	usage.refreshMenu.label	每 {{seconds}} 秒扫描	{{seconds}}초마다 스캔
+441	common.unsavedLeaveMessage	离开后，当前编辑页里的修改不会保存。	이 페이지를 나가면 변경 사항이 저장되지 않습니다.
+442	provider.officialModelsReason.noLogin	官方列表：Codex 没有可用的 ChatGPT 登录，请在 Codex 里用 ChatGPT 账号登录	공식 목록: Codex에는 사용 가능한 ChatGPT 로그인이 없습니다. ChatGPT 계정으로 Codex에 로그인하세요.
+443	settings.restartLater	稍后重启	나중에 다시 시작
+444	copilot.manageAccounts	管理账号	계정 관리
+445	sessionManager.moreActions	会话的更多操作	추가 세션 작업
+446	usage.cacheRead	命中	적중
+447	plan_expired	套餐已过期	요금제 만료됨
+448	pi.prompts.systemTab	系统提示	시스템 프롬프트
+449	proxy.autoFailover.nonStreaming	非流式超时	비스트리밍 시간 초과
+450	codex.chooseAccount	选择账号	계정 선택
+451	workspace.dailyMemory.deleteSuccess	每日记忆文件已删除	일일 메모리 파일이 삭제되었습니다.
+452	mcp.presets.installed	已安装	설치됨
+453	settings.advanced.logConfig.levels.info	信息	정보
+454	sessionManager.reader.image.alt	图 {{index}}	이미지 {{index}}
+455	codexConfig.autoCompactLimit	压缩阈值	자동 압축 임계값
+456	authCenter.accountMenu	{{login}} 的更多操作	{{login}}의 추가 작업
+457	hermes.webui.offline	Hermes Web UI 未启动，请先运行 `hermes dashboard` 启动服务。	Hermes 웹 UI가 실행되고 있지 않습니다. 먼저 `hermes dashboard`로 시작하세요.
+458	iconPicker.category.other	其他	기타
+459	omo.selectPlaceholder	请选择...	선택...
+460	usage.cacheCreationTokens	缓存创建	캐시 생성
+461	mcpPage.drawer.namePlaceholder	例如 context7	예: context7
+462	settings.backupId	备份ID	백업 ID
+463	mcp.enabledCount	已启用 {{count}} 个	{{count}} 활성화됨
+464	settings.tabAuth	认证	인증
+465	grokBuild.contextWindow	上下文窗口	컨텍스트 창
+466	provider.addCodexProvider	添加 Codex 供应商	Codex 공급자 추가
+467	skillsPage.banner.close	关闭提示	닫기
+468	usage.modelFilter.label	模型	모델
+469	quota.resetCredits.noExpiry	不会过期	만료 없음
+470	usage.today	24小时	24시간
+471	openclaw.removeModel	移除模型	모델 제거
+472	codexOauth.statusLoadFailed	无法加载 ChatGPT 账号状态，请重试。	ChatGPT 계정 상태를 로드하지 못했습니다. 다시 시도해 주세요.
+473	provider.configJson	配置 JSON	JSON 설정
+474	providerForm.gptContextWindowHint	中转站的 GPT 多来自 ChatGPT 订阅，窗口只有 272K。窗口写大了不会提前压缩，等上游拒收时这一轮会失败；确认这家支持更大窗口再这样填。	중계 서비스의 GPT는 대부분 ChatGPT 구독을 통해 제공되어 컨텍스트 창이 272K에 불과합니다. 창 크기를 실제보다 크게 입력하면 미리 압축되지 않아 업스트림이 요청을 거부할 때 해당 응답이 실패합니다. 이 공급자가 더 큰 컨텍스트 창을 지원하는지 확인한 후 입력하세요.
+475	appsPage.helpTitle	应用	앱
+476	openclaw.agents.runtimeSection	运行参数	런타임 매개변수
+477	prompts.description	说明	설명
+478	openclawConfig.modelCatalog.modelId	模型 ID	모델 ID
+479	mcp.presets.requiresEnv	需要环境变量	환경 변수 필요
+480	codexConfig.upstreamFormatCopilotRouteHint	所有模式都需要开启路由，由路由注入 Copilot 账号凭据；手动指定的协议模型不支持时会报错。	모든 모드에는 Copilot 계정 자격 증명을 삽입하는 라우팅이 필요합니다. 명시적으로 선택한 프로토콜은 해당 프로토콜을 지원하지 않는 모델에서는 실패합니다.
+481	mcp.addClaudeServer	新增 Claude Code MCP	Claude Code MCP 추가
+482	omo.otherFields	其他配置	기타 설정
+483	proxy.panel.stoppedTitle	路由服务已停止	라우팅 서비스가 중지되었습니다.
+484	skills.noInstalled	暂无已安装的技能	설치된 스킬 없음
+485	skillsPage.headerUpdates	{{count}} 个可更新	업데이트 {{count}}개
+486	providerForm.officialHint	💡 官方供应商使用浏览器登录，无需配置 API Key	💡 공식 공급자는 브라우저 로그인을 사용하므로 API 키가 필요하지 않습니다.
+487	endpointTest.testSpeed	测速	속도 테스트
+488	openclawConfig.modelCatalog.description	配置可用模型的别名和允许列表	모델 별칭 및 허용 목록 설정
+489	settings.globalProxy.scan	扫描本地代理	로컬 프록시 스캔
+490	prompts.toast.importedPi	已把 AGENTS.md 存进提示库，文件没有改动	AGENTS.md를 라이브러리에 저장했습니다. 파일은 변경되지 않았습니다
+491	settings.appVisibility.showProfileSwitcher	显示项目切换	프로젝트 전환기 표시
+492	sessionManager.reader.loading	加载中…	로드 중…
+493	providerCard.chip.noModels	没有模型	모델 없음
+494	provider.sortUpdated	排序已更新	정렬 순서가 업데이트되었습니다.
+495	mode.stackSettings.autoReviewDefaultOfficial	官方 Auto Review（默认）	공식 Auto Review (기본값)
+496	sessionManager.reader.verb.write	写入	쓰기
+497	skills.refresh	刷新	새로 고침
+498	usageScript.accessToken	访问令牌（在个人安全设置里获取）	액세스 토큰(개인 보안 설정에서 발급)
+499	settings.advanced.rectifier.responseGroup	响应整流	응답 보정
+500	settings.hermesConfigDir	Hermes 配置目录	Hermes 설정 디렉터리
+501	settings.advanced.rectifier.enabled	启用整流器	호환성 보정 활성화
+502	providerForm.authJsonError	auth.json 格式错误，请检查JSON语法	auth.json 형식 오류입니다. JSON 구문을 확인하세요.
+503	skills.storageSheet.resyncing	正在重新同步…	재동기화 중…
+504	providerCard.section.addedHelp	已添加的供应商会同时写进 {{app}} 的配置，在 {{app}} 里选模型即可。	추가된 공급자는 모두 {{app}}의 설정에 함께 저장됩니다. {{app}}에서 모델을 선택하면 됩니다.
+505	pi.prompts.templateSyntax	模板正文怎么写	템플릿 텍스트 작성
+506	skillsPage.discover.showAll	显示全部	모두 표시
+507	managedAuth.selectedAccountNeedsReauth	已绑定账号不存在或需要重新登录	연결된 계정이 없거나 다시 로그인해야 합니다.
+508	sessionManager.consequenceGeneric	从 {{app}} 的本地记录中永久删除。	{{app}}의 로컬 기록에서 영구적으로 제거됩니다.
+509	settings.terminal.options.macos.terminal	Terminal.app	Terminal.app
+510	usageScript.intervalMustBeInteger	自动查询间隔必须为整数，小数部分已忽略	간격은 정수여야 하며 소수 부분은 무시됩니다.
+511	openclaw.reasoning	支持扩展思考	확장 추론 지원
+512	openclawConfig.modelCatalog.empty	暂无模型目录配置	모델 카탈로그 항목이 없습니다.
+513	providerForm.partnerPromotion.qiniu	七牛云是多协议 AI 中转平台，一个 Key 即可调用原生 Claude、GPT、Gemini 模型，兼容 Anthropic、OpenAI、Gemini 多种接口。	Qiniu Cloud는 다중 프로토콜 AI 릴레이입니다. API 키 하나로 네이티브 Claude, GPT 및 Gemini 모델을 사용할 수 있으며, Anthropic, OpenAI 및 Gemini API를 모두 지원합니다.
+514	sessionManager.launchedIn	已在 {{terminal}} 中运行恢复命令	{{terminal}}에서 이어가기 명령을 실행했습니다.
+515	appMatrix.columnAria	{{app}}：已在 {{on}} / {{total}} 个 {{noun}} 上启用，批量操作	{{app}}: {{noun}} {{total}}개 중 {{on}}개 활성화됨, 일괄 작업
+516	openclaw.env.title	环境变量	환경 변수
+517	quota.resetCredits.value	剩余 {{count}} 次	{{count}}회 남음
+518	pi.prompts.deleteFailed	删除 Pi 指令文件失败	Pi 지침 파일을 삭제하지 못했습니다.
+519	usage.modelsDevAutoSync.configureDescription	通过搜索和供应商筛选选择需要自动更新的模型，选择结果保存在本地。	검색과 공급자 필터를 사용하여 요금을 자동 업데이트할 모델을 선택하세요. 선택 결과는 로컬에 저장됩니다.
+520	settings.advanced.optimizer.thinkingOptimizerDescription	自动为 Opus/Sonnet 启用 Adaptive Thinking，为旧模型注入 Extended Thinking	Opus/Sonnet에는 Adaptive Thinking을 자동으로 활성화하고 이전 모델에는 Extended Thinking을 추가합니다.
+521	provider.editProvider	编辑供应商	공급자 편집
+522	mcpPage.import.ok	知道了	확인
+523	providerForm.partnerPromotion.ccsub	CCSub 是稳定、实惠的 AI API 中转平台，Claude Code 官方订阅的超强平替，一个 Key 覆盖全部模型，价格约为官方 1/3。	CCSub는 안정적이고 합리적인 가격의 AI API 중계 플랫폼으로, Claude Code 공식 구독을 대체할 수 있습니다. 키 하나로 모든 모델을 이용하며 가격은 공식 가격의 약 3분의 1입니다.
+524	skillsPage.addMenu.discover	在发现里浏览	탐색에서 찾아보기
+525	usage.requestNotFound	请求未找到	요청을 찾을 수 없습니다
+526	sessionManager.findClose	关闭查找	찾기 닫기
+527	sessionManager.findInSession	在会话中查找	세션에서 찾기
+528	sessionManager.reader.image.copied	已复制图片	이미지가 복사되었습니다.
+529	sessionManager.whereTitle	会话记录在哪里	세션이 저장되는 위치
+530	authCenter.statusLoading	正在加载账号…	계정 불러오는 중…
+531	open_panel	打开快捷面板	빠른 패널 열기
+532	openclawConfig.modelCatalog.addEntry	添加模型	모델 추가
+533	kimi.empty.title	添加 Kimi Code 供应商	Kimi Code 공급자 추가
+534	settings.terminal.options.macos.otty	Otty	Otty
+535	skills.apps.gemini	Gemini	Gemini
+536	providerCard.chip.direct	直连	직접 연결
+537	codexConfig.subagentModelLabel	子代理模型	서브에이전트 모델
+538	reset_credits	可重置 {count} 次	초기화 {count}회 가능
+539	hermes.memory.disabledHint	在重新启用前 Hermes 会跳过此记忆	이 메모리를 다시 활성화하기 전까지 Hermes는 해당 내용을 사용하지 않습니다.
+540	mcpPage.count	{{count}} 个 MCP	MCP 서버 {{count}}개
+541	prompts.helpPiTitle	Pi 的提示词怎么生效	Pi 프롬프트가 적용되는 방법
+542	mode.toast.exited	已回到直连：{{app}} 现在直接连接 {{provider}}。	직접 연결로 돌아왔습니다. 이제 {{app}}이(가) {{provider}}에 직접 연결됩니다.
+543	mode.stackSettings.subagentDescription	子代理默认跟随主模型。选一个聚合里的模型后，主代理派出的子代理默认用它（主代理派单时自己指定了模型的除外）。不用重启 Codex，新开的对话就会用上；已经开着的对话仍按原来的设置。	서브에이전트는 기본으로 주 모델을 따릅니다. 통합된 모델을 선택하면 주 에이전트가 생성하는 서브에이전트가 기본으로 해당 모델을 사용합니다. 단, 생성할 때 주 에이전트가 모델을 직접 지정한 경우는 제외합니다. Codex를 다시 시작할 필요 없이 새 대화부터 적용되며, 이미 열린 대화는 이전 설정을 유지합니다.
+544	proxy.panel.stoppedDescription	使用上方开关即可启动服务	위의 토글을 사용하여 서비스를 시작하세요.
+545	sessionManager.reader.thinking.opencode	Thought	추론 내용
+546	pi.form.thinkingLevels.max	Max	최대
+547	usage.speedEstimatedValue	≈ {{value}} tok/s	≈ {{value}} tok/s
+548	mcp.confirm.deleteTitle	删除 MCP 服务器	MCP 서버 삭제
+549	deeplink.model	模型	모델
+550	skills.apps.openclaw	OpenClaw	OpenClaw
+551	notifications.settingsSaved	设置已保存	설정이 저장되었습니다.
+552	mcp.msg.disabled	已禁用	비활성화됨
+553	managedAuth.usedBy	{{count}} 个供应商在用	공급자 {{count}}개에서 사용 중
+554	skillsPage.installTo.many	{{first}} 等 {{count}} 个	{{first}} 등 {{count}}개
+555	appMatrix.pop.disableAll	全部关闭	모두 끄기
+556	providerCard.section.stackDefaultHelpDesktop	Claude Desktop 的默认模型和映射表里的模型都发给它；其他已添加的供应商以「供应商 / 模型」出现在模型列表里。	기본 모델과 매핑된 모델의 요청은 이 공급자로 보냅니다. 추가된 다른 공급자의 모델은 모델 목록에 ‘공급자 / 모델’로 표시됩니다.
+557	providerForm.apiHint	💡 填写兼容 Claude API 的服务端点地址，不要以斜杠结尾	💡 Claude API 호환 서비스의 엔드포인트를 입력하세요. 끝에 슬래시를 붙이지 마세요
+558	settings.wslShellFlag	标志	플래그
+559	nav.settings	设置	설정
+560	usage.modelPricingDesc	配置各模型的 Token 成本	각 모델의 토큰 비용 설정
+561	providerPreset.plan.payg	按量付费	종량제
+562	openclawConfig.modelCatalog.saveFailed	保存模型目录失败	모델 카탈로그를 저장하지 못했습니다.
+563	providerPreset.matchedVersion	匹配：{{name}}	일치 항목: {{name}}
+564	mcp.wizard.apply	应用配置	설정 적용
+565	providerForm.partnerPromotion.openmodel	OpenModel 为 Codex 和 Claude Code 提供客户端专属折扣，所支持的模型通过 Codex 调用最高优惠 90%、通过 Claude Code 调用最高优惠 60%。CC Switch 用户通过此链接注册并使用优惠码 "cc-switch"，即可享受首次充值九折优惠！	OpenModel은 지원되는 모델 전반에 걸쳐 Codex의 경우 최대 90%, Claude Code의 경우 최대 60%의 클라이언트별 할인을 제공합니다. 이 링크를 통해 등록하고 프로모션 코드 "cc-switch"를 사용하는 CC Switch 사용자는 첫 충전 시 10% 할인을 받습니다!
+566	pi.prompts.fileSaved	{{filename}} 已保存	{{filename}} 저장됨
+567	providerPreset.groupHint.cloud	用云厂商账号调用模型。	클라우드 공급자 계정으로 모델을 호출합니다.
+568	nav.settingsHasUpdate	设置 · CC Switch 有新版本	설정 · 새로운 CC Switch 버전을 사용할 수 있습니다
+569	sessionManager.reader.stepExpand	展开 {{title}} 的详情	{{title}}에 대한 세부정보 표시
+570	providerPreset.other	其他	기타
+571	skills.repo.skillCount	识别到 {{count}} 个技能	스킬 {{count}}개 발견
+572	settings.general.trayStyle	托盘样式	트레이 스타일
+573	omo.advancedLsp	LSP 配置	LSP 설정
+574	kimi.oauth.removeAccount	删除账号	계정 삭제
+575	codexConfig.authJsonHint	Codex auth.json 配置内容	Codex auth.json 설정 내용
+576	omo.importLocalReplaceSuccess	已从本地文件导入并覆盖 Agent/Category/Other Fields	로컬 파일에서 가져와 에이전트/카테고리/기타 필드 설정을 덮어썼습니다.
+577	settings.webdavSync.confirmUpload.warning	将覆盖云端已有的同步数据	원격 서버의 기존 동기화 데이터를 덮어쓰게 됩니다.
+578	pi.prompts.configuredEmpty	已配置但为空	설정되었지만 비어 있음
+579	subscription.thirtyDay	30 天	30일
+580	settings.backupManager.empty	暂无备份	아직 백업이 없습니다.
+581	proxy.panel.stats.successRate	成功率	성공률
+582	mcpPage.drawer.displayName	显示名	표시 이름
+583	appMatrix.toast.disabled	已在 {{app}} 关闭 {{count}} 个 {{noun}}	{{app}}에서 {{noun}} {{count}}개를 비활성화했습니다.
+584	usageScript.organizationId	组织 ID	조직 ID
+585	duration_hours	{n}小时	{n}시간
+586	usage.modelsDevAutoSync.lastSync	上次同步	마지막 동기화
+587	settings.backupStorage.items.skills.hint	卸载 Skill 前留的副本，可在 Skills 页恢复。删除后这些已卸载的 Skill 无法再恢复。	스킬을 제거할 때 보관한 복사본으로, 스킬 페이지에서 복원할 수 있습니다. 삭제하면 제거된 스킬을 더 이상 복원할 수 없습니다.
+588	prompts.appNoteOpenclaw	OpenClaw 在它自己页面的「工作区」里管理。	OpenClaw는 해당 앱 페이지의 작업 공간에서 관리합니다.
+589	skillsPage.searchInDiscover	在发现里搜索“{{query}}”	탐색에서 “{{query}}” 검색
+590	prompts.saveAndWritePi	保存并写入 AGENTS.md	저장 후 AGENTS.md에 반영
+591	endpointTest.noResult	未返回结果	반환된 결과가 없습니다.
+592	hermes.memory.agentPlaceholder	项目 acme-web 用 pnpm 和 Node 22。
+§
+部署走 GitHub Actions。	프로젝트 acme-web은 pnpm과 Node 22를 사용합니다.
+§
+배포는 GitHub Actions로 진행합니다.
+593	providerForm.presets.deepseek	DeepSeek	DeepSeek
+594	sessionManager.reader.injectedToggle	显示注入的上下文	주입된 컨텍스트 표시
+595	mcp.args	参数	인수
+596	proxy.autoFailover.errorRateExplain	错误率超过此值时，即使未达到失败阈值也会打开熔断器	연속 실패 임계값에 도달하지 않았더라도 오류율이 이 값을 초과하면 서킷 브레이커를 엽니다
+597	skills.storageSheet.resyncHint	修改只对之后启用或更新的 Skill 生效。要让已启用的 Skill 也换成当前方式，点「立即重新同步」。	변경 사항은 나중에 활성화하거나 업데이트하는 스킬에만 적용됩니다. 이미 활성화된 스킬을 전환하려면 지금 다시 동기화하세요.
+598	copilot.automaticFormatHint	Copilot 的上游格式由路由按模型自动选择，手选格式不生效。	Copilot의 업스트림 형식은 라우팅에서 모델에 따라 자동으로 선택합니다. 수동으로 지정한 형식은 적용되지 않습니다.
+599	sessionManager.listRefreshed	已刷新会话列表	세션 목록이 새로 고쳐졌습니다.
+600	usage.rawInputLabel	原始	원본
+601	settings.manualUninstallHint	默认自动侦测各应用的运行环境，也可手动切换。请选择安装时使用的方式，再复制所需应用的命令到终端执行。完成后点击“检查更新”刷新安装状态。	각 앱의 환경은 기본적으로 자동으로 감지되며, 다른 환경을 수동으로 선택할 수 있습니다. 원래 설치 방법을 선택한 다음, 제거하려는 앱에 대한 명령을 복사하여 터미널에서 실행하세요. 상태를 새로 고치려면 나중에 “업데이트 확인”을 클릭하세요.
+602	settings.title	设置	설정
+603	providerForm.modelPicker.selectedCount	已选 {{selected}} / 共 {{total}}	{{total}}개 중 {{selected}}개 선택됨
+604	providerForm.getApiKey	获取 API Key	API 키 가져오기
+605	mode.status.routeLead	路由生效中	라우팅 적용 중
+606	settings.openclawConfigDir	OpenClaw 配置目录	OpenClaw 설정 디렉터리
+607	authCenter.claude.loginExpiresOn	登录约在{{date}}过期，之后要重新登录	로그인 정보는 {{date}}경 만료되며, 이후 다시 로그인해야 합니다.
+608	firstRunNotice.bodyOfficial	列表里还预置了 “官方（Official）” 供应商，随时点一下即可切回官方默认配置。切换前 CC Switch 会自动把当前配置备份回 default，可以放心来回切。CC Switch 就是这样工作的 😊	목록에는 ‘공식(Official)’ 공급자도 미리 등록되어 있습니다. 언제든지 선택하여 공식 기본 설정으로 돌아갈 수 있습니다. CC Switch는 전환 전에 현재 설정을 ‘default’에 자동으로 백업하므로 안심하고 전환할 수 있습니다. CC Switch는 이렇게 작동합니다 😊
+609	omo.currentValueNotEnabled	{{value}}（当前值，未配置）	{{value}}(현재 값, 설정되지 않음)
+610	settings.backupManager.intervalDisabled	禁用	비활성화됨
+611	proxy.logging.failed	切换日志状态失败	로깅을 전환하지 못했습니다.
+612	skills.updateAllSuccess	已成功更新 {{count}} 个技能	스킬 {{count}}개를 업데이트했습니다.
+613	usage.justNow	刚刚	방금
+614	settings.s3Sync.presets.cos	腾讯云 COS	Tencent Cloud COS
+615	settings.appConfigDirDescription	自定义 CC Switch 的配置存储位置（指定到云同步文件夹即可云同步配置）	CC Switch 설정 저장 위치 (클라우드 동기화 폴더를 선택하면 설정을 클라우드로 동기화할 수 있습니다)
+616	settings.backupManager.title	数据库备份	데이터베이스 백업
+617	providerCard.section.queueEmpty	队列是空的，从下面加入供应商。	대기열이 비어 있습니다. 아래에서 공급자를 추가하세요.
+618	mcp.form.syncOtherSideHint	勾选后会把当前配置同时写入 {{target}}，若存在同名配置将被覆盖	{{target}}에도 동일한 설정을 적용합니다. 동일한 ID를 가진 기존 항목을 덮어씁니다.
+619	omo.clearWrapped	（清空）	(지우기)
+620	kimi.deleteSessionHint	请在 Kimi Code 中删除，以同时更新会话索引和历史记录。	색인과 기록을 함께 업데이트하려면 Kimi Code에서 이 세션을 삭제하세요.
+621	sessionManager.reader.event.prLinkPlain	已关联 PR	PR을 연결했습니다
+622	omo.agentTooltip.momus	计划评审员，高精度验证计划的清晰度、可验证性和完整性，拒绝并要求修订直到计划完美。	높은 정밀도로 계획의 명확성, 검증 가능성 및 완전성을 검증하는 계획 검토자입니다. 계획이 완벽해질 때까지 거부하고 수정을 요청합니다.
+623	mcpPage.drawer.homepage	主页	홈페이지
+624	skillsPage.viewInstalledCount	已安装 {{count}}	{{count}}개 설치됨
+625	problem_more	还有 {count} 个问题，打开 CC Switch 查看	문제 {count}개 더 있음 — CC Switch에서 확인하세요
+626	sessionManager.reader.note	说明	설명
+627	settings.webdavSync.confirmDownload.confirm	确认恢复	복원 확인
+628	codexConfig.catalogModelPlaceholder	例如: deepseek-v4-flash	예: deepseek-v4-flash
+629	profiles.createFailed	创建项目失败: {{detail}}	프로젝트 생성 실패: {{detail}}
+630	providerPreset.categoriesLabel	预设分类	프리셋 카테고리
+631	mcp.unifiedPanel.apps.opencode	OpenCode	OpenCode
+632	providerForm.fetchModelsNeedConfig	请先填写 API 端点和 API Key	먼저 API 엔드포인트와 API 키를 입력하세요.
+633	endpointTest.endpoints	个端点	엔드포인트
+634	mcpPage.drawer.jsonHelpTitle	JSON 和表单的关系	JSON과 양식
+635	codexOauth.accountToUse	使用的账号	사용할 계정
+636	mcpPage.deleteEllipsis	删除	삭제
+637	codex.needsRouting	需要路由	라우팅 필요
+638	codexOauth.loginRequired	请先登录 ChatGPT 账号	먼저 ChatGPT에 로그인하세요.
+639	hermes.form.baseUrlInvalid	API 端点不是有效的 URL	API 엔드포인트는 유효한 URL이 아닙니다.
+640	sessionManager.reader.thinkingChars	{{chars}} 字	{{chars}}자
+641	settings.backupStorage.items.codexHistoryUnify.hint	开启「统一 Codex 会话历史」并迁入既有会话时留的会话副本。关闭该开关时的「恢复备份」依赖它，删除后无法再把迁移过的官方会话还原回原分组。	‘Codex 세션 기록 통합’으로 기존 세션을 옮길 때 보관한 복사본입니다. 해당 기능을 끌 때 ‘백업 복원’에 사용합니다. 삭제하면 옮긴 공식 세션을 원래 그룹으로 되돌릴 수 없습니다.
+642	settings.restartRequired	需要重启应用	다시 시작 필요
+643	pi.prompts.saveAndConfigure	保存并配置	저장 및 설정
+644	settings.webdavSync.saveBeforeSync	请先保存配置，再使用上传/下载。	업로드/다운로드를 활성화하려면 먼저 설정을 저장하세요.
+645	settings.backupStorage.items.openclaw.hint	保存 OpenClaw 配置前的副本，按「备份保留数量」自动裁剪。	OpenClaw 설정을 저장하기 전에 보관한 복사본입니다. ‘보존할 백업 수’ 설정에 따라 오래된 백업이 자동으로 삭제됩니다.
+646	openclawConfig.defaultModel.fallbacks	回退模型	대체 모델
+647	settings.toolUninstallPreparing	正在检查安装…	설치 확인 중…
+648	tooltip_problem	CC Switch · 需要处理：{problem}	CC Switch · 확인 필요: {problem}
+649	pi.form.noModels	暂无模型配置	설정된 모델이 없습니다.
+650	settings.syncType.s3	S3 兼容存储	S3 호환
+651	providerForm.modelMetadataSourceBoth	预设和 models.dev	프리셋 및 models.dev
+652	sessionManager.reader.output	输出	출력
+653	omo.importGlobalSuccess	已从本地文件导入全局配置（未保存）	로컬 파일에서 가져온 전역 설정(저장되지 않음)
+654	providerForm.codexApiKeyAutoFill	只需要填这里，下方 auth.json 会自动填充	여기에 입력하면 아래 auth.json이 자동으로 채워집니다.
+655	mcp.wizard.typeHttp	http	http
+656	omo.advancedLabel	高级参数	고급 매개변수

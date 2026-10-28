@@ -1,0 +1,34 @@
+{
+  "batch_id": "translation:json-locale:failover:001",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "failover",
+  "ordinal": 1,
+  "record_count": 11,
+  "record_ids": [
+    "json:src/i18n/locales#failover.addQueue",
+    "json:src/i18n/locales#failover.disabled",
+    "json:src/i18n/locales#failover.enabled",
+    "json:src/i18n/locales#failover.inQueue",
+    "json:src/i18n/locales#failover.priority.tooltip",
+    "json:src/i18n/locales#failover.queueAddFailed",
+    "json:src/i18n/locales#failover.queueRemoveFailed",
+    "json:src/i18n/locales#failover.toggleFailed",
+    "json:src/i18n/locales#failover.tooltip.disabled",
+    "json:src/i18n/locales#failover.tooltip.enabled",
+    "json:src/i18n/locales#failover.tooltip.takeoverRequired"
+  ],
+  "keys": [
+    "failover.addQueue",
+    "failover.disabled",
+    "failover.enabled",
+    "failover.inQueue",
+    "failover.priority.tooltip",
+    "failover.queueAddFailed",
+    "failover.queueRemoveFailed",
+    "failover.toggleFailed",
+    "failover.tooltip.disabled",
+    "failover.tooltip.enabled",
+    "failover.tooltip.takeoverRequired"
+  ]
+}

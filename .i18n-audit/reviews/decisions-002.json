@@ -1,0 +1,12 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:apiKeyInput:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:app:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:appMatrix:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:appPage:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:appSwitcher:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:apps:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:claudeCode:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:jsonEditor:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:migration:001","default_status":"可保留","overrides":[]},
+{"batch_id":"translation:json-locale:newLayoutNotice:001","default_status":"可保留","overrides":[]}
+]}

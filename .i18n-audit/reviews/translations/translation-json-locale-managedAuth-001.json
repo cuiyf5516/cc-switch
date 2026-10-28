@@ -1,0 +1,388 @@
+{
+  "schema_version": 1,
+  "batch_id": "translation:json-locale:managedAuth:001",
+  "kind": "translation",
+  "namespace": "managedAuth",
+  "reviewed_at": "2026-10-28T13:40:03.248407+00:00",
+  "review_count": 18,
+  "records": [
+    {
+      "id": "json:src/i18n/locales#managedAuth.accountRemoved",
+      "key": "managedAuth.accountRemoved",
+      "status": "可保留",
+      "combined_fingerprint": "9baa08ac2198e7f466207e30731e4dd02c52a0d4ecf2731f30e49ef73a6f20ff",
+      "content_fingerprints": {
+        "en": "5d670c14e5b1964725e22f1130c5bf15611d41d5668e7da420e421837e4eafed",
+        "ja": "9500d66d377373bea9aa1599466cc69902bf0484d5bc2251c088c24e5d48ba3b",
+        "ko": "691d7f0fd1bf6cbac98da909db9496c7d91bbe1dcbfdbb12bf92744d7e3f7798",
+        "tr": "3c79a55af87540b644934147b1403692c9301a9e304ad0b225c0485f0e7891d3",
+        "zh": "f0df70b1400463505a9419737b44ba7d11b475a289ea4e51ae5800671ba73f07",
+        "zh-TW": "5aaea8ffc608aad47905729b15af5cfb3d4e8aea22db8215ba7c8bdf59ff4212"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.248407+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“账号已删除”与韩文“계정이 삭제되었습니다”在本条目所属 managedAuth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "managedAuth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#managedAuth.remove.appSeparator",
+      "key": "managedAuth.remove.appSeparator",
+      "status": "可保留",
+      "combined_fingerprint": "7a1b100b3ddf31a2fdf205e849b4bd3dd1829f1da5aefee95ffb203e5ff8f901",
+      "content_fingerprints": {
+        "en": "45822f54a0d0e030f75698c9252f1345982e743c9466806048f542467b3ca4f9",
+        "ja": "f114611cd61000bf57db19a6dab8057d9f8e236839a22c21b32c8458de91961a",
+        "ko": "45822f54a0d0e030f75698c9252f1345982e743c9466806048f542467b3ca4f9",
+        "tr": "e7ac0786668e0ff0f02b62bd04f45ff636fd82db63b1104601c975dc005f3a67",
+        "zh": "f114611cd61000bf57db19a6dab8057d9f8e236839a22c21b32c8458de91961a",
+        "zh-TW": "f114611cd61000bf57db19a6dab8057d9f8e236839a22c21b32c8458de91961a"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.248407+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“：”与韩文“: ”在本条目所属 managedAuth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "managedAuth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#managedAuth.remove.brokenAll",
+      "key": "managedAuth.remove.brokenAll",
+      "status": "可保留",
+      "combined_fingerprint": "ae5e7191e23f7360c2b6310bfacda8680e5a63a7ae22ff2f53829ca685fb3222",
+      "content_fingerprints": {
+        "en": "953d4c8a66605f2b2a126b134985abd73bd0cd84f466d5abfe3ec5f759c99bf6",
+        "ja": "be948ad0aadf4bd34ae7006de81f96659e7762b1e9bb5cee6aaba49f0ad08360",
+        "ko": "da1b30448578adde533810aeeecdfb3f3baa192bca86bbf23e91c20e95c97dad",
+        "tr": "cafb7e489ee7e1680f20fcb8dfa88586258b396765ecef72bb2e32a71c1593c0",
+        "zh": "67aadc4f3100907b92ebe8968cabfb9fbc89beb7c4f3072e866fae5b15217215",
+        "zh-TW": "a87ee2d61b30c48d0f8d54da3d14e4220bab1c1e3c9ada807e03ece1e52498dc"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.248407+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“这些供应商会无法使用，直到重新登录：”与韩文“다음 공급자는 다시 로그인할 때까지 사용할 수 없습니다:”在本条目所属 managedAuth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "managedAuth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#managedAuth.remove.brokenOne",
+      "key": "managedAuth.remove.brokenOne",
+      "status": "可保留",
+      "combined_fingerprint": "1de63d9d62ca82a8bc6afa3e736a91e5d42e34ab8cf865da10858e350615d485",
+      "content_fingerprints": {
+        "en": "903967d7b848d2ea7a82e8222184d3513c4fcde13e1e6385a10a47b5ba5d54cb",
+        "ja": "ac54192a82e5f2e3b5918c2112cd509fa5f13935adef111233be63f0d136edd5",
+        "ko": "8755584b30b2e85fede672e614b493c2f51476d4c555b8cab7ff836cbed9a7aa",
+        "tr": "320fb330e81d51c0b4dd284571f7066c5b1da9461aed1bd0d9ce8bdd30bd9c35",
+        "zh": "84dcdc48ca42f056ca00f17f75966269e4d6d8422db5d75d11b6bd29e7e6fbd8",
+        "zh-TW": "73793ff7e099340fccbcb2cf6a3759b6a3c3665185e2e34c9c63c5cb8175e64d"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.248407+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“这些供应商会无法使用，直到重新登录或改选别的账号：”与韩文“다음 공급자는 다시 로그인하거나 다른 계정을 선택할 때까지 사용할 수 없습니다:”在本条目所属 managedAuth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "managedAuth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#managedAuth.remove.confirmAll",
+      "key": "managedAuth.remove.confirmAll",
+      "status": "可保留",
+      "combined_fingerprint": "41be3cc0cfca69115aef23ad208a904042b744c91ec745cf2619bc6ced5253af",
+      "content_fingerprints": {
+        "en": "478e466a888c950440002f7d62bf92097799b7cf0b8231aa81cc6a1c131b8949",
+        "ja": "b9299d45b856a475efce44e30455d071e1b4925764db6309ca41b8720e6b62c4",
+        "ko": "d28c2fccf02c37f25ee47253e3312d9148b2d09d57966cc6c264066dc5eb9a02",
+        "tr": "88aea78343a38975e2a32c8139c74d8b6fdad4ded80dc73e2859221cc1d9b61c",
+        "zh": "ba3adb6b36e91fd5fe6e3d3cf7369c44d88fa7645501950fe3c23f840fdfa7a1",
+        "zh-TW": "e73b7b5f73cf76c39b4a334a58b6f0497094170de3ef5e10f54edf45bd0d6d41"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.248407+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“删除 {{count}} 个账号”与韩文“계정 {{count}}개 삭제”在本条目所属 managedAuth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "managedAuth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#managedAuth.remove.confirmOne",
+      "key": "managedAuth.remove.confirmOne",
+      "status": "可保留",
+      "combined_fingerprint": "4e35b793cf1279e9980690002c0038c465b037132dcf9201624ddf63a992e388",
+      "content_fingerprints": {
+        "en": "a2e20a33570001ae083b4667b54c433a7246897eba226b258a680cf46089c0b0",
+        "ja": "45cab102571833b825fc066a64db18ae0fa99b0e90eac73148deee18b967cd66",
+        "ko": "07051913f67d3a7ef7548ab3e9cbcfa81dc0a9a7b01470bb7db977f6092be47e",
+        "tr": "dda55e2ffddde5e2d43c3ceff3e52e54ed504235a4ff72e3822d113a8ccd67e6",
+        "zh": "cd3266d91ae10abc6599ab9f8cacfbd3849956bed896b4a0761230566d26dc52",
+        "zh-TW": "6768c74aa0afa1a4ed2c9236b7388d328f37a52806c648a5b8e1c7792456f90f"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.248407+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“删除账号”与韩文“계정 삭제”在本条目所属 managedAuth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "managedAuth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#managedAuth.remove.leadAll",
+      "key": "managedAuth.remove.leadAll",
+      "status": "可保留",
+      "combined_fingerprint": "b96b6576226410fe32b37394cc446e83ce17bd3c8920501f61a0a3a0ac5ddd3d",
+      "content_fingerprints": {
+        "en": "3fafb066ab4e7d58c52c5823d3292b3265ba2a8a86cfacf5bc77a59bdc13e451",
+        "ja": "759c53ff6de7edad3fb52768f35118c927f71db538ea5b359720eb4b6f6e4e7a",
+        "ko": "7f7cb53ca38530f88a69512e1d531567180bce4a2cfd9b17c9f2d46918f37af0",
+        "tr": "48f27350c436cab6a47226bd1249bf251c7606d1f80412fdd7415a912c9e6cd0",
+        "zh": "16731dff7acee310ac25dc83d74feff9c2b44b3a820112bada06772729f5583b",
+        "zh-TW": "11183c91eeed7d19e730048a69d2f3fdbe4850176d562bf9fd293681082b4f47"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.248407+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“会删除这 {{count}} 个账号保存在 CC Switch 里的登录凭据，无法撤销。”与韩文“CC Switch에 저장된 계정 {{count}}개의 로그인 자격 증명이 삭제됩니다. 이 작업은 취소할 수 없습니다.”在本条目所属 managedAuth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "managedAuth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#managedAuth.remove.leadOne",
+      "key": "managedAuth.remove.leadOne",
+      "status": "可保留",
+      "combined_fingerprint": "213dacb16fe64feed7fad797bbe98c89c38287d488f8c25c19e69f65f114c421",
+      "content_fingerprints": {
+        "en": "c9b085c56c50d884368e7fe4a68daa59111c3ebc28a218dead4bf36f4d8de5e7",
+        "ja": "6388718bb52cb09781d9d8d2520530d7f6ad9b9d045829fa8ca10a496989c337",
+        "ko": "aa674efacb51c9c2af1e74663e849cd98b8bb3e4ef63b06995aa513cd22e4c78",
+        "tr": "d3ba6aa73461d0a91dbbd31b432b4231eb4a2dd117dd9b4ec19a63df0042838d",
+        "zh": "bac540ee0e8228ecf561f878e55586a92acc6fde763fbdad01d7c71ae93eb914",
+        "zh-TW": "7544f422dc9c9a9fe3a67882fb4239ef83ed46071ef33e3f9ad18a846330ef27"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.248407+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“会删除这个账号保存在 CC Switch 里的登录凭据，无法撤销。”与韩文“CC Switch에 저장된 이 계정의 로그인 자격 증명이 삭제됩니다. 이 작업은 취소할 수 없습니다.”在本条目所属 managedAuth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "managedAuth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#managedAuth.remove.moved",
+      "key": "managedAuth.remove.moved",
+      "status": "可保留",
+      "combined_fingerprint": "bbc351d7a2d2170224d6d2254e63ac9fa98e585b5e6fe9d439a7863e185af67e",
+      "content_fingerprints": {
+        "en": "3fdf3272f7c2c5820f0f9d1f31a7e8cd5ce03e2e77f67a5840e738f487904b9d",
+        "ja": "18e04232e2e512c99a2f11b65db12a8b08a62170599ad5f745c3669e60b10aa6",
+        "ko": "6a99b5f9b65272480d00847e070f58a6957d36eaebd166f026b04d58ff1ddd01",
+        "tr": "bc6547b1add1b4496af8b8be59fcab6f408575df759f6e2dc63351114959332e",
+        "zh": "5f4e833cf6693e8120ae5b21dc1de0741110339000c27bf5bd5e6d1190ee90bf",
+        "zh-TW": "ef29a4f888dac820e2f449e21242a81fd73033418b5b28d3db4546a95daa595d"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.248407+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“这些供应商用的是默认账号，删除后改用新的默认账号：”与韩文“다음 공급자는 기본 계정을 사용하므로 삭제 후 새 기본 계정으로 전환됩니다:”在本条目所属 managedAuth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "managedAuth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#managedAuth.remove.nameSeparator",
+      "key": "managedAuth.remove.nameSeparator",
+      "status": "可保留",
+      "combined_fingerprint": "701442d9e0eed32b988bd1bc5742581903fe9e4c85ab0e6c323a520d80473b03",
+      "content_fingerprints": {
+        "en": "0a07f659461970d8d8dcefe4fff96a1745599810dc7d47391e95c803b7b2072c",
+        "ja": "c4a40ea8fe35627476f7f8cb9e1fc7f8898f428c6d1ff18b0bc5479d5db39c5f",
+        "ko": "0a07f659461970d8d8dcefe4fff96a1745599810dc7d47391e95c803b7b2072c",
+        "tr": "d03502c43d74a30b936740a9517dc4ea2b2ad7168caa0a774cefe793ce0b33e7",
+        "zh": "c4a40ea8fe35627476f7f8cb9e1fc7f8898f428c6d1ff18b0bc5479d5db39c5f",
+        "zh-TW": "c4a40ea8fe35627476f7f8cb9e1fc7f8898f428c6d1ff18b0bc5479d5db39c5f"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.248407+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“、”与韩文“, ”在本条目所属 managedAuth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "managedAuth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#managedAuth.remove.noneAll",
+      "key": "managedAuth.remove.noneAll",
+      "status": "可保留",
+      "combined_fingerprint": "a121f80838105a57ac191d1ad86440ad0bf614bc5bad56d5d8f9e4df54faad2d",
+      "content_fingerprints": {
+        "en": "4c242eeeb0163458bdbb93989e747d486377a32f67410e165cbc1aed4bef7569",
+        "ja": "2864b87c5408943a8ebefc010ec85573207f721a12cfea9727976b4de1c5d79f",
+        "ko": "6a78ab0983ccc46ebb7bcf042d932cbbd4474c4b9105b45d1603141fbb6f1a11",
+        "tr": "e4016b42b6af8fb1e4c370213702d68981bdc842cc0f55c2e7fde355d0c9f1d0",
+        "zh": "31f2f02ca0606da73d9d27b1a7bff41021131c3eb2e8fb6754d22441c30c25d6",
+        "zh-TW": "2141655aecd8d032f46731705d27727fca8a18e99b58a5616676d992fbc83bf5"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.248407+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“没有供应商在用这些账号。”与韩文“이 계정들을 사용하는 공급자가 없습니다.”在本条目所属 managedAuth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "managedAuth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#managedAuth.remove.noneOne",
+      "key": "managedAuth.remove.noneOne",
+      "status": "可保留",
+      "combined_fingerprint": "e1e72311f8de6cd70bbcc3ab03dbad43d29c255a872a72b4d4d7cc01b0897bea",
+      "content_fingerprints": {
+        "en": "3e9835240749278b97cd99c537918d742cdfe977963ba8350af2cfc9e30c3bb0",
+        "ja": "2b8a114ef3a82787c443fe2109831396a91d35e76d70a31fa1144c1867bb3968",
+        "ko": "fb87aa3abd7d3a628d672dec2609ae83f5fa3d31323d52c16aa52f5fe5d18a6d",
+        "tr": "d991cda96310530c43aababbe79128b61d830d2b7d600650f153bade7101fe4a",
+        "zh": "4e6d7805fe768ab66425d9f63704922f7b836c04dccf798568ba7a991e90e15b",
+        "zh-TW": "946c3f141f2b1c399eecffb2fc5020f005536bdcd347d9dfa34e2c05cde52ed3"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.248407+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“没有供应商在用这个账号。”与韩文“어떤 공급자도 이 계정을 사용하지 않습니다.”在本条目所属 managedAuth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "managedAuth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#managedAuth.remove.titleAll",
+      "key": "managedAuth.remove.titleAll",
+      "status": "可保留",
+      "combined_fingerprint": "43f03040334739060a0ed4274c5fb012d3b756530c46f40b8f29c94e42774a4b",
+      "content_fingerprints": {
+        "en": "eaa01c637929db6722e59ab39298bbfa80647d7c3527d792e2e36470efb09a0c",
+        "ja": "067c2cf7ce6f937502ec12d45db6b1866e3286735e85cce210aad788a2dedcfc",
+        "ko": "0a2f45d64ad5bbc17ccaea60fd58b9b27c43fe763fc726166f130abf742aa00c",
+        "tr": "b82e1fb82e077f04ba5569974d865cefe3c10bf47d814ab30da72983f6a1c57d",
+        "zh": "f69de2ab0b495ff89caae83accab7a1d995f648834af09426ca2fa4fcc3a3df9",
+        "zh-TW": "b3618e4086513183d32c6d34c3af80a47ed9effd718b3bf0e106ffecb78f17b3"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.248407+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“删除全部 {{service}} 账号？”与韩文“모든 {{service}} 계정을 삭제하시겠습니까?”在本条目所属 managedAuth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "managedAuth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#managedAuth.remove.titleOne",
+      "key": "managedAuth.remove.titleOne",
+      "status": "可保留",
+      "combined_fingerprint": "345b60f7871345ffd5221c792d2d85dc1d5a00acd19083be241ea6c7f64a44fe",
+      "content_fingerprints": {
+        "en": "4f4084ff876da2197170c4be8e4e6e04dfa2ea0d9079eac589a92a6c0ddc9a28",
+        "ja": "f3d9048f6f763218860a122400fe35b430169aa1dc2cb270860eb9105f68e5e4",
+        "ko": "7cbedd980093557acf9d512defa4800b663d14b640b3efcfc98d889c21f69774",
+        "tr": "ac7eda48834542adc276568f948c6ef2796f5b194714cf86acf997872b695f29",
+        "zh": "f5cdd976955e6d79b10d101f6d3606eba1de14cfb43d2849cb3b79d1cefe4c85",
+        "zh-TW": "da8853719873f950ce5625c89a4cb5df0f0e2a75d8676d503a9d325beaf9a169"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.248407+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“删除账号「{{login}}」？”与韩文“'{{login}}' 계정을 삭제하시겠습니까?”在本条目所属 managedAuth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "managedAuth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#managedAuth.selectedAccountNeedsReauth",
+      "key": "managedAuth.selectedAccountNeedsReauth",
+      "status": "可保留",
+      "combined_fingerprint": "8ca433cb83a215d7116e76f15897c5b2364895265df4508872e3569489289fc2",
+      "content_fingerprints": {
+        "en": "af724e080d77a36aa8a0b39f2011cae55a54effc9f10db43e81cd8b3f29ea626",
+        "ja": "e4dfa663cb8b273a2e2e59eb45167b590f57f99b133e57ae77772eb19abaaf42",
+        "ko": "f414c4d5c74f9584d578d599b57e8a129b15489ee8f9c75a6b7582a915dca95a",
+        "tr": "e8853136811db5d5ec2d8646db9170d575a596e17822d72d9b92c1a13118714d",
+        "zh": "15e4b1d59ec929b5cc21815a6453d097664eec76adbabe31066a67964dc8e149",
+        "zh-TW": "442dac7998b93d754ff00077c63381ca4996eab401e4d03e42f03f1b46d64ca5"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.248407+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已绑定账号不存在或需要重新登录”与韩文“연결된 계정이 없거나 다시 로그인해야 합니다.”在本条目所属 managedAuth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "managedAuth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#managedAuth.selectedAccountUnavailable",
+      "key": "managedAuth.selectedAccountUnavailable",
+      "status": "可保留",
+      "combined_fingerprint": "2f6efb09496dff9d60615496ae63e1b1f11bfd63178b63808223310b43be9485",
+      "content_fingerprints": {
+        "en": "14fe667788d15d8b9ca3a239744b569b5855481c8cb4a602463569b8d3a3de83",
+        "ja": "6ae131d23383c1c847901e09f596910a415cc9f958d36e3425cafd899d730ea4",
+        "ko": "c8c5a3d7f9f75c95e2e59de2ef1918eacdd6df9ce7665218bf25a59f9432d701",
+        "tr": "5280371be9f6df24e1d14b57db9cd6f42bf30b0bcf142c66370f2c0ee6f73970",
+        "zh": "fc84b99dacb9ebda59ce59fce6a76a1a093722ec9e46bf87e01becbcecfc0319",
+        "zh-TW": "59e1a7819518d406d103952be0878605ab10c7473608f7fc740b11d951682b0d"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.248407+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“已绑定账号不存在或需要重新登录，请重新选择账号”与韩文“연결된 계정이 없거나 다시 로그인해야 합니다. 계정을 다시 선택하세요.”在本条目所属 managedAuth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "managedAuth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#managedAuth.usedBy",
+      "key": "managedAuth.usedBy",
+      "status": "可保留",
+      "combined_fingerprint": "e008da5564ff5ac6849bd26be32067363494a0c600116886905d46b4e9ae5baf",
+      "content_fingerprints": {
+        "en": "f25d055d2bf368a5ca1f1c1a4459a7343101b14bc1d80a7e3a8dbd9f6cba51e1",
+        "ja": "e99eb5395b83a318ee5a45a1d1b468f77ee0f0ff4ce5d3727ae118a44d34f3b5",
+        "ko": "dc02fe67cfe26e4f6c5a7163fe40a9bb9abba39aa734f7343f09287fd0028fe8",
+        "tr": "d8d3efb23da25443af0c92c31ca0d67dfd11772ccf684eb6055c24767f64d8f0",
+        "zh": "82516dc6906cc03c6247f1313da3cde89744604d0cb430800f40e7c0b2ccf27c",
+        "zh-TW": "f26ed7d19e9e08bd44a1447b12c0fbb7e3cc34176a796c9ed4d6162b6076c32f"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.248407+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“{{count}} 个供应商在用”与韩文“공급자 {{count}}개에서 사용 중”在本条目所属 managedAuth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "managedAuth",
+      "round": 1
+    },
+    {
+      "id": "json:src/i18n/locales#managedAuth.usedByTitle",
+      "key": "managedAuth.usedByTitle",
+      "status": "可保留",
+      "combined_fingerprint": "8af7339700853bdbaf6360face23deb55810f1b206b626a300ec6fe4ed9a3641",
+      "content_fingerprints": {
+        "en": "f3c944f688012385b47006d044f33c245a0aedbb5ecdc61fafa15ad1e9f63fe0",
+        "ja": "03793394a9b30ba5cb05857fc77c8a2a81da13030a5477ba5412bf0bfa21bda4",
+        "ko": "51519997481b22be223a588335c78d35472edb61b01f55347e0397b908e09ccc",
+        "tr": "79d10af5d8337787e8391b16e6ec1f963db2334d256cf88e1e2145d5ff86c8a6",
+        "zh": "3c4cdff6ae454b5021d8e164adabf6016c0bbd4d079615559d6937ee6b06b428",
+        "zh-TW": "0385570db3d2ab191824b3bdc82f5bc065c5d5457abf99b48a4fb97514c35b3a"
+      },
+      "reviewed_at": "2026-10-28T13:40:03.248407+00:00",
+      "reviewer": "primary",
+      "semantic_trace": "中文“在用的供应商：{{names}}”与韩文“사용처: {{names}}”在本条目所属 managedAuth UI 语境中逐条核对，功能、语气和格式一致。",
+      "reason": null,
+      "suggestion": null,
+      "ui_context": "managedAuth",
+      "round": 1
+    }
+  ]
+}

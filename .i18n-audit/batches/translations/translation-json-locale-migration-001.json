@@ -1,0 +1,20 @@
+{
+  "batch_id": "translation:json-locale:migration:001",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "migration",
+  "ordinal": 1,
+  "record_count": 4,
+  "record_ids": [
+    "json:src/i18n/locales#migration.skillsFailed",
+    "json:src/i18n/locales#migration.skillsFailedDescription",
+    "json:src/i18n/locales#migration.skillsSuccess",
+    "json:src/i18n/locales#migration.success"
+  ],
+  "keys": [
+    "migration.skillsFailed",
+    "migration.skillsFailedDescription",
+    "migration.skillsSuccess",
+    "migration.success"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0182:src-hooks-usePromptActions.ts",
+  "kind": "hardcoded",
+  "group": "src/hooks/usePromptActions.ts",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 3,
+  "records": [
+    {
+      "id": "hardcoded:src/hooks/usePromptActions.ts:cacheKey:3830fffc72e9e63f:001",
+      "status": "无需国际化",
+      "content_fingerprint": "3830fffc72e9e63fb907582e5f4e9e8a8f95c4606d773eb3c6d973e9bac9ec2c",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/hooks/usePromptActions.ts",
+      "line": 75,
+      "function": "cacheKey",
+      "expression": "`prompts.${requestAppId}.v1`",
+      "reason": "技术标识、命令、路径、协议值、配置片段或内部数据，不面向用户展示。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0182:src-hooks-usePromptActions.ts",
+      "round": 1
+    },
+    {
+      "id": "hardcoded:src/hooks/usePromptActions.ts:toggleEnabled:7dddff38555ef878:001",
+      "status": "确认遗漏",
+      "content_fingerprint": "7dddff38555ef8787e5d36ce807e6e3c0b4c852ca4c6fd7de592f7e643ac2774",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/hooks/usePromptActions.ts",
+      "line": 199,
+      "function": "toggleEnabled",
+      "expression": "`Prompt ${id} does not exist`",
+      "reason": "提示词操作异常会向上冒泡到用户通知，但消息固定为英文。",
+      "suggested_action": "使用错误码并在通知层翻译。",
+      "suggested_ko": null,
+      "severity": "中",
+      "review_batch": "hardcoded:0182:src-hooks-usePromptActions.ts",
+      "round": 1
+    },
+    {
+      "id": "dynamic-i18n:src/hooks/usePromptActions.ts:toggleEnabled:0a592ddbd2de0f49:001",
+      "status": "待核实",
+      "content_fingerprint": "0a592ddbd2de0f4975252f9cdbe2dbe113aabd4c0d6efee015027c3922676cc9",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/hooks/usePromptActions.ts",
+      "line": 210,
+      "function": "toggleEnabled",
+      "expression": "enabled\n                  ? \"pi.prompts.usePromptSuccess\"\n                  : \"pi.prompts.stopUsingSuccess\"",
+      "reason": "翻译键由运行时表达式“enabled\n                  ? \"pi.prompts.usePromptSuccess\"\n                  : \"pi.prompts.stopUsingSuccess\"”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。",
+      "suggested_action": "核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。",
+      "suggested_ko": null,
+      "severity": "中",
+      "review_batch": "hardcoded:0182:src-hooks-usePromptActions.ts",
+      "round": 1
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0216:src-utils-deepLinkConfigPreview.ts",
+  "kind": "hardcoded",
+  "group": "src/utils/deepLinkConfigPreview.ts",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 2,
+  "records": [
+    {
+      "id": "hardcoded:src/utils/deepLinkConfigPreview.ts:sanitizeTomlForPreview:6e915f849a4a51a6:001",
+      "status": "待核实",
+      "content_fingerprint": "6e915f849a4a51a6a9e91f5572064330ce8e9fa3c31c8d7ddb8ef8def9b46e53",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/utils/deepLinkConfigPreview.ts",
+      "line": 41,
+      "function": "sanitizeTomlForPreview",
+      "expression": "`${stringifyToml(maskStructuredSecrets(parsed) as Record<string, unknown>).trim()}\\n`",
+      "reason": "该英文字符串“`${stringifyToml(maskStructuredSecrets(parsed) as Record<string, unknown>).trim()}\\n`”可能作为提示或错误展示，但静态上下文不足以确认展示链路。",
+      "suggested_action": "追踪调用方并确认是否需要本地化。",
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0216:src-utils-deepLinkConfigPreview.ts",
+      "round": 1
+    },
+    {
+      "id": "hardcoded:src/utils/deepLinkConfigPreview.ts:parseDeepLinkConfigPreview:ff3345b1e0450e63:001",
+      "status": "无需国际化",
+      "content_fingerprint": "ff3345b1e0450e63cd05121e3730a9443a1df969a2601e5e8cc795dfc4429c5d",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/utils/deepLinkConfigPreview.ts",
+      "line": 111,
+      "function": "parseDeepLinkConfigPreview",
+      "expression": "Failed to parse deep link config preview:",
+      "reason": "控制台日志或诊断信息，不作为界面文案。",
+      "suggested_action": null,
+      "suggested_ko": null,
+      "severity": "低",
+      "review_batch": "hardcoded:0216:src-utils-deepLinkConfigPreview.ts",
+      "round": 1
+    }
+  ]
+}

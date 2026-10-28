@@ -1,0 +1,22 @@
+{
+  "batch_id": "translation:json-locale:streamCheck:001",
+  "kind": "translation",
+  "source_kind": "json-locale",
+  "namespace": "streamCheck",
+  "ordinal": 1,
+  "record_count": 5,
+  "record_ids": [
+    "json:src/i18n/locales#streamCheck.error",
+    "json:src/i18n/locales#streamCheck.reachable",
+    "json:src/i18n/locales#streamCheck.reachableSlow",
+    "json:src/i18n/locales#streamCheck.unreachable",
+    "json:src/i18n/locales#streamCheck.unreachableHint"
+  ],
+  "keys": [
+    "streamCheck.error",
+    "streamCheck.reachable",
+    "streamCheck.reachableSlow",
+    "streamCheck.unreachable",
+    "streamCheck.unreachableHint"
+  ]
+}

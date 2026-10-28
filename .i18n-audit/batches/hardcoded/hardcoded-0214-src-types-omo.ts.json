@@ -1,0 +1,18 @@
+{
+  "batch_id": "hardcoded:0214:src-types-omo.ts",
+  "kind": "hardcoded",
+  "group": "src/types/omo.ts",
+  "ordinal": 1,
+  "record_count": 9,
+  "record_ids": [
+    "hardcoded:src/types/omo.ts:OMO_DISABLEABLE_AGENTS:83c9e4e50ca41586:001",
+    "hardcoded:src/types/omo.ts:OMO_DISABLEABLE_AGENTS:94f4223d1647de6a:001",
+    "hardcoded:src/types/omo.ts:OMO_DISABLEABLE_AGENTS:61b1b3dd8e42e1cd:001",
+    "hardcoded:src/types/omo.ts:OMO_SISYPHUS_AGENT_PLACEHOLDER:dae3717f08e64178:001",
+    "hardcoded:src/types/omo.ts:OMO_LSP_PLACEHOLDER:c7371b895550fe89:001",
+    "hardcoded:src/types/omo.ts:OMO_EXPERIMENTAL_PLACEHOLDER:713f419812a3d0af:001",
+    "hardcoded:src/types/omo.ts:OMO_BACKGROUND_TASK_PLACEHOLDER:c07e959e3120b626:001",
+    "hardcoded:src/types/omo.ts:OMO_BROWSER_AUTOMATION_PLACEHOLDER:be8a375e66943bf9:001",
+    "hardcoded:src/types/omo.ts:OMO_CLAUDE_CODE_PLACEHOLDER:71c2e1fe2c3d7aa1:001"
+  ]
+}

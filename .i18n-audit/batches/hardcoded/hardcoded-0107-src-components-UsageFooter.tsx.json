@@ -1,0 +1,15 @@
+{
+  "batch_id": "hardcoded:0107:src-components-UsageFooter.tsx",
+  "kind": "hardcoded",
+  "group": "src/components/UsageFooter.tsx",
+  "ordinal": 1,
+  "record_count": 6,
+  "record_ids": [
+    "hardcoded:src/components/UsageFooter.tsx:key:9362b5b84393faf0:001",
+    "hardcoded:src/components/UsageFooter.tsx:amount:272d40f9ddbe07f5:001",
+    "hardcoded:src/components/UsageFooter.tsx:amount:1c0605d00a26c685:001",
+    "hardcoded:src/components/UsageFooter.tsx:detail:632b5e14fd752866:001",
+    "hardcoded:src/components/UsageFooter.tsx:detail:9836ac80e6765d0a:001",
+    "hardcoded:src/components/UsageFooter.tsx:planLine:9836ac80e6765d0a:001"
+  ]
+}

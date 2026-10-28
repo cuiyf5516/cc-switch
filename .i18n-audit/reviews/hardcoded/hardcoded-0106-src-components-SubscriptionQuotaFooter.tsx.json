@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "batch_id": "hardcoded:0106:src-components-SubscriptionQuotaFooter.tsx",
+  "kind": "hardcoded",
+  "group": "src/components/SubscriptionQuotaFooter.tsx",
+  "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+  "review_count": 3,
+  "records": [
+    {
+      "id": "dynamic-i18n:src/components/SubscriptionQuotaFooter.tsx:tierLabel:594c5d7f4330650b:001",
+      "status": "待核实",
+      "content_fingerprint": "594c5d7f4330650b8869a1eff51f6e2fe4a277881c240a0a19e4b91e46dac546",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/components/SubscriptionQuotaFooter.tsx",
+      "line": 129,
+      "function": "tierLabel",
+      "expression": "TIER_I18N_KEYS[name]",
+      "reason": "翻译键由运行时表达式“TIER_I18N_KEYS[name]”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。",
+      "suggested_action": "核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。",
+      "suggested_ko": null,
+      "severity": "中",
+      "review_batch": "hardcoded:0106:src-components-SubscriptionQuotaFooter.tsx",
+      "round": 1
+    },
+    {
+      "id": "dynamic-i18n:src/components/SubscriptionQuotaFooter.tsx:tierShortLabel:cc8832922601ce1f:001",
+      "status": "待核实",
+      "content_fingerprint": "cc8832922601ce1f1074be0045da3942eed6b0d23f9618bb02fdf597641e861b",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/components/SubscriptionQuotaFooter.tsx",
+      "line": 135,
+      "function": "tierShortLabel",
+      "expression": "key.replace(\"subscription.\", \"subscription.short.\")",
+      "reason": "翻译键由运行时表达式“key.replace(\"subscription.\", \"subscription.short.\")”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。",
+      "suggested_action": "核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。",
+      "suggested_ko": null,
+      "severity": "中",
+      "review_batch": "hardcoded:0106:src-components-SubscriptionQuotaFooter.tsx",
+      "round": 1
+    },
+    {
+      "id": "dynamic-i18n:src/components/SubscriptionQuotaFooter.tsx:label:ad936fcbed631fa6:001",
+      "status": "待核实",
+      "content_fingerprint": "ad936fcbed631fa67e05c3ea03953905221c9d46af0616b70badf105a966fb11",
+      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewer": "primary",
+      "source_file": "src/components/SubscriptionQuotaFooter.tsx",
+      "line": 152,
+      "function": "label",
+      "expression": "group",
+      "reason": "翻译键由运行时表达式“group”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。",
+      "suggested_action": "核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。",
+      "suggested_ko": null,
+      "severity": "中",
+      "review_batch": "hardcoded:0106:src-components-SubscriptionQuotaFooter.tsx",
+      "round": 1
+    }
+  ]
+}

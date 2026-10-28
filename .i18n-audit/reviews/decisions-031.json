@@ -1,0 +1,12 @@
+{"decisions":[
+{"batch_id":"translation:json-locale:usageScript:001","default_status":"可保留","overrides":[
+{"key":"usageScript.baseUrl","status":"建议改","reason":"原文是“请求地址”，韩文「기본 URL」可能被理解为默认 URL，字段用途不够直观。","suggestion":"요청 URL","ui_context":"用量脚本请求地址字段"},
+{"key":"usageScript.baseUrlPlaceholder","status":"建议改","reason":"同字段应统一表达为“请求 URL”，避免「기본 URL」与“默认 URL”混淆。","suggestion":"공급자의 요청 URL을 사용하려면 비워 두세요.","ui_context":"用量脚本请求地址占位符"},
+{"key":"usageScript.method","status":"建议改","reason":"HTTP 方法在韩语软件术语中通常为「HTTP 메서드」，「방식」更像方式/模式。","suggestion":"HTTP 메서드","ui_context":"用量脚本请求方法字段"}
+]},
+{"batch_id":"translation:json-locale:usageScript:002","default_status":"可保留","overrides":[
+{"key":"usageScript.scriptEmpty","status":"建议改","reason":"「비워둘 수 없습니다」应按韩语辅助动词规范分写为「비워 둘 수 없습니다」。","suggestion":"스크립트 설정은 비워 둘 수 없습니다.","ui_context":"用量脚本空值校验"},
+{"key":"usageScript.templateGeneral","status":"建议改","reason":"原文是“通用模板”，韩文只写「일반」，遗漏模板类型语义。","suggestion":"일반 템플릿","ui_context":"用量脚本模板类型"}
+]},
+{"batch_id":"translation:json-locale:usageScript:003","default_status":"可保留","overrides":[]}
+]}

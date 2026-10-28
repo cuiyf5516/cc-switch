@@ -1,0 +1,12 @@
+{
+  "batch_id": "hardcoded:0194:src-icons-extracted",
+  "kind": "hardcoded",
+  "group": "src/icons/extracted",
+  "ordinal": 4,
+  "record_count": 3,
+  "record_ids": [
+    "hardcoded:src/icons/extracted/metadata.ts:iconMetadata:e6e4af5f0673a2da:001",
+    "hardcoded:src/icons/extracted/metadata.ts:iconMetadata:7a4802781ef8a96c:001",
+    "hardcoded:src/icons/extracted/metadata.ts:iconMetadata:bfdf8d751b905efb:001"
+  ]
+}

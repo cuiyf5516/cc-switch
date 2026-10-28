@@ -1,0 +1,15 @@
+{
+  "batch_id": "hardcoded:0198:src-lib-errors",
+  "kind": "hardcoded",
+  "group": "src/lib/errors",
+  "ordinal": 1,
+  "record_count": 6,
+  "record_ids": [
+    "dynamic-i18n:src/lib/errors/skillErrorParser.ts:formatSkillError:70769166fc12d162:001",
+    "dynamic-i18n:src/lib/errors/skillErrorParser.ts:description:f55554c3a3e38660:001",
+    "dynamic-i18n:src/lib/errors/skillErrorParser.ts:suggestionText:74e698c28bf062c8:001",
+    "dynamic-i18n:src/lib/errors/skillErrorParser.ts:formatSkillError:70769166fc12d162:002",
+    "dynamic-i18n:src/lib/errors/skillErrorParser.ts:skillErrorReason:cc40d5267afefbf0:001",
+    "dynamic-i18n:src/lib/errors/skillErrorParser.ts:skillErrorReason:37f93e4d82bbafa0:001"
+  ]
+}

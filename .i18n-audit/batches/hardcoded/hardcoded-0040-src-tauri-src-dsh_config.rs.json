@@ -1,0 +1,11 @@
+{
+  "batch_id": "hardcoded:0040:src-tauri-src-dsh_config.rs",
+  "kind": "hardcoded",
+  "group": "src-tauri/src/dsh_config.rs",
+  "ordinal": 2,
+  "record_count": 2,
+  "record_ids": [
+    "hardcoded:src-tauri/src/dsh_config.rs:sync_mcp_file_and_commit:9ca54b9a57c15a87:001",
+    "hardcoded:src-tauri/src/dsh_config.rs:sync_mcp_file_and_commit:237d8e983c59309f:001"
+  ]
+}

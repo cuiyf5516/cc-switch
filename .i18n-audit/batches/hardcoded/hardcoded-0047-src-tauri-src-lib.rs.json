@@ -1,0 +1,10 @@
+{
+  "batch_id": "hardcoded:0047:src-tauri-src-lib.rs",
+  "kind": "hardcoded",
+  "group": "src-tauri/src/lib.rs",
+  "ordinal": 1,
+  "record_count": 1,
+  "record_ids": [
+    "hardcoded:src-tauri/src/lib.rs:handle_deeplink_url:c4a225c9c46bc549:001"
+  ]
+}
