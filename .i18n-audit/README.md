@@ -31,3 +31,17 @@ All generated state is under `.i18n-audit/`. `verify.py` exits non-zero while re
 - Hardcoded candidates: 4,990 reviewed; 1,160 confirmed omissions, 1,256 pending verification, 2,574 no-i18n.
 - Dynamic translation keys: 162 registered and reviewed as pending runtime-key risks.
 - Second round: 655 keep samples plus all 86 translation issues; 1,160 confirmed and 1,256 pending hardcoded candidates rechecked; 391 no-i18n samples checked.
+
+## Human review and repair handoff
+
+- Human decisions: `.i18n-audit/reviews/human-review/review_decisions.csv`
+- Approved repair plan: `.i18n-audit/reviews/human-review/repair_plan.csv`
+- Review instructions: `.i18n-audit/reviews/human-review/README.md`
+
+After filling the human decisions, run:
+
+```powershell
+python .i18n-audit/scripts/build_repair_plan.py
+```
+
+Only rows marked `采纳`, `修改后采纳`, or `确认修复` are exported to the repair plan.
