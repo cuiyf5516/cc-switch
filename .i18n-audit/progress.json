@@ -23,18 +23,18 @@
   },
   "hardcoded": {
     "source_file_count": 828,
-    "included_source_file_count": 802,
-    "excluded_source_file_count": 26,
-    "scanned_source_file_count": 802,
+    "included_source_file_count": 801,
+    "excluded_source_file_count": 27,
+    "scanned_source_file_count": 801,
     "failed_source_file_count": 0,
-    "candidate_count": 4990,
-    "batch_count": 223,
-    "complete_batch_count": 223,
-    "valid_review_count": 4990,
+    "candidate_count": 4426,
+    "batch_count": 208,
+    "complete_batch_count": 208,
+    "valid_review_count": 4426,
     "unreviewed_count": 0,
     "status_counts": {
-      "无需国际化": 2574,
-      "确认遗漏": 1160,
+      "确认遗漏": 797,
+      "无需国际化": 2373,
       "待核实": 1256
     },
     "scan_coverage_pct": 100.0,
@@ -47,10 +47,10 @@
     "translation_keep_sample_required": 655,
     "translation_keep_sample_reviewed": 655,
     "translation_issue_recheck_count": 86,
-    "hardcoded_confirmed_recheck_count": 1160,
+    "hardcoded_confirmed_recheck_count": 797,
     "hardcoded_pending_recheck_count": 1256,
-    "hardcoded_no_i18n_sample_required": 387,
-    "hardcoded_no_i18n_sample_reviewed": 391
+    "hardcoded_no_i18n_sample_required": 356,
+    "hardcoded_no_i18n_sample_reviewed": 360
   },
   "completion_conditions_met": true,
   "validation_exit_code": 0

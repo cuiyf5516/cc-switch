@@ -1,7 +1,6 @@
 {
   "schema_version": 1,
   "included": [
-    "deplink.html",
     "src-tauri/src/agy_config.rs",
     "src-tauri/src/app_config.rs",
     "src-tauri/src/app_store.rs",
@@ -806,119 +805,142 @@
   ],
   "excluded": [
     {
-      "path": "src/config/codexProviderPresets.test.ts",
-      "reason": "test file"
-    },
-    {
-      "path": "src/config/codexProviderPresets.tokenPlanTextOnly.test.ts",
-      "reason": "test file"
-    },
-    {
-      "path": "src/config/codexProviderPresets.zhipuFlashVision.test.ts",
-      "reason": "test file"
-    },
-    {
-      "path": "src/config/codingPlanProviders.test.ts",
-      "reason": "test file"
-    },
-    {
-      "path": "src/config/dshProviderPresets.test.ts",
-      "reason": "test file"
-    },
-    {
-      "path": "src/config/grokBuildProviderPresets.test.ts",
-      "reason": "test file"
-    },
-    {
-      "path": "src/config/jiekouProviderPresets.test.ts",
-      "reason": "test file"
-    },
-    {
-      "path": "src/config/kimiProviderPresets.test.ts",
-      "reason": "test file"
-    },
-    {
-      "path": "src/config/mcodeProviderPresets.test.ts",
-      "reason": "test file"
-    },
-    {
-      "path": "src/config/ppioProviderPresets.test.ts",
-      "reason": "test file"
-    },
-    {
-      "path": "src/lib/api/model-fetch.test.ts",
-      "reason": "test file"
-    },
-    {
-      "path": "src/lib/utils/base64.test.ts",
-      "reason": "test file"
-    },
-    {
-      "path": "src/lib/version.test.ts",
-      "reason": "test file"
-    },
-    {
-      "path": "src/utils/deeplinkRisk.test.ts",
-      "reason": "test file"
-    },
-    {
-      "path": "src/utils/grokBuildConfig.test.ts",
-      "reason": "test file"
-    },
-    {
-      "path": "src/utils/providerCapabilities.test.ts",
-      "reason": "test file"
-    },
-    {
-      "path": "src/utils/providerConfigUtils.test.ts",
-      "reason": "test file"
-    },
-    {
-      "path": "src/utils/providerIcon.test.ts",
-      "reason": "test file"
+      "path": "deplink.html",
+      "reason": "产品决定：该独立静态页只提供简体中文，不纳入本次韩语国际化审查。",
+      "category": "scope-exclusion"
     },
     {
       "path": "src-tauri/src/agy_smoke_tests.rs",
-      "reason": "test file"
+      "reason": "test file",
+      "category": "test/non-production"
     },
     {
       "path": "src-tauri/src/database/tests.rs",
-      "reason": "test file"
+      "reason": "test file",
+      "category": "test/non-production"
     },
     {
       "path": "src-tauri/src/deeplink/tests.rs",
-      "reason": "test file"
+      "reason": "test file",
+      "category": "test/non-production"
     },
     {
       "path": "src-tauri/src/proxy/session/header_tests.rs",
-      "reason": "test file"
+      "reason": "test file",
+      "category": "test/non-production"
     },
     {
       "path": "src-tauri/src/services/agy_account/tests.rs",
-      "reason": "test file"
+      "reason": "test file",
+      "category": "test/non-production"
     },
     {
       "path": "src-tauri/src/services/claude_account/snapshot/tests.rs",
-      "reason": "test file"
+      "reason": "test file",
+      "category": "test/non-production"
     },
     {
       "path": "src-tauri/src/services/claude_account/tests.rs",
-      "reason": "test file"
+      "reason": "test file",
+      "category": "test/non-production"
     },
     {
       "path": "src-tauri/src/services/provider/opencode_tests.rs",
-      "reason": "test file"
+      "reason": "test file",
+      "category": "test/non-production"
+    },
+    {
+      "path": "src/config/codexProviderPresets.test.ts",
+      "reason": "test file",
+      "category": "test/non-production"
+    },
+    {
+      "path": "src/config/codexProviderPresets.tokenPlanTextOnly.test.ts",
+      "reason": "test file",
+      "category": "test/non-production"
+    },
+    {
+      "path": "src/config/codexProviderPresets.zhipuFlashVision.test.ts",
+      "reason": "test file",
+      "category": "test/non-production"
+    },
+    {
+      "path": "src/config/codingPlanProviders.test.ts",
+      "reason": "test file",
+      "category": "test/non-production"
+    },
+    {
+      "path": "src/config/dshProviderPresets.test.ts",
+      "reason": "test file",
+      "category": "test/non-production"
+    },
+    {
+      "path": "src/config/grokBuildProviderPresets.test.ts",
+      "reason": "test file",
+      "category": "test/non-production"
+    },
+    {
+      "path": "src/config/jiekouProviderPresets.test.ts",
+      "reason": "test file",
+      "category": "test/non-production"
+    },
+    {
+      "path": "src/config/kimiProviderPresets.test.ts",
+      "reason": "test file",
+      "category": "test/non-production"
+    },
+    {
+      "path": "src/config/mcodeProviderPresets.test.ts",
+      "reason": "test file",
+      "category": "test/non-production"
+    },
+    {
+      "path": "src/config/ppioProviderPresets.test.ts",
+      "reason": "test file",
+      "category": "test/non-production"
+    },
+    {
+      "path": "src/lib/api/model-fetch.test.ts",
+      "reason": "test file",
+      "category": "test/non-production"
+    },
+    {
+      "path": "src/lib/utils/base64.test.ts",
+      "reason": "test file",
+      "category": "test/non-production"
+    },
+    {
+      "path": "src/lib/version.test.ts",
+      "reason": "test file",
+      "category": "test/non-production"
+    },
+    {
+      "path": "src/utils/deeplinkRisk.test.ts",
+      "reason": "test file",
+      "category": "test/non-production"
+    },
+    {
+      "path": "src/utils/grokBuildConfig.test.ts",
+      "reason": "test file",
+      "category": "test/non-production"
+    },
+    {
+      "path": "src/utils/providerCapabilities.test.ts",
+      "reason": "test file",
+      "category": "test/non-production"
+    },
+    {
+      "path": "src/utils/providerConfigUtils.test.ts",
+      "reason": "test file",
+      "category": "test/non-production"
+    },
+    {
+      "path": "src/utils/providerIcon.test.ts",
+      "reason": "test file",
+      "category": "test/non-production"
     }
   ],
   "source_files": [
-    {
-      "path": "deplink.html",
-      "language": "html",
-      "status": "scanned",
-      "bytes": 160619,
-      "candidate_count": 568,
-      "parse_errors": []
-    },
     {
       "path": "src-tauri/src/agy_config.rs",
       "language": "rust",

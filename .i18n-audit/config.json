@@ -11,10 +11,25 @@
   "hardcoded_batch_size": 40,
   "production_scope": [
     "src/**/*.{ts,tsx,js,jsx,html}",
-    "src-tauri/src/**/*.rs",
-    "deplink.html"
+    "src-tauri/src/**/*.rs"
   ],
-  "translation_statuses": ["必改", "建议改", "可保留", "待核实"],
-  "candidate_statuses": ["确认遗漏", "待核实", "无需国际化", "未审核"],
-  "write_boundary": ".i18n-audit/ only"
+  "translation_statuses": [
+    "必改",
+    "建议改",
+    "可保留",
+    "待核实"
+  ],
+  "candidate_statuses": [
+    "确认遗漏",
+    "待核实",
+    "无需国际化",
+    "未审核"
+  ],
+  "write_boundary": ".i18n-audit/ only",
+  "scope_exclusions": [
+    {
+      "path": "deplink.html",
+      "reason": "产品决定：该独立静态页只提供简体中文，不纳入本次韩语国际化审查。"
+    }
+  ]
 }

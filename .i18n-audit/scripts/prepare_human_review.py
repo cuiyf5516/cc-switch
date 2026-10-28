@@ -50,9 +50,7 @@ for candidate in hardcoded:
         continue
     review = candidate.get("review", {})
     source_file = candidate["source_file"]
-    if source_file == "deplink.html":
-        fix_scope = "deplink-page"
-    elif candidate["source_kind"] == "dynamic_i18n_key":
+    if candidate["source_kind"] == "dynamic_i18n_key":
         fix_scope = "dynamic-key"
     elif source_file.startswith("src-tauri/"):
         fix_scope = "backend-error"

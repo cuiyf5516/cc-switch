@@ -1,391 +1,360 @@
-001	deplink.html:381	html_text	CC Switch v4.0.10
-002	deplink.html:381	html_text	iconUrl
-003	deplink.html:409	html_text	Claude Code
-004	deplink.html:410	html_text	Codex
-005	deplink.html:415	html_text	Hermes
-006	deplink.html:451	html_attribute	https://api.example.com/v1
-007	deplink.html:538	html_text	ANTHROPIC_DEFAULT_OPUS_MODEL
-008	deplink.html:560	html_text	enabled
-009	deplink.html:587	html_text	{{baseUrl}}
-010	deplink.html:646	html_attribute	{ /   "mcpServers": { /     "server-name": { /       "command": "npx", /       "args": ["-y", "@modelcontextprotocol/server-xxx"], /       "type": "stdio" /     } /   } / }
-011	deplink.html:684	html_text	Pi
-012	deplink.html:760	html_text	ccswitch://
-013	deplink.html:845	html_text	config
-014	deplink.html:850	html_text	{ /   "env": { /     "ANTHROPIC_BASE_URL": "https://api.example.com", /     "API_TIMEOUT_MS": "600000" /   } / }
-015	deplink.html:868	html_text	config
-016	deplink.html:877	html_text	model_provider = "example" / model = "example-coder" /  / [model_providers.example] / name = "Example AI" / base_url = "https://api.example.com/v1" / wire_api = "responses"
-017	deplink.html:900	html_text	{ /   "GEMINI_API_KEY": "AIzaSy-test-key123", /   "GOOGLE_GEMINI_BASE_URL": "https://api.example.com" / }
-018	deplink.html:915	html_text	endpoint
-019	deplink.html:978	html_text	{{baseUrl}}
-020	deplink.html:978	html_text	usageBaseUrl
-021	deplink.html:980	html_text	extractor
-022	deplink.html:980	html_text	invalidMessage
-023	deplink.html:989	html_text	usageBaseUrl
-024	deplink.html:1021	html_text	usageBaseUrl
-025	deplink.html:1023	html_text	usageUserId
-026	deplink.html:1060	html_text	usageScript
-027	deplink.html:1096	html_text	usageBaseUrl
-028	deplink.html:1096	html_text	extractor
-029	deplink.html:1120	html_text	{ /       "mcpServers": { /         "context7": { /           "command": "npx", /           "args": ["-y", "@upstash/context7-mcp"], /           "env": {} /         }, /         "sequential-thinking": { /           "comm
-030	deplink.html:1203	html_text	location.href = link
-031	deplink.html:1211	html_text	application/octet-stream
-032	src-tauri/src/agy_config.rs:85	rust_string	agy.config.missing
-033	src-tauri/src/agy_config.rs:95	rust_string	env
-034	src-tauri/src/agy_config.rs:96	rust_string	config
-035	src-tauri/src/app_config.rs:584	rust_string	unsupported_app
-036	src-tauri/src/claude_desktop_config.rs:471	rust_string	claude_desktop.provider.api_format_unsupported
-037	src-tauri/src/claude_desktop_config.rs:473	rust_string	Claude Desktop phase 1 only supports native Anthropic Messages API
-038	src-tauri/src/claude_desktop_config.rs:536	rust_string	Claude Desktop proxy mode does not support API format: {api_format}
-039	src-tauri/src/claude_desktop_config.rs:645	rust_string	claude_desktop.provider.direct_mapping_unsupported
-040	src-tauri/src/claude_desktop_config.rs:772	rust_string	Claude Desktop proxy mode requires at least one model route mapping
-041	src-tauri/src/codex_config.rs:928	rust_string	config.toml
-042	src-tauri/src/codex_config.rs:3067	rust_string	Codex 配置文件不存在
-043	src-tauri/src/commands/misc.rs:423	rust_string	windows
-044	src-tauri/src/commands/misc.rs:4523	rust_string	OPENCODE_CONFIG_DIR
-045	src-tauri/src/commands/misc.rs:4534	rust_string	{key}={linux_value}
-046	src-tauri/src/commands/misc.rs:6280	rust_string	gnome-terminal
-047	src-tauri/src/commands/profile.rs:87	rust_string	provider-switched
-048	src-tauri/src/database/backup.rs:960	rust_string	{b:02X}
-049	src-tauri/src/database/dao/providers.rs:587	rust_string	omo
-050	src-tauri/src/database/dao/settings.rs:259	rust_string	rectifier_config
-051	src-tauri/src/deeplink/utils.rs:15	rust_string	https
-052	src-tauri/src/dsh_config.rs:149	rust_string	{}.lock
-053	src-tauri/src/dsh_config.rs:337	rust_string	api
-054	src-tauri/src/gemini_config.rs:117	rust_string	Invalid Gemini .env format (line {line_number}): variable name can only contain letters, numbers, and underscores / Variable: {key}
-055	src-tauri/src/gemini_config.rs:320	rust_string	gemini.validation.missing_api_key
-056	src-tauri/src/grok_config.rs:289	rust_string	Grok Build 配置文件不存在
-057	src-tauri/src/grok_config.rs:290	rust_string	Grok Build configuration file not found
-058	src-tauri/src/grok_config.rs:296	rust_string	config
-059	src-tauri/src/kimi_config.rs:163	rust_string	base_url
-060	src-tauri/src/kimi_config.rs:269	rust_string	services
-061	src-tauri/src/kimi_config.rs:609	rust_string	/oauth/key
-062	src-tauri/src/kimi_config.rs:638	rust_string	kimi.account.remove_current
-063	src-tauri/src/kimi_config.rs:688	rust_string	models
-064	src-tauri/src/live/project/codex.rs:395	rust_string	query_params
-065	src-tauri/src/live/project/codex.rs:397	rust_string	env_http_headers
-066	src-tauri/src/live/project/grok.rs:149	rust_string	provider.grokbuild.default_model.ambiguous
-067	src-tauri/src/mcode_config.rs:154	rust_string	models
-068	src-tauri/src/mcode_config.rs:191	rust_string	{}.lock
-069	src-tauri/src/mcp/mcode.rs:14	rust_string	mcpServers
-070	src-tauri/src/mcp/mcode.rs:40	rust_string	mcp.json
-071	src-tauri/src/mcp/omp.rs:180	rust_string	mcpServers
-072	src-tauri/src/mcp/omp.rs:181	rust_string	enabled
-073	src-tauri/src/mode/controller.rs:690	rust_string	mode.unsettled
-074	src-tauri/src/mode/operation.rs:102	rust_string	staged
-075	src-tauri/src/omp_config.rs:979	rust_string	mcpServers
-076	src-tauri/src/opencode_config.rs:505	rust_string	OpenCode 原生供应商「{id}」的字段 {path} 不符合 OpenCode V2 配置格式
-077	src-tauri/src/opencode_config.rs:556	rust_string	OpenCode providers must be a JSON object
-078	src-tauri/src/prompt_files.rs:26	rust_string	This app does not support Prompts
-079	src-tauri/src/proxy/forwarder.rs:3817	rust_string	response.queued
-080	src-tauri/src/proxy/http_client.rs:308	rust_string	https
-081	src-tauri/src/proxy/hyper_client.rs:507	rust_string	https
-082	src-tauri/src/proxy/hyper_client.rs:719	rust_string	Build dummy request: {e}
-083	src-tauri/src/proxy/providers/codex_oauth_auth/browser.rs:92	rust_string	code
-084	src-tauri/src/proxy/providers/codex_oauth_auth/browser.rs:111	rust_string	no-store
-085	src-tauri/src/proxy/providers/streaming_codex_chat.rs:815	rust_string	error
-086	src-tauri/src/proxy/providers/streaming_responses.rs:2487	rust_string	response_parse_error
-087	src-tauri/src/proxy/providers/xai_oauth_auth.rs:320	rust_string	expired_token
-088	src-tauri/src/services/agy_account/mod.rs:202	rust_string	timeout
-089	src-tauri/src/services/agy_account/mod.rs:234	rust_string	This sign-in has ended. Add the account again.
-090	src-tauri/src/services/agy_account/mod.rs:317	rust_string	This account's sign-in has expired. Add it again.
-091	src-tauri/src/services/agy_account/mod.rs:349	rust_string	写入后核对不一致，agy 的登录可能没有切换成功
-092	src-tauri/src/services/claude_account/mod.rs:625	rust_string	.claude.json
-093	src-tauri/src/services/claude_account/snapshot/store.rs:95	rust_string	Claude Code 的登录信息格式无法识别，没有做任何改动
-094	src-tauri/src/services/claude_account/snapshot/store/keychain.rs:74	rust_string	claude.snapshot.too_large
-095	src-tauri/src/services/claude_account/snapshot/store/keychain.rs:76	rust_string	Claude Code's sign-in data is too large for the keychain, so nothing was switched.
-096	src-tauri/src/services/claude_account/snapshot/store/keychain.rs:125	rust_string	stdin
-097	src-tauri/src/services/claude_account/snapshot/store/keychain.rs:129	rust_string	stdout
-098	src-tauri/src/services/env_manager.rs:99	rust_string	file
-099	src-tauri/src/services/env_manager.rs:144	rust_string	system
-100	src-tauri/src/services/kimi_oauth/account.rs:164	rust_string	user_id
-101	src-tauri/src/services/kimi_oauth/lock.rs:65	rust_string	.lock
-102	src-tauri/src/services/kimi_oauth/mod.rs:260	rust_string	key
-103	src-tauri/src/services/kimi_oauth/mod.rs:712	rust_string	user_code
-104	src-tauri/src/services/kimi_oauth/mod.rs:1073	rust_string	provider
-105	src-tauri/src/services/kimi_oauth/mod.rs:1073	rust_string	oauth
-106	src-tauri/src/services/prompt.rs:416	rust_string	mcode
-107	src-tauri/src/services/provider/claude_official.rs:250	rust_string	claude.account.default_taken
-108	src-tauri/src/services/provider/claude_official.rs:251	rust_string	这个账号现在在 Claude Code 的默认登录里，但 Claude Code 当前用的是其他供应商或本地路由，打开的终端不会用这个账号。请先切到这张卡（或任一官方卡）再打开终端
-109	src-tauri/src/services/provider/endpoints.rs:44	rust_string	provider.endpoint.url_required
-110	src-tauri/src/services/provider/icon.rs:46	rust_string	自定义图标无效，请重新上传
-111	src-tauri/src/services/provider/icon.rs:245	rust_string	customIcon.nameTooLong
-112	src-tauri/src/services/provider/live.rs:548	rust_string	claude.live.requires_engine
-113	src-tauri/src/services/provider/live.rs:555	rust_string	claude_desktop.live.requires_db_context
-114	src-tauri/src/services/provider/live.rs:557	rust_string	Claude Desktop configuration must be written through the provider switch flow
-115	src-tauri/src/services/provider/live.rs:562	rust_string	codex.live.requires_engine
-116	src-tauri/src/services/provider/live.rs:619	rust_string	A new OpenCode provider ID requires an npm package and at least one model; only an existing ID in the live config may inherit defaults
-117	src-tauri/src/services/provider/live.rs:943	rust_string	Claude Desktop 3P configuration cannot be imported as a generic live config. Use 'Import compatible providers from Claude' instead.
-118	src-tauri/src/services/provider/live.rs:1013	rust_string	hermes.config.missing
-119	src-tauri/src/services/provider/live.rs:1391	rust_string	openclaw
-120	src-tauri/src/services/provider/mod.rs:6820	rust_string	Antigravity cards are not enabled; use Open terminal to start one
-121	src-tauri/src/services/provider/omp.rs:69	rust_string	omp
-122	src-tauri/src/services/provider/usage.rs:156	rust_string	Usage query is disabled
-123	src-tauri/src/services/s3.rs:361	rust_string	s3.connection_failed
-124	src-tauri/src/services/s3.rs:496	rust_string	S3 URL 无效: {e}
-125	src-tauri/src/services/s3.rs:529	rust_string	etag
-126	src-tauri/src/services/skill.rs:3866	rust_string	limit_mb
-127	src-tauri/src/services/skill.rs:3967	rust_string	ARCHIVE_TOO_LARGE
-128	src-tauri/src/services/skill.rs:4004	rust_string	checkZipContent
-129	src-tauri/src/services/skill.rs:4554	rust_string	checkZipContent
-130	src-tauri/src/services/skill.rs:4564	rust_string	ARCHIVE_TOO_MANY_ENTRIES
-131	src-tauri/src/services/subscription.rs:1654	rust_string	claude
-132	src-tauri/src/services/sync_protocol.rs:184	rust_string	sync.snapshot_tmpdir_failed
-133	src-tauri/src/services/sync_protocol.rs:186	rust_string	Failed to create temporary directory for snapshot
-134	src-tauri/src/services/sync_protocol.rs:284	rust_string	sync.manifest_db_version_missing
-135	src-tauri/src/services/sync_protocol.rs:303	rust_string	sync.manifest_db_version_incompatible
-136	src-tauri/src/services/webdav_sync/archive.rs:75	rust_string	webdav.sync.skills_extract_tmpdir_failed
-137	src-tauri/src/services/webdav_sync/archive.rs:98	rust_string	webdav.sync.skills_zip_too_many_entries
-138	src-tauri/src/services/webdav_sync/archive.rs:100	rust_string	skills.zip 条目数过多（{}），上限 {MAX_EXTRACT_ENTRIES}
-139	src-tauri/src/services/webdav_sync/archive.rs:143	rust_string	获取 Skills SSOT 目录失败: {e}
-140	src-tauri/src/services/webdav_sync/archive.rs:286	rust_string	Failed to create temporary directory for skills backup
-141	src-tauri/src/services/webdav_sync/archive.rs:329	rust_string	sync.db_import_and_rollback_failed
-142	src-tauri/src/session_manager/content.rs:258	rust_string	) { /                 if let Some(thoughts) = value /                     .pointer(pointer) /                     .and_then(super::providers::gemini::format_thoughts) /                 { /                     return Ok(t
-143	src-tauri/src/session_manager/content.rs:371	rust_string	.to_string())? /         .len(); /     if end > file_len { /         return Err(STALE.to_string()); /     } /     let read_end = (end + 1).min(file_len); /     let mut buf = vec![0u8; (read_end - start) as usize]; /     
-144	src-tauri/src/session_manager/content.rs:590	rust_string	.to_string())?; /     if bytes.len() as u64 > max { /         return Err(TOO_LARGE_IMAGE.to_string()); /     } /     Ok(bytes) / } /  / /// 规范化本地图片路径：接受绝对路径或 `file://` URL，只允许位图扩展名 / fn canonical_local_image(path: &str) 
-145	src-tauri/src/session_manager/mod.rs:186	rust_string	kimi
-146	src-tauri/src/session_manager/providers/dsh.rs:37	rust_string	zstd
-147	src-tauri/src/session_manager/providers/gemini.rs:35	rust_string	chats
-148	src-tauri/src/session_manager/providers/hermes.rs:434	rust_string	model_only
-149	src-tauri/src/session_manager/terminal/mod.rs:57	rust_string	macos
-150	src-tauri/src/settings.rs:256	rust_string	s3.bucket.required
-151	src-tauri/src/settings.rs:257	rust_string	S3 存储桶不能为空
-152	src-tauri/src/settings.rs:258	rust_string	S3 bucket is required.
-153	src-tauri/src/settings.rs:264	rust_string	S3 区域不能为空
-154	src-tauri/src/usage_script.rs:45	rust_string	Failed to create JS runtime: {e}
-155	src-tauri/src/usage_script.rs:75	rust_string	Failed to create JS context: {e}
-156	src-tauri/src/usage_script.rs:84	rust_string	解析配置失败: {e}
-157	src-tauri/src/usage_script.rs:105	rust_string	Failed to serialize request: {e}
-158	src-tauri/src/usage_script.rs:148	rust_string	usage_script.context_create_failed
-159	src-tauri/src/usage_script.rs:178	rust_string	解析响应 JSON 失败: {e}
-160	src-tauri/src/usage_script.rs:186	rust_string	usage_script.extractor_exec_failed
-161	src-tauri/src/usage_script.rs:199	rust_string	Failed to serialize result: {e}
-162	src-tauri/src/usage_script.rs:258	rust_string	Unsupported HTTP method: {}
-163	src-tauri/src/usage_script.rs:281	rust_string	Request failed: {e}
-164	src-tauri/src/usage_script.rs:306	rust_string	HTTP {status} : {preview}
-165	src-tauri/src/usage_script.rs:329	rust_string	数组索引[{idx}]验证失败: {e}
-166	src-tauri/src/usage_script.rs:358	rust_string	isValid 必须是布尔值或 null
-167	src-tauri/src/usage_script.rs:409	rust_string	planName 必须是字符串或 null
-168	src-tauri/src/usage_script.rs:472	rust_string	base_url must use HTTPS (localhost allowed)
-169	src-tauri/src/usage_script.rs:524	rust_string	Request URL must use HTTPS (localhost allowed)
-170	src/App.tsx:619	string	[App] Failed to read window resize state
-171	src/App.tsx:745	string	[App] Failed to check migration result:
-172	src/components/BrandIcons.tsx:100	string	M15.688 2.343a2.588 2.588 0 00-3.61 0l-9.626 9.44a.863.863 0 01-1.203 0 .823.823 0 010-1.18l9.626-9.44a4.313 4.313 0 016.016 0 4.116 4.116 0 011.204 3.54 4.3 4.3 0 013.609 1.18l.05.05a4.115 4.115 0 010 5.9l-8.706 8.537a.
-173	src/components/IconPicker.tsx:45	string	grid grid-cols-6 sm:grid-cols-8 lg:grid-cols-10 gap-2
-174	src/components/UsageScriptModal.tsx:63	template	({ /   request: { /     url: "", /     method: "GET", /     headers: {} /   }, /   extractor: function(response) { /     return { /       remaining: 0, /       unit: "USD" /     }; /   } / })
-175	src/components/UsageScriptModal.tsx:591	template	`${t("usageScript.testFailed")}: ${quota.error || t("endpointTest.noResult")}`
-176	src/components/UsageScriptModal.tsx:1313	string	https://api.zenmux.com/v1/...
-177	src/components/WhatsNewDialog.tsx:58	string	Failed to open changelog:
-178	src/components/apps/AppsPage.tsx:353	string	claude-desktop
-179	src/components/apps/ToolUninstallConfirmDialog.tsx:143	jsx_text	WSL:
-180	src/components/apps/toolUninstallCommands.ts:31	string	npm uninstall -g opencode-ai
-181	src/components/apps/toolUninstallCommands.ts:34	string	npm uninstall -g @minimax-ai/code
-182	src/components/apps/toolUninstallCommands.ts:78	string	brew uninstall --cask claude-code@latest
-183	src/components/apps/useToolManagement.ts:154	string	npm i -g @xai-official/grok@latest --ignore-scripts=false --include=optional --allow-scripts=@xai-official/grok
-184	src/components/apps/useToolManagement.ts:448	string	[useToolManagement] Failed to refresh tools
-185	src/components/apps/useToolManagement.ts:648	string	[useToolManagement] Diagnose all failed
-186	src/components/providers/AddProviderDialog.tsx:229	string	[AddProviderDialog] Provider saved but sync failed
-187	src/components/providers/AddProviderDialog.tsx:565	string	flex h-full flex-col space-y-0 p-0
-188	src/components/providers/forms/ClaudeDesktopProviderForm.tsx:1375	string	claude-sonnet-4-6
-189	src/components/providers/forms/ClaudeFormFields.tsx:467	string	[XaiOAuth] Failed to fetch models:
-190	src/components/providers/forms/HermesFormFields.tsx:255	string	https://api.example.com/v1
-191	src/components/providers/forms/KimiProviderForm.tsx:88	string	OpenAI Chat Completions
-192	src/components/providers/forms/KimiProviderForm.tsx:527	template	`${modelKeyPrefix}/`
-193	src/components/providers/forms/KimiProviderForm.tsx:647	template	`${modelKeyPrefix}/model-${++index}`
-194	src/components/providers/forms/PiProviderForm.tsx:99	string	Google Generative AI
-195	src/components/providers/forms/PiProviderForm.tsx:1203	string	[ModelFetch] Failed:
-196	src/components/providers/forms/ProviderPresetSelector.tsx:417	string	h-auto min-w-0 flex-wrap gap-0.5 border border-border-strong bg-transparent p-0.5
-197	src/components/providers/forms/hooks/useManagedAuth.ts:160	string	[ManagedAuth] Failed to open browser:
-198	src/components/providers/forms/hooks/useManagedAuth.ts:275	string	[ManagedAuth] Failed to logout:
-199	src/components/providers/mode/ModeDialog.tsx:107	string	取消
-200	src/components/providers/mode/StackSettingsSheet.tsx:36	string	rounded-control bg-warning-soft px-3 py-2 text-caption text-warning-text
-201	src/components/sessions/reader/SessionEventRow.tsx:105	string	link.openExternal
-202	src/components/sessions/reader/SessionStep.tsx:118	string	stepExpand
-203	src/components/sessions/reader/SessionStep.tsx:205	string	image.alt
-204	src/components/sessions/reader/SessionStepDetails.tsx:66	string	whitespace-pre-wrap break-words text-caption
-205	src/components/sessions/reader/SessionStepDetails.tsx:303	string	diff
-206	src/components/sessions/reader/SessionTimeline.tsx:86	string	timelineSummary
-207	src/components/sessions/reader/i18n.ts:14	string	{{count}} 个命令
-208	src/components/sessions/reader/i18n.ts:24	string	收起
-209	src/components/sessions/reader/i18n.ts:27	string	已中断
-210	src/components/sessions/reader/i18n.ts:43	string	想法
-211	src/components/sessions/reader/i18n.ts:45	string	Thinking…
-212	src/components/sessions/reader/i18n.ts:49	string	思考内容不可见
-213	src/components/sessions/reader/i18n.ts:77	string	调用 {{server}} {{count}} 次
-214	src/components/sessions/reader/i18n.ts:83	string	{{requests}} 次请求 · 按 API 价估算 / 输入 {{input}} · 输出 {{output}} / 缓存写入 {{cacheWrite}} · 缓存读取 {{cacheRead}}
-215	src/components/sessions/reader/i18n.ts:84	string	已加载 {{loaded}} / {{total}}
-216	src/components/sessions/reader/i18n.ts:97	string	复制这一轮
-217	src/components/sessions/reader/i18n.ts:101	string	对话
-218	src/components/sessions/reader/i18n.ts:103	string	视图
-219	src/components/sessions/reader/i18n.ts:112	string	{{count}} 步
-220	src/components/sessions/reader/i18n.ts:115	string	没有回复
-221	src/components/settings/AboutSection.tsx:79	string	[AboutSection] Failed to load app version
-222	src/components/settings/AboutSection.tsx:155	string	[AboutSection] Update failed
-223	src/components/settings/RectifierConfigPanel.tsx:46	string	Failed to save rectifier config:
-224	src/components/settings/SettingsPage.tsx:285	string	[SettingsPage] Failed to save settings
-225	src/components/settings/auth/ManagedAccountsGroup.tsx:206	string	[AuthCenter] Failed to copy user code:
-226	src/components/settings/sections/RoutingSection.tsx:346	string	127.0.0.1
-227	src/components/shell/NewLayoutDialog.tsx:103	string	Failed to open release notes:
-228	src/components/shell/Sidebar.tsx:769	jsx_text	CC Switch v
-229	src/components/shell/WindowControls.tsx:31	string	[WindowControls] Failed to sync maximized state
-230	src/components/ui/badge.tsx:7	string	inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2
-231	src/components/ui/button.tsx:19	string	text-fg-2 hover:bg-subtle hover:text-fg-1
-232	src/components/universal/UniversalProviderFormModal.tsx:629	string	gemini-2.5-pro
-233	src/components/usage/RequestDetailPanel.tsx:74	string	string
-234	src/components/usage/usageTable.ts:18	string	whitespace-nowrap px-3 text-start font-medium first:ps-4 last:pe-4
-235	src/components/workspace/WorkspaceFileEditor.tsx:54	string	Failed to read workspace file:
-236	src/components/workspace/WorkspaceFileEditor.tsx:69	string	Failed to save workspace file:
-237	src/config/appConfig.tsx:289	string	bg-violet-500/10 text-violet-700 dark:text-violet-300 hover:bg-violet-500/20 border-0 gap-1.5
-238	src/config/appConfig.tsx:316	string	bg-fuchsia-500/10 ring-1 ring-fuchsia-500/20 hover:bg-fuchsia-500/20 text-fuchsia-600 dark:text-fuchsia-400
-239	src/config/claudeDesktopProviderPresets.ts:210	string	Kimi For Coding
-240	src/config/claudeDesktopProviderPresets.ts:1414	string	Tencent Token Plan Enterprise Lite (Intl)
-241	src/config/claudeDesktopProviderPresets.ts:1612	string	QwenCloud Token Plan
-242	src/config/claudeDesktopProviderPresets.ts:2002	string	Meta Model API
-243	src/config/claudeDesktopProviderPresets.ts:2283	string	Cloudflare AI Gateway
-244	src/config/claudeProviderPresets.ts:1360	string	Tencent Token Plan (Intl)
-245	src/config/claudeProviderPresets.ts:2843	string	Access Key ID
-246	src/config/claudeProviderPresets.ts:2857	string	AWS Bedrock (API Key)
-247	src/config/claudeProviderPresets.ts:2945	string	模力方舟
-248	src/config/codexProviderPresets.ts:307	string	Kimi K2.7 Code
-249	src/config/codexProviderPresets.ts:319	string	Kimi For Coding
-250	src/config/codexProviderPresets.ts:405	string	Kimi For Coding
-251	src/config/codexProviderPresets.ts:764	string	DeepSeek V4 Flash
-252	src/config/codexProviderPresets.ts:919	template	model_provider = "custom" / model = "gpt-6.1-sol" / review_model = "gpt-6.1-sol" / model_reasoning_effort = "high" / disable_response_storage = true /  / [model_providers.custom] / name = "APIKEY.FUN" / base_url = "https
-253	src/config/codexProviderPresets.ts:1731	string	DeepSeek V4.1 Flash
-254	src/config/codexProviderPresets.ts:2060	string	千问AI平台 Token Plan
-255	src/config/codexProviderPresets.ts:2492	string	Tencent Token Plan Enterprise Pro
-256	src/config/codexProviderPresets.ts:2573	string	Kimi K2.7 Code HighSpeed
-257	src/config/codexProviderPresets.ts:2703	string	DeepSeek V4 Flash
-258	src/config/codexProviderPresets.ts:2928	string	Step 3.5 Flash
-259	src/config/codexProviderPresets.ts:2959	string	Step 3.7 Flash
-260	src/config/codexProviderPresets.ts:3069	string	KAT-Coder Pro V2.5
-261	src/config/codexProviderPresets.ts:3137	string	You are Codex, a coding agent based on MiniMax-M3.1-Flash. You and the user share the same workspace and collaborate to achieve the user's goals.
-262	src/config/codexProviderPresets.ts:3289	string	MiMo V2.6 Flash
-263	src/config/codexProviderPresets.ts:3990	string	Nebius Token Factory
-264	src/config/codexProviderPresets.ts:4923	string	SoruxGPT Coding Plan
-265	src/config/grokBuildProviderPresets.ts:72	template	`model_provider = "custom" / model = ${tomlString(model)} /  / [model_providers.custom] / name = ${tomlString(providerName)} / base_url = ${tomlString(baseUrl)} / wire_api = "responses" / requires_openai_auth = true`
-266	src/config/hermesProviderPresets.ts:664	string	FluxA Token Plan
-267	src/config/hermesProviderPresets.ts:1129	string	火山 Agent Plan
-268	src/config/hermesProviderPresets.ts:1161	string	火山 Coding Plan
-269	src/config/hermesProviderPresets.ts:2307	string	Tencent Token Plan Enterprise Lite (Intl)
-270	src/config/hermesProviderPresets.ts:2409	string	千问AI平台 Token Plan
-271	src/config/hermesProviderPresets.ts:3252	string	Nebius Token Factory
-272	src/config/openclawProviderPresets.ts:97	string	Google Generative AI
-273	src/config/openclawProviderPresets.ts:4163	string	QwenCloud For Coding
-274	src/config/openclawProviderPresets.ts:4219	string	Qwen3 Coder Plus
-275	src/config/openclawProviderPresets.ts:5474	string	Qwen3-Coder 30B A3B
-276	src/config/opencodeProviderPresets.ts:95	string	Step 3.5 Flash 2603
-277	src/config/opencodeProviderPresets.ts:123	string	Gemini 3.8 Flash
-278	src/config/opencodeProviderPresets.ts:274	string	Claude Opus 4.5
-279	src/config/opencodeProviderPresets.ts:299	string	Claude Haiku 4.5
-280	src/config/opencodeProviderPresets.ts:403	string	Kimi K2.7 Code
-281	src/config/opencodeProviderPresets.ts:635	string	Claude Opus 5.5
-282	src/config/opencodeProviderPresets.ts:760	string	Claude Opus 5.5
-283	src/config/opencodeProviderPresets.ts:928	string	Claude Opus 5.5
-284	src/config/opencodeProviderPresets.ts:934	string	Claude Sonnet 5.5
-285	src/config/opencodeProviderPresets.ts:1231	string	Claude Sonnet 5.5
-286	src/config/opencodeProviderPresets.ts:1282	string	Claude Sonnet 5.5
-287	src/config/opencodeProviderPresets.ts:1332	string	Claude Opus 5.5
-288	src/config/opencodeProviderPresets.ts:1334	string	Claude Haiku 5.5
-289	src/config/opencodeProviderPresets.ts:1363	string	Claude Sonnet 5.5
-290	src/config/opencodeProviderPresets.ts:1532	string	Kimi K3.1 Pro
-291	src/config/opencodeProviderPresets.ts:1578	string	Claude Haiku 5.5
-292	src/config/opencodeProviderPresets.ts:1662	string	Ark Code Latest
-293	src/config/opencodeProviderPresets.ts:1695	string	Ark Code Latest
-294	src/config/opencodeProviderPresets.ts:1834	string	Claude Opus 5.5
-295	src/config/opencodeProviderPresets.ts:1958	string	Claude Sonnet 5.5
-296	src/config/opencodeProviderPresets.ts:2319	string	Claude Fable 5.1
-297	src/config/opencodeProviderPresets.ts:2326	string	Claude Haiku 5.5
-298	src/config/opencodeProviderPresets.ts:2554	string	Tencent Token Plan
-299	src/config/opencodeProviderPresets.ts:2648	string	Tencent Token Plan Enterprise Pro
-300	src/config/opencodeProviderPresets.ts:2660	string	Kimi K2.7 Code
-301	src/config/opencodeProviderPresets.ts:2826	string	Baidu Qianfan Token Plan
-302	src/config/opencodeProviderPresets.ts:3014	string	QwenCloud For Coding
-303	src/config/opencodeProviderPresets.ts:3166	string	Step 3.5 Flash
-304	src/config/opencodeProviderPresets.ts:3552	string	MiMo V2.6 Flash
-305	src/config/opencodeProviderPresets.ts:3712	string	Claude Sonnet 5.5
-306	src/config/opencodeProviderPresets.ts:3801	string	Claude Sonnet 5.5
-307	src/config/opencodeProviderPresets.ts:3819	string	Claude Fable 5.1
-308	src/config/opencodeProviderPresets.ts:3855	string	Claude Fable 5.1
-309	src/config/opencodeProviderPresets.ts:3963	string	DeepSeek V4 Pro
-310	src/config/opencodeProviderPresets.ts:4154	string	Claude Sonnet 5
-311	src/config/opencodeProviderPresets.ts:4355	string	Claude Sonnet 5.5
-312	src/config/opencodeProviderPresets.ts:4693	string	Claude Opus 5.5
-313	src/config/opencodeProviderPresets.ts:4736	string	Claude Fable 5.1
-314	src/config/opencodeProviderPresets.ts:4788	string	Claude Opus 5.5
-315	src/config/piModelCatalog.ts:86	string	Claude Opus 5
-316	src/config/piModelCatalog.ts:131	string	DeepSeek V4 Pro
-317	src/config/piModelCatalog.ts:598	string	KAT-Coder Pro V2.5
-318	src/config/piModelCatalog.ts:616	string	Doubao Seed 2.1 Pro
-319	src/config/piModelCatalog.ts:760	string	DeepSeek V4.1 Flash
-320	src/config/piModelCatalog.ts:769	string	Step 5 Preview
-321	src/config/piModelCatalog.ts:868	string	MiMo V2.6 Pro
-322	src/config/piModelCatalog.ts:877	string	MiMo V2.6 Flash
-323	src/config/piProviderPresets.ts:229	string	Kimi For Coding
-324	src/config/piProviderPresets.ts:256	string	Kimi For Coding
-325	src/config/piProviderPresets.ts:570	string	FluxA Token Plan
-326	src/config/piProviderPresets.ts:575	string	FluxA Token Plan
-327	src/config/piProviderPresets.ts:1621	string	QwenCloud Token Plan
-328	src/config/piProviderPresets.ts:1660	string	Step 3.5 Flash 2603
-329	src/config/piProviderPresets.ts:1702	string	StepFun Step Plan
-330	src/config/piProviderPresets.ts:1927	string	Xiaomi MiMo Token Plan (China)
-331	src/config/piProviderPresets.ts:2938	string	Tencent Token Plan Enterprise Pro (Intl)
-332	src/config/piProviderPresets.ts:2946	string	Tencent Token Plan Enterprise Pro (Intl)
-333	src/config/piProviderPresets.ts:2973	string	DeepSeek V4 Flash 0731 GA
-334	src/config/presetSearchAliases.ts:7	string	amazon 亚马逊
-335	src/config/presetSearchAliases.ts:9	string	Baidu Qianfan Coding Plan
-336	src/config/presetSearchAliases.ts:15	string	深度求索
-337	src/config/presetSearchAliases.ts:20	string	月之暗面 moonshot
-338	src/config/presetSearchAliases.ts:22	string	月之暗面 moonshot
-339	src/config/presetSearchAliases.ts:23	string	月之暗面 moonshot
-340	src/config/presetSearchAliases.ts:27	string	azure 微软 ai foundry claude
-341	src/config/presetSearchAliases.ts:30	string	codestral la plateforme 法国
-342	src/config/presetSearchAliases.ts:44	string	腾讯 混元 hunyuan
-343	src/config/presetSearchAliases.ts:46	string	Tencent Token Plan Enterprise Lite (Intl)
-344	src/config/presetSearchAliases.ts:47	string	Tencent Token Plan Enterprise Pro
-345	src/config/presetSearchAliases.ts:48	string	Tencent Token Plan Enterprise Pro (Intl)
-346	src/config/presetSearchAliases.ts:50	string	兔子 兔子api tuzi
-347	src/config/presetSearchAliases.ts:55	string	智谱 glm bigmodel z.ai chatglm
-348	src/config/presetSearchAliases.ts:63	string	火山 豆包 doubao volcengine 方舟 ark 字节
-349	src/config/presetSearchAliases.ts:64	string	火山 豆包AI
-350	src/hooks/useDirectorySettings.ts:267	string	[useDirectorySettings] Failed to load directory info
-351	src/hooks/useImportExport.ts:127	string	[useImportExport] Failed to import config
-352	src/hooks/usePromptActions.ts:75	template	`prompts.${requestAppId}.v1`
-353	src/hooks/useSettings.ts:175	string	[useSettings] Failed to sync providers after toggling Claude plugin
-354	src/hooks/useSettingsMetadata.ts:36	string	[useSettingsMetadata] Failed to load metadata
-355	src/icons/extracted/index.ts:57	template	<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" style="flex:none;line-height:1" viewBox="0 0 512 512"><title>AICodeWith</title><path fill="currentColor" d="M98 62 97 63 82 63 82 64 74 65 72 67 69 67 69 6
-356	src/icons/extracted/index.ts:59	template	<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" style="flex:none;line-height:1" viewBox="0 0 64 64"><title>AIComing</title><rect width="64" height="64" rx="16" fill="#1d1d1f"/><path d="M17 18L31 32L17 46
-357	src/icons/extracted/index.ts:65	template	<svg height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Azure</title><path d="M7.242 1.613A1.11 1.11 0 018.295.857h6.977L8.03 22.316a1.11 1.11 0 01-1.05
-358	src/icons/extracted/index.ts:68	template	<svg height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>ByteDance</title><path d="M14.944 18.587l-1.704-.445V10.01l1.824-.462c1-.254 1.84-.461 1.88-.453
-359	src/icons/extracted/index.ts:77	template	<svg height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>DeepSeek</title><path d="M23.748 4.482c-.254-.124-.364.113-.512.234-.051.039-.094.09-.137.136-.3
-360	src/icons/extracted/index.ts:78	template	<svg height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Doubao</title><path d="M5.31 15.756c.172-3.75 1.883-5.999 2.549-6.739-3.26 2.058-5.425 5.658-6.3
-361	src/icons/extracted/index.ts:80	template	<svg height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Gemma</title><defs><linearGradient id="lobe-icons-gemma-fill" x1="24.419%" x2="75.194%" y1="75.5
-362	src/icons/extracted/index.ts:82	template	<svg fill="currentColor" fill-rule="evenodd" height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>GithubCopilot</title><path d="M19.245 5.364c1.322 1.36 1
-363	src/icons/extracted/index.ts:89	template	<svg height="1em" width="1em" style="flex:none;line-height:1" viewBox="0 0 24 25" xmlns="http://www.w3.org/2000/svg"><title>Kimi</title><path d="M21.7202 0.939941C22.9502 0.939941 23.9502 1.93994 23.9502 3.16994C23.9502 
-364	src/icons/extracted/index.ts:91	template	<svg fill="currentColor" fill-rule="evenodd" height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Midjourney</title><path d="M22.369 17.676c-1.387 1.259-3
-365	src/icons/extracted/index.ts:92	template	<svg height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Minimax</title><defs><linearGradient id="lobe-icons-minimax-fill" x1="0%" x2="100.182%" y1="50.0
-366	src/icons/extracted/index.ts:99	template	<svg fill="currentColor" fill-rule="evenodd" height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>OpenAI</title><path d="M21.55 10.004a5.416 5.416 0 00-.4
-367	src/icons/extracted/index.ts:111	template	<svg height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Wenxin</title><path d="M11.32 1.176a1.4 1.4 0 011.36 0l8.64 4.843c.421.234.68.67.68 1.141v9.68c0
-368	src/icons/extracted/index.ts:113	template	<svg height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Xiaomi MiMo</title><rect width="24" height="24" fill="#000"/><path fill="#fff" fill-rule="evenod
-369	src/icons/extracted/index.ts:116	template	<svg fill="currentColor" fill-rule="evenodd" height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>01.AI</title><path d="M5.246 12c0 .837-.086 1.554-.257 2
-370	src/icons/extracted/index.ts:125	template	<svg height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>SiliconCloud</title><path clip-rule="evenodd" d="M22.956 6.521H12.522c-.577 0-1.044.468-1.044 1.
-371	src/icons/extracted/index.ts:133	template	<svg height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Nvidia</title><path d="M10.212 8.976V7.62c.127-.01.256-.017.388-.021 3.596-.117 5.957 3.184 5.95
-372	src/icons/extracted/index.ts:147	template	<svg fill="currentColor" fill-rule="evenodd" height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>DigitalOcean</title><path d="M11.968 24v-4.651c4.923 0 8
-373	src/icons/extracted/index.ts:150	template	<svg fill="currentColor" fill-rule="evenodd" height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Nebius</title><path d="M20 2.306v16.797s4-.242 4-4.815V2
-374	src/icons/extracted/index.ts:157	template	<svg fill="currentColor" height="1em" style="flex:none;line-height:1" viewBox="0 0 113 113" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Cline</title><path d="M56.4998 8.99805L56.4999 5.29805H56.4998V8.99805ZM68
-375	src/icons/extracted/metadata.ts:33	string	ai code with
-376	src/icons/extracted/metadata.ts:610	string	Oh My Pi
-377	src/icons/extracted/metadata.ts:613	string	oh my pi
-378	src/icons/extracted/metadata.ts:681	string	千问AI平台
-379	src/icons/extracted/metadata.ts:924	string	阶跃星辰
-380	src/index.html:5	html_attribute	width=device-width, initial-scale=1.0
-381	src/lib/query/queries.ts:61	string	获取供应商列表失败:
-382	src/tray-panel.html:6	html_text	CC Switch
-383	src/tray-panel/TrayPanel.tsx:586	string	[TrayPanel] 读取托盘面板数据失败
-384	src/types/omo.ts:183	string	Frontend UI/UX Engineer
-385	src/utils/errorUtils.ts:106	string	MCP 服务器 server 字段必须为 JSON 对象
-386	src/utils/errorUtils.ts:108	string	MCP 服务器 '
-387	src/utils/errorUtils.ts:111	string	MCP 服务器 name 必须为字符串
-388	src/utils/errorUtils.ts:132	string	http 类型的 MCP 服务器缺少 url 字段
-389	src/utils/errorUtils.ts:134	string	必须包含 url 字段
-390	src/utils/errorUtils.ts:145	string	TOML 内容不能为空
-391	src/utils/providerConfigUtils.ts:677	template	`\\u${ch.charCodeAt(0).toString(16).padStart(4, "0")}`
+001	src-tauri/src/agy_config.rs:85	rust_string	agy.config.missing
+002	src-tauri/src/agy_config.rs:95	rust_string	env
+003	src-tauri/src/agy_config.rs:96	rust_string	config
+004	src-tauri/src/app_config.rs:584	rust_string	unsupported_app
+005	src-tauri/src/claude_desktop_config.rs:471	rust_string	claude_desktop.provider.api_format_unsupported
+006	src-tauri/src/claude_desktop_config.rs:473	rust_string	Claude Desktop phase 1 only supports native Anthropic Messages API
+007	src-tauri/src/claude_desktop_config.rs:536	rust_string	Claude Desktop proxy mode does not support API format: {api_format}
+008	src-tauri/src/claude_desktop_config.rs:645	rust_string	claude_desktop.provider.direct_mapping_unsupported
+009	src-tauri/src/claude_desktop_config.rs:772	rust_string	Claude Desktop proxy mode requires at least one model route mapping
+010	src-tauri/src/codex_config.rs:928	rust_string	config.toml
+011	src-tauri/src/codex_config.rs:3067	rust_string	Codex 配置文件不存在
+012	src-tauri/src/commands/misc.rs:423	rust_string	windows
+013	src-tauri/src/commands/misc.rs:4523	rust_string	OPENCODE_CONFIG_DIR
+014	src-tauri/src/commands/misc.rs:4534	rust_string	{key}={linux_value}
+015	src-tauri/src/commands/misc.rs:6280	rust_string	gnome-terminal
+016	src-tauri/src/commands/profile.rs:87	rust_string	provider-switched
+017	src-tauri/src/database/backup.rs:960	rust_string	{b:02X}
+018	src-tauri/src/database/dao/providers.rs:587	rust_string	omo
+019	src-tauri/src/database/dao/settings.rs:259	rust_string	rectifier_config
+020	src-tauri/src/deeplink/utils.rs:15	rust_string	https
+021	src-tauri/src/dsh_config.rs:149	rust_string	{}.lock
+022	src-tauri/src/dsh_config.rs:337	rust_string	api
+023	src-tauri/src/gemini_config.rs:117	rust_string	Invalid Gemini .env format (line {line_number}): variable name can only contain letters, numbers, and underscores / Variable: {key}
+024	src-tauri/src/gemini_config.rs:320	rust_string	gemini.validation.missing_api_key
+025	src-tauri/src/grok_config.rs:289	rust_string	Grok Build 配置文件不存在
+026	src-tauri/src/grok_config.rs:290	rust_string	Grok Build configuration file not found
+027	src-tauri/src/grok_config.rs:296	rust_string	config
+028	src-tauri/src/kimi_config.rs:163	rust_string	base_url
+029	src-tauri/src/kimi_config.rs:269	rust_string	services
+030	src-tauri/src/kimi_config.rs:609	rust_string	/oauth/key
+031	src-tauri/src/kimi_config.rs:638	rust_string	kimi.account.remove_current
+032	src-tauri/src/kimi_config.rs:688	rust_string	models
+033	src-tauri/src/live/project/codex.rs:395	rust_string	query_params
+034	src-tauri/src/live/project/codex.rs:397	rust_string	env_http_headers
+035	src-tauri/src/live/project/grok.rs:149	rust_string	provider.grokbuild.default_model.ambiguous
+036	src-tauri/src/mcode_config.rs:154	rust_string	models
+037	src-tauri/src/mcode_config.rs:191	rust_string	{}.lock
+038	src-tauri/src/mcp/mcode.rs:14	rust_string	mcpServers
+039	src-tauri/src/mcp/mcode.rs:40	rust_string	mcp.json
+040	src-tauri/src/mcp/omp.rs:180	rust_string	mcpServers
+041	src-tauri/src/mcp/omp.rs:181	rust_string	enabled
+042	src-tauri/src/mode/controller.rs:690	rust_string	mode.unsettled
+043	src-tauri/src/mode/operation.rs:102	rust_string	staged
+044	src-tauri/src/omp_config.rs:979	rust_string	mcpServers
+045	src-tauri/src/opencode_config.rs:505	rust_string	OpenCode 原生供应商「{id}」的字段 {path} 不符合 OpenCode V2 配置格式
+046	src-tauri/src/opencode_config.rs:556	rust_string	OpenCode providers must be a JSON object
+047	src-tauri/src/prompt_files.rs:26	rust_string	This app does not support Prompts
+048	src-tauri/src/proxy/forwarder.rs:3817	rust_string	response.queued
+049	src-tauri/src/proxy/http_client.rs:308	rust_string	https
+050	src-tauri/src/proxy/hyper_client.rs:507	rust_string	https
+051	src-tauri/src/proxy/hyper_client.rs:719	rust_string	Build dummy request: {e}
+052	src-tauri/src/proxy/providers/codex_oauth_auth/browser.rs:92	rust_string	code
+053	src-tauri/src/proxy/providers/codex_oauth_auth/browser.rs:111	rust_string	no-store
+054	src-tauri/src/proxy/providers/streaming_codex_chat.rs:815	rust_string	error
+055	src-tauri/src/proxy/providers/streaming_responses.rs:2487	rust_string	response_parse_error
+056	src-tauri/src/proxy/providers/xai_oauth_auth.rs:320	rust_string	expired_token
+057	src-tauri/src/services/agy_account/mod.rs:202	rust_string	timeout
+058	src-tauri/src/services/agy_account/mod.rs:234	rust_string	This sign-in has ended. Add the account again.
+059	src-tauri/src/services/agy_account/mod.rs:317	rust_string	This account's sign-in has expired. Add it again.
+060	src-tauri/src/services/agy_account/mod.rs:349	rust_string	写入后核对不一致，agy 的登录可能没有切换成功
+061	src-tauri/src/services/claude_account/mod.rs:625	rust_string	.claude.json
+062	src-tauri/src/services/claude_account/snapshot/store.rs:95	rust_string	Claude Code 的登录信息格式无法识别，没有做任何改动
+063	src-tauri/src/services/claude_account/snapshot/store/keychain.rs:74	rust_string	claude.snapshot.too_large
+064	src-tauri/src/services/claude_account/snapshot/store/keychain.rs:76	rust_string	Claude Code's sign-in data is too large for the keychain, so nothing was switched.
+065	src-tauri/src/services/claude_account/snapshot/store/keychain.rs:125	rust_string	stdin
+066	src-tauri/src/services/claude_account/snapshot/store/keychain.rs:129	rust_string	stdout
+067	src-tauri/src/services/env_manager.rs:99	rust_string	file
+068	src-tauri/src/services/env_manager.rs:144	rust_string	system
+069	src-tauri/src/services/kimi_oauth/account.rs:164	rust_string	user_id
+070	src-tauri/src/services/kimi_oauth/lock.rs:65	rust_string	.lock
+071	src-tauri/src/services/kimi_oauth/mod.rs:260	rust_string	key
+072	src-tauri/src/services/kimi_oauth/mod.rs:712	rust_string	user_code
+073	src-tauri/src/services/kimi_oauth/mod.rs:1073	rust_string	provider
+074	src-tauri/src/services/kimi_oauth/mod.rs:1073	rust_string	oauth
+075	src-tauri/src/services/prompt.rs:416	rust_string	mcode
+076	src-tauri/src/services/provider/claude_official.rs:250	rust_string	claude.account.default_taken
+077	src-tauri/src/services/provider/claude_official.rs:251	rust_string	这个账号现在在 Claude Code 的默认登录里，但 Claude Code 当前用的是其他供应商或本地路由，打开的终端不会用这个账号。请先切到这张卡（或任一官方卡）再打开终端
+078	src-tauri/src/services/provider/endpoints.rs:44	rust_string	provider.endpoint.url_required
+079	src-tauri/src/services/provider/icon.rs:46	rust_string	自定义图标无效，请重新上传
+080	src-tauri/src/services/provider/icon.rs:245	rust_string	customIcon.nameTooLong
+081	src-tauri/src/services/provider/live.rs:548	rust_string	claude.live.requires_engine
+082	src-tauri/src/services/provider/live.rs:555	rust_string	claude_desktop.live.requires_db_context
+083	src-tauri/src/services/provider/live.rs:557	rust_string	Claude Desktop configuration must be written through the provider switch flow
+084	src-tauri/src/services/provider/live.rs:562	rust_string	codex.live.requires_engine
+085	src-tauri/src/services/provider/live.rs:619	rust_string	A new OpenCode provider ID requires an npm package and at least one model; only an existing ID in the live config may inherit defaults
+086	src-tauri/src/services/provider/live.rs:943	rust_string	Claude Desktop 3P configuration cannot be imported as a generic live config. Use 'Import compatible providers from Claude' instead.
+087	src-tauri/src/services/provider/live.rs:1013	rust_string	hermes.config.missing
+088	src-tauri/src/services/provider/live.rs:1391	rust_string	openclaw
+089	src-tauri/src/services/provider/mod.rs:6820	rust_string	Antigravity cards are not enabled; use Open terminal to start one
+090	src-tauri/src/services/provider/omp.rs:69	rust_string	omp
+091	src-tauri/src/services/provider/usage.rs:156	rust_string	Usage query is disabled
+092	src-tauri/src/services/s3.rs:361	rust_string	s3.connection_failed
+093	src-tauri/src/services/s3.rs:496	rust_string	S3 URL 无效: {e}
+094	src-tauri/src/services/s3.rs:529	rust_string	etag
+095	src-tauri/src/services/skill.rs:3866	rust_string	limit_mb
+096	src-tauri/src/services/skill.rs:3967	rust_string	ARCHIVE_TOO_LARGE
+097	src-tauri/src/services/skill.rs:4004	rust_string	checkZipContent
+098	src-tauri/src/services/skill.rs:4554	rust_string	checkZipContent
+099	src-tauri/src/services/skill.rs:4564	rust_string	ARCHIVE_TOO_MANY_ENTRIES
+100	src-tauri/src/services/subscription.rs:1654	rust_string	claude
+101	src-tauri/src/services/sync_protocol.rs:184	rust_string	sync.snapshot_tmpdir_failed
+102	src-tauri/src/services/sync_protocol.rs:186	rust_string	Failed to create temporary directory for snapshot
+103	src-tauri/src/services/sync_protocol.rs:284	rust_string	sync.manifest_db_version_missing
+104	src-tauri/src/services/sync_protocol.rs:303	rust_string	sync.manifest_db_version_incompatible
+105	src-tauri/src/services/webdav_sync/archive.rs:75	rust_string	webdav.sync.skills_extract_tmpdir_failed
+106	src-tauri/src/services/webdav_sync/archive.rs:98	rust_string	webdav.sync.skills_zip_too_many_entries
+107	src-tauri/src/services/webdav_sync/archive.rs:100	rust_string	skills.zip 条目数过多（{}），上限 {MAX_EXTRACT_ENTRIES}
+108	src-tauri/src/services/webdav_sync/archive.rs:143	rust_string	获取 Skills SSOT 目录失败: {e}
+109	src-tauri/src/services/webdav_sync/archive.rs:286	rust_string	Failed to create temporary directory for skills backup
+110	src-tauri/src/services/webdav_sync/archive.rs:329	rust_string	sync.db_import_and_rollback_failed
+111	src-tauri/src/session_manager/content.rs:258	rust_string	) { /                 if let Some(thoughts) = value /                     .pointer(pointer) /                     .and_then(super::providers::gemini::format_thoughts) /                 { /                     return Ok(thoughts.text); /                 } /             } /             extract_text(&value, pointer) /         } /         ContentRef::Sidecar { rel_path } => { /             let base = source.sidecar_base().ok_or_else(|| OUTSIDE.to_string())?; /             let SourceLocation::Path { root, .. } = &source.location else { /                 return Err(OUTSIDE.to_string()); /             }; /             let base = canonicalize_existing_path(&base,
+112	src-tauri/src/session_manager/content.rs:371	rust_string	.to_string())? /         .len(); /     if end > file_len { /         return Err(STALE.to_string()); /     } /     let read_end = (end + 1).min(file_len); /     let mut buf = vec![0u8; (read_end - start) as usize]; /     file.seek(SeekFrom::Start(start)) /         .and_then(|_| file.read_exact(&mut buf)) /         .map_err(|_| STALE.to_string())?; /     Ok((buf, end < file_len)) / } /  / /// Codex 压缩的 rollout（`.jsonl.zst`）没法随机定位：偏移按解压后的内容算， / /// 从头解压丢掉 `start` 字节再读窗口。 / fn read_compressed_window(path: &Path, start: u64, end: u64) -> Result<(Vec<u8>, bool), String> { /     let mut reader = /         crate::codex_rollout_file::open_reader(path).map_err(|_|
+113	src-tauri/src/session_manager/content.rs:590	rust_string	.to_string())?; /     if bytes.len() as u64 > max { /         return Err(TOO_LARGE_IMAGE.to_string()); /     } /     Ok(bytes) / } /  / /// 规范化本地图片路径：接受绝对路径或 `file://` URL，只允许位图扩展名 / fn canonical_local_image(path: &str) -> Result<PathBuf, String> { /     let path = if path.starts_with(
+114	src-tauri/src/session_manager/mod.rs:186	rust_string	kimi
+115	src-tauri/src/session_manager/providers/dsh.rs:37	rust_string	zstd
+116	src-tauri/src/session_manager/providers/gemini.rs:35	rust_string	chats
+117	src-tauri/src/session_manager/providers/hermes.rs:434	rust_string	model_only
+118	src-tauri/src/session_manager/terminal/mod.rs:57	rust_string	macos
+119	src-tauri/src/settings.rs:256	rust_string	s3.bucket.required
+120	src-tauri/src/settings.rs:257	rust_string	S3 存储桶不能为空
+121	src-tauri/src/settings.rs:258	rust_string	S3 bucket is required.
+122	src-tauri/src/settings.rs:264	rust_string	S3 区域不能为空
+123	src-tauri/src/usage_script.rs:45	rust_string	Failed to create JS runtime: {e}
+124	src-tauri/src/usage_script.rs:75	rust_string	Failed to create JS context: {e}
+125	src-tauri/src/usage_script.rs:84	rust_string	解析配置失败: {e}
+126	src-tauri/src/usage_script.rs:105	rust_string	Failed to serialize request: {e}
+127	src-tauri/src/usage_script.rs:148	rust_string	usage_script.context_create_failed
+128	src-tauri/src/usage_script.rs:178	rust_string	解析响应 JSON 失败: {e}
+129	src-tauri/src/usage_script.rs:186	rust_string	usage_script.extractor_exec_failed
+130	src-tauri/src/usage_script.rs:199	rust_string	Failed to serialize result: {e}
+131	src-tauri/src/usage_script.rs:258	rust_string	Unsupported HTTP method: {}
+132	src-tauri/src/usage_script.rs:281	rust_string	Request failed: {e}
+133	src-tauri/src/usage_script.rs:306	rust_string	HTTP {status} : {preview}
+134	src-tauri/src/usage_script.rs:329	rust_string	数组索引[{idx}]验证失败: {e}
+135	src-tauri/src/usage_script.rs:358	rust_string	isValid 必须是布尔值或 null
+136	src-tauri/src/usage_script.rs:409	rust_string	planName 必须是字符串或 null
+137	src-tauri/src/usage_script.rs:472	rust_string	base_url must use HTTPS (localhost allowed)
+138	src-tauri/src/usage_script.rs:524	rust_string	Request URL must use HTTPS (localhost allowed)
+139	src/App.tsx:619	string	[App] Failed to read window resize state
+140	src/App.tsx:745	string	[App] Failed to check migration result:
+141	src/components/BrandIcons.tsx:100	string	M15.688 2.343a2.588 2.588 0 00-3.61 0l-9.626 9.44a.863.863 0 01-1.203 0 .823.823 0 010-1.18l9.626-9.44a4.313 4.313 0 016.016 0 4.116 4.116 0 011.204 3.54 4.3 4.3 0 013.609 1.18l.05.05a4.115 4.115 0 010 5.9l-8.706 8.537a.274.274 0 000 .393l1.788 1.754a.823.823 0 010 1.18.863.863 0 01-1.203 0l-1.788-1.753a1.92 1.92 0 010-2.754l8.706-8.538a2.47 2.47 0 000-3.54l-.05-.049a2.588 2.588 0 00-3.607-.003l-7.172 7.034-.002.002-.098.097a.863.863 0 01-1.204 0 .823.823 0 010-1.18l7.273-7.133a2.47 2.47 0 00-.003-3.537z
+142	src/components/IconPicker.tsx:45	string	grid grid-cols-6 sm:grid-cols-8 lg:grid-cols-10 gap-2
+143	src/components/UsageScriptModal.tsx:63	template	({ /   request: { /     url: "", /     method: "GET", /     headers: {} /   }, /   extractor: function(response) { /     return { /       remaining: 0, /       unit: "USD" /     }; /   } / })
+144	src/components/UsageScriptModal.tsx:591	template	`${t("usageScript.testFailed")}: ${quota.error || t("endpointTest.noResult")}`
+145	src/components/UsageScriptModal.tsx:1313	string	https://api.zenmux.com/v1/...
+146	src/components/WhatsNewDialog.tsx:58	string	Failed to open changelog:
+147	src/components/apps/AppsPage.tsx:353	string	claude-desktop
+148	src/components/apps/ToolUninstallConfirmDialog.tsx:143	jsx_text	WSL:
+149	src/components/apps/toolUninstallCommands.ts:31	string	npm uninstall -g opencode-ai
+150	src/components/apps/toolUninstallCommands.ts:34	string	npm uninstall -g @minimax-ai/code
+151	src/components/apps/toolUninstallCommands.ts:78	string	brew uninstall --cask claude-code@latest
+152	src/components/apps/useToolManagement.ts:154	string	npm i -g @xai-official/grok@latest --ignore-scripts=false --include=optional --allow-scripts=@xai-official/grok
+153	src/components/apps/useToolManagement.ts:448	string	[useToolManagement] Failed to refresh tools
+154	src/components/apps/useToolManagement.ts:648	string	[useToolManagement] Diagnose all failed
+155	src/components/providers/AddProviderDialog.tsx:229	string	[AddProviderDialog] Provider saved but sync failed
+156	src/components/providers/AddProviderDialog.tsx:565	string	flex h-full flex-col space-y-0 p-0
+157	src/components/providers/forms/ClaudeDesktopProviderForm.tsx:1375	string	claude-sonnet-4-6
+158	src/components/providers/forms/ClaudeFormFields.tsx:467	string	[XaiOAuth] Failed to fetch models:
+159	src/components/providers/forms/HermesFormFields.tsx:255	string	https://api.example.com/v1
+160	src/components/providers/forms/KimiProviderForm.tsx:88	string	OpenAI Chat Completions
+161	src/components/providers/forms/KimiProviderForm.tsx:527	template	`${modelKeyPrefix}/`
+162	src/components/providers/forms/KimiProviderForm.tsx:647	template	`${modelKeyPrefix}/model-${++index}`
+163	src/components/providers/forms/PiProviderForm.tsx:99	string	Google Generative AI
+164	src/components/providers/forms/PiProviderForm.tsx:1203	string	[ModelFetch] Failed:
+165	src/components/providers/forms/ProviderPresetSelector.tsx:417	string	h-auto min-w-0 flex-wrap gap-0.5 border border-border-strong bg-transparent p-0.5
+166	src/components/providers/forms/hooks/useManagedAuth.ts:160	string	[ManagedAuth] Failed to open browser:
+167	src/components/providers/forms/hooks/useManagedAuth.ts:275	string	[ManagedAuth] Failed to logout:
+168	src/components/providers/mode/ModeDialog.tsx:107	string	取消
+169	src/components/providers/mode/StackSettingsSheet.tsx:36	string	rounded-control bg-warning-soft px-3 py-2 text-caption text-warning-text
+170	src/components/sessions/reader/SessionEventRow.tsx:105	string	link.openExternal
+171	src/components/sessions/reader/SessionStep.tsx:118	string	stepExpand
+172	src/components/sessions/reader/SessionStep.tsx:205	string	image.alt
+173	src/components/sessions/reader/SessionStepDetails.tsx:66	string	whitespace-pre-wrap break-words text-caption
+174	src/components/sessions/reader/SessionStepDetails.tsx:303	string	diff
+175	src/components/sessions/reader/SessionTimeline.tsx:86	string	timelineSummary
+176	src/components/sessions/reader/i18n.ts:14	string	{{count}} 个命令
+177	src/components/sessions/reader/i18n.ts:24	string	收起
+178	src/components/sessions/reader/i18n.ts:27	string	已中断
+179	src/components/sessions/reader/i18n.ts:43	string	想法
+180	src/components/sessions/reader/i18n.ts:45	string	Thinking…
+181	src/components/sessions/reader/i18n.ts:49	string	思考内容不可见
+182	src/components/sessions/reader/i18n.ts:77	string	调用 {{server}} {{count}} 次
+183	src/components/sessions/reader/i18n.ts:83	string	{{requests}} 次请求 · 按 API 价估算 / 输入 {{input}} · 输出 {{output}} / 缓存写入 {{cacheWrite}} · 缓存读取 {{cacheRead}}
+184	src/components/sessions/reader/i18n.ts:84	string	已加载 {{loaded}} / {{total}}
+185	src/components/sessions/reader/i18n.ts:97	string	复制这一轮
+186	src/components/sessions/reader/i18n.ts:101	string	对话
+187	src/components/sessions/reader/i18n.ts:103	string	视图
+188	src/components/sessions/reader/i18n.ts:112	string	{{count}} 步
+189	src/components/sessions/reader/i18n.ts:115	string	没有回复
+190	src/components/settings/AboutSection.tsx:79	string	[AboutSection] Failed to load app version
+191	src/components/settings/AboutSection.tsx:155	string	[AboutSection] Update failed
+192	src/components/settings/RectifierConfigPanel.tsx:46	string	Failed to save rectifier config:
+193	src/components/settings/SettingsPage.tsx:285	string	[SettingsPage] Failed to save settings
+194	src/components/settings/auth/ManagedAccountsGroup.tsx:206	string	[AuthCenter] Failed to copy user code:
+195	src/components/settings/sections/RoutingSection.tsx:346	string	127.0.0.1
+196	src/components/shell/NewLayoutDialog.tsx:103	string	Failed to open release notes:
+197	src/components/shell/Sidebar.tsx:769	jsx_text	CC Switch v
+198	src/components/shell/WindowControls.tsx:31	string	[WindowControls] Failed to sync maximized state
+199	src/components/ui/badge.tsx:7	string	inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2
+200	src/components/ui/button.tsx:19	string	text-fg-2 hover:bg-subtle hover:text-fg-1
+201	src/components/universal/UniversalProviderFormModal.tsx:629	string	gemini-2.5-pro
+202	src/components/usage/RequestDetailPanel.tsx:74	string	string
+203	src/components/usage/usageTable.ts:18	string	whitespace-nowrap px-3 text-start font-medium first:ps-4 last:pe-4
+204	src/components/workspace/WorkspaceFileEditor.tsx:54	string	Failed to read workspace file:
+205	src/components/workspace/WorkspaceFileEditor.tsx:69	string	Failed to save workspace file:
+206	src/config/appConfig.tsx:289	string	bg-violet-500/10 text-violet-700 dark:text-violet-300 hover:bg-violet-500/20 border-0 gap-1.5
+207	src/config/appConfig.tsx:316	string	bg-fuchsia-500/10 ring-1 ring-fuchsia-500/20 hover:bg-fuchsia-500/20 text-fuchsia-600 dark:text-fuchsia-400
+208	src/config/claudeDesktopProviderPresets.ts:210	string	Kimi For Coding
+209	src/config/claudeDesktopProviderPresets.ts:1414	string	Tencent Token Plan Enterprise Lite (Intl)
+210	src/config/claudeDesktopProviderPresets.ts:1612	string	QwenCloud Token Plan
+211	src/config/claudeDesktopProviderPresets.ts:2002	string	Meta Model API
+212	src/config/claudeDesktopProviderPresets.ts:2283	string	Cloudflare AI Gateway
+213	src/config/claudeProviderPresets.ts:1360	string	Tencent Token Plan (Intl)
+214	src/config/claudeProviderPresets.ts:2843	string	Access Key ID
+215	src/config/claudeProviderPresets.ts:2857	string	AWS Bedrock (API Key)
+216	src/config/claudeProviderPresets.ts:2945	string	模力方舟
+217	src/config/codexProviderPresets.ts:307	string	Kimi K2.7 Code
+218	src/config/codexProviderPresets.ts:319	string	Kimi For Coding
+219	src/config/codexProviderPresets.ts:405	string	Kimi For Coding
+220	src/config/codexProviderPresets.ts:764	string	DeepSeek V4 Flash
+221	src/config/codexProviderPresets.ts:919	template	model_provider = "custom" / model = "gpt-6.1-sol" / review_model = "gpt-6.1-sol" / model_reasoning_effort = "high" / disable_response_storage = true /  / [model_providers.custom] / name = "APIKEY.FUN" / base_url = "https://api.apikey.fan/v1" / wire_api = "responses" / requires_openai_auth = true
+222	src/config/codexProviderPresets.ts:1731	string	DeepSeek V4.1 Flash
+223	src/config/codexProviderPresets.ts:2060	string	千问AI平台 Token Plan
+224	src/config/codexProviderPresets.ts:2492	string	Tencent Token Plan Enterprise Pro
+225	src/config/codexProviderPresets.ts:2573	string	Kimi K2.7 Code HighSpeed
+226	src/config/codexProviderPresets.ts:2703	string	DeepSeek V4 Flash
+227	src/config/codexProviderPresets.ts:2928	string	Step 3.5 Flash
+228	src/config/codexProviderPresets.ts:2959	string	Step 3.7 Flash
+229	src/config/codexProviderPresets.ts:3069	string	KAT-Coder Pro V2.5
+230	src/config/codexProviderPresets.ts:3137	string	You are Codex, a coding agent based on MiniMax-M3.1-Flash. You and the user share the same workspace and collaborate to achieve the user's goals.
+231	src/config/codexProviderPresets.ts:3289	string	MiMo V2.6 Flash
+232	src/config/codexProviderPresets.ts:3990	string	Nebius Token Factory
+233	src/config/codexProviderPresets.ts:4923	string	SoruxGPT Coding Plan
+234	src/config/grokBuildProviderPresets.ts:72	template	`model_provider = "custom" / model = ${tomlString(model)} /  / [model_providers.custom] / name = ${tomlString(providerName)} / base_url = ${tomlString(baseUrl)} / wire_api = "responses" / requires_openai_auth = true`
+235	src/config/hermesProviderPresets.ts:664	string	FluxA Token Plan
+236	src/config/hermesProviderPresets.ts:1129	string	火山 Agent Plan
+237	src/config/hermesProviderPresets.ts:1161	string	火山 Coding Plan
+238	src/config/hermesProviderPresets.ts:2307	string	Tencent Token Plan Enterprise Lite (Intl)
+239	src/config/hermesProviderPresets.ts:2409	string	千问AI平台 Token Plan
+240	src/config/hermesProviderPresets.ts:3252	string	Nebius Token Factory
+241	src/config/openclawProviderPresets.ts:97	string	Google Generative AI
+242	src/config/openclawProviderPresets.ts:4163	string	QwenCloud For Coding
+243	src/config/openclawProviderPresets.ts:4219	string	Qwen3 Coder Plus
+244	src/config/openclawProviderPresets.ts:5474	string	Qwen3-Coder 30B A3B
+245	src/config/opencodeProviderPresets.ts:95	string	Step 3.5 Flash 2603
+246	src/config/opencodeProviderPresets.ts:123	string	Gemini 3.8 Flash
+247	src/config/opencodeProviderPresets.ts:274	string	Claude Opus 4.5
+248	src/config/opencodeProviderPresets.ts:299	string	Claude Haiku 4.5
+249	src/config/opencodeProviderPresets.ts:403	string	Kimi K2.7 Code
+250	src/config/opencodeProviderPresets.ts:635	string	Claude Opus 5.5
+251	src/config/opencodeProviderPresets.ts:760	string	Claude Opus 5.5
+252	src/config/opencodeProviderPresets.ts:928	string	Claude Opus 5.5
+253	src/config/opencodeProviderPresets.ts:934	string	Claude Sonnet 5.5
+254	src/config/opencodeProviderPresets.ts:1231	string	Claude Sonnet 5.5
+255	src/config/opencodeProviderPresets.ts:1282	string	Claude Sonnet 5.5
+256	src/config/opencodeProviderPresets.ts:1332	string	Claude Opus 5.5
+257	src/config/opencodeProviderPresets.ts:1334	string	Claude Haiku 5.5
+258	src/config/opencodeProviderPresets.ts:1363	string	Claude Sonnet 5.5
+259	src/config/opencodeProviderPresets.ts:1532	string	Kimi K3.1 Pro
+260	src/config/opencodeProviderPresets.ts:1578	string	Claude Haiku 5.5
+261	src/config/opencodeProviderPresets.ts:1662	string	Ark Code Latest
+262	src/config/opencodeProviderPresets.ts:1695	string	Ark Code Latest
+263	src/config/opencodeProviderPresets.ts:1834	string	Claude Opus 5.5
+264	src/config/opencodeProviderPresets.ts:1958	string	Claude Sonnet 5.5
+265	src/config/opencodeProviderPresets.ts:2319	string	Claude Fable 5.1
+266	src/config/opencodeProviderPresets.ts:2326	string	Claude Haiku 5.5
+267	src/config/opencodeProviderPresets.ts:2554	string	Tencent Token Plan
+268	src/config/opencodeProviderPresets.ts:2648	string	Tencent Token Plan Enterprise Pro
+269	src/config/opencodeProviderPresets.ts:2660	string	Kimi K2.7 Code
+270	src/config/opencodeProviderPresets.ts:2826	string	Baidu Qianfan Token Plan
+271	src/config/opencodeProviderPresets.ts:3014	string	QwenCloud For Coding
+272	src/config/opencodeProviderPresets.ts:3166	string	Step 3.5 Flash
+273	src/config/opencodeProviderPresets.ts:3552	string	MiMo V2.6 Flash
+274	src/config/opencodeProviderPresets.ts:3712	string	Claude Sonnet 5.5
+275	src/config/opencodeProviderPresets.ts:3801	string	Claude Sonnet 5.5
+276	src/config/opencodeProviderPresets.ts:3819	string	Claude Fable 5.1
+277	src/config/opencodeProviderPresets.ts:3855	string	Claude Fable 5.1
+278	src/config/opencodeProviderPresets.ts:3963	string	DeepSeek V4 Pro
+279	src/config/opencodeProviderPresets.ts:4154	string	Claude Sonnet 5
+280	src/config/opencodeProviderPresets.ts:4355	string	Claude Sonnet 5.5
+281	src/config/opencodeProviderPresets.ts:4693	string	Claude Opus 5.5
+282	src/config/opencodeProviderPresets.ts:4736	string	Claude Fable 5.1
+283	src/config/opencodeProviderPresets.ts:4788	string	Claude Opus 5.5
+284	src/config/piModelCatalog.ts:86	string	Claude Opus 5
+285	src/config/piModelCatalog.ts:131	string	DeepSeek V4 Pro
+286	src/config/piModelCatalog.ts:598	string	KAT-Coder Pro V2.5
+287	src/config/piModelCatalog.ts:616	string	Doubao Seed 2.1 Pro
+288	src/config/piModelCatalog.ts:760	string	DeepSeek V4.1 Flash
+289	src/config/piModelCatalog.ts:769	string	Step 5 Preview
+290	src/config/piModelCatalog.ts:868	string	MiMo V2.6 Pro
+291	src/config/piModelCatalog.ts:877	string	MiMo V2.6 Flash
+292	src/config/piProviderPresets.ts:229	string	Kimi For Coding
+293	src/config/piProviderPresets.ts:256	string	Kimi For Coding
+294	src/config/piProviderPresets.ts:570	string	FluxA Token Plan
+295	src/config/piProviderPresets.ts:575	string	FluxA Token Plan
+296	src/config/piProviderPresets.ts:1621	string	QwenCloud Token Plan
+297	src/config/piProviderPresets.ts:1660	string	Step 3.5 Flash 2603
+298	src/config/piProviderPresets.ts:1702	string	StepFun Step Plan
+299	src/config/piProviderPresets.ts:1927	string	Xiaomi MiMo Token Plan (China)
+300	src/config/piProviderPresets.ts:2938	string	Tencent Token Plan Enterprise Pro (Intl)
+301	src/config/piProviderPresets.ts:2946	string	Tencent Token Plan Enterprise Pro (Intl)
+302	src/config/piProviderPresets.ts:2973	string	DeepSeek V4 Flash 0731 GA
+303	src/config/presetSearchAliases.ts:7	string	amazon 亚马逊
+304	src/config/presetSearchAliases.ts:9	string	Baidu Qianfan Coding Plan
+305	src/config/presetSearchAliases.ts:15	string	深度求索
+306	src/config/presetSearchAliases.ts:20	string	月之暗面 moonshot
+307	src/config/presetSearchAliases.ts:22	string	月之暗面 moonshot
+308	src/config/presetSearchAliases.ts:23	string	月之暗面 moonshot
+309	src/config/presetSearchAliases.ts:27	string	azure 微软 ai foundry claude
+310	src/config/presetSearchAliases.ts:30	string	codestral la plateforme 法国
+311	src/config/presetSearchAliases.ts:44	string	腾讯 混元 hunyuan
+312	src/config/presetSearchAliases.ts:46	string	Tencent Token Plan Enterprise Lite (Intl)
+313	src/config/presetSearchAliases.ts:47	string	Tencent Token Plan Enterprise Pro
+314	src/config/presetSearchAliases.ts:48	string	Tencent Token Plan Enterprise Pro (Intl)
+315	src/config/presetSearchAliases.ts:50	string	兔子 兔子api tuzi
+316	src/config/presetSearchAliases.ts:55	string	智谱 glm bigmodel z.ai chatglm
+317	src/config/presetSearchAliases.ts:63	string	火山 豆包 doubao volcengine 方舟 ark 字节
+318	src/config/presetSearchAliases.ts:64	string	火山 豆包AI
+319	src/hooks/useDirectorySettings.ts:267	string	[useDirectorySettings] Failed to load directory info
+320	src/hooks/useImportExport.ts:127	string	[useImportExport] Failed to import config
+321	src/hooks/usePromptActions.ts:75	template	`prompts.${requestAppId}.v1`
+322	src/hooks/useSettings.ts:175	string	[useSettings] Failed to sync providers after toggling Claude plugin
+323	src/hooks/useSettingsMetadata.ts:36	string	[useSettingsMetadata] Failed to load metadata
+324	src/icons/extracted/index.ts:57	template	<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" style="flex:none;line-height:1" viewBox="0 0 512 512"><title>AICodeWith</title><path fill="currentColor" d="M98 62 97 63 82 63 82 64 74 65 72 67 69 67 69 68 61 71 56 76 54 76 43 87 43 89 40 91 39 95 37 96 37 98 36 98 36 100 35 100 35 102 33 104 31 114 30 114 30 120 29 120 29 345 30 345 32 358 33 358 33 360 35 362 36 367 38 368 41 375 45 378 45 380 52 387 54 387 56 390 58 390 59 392 61 392 62 394 66 395 68 397 71 397 71 398 74 398 74 399 77 399 77 400 81 400 81 401 87 401 87 402 151 402 151 455 152 455 152 459 154 460 155 463 157 463 159 465 167 465 167 464 171 463 172 461 174 461 175 459 177 459 178 457 180 457 181 455 183 455 188 450 190 450 196 444 198 444 199 442 204 440 210 434 212 434 213 432 218 430 220 427 225 425 227 422 232 420 234 417 239 415 241 412 246 410 248 407 250 407 251 405 253 405 255 403 258 403 258 402 410 402 410 401 420 400 420 399 423 399 423 398 426 398 428 396 431 396 431 395 435 394 436 392 441 390 443 387 445 387 451 381 451 379 455 376 455 374 457 373 457 371 458 371 458 369 459 369 459 367 460 367 460 365 463 361 463 358 464 358 464 355 465 355 465 350 466 350 466 344 467 344 467 302 464 299 457 299 457 300 453 301 451 304 449 304 443 310 443 316 442 316 442 343 441 343 439 353 438 353 436 359 434 360 434 362 427 369 425 369 424 371 422 371 422 372 420 372 416 375 413 375 413 376 379 376 379 377 377 377 377 376 375 376 375 377 374 376 253 376 253 377 248 377 248 378 242 380 241 382 239 382 238 384 236 384 234 387 232 387 230 390 225 392 223 395 221 395 220 397 215 399 213 402 211 402 210 404 205 406 203 409 201 409 200 411 195 413 193 416 191 416 190 418 188 418 187 420 185 420 181 423 177 420 177 390 176 390 176 383 172 378 169 378 169 377 166 377 166 376 85 376 85 375 82 375 82 374 79 374 79 373 75 372 70 367 68 367 63 362 63 360 61 359 61 357 58 354 58 351 57 351 56 345 55 345 55 335 54 335 54 124 55 124 55 118 56 118 57 112 58 112 59 108 61 107 61 105 63 104 63 102 68 97 70 97 72 94 74 94 77 91 87 89 87 88 408 88 408 89 413 89 413 90 419 91 419 92 423 93 424 95 426 95 434 103 435 107 437 108 437 110 439 112 441 122 442 122 442 165 443 165 443 169 449 175 451 175 452 177 454 177 455 179 458 179 458 180 464 179 467 175 467 121 466 121 466 115 465 115 465 111 464 111 464 107 462 105 462 102 461 102 458 94 456 93 454 88 449 84 448 81 446 81 441 75 439 75 435 71 433 71 433 70 431 70 431 69 429 69 429 68 427 68 425 66 422 66 422 65 418 65 418 64 414 64 414 63 397 63 397 62 373 62 373 63 370 63 370 62 365 62 365 63 357 63 357 62 355 62 355 63 208 63 208 62 206 62 206 63 156 63 156 62 146 62 145 63 145 62ZM169 142 165 143 161 147 161 150 159 152 159 155 158 155 158 158 156 160 154 169 152 171 150 180 148 182 146 191 144 193 144 197 142 199 138 214 136 216 136 220 134 222 134 225 133 225 132 231 130 233 127 245 126 245 125 250 123 252 119 267 117 269 114 281 112 283 108 298 106 300 106 303 105 303 105 306 103 308 101 317 99 319 98 327 100 329 129 329 129 328 131 328 134 325 135 321 136 321 138 311 140 309 140 306 141 306 141 303 142 303 142 300 143 300 143 297 144 297 144 294 145 294 145 291 146 291 147 288 214 287 214 288 217 289 217 292 219 294 219 298 221 300 221 303 222 303 222 306 223 306 223 309 224 309 224 312 225 312 225 315 226 315 226 318 227 318 227 321 228 321 228 324 230 325 230 327 240 328 240 329 249 329 249 328 250 329 254 329 254 328 255 329 261 329 261 328 264 328 264 320 263 320 261 311 259 309 256 297 254 295 252 286 250 284 248 275 246 273 246 269 245 269 244 264 242 262 239 250 237 248 233 233 231 231 227 216 225 214 221 199 219 197 217 188 215 186 215 183 214 183 212 174 210 172 210 169 209 169 209 166 208 166 208 163 207 163 207 160 206 160 206 157 205 157 205 154 203 152 202 147 200 146 200 144 195 143 195 142ZM297 142 294 144 294 326 297 329 329 329 331 327 331 144 330 144 330 142ZM402 192 399 195 397 195 397 197 395 199 393 199 393 201 391 203 389 203 388 206 382 212 380 212 380 214 378 214 378 216 376 216 376 218 359 234 358 240 359 240 360 244 400 284 408 285 414 279 414 270 383 239 383 237 413 208 413 206 415 204 414 197 411 193ZM452 193 449 194 445 198 445 200 444 200 445 207 475 237 475 240 445 269 444 276 445 276 446 280 451 284 457 284 498 244 499 235 496 232 496 230 493 229 474 210 474 208 472 208 472 206 462 196 460 196 457 193ZM181 185 184 187 184 190 185 190 185 193 186 193 186 196 187 196 187 199 188 199 192 214 194 216 194 220 195 220 195 223 196 223 196 226 197 226 197 229 198 229 198 232 199 232 199 235 200 235 200 238 201 238 204 250 205 250 205 255 158 255 157 254 158 250 159 250 159 247 160 247 160 244 161 244 161 241 162 241 162 238 163 238 163 235 164 235 164 232 165 232 165 229 166 229 166 226 167 226 167 223 168 223 168 220 169 220 169 217 170 217 170 214 171 214 171 211 172 211 172 208 173 208 173 205 174 205 174 202 175 202 175 199 176 199 176 196 177 196 177 193 178 193 178 190 179 190 179 187Z"/></svg>
+325	src/icons/extracted/index.ts:59	template	<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" style="flex:none;line-height:1" viewBox="0 0 64 64"><title>AIComing</title><rect width="64" height="64" rx="16" fill="#1d1d1f"/><path d="M17 18L31 32L17 46" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M33 18L47 32L33 46" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/></svg>
+326	src/icons/extracted/index.ts:65	template	<svg height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Azure</title><path d="M7.242 1.613A1.11 1.11 0 018.295.857h6.977L8.03 22.316a1.11 1.11 0 01-1.052.755h-5.43a1.11 1.11 0 01-1.053-1.466L7.242 1.613z" fill="url(#lobe-icons-azure-fill-0)"></path><path d="M18.397 15.296H7.4a.51.51 0 00-.347.882l7.066 6.595c.206.192.477.298.758.298h6.226l-2.706-7.775z" fill="#0078D4"></path><path d="M15.272.857H7.497L0 23.071h7.775l1.596-4.73 5.068 4.73h6.665l-2.707-7.775h-7.998L15.272.857z" fill="url(#lobe-icons-azure-fill-1)"></path><path d="M17.193 1.613a1.11 1.11 0 00-1.052-.756h-7.81.035c.477 0 .9.304 1.052.756l6.748 19.992a1.11 1.11 0 01-1.052 1.466h-.12 7.895a1.11 1.11 0 001.052-1.466L17.193 1.613z" fill="url(#lobe-icons-azure-fill-2)"></path><defs><linearGradient gradientUnits="userSpaceOnUse" id="lobe-icons-azure-fill-0" x1="8.247" x2="1.002" y1="1.626" y2="23.03"><stop stop-color="#114A8B"></stop><stop offset="1" stop-color="#0669BC"></stop></linearGradient><linearGradient gradientUnits="userSpaceOnUse" id="lobe-icons-azure-fill-1" x1="14.042" x2="12.324" y1="15.302" y2="15.888"><stop stop-opacity=".3"></stop><stop offset=".071" stop-opacity=".2"></stop><stop offset=".321" stop-opacity=".1"></stop><stop offset=".623" stop-opacity=".05"></stop><stop offset="1" stop-opacity="0"></stop></linearGradient><linearGradient gradientUnits="userSpaceOnUse" id="lobe-icons-azure-fill-2" x1="12.841" x2="20.793" y1="1.626" y2="22.814"><stop stop-color="#3CCBF4"></stop><stop offset="1" stop-color="#2892DF"></stop></linearGradient></defs></svg>
+327	src/icons/extracted/index.ts:68	template	<svg height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>ByteDance</title><path d="M14.944 18.587l-1.704-.445V10.01l1.824-.462c1-.254 1.84-.461 1.88-.453.032 0 .056 2.235.056 4.972v4.973l-.176-.008c-.104 0-.952-.207-1.88-.446z" fill="#00C8D2" fill-rule="nonzero"></path><path d="M7 16.542c0-2.736.024-4.98.064-4.98.032-.008.872.2 1.88.454l1.816.461-.016 4.05-.024 4.049-1.632.422c-.896.23-1.736.445-1.856.469L7 21.523v-4.98z" fill="#3C8CFF" fill-rule="nonzero"></path><path d="M19.24 12.477c0-9.03.008-9.515.144-9.475.072.024.784.207 1.576.406.792.207 1.576.405 1.744.445l.296.08-.016 8.56-.024 8.568-1.624.414c-.888.23-1.728.437-1.856.47l-.24.055v-9.523z" fill="#78E6DC" fill-rule="nonzero"></path><path d="M1 12.509c0-4.678.024-8.505.064-8.505.032 0 .872.207 1.872.454l1.824.461v7.582c0 4.16-.016 7.574-.032 7.574-.024 0-.872.215-1.88.47L1 21.013v-8.505z" fill="#325AB4"></path></svg>
+328	src/icons/extracted/index.ts:77	template	<svg height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>DeepSeek</title><path d="M23.748 4.482c-.254-.124-.364.113-.512.234-.051.039-.094.09-.137.136-.372.397-.806.657-1.373.626-.829-.046-1.537.214-2.163.848-.133-.782-.575-1.248-1.247-1.548-.352-.156-.708-.311-.955-.65-.172-.241-.219-.51-.305-.774-.055-.16-.11-.323-.293-.35-.2-.031-.278.136-.356.276-.313.572-.434 1.202-.422 1.84.027 1.436.633 2.58 1.838 3.393.137.093.172.187.129.323-.082.28-.18.552-.266.833-.055.179-.137.217-.329.14a5.526 5.526 0 01-1.736-1.18c-.857-.828-1.631-1.742-2.597-2.458a11.365 11.365 0 00-.689-.471c-.985-.957.13-1.743.388-1.836.27-.098.093-.432-.779-.428-.872.004-1.67.295-2.687.684a3.055 3.055 0 01-.465.137 9.597 9.597 0 00-2.883-.102c-1.885.21-3.39 1.102-4.497 2.623C.082 8.606-.231 10.684.152 12.85c.403 2.284 1.569 4.175 3.36 5.653 1.858 1.533 3.997 2.284 6.438 2.14 1.482-.085 3.133-.284 4.994-1.86.47.234.962.327 1.78.397.63.059 1.236-.03 1.705-.128.735-.156.684-.837.419-.961-2.155-1.004-1.682-.595-2.113-.926 1.096-1.296 2.746-2.642 3.392-7.003.05-.347.007-.565 0-.845-.004-.17.035-.237.23-.256a4.173 4.173 0 001.545-.475c1.396-.763 1.96-2.015 2.093-3.517.02-.23-.004-.467-.247-.588zM11.581 18c-2.089-1.642-3.102-2.183-3.52-2.16-.392.024-.321.471-.235.763.09.288.207.486.371.739.114.167.192.416-.113.603-.673.416-1.842-.14-1.897-.167-1.361-.802-2.5-1.86-3.301-3.307-.774-1.393-1.224-2.887-1.298-4.482-.02-.386.093-.522.477-.592a4.696 4.696 0 011.529-.039c2.132.312 3.946 1.265 5.468 2.774.868.86 1.525 1.887 2.202 2.891.72 1.066 1.494 2.082 2.48 2.914.348.292.625.514.891.677-.802.09-2.14.11-3.054-.614zm1-6.44a.306.306 0 01.415-.287.302.302 0 01.2.288.306.306 0 01-.31.307.303.303 0 01-.304-.308zm3.11 1.596c-.2.081-.399.151-.59.16a1.245 1.245 0 01-.798-.254c-.274-.23-.47-.358-.552-.758a1.73 1.73 0 01.016-.588c.07-.327-.008-.537-.239-.727-.187-.156-.426-.199-.688-.199a.559.559 0 01-.254-.078c-.11-.054-.2-.19-.114-.358.028-.054.16-.186.192-.21.356-.202.767-.136 1.146.016.352.144.618.408 1.001.782.391.451.462.576.685.914.176.265.336.537.445.848.067.195-.019.354-.25.452z" fill="#4D6BFE"></path></svg>
+329	src/icons/extracted/index.ts:78	template	<svg height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Doubao</title><path d="M5.31 15.756c.172-3.75 1.883-5.999 2.549-6.739-3.26 2.058-5.425 5.658-6.358 8.308v1.12C1.501 21.513 4.226 24 7.59 24a6.59 6.59 0 002.2-.375c.353-.12.7-.248 1.039-.378.913-.899 1.65-1.91 2.243-2.992-4.877 2.431-7.974.072-7.763-4.5l.002.001z" fill="#1E37FC"></path><path d="M22.57 10.283c-1.212-.901-4.109-2.404-7.397-2.8.295 3.792.093 8.766-2.1 12.773a12.782 12.782 0 01-2.244 2.992c3.764-1.448 6.746-3.457 8.596-5.219 2.82-2.683 3.353-5.178 3.361-6.66a2.737 2.737 0 00-.216-1.084v-.002z" fill="#37E1BE"></path><path d="M14.303 1.867C12.955.7 11.248 0 9.39 0 7.532 0 5.883.677 4.545 1.807 2.791 3.29 1.627 5.557 1.5 8.125v9.201c.932-2.65 3.097-6.25 6.357-8.307.5-.318 1.025-.595 1.569-.829 1.883-.801 3.878-.932 5.746-.706-.222-2.83-.718-5.002-.87-5.617h.001z" fill="#A569FF"></path><path d="M17.305 4.961a199.47 199.47 0 01-1.08-1.094c-.202-.213-.398-.419-.586-.622l-1.333-1.378c.151.615.648 2.786.869 5.617 3.288.395 6.185 1.898 7.396 2.8-1.306-1.275-3.475-3.487-5.266-5.323z" fill="#1E37FC"></path></svg>
+330	src/icons/extracted/index.ts:80	template	<svg height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Gemma</title><defs><linearGradient id="lobe-icons-gemma-fill" x1="24.419%" x2="75.194%" y1="75.581%" y2="25.194%"><stop offset="0%" stop-color="#446EFF"></stop><stop offset="36.661%" stop-color="#2E96FF"></stop><stop offset="83.221%" stop-color="#B1C5FF"></stop></linearGradient></defs><path d="M12.34 5.953a8.233 8.233 0 01-.247-1.125V3.72a8.25 8.25 0 015.562 2.232H12.34zm-.69 0c.113-.373.199-.755.257-1.145V3.72a8.25 8.25 0 00-5.562 2.232h5.304zm-5.433.187h5.373a7.98 7.98 0 01-.267.696 8.41 8.41 0 01-1.76 2.65L6.216 6.14zm-.264-.187H2.977v.187h2.915a8.436 8.436 0 00-2.357 5.767H0v.186h3.535a8.436 8.436 0 002.357 5.767H2.977v.186h2.976v2.977h.187v-2.915a8.436 8.436 0 005.767 2.357V24h.186v-3.535a8.436 8.436 0 005.767-2.357v2.915h.186v-2.977h2.977v-.186h-2.915a8.436 8.436 0 002.357-5.767H24v-.186h-3.535a8.436 8.436 0 00-2.357-5.767h2.915v-.187h-2.977V2.977h-.186v2.915a8.436 8.436 0 00-5.767-2.357V0h-.186v3.535A8.436 8.436 0 006.14 5.892V2.977h-.187v2.976zm6.14 14.326a8.25 8.25 0 005.562-2.233H12.34c-.108.367-.19.743-.247 1.126v1.107zm-.186-1.087a8.015 8.015 0 00-.258-1.146H6.345a8.25 8.25 0 005.562 2.233v-1.087zm-8.186-7.285h1.107a8.23 8.23 0 001.125-.247V6.345a8.25 8.25 0 00-2.232 5.562zm1.087.186H3.72a8.25 8.25 0 002.232 5.562v-5.304a8.012 8.012 0 00-1.145-.258zm15.47-.186a8.25 8.25 0 00-2.232-5.562v5.315c.367.108.743.19 1.126.247h1.107zm-1.086.186c-.39.058-.772.144-1.146.258v5.304a8.25 8.25 0 002.233-5.562h-1.087zm-1.332 5.69V12.41a7.97 7.97 0 00-.696.267 8.409 8.409 0 00-2.65 1.76l3.346 3.346zm0-6.18v-5.45l-.012-.013h-5.451c.076.235.162.468.26.696a8.698 8.698 0 001.819 2.688 8.698 8.698 0 002.688 1.82c.228.097.46.183.696.259zM6.14 17.848V12.41c.235.078.468.167.696.267a8.403 8.403 0 012.688 1.799 8.404 8.404 0 011.799 2.688c.1.228.19.46.267.696H6.152l-.012-.012zm0-6.245V6.326l3.29 3.29a8.716 8.716 0 01-2.594 1.728 8.14 8.14 0 01-.696.259zm6.257 6.257h5.277l-3.29-3.29a8.716 8.716 0 00-1.728 2.594 8.135 8.135 0 00-.259.696zm-2.347-7.81a9.435 9.435 0 01-2.88 1.96 9.14 9.14 0 012.88 1.94 9.14 9.14 0 011.94 2.88 9.435 9.435 0 011.96-2.88 9.14 9.14 0 012.88-1.94 9.435 9.435 0 01-2.88-1.96 9.434 9.434 0 01-1.96-2.88 9.14 9.14 0 01-1.94 2.88z" fill="url(#lobe-icons-gemma-fill)" fill-rule="evenodd"></path></svg>
+331	src/icons/extracted/index.ts:82	template	<svg fill="currentColor" fill-rule="evenodd" height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>GithubCopilot</title><path d="M19.245 5.364c1.322 1.36 1.877 3.216 2.11 5.817.622 0 1.2.135 1.592.654l.73.964c.21.278.323.61.323.955v2.62c0 .339-.173.669-.453.868C20.239 19.602 16.157 21.5 12 21.5c-4.6 0-9.205-2.583-11.547-4.258-.28-.2-.452-.53-.453-.868v-2.62c0-.345.113-.679.321-.956l.73-.963c.392-.517.974-.654 1.593-.654l.029-.297c.25-2.446.81-4.213 2.082-5.52 2.461-2.54 5.71-2.851 7.146-2.864h.198c1.436.013 4.685.323 7.146 2.864zm-7.244 4.328c-.284 0-.613.016-.962.05-.123.447-.305.85-.57 1.108-1.05 1.023-2.316 1.18-2.994 1.18-.638 0-1.306-.13-1.851-.464-.516.165-1.012.403-1.044.996a65.882 65.882 0 00-.063 2.884l-.002.48c-.002.563-.005 1.126-.013 1.69.002.326.204.63.51.765 2.482 1.102 4.83 1.657 6.99 1.657 2.156 0 4.504-.555 6.985-1.657a.854.854 0 00.51-.766c.03-1.682.006-3.372-.076-5.053-.031-.596-.528-.83-1.046-.996-.546.333-1.212.464-1.85.464-.677 0-1.942-.157-2.993-1.18-.266-.258-.447-.661-.57-1.108-.32-.032-.64-.049-.96-.05zm-2.525 4.013c.539 0 .976.426.976.95v1.753c0 .525-.437.95-.976.95a.964.964 0 01-.976-.95v-1.752c0-.525.437-.951.976-.951zm5 0c.539 0 .976.426.976.95v1.753c0 .525-.437.95-.976.95a.964.964 0 01-.976-.95v-1.752c0-.525.437-.951.976-.951zM7.635 5.087c-1.05.102-1.935.438-2.385.906-.975 1.037-.765 3.668-.21 4.224.405.394 1.17.657 1.995.657h.09c.649-.013 1.785-.176 2.73-1.11.435-.41.705-1.433.675-2.47-.03-.834-.27-1.52-.63-1.813-.39-.336-1.275-.482-2.265-.394zm6.465.394c-.36.292-.6.98-.63 1.813-.03 1.037.24 2.06.675 2.47.968.957 2.136 1.104 2.776 1.11h.044c.825 0 1.59-.263 1.995-.657.555-.556.765-3.187-.21-4.224-.45-.468-1.335-.804-2.385-.906-.99-.088-1.875.058-2.265.394zM12 7.615c-.24 0-.525.015-.84.044.03.16.045.336.06.526l-.001.159a2.94 2.94 0 01-.014.25c.225-.022.425-.027.612-.028h.366c.187 0 .387.006.612.028-.015-.146-.015-.277-.015-.409.015-.19.03-.365.06-.526a9.29 9.29 0 00-.84-.044z"></path></svg>
+332	src/icons/extracted/index.ts:89	template	<svg height="1em" width="1em" style="flex:none;line-height:1" viewBox="0 0 24 25" xmlns="http://www.w3.org/2000/svg"><title>Kimi</title><path d="M21.7202 0.939941C22.9502 0.939941 23.9502 1.93994 23.9502 3.16994C23.9502 4.39994 22.9502 5.39994 21.7202 5.39994H19.7502C19.6002 5.39994 19.4902 5.27994 19.4902 5.13994V3.16994C19.4902 1.93994 20.4902 0.939941 21.7202 0.939941Z" fill="#1783FF"></path><path d="M9.39 13.9501L17.82 5.59012C17.98 5.43012 17.89 5.12012 17.68 5.12012H13.14C13.14 5.12012 13.04 5.14012 13 5.18012L3.92 14.1901C3.78 14.3301 3.57 14.2101 3.57 13.9801V5.39012C3.57 5.24012 3.47 5.12012 3.35 5.12012H0.219999C0.0999993 5.12012 0 5.24012 0 5.39012V23.9201C0 24.0701 0.0999993 24.1901 0.219999 24.1901H3.35C3.47 24.1901 3.57 24.0701 3.57 23.9201V20.1401C3.57 20.0601 3.6 19.9801 3.65 19.9301L6.47 17.1401C6.54 17.0701 6.63 17.0601 6.71 17.1101L14.24 22.6501C15.47 23.4801 16.85 23.9901 18.25 24.1401C18.37 24.1501 18.48 24.0301 18.48 23.8701V20.3101C18.48 20.1701 18.4 20.0601 18.29 20.0501C17.47 19.9201 16.66 19.6001 15.94 19.1101L9.42 14.3901C9.28 14.3001 9.27 14.0701 9.39 13.9501Z" fill="currentColor"></path></svg>
+333	src/icons/extracted/index.ts:91	template	<svg fill="currentColor" fill-rule="evenodd" height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Midjourney</title><path d="M22.369 17.676c-1.387 1.259-3.17 2.378-5.332 3.417.044.03.086.057.13.083l.018.01.019.012c.216.123.42.184.641.184.222 0 .426-.061.642-.184l.018-.011.019-.011c.14-.084.266-.178.492-.366l.178-.148c.279-.232.426-.342.625-.456.304-.174.612-.266.949-.266.337 0 .645.092.949.266l.023.014c.188.109.334.219.602.442l.178.148c.221.184.346.278.483.36l.028.017.018.01c.21.12.407.181.62.185h.022a.31.31 0 110 .618c-.337 0-.645-.092-.95-.266a3.137 3.137 0 01-.09-.054l-.022-.014-.022-.013-.02-.014a5.356 5.356 0 01-.49-.377l-.159-.132a3.836 3.836 0 00-.483-.36l-.027-.017-.019-.01a1.256 1.256 0 00-.641-.185c-.222 0-.426.061-.641.184l-.02.011-.018.011c-.14.084-.266.178-.492.366l-.158.132a5.125 5.125 0 01-.51.39l-.022.014-.022.014-.09.054a1.868 1.868 0 01-.95.266c-.337 0-.644-.092-.949-.266a3.137 3.137 0 01-.09-.054l-.022-.014-.022-.013-.026-.017a4.881 4.881 0 01-.425-.325.308.308 0 01-.12-.1l-.098-.081a3.836 3.836 0 00-.483-.36l-.027-.017-.019-.01a1.256 1.256 0 00-.641-.185c-.222 0-.426.061-.642.184l-.018.011-.019.011c-.14.084-.266.178-.492.366l-.158.132a5.125 5.125 0 01-.51.39l-.023.014-.022.014-.09.054A1.868 1.868 0 0112 22c-.337 0-.645-.092-.949-.266a3.137 3.137 0 01-.09-.054l-.022-.014-.022-.013-.021-.014a5.356 5.356 0 01-.49-.377l-.158-.132a3.836 3.836 0 00-.483-.36l-.028-.017-.018-.01a1.256 1.256 0 00-.642-.185c-.221 0-.425.061-.641.184l-.019.011-.018.011c-.141.084-.266.178-.492.366l-.158.132a5.125 5.125 0 01-.511.39l-.022.014-.022.014-.09.054a1.868 1.868 0 01-.986.264c-.746-.09-1.319-.38-1.89-.866l-.035-.03c-.047-.041-.118-.106-.192-.174l-.196-.181-.107-.1-.011-.01a1.531 1.531 0 00-.336-.253.313.313 0 00-.095-.03h-.005c-.119.022-.238.059-.361.11a.308.308 0 01-.077.061l-.008.005a.309.309 0 01-.126.034 5.66 5.66 0 00-.774.518l-.416.324-.055.043a6.542 6.542 0 01-.324.236c-.305.207-.552.315-.8.315a.31.31 0 01-.01-.618h.01c.09 0 .235-.062.438-.198l.04-.027c.077-.054.163-.117.27-.199l.385-.301.06-.047c.268-.206.506-.373.73-.505l-.633-1.21a.309.309 0 01.254-.451l20.287-1.305a.309.309 0 01.228.537zm-1.118.14L2.369 19.03l.423.809c.128-.045.256-.078.388-.1a.31.31 0 01.052-.005c.132 0 .26.032.386.093.153.073.294.179.483.35l.016.015.092.086.144.134.097.089c.065.06.125.114.16.144.485.418.948.658 1.554.736h.011a1.25 1.25 0 00.6-.172l.021-.011.019-.011.018-.011c.141-.084.266-.178.492-.366l.178-.148c.279-.232.426-.342.625-.456.305-.174.612-.266.95-.266.336 0 .644.092.948.266l.023.014c.188.109.335.219.603.442l.177.148c.222.184.346.278.484.36l.027.017.019.01c.215.124.42.185.641.185.222 0 .426-.061.641-.184l.019-.011.018-.011c.141-.084.267-.178.493-.366l.177-.148c.28-.232.427-.342.626-.456.304-.174.612-.266.949-.266.337 0 .644.092.949.266l.025.015c.187.109.334.22.603.443 1.867-.878 3.448-1.811 4.73-2.832l.02-.016zM3.653 2.026C6.073 3.06 8.69 4.941 10.8 7.258c2.46 2.7 4.109 5.828 4.637 9.149a.31.31 0 01-.421.335c-2.348-.945-4.54-1.258-6.59-1.02-1.739.2-3.337.792-4.816 1.703-.294.182-.62-.182-.405-.454 1.856-2.355 2.581-4.99 2.343-7.794-.195-2.292-1.031-4.61-2.284-6.709a.31.31 0 01.388-.442zM10.04 4.45c1.778.543 3.892 2.102 5.782 4.243 1.984 2.248 3.552 4.934 4.347 7.582a.31.31 0 01-.401.38l-.022-.01-.386-.154a10.594 10.594 0 00-.291-.112l-.016-.006c-.68-.247-1.199-.291-1.944-.101a.31.31 0 01-.375-.218C15.378 11.123 13.073 7.276 9.775 5c-.291-.201-.072-.653.266-.55zM4.273 2.996l.008.015c1.028 1.94 1.708 4.031 1.885 6.113.213 2.513-.31 4.906-1.673 7.092l-.02.031.003-.001c1.198-.581 2.47-.969 3.825-1.132l.055-.006c1.981-.23 4.083.029 6.309.837l.066.025-.007-.039c-.593-2.95-2.108-5.737-4.31-8.179l-.07-.078c-1.785-1.96-3.944-3.6-6.014-4.65l-.057-.028zm7.92 3.238l.048.048c2.237 2.295 3.885 5.431 4.974 9.191l.038.132.022-.004c.71-.133 1.284-.063 1.963.18l.027.01.066.024.046.018-.025-.073c-.811-2.307-2.208-4.62-3.936-6.594l-.058-.065c-1.02-1.155-2.103-2.132-3.15-2.856l-.015-.011z"></path></svg>
+334	src/icons/extracted/index.ts:92	template	<svg height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Minimax</title><defs><linearGradient id="lobe-icons-minimax-fill" x1="0%" x2="100.182%" y1="50.057%" y2="50.057%"><stop offset="0%" stop-color="#E2167E"></stop><stop offset="100%" stop-color="#FE603C"></stop></linearGradient></defs><path d="M16.278 2c1.156 0 2.093.927 2.093 2.07v12.501a.74.74 0 00.744.709.74.74 0 00.743-.709V9.099a2.06 2.06 0 012.071-2.049A2.06 2.06 0 0124 9.1v6.561a.649.649 0 01-.652.645.649.649 0 01-.653-.645V9.1a.762.762 0 00-.766-.758.762.762 0 00-.766.758v7.472a2.037 2.037 0 01-2.048 2.026 2.037 2.037 0 01-2.048-2.026v-12.5a.785.785 0 00-.788-.753.785.785 0 00-.789.752l-.001 15.904A2.037 2.037 0 0113.441 22a2.037 2.037 0 01-2.048-2.026V18.04c0-.356.292-.645.652-.645.36 0 .652.289.652.645v1.934c0 .263.142.506.372.638.23.131.514.131.744 0a.734.734 0 00.372-.638V4.07c0-1.143.937-2.07 2.093-2.07zm-5.674 0c1.156 0 2.093.927 2.093 2.07v11.523a.648.648 0 01-.652.645.648.648 0 01-.652-.645V4.07a.785.785 0 00-.789-.78.785.785 0 00-.789.78v14.013a2.06 2.06 0 01-2.07 2.048 2.06 2.06 0 01-2.071-2.048V9.1a.762.762 0 00-.766-.758.762.762 0 00-.766.758v3.8a2.06 2.06 0 01-2.071 2.049A2.06 2.06 0 010 12.9v-1.378c0-.357.292-.646.652-.646.36 0 .653.29.653.646V12.9c0 .418.343.757.766.757s.766-.339.766-.757V9.099a2.06 2.06 0 012.07-2.048 2.06 2.06 0 012.071 2.048v8.984c0 .419.343.758.767.758.423 0 .766-.339.766-.758V4.07c0-1.143.937-2.07 2.093-2.07z" fill="url(#lobe-icons-minimax-fill)" fill-rule="nonzero"></path></svg>
+335	src/icons/extracted/index.ts:99	template	<svg fill="currentColor" fill-rule="evenodd" height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>OpenAI</title><path d="M21.55 10.004a5.416 5.416 0 00-.478-4.501c-1.217-2.09-3.662-3.166-6.05-2.66A5.59 5.59 0 0010.831 1C8.39.995 6.224 2.546 5.473 4.838A5.553 5.553 0 001.76 7.496a5.487 5.487 0 00.691 6.5 5.416 5.416 0 00.477 4.502c1.217 2.09 3.662 3.165 6.05 2.66A5.586 5.586 0 0013.168 23c2.443.006 4.61-1.546 5.361-3.84a5.553 5.553 0 003.715-2.66 5.488 5.488 0 00-.693-6.497v.001zm-8.381 11.558a4.199 4.199 0 01-2.675-.954c.034-.018.093-.05.132-.074l4.44-2.53a.71.71 0 00.364-.623v-6.176l1.877 1.069c.02.01.033.029.036.05v5.115c-.003 2.274-1.87 4.118-4.174 4.123zM4.192 17.78a4.059 4.059 0 01-.498-2.763c.032.02.09.055.131.078l4.44 2.53c.225.13.504.13.73 0l5.42-3.088v2.138a.068.068 0 01-.027.057L9.9 19.288c-1.999 1.136-4.552.46-5.707-1.51h-.001zM3.023 8.216A4.15 4.15 0 015.198 6.41l-.002.151v5.06a.711.711 0 00.364.624l5.42 3.087-1.876 1.07a.067.067 0 01-.063.005l-4.489-2.559c-1.995-1.14-2.679-3.658-1.53-5.63h.001zm15.417 3.54l-5.42-3.088L14.896 7.6a.067.067 0 01.063-.006l4.489 2.557c1.998 1.14 2.683 3.662 1.529 5.633a4.163 4.163 0 01-2.174 1.807V12.38a.71.71 0 00-.363-.623zm1.867-2.773a6.04 6.04 0 00-.132-.078l-4.44-2.53a.731.731 0 00-.729 0l-5.42 3.088V7.325a.068.068 0 01.027-.057L14.1 4.713c2-1.137 4.555-.46 5.707 1.513.487.833.664 1.809.499 2.757h.001zm-11.741 3.81l-1.877-1.068a.065.065 0 01-.036-.051V6.559c.001-2.277 1.873-4.122 4.181-4.12.976 0 1.92.338 2.671.954-.034.018-.092.05-.131.073l-4.44 2.53a.71.71 0 00-.365.623l-.003 6.173v.002zm1.02-2.168L12 9.25l2.414 1.375v2.75L12 14.75l-2.415-1.375v-2.75z"></path></svg>
+336	src/icons/extracted/index.ts:111	template	<svg height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Wenxin</title><path d="M11.32 1.176a1.4 1.4 0 011.36 0l8.64 4.843c.421.234.68.67.68 1.141v9.68c0 .472-.259.908-.68 1.143l-8.64 4.84a1.4 1.4 0 01-1.36 0l-8.64-4.84A1.31 1.31 0 012 16.84V7.159c0-.471.259-.907.68-1.142l8.64-4.84zm7.42 13.839V8.227L12.002 12 12 19.551l6.059-3.394a1.31 1.31 0 00.68-1.142zM12.68 4.833a1.393 1.393 0 00-1.36 0L5.944 7.846c-.421.235-.68.67-.68 1.142v6.027c0 .47.259.905.68 1.142l2.795 1.566V11.09a1.546 1.546 0 00.221.79 1.527 1.527 0 01-.216-.834l.004-.094.02-.15.018-.084.017-.062.039-.117.062-.142.035-.065.081-.13.094-.122.084-.091.08-.075.125-.1.071-.048.134-.076 5.87-3.29-2.796-1.566z" fill="url(#lobe-icons-wenxin-fill)"></path><path d="M12 11.088c0-.875-.73-1.584-1.631-1.584a1.66 1.66 0 00-.855.237c-.027.016-.055.033-.08.05a2.361 2.361 0 00-.123.093c-.022.02-.045.038-.066.059l-.048.045-.063.067c-.014.016-.028.031-.04.048a2.303 2.303 0 00-.094.125l-.042.069a1.7 1.7 0 00-.07.13l-.036.081a.764.764 0 00-.022.06c-.01.03-.02.058-.028.087l-.017.062a.883.883 0 00-.03.16c-.002.025-.007.05-.008.074a1.527 1.527 0 00.213.929c.302.508.85.792 1.414.792.277 0 .558-.068.814-.212l.815-.457v-.914L12 11.088z" fill="#012F8D"></path><defs><linearGradient id="lobe-icons-wenxin-fill" x1="9.155%" x2="90.531%" y1="75.177%" y2="25.028%"><stop offset="0%" stop-color="#0A51C3"></stop><stop offset="100%" stop-color="#23A4FB"></stop></linearGradient></defs></svg>
+337	src/icons/extracted/index.ts:113	template	<svg height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Xiaomi MiMo</title><rect width="24" height="24" fill="#000"/><path fill="#fff" fill-rule="evenodd" transform="translate(2.4 2.18) scale(.8)" d="M.958 15.936a.459.459 0 01.459.44v2.729a.46.46 0 01-.918 0v-2.729a.459.459 0 01.459-.44zm4.814-2.035a.46.46 0 01.553.45v4.754a.458.458 0 11-.918 0V15.48L3.74 17.202a.462.462 0 01-.655.016.462.462 0 01-.065-.082L.628 14.67a.459.459 0 01.658-.637l2.124 2.187 2.127-2.188a.46.46 0 01.235-.13zm2.068.004a.46.46 0 01.458.445v4.755a.46.46 0 01-.458.458.459.459 0 01-.458-.458V14.35a.459.459 0 01.458-.445zm1.973 2.014a.46.46 0 01.46.457v2.729a.46.46 0 01-.784.324.46.46 0 01-.134-.324v-2.729a.46.46 0 01.458-.458zm.002-2.045a.458.458 0 01.328.157l2.127 2.19 2.125-2.19a.459.459 0 01.784.318v4.756a.46.46 0 01-.455.458.46.46 0 01-.458-.458V15.48l-1.667 1.723a.46.46 0 01-.65.008l-.005-.005c0-.002-.002-.002-.004-.003l-2.455-2.534a.46.46 0 01-.008-.667.461.461 0 01.338-.128zm6.797 1.206a.46.46 0 01.53.651A1.966 1.966 0 0019.81 18.4a.462.462 0 01.623.18.46.46 0 01-.181.624 2.863 2.863 0 01-1.38.353l-.142-.004a2.88 2.88 0 01-2.393-4.263.461.461 0 01.274-.21zm.864-.931a2.884 2.884 0 013.915 3.914.46.46 0 01-.402.24l-.057-.004a.458.458 0 01-.164-.055.46.46 0 01-.182-.622 1.967 1.967 0 00-2.669-2.67.459.459 0 11-.441-.803zM9.59 6.368c1.481 0 1.696 1.202 1.696 1.654v2.648h-.917v-.432c-.26.346-.792.535-1.36.535-.133 0-1.289-.03-1.384-1.136-.082-.932.675-1.61 2.053-1.61h.691c0-.563-.367-.886-.983-.886-.44.013-.864.174-1.2.458l-.36-.664c.484-.379 1.012-.567 1.764-.567zm4.427.1c1.263 0 2.082.97 2.083 2.15 0 1.181-.824 2.154-2.083 2.154-1.26 0-2.084-.972-2.084-2.152 0-1.18.82-2.153 2.084-2.153zm6.801.015c.68 0 1.202.465 1.197 1.548v2.642H21.1V8.29c0-.312-.002-.98-.63-.98s-.628.667-.628.838v2.524h-.89V8.148c0-.17-.001-.838-.63-.838-.628 0-.628.668-.628.98v2.383h-.917v-4.03h.917V7a1.22 1.22 0 01.947-.516c.398 0 .76.193.982.686a1.321 1.321 0 011.195-.686zm-18.093.872l1.457-1.772H5.32L3.311 8.07l2.14 2.602H4.24L2.725 8.796 1.21 10.672H0L2.138 8.07.13 5.583h1.138l1.458 1.772zm4.149 3.317h-.916V6.644h.916v4.028zm16.99 0h-.916V6.644h.916v4.028zM9.925 8.71c-1.055 0-1.359.412-1.326.742.032.329.324.537.757.537a1.013 1.013 0 001.014-.968l.002-.31h-.447zM14.018 7.3c-.663 0-1.184.487-1.184 1.32 0 .832.52 1.32 1.184 1.32.662 0 1.182-.49 1.182-1.32 0-.832-.52-1.32-1.182-1.32zM6.417 5.001a.568.568 0 01.587.582.588.588 0 01-1.175 0A.57.57 0 016.417 5zm16.991 0a.57.57 0 01.592.582.588.588 0 01-1.174 0 .57.57 0 01.357-.542.572.572 0 01.225-.04z"/></svg>
+338	src/icons/extracted/index.ts:116	template	<svg fill="currentColor" fill-rule="evenodd" height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>01.AI</title><path d="M5.246 12c0 .837-.086 1.554-.257 2.151-.172.598-.45 1.055-.837 1.373-.386.317-.898.476-1.534.476-.901 0-1.563-.353-1.985-1.059C.211 14.235 0 13.255 0 12c0-.837.086-1.554.257-2.151.172-.598.45-1.055.832-1.373C1.472 8.16 1.981 8 2.618 8c.894 0 1.555.351 1.985 1.053.429.702.643 1.685.643 2.947zm-3.883 0c0 .956.09 1.668.273 2.134.183.467.51.7.982.7.465 0 .792-.23.981-.694.19-.463.285-1.176.285-2.14 0-.956-.095-1.668-.285-2.134-.19-.467-.516-.7-.981-.7-.472 0-.8.233-.982.7-.182.466-.273 1.178-.273 2.134zm8.52 3.771H8.517l.011-6.295-1.823.324V8.571l2.04-.457h1.136v7.657zm2.497-1.6h.543c.3 0 .543.256.543.572v.571a.558.558 0 01-.543.572h-.543a.558.558 0 01-.543-.572v-.571c0-.316.243-.572.543-.572zm10.317-6.057H24v7.772h-1.303V8.114zm-3.692 0l2.606 7.772h-1.303l-.69-2.058h-3.073l-.69 2.058h-1.303l2.606-7.772h1.847zm.191 4.457l-1.115-3.323-1.114 3.323h2.23z"></path></svg>
+339	src/icons/extracted/index.ts:125	template	<svg height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>SiliconCloud</title><path clip-rule="evenodd" d="M22.956 6.521H12.522c-.577 0-1.044.468-1.044 1.044v3.13c0 .577-.466 1.044-1.043 1.044H1.044c-.577 0-1.044.467-1.044 1.044v4.174C0 17.533.467 18 1.044 18h10.434c.577 0 1.044-.467 1.044-1.043v-3.13c0-.578.466-1.044 1.043-1.044h9.391c.577 0 1.044-.467 1.044-1.044V7.565c0-.576-.467-1.044-1.044-1.044z" fill="#6E29F6" fill-rule="evenodd"></path></svg>
+340	src/icons/extracted/index.ts:133	template	<svg height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Nvidia</title><path d="M10.212 8.976V7.62c.127-.01.256-.017.388-.021 3.596-.117 5.957 3.184 5.957 3.184s-2.548 3.647-5.282 3.647a3.227 3.227 0 01-1.063-.175v-4.109c1.4.174 1.681.812 2.523 2.258l1.873-1.627a4.905 4.905 0 00-3.67-1.846 6.594 6.594 0 00-.729.044m0-4.476v2.025c.13-.01.259-.019.388-.024 5.002-.174 8.261 4.226 8.261 4.226s-3.743 4.69-7.643 4.69c-.338 0-.675-.031-1.007-.092v1.25c.278.038.558.057.838.057 3.629 0 6.253-1.91 8.794-4.169.421.347 2.146 1.193 2.501 1.564-2.416 2.083-8.048 3.763-11.24 3.763-.308 0-.603-.02-.894-.048V19.5H24v-15H10.21zm0 9.756v1.068c-3.356-.616-4.287-4.21-4.287-4.21a7.173 7.173 0 014.287-2.138v1.172h-.005a3.182 3.182 0 00-2.502 1.178s.615 2.276 2.507 2.931m-5.961-3.3c1.436-1.935 3.604-3.148 5.961-3.336V6.523C5.81 6.887 2 10.723 2 10.723s2.158 6.427 8.21 7.015v-1.166C5.77 16 4.25 10.958 4.25 10.958h-.002z" fill="#74B71B" fill-rule="nonzero"></path></svg>
+341	src/icons/extracted/index.ts:147	template	<svg fill="currentColor" fill-rule="evenodd" height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>DigitalOcean</title><path d="M11.968 24v-4.651c4.923 0 8.744-4.882 6.854-10.064a6.95 6.95 0 0 0-4.148-4.148C9.493 3.261 4.61 7.068 4.61 11.992H0C0 4.144 7.589-1.976 15.816.595c3.59 1.129 6.46 3.985 7.575 7.575C25.935 16.411 19.828 24 11.968 24"></path><path d="M11.981 19.362H7.357v-4.624h4.624zm-4.624 3.563H3.794v-3.563h3.563zm-3.563-3.563H.816v-2.978h2.978z"></path></svg>
+342	src/icons/extracted/index.ts:150	template	<svg fill="currentColor" fill-rule="evenodd" height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Nebius</title><path d="M20 2.306v16.797s4-.242 4-4.815V2.306h-4zM4 22.001V5.204s-4 .242-4 4.816V22h4z"></path><path d="M16.318 16.51L11.286 4.94c-.824-1.872-2.168-2.926-4.077-2.926-1.908 0-3.211 1.54-3.211 3.19 0 0 2.405-.333 3.68 2.593l5.036 11.57c.821 1.87 2.168 2.926 4.075 2.926 1.905 0 3.211-1.541 3.211-3.19 0 0-2.406.333-3.682-2.594z"></path></svg>
+343	src/icons/extracted/index.ts:157	template	<svg fill="currentColor" height="1em" style="flex:none;line-height:1" viewBox="0 0 113 113" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Cline</title><path d="M56.4998 8.99805L56.4999 5.29805H56.4998V8.99805ZM68.4998 20.708L72.1998 20.7081V20.708H68.4998ZM67.9929 25L64.3662 24.2671L63.4704 28.7H67.9929V25ZM84.4998 25L84.4998 21.3H84.4998V25ZM95.7 49.7998H92V51.2066L92.9346 52.258L95.7 49.7998ZM108.027 63.667L110.793 61.2088L110.792 61.2088L108.027 63.667ZM108.027 64.7305L110.792 67.1887L110.793 67.1883L108.027 64.7305ZM95.7 78.5977L92.9346 76.1394L92 77.1909V78.5977H95.7ZM95.7 92.2002L99.3999 92.2002V92.2002H95.7ZM84.4998 103.4V107.1H84.4998L84.4998 103.4ZM17.2996 92.2002H13.5996V92.2002L17.2996 92.2002ZM17.2996 78.5986H20.9996V77.1918L20.0649 76.1404L17.2996 78.5986ZM4.97144 64.7305L2.20602 67.1886L2.20611 67.1887L4.97144 64.7305ZM4.97144 63.667L7.73685 66.1251L7.73685 66.1251L4.97144 63.667ZM17.2996 49.7979L20.065 52.256L20.9996 51.2046V49.7979H17.2996ZM45.0066 25V28.7H49.5292L48.6333 24.267L45.0066 25ZM44.4998 20.708H40.7998V20.7081L44.4998 20.708ZM56.4998 8.99805L56.4996 12.698C61.1812 12.6982 64.7998 16.3247 64.7998 20.708H68.4998H72.1998C72.1998 12.0452 65.0728 5.29829 56.4999 5.29805L56.4998 8.99805ZM68.4998 20.708L64.7998 20.7079C64.7997 21.6154 64.6614 22.8066 64.3662 24.2671L67.9929 25L71.6196 25.7329C71.969 24.004 72.1997 22.2864 72.1998 20.7081L68.4998 20.708ZM67.9929 25V28.7H84.4998V25V21.3H67.9929V25ZM84.4998 25L84.4997 28.7C88.6419 28.7001 92 32.0582 92 36.2002H95.7H99.3999C99.3999 27.9712 92.7287 21.3001 84.4998 21.3L84.4998 25ZM95.7 36.2002H92V49.7998H95.7H99.3999V36.2002H95.7ZM95.7 49.7998L92.9346 52.258L105.262 66.1252L108.027 63.667L110.792 61.2088L98.4653 47.3416L95.7 49.7998ZM108.027 63.667L105.262 66.1251C104.285 65.026 104.285 63.371 105.261 62.2727L108.027 64.7305L110.793 67.1883C112.308 65.4837 112.308 62.9141 110.793 61.2088L108.027 63.667ZM108.027 64.7305L105.262 62.2722L92.9346 76.1394L95.7 78.5977L98.4653 81.0559L110.792 67.1887L108.027 64.7305ZM95.7 78.5977H92V92.2002H95.7H99.3999V78.5977H95.7ZM95.7 92.2002L92 92.2002C91.9999 96.3422 88.6418 99.7003 84.4997 99.7004L84.4998 103.4L84.4998 107.1C92.7287 107.1 99.3999 100.429 99.3999 92.2002L95.7 92.2002ZM84.4998 103.4V99.7004H28.4998V103.4V107.1H84.4998V103.4ZM28.4998 103.4V99.7004C24.3577 99.7004 20.9996 96.3423 20.9996 92.2002L17.2996 92.2002L13.5996 92.2002C13.5996 100.429 20.2707 107.1 28.4998 107.1V103.4ZM17.2996 92.2002H20.9996V78.5986H17.2996H13.5996V92.2002H17.2996ZM17.2996 78.5986L20.0649 76.1404L7.73676 62.2722L4.97144 64.7305L2.20611 67.1887L14.5342 81.0569L17.2996 78.5986ZM4.97144 64.7305L7.73685 62.2723C8.71353 63.3711 8.71353 65.0264 7.73685 66.1251L4.97144 63.667L2.20602 61.2088C0.690476 62.9138 0.690476 65.4836 2.20602 67.1886L4.97144 64.7305ZM4.97144 63.667L7.73685 66.1251L20.065 52.256L17.2996 49.7979L14.5341 47.3397L2.20602 61.2088L4.97144 63.667ZM17.2996 49.7979H20.9996V36.2002H17.2996H13.5996V49.7979H17.2996ZM17.2996 36.2002H20.9996C20.9996 32.0581 24.3576 28.7 28.4998 28.7V25V21.3C20.2707 21.3 13.5996 27.9712 13.5996 36.2002H17.2996ZM28.4998 25V28.7H45.0066V25V21.3H28.4998V25ZM45.0066 25L48.6333 24.267C48.3381 22.8066 48.1998 21.6154 48.1998 20.7079L44.4998 20.708L40.7998 20.7081C40.7998 22.2864 41.0305 24.0039 41.3799 25.733L45.0066 25ZM44.4998 20.708H48.1998C48.1998 16.3244 51.8182 12.698 56.4998 12.698V8.99805V5.29805C47.9264 5.29805 40.7998 12.0451 40.7998 20.708H44.4998Z"/><rect x="66.1001" y="49.8008" width="9.6" height="28.8" rx="4.8"/><rect x="37.3" y="49.8008" width="9.6" height="28.8" rx="4.8"/></svg>
+344	src/icons/extracted/metadata.ts:33	string	ai code with
+345	src/icons/extracted/metadata.ts:610	string	Oh My Pi
+346	src/icons/extracted/metadata.ts:613	string	oh my pi
+347	src/icons/extracted/metadata.ts:681	string	千问AI平台
+348	src/icons/extracted/metadata.ts:924	string	阶跃星辰
+349	src/index.html:5	html_attribute	width=device-width, initial-scale=1.0
+350	src/lib/query/queries.ts:61	string	获取供应商列表失败:
+351	src/tray-panel.html:6	html_text	CC Switch
+352	src/tray-panel/TrayPanel.tsx:586	string	[TrayPanel] 读取托盘面板数据失败
+353	src/types/omo.ts:183	string	Frontend UI/UX Engineer
+354	src/utils/errorUtils.ts:106	string	MCP 服务器 server 字段必须为 JSON 对象
+355	src/utils/errorUtils.ts:108	string	MCP 服务器 '
+356	src/utils/errorUtils.ts:111	string	MCP 服务器 name 必须为字符串
+357	src/utils/errorUtils.ts:132	string	http 类型的 MCP 服务器缺少 url 字段
+358	src/utils/errorUtils.ts:134	string	必须包含 url 字段
+359	src/utils/errorUtils.ts:145	string	TOML 内容不能为空
+360	src/utils/providerConfigUtils.ts:677	template	`\\u${ch.charCodeAt(0).toString(16).padStart(4, "0")}`

@@ -12,23 +12,22 @@
 
 ## 国际化遗漏扫描
 
-- 纳入生产源码：802
-- 成功扫描：802（100.0%）
-- 排除的非生产/测试文件：26
+- 纳入生产源码：801
+- 成功扫描：801（100.0%）
+- 排除的非生产/测试及范围外文件：27
 - 扫描失败：0
-- 候选审核：4990/4990（100.0%）
+- 候选审核：4426/4426（100.0%）
 - 动态翻译键：162/162 已登记判断
 
 ## 候选结论
 
-- 确认遗漏：1160
+- 确认遗漏：797
 - 待核实：1256
-- 无需国际化：2574
+- 无需国际化：2373
 - 未审核：0
 
 ## 确认遗漏分布
 
-- `deplink.html`：363
 - `src-tauri/src/commands/misc.rs`：51
 - `src-tauri/src/database/schema.rs`：48
 - `src-tauri/src/usage_script.rs`：41
@@ -68,16 +67,16 @@
 - `src-tauri/src/mcp/validation.rs`：6
 - `src-tauri/src/services/agy_account/mod.rs`：6
 - `src-tauri/src/services/provider/codex_official_models.rs`：6
+- `src-tauri/src/services/provider/icon.rs`：6
 
 ## 结论类型
 
 - 确认遗漏 / `rust_string`：475
-- 确认遗漏 / `html_text`：343
 - 确认遗漏 / `backend_localized_error`：262
 - 确认遗漏 / `string`：40
-- 确认遗漏 / `html_attribute`：21
 - 确认遗漏 / `template`：14
 - 确认遗漏 / `jsx_text`：5
+- 确认遗漏 / `html_text`：1
 - 待核实 / `rust_string`：699
 - 待核实 / `template`：268
 - 待核实 / `dynamic_i18n_key`：162

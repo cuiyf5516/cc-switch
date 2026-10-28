@@ -27,7 +27,7 @@
 
 `missing_i18n_review_decisions.csv`
 
-- 2,416 条：确认遗漏和待核实。
+- 2,053 条：确认遗漏和待核实。
 - 主要列：
   - `文件`
   - `位置`
@@ -54,7 +54,8 @@
 - `frontend-i18n`
 - `backend-error`
 - `dynamic-key`
-- `deplink-page`
+
+> `deplink.html` 已按产品决定排除在韩语国际化审查范围之外，不再出现在本 CSV 中。
 
 ## 生成修复清单
 

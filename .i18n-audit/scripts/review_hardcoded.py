@@ -44,13 +44,6 @@ def classify(c:dict[str,Any])->dict[str,Any]:
   status='确认遗漏'; severity='高'
   reason='后端 localized 错误只携带中文和英文，AppError 显示层没有韩语分支，韩语界面会看到中文或中英混合错误。'
   action='将后端错误改为按语言代码统一渲染，或在现有 localized 载荷中加入韩语；保留稳定错误键。'
- elif path=='deplink.html':
-  if (kind in {'html_text','html_attribute'}) and has_cjk(expr):
-   status='确认遗漏'; severity='高'
-   reason='深链接工具是用户直接访问的静态页面，该可见中文/中文占位符未接入任何语言机制。'
-   action='把整页文案抽取为页面级 i18n 资源并补齐韩语；技术参数名和示例 URL 保持原样。'
-  else:
-   reason='该 HTML 字面量是品牌名、协议名、示例 URL、代码内容或纯技术属性，不承载需要本地化的自然语言。'
  elif path.startswith('src/icons/'):
   reason='图标元数据中的中文是搜索别名，不直接渲染为界面文案；保留有助于中文品牌检索。'
  elif path.startswith('src/config/'):
@@ -84,10 +77,7 @@ def classify(c:dict[str,Any])->dict[str,Any]:
   else:
    status='待核实'; severity='低'; reason=f'JSX 文本“{expr}”是否需要本地化取决于运行时展示位置。'; action='结合组件布局确认后再决定是否抽取。'
  elif kind=='html_attribute':
-  if path=='deplink.html':
-   if has_cjk(expr): status='确认遗漏'; severity='高'; reason='静态深链接页的中文占位符/可访问标签未国际化。'; action='迁入页面级 i18n；URL 示例等纯技术占位符保持原样。'
-   else: reason='技术占位符、URL、品牌名或示例值，不需要翻译。'
-  elif has_cjk(expr) and natural(expr):
+  if has_cjk(expr) and natural(expr):
    status='确认遗漏'; severity='中'; reason='该可访问标签/占位符是面向用户的中文硬编码，切换语言后不会变化。'; action='改用 t() 资源键并补齐韩语。'
   elif expr=='Reasoning Effort':
    status='确认遗漏'; severity='中'; reason='字段标签硬编码英文。'; action='改用翻译键。'; suggested_ko='추론 수준'

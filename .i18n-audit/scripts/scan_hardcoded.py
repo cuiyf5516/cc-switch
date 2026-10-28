@@ -12,6 +12,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / ".i18n-audit"
+CONFIG = json.loads((OUT / "config.json").read_text(encoding="utf-8"))
 
 
 def sha(value: str) -> str:
@@ -42,6 +43,11 @@ def is_test_path(rel: str) -> bool:
 def enumerate_sources() -> tuple[list[str], list[dict[str, Any]]]:
     included: list[str] = []
     excluded: list[dict[str, Any]] = []
+    scope_exclusions = {
+        item["path"]: item["reason"]
+        for item in CONFIG.get("scope_exclusions", [])
+        if isinstance(item, dict) and item.get("path")
+    }
     for base in (ROOT / "src", ROOT / "src-tauri/src"):
         for path in sorted(base.rglob("*")):
             if not path.is_file():
@@ -51,14 +57,16 @@ def enumerate_sources() -> tuple[list[str], list[dict[str, Any]]]:
             if ext not in {".ts", ".tsx", ".js", ".jsx", ".html", ".rs"}:
                 continue
             if is_test_path(rel):
-                excluded.append({"path": rel, "reason": "test file"})
+                excluded.append({"path": rel, "reason": "test file", "category": "test/non-production"})
+            elif rel in scope_exclusions:
+                excluded.append({"path": rel, "reason": scope_exclusions[rel], "category": "scope-exclusion"})
             else:
                 included.append(rel)
-    for rel in ("deplink.html",):
+    for rel, reason in scope_exclusions.items():
         path = ROOT / rel
-        if path.is_file():
-            included.append(rel)
-    return sorted(set(included)), excluded
+        if path.is_file() and rel not in included and not any(item["path"] == rel for item in excluded):
+            excluded.append({"path": rel, "reason": reason, "category": "scope-exclusion"})
+    return sorted(set(included)), sorted(excluded, key=lambda item: item["path"])
 
 
 def rust_strings(text: str) -> list[tuple[str, int, str]]:
@@ -454,7 +462,8 @@ def main() -> int:
     manifest = {
         "schema_version": 1,
         "generated_by": ".i18n-audit/scripts/scan_hardcoded.py",
-        "scope": json.loads((OUT / "config.json").read_text(encoding="utf-8"))["production_scope"],
+        "scope": CONFIG["production_scope"],
+        "scope_exclusions": CONFIG.get("scope_exclusions", []),
         "source_file_count": len(included) + len(excluded),
         "included_source_file_count": len(included),
         "excluded_source_file_count": len(excluded),

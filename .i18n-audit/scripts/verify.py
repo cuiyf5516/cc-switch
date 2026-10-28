@@ -64,6 +64,13 @@ def validate_hardcoded()->dict[str,Any]:
  manifest=load(OUT/'manifest/hardcoded_candidates.json'); plans=load(OUT/'manifest/hardcoded_batches.json')
  candidates=manifest['candidates']; by_id={c['id']:c for c in candidates}
  if len(by_id)!=len(candidates): errors.append('hardcoded: duplicate candidate IDs')
+ scope_excluded={item['path'] for item in CONFIG.get('scope_exclusions',[]) if item.get('path')}
+ listed_scope_excluded={item['path'] for item in manifest.get('excluded_files',[]) if item.get('category')=='scope-exclusion'}
+ if scope_excluded-listed_scope_excluded:
+  errors.append(f'hardcoded: scope exclusions missing from manifest: {sorted(scope_excluded-listed_scope_excluded)}')
+ leaked=sum(1 for c in candidates if c.get('source_file') in scope_excluded)
+ if leaked:
+  errors.append(f'hardcoded: {leaked} candidates remain from scope-excluded files')
  assigned=defaultdict(list)
  for b in plans['batches']:
   for cid in b['record_ids']: assigned[cid].append(b['batch_id'])
