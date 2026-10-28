@@ -10,7 +10,7 @@
       "id": "hardcoded:src-tauri/src/app_config.rs:from_str:106c194e215cd0d0:001",
       "status": "无需国际化",
       "content_fingerprint": "106c194e215cd0d0b9595e2305e2a9983296656ef7faa0205569a48dba8b597a",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/app_config.rs",
       "line": 583,
@@ -23,7 +23,8 @@
       "review_batch": "hardcoded:0017:src-tauri-src-app_config.rs",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/app_config.rs:from_str:f5a776ab87ce4278:001",
@@ -114,7 +115,7 @@
       "id": "hardcoded:src-tauri/src/app_config.rs:load:66201917674952d5:001",
       "status": "无需国际化",
       "content_fingerprint": "66201917674952d5ce5c90960532bc1bb7667cb01048a868c53b233da9758a00",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/app_config.rs",
       "line": 740,
@@ -127,7 +128,8 @@
       "review_batch": "hardcoded:0017:src-tauri-src-app_config.rs",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/app_config.rs:load:0042864fa4a59a7d:001",

@@ -10,7 +10,7 @@
       "id": "hardcoded:src-tauri/src/gemini_config.rs:parse_env_file_strict:3efc1f5418e2f6db:001",
       "status": "无需国际化",
       "content_fingerprint": "3efc1f5418e2f6dbfe8757a971edd78d2970bcaa8f591e63333603241e85171a",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/gemini_config.rs",
       "line": 91,
@@ -23,7 +23,8 @@
       "review_batch": "hardcoded:0041:src-tauri-src-gemini_config.rs",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/gemini_config.rs:parse_env_file_strict:941aa56641ae0d58:001",
@@ -80,7 +81,7 @@
       "id": "hardcoded:src-tauri/src/gemini_config.rs:parse_env_file_strict:8d7c7fea370ebb06:001",
       "status": "无需国际化",
       "content_fingerprint": "8d7c7fea370ebb06c8e4c2298a7ce7c4fae17b8c498309edf3d33296d12cfc0f",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/gemini_config.rs",
       "line": 105,
@@ -93,7 +94,8 @@
       "review_batch": "hardcoded:0041:src-tauri-src-gemini_config.rs",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/gemini_config.rs:parse_env_file_strict:ddad385265d12d35:001",
@@ -150,7 +152,7 @@
       "id": "hardcoded:src-tauri/src/gemini_config.rs:parse_env_file_strict:6d275283ed8b9b98:001",
       "status": "无需国际化",
       "content_fingerprint": "6d275283ed8b9b98ca3e4b56111e3ec6a5088b3881d5357b4750c1985deff6f4",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/gemini_config.rs",
       "line": 114,
@@ -163,7 +165,8 @@
       "review_batch": "hardcoded:0041:src-tauri-src-gemini_config.rs",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/gemini_config.rs:parse_env_file_strict:9a792999e365b2b8:001",
@@ -220,7 +223,7 @@
       "id": "hardcoded:src-tauri/src/gemini_config.rs:validate_gemini_settings:172762c866ea005b:001",
       "status": "无需国际化",
       "content_fingerprint": "172762c866ea005ba23dff9447b387dc2c8d04dbfb9d57912cc7e63f97c7e4e0",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/gemini_config.rs",
       "line": 272,
@@ -233,7 +236,8 @@
       "review_batch": "hardcoded:0041:src-tauri-src-gemini_config.rs",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/gemini_config.rs:validate_gemini_settings:619229f93d065559:001",
@@ -290,7 +294,7 @@
       "id": "hardcoded:src-tauri/src/gemini_config.rs:validate_gemini_settings:6da394ed387065ef:001",
       "status": "无需国际化",
       "content_fingerprint": "6da394ed387065efe500dd6bfa11cd25bfca2aa5c4a96372531f64e55ce2f252",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/gemini_config.rs",
       "line": 283,
@@ -303,7 +307,8 @@
       "review_batch": "hardcoded:0041:src-tauri-src-gemini_config.rs",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/gemini_config.rs:validate_gemini_settings:fe52e9f7eae4758c:001",
@@ -360,7 +365,7 @@
       "id": "hardcoded:src-tauri/src/gemini_config.rs:validate_gemini_settings_strict:a7398b03cc2502d0:001",
       "status": "无需国际化",
       "content_fingerprint": "a7398b03cc2502d00b394af7f92d086357da95b7ba904be9ec1dbcab4d30ffc4",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/gemini_config.rs",
       "line": 319,
@@ -373,7 +378,8 @@
       "review_batch": "hardcoded:0041:src-tauri-src-gemini_config.rs",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/gemini_config.rs:validate_gemini_settings_strict:6f47b915e14d2897:001",

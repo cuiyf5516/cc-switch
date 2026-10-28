@@ -10,7 +10,7 @@
       "id": "hardcoded:src-tauri/src/live/patch/mod.rs:from:54de1b333957750b:001",
       "status": "无需国际化",
       "content_fingerprint": "54de1b333957750b0a287639c387483298b811a13093bd9bf291a01c7f16cff4",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/live/patch/mod.rs",
       "line": 162,
@@ -23,13 +23,14 @@
       "review_batch": "hardcoded:0049:src-tauri-src-live",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/live/patch/mod.rs:from:eb41dd21e80a611e:001",
       "status": "无需国际化",
       "content_fingerprint": "eb41dd21e80a611e81de34924497a9a56fb4759bd2d588f23aed750645434f11",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/live/patch/mod.rs",
       "line": 177,
@@ -42,13 +43,14 @@
       "review_batch": "hardcoded:0049:src-tauri-src-live",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/live/patch/mod.rs:from:7828ebe04dd658c5:001",
       "status": "无需国际化",
       "content_fingerprint": "7828ebe04dd658c51d4c75851896da7ddb2503cff6cf8d3a3b5fbe9525ae59dc",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/live/patch/mod.rs",
       "line": 194,
@@ -61,13 +63,14 @@
       "review_batch": "hardcoded:0049:src-tauri-src-live",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/live/project/codex.rs:config_error:1dd6abf6bf9aa0cc:001",
       "status": "无需国际化",
       "content_fingerprint": "1dd6abf6bf9aa0cca3579824796c1481683c894135d16ad66176608c76255fd5",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/live/project/codex.rs",
       "line": 129,
@@ -80,7 +83,8 @@
       "review_batch": "hardcoded:0049:src-tauri-src-live",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/live/project/codex.rs:of:84bd3ad8fb789d27:001",
@@ -103,7 +107,7 @@
       "id": "hardcoded:src-tauri/src/live/project/codex.rs:third_party_route:cd7498a5901772aa:001",
       "status": "无需国际化",
       "content_fingerprint": "cd7498a5901772aa3b255afb7ec603cee52908335b33b18f20ffb02f645c4ce0",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/live/project/codex.rs",
       "line": 286,
@@ -116,7 +120,8 @@
       "review_batch": "hardcoded:0049:src-tauri-src-live",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/live/project/codex.rs:third_party_route:071e976989ab0a78:001",
@@ -139,7 +144,7 @@
       "id": "hardcoded:src-tauri/src/live/project/codex.rs:third_party_route:a15e64778d759bff:001",
       "status": "无需国际化",
       "content_fingerprint": "a15e64778d759bff6522a775b58c25f900fbdf9149da267e714d6da65f3d706f",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/live/project/codex.rs",
       "line": 300,
@@ -152,7 +157,8 @@
       "review_batch": "hardcoded:0049:src-tauri-src-live",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/live/project/codex.rs:third_party_route:586635e2eaaf84ff:001",
@@ -260,7 +266,7 @@
       "id": "hardcoded:src-tauri/src/live/project/codex.rs:no_token_slot_error:bb08f4febebb0d23:001",
       "status": "无需国际化",
       "content_fingerprint": "bb08f4febebb0d23cc68a91bb2cf367a1caf6729c9d864c13747e611909ff984",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/live/project/codex.rs",
       "line": 436,
@@ -273,13 +279,14 @@
       "review_batch": "hardcoded:0049:src-tauri-src-live",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/live/project/grok.rs:of:7c902e7d1ecb5042:001",
       "status": "无需国际化",
       "content_fingerprint": "7c902e7d1ecb50422d32e46f3ad8346b195bd9b55aadc8a0ee548644b436e83a",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/live/project/grok.rs",
       "line": 46,
@@ -292,13 +299,14 @@
       "review_batch": "hardcoded:0049:src-tauri-src-live",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/live/project/grok.rs:of:feae00b110175255:001",
       "status": "无需国际化",
       "content_fingerprint": "feae00b110175255d002e5ab36171c57984dcdea31e12f36b412f141dfeb4fd5",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/live/project/grok.rs",
       "line": 53,
@@ -311,7 +319,8 @@
       "review_batch": "hardcoded:0049:src-tauri-src-live",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/live/project/grok.rs:of:f454eadc69108104:001",
@@ -368,7 +377,7 @@
       "id": "hardcoded:src-tauri/src/live/project/grok.rs:proxy_contract:b02a752e7a5da7b3:001",
       "status": "无需国际化",
       "content_fingerprint": "b02a752e7a5da7b39a108ddc86ee4b178c19073cd867890a087a04bd6cba31b0",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/live/project/grok.rs",
       "line": 88,
@@ -381,13 +390,14 @@
       "review_batch": "hardcoded:0049:src-tauri-src-live",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/live/project/grok.rs:resolve_table_name:4d408ee2d9607ed4:001",
       "status": "无需国际化",
       "content_fingerprint": "4d408ee2d9607ed469a6e9b309758481134072908eec9642a90b5c8151fdaddb",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/live/project/grok.rs",
       "line": 143,
@@ -400,7 +410,8 @@
       "review_batch": "hardcoded:0049:src-tauri-src-live",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/live/project/grok.rs:resolve_table_name:358120cdb8f1b98b:001",
@@ -457,7 +468,7 @@
       "id": "hardcoded:src-tauri/src/live/project/grok.rs:resolve_table_name:d30adb2c8bd1310e:001",
       "status": "无需国际化",
       "content_fingerprint": "d30adb2c8bd1310eca5fc0bf77c4f7774d22bbbd92abda8992d69cc0ffdf68cf",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/live/project/grok.rs",
       "line": 148,
@@ -470,7 +481,8 @@
       "review_batch": "hardcoded:0049:src-tauri-src-live",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/live/project/grok.rs:resolve_table_name:2b90e03d5baf4724:001",

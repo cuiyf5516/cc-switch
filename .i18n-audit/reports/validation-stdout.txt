@@ -32,9 +32,9 @@
     "valid_review_count": 4426,
     "unreviewed_count": 0,
     "status_counts": {
-      "������ʻ�": 2635,
-      "����ʵ": 1256,
-      "ȷ����©": 535
+      "������ʻ�": 3809,
+      "����ʵ": 557,
+      "ȷ����©": 60
     },
     "scan_coverage_pct": 100.0,
     "candidate_review_coverage_pct": 100.0,
@@ -46,10 +46,10 @@
     "translation_keep_sample_required": 655,
     "translation_keep_sample_reviewed": 655,
     "translation_issue_recheck_count": 86,
-    "hardcoded_confirmed_recheck_count": 535,
-    "hardcoded_pending_recheck_count": 1256,
-    "hardcoded_no_i18n_sample_required": 396,
-    "hardcoded_no_i18n_sample_reviewed": 396
+    "hardcoded_confirmed_recheck_count": 60,
+    "hardcoded_pending_recheck_count": 557,
+    "hardcoded_no_i18n_sample_required": 572,
+    "hardcoded_no_i18n_sample_reviewed": 572
   },
   "errors": [],
   "warnings": [],

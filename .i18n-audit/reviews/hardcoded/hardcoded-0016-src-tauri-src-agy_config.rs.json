@@ -10,7 +10,7 @@
       "id": "hardcoded:src-tauri/src/agy_config.rs:read_live_settings:87722d8042d6cd5a:001",
       "status": "无需国际化",
       "content_fingerprint": "87722d8042d6cd5abb0abaf354ee137028411ca1f4fb8d71c3d718e38ccb96fe",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/agy_config.rs",
       "line": 84,
@@ -23,7 +23,8 @@
       "review_batch": "hardcoded:0016:src-tauri-src-agy_config.rs",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/agy_config.rs:read_live_settings:272ec9739e18d77c:001",
@@ -78,20 +79,22 @@
     },
     {
       "id": "hardcoded:src-tauri/src/agy_config.rs:read_live_settings:e3f5daf347d1ba72:001",
-      "status": "待核实",
+      "status": "无需国际化",
       "content_fingerprint": "e3f5daf347d1ba7238bde5c002ec5d25c80c8bac12331a064eb458ccc93d68b9",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/agy_config.rs",
       "line": 92,
       "function": "read_live_settings",
       "expression": "Invalid agy settings.json: {e}",
-      "reason": "该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。",
-      "suggested_action": "追踪命令调用与前端展示链路，确认后改为结构化错误键。",
+      "reason": "产品决定：后端硬编码错误不纳入前端韩语国际化遗漏项。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "中",
+      "severity": "低",
       "review_batch": "hardcoded:0016:src-tauri-src-agy_config.rs",
-      "round": 1
+      "round": 1,
+      "excluded_from_missing": true,
+      "exclusion_rule_id": "backend-error"
     },
     {
       "id": "hardcoded:src-tauri/src/agy_config.rs:read_live_settings:9372c470eeadd5ec:001",

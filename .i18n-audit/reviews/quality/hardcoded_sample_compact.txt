@@ -394,3 +394,179 @@
 394	src-tauri/src/services/model_pricing.rs:116	backend_localized_error	usage.invalidPrice
 395	src-tauri/src/live/project/codex.rs:300	backend_localized_error	provider.codex.config.no_custom_provider
 396	src-tauri/src/services/provider/live.rs:953	backend_localized_error	gemini.env.missing
+397	src-tauri/src/config.rs:674	rust_string	原子替换失败: {} -> {}
+398	src-tauri/src/dsh_config.rs:351	rust_string	Enter a valid DeepSeek Harness endpoint URL
+399	src-tauri/src/commands/proxy.rs:16	rust_string	{} 不支持本地路由
+400	src-tauri/src/services/session_usage_opencode.rs:78	rust_string	查询表 {table} 失败: {error}
+401	src-tauri/src/services/provider/mod.rs:6885	rust_string	路由模式下不能切换到官方供应商，使用代理访问官方 API 可能导致账号被封禁。请先退出路由模式，或选择第三方供应商。
+402	src-tauri/src/services/provider/live.rs:1030	rust_string	Oh My Pi providers are read from Oh My Pi's native models file
+403	src-tauri/src/session_manager/terminal/mod.rs:416	rust_string	Custom terminal execution returned error code
+404	src-tauri/src/services/session_usage_codex.rs:165	rust_string	父 rollout {} 的 token_count 缺少有效 timestamp
+405	src-tauri/src/database/schema.rs:3809	rust_string	删除旧使用量去重索引失败: {e}
+406	src-tauri/src/opencode_config.rs:487	rust_string	OpenCode config does not contain provider '{id}'
+407	src-tauri/src/commands/misc.rs:6018	rust_string	写入批处理文件失败: {e}
+408	src-tauri/src/commands/misc.rs:346	rust_string	Preview the uninstall plan before confirming.
+409	src-tauri/src/opencode_config.rs:499	rust_string	provider.opencode.native_not_object
+410	src-tauri/src/services/s3.rs:405	rust_string	s3.put_failed
+411	src-tauri/src/services/proxy.rs:441	rust_string	读取 Gemini env 失败: {e}
+412	src-tauri/src/services/proxy.rs:125	rust_string	获取代理配置失败: {e}
+413	src-tauri/src/services/profile.rs:366	rust_string	解析 profile payload 失败: {e}
+414	src-tauri/src/session_manager/providers/grokbuild.rs:140	rust_string	Grok Build session ID mismatch: expected {session_id}, found {}
+415	src-tauri/src/dsh_config.rs:104	rust_string	Use block-style YAML for the DeepSeek Harness profile
+416	src-tauri/src/services/skill.rs:3968	rust_string	limit_mb
+417	src-tauri/src/services/provider/agy_direct.rs:69	rust_string	Gemini 配置缺少必需字段: GEMINI_API_KEY
+418	src-tauri/src/commands/proxy.rs:52	rust_string	仍有应用处于代理接管状态，请先在设置中关闭对应应用接管后再停止本地路由。
+419	src-tauri/src/commands/misc.rs:5516	rust_string	设置脚本权限失败: {e}
+420	src-tauri/src/services/provider/live.rs:986	rust_string	OpenCode configuration file not found
+421	src-tauri/src/commands/tool_uninstall.rs:194	rust_string	Installation changed since the uninstall preview. Check installations and confirm again.
+422	src-tauri/src/services/skill.rs:3843	rust_string	status
+423	src-tauri/src/services/sync_protocol.rs:324	rust_string	artifact {artifact_name} 超过下载上限（{} MB）
+424	src-tauri/src/services/mcp.rs:879	rust_string	已导入 {total} 个，部分应用导入失败: {}
+425	src-tauri/src/services/kimi_oauth/mod.rs:260	rust_string	oauth/{slot}
+426	src-tauri/src/services/session_usage_pi.rs:441	rust_string	Pi 会话文件读取时超过安全上限
+427	src-tauri/src/session_manager/content.rs:248	rust_string	{ /                 // 指针按解析器还原后的 `/messages/<i>` 编号，JSONL 也要同样回放 /                 std::str::from_utf8(&bytes) /                     .ok() /                     .and_then(super::providers::gemini::parse_session_document) /                     .ok_or_else(|| STALE.to_string())? /             } else { /                 serde_json::from_slice(&bytes).map_err(|_| STALE.to_string())? /             }; /             // Gemini 多条思考合并成一个块：按解析器同一口径格式化，而不是返回 JSON /             if source.provider_id ==
+428	src-tauri/src/commands/skill.rs:217	rust_string	打开文件夹失败: {e}
+429	src-tauri/src/deeplink/provider.rs:1230	rust_string	Invalid Grok Build config: {error}
+430	src-tauri/src/deeplink/grok_link.rs:76	rust_string	The Grok Build config uses '{key}', which makes Grok run a credential provider or  /                  read credentials from this computer; it cannot be imported from a link. Add the  /                  provider manually instead.
+431	src-tauri/src/opencode_config.rs:554	rust_string	provider.opencode.providers_not_object
+432	src-tauri/src/services/claude_account/snapshot/store/keychain.rs:75	rust_string	Claude Code 的登录信息太大，无法写入钥匙串，没有切换
+433	src-tauri/src/proxy/hyper_client.rs:504	rust_string	Proxy TCP connect failed: {e}
+434	src-tauri/src/services/kimi_oauth/account.rs:186	rust_string	Invalid Kimi Code credentials; sign in again
+435	src-tauri/src/services/proxy.rs:481	rust_string	获取代理配置失败: {e}
+436	src-tauri/src/database/dao/proxy.rs:21	rust_string	Invalid pricing mode: {value}
+437	src-tauri/src/services/webdav.rs:204	rust_string	MKCOL 请求
+438	src-tauri/src/services/webdav.rs:276	rust_string	GET request
+439	src-tauri/src/services/provider/pi.rs:150	rust_string	failed to save Pi provider: {error}; native rollback failed: {rollback}
+440	src-tauri/src/pi_config/mod.rs:68	rust_string	{source} must resolve to an absolute directory: {}
+441	src-tauri/src/commands/tool_uninstall.rs:683	rust_string	Invalid WSL shell flag: {flag}
+442	src-tauri/src/services/session_usage_grokbuild.rs:219	rust_string	无法读取文件: {e}
+443	src-tauri/src/services/webdav.rs:36	rust_string	webdav.base_url.required
+444	src-tauri/src/services/claude_account/login.rs:378	rust_string	claude auth login 没有给出登录链接: {message}
+445	src-tauri/src/services/proxy.rs:490	rust_string	保存代理配置失败: {e}
+446	src-tauri/src/services/provider/mod.rs:7953	rust_string	provider.claude.settings.not_object
+447	src-tauri/src/commands/misc.rs:6274	rust_string	写入启动脚本失败: {e}
+448	src-tauri/src/dsh_config.rs:204	rust_string	{error}; restoring DeepSeek Harness configuration failed: {rollback}
+449	src-tauri/src/deeplink/provider.rs:1228	rust_string	Invalid Grok Build config: {error}
+450	src-tauri/src/jsonc_document.rs:100	rust_string	Refusing to write JSONC config: serialized output does not match the intended state
+451	src-tauri/src/services/provider/mod.rs:6794	rust_string	switch.official_blocked_by_proxy
+452	src-tauri/src/deeplink/utils.rs:15	rust_string	http
+453	src-tauri/src/services/sync_protocol.rs:261	rust_string	sync.manifest_format_incompatible
+454	src-tauri/src/session_manager/terminal/mod.rs:386	rust_string	Custom terminal command template is empty
+455	src-tauri/src/services/provider/icon.rs:275	rust_string	provider.icon.invalid
+456	src-tauri/src/proxy/handlers.rs:2553	rust_string	Failed to parse request body: {e}
+457	src-tauri/src/proxy/providers/codex_oauth_auth/browser.rs:149	rust_string	Cannot open the browser login callback on localhost:{port}. Finish any other Codex login and retry, or choose device-code login.
+458	src-tauri/src/services/env_manager.rs:225	rust_string	无法恢复类型为 {} 的环境变量
+459	src-tauri/src/services/claude_account/layout.rs:66	rust_string	账号目录不能包含 `..`: {}
+460	src-tauri/src/commands/misc.rs:4615	rust_string	Command timed out
+461	src-tauri/src/database/schema.rs:455	rust_string	开启迁移 savepoint 失败: {e}
+462	src-tauri/src/dsh_config.rs:338	rust_string	openai-responses
+463	src-tauri/src/services/provider/endpoints.rs:46	rust_string	URL cannot be empty
+464	src-tauri/src/services/session_usage_codex.rs:2417	rust_string	插入 Codex 会话日志失败: {e}
+465	src-tauri/src/mode/controller.rs:983	rust_string	{}: {error}
+466	src-tauri/src/dsh_config.rs:221	rust_string	providers
+467	src-tauri/src/jsonc_document.rs:90	rust_string	Refusing to write invalid JSONC config after round-trip serialization: {e}
+468	src-tauri/src/live/project/codex.rs:396	rust_string	http_headers
+469	src-tauri/src/commands/model_fetch.rs:48	rust_string	antigravity-cli
+470	src-tauri/src/grok_config.rs:288	rust_string	grokbuild.config.missing
+471	src-tauri/src/commands/misc.rs:5116	rust_string	选择的路径不是文件夹: {}
+472	src-tauri/src/codex_history_migration.rs:713	rust_string	threads
+473	src-tauri/src/services/config.rs:28	rust_string	{backup_id}.json
+474	src-tauri/src/database/schema.rs:3875	rust_string	读取列名失败: {e}
+475	src-tauri/src/services/session_usage_pi.rs:371	rust_string	无法读取 Pi 会话文件尾部: {error}
+476	src-tauri/src/services/kimi_oauth/mod.rs:259	rust_string	kimi-code-ccs-{suffix}
+477	src-tauri/src/commands/codex_oauth.rs:72	rust_string	Codex OAuth token unavailable: {e}
+478	src-tauri/src/commands/provider.rs:57	rust_string	供应商添加任务执行失败: {e}
+479	src-tauri/src/services/session_usage_codex.rs:1282	rust_string	无法读取 Codex 日志: {e}
+480	src-tauri/src/services/session_usage_agy/native_models.rs:71	rust_string	Conversation database is outside the Antigravity root
+481	src-tauri/src/commands/auth.rs:231	rust_string	Targeted re-authentication is only supported for Codex OAuth
+482	src-tauri/src/usage_script.rs:168	rust_string	缺少 extractor 函数: {e}
+483	src-tauri/src/services/s3.rs:519	rust_string	HEAD 请求
+484	src-tauri/src/database/migration.rs:113	rust_string	Migrate endpoint failed: {e}
+485	src-tauri/src/usage_script.rs:169	rust_string	Missing extractor function: {e}
+486	src-tauri/src/deeplink/prompt.rs:49	rust_string	Invalid UTF-8 in content: {e}
+487	src-tauri/src/services/provider/icon.rs:276	rust_string	自定义图标无效，请重新上传
+488	src-tauri/src/database/dao/proxy.rs:836	rust_string	Mutex lock failed: {e}
+489	src-tauri/src/commands/workspace.rs:144	rust_string	Failed to create memory directory: {e}
+490	src-tauri/src/commands/copilot.rs:189	rust_string	camelCase
+491	src-tauri/src/services/skill.rs:3865	rust_string	ARCHIVE_DOWNLOAD_TOO_LARGE
+492	src-tauri/src/services/webdav.rs:158	rust_string	connection
+493	src-tauri/src/services/webdav.rs:299	rust_string	webdav.response_read_failed
+494	src-tauri/src/database/schema.rs:3764	rust_string	读取 user_version 失败: {e}
+495	src-tauri/src/services/session_usage_pi.rs:170	rust_string	无法发现 Pi 会话: {error}
+496	src-tauri/src/session_manager/terminal/mod.rs:48	rust_string	Failed to launch Terminal: {e}
+497	src-tauri/src/services/kimi_oauth/mod.rs:257	rust_string	Cannot check Kimi Code credentials: {e}
+498	src-tauri/src/proxy/providers/xai_oauth_auth.rs:903	rust_string	xAI discovery 响应字段无效
+499	src-tauri/src/services/claude_account/cc_lock.rs:69	rust_string	Claude Code 正在使用登录信息（刷新或登录中），请稍后再切换
+500	src-tauri/src/proxy/providers/codex_oauth_auth.rs:981	rust_string	账号凭据已更新，已丢弃旧刷新响应
+501	src-tauri/src/proxy/providers/transform_codex_anthropic.rs:1555	rust_string	anthropic SSE error event: {msg}
+502	src-tauri/src/deeplink/parser.rs:150	rust_string	Pi providers need a model; add 'model' to the link
+503	src-tauri/src/services/provider/live.rs:933	rust_string	claude.live.missing
+504	src-tauri/src/gemini_config.rs:108	rust_string	Invalid Gemini .env format (line {line_number}): variable name cannot be empty / Line: {line}
+505	src-tauri/src/session_manager/terminal/mod.rs:53	rust_string	Terminal command execution failed
+506	src-tauri/src/services/provider/mod.rs:6901	rust_string	切换路由失败: {e}
+507	src-tauri/src/kimi_config.rs:218	rust_string	api_key_env cannot be combined with api_key or OAuth
+508	src-tauri/src/commands/failover.rs:28	rust_string	供应商不存在: {provider_id}
+509	src-tauri/src/services/kimi_oauth/mod.rs:861	rust_string	Kimi model discovery failed
+510	src-tauri/src/mode/controller.rs:1241	rust_string	官方账号不能加入聚合 (An official account cannot join the aggregation)
+511	src-tauri/src/services/webdav.rs:256	rust_string	PUT
+512	src-tauri/src/services/webdav.rs:308	rust_string	webdav.response_read_failed
+513	src-tauri/src/services/session_usage.rs:595	rust_string	无法读取游标边界尾部: {e}
+514	src-tauri/src/deeplink/prompt.rs:22	rust_string	Expected prompt resource, got '{}'
+515	src-tauri/src/usage_script.rs:391	rust_string	usage_script.total_type_error
+516	src-tauri/src/services/prompt.rs:220	rust_string	提示词 {id} 不存在
+517	src-tauri/src/services/prompt.rs:440	rust_string	提示词 {id} 不存在
+518	src-tauri/src/services/webdav_sync/archive.rs:230	rust_string	webdav.sync.skills_replace_and_rollback_failed
+519	src-tauri/src/services/provider/live.rs:1112	rust_string	gemini.live.missing
+520	src-tauri/src/usage_script.rs:569	rust_string	请求端口 {request_port} 必须与 base_url 端口 {base_port} 匹配
+521	src-tauri/src/services/provider/mod.rs:6315	rust_string	Provider '{}' already exists in app '{}'
+522	src-tauri/src/claude_desktop_config.rs:635	rust_string	Claude Desktop 直连模型必须使用 claude-* 或 anthropic/claude-* 名称: {route_id}
+523	src-tauri/src/database/schema.rs:1346	rust_string	model_pricing
+524	src-tauri/src/services/omo.rs:258	rust_string	Expected JSON object
+525	src-tauri/src/services/sync_protocol.rs:387	rust_string	SQL is not valid UTF-8: {e}
+526	src-tauri/src/services/claude_account/snapshot/creds.rs:162	rust_string	claude.snapshot.owner_unknown
+527	src-tauri/src/deeplink/utils.rs:78	rust_string	未知错误
+528	src-tauri/src/session_manager/terminal/mod.rs:255	rust_string	Failed to launch WezTerm.
+529	src-tauri/src/services/s3.rs:337	rust_string	s3.url.invalid
+530	src-tauri/src/kimi_config.rs:151	rust_string	Enter a Kimi Code provider key
+531	src-tauri/src/database/schema.rs:995	rust_string	插入 {app} 配置失败: {e}
+532	src-tauri/src/deeplink/provider.rs:345	rust_string	.into(), /             )); /         } /         AppType::Kimi => { /             return Err(AppError::InvalidInput(
+533	src-tauri/src/database/schema.rs:3794	rust_string	app_type
+534	src-tauri/src/services/webdav_sync/archive.rs:142	rust_string	webdav.sync.skills_ssot_dir_failed
+535	src-tauri/src/mcode_config.rs:211	rust_string	custom_provider:{id}/
+536	src-tauri/src/agy_config.rs:468	rust_string	env
+537	src-tauri/src/services/omo.rs:356	rust_string	Config changed after CC Switch wrote it; refusing to roll back {}
+538	src-tauri/src/deeplink/provider.rs:355	rust_string	.into(), /             )) /         } /         AppType::Agy => { /             let mut settings = build_gemini_settings(request); /             settings[
+539	src-tauri/src/services/session_usage_pi.rs:520	rust_string	Pi 会话没有有效 header
+540	src-tauri/src/database/dao/providers.rs:337	rust_string	Failed to serialize meta: {e}
+541	src-tauri/src/dsh_config.rs:650	rust_string	Assign an id to this native MCP entry before editing it in CC Switch
+542	src-tauri/src/commands/misc.rs:37	rust_string	链接格式无效
+543	src-tauri/src/usage_script.rs:160	rust_string	Failed to re-parse config: {e}
+544	src-tauri/src/session_manager/mod.rs:263	rust_string	Unsupported provider: {provider_id}
+545	src-tauri/src/session_manager/hermes_wsl.rs:147	rust_string	Hermes WSL read failed (python3 is required): {}
+546	src-tauri/src/services/provider/codex_direct.rs:1187	rust_string	Codex 的登录在这次操作期间变了，官方模型列表对不上新的登录。本次没有写入任何文件，请重试
+547	src-tauri/src/services/provider/mod.rs:6795	rust_string	agy.switch.unsupported
+548	src-tauri/src/mcp/mcode.rs:19	rust_string	mcpServers
+549	src-tauri/src/services/webdav.rs:344	rust_string	etag
+550	src-tauri/src/settings.rs:182	rust_string	webdav.username.required
+551	src-tauri/src/services/session_usage_pi.rs:1001	rust_string	插入 Pi 会话用量失败: {error}
+552	src-tauri/src/proxy/forwarder.rs:4204	rust_string	Managed account proxy auth was not resolved; PROXY_MANAGED must not be sent upstream
+553	src-tauri/src/services/subscription.rs:1520	rust_string	gemini
+554	src-tauri/src/gemini_mcp.rs:93	rust_string	MCP 服务器 '{id}' 不是对象
+555	src-tauri/src/commands/misc.rs:5538	rust_string	写入配置文件失败: {e}
+556	src-tauri/src/claude_mcp.rs:247	rust_string	MCP 服务器 ID 不能为空
+557	src-tauri/src/mcp/omp.rs:141	rust_string	disabledServers
+558	src-tauri/src/services/provider/mod.rs:7778	rust_string	Serialization failed: {e}
+559	src-tauri/src/proxy/handlers.rs:3099	rust_string	Upstream SSE stream appears truncated (no finish_reason or [DONE] marker)
+560	src-tauri/src/commands/misc.rs:44	rust_string	http
+561	src-tauri/src/services/provider/pi.rs:128	rust_string	Pi provider keys cannot be renamed
+562	src-tauri/src/proxy/providers/transform_codex_anthropic.rs:553	rust_string	Invalid function_call arguments for '{name}': {error}
+563	src-tauri/src/proxy/hyper_client.rs:551	rust_string	Proxy authentication required (407): {}
+564	src-tauri/src/dsh_config.rs:218	rust_string	Duplicate llm-pi-ai overrides
+565	src-tauri/src/services/session_usage_pi.rs:246	rust_string	无法读取 Pi 会话文件元数据: {error}
+566	src-tauri/src/settings.rs:184	rust_string	WebDAV username is required.
+567	src-tauri/src/commands/misc.rs:5886	rust_string	启动 Warp 失败: {e}
+568	src-tauri/src/services/claude_account/shared.rs:264	rust_string	settings.json
+569	src-tauri/src/services/kimi_oauth/mod.rs:711	rust_string	device_code
+570	src-tauri/src/services/provider/agy_direct.rs:53	rust_string	Antigravity credentials, endpoint and model must be single-line values
+571	src-tauri/src/session_manager/providers/codex.rs:1884	rust_string	Failed to delete Codex session file {}: {e}
+572	src-tauri/src/usage_script.rs:85	rust_string	Failed to parse config: {e}

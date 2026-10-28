@@ -38,6 +38,17 @@
       "status": "无需国际化",
       "reason": "产品决定：仅实现中英双语的后端错误不纳入本次韩语国际化遗漏项。",
       "severity": "低"
+    },
+    {
+      "id": "backend-error",
+      "source_file_prefix": "src-tauri/",
+      "status": "无需国际化",
+      "reason": "产品决定：后端硬编码错误不纳入前端韩语国际化遗漏项。",
+      "severity": "低",
+      "apply_to_statuses": [
+        "确认遗漏",
+        "待核实"
+      ]
     }
   ]
 }

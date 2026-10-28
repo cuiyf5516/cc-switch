@@ -10,7 +10,7 @@
       "id": "hardcoded:src-tauri/src/opencode_config.rs:provider_fragment:a9049ee09c525ccd:001",
       "status": "无需国际化",
       "content_fingerprint": "a9049ee09c525ccd48b3361368febbbc41f2c7a1aa0624c8d66cbc032d71702e",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/opencode_config.rs",
       "line": 484,
@@ -23,7 +23,8 @@
       "review_batch": "hardcoded:0055:src-tauri-src-opencode_config.rs",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/opencode_config.rs:provider_fragment:e81a9faceea7eeb8:001",
@@ -80,7 +81,7 @@
       "id": "hardcoded:src-tauri/src/opencode_config.rs:validate_native_provider:ace2c4f995ffc920:001",
       "status": "无需国际化",
       "content_fingerprint": "ace2c4f995ffc920cb5248cee6e83d2cdb3ea3d095f35ebc8d26ae21cb259456",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/opencode_config.rs",
       "line": 498,
@@ -93,7 +94,8 @@
       "review_batch": "hardcoded:0055:src-tauri-src-opencode_config.rs",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/opencode_config.rs:validate_native_provider:b32a7e3d8454ae9a:001",
@@ -150,7 +152,7 @@
       "id": "hardcoded:src-tauri/src/opencode_config.rs:validate_native_provider:fbb590dee71b1731:001",
       "status": "无需国际化",
       "content_fingerprint": "fbb590dee71b17315c018f1ca5081d48caf08fcbeb1f63deebb26b356d3865e6",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/opencode_config.rs",
       "line": 503,
@@ -163,7 +165,8 @@
       "review_batch": "hardcoded:0055:src-tauri-src-opencode_config.rs",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/opencode_config.rs:validate_native_provider:bae08e7abf3ce18e:001",
@@ -220,7 +223,7 @@
       "id": "hardcoded:src-tauri/src/opencode_config.rs:set_provider_with_format:bdaa19c09cfecc2d:001",
       "status": "无需国际化",
       "content_fingerprint": "bdaa19c09cfecc2df745d8a21fd3ff0d119e13cfd199d99f65820e8122dceff8",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/opencode_config.rs",
       "line": 531,
@@ -233,7 +236,8 @@
       "review_batch": "hardcoded:0055:src-tauri-src-opencode_config.rs",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/opencode_config.rs:set_provider_with_format:30cbd3ab57139615:001",
@@ -271,26 +275,28 @@
     },
     {
       "id": "hardcoded:src-tauri/src/opencode_config.rs:set_provider_with_format:80a94f4873580686:001",
-      "status": "待核实",
+      "status": "无需国际化",
       "content_fingerprint": "80a94f48735806868e09e00b749ae79ca0db50e5e208d43310ce81e571b02c78",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/opencode_config.rs",
       "line": 535,
       "function": "set_provider_with_format",
       "expression": "OpenCode provider '{id}' has a native V2 declaration. Reload providers before editing it.",
-      "reason": "该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。",
-      "suggested_action": "追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。",
+      "reason": "产品决定：后端硬编码错误不纳入前端韩语国际化遗漏项。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "中",
+      "severity": "低",
       "review_batch": "hardcoded:0055:src-tauri-src-opencode_config.rs",
-      "round": 1
+      "round": 1,
+      "excluded_from_missing": true,
+      "exclusion_rule_id": "backend-error"
     },
     {
       "id": "hardcoded:src-tauri/src/opencode_config.rs:set_provider_with_format:5cf499416b128a84:001",
       "status": "无需国际化",
       "content_fingerprint": "5cf499416b128a84a225d97195e66d95c963157f37c9f5f0f57c51cb9b179a86",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/opencode_config.rs",
       "line": 553,
@@ -303,7 +309,8 @@
       "review_batch": "hardcoded:0055:src-tauri-src-opencode_config.rs",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/opencode_config.rs:set_provider_with_format:5dd0c340fd6885f2:001",
@@ -358,20 +365,22 @@
     },
     {
       "id": "hardcoded:src-tauri/src/opencode_config.rs:set_default_model:eef5d75f1f78908c:001",
-      "status": "待核实",
+      "status": "无需国际化",
       "content_fingerprint": "eef5d75f1f78908c79dc240c0f58890e9258b0c92501b7c63f53b9c4a95fe14a",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/opencode_config.rs",
       "line": 604,
       "function": "set_default_model",
       "expression": "OpenCode model must be \"<provider>/<model>\": {model}",
-      "reason": "该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。",
-      "suggested_action": "追踪命令调用与前端展示链路，确认后改为结构化错误键。",
+      "reason": "产品决定：后端硬编码错误不纳入前端韩语国际化遗漏项。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "中",
+      "severity": "低",
       "review_batch": "hardcoded:0055:src-tauri-src-opencode_config.rs",
-      "round": 1
+      "round": 1,
+      "excluded_from_missing": true,
+      "exclusion_rule_id": "backend-error"
     }
   ]
 }

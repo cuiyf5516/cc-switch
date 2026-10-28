@@ -8,54 +8,60 @@
   "records": [
     {
       "id": "hardcoded:src-tauri/src/services/claude_account/login.rs:wait_for_link:6a3fd6ca73979dfd:001",
-      "status": "确认遗漏",
+      "status": "无需国际化",
       "content_fingerprint": "6a3fd6ca73979dfde24a4a061dc9504e4568bec92bc8017ca016966183932aa9",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/services/claude_account/login.rs",
       "line": 375,
       "function": "wait_for_link",
       "expression": "claude auth login 已退出",
-      "reason": "该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。",
-      "suggested_action": "改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。",
+      "reason": "产品决定：后端硬编码错误不纳入前端韩语国际化遗漏项。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "高",
+      "severity": "低",
       "review_batch": "hardcoded:0064:src-tauri-src-services",
-      "round": 1
+      "round": 1,
+      "excluded_from_missing": true,
+      "exclusion_rule_id": "backend-error"
     },
     {
       "id": "hardcoded:src-tauri/src/services/claude_account/login.rs:wait_for_link:16490595a0ca16a1:001",
-      "status": "确认遗漏",
+      "status": "无需国际化",
       "content_fingerprint": "16490595a0ca16a1b4e79789bfd33729a83d300c373af51f85224b373bde2b90",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/services/claude_account/login.rs",
       "line": 378,
       "function": "wait_for_link",
       "expression": "claude auth login 没有给出登录链接: {message}",
-      "reason": "该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。",
-      "suggested_action": "改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。",
+      "reason": "产品决定：后端硬编码错误不纳入前端韩语国际化遗漏项。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "高",
+      "severity": "低",
       "review_batch": "hardcoded:0064:src-tauri-src-services",
-      "round": 1
+      "round": 1,
+      "excluded_from_missing": true,
+      "exclusion_rule_id": "backend-error"
     },
     {
       "id": "hardcoded:src-tauri/src/services/claude_account/login.rs:wait_for_link:9d3c2d4f9ad4fbf9:001",
-      "status": "确认遗漏",
+      "status": "无需国际化",
       "content_fingerprint": "9d3c2d4f9ad4fbf901ef39566e91281d35d69e67105618d1a29d31aba5e4f256",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/services/claude_account/login.rs",
       "line": 386,
       "function": "wait_for_link",
       "expression": "claude auth login 没有给出登录链接，请在终端里运行 `claude auth login` 看看它输出了什么",
-      "reason": "该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。",
-      "suggested_action": "改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。",
+      "reason": "产品决定：后端硬编码错误不纳入前端韩语国际化遗漏项。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "高",
+      "severity": "低",
       "review_batch": "hardcoded:0064:src-tauri-src-services",
-      "round": 1
+      "round": 1,
+      "excluded_from_missing": true,
+      "exclusion_rule_id": "backend-error"
     },
     {
       "id": "hardcoded:src-tauri/src/services/claude_account/login.rs:spawn_login:14103872e97d63e4:001",
@@ -93,26 +99,28 @@
     },
     {
       "id": "hardcoded:src-tauri/src/services/claude_account/login.rs:spawn_login:7298b97e1b0939d7:001",
-      "status": "确认遗漏",
+      "status": "无需国际化",
       "content_fingerprint": "7298b97e1b0939d7e86db9464dde0bd4fffd2962abdafc840411fcb0d55115e0",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/services/claude_account/login.rs",
       "line": 460,
       "function": "spawn_login",
       "expression": "无法启动 claude auth login: {error}",
-      "reason": "该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。",
-      "suggested_action": "改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。",
+      "reason": "产品决定：后端硬编码错误不纳入前端韩语国际化遗漏项。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "高",
+      "severity": "低",
       "review_batch": "hardcoded:0064:src-tauri-src-services",
-      "round": 1
+      "round": 1,
+      "excluded_from_missing": true,
+      "exclusion_rule_id": "backend-error"
     },
     {
       "id": "hardcoded:src-tauri/src/services/claude_account/mod.rs:poll_login:13e0911635dec4e9:001",
       "status": "无需国际化",
       "content_fingerprint": "13e0911635dec4e9adc2754355ed4518e20b78e7436e5e6f4fc51c2ab94e1790",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/services/claude_account/mod.rs",
       "line": 290,
@@ -125,13 +133,14 @@
       "review_batch": "hardcoded:0064:src-tauri-src-services",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/services/claude_account/mod.rs:finish_login:a6daadc357ea97a5:001",
       "status": "无需国际化",
       "content_fingerprint": "a6daadc357ea97a529570dd5ee046f868f3b09737d5d6c94fcae8d9655f33b82",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/services/claude_account/mod.rs",
       "line": 354,
@@ -144,7 +153,8 @@
       "review_batch": "hardcoded:0064:src-tauri-src-services",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/services/claude_account/mod.rs:finish_login:af3ca14e667d2622:001",
@@ -201,7 +211,7 @@
       "id": "hardcoded:src-tauri/src/services/claude_account/mod.rs:submit_paste:13e0911635dec4e9:001",
       "status": "无需国际化",
       "content_fingerprint": "13e0911635dec4e9adc2754355ed4518e20b78e7436e5e6f4fc51c2ab94e1790",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/services/claude_account/mod.rs",
       "line": 433,
@@ -214,7 +224,8 @@
       "review_batch": "hardcoded:0064:src-tauri-src-services",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/services/claude_account/mod.rs:submit_paste:707deb8a7d6b7575:001",
@@ -271,7 +282,7 @@
       "id": "hardcoded:src-tauri/src/services/claude_account/mod.rs:account_not_found:40b96a4651d97e2f:001",
       "status": "无需国际化",
       "content_fingerprint": "40b96a4651d97e2fae736edf22d361b574f2fbc44e819496eb4e603b8a4f0945",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/services/claude_account/mod.rs",
       "line": 559,
@@ -284,7 +295,8 @@
       "review_batch": "hardcoded:0064:src-tauri-src-services",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/services/claude_account/mod.rs:adopt:a09beb6f966ee786:001",
@@ -324,7 +336,7 @@
       "id": "hardcoded:src-tauri/src/services/claude_account/snapshot/creds.rs:owner_of:cb1dc128faf45a3b:001",
       "status": "无需国际化",
       "content_fingerprint": "cb1dc128faf45a3b65383cbbf27cf277f065a69bc3c188f143d45c3ab6eca1c7",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/services/claude_account/snapshot/creds.rs",
       "line": 161,
@@ -337,7 +349,8 @@
       "review_batch": "hardcoded:0064:src-tauri-src-services",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/services/claude_account/snapshot/creds.rs:owner_of:18b6a72e1822a5ea:001",
@@ -394,7 +407,7 @@
       "id": "hardcoded:src-tauri/src/services/claude_account/snapshot/creds.rs:changed:fcf84cf02c67e73e:001",
       "status": "无需国际化",
       "content_fingerprint": "fcf84cf02c67e73e899d98a5953778752b0c8a2c675886f27922e8d9b3cf2ccc",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/services/claude_account/snapshot/creds.rs",
       "line": 171,
@@ -407,24 +420,27 @@
       "review_batch": "hardcoded:0064:src-tauri-src-services",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/services/claude_account/snapshot/files.rs:write_profile:9e1af08c9ae84ad1:001",
-      "status": "确认遗漏",
+      "status": "无需国际化",
       "content_fingerprint": "9e1af08c9ae84ad16cfa73dce2c144cabf92a8a847d319a1663ccfa2d9d30216",
-      "reviewed_at": "2026-10-28T14:16:21.427573+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/services/claude_account/snapshot/files.rs",
       "line": 69,
       "function": "write_profile",
       "expression": "{} 不是 JSON 对象，没有改动",
-      "reason": "该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。",
-      "suggested_action": "改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。",
+      "reason": "产品决定：后端硬编码错误不纳入前端韩语国际化遗漏项。",
+      "suggested_action": null,
       "suggested_ko": null,
-      "severity": "高",
+      "severity": "低",
       "review_batch": "hardcoded:0064:src-tauri-src-services",
-      "round": 1
+      "round": 1,
+      "excluded_from_missing": true,
+      "exclusion_rule_id": "backend-error"
     },
     {
       "id": "hardcoded:src-tauri/src/services/claude_account/snapshot/store.rs:fmt:434bd273fc7e96da:001",
@@ -447,7 +463,7 @@
       "id": "hardcoded:src-tauri/src/services/claude_account/snapshot/store.rs:parse:00db3a6b4a97cbd7:001",
       "status": "无需国际化",
       "content_fingerprint": "00db3a6b4a97cbd7e87bba2248f51687e621460f2b0853c9b37ea98eb93de01d",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/services/claude_account/snapshot/store.rs",
       "line": 93,
@@ -460,7 +476,8 @@
       "review_batch": "hardcoded:0064:src-tauri-src-services",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/services/claude_account/snapshot/store.rs:parse:ea2d84c48f15bc26:001",
@@ -568,7 +585,7 @@
       "id": "hardcoded:src-tauri/src/services/claude_account/snapshot/store/keychain.rs:write:36a410ad9c18857e:001",
       "status": "无需国际化",
       "content_fingerprint": "36a410ad9c18857e4681d9b764b78e08ae8d4eec3edf50263f754e4e2b2ebaa4",
-      "reviewed_at": "2026-10-28T15:25:39.192625+00:00",
+      "reviewed_at": "2026-10-28T15:36:00.935977+00:00",
       "reviewer": "primary",
       "source_file": "src-tauri/src/services/claude_account/snapshot/store/keychain.rs",
       "line": 73,
@@ -581,7 +598,8 @@
       "review_batch": "hardcoded:0064:src-tauri-src-services",
       "round": 1,
       "excluded_from_missing": true,
-      "exclusion_source_kind": "backend_localized_error"
+      "exclusion_source_kind": "backend_localized_error",
+      "exclusion_rule_id": "backend_localized_error"
     },
     {
       "id": "hardcoded:src-tauri/src/services/claude_account/snapshot/store/keychain.rs:write:616465df9ba40ca5:001",

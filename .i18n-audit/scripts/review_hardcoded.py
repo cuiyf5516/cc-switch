@@ -6,7 +6,17 @@ from typing import Any
 ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/'.i18n-audit'
 CONFIG=json.loads((OUT/'config.json').read_text(encoding='utf-8'))
-CANDIDATE_EXCLUSIONS={item['source_kind']:item for item in CONFIG.get('candidate_scope_exclusions',[]) if item.get('source_kind')}
+CANDIDATE_EXCLUSIONS=[item for item in CONFIG.get('candidate_scope_exclusions',[]) if item.get('source_kind') or item.get('source_file_prefix')]
+
+def candidate_exclusion(c:dict[str,Any],result_status:str):
+ for rule in CANDIDATE_EXCLUSIONS:
+  kind=rule.get('source_kind'); prefix=rule.get('source_file_prefix')
+  if kind and c.get('source_kind')!=kind: continue
+  if prefix and not c.get('source_file','').startswith(prefix): continue
+  statuses=rule.get('apply_to_statuses')
+  if statuses and result_status not in statuses: continue
+  if kind or prefix: return rule
+ return None
 
 def atomic(path:Path,data:Any)->None:
  path.parent.mkdir(parents=True,exist_ok=True); tmp=path.with_suffix(path.suffix+'.tmp'); tmp.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8'); tmp.replace(path)
@@ -42,11 +52,6 @@ def classify(c:dict[str,Any])->dict[str,Any]:
   status='待核实'; severity='中'
   reason=f'翻译键由运行时表达式“{expr}”动态构造，静态检查无法确认所有分支都能命中现有韩语资源。'
   action='核实枚举/映射的所有可能键值，并补充覆盖测试；若存在未约束的外部输入，应改为显式映射。'
- elif kind in CANDIDATE_EXCLUSIONS:
-  rule=CANDIDATE_EXCLUSIONS[kind]
-  status=rule.get('status','无需国际化'); severity=rule.get('severity','低')
-  reason=rule.get('reason') or '该候选类别按产品决定不纳入国际化遗漏项。'
-  action=None
  elif path.startswith('src/icons/'):
   reason='图标元数据中的中文是搜索别名，不直接渲染为界面文案；保留有助于中文品牌检索。'
  elif path.startswith('src/config/'):
@@ -164,6 +169,12 @@ def classify(c:dict[str,Any])->dict[str,Any]:
 
  if not reason:
   reason='已按实际代码上下文检查，该字面量不承担用户可见自然语言。'
+ excluded_rule=candidate_exclusion(c,status)
+ if excluded_rule:
+  status=excluded_rule.get('status','无需国际化'); severity=excluded_rule.get('severity','低')
+  reason=excluded_rule.get('reason') or '该候选类别按产品决定不纳入国际化遗漏项。'
+  action=''
+  suggested_ko=None
  return {'status':status,'reason':reason,'suggested_action':action or None,'suggested_ko':suggested_ko,'severity':severity}
 
 def main()->int:

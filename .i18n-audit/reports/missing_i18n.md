@@ -4,5249 +4,24 @@
 - 成功扫描：801
 - 扫描失败：0
 - 候选总数：4426
-- 确认遗漏：535
-- 待核实：1256
-- 无需国际化：2635
+- 确认遗漏：60
+- 待核实：557
+- 无需国际化：3809
 - 范围排除文件：1
-- 候选类别排除：262（中英双语后端错误）
+- 候选类别排除：1436（后端错误：双语 262 + 其他硬编码 1174）
 
 > 本报告不展示已确认无需国际化的候选项。候选详情保留在 `.i18n-audit/reviews/hardcoded/`。
 
 ## 系统性结论
 
-- `AppError::localized` 的 262 条中英双语错误按产品决定归为无需国际化，不计入韩语遗漏项。
+- 后端错误按产品决定排除：`AppError::localized` 262 条中英双语错误，以及其他后端硬编码错误 1174 条，均不计入韩语遗漏项。
 - 多个前端校验器和工具函数直接抛出中文/英文错误，绕过 i18n。
 - 多处可见 JSX 标签（如 `Auth:`、`TOML Config:`、`Reasoning Effort`、`API Key`）仍未使用翻译函数。
 - 162 个动态翻译键已逐一登记为待核实，不能仅因运行时未崩溃视为安全。
 
-## 确认遗漏明细（535）
+## 确认遗漏明细（60）
 
-### 1. `hardcoded:src-tauri/src/auto_launch.rs:get_auto_launch:07a4b2b03712a79b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/auto_launch.rs:22`
-- 结构：`get_auto_launch` / `rust_string`
-- 原文/表达式：无法获取应用路径: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`07a4b2b03712a79b1989b42266ec4e4f2df3a157bbc4adc9152a487f3881fcac`
-
-### 2. `hardcoded:src-tauri/src/auto_launch.rs:get_auto_launch:82c71eeea906f9a4:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/auto_launch.rs:38`
-- 结构：`get_auto_launch` / `rust_string`
-- 原文/表达式：创建 AutoLaunch 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`82c71eeea906f9a4a5cada7fe8222e41e3963a231748c53418d74d2601d4efa4`
-
-### 3. `hardcoded:src-tauri/src/auto_launch.rs:enable_auto_launch:d307952c56a1c4d5:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/auto_launch.rs:48`
-- 结构：`enable_auto_launch` / `rust_string`
-- 原文/表达式：启用开机自启失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`d307952c56a1c4d5886807e2104b6b66edf2a47c84c378e2d4fed6b18640733e`
-
-### 4. `hardcoded:src-tauri/src/auto_launch.rs:disable_auto_launch:c19144dbe2f390e9:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/auto_launch.rs:58`
-- 结构：`disable_auto_launch` / `rust_string`
-- 原文/表达式：禁用开机自启失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`c19144dbe2f390e9097d1ffd4542bdb28d790360e181acb6d2ad1bb1524c859a`
-
-### 5. `hardcoded:src-tauri/src/auto_launch.rs:is_auto_launch_enabled:6692dc0f7647d368:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/auto_launch.rs:68`
-- 结构：`is_auto_launch_enabled` / `rust_string`
-- 原文/表达式：检查开机自启状态失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`6692dc0f7647d3685325a8483715359f923ec04ec8ce1b98936994440aac297c`
-
-### 6. `hardcoded:src-tauri/src/claude_mcp.rs:upsert_mcp_server:38efc7942c69ef3f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_mcp.rs:175`
-- 结构：`upsert_mcp_server` / `rust_string`
-- 原文/表达式：MCP 服务器 ID 不能为空
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`38efc7942c69ef3fdcd68f13843ad37fb987f72b22d612906c9374e35012791e`
-
-### 7. `hardcoded:src-tauri/src/claude_mcp.rs:upsert_mcp_server:7cf9f81c56bc20db:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_mcp.rs:180`
-- 结构：`upsert_mcp_server` / `rust_string`
-- 原文/表达式：MCP 服务器定义必须为 JSON 对象
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`7cf9f81c56bc20db2aa15a7d8089b589da40e88c4ca705393e53207bb3f5f2b8`
-
-### 8. `hardcoded:src-tauri/src/claude_mcp.rs:upsert_mcp_server:cd5a094f235d66b4:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_mcp.rs:189`
-- 结构：`upsert_mcp_server` / `rust_string`
-- 原文/表达式：MCP 服务器 type 必须是 'stdio'、'http' 或 'sse'（或省略表示 stdio）
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`cd5a094f235d66b4cf6566c25dcb9ed35fe743e280598098df5bb16653675a0d`
-
-### 9. `hardcoded:src-tauri/src/claude_mcp.rs:upsert_mcp_server:eef74f394f855bdc:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_mcp.rs:198`
-- 结构：`upsert_mcp_server` / `rust_string`
-- 原文/表达式：stdio 类型的 MCP 服务器缺少 command 字段
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`eef74f394f855bdce3934e002ceb8228529e2586070551475c26643134adda16`
-
-### 10. `hardcoded:src-tauri/src/claude_mcp.rs:upsert_mcp_server:d03a3105c36ee824:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_mcp.rs:208`
-- 结构：`upsert_mcp_server` / `rust_string`
-- 原文/表达式：http 类型的 MCP 服务器缺少 url 字段
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`d03a3105c36ee824dcbd4460255906117b32f93051192a203b03ff1bbb68b861`
-
-### 11. `hardcoded:src-tauri/src/claude_mcp.rs:upsert_mcp_server:f96daad60691836a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_mcp.rs:210`
-- 结构：`upsert_mcp_server` / `rust_string`
-- 原文/表达式：sse 类型的 MCP 服务器缺少 url 字段
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`f96daad60691836af3e060d9c06581238dd36d4cc210ac3a753449e5a77e7979`
-
-### 12. `hardcoded:src-tauri/src/claude_mcp.rs:delete_mcp_server:38efc7942c69ef3f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_mcp.rs:247`
-- 结构：`delete_mcp_server` / `rust_string`
-- 原文/表达式：MCP 服务器 ID 不能为空
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`38efc7942c69ef3fdcd68f13843ad37fb987f72b22d612906c9374e35012791e`
-
-### 13. `hardcoded:src-tauri/src/claude_mcp.rs:set_mcp_servers_map:3aa384326118160d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/claude_mcp.rs:343`
-- 结构：`set_mcp_servers_map` / `rust_string`
-- 原文/表达式：MCP 服务器 '{id}' 不是对象
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`3aa384326118160db083930c94cc7a4e99bfe08756a531a17bcd013c81b07b3a`
-
-### 14. `hardcoded:src-tauri/src/codex_config.rs:codex_managed_oauth_marker_bytes:f0fe94dd6b4b04be:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/codex_config.rs:453`
-- 结构：`codex_managed_oauth_marker_bytes` / `rust_string`
-- 原文/表达式：序列化 Codex 托管账号标记失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`f0fe94dd6b4b04bef4e3ef0d6501cb264924361ed211d0ec3c4b4dd4294aba65`
-
-### 15. `hardcoded:src-tauri/src/codex_config.rs:migrate_legacy_codex_managed_oauth_live_auth_marker:b2115bf591d83caa:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/codex_config.rs:505`
-- 结构：`migrate_legacy_codex_managed_oauth_live_auth_marker` / `rust_string`
-- 原文/表达式：旧版 Codex OAuth 账号 {managed_account_id} 无法通过稳定用户身份确认磁盘凭据所有权；为避免覆盖或串用 auth.json，本次操作已取消，请在认证中心重新登录该账号
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`b2115bf591d83caa8e926acb670a9a377674b49096256b45207470a93557d7fb`
-
-### 16. `hardcoded:src-tauri/src/codex_config.rs:ensure_codex_live_auth_unchanged_for_managed_account:cb561175ef36d876:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/codex_config.rs:644`
-- 结构：`ensure_codex_live_auth_unchanged_for_managed_account` / `rust_string`
-- 原文/表达式：Codex CLI 账号 {account_id} 的 live auth 已在切换期间被移除，请重试
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`cb561175ef36d8761241f9ff7a605ad9108324175155fac3f88e41a0cd55b51d`
-
-### 17. `hardcoded:src-tauri/src/codex_config.rs:ensure_codex_live_auth_unchanged_for_managed_account:978e8417a4fc459b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/codex_config.rs:656`
-- 结构：`ensure_codex_live_auth_unchanged_for_managed_account` / `rust_string`
-- 原文/表达式：Codex CLI 账号 {account_id} 的 live 凭据在切换期间已刷新；为避免覆盖新 refresh token，本次操作已取消，请重试
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`978e8417a4fc459be2be0115288265a6c8117a17afcefe1a9314673c796dddb8`
-
-### 18. `hardcoded:src-tauri/src/codex_config.rs:clear_codex_live_auth_for_managed_account_if_unchanged:88c926df5719cf84:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/codex_config.rs:679`
-- 结构：`clear_codex_live_auth_for_managed_account_if_unchanged` / `rust_string`
-- 原文/表达式：Codex CLI 账号 {account_id} 的 live 凭据在切换期间已刷新；为避免删除新 refresh token，本次操作已取消，请重试
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`88c926df5719cf848ec89dc63e65662a4dc72f2c11b86fc456f41585ca6be6d0`
-
-### 19. `hardcoded:src-tauri/src/codex_config.rs:read_limited_string:a5f18a7832980399:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/codex_config.rs:2787`
-- 结构：`read_limited_string` / `rust_string`
-- 原文/表达式：文件 {} 超过大小上限 {} 字节
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a5f18a7832980399ce031d0396f8f399b7633b6298d816d24ead740d734cad40`
-
-### 20. `hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:bda73b874802c8cd:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/codex_history_migration.rs:708`
-- 结构：`restore_codex_state_db_official_threads` / `rust_string`
-- 原文/表达式：打开 Codex state DB 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`bda73b874802c8cdc552ac681bfebee35fde2ccfc76fbd7d2c2f0acd4ee351ee`
-
-### 21. `hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:806823400909fcb4:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/codex_history_migration.rs:710`
-- 结构：`restore_codex_state_db_official_threads` / `rust_string`
-- 原文/表达式：设置 Codex state DB busy_timeout 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`806823400909fcb46f85494971baf04598e700620065b5d4c4117ad7cc9d0775`
-
-### 22. `hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:b71f3e1795a52210:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/codex_history_migration.rs:732`
-- 结构：`restore_codex_state_db_official_threads` / `rust_string`
-- 原文/表达式：统计 Codex state DB 待还原行失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`b71f3e1795a52210ff15edfbfb15bf0b799c3abefe3041ff016ff0bc767c669f`
-
-### 23. `hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:d47c129040dde6e9:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/codex_history_migration.rs:743`
-- 结构：`restore_codex_state_db_official_threads` / `rust_string`
-- 原文/表达式：开启 Codex state DB 还原事务失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`d47c129040dde6e9981f163ac324313afa5e3346df47a2323fb9c2bf68749703`
-
-### 24. `hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:22a83e7d9706ee08:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/codex_history_migration.rs:756`
-- 结构：`restore_codex_state_db_official_threads` / `rust_string`
-- 原文/表达式：还原 Codex state DB provider 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`22a83e7d9706ee08d31bfeb142ae978aca40031af677cca7b9910ea137a39d4b`
-
-### 25. `hardcoded:src-tauri/src/codex_history_migration.rs:restore_codex_state_db_official_threads:0295eef4f8df24e1:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/codex_history_migration.rs:759`
-- 结构：`restore_codex_state_db_official_threads` / `rust_string`
-- 原文/表达式：提交 Codex state DB 还原事务失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`0295eef4f8df24e12ecc15ad349964558edf418454293c1d26ce94ec09dc7c73`
-
-### 26. `hardcoded:src-tauri/src/commands/auth.rs:remove_codex_oauth_account_with_switch_lock:b58747ef3c709ebc:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/auth.rs:612`
-- 结构：`remove_codex_oauth_account_with_switch_lock` / `rust_string`
-- 原文/表达式：账号已删除，但 Codex 供应商解绑失败；请编辑供应商重新选择账号或切换供应商: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`b58747ef3c709ebce4ea034ad8b2b98d3bd44ffe68e7ca03b91839ca5a529866`
-
-### 27. `hardcoded:src-tauri/src/commands/auth.rs:logout_codex_oauth_with_switch_lock:11edb17dafc2d97a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/auth.rs:730`
-- 结构：`logout_codex_oauth_with_switch_lock` / `rust_string`
-- 原文/表达式：托管账号已登出，但 Codex 供应商解绑失败；请编辑供应商重新选择账号或切换供应商: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`11edb17dafc2d97adbd3e2ab0ed9d7417ed49f6cacbc906760dd100f4df45a19`
-
-### 28. `hardcoded:src-tauri/src/commands/failover.rs:require_failover_app:29690757b8477744:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/failover.rs:13`
-- 结构：`require_failover_app` / `rust_string`
-- 原文/表达式：无效的应用类型: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`29690757b8477744f02b605b856acb15566e6d29397a9120e8445f27b70c0841`
-
-### 29. `hardcoded:src-tauri/src/commands/failover.rs:require_failover_app:cf12df272bce127f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/failover.rs:15`
-- 结构：`require_failover_app` / `rust_string`
-- 原文/表达式：{} 不支持故障转移
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`cf12df272bce127f93b830b235d9bcbfb281e1a0b045575fc5c67d5b257e6ff8`
-
-### 30. `hardcoded:src-tauri/src/commands/failover.rs:require_failover_provider:e805ed523d37d944:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/failover.rs:28`
-- 结构：`require_failover_provider` / `rust_string`
-- 原文/表达式：供应商不存在: {provider_id}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`e805ed523d37d944cba37d7729d8334f5a35c279dd9d0fb654a5febb9b236b95`
-
-### 31. `hardcoded:src-tauri/src/commands/failover.rs:require_failover_provider:d41ef1ea1ae9e042:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/failover.rs:30`
-- 结构：`require_failover_provider` / `rust_string`
-- 原文/表达式：Codex Official 账号卡不支持自动故障转移
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`d41ef1ea1ae9e04252c0776cfbecbf85a6357f188ead0175949f6f055853c556`
-
-### 32. `hardcoded:src-tauri/src/commands/failover.rs:set_auto_failover_enabled:430f258a52b35970:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/failover.rs:181`
-- 结构：`set_auto_failover_enabled` / `rust_string`
-- 原文/表达式：无效的应用类型: {app_type}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`430f258a52b359706aa8f6d1e850db228842235a7f49dcde47026fb2130de535`
-
-### 33. `hardcoded:src-tauri/src/commands/failover.rs:set_auto_failover_enabled:033de08e14d5d588:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/failover.rs:194`
-- 结构：`set_auto_failover_enabled` / `rust_string`
-- 原文/表达式：需要先让该应用进入路由模式，再开启故障转移
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`033de08e14d5d588eec5b3afaf6f49127702ccce5e0a7767faf50be312d9d6fb`
-
-### 34. `hardcoded:src-tauri/src/commands/failover.rs:set_auto_failover_enabled:d642367646693548:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/failover.rs:229`
-- 结构：`set_auto_failover_enabled` / `rust_string`
-- 原文/表达式：故障转移队列为空，且未设置当前供应商，无法开启故障转移
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`d642367646693548f125a9dde44956e25b664ff28cd320fb3bd89af5822eff20`
-
-### 35. `hardcoded:src-tauri/src/commands/import_export.rs:import_config_from_file:268e8fb5c8c98c8e:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/import_export.rs:77`
-- 结构：`import_config_from_file` / `rust_string`
-- 原文/表达式：导入配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`268e8fb5c8c98c8eccfe6789fef40235678da6a269047178bfbf5a152dd5c27e`
-
-### 36. `hardcoded:src-tauri/src/commands/misc.rs:validate_external_url:651be54e0e5440df:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:37`
-- 结构：`validate_external_url` / `rust_string`
-- 原文/表达式：链接格式无效
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`651be54e0e5440df1b208fab43cf0836ad1121ff829797c8dd724425b9b4fa6a`
-
-### 37. `hardcoded:src-tauri/src/commands/misc.rs:validate_external_url:651be54e0e5440df:002`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:39`
-- 结构：`validate_external_url` / `rust_string`
-- 原文/表达式：链接格式无效
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`651be54e0e5440df1b208fab43cf0836ad1121ff829797c8dd724425b9b4fa6a`
-
-### 38. `hardcoded:src-tauri/src/commands/misc.rs:validate_external_url:651be54e0e5440df:003`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:44`
-- 结构：`validate_external_url` / `rust_string`
-- 原文/表达式：链接格式无效
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`651be54e0e5440df1b208fab43cf0836ad1121ff829797c8dd724425b9b4fa6a`
-
-### 39. `hardcoded:src-tauri/src/commands/misc.rs:validate_external_url:7bfaf66ec07f5207:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:45`
-- 结构：`validate_external_url` / `rust_string`
-- 原文/表达式：只能打开 http、https 或 mailto 链接
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`7bfaf66ec07f520769cd18fc4a45a5f847d1825fc4e2454ca404c1c49b5f5938`
-
-### 40. `hardcoded:src-tauri/src/commands/misc.rs:open_external:7f653c432ccd64cc:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:55`
-- 结构：`open_external` / `rust_string`
-- 原文/表达式：打开链接失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`7f653c432ccd64ccd310eaed4b3cba5cfcb3ed767b73c30fc8f4872e64f6742b`
-
-### 41. `hardcoded:src-tauri/src/commands/misc.rs:copy_text_to_clipboard:2953b4ce4ae194e9:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:66`
-- 结构：`copy_text_to_clipboard` / `rust_string`
-- 原文/表达式：访问系统剪贴板失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`2953b4ce4ae194e99644ece5b4efea12794141a0ee50748b3401aef567dc7391`
-
-### 42. `hardcoded:src-tauri/src/commands/misc.rs:copy_text_to_clipboard:be7c2668fff6e961:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:69`
-- 结构：`copy_text_to_clipboard` / `rust_string`
-- 原文/表达式：写入系统剪贴板失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`be7c2668fff6e9616df491096109163147b35a4fd4512eeaf03ee35fb622cdb1`
-
-### 43. `hardcoded:src-tauri/src/commands/misc.rs:copy_text_to_clipboard:b4009db0f63d06e0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:73`
-- 结构：`copy_text_to_clipboard` / `rust_string`
-- 原文/表达式：剪贴板任务执行失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`b4009db0f63d06e04c1d6e26a4c82fd2dd7298a31bc5175a1e13f50cb428b298`
-
-### 44. `hardcoded:src-tauri/src/commands/misc.rs:check_for_updates:a84dd4930ae1e39d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:85`
-- 结构：`check_for_updates` / `rust_string`
-- 原文/表达式：打开更新页面失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a84dd4930ae1e39d290d6101199ab9e78941dfc207fb1c962cd391c65b3574b5`
-
-### 45. `hardcoded:src-tauri/src/commands/misc.rs:open_portable_update_download:a84dd4930ae1e39d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:119`
-- 结构：`open_portable_update_download` / `rust_string`
-- 原文/表达式：打开更新页面失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a84dd4930ae1e39d290d6101199ab9e78941dfc207fb1c962cd391c65b3574b5`
-
-### 46. `hardcoded:src-tauri/src/commands/misc.rs:is_portable_mode:140ea1b2666d67ca:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:127`
-- 结构：`is_portable_mode` / `rust_string`
-- 原文/表达式：获取可执行路径失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`140ea1b2666d67ca3ba9389ce61dc16acb6adfd59a361e232237c8ac9e180d98`
-
-### 47. `hardcoded:src-tauri/src/commands/misc.rs:run_tool_lifecycle_silently:789a7b3791b137f2:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:402`
-- 结构：`run_tool_lifecycle_silently` / `rust_string`
-- 原文/表达式：启动安装进程失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`789a7b3791b137f2c839bad77d73307b6c74525fd8ee2eedb2b27b6fb0d326c0`
-
-### 48. `hardcoded:src-tauri/src/commands/misc.rs:run_tool_lifecycle_silently:bb4e53c4d3ace305:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:414`
-- 结构：`run_tool_lifecycle_silently` / `rust_string`
-- 原文/表达式：创建批处理目录失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`bb4e53c4d3ace305162ff3ecd7b7d1717467801520d009a26fc4c222a2812152`
-
-### 49. `hardcoded:src-tauri/src/commands/misc.rs:run_tool_lifecycle_silently:8eb17ed322bc641a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:416`
-- 结构：`run_tool_lifecycle_silently` / `rust_string`
-- 原文/表达式：写入批处理文件失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`8eb17ed322bc641a09ab6d0f55e52381ccb1e790e7ab084924700c719383da1c`
-
-### 50. `hardcoded:src-tauri/src/commands/misc.rs:run_tool_lifecycle_silently:789a7b3791b137f2:002`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:420`
-- 结构：`run_tool_lifecycle_silently` / `rust_string`
-- 原文/表达式：启动安装进程失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`789a7b3791b137f2c839bad77d73307b6c74525fd8ee2eedb2b27b6fb0d326c0`
-
-### 51. `hardcoded:src-tauri/src/commands/misc.rs:finish_lifecycle_output:eafab31ae4b152c1:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:451`
-- 结构：`finish_lifecycle_output` / `rust_string`
-- 原文/表达式：命令执行失败 (exit code: {:?})
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`eafab31ae4b152c1dd5ae80a283f39be1e38ca462b0a13dcb91d4c64848869e7`
-
-### 52. `hardcoded:src-tauri/src/commands/misc.rs:open_provider_terminal:c86bc5d89e49dd3c:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:5006`
-- 结构：`open_provider_terminal` / `rust_string`
-- 原文/表达式：获取提供商列表失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`c86bc5d89e49dd3c9c7eed5088c9d77547bf359139d73dcf8c29c32049b9ef64`
-
-### 53. `hardcoded:src-tauri/src/commands/misc.rs:open_provider_terminal:ae4a12f27b4dc05b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:5045`
-- 结构：`open_provider_terminal` / `rust_string`
-- 原文/表达式：启动终端失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`ae4a12f27b4dc05b30fa9d0806aa267230608d6bd25ea71da1ba6f0ea69e10ba`
-
-### 54. `hardcoded:src-tauri/src/commands/misc.rs:resolve_launch_cwd:7ad70a366201365e:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:5106`
-- 结构：`resolve_launch_cwd` / `rust_string`
-- 原文/表达式：目录路径包含非法换行符
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`7ad70a366201365efa55deb15326acf6e1e0e2fe7711be087c41c8ca01d156db`
-
-### 55. `hardcoded:src-tauri/src/commands/misc.rs:resolve_launch_cwd:10747d1fe2c3acc5:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:5111`
-- 结构：`resolve_launch_cwd` / `rust_string`
-- 原文/表达式：目录不存在: {raw_path}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`10747d1fe2c3acc502c612da5abdcadaf7c7d13ed8d56a9b4043e14c5378ac38`
-
-### 56. `hardcoded:src-tauri/src/commands/misc.rs:resolve_launch_cwd:063d79ef7f66815e:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:5114`
-- 结构：`resolve_launch_cwd` / `rust_string`
-- 原文/表达式：解析目录失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`063d79ef7f66815e57cd21dc824ef6b262a64b0e54ceec8cdf0bd8be2be46794`
-
-### 57. `hardcoded:src-tauri/src/commands/misc.rs:resolve_launch_cwd:37f46a8d1c89254d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:5116`
-- 结构：`resolve_launch_cwd` / `rust_string`
-- 原文/表达式：选择的路径不是文件夹: {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`37f46a8d1c89254debbe6a9c187dd5eebf72643d14d91528c5f9d2d9dd458ac5`
-
-### 58. `hardcoded:src-tauri/src/commands/misc.rs:open_agy_resume_terminal:c92b3d533d6de828:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:5309`
-- 结构：`open_agy_resume_terminal` / `rust_string`
-- 原文/表达式：「{}」已不再带 API Key，无法恢复它在私有目录里的会话
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`c92b3d533d6de8282cb6b0171166aa5c039f268a1ce1ba3239d1df6aa3f42360`
-
-### 59. `hardcoded:src-tauri/src/commands/misc.rs:open_agy_resume_terminal:ae4a12f27b4dc05b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:5317`
-- 结构：`open_agy_resume_terminal` / `rust_string`
-- 原文/表达式：启动终端失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`ae4a12f27b4dc05b30fa9d0806aa267230608d6bd25ea71da1ba6f0ea69e10ba`
-
-### 60. `hardcoded:src-tauri/src/commands/misc.rs:launch_provider_terminal:8f5ccc47bc2fa8e9:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:5376`
-- 结构：`launch_provider_terminal` / `rust_string`
-- 原文/表达式：不支持的操作系统
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`8f5ccc47bc2fa8e9baac2dcde1089fb86589a33aaecee1f473526b89cd701316`
-
-### 61. `hardcoded:src-tauri/src/commands/misc.rs:write_unix_launcher:7329b1ba03655c4c:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:5505`
-- 结构：`write_unix_launcher` / `rust_string`
-- 原文/表达式：写入启动环境失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`7329b1ba03655c4c635f4704fab06c13ca8578c1c8718ca1528d4cfc94de0315`
-
-### 62. `hardcoded:src-tauri/src/commands/misc.rs:write_unix_launcher:588ffa6579c95b03:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:5514`
-- 结构：`write_unix_launcher` / `rust_string`
-- 原文/表达式：写入启动脚本失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`588ffa6579c95b03b53db429d2aa5599d9154636d2d3199beec5ef21ddbeee46`
-
-### 63. `hardcoded:src-tauri/src/commands/misc.rs:write_unix_launcher:b345164409bc8c98:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:5516`
-- 结构：`write_unix_launcher` / `rust_string`
-- 原文/表达式：设置脚本权限失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`b345164409bc8c98e4a2ddfe795fc21f40dd12ccde38bf2d8d296da33baf0180`
-
-### 64. `hardcoded:src-tauri/src/commands/misc.rs:write_claude_config:4ded31d52b88d7e2:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:5535`
-- 结构：`write_claude_config` / `rust_string`
-- 原文/表达式：序列化配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`4ded31d52b88d7e2abd4cebd8d7c793e8fa0d0f6f1ea2b91221b8cffec7a68c3`
-
-### 65. `hardcoded:src-tauri/src/commands/misc.rs:write_claude_config:13949944b4078cb3:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:5538`
-- 结构：`write_claude_config` / `rust_string`
-- 原文/表达式：写入配置文件失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`13949944b4078cb393fe2cfafdf0503b930ad53b446a4affa06e7a552be667a6`
-
-### 66. `hardcoded:src-tauri/src/commands/misc.rs:run_terminal_osascript:a105515d76784029:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:5630`
-- 结构：`run_terminal_osascript` / `rust_string`
-- 原文/表达式：执行 osascript 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a105515d767840298ad25939c21159429f77f154914f63456d9846e75e278b1e`
-
-### 67. `hardcoded:src-tauri/src/commands/misc.rs:run_terminal_osascript:a58dbff6a6c4e862:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:5635`
-- 结构：`run_terminal_osascript` / `rust_string`
-- 原文/表达式：{terminal_label} 执行失败 (exit code: {:?}): {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a58dbff6a6c4e862aeda139ef333e7717ae7e1e0999a346cb86cfd255d8c5b15`
-
-### 68. `hardcoded:src-tauri/src/commands/misc.rs:launch_macos_otty:65cb59a525ed8c4a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:5665`
-- 结构：`launch_macos_otty` / `rust_string`
-- 原文/表达式：启动 Otty CLI 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`65cb59a525ed8c4acb76361e3cb76f414f6a7c9446be0a6a8305c5d779655ed2`
-
-### 69. `hardcoded:src-tauri/src/commands/misc.rs:launch_macos_otty:65cb59a525ed8c4a:002`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:5679`
-- 结构：`launch_macos_otty` / `rust_string`
-- 原文/表达式：启动 Otty CLI 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`65cb59a525ed8c4acb76361e3cb76f414f6a7c9446be0a6a8305c5d779655ed2`
-
-### 70. `hardcoded:src-tauri/src/commands/misc.rs:launch_macos_otty:96cebe36dd6cecf8:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:5685`
-- 结构：`launch_macos_otty` / `rust_string`
-- 原文/表达式：Otty 新建窗口失败 (exit code: {:?}): {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`96cebe36dd6cecf847c5d273676d454369f910de1b726267cd4404742186b43c`
-
-### 71. `hardcoded:src-tauri/src/commands/misc.rs:launch_macos_open_app:5f6a5c6f7dffbe1d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:5833`
-- 结构：`launch_macos_open_app` / `rust_string`
-- 原文/表达式：启动 {app_name} 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`5f6a5c6f7dffbe1d1ffb039fd481d08fc2a2aac16a7b5bfc3d79c9023a1c7002`
-
-### 72. `hardcoded:src-tauri/src/commands/misc.rs:launch_macos_open_app:b6d3d568966d4447:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:5838`
-- 结构：`launch_macos_open_app` / `rust_string`
-- 原文/表达式：{} 启动失败 (exit code: {:?}): {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`b6d3d568966d44471f0ad0814e475532f5d24a01b4f50908c4dc9ee2b25d1824`
-
-### 73. `hardcoded:src-tauri/src/commands/misc.rs:launch_macos_warp:0aced10b0452cfd6:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:5886`
-- 结构：`launch_macos_warp` / `rust_string`
-- 原文/表达式：启动 Warp 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`0aced10b0452cfd6ba8eb081b612965152ed3c81026f2e2caa649f39e9fcdf58`
-
-### 74. `hardcoded:src-tauri/src/commands/misc.rs:launch_macos_warp:ae5d75fa23093809:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:5890`
-- 结构：`launch_macos_warp` / `rust_string`
-- 原文/表达式：Warp 启动失败 (exit code: {:?}): {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`ae5d75fa230938092c7622b11f270999168b2ceb2658bdca39fcd899f37eba45`
-
-### 75. `hardcoded:src-tauri/src/commands/misc.rs:launch_linux_terminal:31be9ea03ef58eb8:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:5961`
-- 结构：`launch_linux_terminal` / `rust_string`
-- 原文/表达式：执行 {} 失败: {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`31be9ea03ef58eb8fc16add95f8825a8fa96bff488869e3bf30a2bb24464f613`
-
-### 76. `hardcoded:src-tauri/src/commands/misc.rs:launch_windows_terminal:8eb17ed322bc641a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:6018`
-- 结构：`launch_windows_terminal` / `rust_string`
-- 原文/表达式：写入批处理文件失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`8eb17ed322bc641a09ab6d0f55e52381ccb1e790e7ab084924700c719383da1c`
-
-### 77. `hardcoded:src-tauri/src/commands/misc.rs:run_windows_start_command_with_env:7ec9787163f9aa55:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:6190`
-- 结构：`run_windows_start_command_with_env` / `rust_string`
-- 原文/表达式：启动 {} 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`7ec9787163f9aa55f4c10426e04b3bbfa2ad63e2e2afaac1d0eaa3eb7d7ecba5`
-
-### 78. `hardcoded:src-tauri/src/commands/misc.rs:run_windows_start_command_with_env:4c3282160895dfad:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:6194`
-- 结构：`run_windows_start_command_with_env` / `rust_string`
-- 原文/表达式：{} 启动失败 (exit code: {:?})
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`4c3282160895dfad47aa2d2b9449e0c16d2d862bcefc5dab21635f10ca2eae02`
-
-### 79. `hardcoded:src-tauri/src/commands/misc.rs:launch_terminal_running:588ffa6579c95b03:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:6238`
-- 结构：`launch_terminal_running` / `rust_string`
-- 原文/表达式：写入启动脚本失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`588ffa6579c95b03b53db429d2aa5599d9154636d2d3199beec5ef21ddbeee46`
-
-### 80. `hardcoded:src-tauri/src/commands/misc.rs:launch_terminal_running:b345164409bc8c98:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:6240`
-- 结构：`launch_terminal_running` / `rust_string`
-- 原文/表达式：设置脚本权限失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`b345164409bc8c98e4a2ddfe795fc21f40dd12ccde38bf2d8d296da33baf0180`
-
-### 81. `hardcoded:src-tauri/src/commands/misc.rs:launch_terminal_running:588ffa6579c95b03:002`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:6274`
-- 结构：`launch_terminal_running` / `rust_string`
-- 原文/表达式：写入启动脚本失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`588ffa6579c95b03b53db429d2aa5599d9154636d2d3199beec5ef21ddbeee46`
-
-### 82. `hardcoded:src-tauri/src/commands/misc.rs:launch_terminal_running:b345164409bc8c98:002`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:6276`
-- 结构：`launch_terminal_running` / `rust_string`
-- 原文/表达式：设置脚本权限失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`b345164409bc8c98e4a2ddfe795fc21f40dd12ccde38bf2d8d296da33baf0180`
-
-### 83. `hardcoded:src-tauri/src/commands/misc.rs:launch_terminal_running:31be9ea03ef58eb8:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:6327`
-- 结构：`launch_terminal_running` / `rust_string`
-- 原文/表达式：执行 {} 失败: {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`31be9ea03ef58eb8fc16add95f8825a8fa96bff488869e3bf30a2bb24464f613`
-
-### 84. `hardcoded:src-tauri/src/commands/misc.rs:launch_terminal_running:8eb17ed322bc641a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:6348`
-- 结构：`launch_terminal_running` / `rust_string`
-- 原文/表达式：写入批处理文件失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`8eb17ed322bc641a09ab6d0f55e52381ccb1e790e7ab084924700c719383da1c`
-
-### 85. `hardcoded:src-tauri/src/commands/misc.rs:launch_terminal_running:8f5ccc47bc2fa8e9:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/misc.rs:6385`
-- 结构：`launch_terminal_running` / `rust_string`
-- 原文/表达式：不支持的操作系统
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`8f5ccc47bc2fa8e9baac2dcde1089fb86589a33aaecee1f473526b89cd701316`
-
-### 86. `hardcoded:src-tauri/src/commands/provider.rs:add_provider:247d4417bc7e7546:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/provider.rs:57`
-- 结构：`add_provider` / `rust_string`
-- 原文/表达式：供应商添加任务执行失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`247d4417bc7e75460cf2003ea37eb12f6c9d309ca3785920882721acbfef9f86`
-
-### 87. `hardcoded:src-tauri/src/commands/provider.rs:update_provider:4110d68cb11527c0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/provider.rs:83`
-- 结构：`update_provider` / `rust_string`
-- 原文/表达式：供应商更新任务执行失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`4110d68cb11527c0a334e32c8e3bc96cf720a20aefb8426d42bb33c81092994c`
-
-### 88. `hardcoded:src-tauri/src/commands/provider.rs:get_provider_editor_view:3c4374b9e97c0f65:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/provider.rs:121`
-- 结构：`get_provider_editor_view` / `rust_string`
-- 原文/表达式：读取编辑器内容失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`3c4374b9e97c0f6518b723c21985955d351a04e2dbbe0f830aada42af604c05c`
-
-### 89. `hardcoded:src-tauri/src/commands/provider.rs:update_providers_sort_order:295c689ae921d848:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/provider.rs:953`
-- 结构：`update_providers_sort_order` / `rust_string`
-- 原文/表达式：排序已保存，但聚合模型顺序没能更新: {error} (Sort order saved, but the aggregated model order could not be updated)
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`295c689ae921d848004892224f9284d46528f8bee03bb26cc7ddec17a6bea080`
-
-### 90. `hardcoded:src-tauri/src/commands/proxy.rs:require_proxy_app:29690757b8477744:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/proxy.rs:14`
-- 结构：`require_proxy_app` / `rust_string`
-- 原文/表达式：无效的应用类型: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`29690757b8477744f02b605b856acb15566e6d29397a9120e8445f27b70c0841`
-
-### 91. `hardcoded:src-tauri/src/commands/proxy.rs:require_proxy_app:ffc9b443461f4fe3:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/proxy.rs:16`
-- 结构：`require_proxy_app` / `rust_string`
-- 原文/表达式：{} 不支持本地路由
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`ffc9b443461f4fe3ae50c8b6f26320b207c20700cf3a9cbaf759408bfb5173a7`
-
-### 92. `hardcoded:src-tauri/src/commands/proxy.rs:require_mode_app:29690757b8477744:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/proxy.rs:24`
-- 结构：`require_mode_app` / `rust_string`
-- 原文/表达式：无效的应用类型: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`29690757b8477744f02b605b856acb15566e6d29397a9120e8445f27b70c0841`
-
-### 93. `hardcoded:src-tauri/src/commands/proxy.rs:require_mode_app:ffc9b443461f4fe3:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/proxy.rs:26`
-- 结构：`require_mode_app` / `rust_string`
-- 原文/表达式：{} 不支持本地路由
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`ffc9b443461f4fe3ae50c8b6f26320b207c20700cf3a9cbaf759408bfb5173a7`
-
-### 94. `hardcoded:src-tauri/src/commands/proxy.rs:stop_proxy_server:061dfd22bbb99b3d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/proxy.rs:52`
-- 结构：`stop_proxy_server` / `rust_string`
-- 原文/表达式：仍有应用处于代理接管状态，请先在设置中关闭对应应用接管后再停止本地路由。
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`061dfd22bbb99b3d08dce94244f58941d4e659fa9d18cebab567308238656d23`
-
-### 95. `hardcoded:src-tauri/src/commands/session_manager.rs:reveal_session_path:68e69b6ebe939112:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/session_manager.rs:118`
-- 结构：`reveal_session_path` / `rust_string`
-- 原文/表达式：无法在文件管理器中显示该路径
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`68e69b6ebe939112ada8ad0c88f4aecba47afc577b31b7bdf3944a6f56e7aaa8`
-
-### 96. `hardcoded:src-tauri/src/commands/settings.rs:install_update_and_restart:61c19695fd4ed8b9:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/settings.rs:290`
-- 结构：`install_update_and_restart` / `rust_string`
-- 原文/表达式：初始化更新器失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`61c19695fd4ed8b9aef16da25018d5599a7e52834881343f6383a9930b9e7702`
-
-### 97. `hardcoded:src-tauri/src/commands/settings.rs:install_update_and_restart:bf02c261a5a756b7:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/settings.rs:295`
-- 结构：`install_update_and_restart` / `rust_string`
-- 原文/表达式：检查更新失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`bf02c261a5a756b716cf938af2825cb217e06efb55e3eb6f335a8c0cf2af75c0`
-
-### 98. `hardcoded:src-tauri/src/commands/settings.rs:install_update_and_restart:3cf38c8d083b5b76:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/settings.rs:318`
-- 结构：`install_update_and_restart` / `rust_string`
-- 原文/表达式：下载更新失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`3cf38c8d083b5b764e68df6dcb83850dba60df5df6e57f41740ce07b3c278d14`
-
-### 99. `hardcoded:src-tauri/src/commands/settings.rs:install_update_and_restart:886d5febc4c77b1d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/settings.rs:335`
-- 结构：`install_update_and_restart` / `rust_string`
-- 原文/表达式：Windows 更新安装失败: {e}。已执行退出前清理，代理或 Live 接管可能已暂停；请重启应用或重新开启代理后再试。
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`886d5febc4c77b1d73b6c0433425e2234da7d59c9ad284366718a894153ae13e`
-
-### 100. `hardcoded:src-tauri/src/commands/settings.rs:install_update_and_restart:ce72dd9d276acaf9:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/settings.rs:346`
-- 结构：`install_update_and_restart` / `rust_string`
-- 原文/表达式：安装更新失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`ce72dd9d276acaf978b8dccf347479a141171665425a04b580d308f9f73bea40`
-
-### 101. `hardcoded:src-tauri/src/commands/settings.rs:check_app_update_available:61c19695fd4ed8b9:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/settings.rs:367`
-- 结构：`check_app_update_available` / `rust_string`
-- 原文/表达式：初始化更新器失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`61c19695fd4ed8b9aef16da25018d5599a7e52834881343f6383a9930b9e7702`
-
-### 102. `hardcoded:src-tauri/src/commands/settings.rs:check_app_update_available:bf02c261a5a756b7:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/settings.rs:371`
-- 结构：`check_app_update_available` / `rust_string`
-- 原文/表达式：检查更新失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`bf02c261a5a756b716cf938af2825cb217e06efb55e3eb6f335a8c0cf2af75c0`
-
-### 103. `hardcoded:src-tauri/src/commands/settings.rs:set_auto_launch:d307952c56a1c4d5:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/settings.rs:396`
-- 结构：`set_auto_launch` / `rust_string`
-- 原文/表达式：启用开机自启失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`d307952c56a1c4d5886807e2104b6b66edf2a47c84c378e2d4fed6b18640733e`
-
-### 104. `hardcoded:src-tauri/src/commands/settings.rs:set_auto_launch:c19144dbe2f390e9:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/settings.rs:398`
-- 结构：`set_auto_launch` / `rust_string`
-- 原文/表达式：禁用开机自启失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`c19144dbe2f390e9097d1ffd4542bdb28d790360e181acb6d2ad1bb1524c859a`
-
-### 105. `hardcoded:src-tauri/src/commands/settings.rs:get_auto_launch_status:7d2f21979f67d782:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/settings.rs:740`
-- 结构：`get_auto_launch_status` / `rust_string`
-- 原文/表达式：获取开机自启状态失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`7d2f21979f67d78254b2547b424a25069cc88eaf9bddf5d3cd73090a2f2faa13`
-
-### 106. `hardcoded:src-tauri/src/commands/skill.rs:open_cc_switch_skills_dir:7bf7ed648bda544b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/skill.rs:198`
-- 结构：`open_cc_switch_skills_dir` / `rust_string`
-- 原文/表达式：创建目录失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`7bf7ed648bda544bf4ddfada1e3c81dee35a8186eaa3cb1319e618e3fae4fed2`
-
-### 107. `hardcoded:src-tauri/src/commands/skill.rs:open_cc_switch_skills_dir:755b05b71eaf61c6:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/skill.rs:203`
-- 结构：`open_cc_switch_skills_dir` / `rust_string`
-- 原文/表达式：打开文件夹失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`755b05b71eaf61c68d117a3cdf34595589b0c362dd7024cd84fccbde3cce4822`
-
-### 108. `hardcoded:src-tauri/src/commands/skill.rs:open_skill_dir:afd8bf6d4b87ab0b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/skill.rs:212`
-- 结构：`open_skill_dir` / `rust_string`
-- 原文/表达式：目录不存在: {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`afd8bf6d4b87ab0b49d78e61f0c0b4f6e6dbd7ced88f76cb5661045a01761b8c`
-
-### 109. `hardcoded:src-tauri/src/commands/skill.rs:open_skill_dir:755b05b71eaf61c6:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/skill.rs:217`
-- 结构：`open_skill_dir` / `rust_string`
-- 原文/表达式：打开文件夹失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`755b05b71eaf61c68d117a3cdf34595589b0c362dd7024cd84fccbde3cce4822`
-
-### 110. `hardcoded:src-tauri/src/commands/sync_support.rs:run_post_import_sync:7fff4094fcfe8c27:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/sync_support.rs:37`
-- 结构：`run_post_import_sync` / `rust_string`
-- 原文/表达式：部分导入后同步失败: {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`7fff4094fcfe8c27666ecf1971cbb877056480b7e2f63a2b352b471def69b120`
-
-### 111. `hardcoded:src-tauri/src/commands/usage.rs:rebuild_codex_usage:9a7abd153f440909:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/commands/usage.rs:360`
-- 结构：`rebuild_codex_usage` / `rust_string`
-- 原文/表达式：Codex 用量重建任务失败: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`9a7abd153f440909d4636d1b8883be708412ec0ff73a2e7e88c60250d438b453`
-
-### 112. `hardcoded:src-tauri/src/config.rs:read_json_file:aee7bf36cefac7fc:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/config.rs:388`
-- 结构：`read_json_file` / `rust_string`
-- 原文/表达式：文件不存在: {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`aee7bf36cefac7fcbf31d3346085ae58b72b2729bafa46f3a9f76e6bd1d689ad`
-
-### 113. `hardcoded:src-tauri/src/config.rs:commit_staged:1f28398f78f50eb4:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/config.rs:674`
-- 结构：`commit_staged` / `rust_string`
-- 原文/表达式：原子替换失败: {} -> {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`1f28398f78f50eb45b5c959e2ba68f3ceeec1c37a8bcaa6210d7f4a4c544e621`
-
-### 114. `hardcoded:src-tauri/src/config.rs:commit_staged:1f28398f78f50eb4:002`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/config.rs:684`
-- 结构：`commit_staged` / `rust_string`
-- 原文/表达式：原子替换失败: {} -> {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`1f28398f78f50eb45b5c959e2ba68f3ceeec1c37a8bcaa6210d7f4a4c544e621`
-
-### 115. `hardcoded:src-tauri/src/database/backup.rs:import_sql:3257aefb21a94184:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/backup.rs:144`
-- 结构：`import_sql` / `rust_string`
-- 原文/表达式：SQL 文件不存在: {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`3257aefb21a94184b1209cff24c46e901cca4638dc7d8d43bfbe59467f4e20b6`
-
-### 116. `hardcoded:src-tauri/src/database/backup.rs:import_sql_string_inner_with_hook:b6f42342f3f0600f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/backup.rs:187`
-- 结构：`import_sql_string_inner_with_hook` / `rust_string`
-- 原文/表达式：创建临时数据库文件失败
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`b6f42342f3f0600f9cb489ce19f81d745499f1fece195d8bb644dcd6405421d8`
-
-### 117. `hardcoded:src-tauri/src/database/backup.rs:import_sql_string_inner_with_hook:74667e8132ec711f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/backup.rs:198`
-- 结构：`import_sql_string_inner_with_hook` / `rust_string`
-- 原文/表达式：设置暂存库 auto_vacuum 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`74667e8132ec711f120b3f831276174653f9874896a1571844dd80255f5e395f`
-
-### 118. `hardcoded:src-tauri/src/database/backup.rs:restore_from_backup_with_hook:681f57efe7da2535:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/backup.rs:1049`
-- 结构：`restore_from_backup_with_hook` / `rust_string`
-- 原文/表达式：创建数据库恢复暂存文件失败
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`681f57efe7da2535133284ae384ff87db9bc5a5fc4acedf7793e8c0d1e394a8f`
-
-### 119. `hardcoded:src-tauri/src/database/backup.rs:restore_from_backup_with_hook:54f3a8d74befab62:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/backup.rs:1057`
-- 结构：`restore_from_backup_with_hook` / `rust_string`
-- 原文/表达式：读取数据库备份
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`54f3a8d74befab627857c2a0a14a45fee40a8589b92fb7447a8345e8323b4986`
-
-### 120. `hardcoded:src-tauri/src/database/backup.rs:restore_from_backup_with_hook:bbf951b3c7499c3b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/backup.rs:1081`
-- 结构：`restore_from_backup_with_hook` / `rust_string`
-- 原文/表达式：恢复主数据库
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`bbf951b3c7499c3b8b9cd85e7bfb7499d93e90a3697561ad879b724a4966baf8`
-
-### 121. `hardcoded:src-tauri/src/database/dao/settings.rs:get_rectifier_config:62a256df6ab35bdc:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/dao/settings.rs:247`
-- 结构：`get_rectifier_config` / `rust_string`
-- 原文/表达式：解析整流器配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`62a256df6ab35bdcc645fa4e5ca9ba8930ce53afe44f45acd365c7b0ee175d84`
-
-### 122. `hardcoded:src-tauri/src/database/dao/settings.rs:set_rectifier_config:3014f82983e744ef:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/dao/settings.rs:258`
-- 结构：`set_rectifier_config` / `rust_string`
-- 原文/表达式：序列化整流器配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`3014f82983e744efecd098e6c964035f1783f5aaa1c8d153a006f7cfa57afe10`
-
-### 123. `hardcoded:src-tauri/src/database/dao/settings.rs:get_optimizer_config:ac2299fbb889a76e:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/dao/settings.rs:270`
-- 结构：`get_optimizer_config` / `rust_string`
-- 原文/表达式：解析优化器配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`ac2299fbb889a76ed20938543cf680f94082279ff0fd815041cd80d43ef8bc3a`
-
-### 124. `hardcoded:src-tauri/src/database/dao/settings.rs:set_optimizer_config:a1f99e9333e15fa7:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/dao/settings.rs:281`
-- 结构：`set_optimizer_config` / `rust_string`
-- 原文/表达式：序列化优化器配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a1f99e9333e15fa72d423bd38b5214763e77031b55b6580c664235e7eb3b2aa9`
-
-### 125. `hardcoded:src-tauri/src/database/dao/settings.rs:get_copilot_optimizer_config:49ca09735cca8c73:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/dao/settings.rs:295`
-- 结构：`get_copilot_optimizer_config` / `rust_string`
-- 原文/表达式：解析 Copilot 优化器配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`49ca09735cca8c732da8ffee427e3b123b20f20b33e0a98e69f53b614e789295`
-
-### 126. `hardcoded:src-tauri/src/database/dao/settings.rs:set_copilot_optimizer_config:6d9e53f06584cd3d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/dao/settings.rs:306`
-- 结构：`set_copilot_optimizer_config` / `rust_string`
-- 原文/表达式：序列化 Copilot 优化器配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`6d9e53f06584cd3d6c584b5d1638c8ee1774b3354110d5e0e40d4d3d3a9f7a89`
-
-### 127. `hardcoded:src-tauri/src/database/dao/settings.rs:get_log_config:744c1f645f719234:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/dao/settings.rs:316`
-- 结构：`get_log_config` / `rust_string`
-- 原文/表达式：解析日志配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`744c1f645f719234d5de0c21e33b8d795d7942860b60a3a67396a5d76eba62c1`
-
-### 128. `hardcoded:src-tauri/src/database/dao/settings.rs:set_log_config:24d05f337742dce4:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/dao/settings.rs:324`
-- 结构：`set_log_config` / `rust_string`
-- 原文/表达式：序列化日志配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`24d05f337742dce46614c1b21a8bda507142aeeaec3721b7751ad9e9a5d5c9c7`
-
-### 129. `hardcoded:src-tauri/src/database/dao/universal_providers.rs:get_all_universal_providers:c4825cae19e644bc:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/dao/universal_providers.rs:30`
-- 结构：`get_all_universal_providers` / `rust_string`
-- 原文/表达式：解析统一供应商数据失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`c4825cae19e644bc462dd68644ca848380828bfd2084ee0a79c0dee35bb03af9`
-
-### 130. `hardcoded:src-tauri/src/database/mod.rs:get_auto_vacuum_mode:ddc85abe32b466c9:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/mod.rs:209`
-- 结构：`get_auto_vacuum_mode` / `rust_string`
-- 原文/表达式：读取 auto_vacuum 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`ddc85abe32b466c962bdd9905e6e3a38fb509f55614771b827bd9a55b6bbcd1c`
-
-### 131. `hardcoded:src-tauri/src/database/mod.rs:incremental_vacuum_on_conn:a8ac074a6df61e6f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/mod.rs:217`
-- 结构：`incremental_vacuum_on_conn` / `rust_string`
-- 原文/表达式：执行 incremental_vacuum 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a8ac074a6df61e6f69474f85f7a1dc0ed68448b07ac3402ee6801fcc7610babd`
-
-### 132. `hardcoded:src-tauri/src/database/mod.rs:incremental_vacuum_on_conn:a8ac074a6df61e6f:002`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/mod.rs:220`
-- 结构：`incremental_vacuum_on_conn` / `rust_string`
-- 原文/表达式：执行 incremental_vacuum 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a8ac074a6df61e6f69474f85f7a1dc0ed68448b07ac3402ee6801fcc7610babd`
-
-### 133. `hardcoded:src-tauri/src/database/mod.rs:incremental_vacuum_on_conn:a8ac074a6df61e6f:003`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/mod.rs:223`
-- 结构：`incremental_vacuum_on_conn` / `rust_string`
-- 原文/表达式：执行 incremental_vacuum 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a8ac074a6df61e6f69474f85f7a1dc0ed68448b07ac3402ee6801fcc7610babd`
-
-### 134. `hardcoded:src-tauri/src/database/mod.rs:has_user_tables:171b9c45f853b626:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/mod.rs:236`
-- 结构：`has_user_tables` / `rust_string`
-- 原文/表达式：读取表数量失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`171b9c45f853b62672b004c2086c33d41b971b8f836f7bc31fad226c9a717beb`
-
-### 135. `hardcoded:src-tauri/src/database/mod.rs:ensure_incremental_auto_vacuum_on_conn:a7f811c1d855b20f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/mod.rs:250`
-- 结构：`ensure_incremental_auto_vacuum_on_conn` / `rust_string`
-- 原文/表达式：设置 auto_vacuum 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a7f811c1d855b20fb7ecd3f53934aea190a240de6a6e8d597067f1e4531188f7`
-
-### 136. `hardcoded:src-tauri/src/database/mod.rs:ensure_incremental_auto_vacuum_on_conn:07ff9c9c9c2ef182:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/mod.rs:257`
-- 结构：`ensure_incremental_auto_vacuum_on_conn` / `rust_string`
-- 原文/表达式：执行 VACUUM 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`07ff9c9c9c2ef182c1b1b7980c4f2c61446670355406aae3348c7c10ff64367c`
-
-### 137. `hardcoded:src-tauri/src/database/mod.rs:ensure_incremental_auto_vacuum_on_conn:eff3735bba057c47:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/mod.rs:259`
-- 结构：`ensure_incremental_auto_vacuum_on_conn` / `rust_string`
-- 原文/表达式：恢复 foreign_keys 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`eff3735bba057c47f1310e9536b9a0f3b782981cddd34fad5e2e877461ffa8f3`
-
-### 138. `hardcoded:src-tauri/src/database/schema.rs:apply_schema_migrations_on_conn:17fba5292e346e8b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:455`
-- 结构：`apply_schema_migrations_on_conn` / `rust_string`
-- 原文/表达式：开启迁移 savepoint 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`17fba5292e346e8bf4bc52efb96d0fcd6e8858bae7da4b6381a9aa72feece33c`
-
-### 139. `hardcoded:src-tauri/src/database/schema.rs:apply_schema_migrations_on_conn:1532984b41370439:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:463`
-- 结构：`apply_schema_migrations_on_conn` / `rust_string`
-- 原文/表达式：数据库版本过新（{version}），当前应用仅支持 {SCHEMA_VERSION}，请升级应用后再尝试。
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`1532984b413704393fbfb8959e255b4c32dc94cb8814cf146373e425d879bb7b`
-
-### 140. `hardcoded:src-tauri/src/database/schema.rs:apply_schema_migrations_on_conn:24c2f069812875f1:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:640`
-- 结构：`apply_schema_migrations_on_conn` / `rust_string`
-- 原文/表达式：未知的数据库版本 {version}，无法迁移到 {SCHEMA_VERSION}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`24c2f069812875f13b548579ba6f2434723d64d2221e645a3fc6f45ae0a9c2ae`
-
-### 141. `hardcoded:src-tauri/src/database/schema.rs:apply_schema_migrations_on_conn:42fa73ee86db5553:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:652`
-- 结构：`apply_schema_migrations_on_conn` / `rust_string`
-- 原文/表达式：提交迁移 savepoint 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`42fa73ee86db5553796e7f883e0def8fe2e8da599beea35d0e15370855693110`
-
-### 142. `hardcoded:src-tauri/src/database/schema.rs:migrate_v1_to_v2:bbebde623b34316d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:792`
-- 结构：`migrate_v1_to_v2` / `rust_string`
-- 原文/表达式：删除 failover_queue 索引失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`bbebde623b34316d3d47bff831a85a6a2721864c5287c670c64719ae66ad624a`
-
-### 143. `hardcoded:src-tauri/src/database/schema.rs:migrate_v1_to_v2:21bbdb02d5ce8e90:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:794`
-- 结构：`migrate_v1_to_v2` / `rust_string`
-- 原文/表达式：删除 failover_queue 表失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`21bbdb02d5ce8e90c0575fc0bdc504e52687820ebe1d73c96922663b5ab2eca9`
-
-### 144. `hardcoded:src-tauri/src/database/schema.rs:migrate_v1_to_v2:be0d614bc74ee55f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:802`
-- 结构：`migrate_v1_to_v2` / `rust_string`
-- 原文/表达式：创建 failover 索引失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`be0d614bc74ee55f75aaf4b63c717774aeaba61ed004559bf0c68313eeb7465e`
-
-### 145. `hardcoded:src-tauri/src/database/schema.rs:migrate_v1_to_v2:334430af7eaa8175:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:849`
-- 结构：`migrate_v1_to_v2` / `rust_string`
-- 原文/表达式：清空模型定价失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`334430af7eaa8175c76901fb8f57434f64d2f65d85b36bb51951c3d62d7d2c78`
-
-### 146. `hardcoded:src-tauri/src/database/schema.rs:migrate_proxy_config_to_per_app:9b43b0a47fa8f127:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:995`
-- 结构：`migrate_proxy_config_to_per_app` / `rust_string`
-- 原文/表达式：插入 {app} 配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`9b43b0a47fa8f127d3aa87d5eb6678721106fc71bfd57675d61a37f82594b42e`
-
-### 147. `hardcoded:src-tauri/src/database/schema.rs:migrate_skills_table:34e8d69a495f8f75:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:1048`
-- 结构：`migrate_skills_table` / `rust_string`
-- 原文/表达式：创建新 skills 表失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`34e8d69a495f8f7597a620ceda80ceb877ed11f85734975e15e15e9f7b54131b`
-
-### 148. `hardcoded:src-tauri/src/database/schema.rs:migrate_skills_table:ffcbfb19adf81263:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:1054`
-- 结构：`migrate_skills_table` / `rust_string`
-- 原文/表达式：查询旧 skills 数据失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`ffcbfb19adf8126349630e886b58fc3714ee576b38ec413b060dc610cfd980cf`
-
-### 149. `hardcoded:src-tauri/src/database/schema.rs:migrate_skills_table:fdc62643ae161f9f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:1064`
-- 结构：`migrate_skills_table` / `rust_string`
-- 原文/表达式：读取旧 skills 数据失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`fdc62643ae161f9f99e365a7970654f5217a1bce5a8af60990bdefbe204d08c5`
-
-### 150. `hardcoded:src-tauri/src/database/schema.rs:migrate_skills_table:08828b79c37befd2:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:1066`
-- 结构：`migrate_skills_table` / `rust_string`
-- 原文/表达式：解析旧 skills 数据失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`08828b79c37befd24213eb1936d8003b38980f5e15f34323cf0993638fe990e6`
-
-### 151. `hardcoded:src-tauri/src/database/schema.rs:migrate_skills_table:ebf80a3bfa51d13f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:1084`
-- 结构：`migrate_skills_table` / `rust_string`
-- 原文/表达式：迁移 skill {key} 到新表失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`ebf80a3bfa51d13f5a24b69ba6476a97564c6f0037691ef5f945dd4e4e300d9b`
-
-### 152. `hardcoded:src-tauri/src/database/schema.rs:migrate_skills_table:095caa47cd9498d3:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:1090`
-- 结构：`migrate_skills_table` / `rust_string`
-- 原文/表达式：删除旧 skills 表失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`095caa47cd9498d37a09ab97a365f36ec474b0a9e645de53f2f70b2990dd73fd`
-
-### 153. `hardcoded:src-tauri/src/database/schema.rs:migrate_v2_to_v3:668466cd4841ce02:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:1124`
-- 结构：`migrate_v2_to_v3` / `rust_string`
-- 原文/表达式：查询旧 skills 快照失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`668466cd4841ce026b9f22e2b7b9c79f70126876832ae1c34dccb0bc89a14c42`
-
-### 154. `hardcoded:src-tauri/src/database/schema.rs:migrate_v2_to_v3:52dfc20b134131e2:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:1132`
-- 结构：`migrate_v2_to_v3` / `rust_string`
-- 原文/表达式：读取旧 skills 快照失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`52dfc20b134131e2eecbce5fe737216beb72b81a8cc49963d3a7fd0201743c01`
-
-### 155. `hardcoded:src-tauri/src/database/schema.rs:migrate_v2_to_v3:7be1c9b79ecb5eed:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:1134`
-- 结构：`migrate_v2_to_v3` / `rust_string`
-- 原文/表达式：解析旧 skills 快照失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`7be1c9b79ecb5eed6a98386507fb1aa47320d4a801aaa7996a0f142ec965c59d`
-
-### 156. `hardcoded:src-tauri/src/database/schema.rs:migrate_v2_to_v3:e852a1abad01001d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:1136`
-- 结构：`migrate_v2_to_v3` / `rust_string`
-- 原文/表达式：序列化旧 skills 快照失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`e852a1abad01001ddbafaf8aff7bab0972094efb62460bc2a07f967d5f47dba0`
-
-### 157. `hardcoded:src-tauri/src/database/schema.rs:migrate_v2_to_v3:095caa47cd9498d3:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:1152`
-- 结构：`migrate_v2_to_v3` / `rust_string`
-- 原文/表达式：删除旧 skills 表失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`095caa47cd9498d37a09ab97a365f36ec474b0a9e645de53f2f70b2990dd73fd`
-
-### 158. `hardcoded:src-tauri/src/database/schema.rs:migrate_v2_to_v3:34e8d69a495f8f75:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:1172`
-- 结构：`migrate_v2_to_v3` / `rust_string`
-- 原文/表达式：创建新 skills 表失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`34e8d69a495f8f7597a620ceda80ceb877ed11f85734975e15e15e9f7b54131b`
-
-### 159. `hardcoded:src-tauri/src/database/schema.rs:migrate_v5_to_v6:d7def629bcd53db4:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:1251`
-- 结构：`migrate_v5_to_v6` / `rust_string`
-- 原文/表达式：创建 usage_daily_rollups 表失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`d7def629bcd53db45ce5ea162eb28025fd1261693bc721c93e929754eb0f418b`
-
-### 160. `hardcoded:src-tauri/src/database/schema.rs:migrate_v7_to_v8:02d3963c114ebeee:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:1343`
-- 结构：`migrate_v7_to_v8` / `rust_string`
-- 原文/表达式：创建 session_log_sync 表失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`02d3963c114ebeeeab17c45e93c2c4909b6a6930d091278c0194006d4ccff60d`
-
-### 161. `hardcoded:src-tauri/src/database/schema.rs:migrate_v7_to_v8:c4523da139e2e990:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:1372`
-- 结构：`migrate_v7_to_v8` / `rust_string`
-- 原文/表达式：更新模型 {model_id} 定价失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`c4523da139e2e990f0ec8573a1c05f8bf8400cd8cd308e2f86022ba20cab6cf9`
-
-### 162. `hardcoded:src-tauri/src/database/schema.rs:migrate_v8_to_v9:19850babb9232f45:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:1391`
-- 结构：`migrate_v8_to_v9` / `rust_string`
-- 原文/表达式：创建 model_pricing 表失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`19850babb9232f45017d205dcc38a43c46e329b9ece3e71b239e17a37ae9cc42`
-
-### 163. `hardcoded:src-tauri/src/database/schema.rs:migrate_v8_to_v9:334430af7eaa8175:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:1393`
-- 结构：`migrate_v8_to_v9` / `rust_string`
-- 原文/表达式：清空模型定价失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`334430af7eaa8175c76901fb8f57434f64d2f65d85b36bb51951c3d62d7d2c78`
-
-### 164. `hardcoded:src-tauri/src/database/schema.rs:migrate_v10_to_v11:9c3b2613b525c4df:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:1470`
-- 结构：`migrate_v10_to_v11` / `rust_string`
-- 原文/表达式：v10 -> v11 重建 usage_daily_rollups 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`9c3b2613b525c4df18f8c5c53c515645be98784d29c074fbb82d7229aa09e490`
-
-### 165. `hardcoded:src-tauri/src/database/schema.rs:migrate_v11_to_v12:eeaea330e467a7c4:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:1493`
-- 结构：`migrate_v11_to_v12` / `rust_string`
-- 原文/表达式：v11 -> v12 创建 profiles 表失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`eeaea330e467a7c4fd9fde10b64f0380ef71fe1c22a3f65b213bb8052e3f4e21`
-
-### 166. `hardcoded:src-tauri/src/database/schema.rs:migrate_v16_to_v17:a89c5d3405069e61:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:1663`
-- 结构：`migrate_v16_to_v17` / `rust_string`
-- 原文/表达式：创建会话用量去重账本失败: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a89c5d3405069e614ab88e574b2ab5314e516f0e9f66a6075956bdf72b79c070`
-
-### 167. `hardcoded:src-tauri/src/database/schema.rs:seed_model_pricing:01a596785e9c0e80:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:2976`
-- 结构：`seed_model_pricing` / `rust_string`
-- 原文/表达式：准备模型定价语句失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`01a596785e9c0e808b704fe563395b4780ed982b491ad5e8767708c697270f26`
-
-### 168. `hardcoded:src-tauri/src/database/schema.rs:seed_model_pricing:1cbb5b6c2633e149:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:2986`
-- 结构：`seed_model_pricing` / `rust_string`
-- 原文/表达式：插入模型定价失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`1cbb5b6c2633e149c8243f996024d9d1e7511519fc7b9aa037653cc318b232c3`
-
-### 169. `hardcoded:src-tauri/src/database/schema.rs:repair_current_model_pricing:2dd583bb1899afa0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:3742`
-- 结构：`repair_current_model_pricing` / `rust_string`
-- 原文/表达式：修复模型 {model_id} 定价失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`2dd583bb1899afa093f848a2111b56fbf86121b87be119bd5138e076ae75b61a`
-
-### 170. `hardcoded:src-tauri/src/database/schema.rs:get_user_version:36bba3e296167b2f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:3764`
-- 结构：`get_user_version` / `rust_string`
-- 原文/表达式：读取 user_version 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`36bba3e296167b2f7f2cea7f0468145a0c792583dfdfcbdd0ffbb902b1731a75`
-
-### 171. `hardcoded:src-tauri/src/database/schema.rs:set_user_version:2ed92a7931da8a62:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:3769`
-- 结构：`set_user_version` / `rust_string`
-- 原文/表达式：user_version 不能为负数
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`2ed92a7931da8a620350f9d2b129398aa9f17819fe7f7e11c28651f1dca4c43a`
-
-### 172. `hardcoded:src-tauri/src/database/schema.rs:set_user_version:9be2d503a5f8d5e3:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:3773`
-- 结构：`set_user_version` / `rust_string`
-- 原文/表达式：写入 user_version 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`9be2d503a5f8d5e392d639bc957b2d79ba895bb672cd00c8104cf1b453f45fd2`
-
-### 173. `hardcoded:src-tauri/src/database/schema.rs:create_request_logs_usage_indexes_if_supported:3453a31fad9e30c4:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:3790`
-- 结构：`create_request_logs_usage_indexes_if_supported` / `rust_string`
-- 原文/表达式：创建使用量应用时间索引失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`3453a31fad9e30c467bf8cbdbc532517229c179c84818b36ac685bed3ec1d716`
-
-### 174. `hardcoded:src-tauri/src/database/schema.rs:create_request_logs_usage_indexes_if_supported:77f9e426b5b978b3:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:3809`
-- 结构：`create_request_logs_usage_indexes_if_supported` / `rust_string`
-- 原文/表达式：删除旧使用量去重索引失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`77f9e426b5b978b3b44cb1c2e4414f63ebbb0ad9b0c7aaaccdb2189267fa9b79`
-
-### 175. `hardcoded:src-tauri/src/database/schema.rs:create_request_logs_usage_indexes_if_supported:048ec36a8184d4dd:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:3821`
-- 结构：`create_request_logs_usage_indexes_if_supported` / `rust_string`
-- 原文/表达式：创建使用量去重表达式索引失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`048ec36a8184d4dd749beb6546856a118c27669f49a070e80ee4396b45e78cfa`
-
-### 176. `hardcoded:src-tauri/src/database/schema.rs:validate_identifier:7d650a94fe9a59b3:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:3827`
-- 结构：`validate_identifier` / `rust_string`
-- 原文/表达式：{kind} 不能为空
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`7d650a94fe9a59b3e77a59e2647f3071756ebcb5358ce111964fb8483adb3d25`
-
-### 177. `hardcoded:src-tauri/src/database/schema.rs:validate_identifier:90b31c400be95b57:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:3831`
-- 结构：`validate_identifier` / `rust_string`
-- 原文/表达式：非法{kind}: {s}，仅允许字母、数字和下划线
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`90b31c400be95b57ff530b2b16380bb27921d844c8908312880421bb3657ef22`
-
-### 178. `hardcoded:src-tauri/src/database/schema.rs:table_exists:f5db9346ca1b5561:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:3842`
-- 结构：`table_exists` / `rust_string`
-- 原文/表达式：读取表名失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`f5db9346ca1b5561ebcf92922a6703da68139b135a06044dba65a70512edd9e7`
-
-### 179. `hardcoded:src-tauri/src/database/schema.rs:table_exists:f20347ae9498d426:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:3845`
-- 结构：`table_exists` / `rust_string`
-- 原文/表达式：查询表名失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`f20347ae9498d426dacf6cc00ebf210347c1ae5689cb80a5027a2ebc8edffbd9`
-
-### 180. `hardcoded:src-tauri/src/database/schema.rs:table_exists:eeb123ff5b01929d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:3849`
-- 结构：`table_exists` / `rust_string`
-- 原文/表达式：解析表名失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`eeb123ff5b01929dec90e712a5b58cfa6b2b93020b6315db5c1a121a1d9d213d`
-
-### 181. `hardcoded:src-tauri/src/database/schema.rs:has_column:599add9d925e7de1:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:3868`
-- 结构：`has_column` / `rust_string`
-- 原文/表达式：读取表结构失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`599add9d925e7de188d08425bcc93ecb762d941dbda2561e79b1bc72fb62bb3d`
-
-### 182. `hardcoded:src-tauri/src/database/schema.rs:has_column:669f93117b39737d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:3871`
-- 结构：`has_column` / `rust_string`
-- 原文/表达式：查询表结构失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`669f93117b39737da61276d1601517f746da80d9378c527a64a84ed282b41dcf`
-
-### 183. `hardcoded:src-tauri/src/database/schema.rs:has_column:c948c80c6073cb98:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:3875`
-- 结构：`has_column` / `rust_string`
-- 原文/表达式：读取列名失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`c948c80c6073cb98bd2a3a0dcfb67eb55c52b0888665122500e1972fa57a6b6d`
-
-### 184. `hardcoded:src-tauri/src/database/schema.rs:add_column_if_missing:43d3d2a1999f56e1:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:3894`
-- 结构：`add_column_if_missing` / `rust_string`
-- 原文/表达式：表 {table} 不存在，无法添加列 {column}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`43d3d2a1999f56e1f9dd63c6750aceb6bc67753fc175991d9a899a40d0f95036`
-
-### 185. `hardcoded:src-tauri/src/database/schema.rs:add_column_if_missing:714f10b1f55e9d79:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/database/schema.rs:3903`
-- 结构：`add_column_if_missing` / `rust_string`
-- 原文/表达式：为表 {table} 添加列 {column} 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`714f10b1f55e9d79fc64636fc06504970e97f253324e4d71bf74930e763e73e3`
-
-### 186. `hardcoded:src-tauri/src/deeplink/provider.rs:build_provider_meta:a2851dc689ca6a94:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/deeplink/provider.rs:498`
-- 结构：`build_provider_meta` / `rust_string`
-- 原文/表达式：)))?<br>    } else {<br>        String::new()<br>    };<br><br>    // 套餐地址且没带脚本：和在应用里新建一样，按套餐额度查询并默认启用<br>    // （链接写了 `usageEnabled` 仍照办）。额度走后端固定端点，不执行任何脚本。<br>    // 火山例外：查额度要账号级 AccessKey，链接里没有，默认启用只会显示「额度查询失败」，<br>    // 所以只预选套餐不启用（前端 `codingPlanEnabledByDefault` 与此一致）。<br>    if let (Some(provider_id), true) = (coding_plan_provider, code.is_empty()) {<br>        return Ok(Some(ProviderMeta {<br>            usage_script: Some(UsageScript {<br>                enabled: request.usage_enabled.unwrap_or(provider_id !=
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a2851dc689ca6a949b2f28abc634a168783ccda5198e5591f13dc73a52e536b6`
-
-### 187. `hardcoded:src-tauri/src/deeplink/utils.rs:decode_base64_param:1f323b6ffe31885f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/deeplink/utils.rs:77`
-- 结构：`decode_base64_param` / `rust_string`
-- 原文/表达式：{field} 参数 Base64 解码失败：{}。请确认链接参数已用 Base64 编码并经过 URL 转义（尤其是将 '+' 编码为 %2B，或使用 URL-safe Base64）。
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`1f323b6ffe31885f2df1230cffcad70ef8bf38d542a7a932d4f2745028c4ece0`
-
-### 188. `hardcoded:src-tauri/src/deeplink/utils.rs:decode_base64_param:13a46616e16fe5e6:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/deeplink/utils.rs:78`
-- 结构：`decode_base64_param` / `rust_string`
-- 原文/表达式：未知错误
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`13a46616e16fe5e684349b2088bd2de5ba310d1469542b69ac355b09c8210c97`
-
-### 189. `hardcoded:src-tauri/src/gemini_mcp.rs:set_mcp_servers_map:3aa384326118160d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/gemini_mcp.rs:93`
-- 结构：`set_mcp_servers_map` / `rust_string`
-- 原文/表达式：MCP 服务器 '{id}' 不是对象
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`3aa384326118160db083930c94cc7a4e99bfe08756a531a17bcd013c81b07b3a`
-
-### 190. `hardcoded:src-tauri/src/lightweight.rs:enter_lightweight_mode:2405fe2aec78ac25:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/lightweight.rs:23`
-- 结构：`enter_lightweight_mode` / `rust_string`
-- 原文/表达式：销毁主窗口失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`2405fe2aec78ac25659b23baf23e586eb327de09370b7184ad2a7ee4f21e8703`
-
-### 191. `hardcoded:src-tauri/src/lightweight.rs:exit_lightweight_mode:9253bb74ed46475f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/lightweight.rs:71`
-- 结构：`exit_lightweight_mode` / `rust_string`
-- 原文/表达式：加载主窗口配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`9253bb74ed46475fd4bfaf9351eb441cdd874d89d89ec54300641d017c492745`
-
-### 192. `hardcoded:src-tauri/src/lightweight.rs:exit_lightweight_mode:0117ee43954a9116:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/lightweight.rs:73`
-- 结构：`exit_lightweight_mode` / `rust_string`
-- 原文/表达式：创建主窗口失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`0117ee43954a911644e4777a2e7654f492df07086bbee177338ae16de59a0c3e`
-
-### 193. `hardcoded:src-tauri/src/mcp/claude.rs:import_from_claude:cefbe57db6b6a28c:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/mcp/claude.rs:56`
-- 结构：`import_from_claude` / `rust_string`
-- 原文/表达式：解析 ~/.claude.json 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`cefbe57db6b6a28cd7d5f9b1c271e01672748db7ba6bcd45a0e7048c8a0bcc51`
-
-### 194. `hardcoded:src-tauri/src/mcp/codex.rs:import_from_codex:fdf3caf1e6b419a6:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/mcp/codex.rs:76`
-- 结构：`import_from_codex` / `rust_string`
-- 原文/表达式：解析 ~/.codex/config.toml 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`fdf3caf1e6b419a652a724ba8e4ea21f3cfacd98d08069262c5d1f06f476efc3`
-
-### 195. `hardcoded:src-tauri/src/mcp/codex.rs:sync_enabled_to_codex:875df7d39cc8dbb7:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/mcp/codex.rs:324`
-- 结构：`sync_enabled_to_codex` / `rust_string`
-- 原文/表达式：解析 config.toml 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`875df7d39cc8dbb72909a5239a709a76c89059efb6cdc5538abe7ae4eb988b65`
-
-### 196. `hardcoded:src-tauri/src/mcp/codex.rs:sync_single_server_to_codex:875df7d39cc8dbb7:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/mcp/codex.rs:458`
-- 结构：`sync_single_server_to_codex` / `rust_string`
-- 原文/表达式：解析 config.toml 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`875df7d39cc8dbb72909a5239a709a76c89059efb6cdc5538abe7ae4eb988b65`
-
-### 197. `hardcoded:src-tauri/src/mcp/grokbuild.rs:import_from_grokbuild:963f605cc8a586b2:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/mcp/grokbuild.rs:85`
-- 结构：`import_from_grokbuild` / `rust_string`
-- 原文/表达式：解析 ~/.grok/config.toml 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`963f605cc8a586b25a248da2edcdd31bcb07b03c2992af1d15a0c9d5d56c5667`
-
-### 198. `hardcoded:src-tauri/src/mcp/grokbuild.rs:sync_single_server_to_grokbuild:08c1aaecaab69c20:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/mcp/grokbuild.rs:149`
-- 结构：`sync_single_server_to_grokbuild` / `rust_string`
-- 原文/表达式：解析 Grok Build config.toml 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`08c1aaecaab69c2057ae69afe11504b5356a5182546840666cdfc872b669149b`
-
-### 199. `hardcoded:src-tauri/src/mcp/validation.rs:validate_server_spec:6d5e61b8271a027f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/mcp/validation.rs:11`
-- 结构：`validate_server_spec` / `rust_string`
-- 原文/表达式：MCP 服务器连接定义必须为 JSON 对象
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`6d5e61b8271a027ffb9b8c4cfcfac0107c0667b38a3f501e8eefb7cc43ef3f77`
-
-### 200. `hardcoded:src-tauri/src/mcp/validation.rs:validate_server_spec:cd5a094f235d66b4:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/mcp/validation.rs:22`
-- 结构：`validate_server_spec` / `rust_string`
-- 原文/表达式：MCP 服务器 type 必须是 'stdio'、'http' 或 'sse'（或省略表示 stdio）
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`cd5a094f235d66b4cf6566c25dcb9ed35fe743e280598098df5bb16653675a0d`
-
-### 201. `hardcoded:src-tauri/src/mcp/validation.rs:validate_server_spec:eef74f394f855bdc:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/mcp/validation.rs:30`
-- 结构：`validate_server_spec` / `rust_string`
-- 原文/表达式：stdio 类型的 MCP 服务器缺少 command 字段
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`eef74f394f855bdce3934e002ceb8228529e2586070551475c26643134adda16`
-
-### 202. `hardcoded:src-tauri/src/mcp/validation.rs:validate_server_spec:d03a3105c36ee824:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/mcp/validation.rs:38`
-- 结构：`validate_server_spec` / `rust_string`
-- 原文/表达式：http 类型的 MCP 服务器缺少 url 字段
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`d03a3105c36ee824dcbd4460255906117b32f93051192a203b03ff1bbb68b861`
-
-### 203. `hardcoded:src-tauri/src/mcp/validation.rs:validate_server_spec:f96daad60691836a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/mcp/validation.rs:46`
-- 结构：`validate_server_spec` / `rust_string`
-- 原文/表达式：sse 类型的 MCP 服务器缺少 url 字段
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`f96daad60691836af3e060d9c06581238dd36d4cc210ac3a753449e5a77e7979`
-
-### 204. `hardcoded:src-tauri/src/mcp/validation.rs:extract_server_spec:cb78bcb3a7223587:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/mcp/validation.rs:83`
-- 结构：`extract_server_spec` / `rust_string`
-- 原文/表达式：MCP 服务器 server 字段必须为 JSON 对象
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`cb78bcb3a7223587cab71a4f32e9be01a9df6e549e5d1a7cc78851095b2118ae`
-
-### 205. `hardcoded:src-tauri/src/mode/controller.rs:require_proxy_app:ffc9b443461f4fe3:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/mode/controller.rs:672`
-- 结构：`require_proxy_app` / `rust_string`
-- 原文/表达式：{} 不支持本地路由
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`ffc9b443461f4fe3ae50c8b6f26320b207c20700cf3a9cbaf759408bfb5173a7`
-
-### 206. `hardcoded:src-tauri/src/mode/controller.rs:try_enter_with_route:cbe04bae6f87107d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/mode/controller.rs:753`
-- 结构：`try_enter_with_route` / `rust_string`
-- 原文/表达式：{} 不支持聚合模式 ({} does not support the Aggregation mode)
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`cbe04bae6f87107d7a1a4b6b48bfe89844c630ce268fa9fc39b408aa9be808e3`
-
-### 207. `hardcoded:src-tauri/src/mode/controller.rs:switch_route_locked:f48a2fb5d8e415d2:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/mode/controller.rs:1052`
-- 结构：`switch_route_locked` / `rust_string`
-- 原文/表达式：{} 不在代理模式
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`f48a2fb5d8e415d24b6b04e7df021cef7923ca34424d05f5372eb70201ca5820`
-
-### 208. `hardcoded:src-tauri/src/mode/controller.rs:switch_route_checked:78f7c64912be2ab6:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/mode/controller.rs:1146`
-- 结构：`switch_route_checked` / `rust_string`
-- 原文/表达式：聚合模式不做故障转移，请先换回路由模式 (The Aggregation mode has no failover; switch back to the routing mode first)
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`78f7c64912be2ab69efe13bcd7bd3c154bee25037288e9dd2c595cd0f7143fc8`
-
-### 209. `hardcoded:src-tauri/src/mode/controller.rs:reject_unsupported_official:5281d9220ffbccdb:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/mode/controller.rs:1205`
-- 结构：`reject_unsupported_official` / `rust_string`
-- 原文/表达式：代理模式下不能切换到官方供应商 (Cannot switch to an official provider in proxy mode)
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`5281d9220ffbccdbadf695be6390b453e339c0668392683a31ea2ecc54c63cbf`
-
-### 210. `hardcoded:src-tauri/src/mode/controller.rs:check_stack_member:e00cdcc5424ff1e7:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/mode/controller.rs:1241`
-- 结构：`check_stack_member` / `rust_string`
-- 原文/表达式：官方账号不能加入聚合 (An official account cannot join the aggregation)
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`e00cdcc5424ff1e7fdb22186e41ea352059d1aa5b8298431807a834bbe65d399`
-
-### 211. `hardcoded:src-tauri/src/mode/operation.rs:run:6e5eaedfc250581c:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/mode/operation.rs:199`
-- 结构：`run` / `rust_string`
-- 原文/表达式：文件已写入，但状态更新失败，将在下次操作或启动时补完: {err}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`6e5eaedfc250581ca5b54c6aee1495ad0a0d5904750c4a092ac41402fe484e40`
-
-### 212. `hardcoded:src-tauri/src/proxy/forwarder.rs:forward:063136a9e60ed655:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/forwarder.rs:1433`
-- 结构：`forward` / `rust_string`
-- 原文/表达式：Codex OAuth 账号解析失败: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`063136a9e60ed655086a9ba4ed72978b09f3165bf4e18634fb4c0d87240613d5`
-
-### 213. `hardcoded:src-tauri/src/proxy/forwarder.rs:forward:ad39fed0f5c2e07c:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/forwarder.rs:1442`
-- 结构：`forward` / `rust_string`
-- 原文/表达式：Codex OAuth 会话校验失败: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`ad39fed0f5c2e07c8f48c2b5ad43efd4c033210dfb21c87c237251156e1db97f`
-
-### 214. `hardcoded:src-tauri/src/proxy/forwarder.rs:forward:2775c9889f1e129a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/forwarder.rs:2255`
-- 结构：`forward` / `rust_string`
-- 原文/表达式：xAI OAuth 认证不可用（无 AppHandle）
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`2775c9889f1e129ae9d8aafbc31bf28e500a86b234d846ff0e3d59842c8a84e2`
-
-### 215. `hardcoded:src-tauri/src/proxy/forwarder.rs:forward:fde4a229a64293ad:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/forwarder.rs:2774`
-- 结构：`forward` / `rust_string`
-- 原文/表达式：流式响应首包超时: {}s（上游未返回响应头）
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`fde4a229a64293ade80d15908a8318fe57142f9977588a057e9779aee4c30f05`
-
-### 216. `hardcoded:src-tauri/src/proxy/forwarder.rs:prepare_success_response_for_failover:70f876f10acead0a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/forwarder.rs:2899`
-- 结构：`prepare_success_response_for_failover` / `rust_string`
-- 原文/表达式：响应体读取超时: {}s（上游发完响应头后 body 未到达）
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`70f876f10acead0aec62015e7fe7ec5f0518f10e8316d489a365244ac3242412`
-
-### 217. `hardcoded:src-tauri/src/proxy/handlers.rs:log_forward_error:151303d6876275a9:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/handlers.rs:3270`
-- 结构：`log_forward_error` / `rust_string`
-- 原文/表达式：usage 记录任务失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`151303d6876275a97476349d03c531b93b41f78408200a47a8f4728941b4d376`
-
-### 218. `hardcoded:src-tauri/src/proxy/handlers.rs:log_usage:151303d6876275a9:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/handlers.rs:3343`
-- 结构：`log_usage` / `rust_string`
-- 原文/表达式：usage 记录任务失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`151303d6876275a97476349d03c531b93b41f78408200a47a8f4728941b4d376`
-
-### 219. `hardcoded:src-tauri/src/proxy/hyper_client.rs:send_request:2f6f76302fd5185b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/hyper_client.rs:298`
-- 结构：`send_request` / `rust_string`
-- 原文/表达式：请求超时: {}s
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`2f6f76302fd5185b8b3cce36d3cedafd7cdea38d7e5beb493d740373bbb27c6e`
-
-### 220. `hardcoded:src-tauri/src/proxy/hyper_client.rs:send_request:2f6f76302fd5185b:002`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/hyper_client.rs:326`
-- 结构：`send_request` / `rust_string`
-- 原文/表达式：请求超时: {}s
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`2f6f76302fd5185b8b3cce36d3cedafd7cdea38d7e5beb493d740373bbb27c6e`
-
-### 221. `hardcoded:src-tauri/src/proxy/hyper_client.rs:send_request:81dd0b71180c95f5:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/hyper_client.rs:329`
-- 结构：`send_request` / `rust_string`
-- 原文/表达式：上游请求失败: {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`81dd0b71180c95f502556cf68ddbdf6b848f1324fa3f952fbe950f77b640d12f`
-
-### 222. `hardcoded:src-tauri/src/proxy/providers/claude.rs:extract_base_url:028b7cfa4d81008f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/providers/claude.rs:762`
-- 结构：`extract_base_url` / `rust_string`
-- 原文/表达式：Claude Provider 缺少 base_url 配置
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`028b7cfa4d81008fcb455a3f7317fa05e351f31716d0c02e6cdcc6bab2110a94`
-
-### 223. `hardcoded:src-tauri/src/proxy/providers/codex.rs:extract_base_url:4d11dda2e5d11ddf:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/providers/codex.rs:1091`
-- 结构：`extract_base_url` / `rust_string`
-- 原文/表达式：Codex Provider 缺少 base_url 配置
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`4d11dda2e5d11ddf1b5ffd1624320ff789067a4131d5023163445cdd26702d5d`
-
-### 224. `hardcoded:src-tauri/src/proxy/providers/codex_oauth_auth.rs:resolve_valid_cached_token_under_lock:276164b2d1f69e4e:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/providers/codex_oauth_auth.rs:981`
-- 结构：`resolve_valid_cached_token_under_lock` / `rust_string`
-- 原文/表达式：账号凭据已更新，已丢弃旧刷新响应
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`276164b2d1f69e4ee32c033d4d99a5bb1865cc02b4245be1357873c9a3279857`
-
-### 225. `hardcoded:src-tauri/src/proxy/providers/codex_oauth_auth.rs:get_valid_token_bundle_for_account:72ac248ee5d38687:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/providers/codex_oauth_auth.rs:1122`
-- 结构：`get_valid_token_bundle_for_account` / `rust_string`
-- 原文/表达式：Codex CLI 账号 {account_id} 的磁盘凭据在准备写入期间已刷新；为避免写入混合 token bundle，本次操作已取消，请重试
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`72ac248ee5d38687e0631bda1c7f62ab5c40d68014af778cf7d6a5c298b142af`
-
-### 226. `hardcoded:src-tauri/src/proxy/providers/codex_oauth_auth.rs:get_valid_token:2e346b7932557830:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/providers/codex_oauth_auth.rs:1380`
-- 结构：`get_valid_token` / `rust_string`
-- 原文/表达式：无可用的 ChatGPT 账号
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`2e346b79325578304a04cd65c179cb7c962d804a77b01173ccfc5009756f3ef6`
-
-### 227. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:get_valid_token:f87002101b466aa4:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:407`
-- 结构：`get_valid_token` / `rust_string`
-- 原文/表达式：无可用的 xAI 账号，请登录或重新登录
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`f87002101b466aa4601990891758baffd1375aff02d6c260565f27e8b0a97e46`
-
-### 228. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:discover_endpoints:a7e74db775952430:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:496`
-- 结构：`discover_endpoints` / `rust_string`
-- 原文/表达式：xAI discovery 请求失败: HTTP {status}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a7e74db7759524300587e8bf8f179b14da627ec9fceac26716ed7793b6503a3f`
-
-### 229. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:discover_endpoints:7b37c38f3d1cfbd5:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:502`
-- 结构：`discover_endpoints` / `rust_string`
-- 原文/表达式：xAI discovery issuer 不匹配
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`7b37c38f3d1cfbd52da2c23a6c8ffc8b5b41315480b325064c008932cbe8649f`
-
-### 230. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:add_account_internal:3d5fd21230b6069b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:573`
-- 结构：`add_account_internal` / `rust_string`
-- 原文/表达式：登录已取消，请重新启动登录
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`3d5fd21230b6069b94cf6a8ef15a9ea51307396e505a6131b85cfe332593fa7e`
-
-### 231. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:commit_refreshed_tokens:fb6e370c2875a61c:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:622`
-- 结构：`commit_refreshed_tokens` / `rust_string`
-- 原文/表达式：账号认证状态已变化，请重试请求
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`fb6e370c2875a61c8e1f80df50b749d568bd6b066188c2994eaa7475e7d171f1`
-
-### 232. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:validate_access_token:63fdc69122c0d32d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:883`
-- 结构：`validate_access_token` / `rust_string`
-- 原文/表达式：成功响应缺少 access_token
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`63fdc69122c0d32d77c54369042525e44b5c404992c1784c04e6d39bc255d5a4`
-
-### 233. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:parse_device_code_response:095ac0acf3259e9d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:893`
-- 结构：`parse_device_code_response` / `rust_string`
-- 原文/表达式：设备授权响应字段无效
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`095ac0acf3259e9dc36118dea905f1fdacb9a5b13da5bb234c8213ffbd2ab0b2`
-
-### 234. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:parse_token_response:3aebecd0ea168cf6:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:898`
-- 结构：`parse_token_response` / `rust_string`
-- 原文/表达式：OAuth Token 响应字段无效
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`3aebecd0ea168cf66ad296c1f6ecfbf8fa2ac5a685107658a4fe72100d42a289`
-
-### 235. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:parse_discovery_document:a19550b0a3612c69:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:903`
-- 结构：`parse_discovery_document` / `rust_string`
-- 原文/表达式：xAI discovery 响应字段无效
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a19550b0a3612c69d1fbbba8efba64e3210e06fc2b580d8c5cb105776d58e964`
-
-### 236. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:validate_xai_endpoint:fb76de080641f085:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:942`
-- 结构：`validate_xai_endpoint` / `rust_string`
-- 原文/表达式：xAI 认证端点 URL 无效
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`fb76de080641f0851b2db8ef915eb791b25eb3d4df0aff23c814b0f5676e2754`
-
-### 237. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:validate_xai_endpoint:0ee62ae8d052fbd7:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:950`
-- 结构：`validate_xai_endpoint` / `rust_string`
-- 原文/表达式：xAI discovery 返回了不受信任的认证端点
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`0ee62ae8d052fbd7c347708c76762cfd1f61af6e6e7f63375b5615069e9773a2`
-
-### 238. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:read_json_response:9e802efcf135f60e:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:964`
-- 结构：`read_json_response` / `rust_string`
-- 原文/表达式：OAuth 响应超过大小限制
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`9e802efcf135f60e29aef74fa2dbbdac36995a68b07d6f93d7205a581939810a`
-
-### 239. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:read_json_response:9e802efcf135f60e:002`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:970`
-- 结构：`read_json_response` / `rust_string`
-- 原文/表达式：OAuth 响应超过大小限制
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`9e802efcf135f60e29aef74fa2dbbdac36995a68b07d6f93d7205a581939810a`
-
-### 240. `hardcoded:src-tauri/src/proxy/providers/xai_oauth_auth.rs:read_json_response:ebd9550e10ef3ca8:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/providers/xai_oauth_auth.rs:974`
-- 结构：`read_json_response` / `rust_string`
-- 原文/表达式：OAuth 响应不是有效 JSON
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`ebd9550e10ef3ca80977979c88faa7c9c6b71dd6a66cc808a18569e37c6098c2`
-
-### 241. `hardcoded:src-tauri/src/proxy/response_processor.rs:read_decoded_body:70f876f10acead0a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/response_processor.rs:97`
-- 结构：`read_decoded_body` / `rust_string`
-- 原文/表达式：响应体读取超时: {}s（上游发完响应头后 body 未到达）
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`70f876f10acead0aec62015e7fe7ec5f0518f10e8316d489a365244ac3242412`
-
-### 242. `hardcoded:src-tauri/src/proxy/response_processor.rs:log_usage_internal:151303d6876275a9:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/response_processor.rs:723`
-- 结构：`log_usage_internal` / `rust_string`
-- 原文/表达式：usage 记录任务失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`151303d6876275a97476349d03c531b93b41f78408200a47a8f4728941b4d376`
-
-### 243. `hardcoded:src-tauri/src/proxy/response_processor.rs:create_logged_passthrough_stream:70d6ac580a3c62b2:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/response_processor.rs:777`
-- 结构：`create_logged_passthrough_stream` / `rust_string`
-- 原文/表达式：首字节
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`70d6ac580a3c62b205fb58d78a5adf86da229b29ed925c644c59288b61526671`
-
-### 244. `hardcoded:src-tauri/src/proxy/response_processor.rs:create_logged_passthrough_stream:7cea794de606b064:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/response_processor.rs:777`
-- 结构：`create_logged_passthrough_stream` / `rust_string`
-- 原文/表达式：静默期
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`7cea794de606b0645b19e7b37a6c6130968b1ab0ac8f9757bfc1287595819da2`
-
-### 245. `hardcoded:src-tauri/src/proxy/server.rs:start:596e2f65f8dbcea2:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/proxy/server.rs:111`
-- 结构：`start` / `rust_string`
-- 原文/表达式：无效的地址: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`596e2f65f8dbcea272f107a652a9757b9271f0eb321eb4414efda02f70f48c0d`
-
-### 246. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:decode:aa49cbcd2d37b164:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/agy_account/keychain.rs:33`
-- 结构：`decode` / `rust_string`
-- 原文/表达式：Antigravity 登录数据不是有效的 base64
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`aa49cbcd2d37b164df33c1811d728e1356c9a34947bc596d00a24831e975132b`
-
-### 247. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:decode:f78a8b4a5afbcacc:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/agy_account/keychain.rs:35`
-- 结构：`decode` / `rust_string`
-- 原文/表达式：Antigravity 登录数据不是 UTF-8
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`f78a8b4a5afbcacc089a87c09513a173773ba17436ec39a3c7c8d13a9804ddd8`
-
-### 248. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:decode:19f962e1c69cbb10:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/agy_account/keychain.rs:40`
-- 结构：`decode` / `rust_string`
-- 原文/表达式：Antigravity 登录数据不是 JSON
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`19f962e1c69cbb10f2713607330ef28512befa109cc96d765bb96953f0c6f8af`
-
-### 249. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:decode:283335358b564e83:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/agy_account/keychain.rs:43`
-- 结构：`decode` / `rust_string`
-- 原文/表达式：Antigravity 登录数据不是 JSON 对象
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`283335358b564e83b3e100f1bbb570fb805ea02140400e79ff70782f50abee00`
-
-### 250. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:read:4a53fbbf15fd8fef:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/agy_account/keychain.rs:102`
-- 结构：`read` / `rust_string`
-- 原文/表达式：读取 Antigravity 登录失败
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`4a53fbbf15fd8fef700ac3be4fa2d225da4a2c14929beb007f17df188bf8fa90`
-
-### 251. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:read:9f4ea1a91b0c1be1:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/agy_account/keychain.rs:110`
-- 结构：`read` / `rust_string`
-- 原文/表达式：读取 Antigravity 登录失败（security 退出码 {:?}）
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`9f4ea1a91b0c1be165e18728708f0cbe451df825303ebebdb54b5ce779790432`
-
-### 252. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:read:f78a8b4a5afbcacc:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/agy_account/keychain.rs:115`
-- 结构：`read` / `rust_string`
-- 原文/表达式：Antigravity 登录数据不是 UTF-8
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`f78a8b4a5afbcacc089a87c09513a173773ba17436ec39a3c7c8d13a9804ddd8`
-
-### 253. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:write:3c583463b5eb99f5:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/agy_account/keychain.rs:130`
-- 结构：`write` / `rust_string`
-- 原文/表达式：Antigravity 登录数据含有不能写入钥匙串的字符
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`3c583463b5eb99f5fd3b5e6a94923d81afbcc20dd2551401aa175dbe51b8d748`
-
-### 254. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:write:da6e61624898db53:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/agy_account/keychain.rs:142`
-- 结构：`write` / `rust_string`
-- 原文/表达式：写入 Antigravity 登录失败
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`da6e61624898db530c5dee1a6e2bf2bc6de90e6a98ca102578cf854198ca01ae`
-
-### 255. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:write:da6e61624898db53:002`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/agy_account/keychain.rs:149`
-- 结构：`write` / `rust_string`
-- 原文/表达式：写入 Antigravity 登录失败
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`da6e61624898db530c5dee1a6e2bf2bc6de90e6a98ca102578cf854198ca01ae`
-
-### 256. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:write:da6e61624898db53:003`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/agy_account/keychain.rs:171`
-- 结构：`write` / `rust_string`
-- 原文/表达式：写入 Antigravity 登录失败
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`da6e61624898db530c5dee1a6e2bf2bc6de90e6a98ca102578cf854198ca01ae`
-
-### 257. `hardcoded:src-tauri/src/services/agy_account/keychain.rs:write:957bb532aa406c77:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/agy_account/keychain.rs:178`
-- 结构：`write` / `rust_string`
-- 原文/表达式：写入 Antigravity 登录失败（security 退出码 {:?}）
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`957bb532aa406c77c46cc47afb493146ecdb2f0a8d22e0d74d9bdd9e85bc4c74`
-
-### 258. `hardcoded:src-tauri/src/services/agy_account/mod.rs:poll_login:b8e3795ac634d5d0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/agy_account/mod.rs:241`
-- 结构：`poll_login` / `rust_string`
-- 原文/表达式：登录被中断
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`b8e3795ac634d5d035a99c1673ba090eaeecacf1796f511eba620de1d856c5be`
-
-### 259. `hardcoded:src-tauri/src/services/agy_account/mod.rs:run_blocking:3f9d180b97e07051:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/agy_account/mod.rs:624`
-- 结构：`run_blocking` / `rust_string`
-- 原文/表达式：钥匙串操作中断: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`3f9d180b97e070519765e0bca9f706c11230a58e0e9680b0fa79e144a8931c7c`
-
-### 260. `hardcoded:src-tauri/src/services/agy_account/oauth.rs:post_token:d2b260e271c1cb6f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/agy_account/oauth.rs:257`
-- 结构：`post_token` / `rust_string`
-- 原文/表达式：响应过大
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`d2b260e271c1cb6f862ab21a073bf38e17e119a3e88eb0a7f2b8b3745cff4ad8`
-
-### 261. `hardcoded:src-tauri/src/services/agy_account/oauth.rs:post_token:bf5b96d48b88998d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/agy_account/oauth.rs:260`
-- 结构：`post_token` / `rust_string`
-- 原文/表达式：HTTP {status}，响应不是 JSON
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`bf5b96d48b88998db8596252fab0733a2482fc2498aa99e5f3f1f061f09f2350`
-
-### 262. `hardcoded:src-tauri/src/services/agy_account/oauth.rs:post_token:0706d03df44b68df:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/agy_account/oauth.rs:275`
-- 结构：`post_token` / `rust_string`
-- 原文/表达式：响应缺少 access_token
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`0706d03df44b68df6686ec63d78f59909d002abac1dbb35a9d36d50aad2a1459`
-
-### 263. `hardcoded:src-tauri/src/services/claude_account/layout.rs:assert_config_dir:0d94df287382ca7f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/layout.rs:57`
-- 结构：`assert_config_dir` / `rust_string`
-- 原文/表达式：账号目录必须是绝对路径: {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`0d94df287382ca7fad86b3cddfef758fc3239358b81cb5e06dc65bd7af579152`
-
-### 264. `hardcoded:src-tauri/src/services/claude_account/layout.rs:assert_config_dir:7e172ea528e96b88:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/layout.rs:66`
-- 结构：`assert_config_dir` / `rust_string`
-- 原文/表达式：账号目录不能包含 `..`: {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`7e172ea528e96b8851194930d76b73b36b63c404073faea5060fbe3f1b297cb5`
-
-### 265. `hardcoded:src-tauri/src/services/claude_account/layout.rs:assert_config_dir:dc7af0fe6b52d223:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/layout.rs:72`
-- 结构：`assert_config_dir` / `rust_string`
-- 原文/表达式：账号目录不在 CC Switch 的账号根下: {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`dc7af0fe6b52d22341a1d2a897550c975e6945e17cd103adffc8432f1ca14e8f`
-
-### 266. `hardcoded:src-tauri/src/services/claude_account/layout.rs:assert_config_dir:1ccd0c17e41bd9aa:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/layout.rs:79`
-- 结构：`assert_config_dir` / `rust_string`
-- 原文/表达式：不能把默认的 Claude 配置目录当作账号目录
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`1ccd0c17e41bd9aa5c941ff6dd0a14ce81388082837501f227f6c180df113095`
-
-### 267. `hardcoded:src-tauri/src/services/claude_account/login.rs:forward_callback:c0c2063eea0b19b8:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/login.rs:146`
-- 结构：`forward_callback` / `rust_string`
-- 原文/表达式：Claude Code 没有接收这个地址: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`c0c2063eea0b19b8429d2cdd802dd648d0b37ad62a697de30784c744aaba65bc`
-
-### 268. `hardcoded:src-tauri/src/services/claude_account/login.rs:wait_for_link:6a3fd6ca73979dfd:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/login.rs:375`
-- 结构：`wait_for_link` / `rust_string`
-- 原文/表达式：claude auth login 已退出
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`6a3fd6ca73979dfde24a4a061dc9504e4568bec92bc8017ca016966183932aa9`
-
-### 269. `hardcoded:src-tauri/src/services/claude_account/login.rs:wait_for_link:16490595a0ca16a1:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/login.rs:378`
-- 结构：`wait_for_link` / `rust_string`
-- 原文/表达式：claude auth login 没有给出登录链接: {message}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`16490595a0ca16a1b4e79789bfd33729a83d300c373af51f85224b373bde2b90`
-
-### 270. `hardcoded:src-tauri/src/services/claude_account/login.rs:wait_for_link:9d3c2d4f9ad4fbf9:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/login.rs:386`
-- 结构：`wait_for_link` / `rust_string`
-- 原文/表达式：claude auth login 没有给出登录链接，请在终端里运行 `claude auth login` 看看它输出了什么
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`9d3c2d4f9ad4fbf901ef39566e91281d35d69e67105618d1a29d31aba5e4f256`
-
-### 271. `hardcoded:src-tauri/src/services/claude_account/login.rs:spawn_login:7298b97e1b0939d7:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/login.rs:460`
-- 结构：`spawn_login` / `rust_string`
-- 原文/表达式：无法启动 claude auth login: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`7298b97e1b0939d7e86db9464dde0bd4fffd2962abdafc840411fcb0d55115e0`
-
-### 272. `hardcoded:src-tauri/src/services/claude_account/snapshot/files.rs:write_profile:9e1af08c9ae84ad1:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/snapshot/files.rs:69`
-- 结构：`write_profile` / `rust_string`
-- 原文/表达式：{} 不是 JSON 对象，没有改动
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`9e1af08c9ae84ad16cfa73dce2c144cabf92a8a847d319a1663ccfa2d9d30216`
-
-### 273. `hardcoded:src-tauri/src/services/claude_account/usage.rs:run_usage:85d6ec51ddc6bfca:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/usage.rs:111`
-- 结构：`run_usage` / `rust_string`
-- 原文/表达式：无法启动 claude: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`85d6ec51ddc6bfcacae650e242a77c088c9225718d40e1f0512619d76f7243e1`
-
-### 274. `hardcoded:src-tauri/src/services/claude_account/usage.rs:run_usage:e512cf016f960728:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/claude_account/usage.rs:122`
-- 结构：`run_usage` / `rust_string`
-- 原文/表达式：超时
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`e512cf016f9607285ce4778e4e7899497acafe63f6c7c119a38c25c4071ff407`
-
-### 275. `hardcoded:src-tauri/src/services/env_manager.rs:delete_env_vars:b62858102b25fbb9:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/env_manager.rs:32`
-- 结构：`delete_env_vars` / `rust_string`
-- 原文/表达式：删除环境变量失败: {}. 备份已保存到: {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`b62858102b25fbb95b0042c0863e1fc827e88dfbc8fda9f27f7530ed8997a80f`
-
-### 276. `hardcoded:src-tauri/src/services/env_manager.rs:create_backup:80e8e9892e19511c:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/env_manager.rs:46`
-- 结构：`create_backup` / `rust_string`
-- 原文/表达式：创建备份目录失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`80e8e9892e19511cbcc6082c3fa23701e21df536cdf0ae2e56ea5bec512dedcb`
-
-### 277. `hardcoded:src-tauri/src/services/env_manager.rs:create_backup:078f577b7f2895f7:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/env_manager.rs:61`
-- 结构：`create_backup` / `rust_string`
-- 原文/表达式：序列化备份数据失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`078f577b7f2895f77b14b69f7ef61e50aa4f58a506a9fb55e124df1a29fbd8c6`
-
-### 278. `hardcoded:src-tauri/src/services/env_manager.rs:create_backup:84143b167bc363b8:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/env_manager.rs:63`
-- 结构：`create_backup` / `rust_string`
-- 原文/表达式：写入备份文件失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`84143b167bc363b83071de32ef8471a8f0e2cd9661346dfd8c5ca1d1a273747a`
-
-### 279. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:8b3f699bca11c444:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/env_manager.rs:82`
-- 结构：`delete_single_env` / `rust_string`
-- 原文/表达式：打开注册表失败: {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`8b3f699bca11c444701024fc62c2894288273d43b1149194c7adeeb0dcb28516`
-
-### 280. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:b14852a0ad3b6de7:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/env_manager.rs:85`
-- 结构：`delete_single_env` / `rust_string`
-- 原文/表达式：删除注册表项失败: {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`b14852a0ad3b6de7e1a4287fcaf93c2326dacb87e3b166eecf6202a5c2cfb1a5`
-
-### 281. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:833352a6f66187a1:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/env_manager.rs:92`
-- 结构：`delete_single_env` / `rust_string`
-- 原文/表达式：打开系统注册表失败 (需要管理员权限): {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`833352a6f66187a11e210a789a8baef3ef73558a460b20fc72ad8d791278f626`
-
-### 282. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:0761c8363b59018d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/env_manager.rs:95`
-- 结构：`delete_single_env` / `rust_string`
-- 原文/表达式：删除系统注册表项失败: {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`0761c8363b59018df2ff25d17cbbf83974f9fc2c38b3367c05a32914f7e1d83f`
-
-### 283. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:334ea04c65eff935:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/env_manager.rs:99`
-- 结构：`delete_single_env` / `rust_string`
-- 原文/表达式：Windows 系统不应该有文件类型的环境变量
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`334ea04c65eff9353aaace3cd2eff0098874a7d22902982ace0e1da26b03d68d`
-
-### 284. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:42c89e7b93dbdf87:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/env_manager.rs:100`
-- 结构：`delete_single_env` / `rust_string`
-- 原文/表达式：未知的环境变量来源类型: {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`42c89e7b93dbdf8783714866d9940625931680db7d222e446ac5fd07de3e5ee3`
-
-### 285. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:29ca7ca180627714:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/env_manager.rs:111`
-- 结构：`delete_single_env` / `rust_string`
-- 原文/表达式：无效的文件路径格式
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`29ca7ca18062771477526230eb091850be6a8e66bec333d7237dc1b5101e03cd`
-
-### 286. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:50640721a7501624:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/env_manager.rs:118`
-- 结构：`delete_single_env` / `rust_string`
-- 原文/表达式：读取文件失败 {file_path}: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`50640721a750162462ee681b279f1ba23812deb7a34567f53988d9bc6d848a15`
-
-### 287. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:d02df2142e3a9d5e:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/env_manager.rs:140`
-- 结构：`delete_single_env` / `rust_string`
-- 原文/表达式：写入文件失败 {file_path}: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`d02df2142e3a9d5ef55334fc992ef64948b37ff0dc4682ec6e815be516e34efa`
-
-### 288. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:42c89e7b93dbdf87:002`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/env_manager.rs:148`
-- 结构：`delete_single_env` / `rust_string`
-- 原文/表达式：未知的环境变量来源类型: {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`42c89e7b93dbdf8783714866d9940625931680db7d222e446ac5fd07de3e5ee3`
-
-### 289. `hardcoded:src-tauri/src/services/env_manager.rs:restore_from_backup:efea55a2db6eb1f0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/env_manager.rs:155`
-- 结构：`restore_from_backup` / `rust_string`
-- 原文/表达式：读取备份文件失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`efea55a2db6eb1f05721b15595630246eb3c7933df8427d41b82b04212938d18`
-
-### 290. `hardcoded:src-tauri/src/services/env_manager.rs:restore_from_backup:7bcd86700fca4fdd:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/env_manager.rs:158`
-- 结构：`restore_from_backup` / `rust_string`
-- 原文/表达式：解析备份文件失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`7bcd86700fca4fdd6c95bb9fd3b210b56667147a651330268f18837fd7ab5de3`
-
-### 291. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:8b3f699bca11c444:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/env_manager.rs:176`
-- 结构：`restore_single_env` / `rust_string`
-- 原文/表达式：打开注册表失败: {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`8b3f699bca11c444701024fc62c2894288273d43b1149194c7adeeb0dcb28516`
-
-### 292. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:0aadf12582c8d359:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/env_manager.rs:179`
-- 结构：`restore_single_env` / `rust_string`
-- 原文/表达式：恢复注册表项失败: {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`0aadf12582c8d359cce3f78b657d754e0f68622534be7527cf8eea56da9b0027`
-
-### 293. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:833352a6f66187a1:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/env_manager.rs:185`
-- 结构：`restore_single_env` / `rust_string`
-- 原文/表达式：打开系统注册表失败 (需要管理员权限): {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`833352a6f66187a11e210a789a8baef3ef73558a460b20fc72ad8d791278f626`
-
-### 294. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:2db0d2260938626d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/env_manager.rs:188`
-- 结构：`restore_single_env` / `rust_string`
-- 原文/表达式：恢复系统注册表项失败: {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`2db0d2260938626d14f9dc34225a4eef2abf49f31294550f24a1dd196babde5d`
-
-### 295. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:cbcd9d11be96195c:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/env_manager.rs:193`
-- 结构：`restore_single_env` / `rust_string`
-- 原文/表达式：无法恢复类型为 {} 的环境变量
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`cbcd9d11be96195c7afe1dde48daaca2ec09aab610856fdec7990bf67d62060b`
-
-### 296. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:29ca7ca180627714:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/env_manager.rs:206`
-- 结构：`restore_single_env` / `rust_string`
-- 原文/表达式：无效的文件路径格式
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`29ca7ca18062771477526230eb091850be6a8e66bec333d7237dc1b5101e03cd`
-
-### 297. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:50640721a7501624:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/env_manager.rs:213`
-- 结构：`restore_single_env` / `rust_string`
-- 原文/表达式：读取文件失败 {file_path}: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`50640721a750162462ee681b279f1ba23812deb7a34567f53988d9bc6d848a15`
-
-### 298. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:d02df2142e3a9d5e:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/env_manager.rs:220`
-- 结构：`restore_single_env` / `rust_string`
-- 原文/表达式：写入文件失败 {file_path}: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`d02df2142e3a9d5ef55334fc992ef64948b37ff0dc4682ec6e815be516e34efa`
-
-### 299. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:cbcd9d11be96195c:002`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/env_manager.rs:225`
-- 结构：`restore_single_env` / `rust_string`
-- 原文/表达式：无法恢复类型为 {} 的环境变量
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`cbcd9d11be96195c7afe1dde48daaca2ec09aab610856fdec7990bf67d62060b`
-
-### 300. `hardcoded:src-tauri/src/services/mcp.rs:sync_all_enabled:a097a3884831e945:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/mcp.rs:454`
-- 结构：`sync_all_enabled` / `rust_string`
-- 原文/表达式：部分应用 MCP 同步失败: {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a097a3884831e9453b66eb3210bd352df6b73d5385083a2de5770f4379f832b4`
-
-### 301. `hardcoded:src-tauri/src/services/mcp.rs:resync_targets:1e9873c6e5248d3b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/mcp.rs:487`
-- 结构：`resync_targets` / `rust_string`
-- 原文/表达式：{} 不支持由 CC Switch 管理 MCP
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`1e9873c6e5248d3bbfc3e7c1b69ca6768d6dffb334e789e5fd430c0f13bb6bad`
-
-### 302. `hardcoded:src-tauri/src/services/mcp.rs:project_servers_to_app:86bbdcec6d1b6cd6:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/mcp.rs:567`
-- 结构：`project_servers_to_app` / `rust_string`
-- 原文/表达式：部分 MCP 服务器同步到 {} 失败: {detail}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`86bbdcec6d1b6cd64c69e1f2f7679d0446cd1c26acae445de2b87cfdfebfd929`
-
-### 303. `hardcoded:src-tauri/src/services/mcp.rs:import_from_all_apps:a42238eccc67caaa:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/mcp.rs:879`
-- 结构：`import_from_all_apps` / `rust_string`
-- 原文/表达式：已导入 {total} 个，部分应用导入失败: {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a42238eccc67caaa9f6a34776e5050f5c51cc5173a95674132c0142473621a06`
-
-### 304. `hardcoded:src-tauri/src/services/model_pricing.rs:upsert_pricing:545b9c9d91fd48c0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/model_pricing.rs:270`
-- 结构：`upsert_pricing` / `rust_string`
-- 原文/表达式：更新模型定价失败: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`545b9c9d91fd48c0311ece76ca022fc67036893df426a9f5b560f3f89a28c1de`
-
-### 305. `hardcoded:src-tauri/src/services/model_pricing.rs:sync_local_model_pricing:d058cec6e60d2148:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/model_pricing.rs:301`
-- 结构：`sync_local_model_pricing` / `rust_string`
-- 原文/表达式：模型定价文件锁失败: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`d058cec6e60d2148ce085e13820ccf9a098c634449e48c8d08cb80567c94ab4e`
-
-### 306. `hardcoded:src-tauri/src/services/model_pricing.rs:get_models_dev_sync_state:d058cec6e60d2148:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/model_pricing.rs:321`
-- 结构：`get_models_dev_sync_state` / `rust_string`
-- 原文/表达式：模型定价文件锁失败: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`d058cec6e60d2148ce085e13820ccf9a098c634449e48c8d08cb80567c94ab4e`
-
-### 307. `hardcoded:src-tauri/src/services/model_pricing.rs:save_models_dev_sync_config:d058cec6e60d2148:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/model_pricing.rs:336`
-- 结构：`save_models_dev_sync_config` / `rust_string`
-- 原文/表达式：模型定价文件锁失败: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`d058cec6e60d2148ce085e13820ccf9a098c634449e48c8d08cb80567c94ab4e`
-
-### 308. `hardcoded:src-tauri/src/services/model_pricing.rs:record_models_dev_sync_result:89492c292e86ba32:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/model_pricing.rs:353`
-- 结构：`record_models_dev_sync_result` / `rust_string`
-- 原文/表达式：模型定价文件锁失败: {lock_error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`89492c292e86ba3247f6806293a7af30e358e9ebaf075cc49e20b8deb638628e`
-
-### 309. `hardcoded:src-tauri/src/services/model_pricing.rs:update_model_pricing_batch_inner:d058cec6e60d2148:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/model_pricing.rs:386`
-- 结构：`update_model_pricing_batch_inner` / `rust_string`
-- 原文/表达式：模型定价文件锁失败: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`d058cec6e60d2148ce085e13820ccf9a098c634449e48c8d08cb80567c94ab4e`
-
-### 310. `hardcoded:src-tauri/src/services/model_pricing.rs:delete_model_pricing:d058cec6e60d2148:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/model_pricing.rs:455`
-- 结构：`delete_model_pricing` / `rust_string`
-- 原文/表达式：模型定价文件锁失败: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`d058cec6e60d2148ce085e13820ccf9a098c634449e48c8d08cb80567c94ab4e`
-
-### 311. `hardcoded:src-tauri/src/services/profile.rs:create:09488335360a2e91:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/profile.rs:271`
-- 结构：`create` / `rust_string`
-- 原文/表达式：序列化 profile payload 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`09488335360a2e91632b0657e4ff9130afb0153118353e90ba7c92ceae6e5eab`
-
-### 312. `hardcoded:src-tauri/src/services/profile.rs:update:433bc41fe9333e8b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/profile.rs:307`
-- 结构：`update` / `rust_string`
-- 原文/表达式：解析 profile payload 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`433bc41fe9333e8bda9af4f395ff43bc95ce546db3d2eb3265af8522b2ec1958`
-
-### 313. `hardcoded:src-tauri/src/services/profile.rs:update:09488335360a2e91:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/profile.rs:310`
-- 结构：`update` / `rust_string`
-- 原文/表达式：序列化 profile payload 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`09488335360a2e91632b0657e4ff9130afb0153118353e90ba7c92ceae6e5eab`
-
-### 314. `hardcoded:src-tauri/src/services/profile.rs:apply:433bc41fe9333e8b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/profile.rs:366`
-- 结构：`apply` / `rust_string`
-- 原文/表达式：解析 profile payload 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`433bc41fe9333e8bda9af4f395ff43bc95ce546db3d2eb3265af8522b2ec1958`
-
-### 315. `hardcoded:src-tauri/src/services/prompt.rs:delete_prompt:cee4eb3e8f53ffe8:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/prompt.rs:142`
-- 结构：`delete_prompt` / `rust_string`
-- 原文/表达式：无法删除已启用的提示词
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`cee4eb3e8f53ffe8519d3cfca13a7c7be2115a97ffb9e813f6f60f9928f7deba`
-
-### 316. `hardcoded:src-tauri/src/services/prompt.rs:enable_prompt:3a14670e4e48d7bd:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/prompt.rs:220`
-- 结构：`enable_prompt` / `rust_string`
-- 原文/表达式：提示词 {id} 不存在
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`3a14670e4e48d7bd29f2e357ebad77414f2d82eb108440a2636a6bb60d103ee0`
-
-### 317. `hardcoded:src-tauri/src/services/prompt.rs:import_from_file:83ec9577dc224234:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/prompt.rs:240`
-- 结构：`import_from_file` / `rust_string`
-- 原文/表达式：提示词文件不存在
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`83ec9577dc22423415fdfb7b93fdccfad943e8d32b87ed98c06e617933649ddf`
-
-### 318. `hardcoded:src-tauri/src/services/prompt.rs:sync_all_to_live:7f33587d159c801b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/prompt.rs:325`
-- 结构：`sync_all_to_live` / `rust_string`
-- 原文/表达式：部分应用 Prompt 同步失败: {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`7f33587d159c801bed0faa5ded630773c433621561174ed31e86056a2059b901`
-
-### 319. `hardcoded:src-tauri/src/services/prompt.rs:delete_pi_prompt:cee4eb3e8f53ffe8:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/prompt.rs:618`
-- 结构：`delete_pi_prompt` / `rust_string`
-- 原文/表达式：无法删除已启用的提示词
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`cee4eb3e8f53ffe8519d3cfca13a7c7be2115a97ffb9e813f6f60f9928f7deba`
-
-### 320. `hardcoded:src-tauri/src/services/provider/codex_client_catalog.rs:restart_daemon:71e3725e46e60d11:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/codex_client_catalog.rs:628`
-- 结构：`restart_daemon` / `rust_string`
-- 原文/表达式：重启 Codex 守护进程失败 (Failed to restart the Codex daemon)
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`71e3725e46e60d11593a5e1db2c2e2bba9a021071aa14ee83986782855bbc579`
-
-### 321. `hardcoded:src-tauri/src/services/provider/codex_client_catalog.rs:restart_daemon:312a6050f5ea3aa0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/codex_client_catalog.rs:630`
-- 结构：`restart_daemon` / `rust_string`
-- 原文/表达式：重启 Codex 守护进程失败 (Failed to restart the Codex daemon): {detail}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`312a6050f5ea3aa0a0e5d385f62daf6870d7955785ea8d02004a4cbfa34ea2cb`
-
-### 322. `hardcoded:src-tauri/src/services/provider/codex_direct.rs:check_stack_member:12b5cf3152d9f237:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/codex_direct.rs:778`
-- 结构：`check_stack_member` / `rust_string`
-- 原文/表达式：「{name}」的配置有问题，不能加入聚合 (The configuration of "{name}" is invalid, so it cannot join the aggregation): {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`12b5cf3152d9f237decd000160f161dec81f8d52fc01db970160db19cd78d4d8`
-
-### 323. `hardcoded:src-tauri/src/services/provider/codex_direct.rs:run_with_edits:a44c612f3133c2c1:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/codex_direct.rs:1263`
-- 结构：`run_with_edits` / `rust_string`
-- 原文/表达式：序列化 Codex 登录暂存失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a44c612f3133c2c101f09b4f638476785bce3c437280320799f7026d6f7c6ae0`
-
-### 324. `hardcoded:src-tauri/src/services/provider/codex_official_models.rs:fmt:bb6cca844ac067e7:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/codex_official_models.rs:478`
-- 结构：`fmt` / `rust_string`
-- 原文/表达式：没有能用的 ChatGPT 登录
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`bb6cca844ac067e776710d24b8c4545f06a524420cc0f24e933a315b111756a0`
-
-### 325. `hardcoded:src-tauri/src/services/provider/codex_official_models.rs:fmt:b01ec7de8ca95046:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/codex_official_models.rs:479`
-- 结构：`fmt` / `rust_string`
-- 原文/表达式：登录超过 8 天没有刷新
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`b01ec7de8ca95046f1ffc6de14a68717cb726d771a61148e1c16d19e556a656b`
-
-### 326. `hardcoded:src-tauri/src/services/provider/codex_official_models.rs:fmt:fffbb38bad3de65e:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/codex_official_models.rs:480`
-- 结构：`fmt` / `rust_string`
-- 原文/表达式：登录里缺工作区 ID 或用户身份
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`fffbb38bad3de65e42407c10a460f26e93f8305281bdc75c73b32e5fe7de6e7e`
-
-### 327. `hardcoded:src-tauri/src/services/provider/codex_official_models.rs:fmt:33d150a393324e4e:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/codex_official_models.rs:513`
-- 结构：`fmt` / `rust_string`
-- 原文/表达式：找不到 Codex 命令行
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`33d150a393324e4ed9fe99c217106220a806ea9dd53474da68332a9d26cbc411`
-
-### 328. `hardcoded:src-tauri/src/services/provider/codex_official_models.rs:fmt:c160ed77093429bd:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/codex_official_models.rs:514`
-- 结构：`fmt` / `rust_string`
-- 原文/表达式：Codex 命令行没有输出列表
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`c160ed77093429bdaa6e86be2875a26f796ae0c8a7c8e5fd343f32527aef0070`
-
-### 329. `hardcoded:src-tauri/src/services/provider/codex_official_models.rs:fmt:8890f364cda19ceb:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/codex_official_models.rs:515`
-- 结构：`fmt` / `rust_string`
-- 原文/表达式：列表里没有能用的模型
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`8890f364cda19ceb2bccc3124a83ffe9c141ca75965b44ff9c9b933cb3bb07f7`
-
-### 330. `hardcoded:src-tauri/src/services/provider/live.rs:get_codex_managed_oauth_live_auth_value:892ed905b1a1f20f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/live.rs:477`
-- 结构：`get_codex_managed_oauth_live_auth_value` / `rust_string`
-- 原文/表达式：Codex OAuth 账号 {account_id} 认证失败，请重新登录 ChatGPT 账号: {err}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`892ed905b1a1f20fd596b7fed4d811c6bf4a510178069fa64e44fe2823557c04`
-
-### 331. `hardcoded:src-tauri/src/services/provider/live.rs:get_codex_managed_oauth_live_auth_value:cfdb63cd3a1ae050:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/live.rs:500`
-- 结构：`get_codex_managed_oauth_live_auth_value` / `rust_string`
-- 原文/表达式：Codex OAuth token 获取线程异常退出
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`cfdb63cd3a1ae0502da6f02fb4eba8554d097d7afe1a234fa676aa98e27f4f07`
-
-### 332. `hardcoded:src-tauri/src/services/provider/live.rs:prepare_codex_managed_oauth_live_auth_switch_away:f965f2318d4978c9:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/live.rs:520`
-- 结构：`prepare_codex_managed_oauth_live_auth_switch_away` / `rust_string`
-- 原文/表达式：Codex OAuth live 凭据采纳线程异常退出
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`f965f2318d4978c9abf2d951d7c8f72793d007d3335104810ca8d246edc5743f`
-
-### 333. `hardcoded:src-tauri/src/services/provider/live.rs:sync_current_to_live:4c6cafaa01e6c8b7:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/live.rs:904`
-- 结构：`sync_current_to_live` / `rust_string`
-- 原文/表达式：部分 live 配置同步失败: {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`4c6cafaa01e6c8b70e917cc1d95499a5503c2c293decc47175498c65056aa033`
-
-### 334. `hardcoded:src-tauri/src/services/provider/mod.rs:add_codex:ef2e86e38e1b1ce4:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:5804`
-- 结构：`add_codex` / `rust_string`
-- 原文/表达式：新增首个 Codex 供应商失败: {error}; 恢复供应商数据同时失败: {rollback}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`ef2e86e38e1b1ce4d8affe8f069e2716585f89d6848d36a186b92a2ddb5892da`
-
-### 335. `hardcoded:src-tauri/src/services/provider/mod.rs:editor_view_with_meta:bba52252fb37b0fc:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:5854`
-- 结构：`editor_view_with_meta` / `rust_string`
-- 原文/表达式：{} 的编辑器还不支持按关键字段显示
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`bba52252fb37b0fc5807f9280786411262f1761fda9794a66642ea853f7cf777`
-
-### 336. `hardcoded:src-tauri/src/services/provider/mod.rs:update_codex:d599f4382315ca81:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:6501`
-- 结构：`update_codex` / `rust_string`
-- 原文/表达式：更新 Codex 供应商失败: {error}; 恢复供应商数据同时失败: {rollback}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`d599f4382315ca8192b26cadd7bc5e6db0a23502ee7ef0eaf85ee2882d2efd86`
-
-### 337. `hardcoded:src-tauri/src/services/provider/mod.rs:delete:70c9a7a0f27993ae:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:6611`
-- 结构：`delete` / `rust_string`
-- 原文/表达式：无法删除当前正在使用的供应商
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`70c9a7a0f27993ae819512f75c0d4b5595d4fd553734f8487181967fa270e14b`
-
-### 338. `hardcoded:src-tauri/src/services/provider/mod.rs:switch_inner:de52da403c73fbc5:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:6901`
-- 结构：`switch_inner` / `rust_string`
-- 原文/表达式：切换路由失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`de52da403c73fbc5f1597f691a1f51ca51edd020c241bf1ca6177f2fa6ebb40d`
-
-### 339. `hardcoded:src-tauri/src/services/provider/mod.rs:scrub_leaked_gemini_common_config:33a3960f44ebc991:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:7731`
-- 结构：`scrub_leaked_gemini_common_config` / `rust_string`
-- 原文/表达式：解析 Gemini 代理接管备份失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`33a3960f44ebc9913a2be0997d622281f8cbfc46bb999b0f038ef1446fcd76cb`
-
-### 340. `hardcoded:src-tauri/src/services/provider/mod.rs:sync_universal_to_apps:270d62a2a7fad7e3:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/provider/mod.rs:8583`
-- 结构：`sync_universal_to_apps` / `rust_string`
-- 原文/表达式：统一供应商已保存到数据库，但以下应用的配置文件未能写入，仍是旧内容：{}。请重试同步，或切换一次该应用的供应商。
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`270d62a2a7fad7e3be37ebc387e2b4d38f140fa4d9b4a233adce47a5289d54d7`
-
-### 341. `hardcoded:src-tauri/src/services/proxy.rs:write:7db20ad10a37b8f0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:40`
-- 结构：`write` / `rust_string`
-- 原文/表达式：恢复原代理配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`7db20ad10a37b8f0b90bf057ec1ef69e7e43e855a8b1cd58f29b227879159383`
-
-### 342. `hardcoded:src-tauri/src/services/proxy.rs:start_server:cec75a72ce37662d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:110`
-- 结构：`start_server` / `rust_string`
-- 原文/表达式：获取全局代理配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`cec75a72ce37662d87ff326f8cfffd10556d293d9aada15a5f2ccabcc28b3988`
-
-### 343. `hardcoded:src-tauri/src/services/proxy.rs:start_server:a5be30ee46307584:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:117`
-- 结构：`start_server` / `rust_string`
-- 原文/表达式：更新代理总开关失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a5be30ee4630758425108a571f1e5c1d627925b0cdb7a269873af0c07d9f5a66`
-
-### 344. `hardcoded:src-tauri/src/services/proxy.rs:start_server:bd8ca066533a11e0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:125`
-- 结构：`start_server` / `rust_string`
-- 原文/表达式：获取代理配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`bd8ca066533a11e05a08d374aab10c5bd14c2a7af6201ead725ba636fd951b67`
-
-### 345. `hardcoded:src-tauri/src/services/proxy.rs:start_server:43da0387e26cd148:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:144`
-- 结构：`start_server` / `rust_string`
-- 原文/表达式：启动代理服务器失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`43da0387e26cd148b078935b8b5309288fd896e309d0ccabfc94e2b95c109c88`
-
-### 346. `hardcoded:src-tauri/src/services/proxy.rs:persist_ephemeral_listen_port_if_needed:cec75a72ce37662d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:174`
-- 结构：`persist_ephemeral_listen_port_if_needed` / `rust_string`
-- 原文/表达式：获取全局代理配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`cec75a72ce37662d87ff326f8cfffd10556d293d9aada15a5f2ccabcc28b3988`
-
-### 347. `hardcoded:src-tauri/src/services/proxy.rs:persist_ephemeral_listen_port_if_needed:19fbbb3533a1a5ae:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:179`
-- 结构：`persist_ephemeral_listen_port_if_needed` / `rust_string`
-- 原文/表达式：保存动态代理端口失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`19fbbb3533a1a5aed55a15de87c0aababa5017624f1aeb1e6d2d15c06b1bb861`
-
-### 348. `hardcoded:src-tauri/src/services/proxy.rs:stop_server:e2155c9800030e55:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:227`
-- 结构：`stop_server` / `rust_string`
-- 原文/表达式：停止代理服务器失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`e2155c9800030e5589c0f178b74f5a8159cdb6fba2dba7414d77ad56b0d23553`
-
-### 349. `hardcoded:src-tauri/src/services/proxy.rs:stop_server:cec75a72ce37662d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:234`
-- 结构：`stop_server` / `rust_string`
-- 原文/表达式：获取全局代理配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`cec75a72ce37662d87ff326f8cfffd10556d293d9aada15a5f2ccabcc28b3988`
-
-### 350. `hardcoded:src-tauri/src/services/proxy.rs:build_proxy_urls:bd8ca066533a11e0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:256`
-- 结构：`build_proxy_urls` / `rust_string`
-- 原文/表达式：获取代理配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`bd8ca066533a11e05a08d374aab10c5bd14c2a7af6201ead725ba636fd951b67`
-
-### 351. `hardcoded:src-tauri/src/services/proxy.rs:build_proxy_urls:f9fca7a20aa05885:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:266`
-- 结构：`build_proxy_urls` / `rust_string`
-- 原文/表达式：代理监听端口为 0，但代理服务器尚未运行，无法生成接管地址
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`f9fca7a20aa05885a91bd4eb79d856c1a19fb8f98573de37f7b91b37777168e0`
-
-### 352. `hardcoded:src-tauri/src/services/proxy.rs:read_claude_live:fd8a1e640ebce812:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:400`
-- 结构：`read_claude_live` / `rust_string`
-- 原文/表达式：Claude 配置文件不存在
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`fd8a1e640ebce8121ea434ca171b2438301f47925a765e6144b1cdc893c7f62a`
-
-### 353. `hardcoded:src-tauri/src/services/proxy.rs:read_claude_live:351d58157d69a329:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:404`
-- 结构：`read_claude_live` / `rust_string`
-- 原文/表达式：读取 Claude 配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`351d58157d69a3297e88d6c94f9dd3834ce58920aef0932e4693e3891a191851`
-
-### 354. `hardcoded:src-tauri/src/services/proxy.rs:read_claude_live:23f437444a24699e:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:420`
-- 结构：`read_claude_live` / `rust_string`
-- 原文/表达式：Claude 配置文件格式错误：根节点必须是 JSON 对象（当前为 {kind}），路径: {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`23f437444a24699ea85235b5f15ea363fb88be94006fb910af5ae4e149056fd5`
-
-### 355. `hardcoded:src-tauri/src/services/proxy.rs:read_codex_live:a656d269eab3d73a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:430`
-- 结构：`read_codex_live` / `rust_string`
-- 原文/表达式：读取 Codex Live 配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a656d269eab3d73a7ed0e3c9bdabf52fb111c5056858a1543451f58591acb68f`
-
-### 356. `hardcoded:src-tauri/src/services/proxy.rs:read_gemini_live:24dac3f26fc91a3c:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:438`
-- 结构：`read_gemini_live` / `rust_string`
-- 原文/表达式：Gemini .env 文件不存在
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`24dac3f26fc91a3c2be80099b7e4826e9710f310efef6d38abd5bb3e795f7810`
-
-### 357. `hardcoded:src-tauri/src/services/proxy.rs:read_gemini_live:2b8f99068d5956e8:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:441`
-- 结构：`read_gemini_live` / `rust_string`
-- 原文/表达式：读取 Gemini env 失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`2b8f99068d5956e85a3b4a900ea648d3711d5a76edb3efd84a1bde8a5baf2483`
-
-### 358. `hardcoded:src-tauri/src/services/proxy.rs:read_grok_live:54b02f59d7da361a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:447`
-- 结构：`read_grok_live` / `rust_string`
-- 原文/表达式：读取 Grok Build 配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`54b02f59d7da361a163e9a44ec53b37b894296a48967780de93493904c23c2fd`
-
-### 359. `hardcoded:src-tauri/src/services/proxy.rs:get_config:bd8ca066533a11e0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:470`
-- 结构：`get_config` / `rust_string`
-- 原文/表达式：获取代理配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`bd8ca066533a11e05a08d374aab10c5bd14c2a7af6201ead725ba636fd951b67`
-
-### 360. `hardcoded:src-tauri/src/services/proxy.rs:update_config:bd8ca066533a11e0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:481`
-- 结构：`update_config` / `rust_string`
-- 原文/表达式：获取代理配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`bd8ca066533a11e05a08d374aab10c5bd14c2a7af6201ead725ba636fd951b67`
-
-### 361. `hardcoded:src-tauri/src/services/proxy.rs:update_config:ee80b46bd67d4394:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:490`
-- 结构：`update_config` / `rust_string`
-- 原文/表达式：保存代理配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`ee80b46bd67d43949d7d82598bd41b8b3a5183450da985fa7e22c27ae7333a64`
-
-### 362. `hardcoded:src-tauri/src/services/proxy.rs:update_global_config:cec75a72ce37662d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:507`
-- 结构：`update_global_config` / `rust_string`
-- 原文/表达式：获取全局代理配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`cec75a72ce37662d87ff326f8cfffd10556d293d9aada15a5f2ccabcc28b3988`
-
-### 363. `hardcoded:src-tauri/src/services/proxy.rs:update_global_config:aa2c6c3dd7b45cf0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:512`
-- 结构：`update_global_config` / `rust_string`
-- 原文/表达式：保存全局代理配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`aa2c6c3dd7b45cf0d84e10544372e8d49df8a9c77b6fd3eecdcac44120dd6076`
-
-### 364. `hardcoded:src-tauri/src/services/proxy.rs:apply_saved_config:bd8ca066533a11e0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:537`
-- 结构：`apply_saved_config` / `rust_string`
-- 原文/表达式：获取代理配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`bd8ca066533a11e05a08d374aab10c5bd14c2a7af6201ead725ba636fd951b67`
-
-### 365. `hardcoded:src-tauri/src/services/proxy.rs:apply_saved_config:a92933db7114e58f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:551`
-- 结构：`apply_saved_config` / `rust_string`
-- 原文/表达式：重启前停止代理服务器失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a92933db7114e58f4013d39577019e573cc41232162245b9a833b6c35b066dd1`
-
-### 366. `hardcoded:src-tauri/src/services/proxy.rs:apply_saved_config:401543d8822e69ba:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:569`
-- 结构：`apply_saved_config` / `rust_string`
-- 原文/表达式：{error}；恢复原配置也失败: {restore_error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`401543d8822e69ba41d832a923359a4408132ba7d2d9a3731fc6577f7fe44cfa`
-
-### 367. `hardcoded:src-tauri/src/services/proxy.rs:restore_and_start:bd8ca066533a11e0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/proxy.rs:594`
-- 结构：`restore_and_start` / `rust_string`
-- 原文/表达式：获取代理配置失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`bd8ca066533a11e05a08d374aab10c5bd14c2a7af6201ead725ba636fd951b67`
-
-### 368. `hardcoded:src-tauri/src/services/s3.rs:test_connection:a5574109f0208e89:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/s3.rs:361`
-- 结构：`test_connection` / `rust_string`
-- 原文/表达式：连接
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a5574109f0208e899feb6b620feb3f1f686aded4ec939631420afc1bec51c400`
-
-### 369. `hardcoded:src-tauri/src/services/s3.rs:put_object:f53b1cc6cdf3a09b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/s3.rs:405`
-- 结构：`put_object` / `rust_string`
-- 原文/表达式：PUT 请求
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`f53b1cc6cdf3a09ba9e868e5ff8af81d3abd7ee155eedc7297789bb1133d288a`
-
-### 370. `hardcoded:src-tauri/src/services/s3.rs:get_object:9a4f338ad2fc9ba6:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/s3.rs:448`
-- 结构：`get_object` / `rust_string`
-- 原文/表达式：GET 请求
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`9a4f338ad2fc9ba611cdf9441a731a887fbfb50b8dbb343689af9b61d6b2c9bf`
-
-### 371. `hardcoded:src-tauri/src/services/s3.rs:get_object:9a4f338ad2fc9ba6:002`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/s3.rs:449`
-- 结构：`get_object` / `rust_string`
-- 原文/表达式：GET 请求
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`9a4f338ad2fc9ba611cdf9441a731a887fbfb50b8dbb343689af9b61d6b2c9bf`
-
-### 372. `hardcoded:src-tauri/src/services/s3.rs:head_object:d68a4bbea7336121:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/s3.rs:519`
-- 结构：`head_object` / `rust_string`
-- 原文/表达式：HEAD 请求
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`d68a4bbea73361213bfe1f356f395784a9858afea0224d7bdfb4ba76fd3802b6`
-
-### 373. `hardcoded:src-tauri/src/services/session_usage.rs:read_tail_before:08b34311e6519632:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage.rs:592`
-- 结构：`read_tail_before` / `rust_string`
-- 原文/表达式：无法定位文件偏移: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`08b34311e65196327e12494b556d370a6e9ea2324901229902e62ef49f7a5bdf`
-
-### 374. `hardcoded:src-tauri/src/services/session_usage.rs:read_tail_before:ced20c02873b0bc7:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage.rs:595`
-- 结构：`read_tail_before` / `rust_string`
-- 原文/表达式：无法读取游标边界尾部: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`ced20c02873b0bc7460a97a8c2aa45f12c90c88a68328630b22d1c1c7b3d613d`
-
-### 375. `hardcoded:src-tauri/src/services/session_usage.rs:sync_single_file:62d071da4464668a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage.rs:636`
-- 结构：`sync_single_file` / `rust_string`
-- 原文/表达式：无法读取文件元数据: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`62d071da4464668a1783c3c49bb438d8510916313c79c3562d36f5ca181e22fa`
-
-### 376. `hardcoded:src-tauri/src/services/session_usage.rs:sync_single_file:4e3c61b7c3c11f20:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage.rs:650`
-- 结构：`sync_single_file` / `rust_string`
-- 原文/表达式：无法打开文件: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`4e3c61b7c3c11f2056e83511fbb1f1ce42c1db5f9ffbf51167018c6e3eabce6e`
-
-### 377. `hardcoded:src-tauri/src/services/session_usage.rs:sync_single_file:9c15439e7a910c3e:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage.rs:722`
-- 结构：`sync_single_file` / `rust_string`
-- 原文/表达式：转换旧行号游标失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`9c15439e7a910c3eb4d1fc5bbc1c02453f190bfcd18c5237932db1986d29e0de`
-
-### 378. `hardcoded:src-tauri/src/services/session_usage.rs:sync_single_file:7c11fc7e739f682b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage.rs:861`
-- 结构：`sync_single_file` / `rust_string`
-- 原文/表达式：启动会话用量导入事务失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`7c11fc7e739f682b0e9b5cb59dd5b15adf27044c7b8ad32a1412a174e2cdf56b`
-
-### 379. `hardcoded:src-tauri/src/services/session_usage.rs:sync_single_file:75009592482d72ba:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage.rs:940`
-- 结构：`sync_single_file` / `rust_string`
-- 原文/表达式：提交会话用量导入事务失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`75009592482d72ba6fec150442e82b58f7cb1d0190d47a257d8fa6b4e587050a`
-
-### 380. `hardcoded:src-tauri/src/services/session_usage.rs:update_claude_sync_state_on_conn:d5920b4317b643f3:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage.rs:980`
-- 结构：`update_claude_sync_state_on_conn` / `rust_string`
-- 原文/表达式：更新同步状态失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`d5920b4317b643f3871ab5db3fcb2d6903962ea7ef6216bdc8b03cf969f90c0b`
-
-### 381. `hardcoded:src-tauri/src/services/session_usage.rs:update_sync_state_on_conn:d5920b4317b643f3:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage.rs:1043`
-- 结构：`update_sync_state_on_conn` / `rust_string`
-- 原文/表达式：更新同步状态失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`d5920b4317b643f3871ab5db3fcb2d6903962ea7ef6216bdc8b03cf969f90c0b`
-
-### 382. `hardcoded:src-tauri/src/services/session_usage.rs:find_stored_session_row:8b8ad13b2401757d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage.rs:1092`
-- 结构：`find_stored_session_row` / `rust_string`
-- 原文/表达式：查询已入库的会话日志失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`8b8ad13b2401757de1923771049176a8849cc523d008d7f9bd4f539f268fc7ef`
-
-### 383. `hardcoded:src-tauri/src/services/session_usage.rs:refresh_session_log_entry_on_conn:a750e0b51b98d318:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage.rs:1192`
-- 结构：`refresh_session_log_entry_on_conn` / `rust_string`
-- 原文/表达式：更新会话日志耗时失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a750e0b51b98d3183bfd0da3dfac76052b52fe48ad7198bb1a20e357773a026c`
-
-### 384. `hardcoded:src-tauri/src/services/session_usage.rs:refresh_session_log_entry_on_conn:81cd0a6b9f9dfd99:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage.rs:1203`
-- 结构：`refresh_session_log_entry_on_conn` / `rust_string`
-- 原文/表达式：删除重复的会话日志失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`81cd0a6b9f9dfd99d640f97d4237c097f98efd51443d412899cb37aa7cb88f24`
-
-### 385. `hardcoded:src-tauri/src/services/session_usage.rs:refresh_session_log_entry_on_conn:5552f1e07ed30a8c:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage.rs:1231`
-- 结构：`refresh_session_log_entry_on_conn` / `rust_string`
-- 原文/表达式：补全会话日志失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`5552f1e07ed30a8c62e6dca2aca63f11160fb1272d6604ef7891c170116b70a8`
-
-### 386. `hardcoded:src-tauri/src/services/session_usage.rs:upsert_session_log_entry_on_conn:65f74c4768eb1979:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage.rs:1325`
-- 结构：`upsert_session_log_entry_on_conn` / `rust_string`
-- 原文/表达式：插入会话日志失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`65f74c4768eb1979cfec3ffb31e6602a64581a36fc7cee2a4f2b4d7167e238e5`
-
-### 387. `hardcoded:src-tauri/src/services/session_usage_codex.rs:signatures_before:fe9a6d5831f00f14:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_codex.rs:165`
-- 结构：`signatures_before` / `rust_string`
-- 原文/表达式：父 rollout {} 的 token_count 缺少有效 timestamp
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`fe9a6d5831f00f1424599564eb38a2b217f4773f9f12f18f78a7cf456072da49`
-
-### 388. `hardcoded:src-tauri/src/services/session_usage_codex.rs:signatures_before:e5317e3a17394dd7:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_codex.rs:174`
-- 结构：`signatures_before` / `rust_string`
-- 原文/表达式：父 rollout {} 尚未写到 child fork 时刻
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`e5317e3a17394dd75de6566e81a240221294fb396c02403055844e595b579175`
-
-### 389. `hardcoded:src-tauri/src/services/session_usage_codex.rs:parse_codex_file_with_index:0eb2016e8ddcf835:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_codex.rs:1282`
-- 结构：`parse_codex_file_with_index` / `rust_string`
-- 原文/表达式：无法读取 Codex 日志: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`0eb2016e8ddcf8359ec2c53bdc7881282713df8f581d5f7c8cf36a2f0f1e0422`
-
-### 390. `hardcoded:src-tauri/src/services/session_usage_codex.rs:parse_codex_file_with_index:a388200552db073c:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_codex.rs:1408`
-- 结构：`parse_codex_file_with_index` / `rust_string`
-- 原文/表达式：显式 parent_thread_id 不是有效 UUID: {parent_id}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a388200552db073c43cd58b428bb398af4800207a4b788c55ce5b7cc3a56a035`
-
-### 391. `hardcoded:src-tauri/src/services/session_usage_codex.rs:parse_codex_file_with_index:b13f15981cf060b4:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_codex.rs:1548`
-- 结构：`parse_codex_file_with_index` / `rust_string`
-- 原文/表达式：续写页缺少有效的前序累计用量基线: {err}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`b13f15981cf060b4576d2f9b86995725e6bb9fcdd0ffd575b64bda2ed6f82b6a`
-
-### 392. `hardcoded:src-tauri/src/services/session_usage_codex.rs:load_parent_timeline:ba09d4b504d86e3e:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_codex.rs:1692`
-- 结构：`load_parent_timeline` / `rust_string`
-- 原文/表达式：无法打开父 rollout {}: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`ba09d4b504d86e3e9cfa1200c5ecb488fd331443b5988d07b8c5222df0a37988`
-
-### 393. `hardcoded:src-tauri/src/services/session_usage_codex.rs:load_parent_timeline:ba09d4b504d86e3e:002`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_codex.rs:1719`
-- 结构：`load_parent_timeline` / `rust_string`
-- 原文/表达式：无法打开父 rollout {}: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`ba09d4b504d86e3e9cfa1200c5ecb488fd331443b5988d07b8c5222df0a37988`
-
-### 394. `hardcoded:src-tauri/src/services/session_usage_codex.rs:load_parent_timeline:57290f2d2a1c869b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_codex.rs:1730`
-- 结构：`load_parent_timeline` / `rust_string`
-- 原文/表达式：无法读取父 rollout {}: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`57290f2d2a1c869ba8f1908c8cbb8a8c84d4c8bcd43a47f2f271e43d2bc558a7`
-
-### 395. `hardcoded:src-tauri/src/services/session_usage_codex.rs:resolve_parent_signatures:d86185143745f92c:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_codex.rs:1822`
-- 结构：`resolve_parent_signatures` / `rust_string`
-- 原文/表达式：找不到父 rollout: {parent_id}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`d86185143745f92cc3e20238c248c92a80ade5f720d94f20d5ea5eace786544c`
-
-### 396. `hardcoded:src-tauri/src/services/session_usage_codex.rs:resolve_parent_signatures:8d4d83d016ac3eeb:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_codex.rs:1852`
-- 结构：`resolve_parent_signatures` / `rust_string`
-- 原文/表达式：父 rollout UUID {parent_id} 对应多个内容不一致的文件
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`8d4d83d016ac3eeb674367d239b4ea43d4dd82a6af7f352f8790c524eec97594`
-
-### 397. `hardcoded:src-tauri/src/services/session_usage_codex.rs:resolve_parent_signatures:d86185143745f92c:002`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_codex.rs:1877`
-- 结构：`resolve_parent_signatures` / `rust_string`
-- 原文/表达式：找不到父 rollout: {parent_id}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`d86185143745f92cc3e20238c248c92a80ade5f720d94f20d5ea5eace786544c`
-
-### 398. `hardcoded:src-tauri/src/services/session_usage_codex.rs:sync_single_codex_file:62d071da4464668a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_codex.rs:1998`
-- 结构：`sync_single_codex_file` / `rust_string`
-- 原文/表达式：无法读取文件元数据: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`62d071da4464668a1783c3c49bb438d8510916313c79c3562d36f5ca181e22fa`
-
-### 399. `hardcoded:src-tauri/src/services/session_usage_codex.rs:sync_single_codex_file:1e7c8486cf1b1c02:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_codex.rs:2219`
-- 结构：`sync_single_codex_file` / `rust_string`
-- 原文/表达式：开启 Codex 会话写入事务失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`1e7c8486cf1b1c025c2ca07770ad6c9f0d73e9cfe75768d3675589887ec769c8`
-
-### 400. `hardcoded:src-tauri/src/services/session_usage_codex.rs:sync_single_codex_file:2974a85e6015313b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_codex.rs:2251`
-- 结构：`sync_single_codex_file` / `rust_string`
-- 原文/表达式：提交 Codex 会话写入事务失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`2974a85e6015313ba2595fb42ba64fcb97dc6473922a877b9baa3e7477dd6000`
-
-### 401. `hardcoded:src-tauri/src/services/session_usage_codex.rs:insert_codex_session_entry_on_conn:716b0280840cfdf2:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_codex.rs:2417`
-- 结构：`insert_codex_session_entry_on_conn` / `rust_string`
-- 原文/表达式：插入 Codex 会话日志失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`716b0280840cfdf20d2e1143ab6518e52eda890004756543b983606f205052f4`
-
-### 402. `hardcoded:src-tauri/src/services/session_usage_gemini.rs:sync_gemini_usage:77c7fcde3406addd:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_gemini.rs:72`
-- 结构：`sync_gemini_usage` / `rust_string`
-- 原文/表达式：Gemini 会话文件解析失败 {}: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`77c7fcde3406adddc2af1b690d420a9dc613b485dd3d702f88a80dff0cd2ae34`
-
-### 403. `hardcoded:src-tauri/src/services/session_usage_gemini.rs:sync_single_gemini_file:62d071da4464668a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_gemini.rs:145`
-- 结构：`sync_single_gemini_file` / `rust_string`
-- 原文/表达式：无法读取文件元数据: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`62d071da4464668a1783c3c49bb438d8510916313c79c3562d36f5ca181e22fa`
-
-### 404. `hardcoded:src-tauri/src/services/session_usage_gemini.rs:sync_single_gemini_file:02cc55fb29f06e9f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_gemini.rs:155`
-- 结构：`sync_single_gemini_file` / `rust_string`
-- 原文/表达式：无法读取文件: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`02cc55fb29f06e9f0c17d28ed856acf911fa264a107a4c69686c204a96edab36`
-
-### 405. `hardcoded:src-tauri/src/services/session_usage_gemini.rs:sync_single_gemini_file:99a8d5e326f9fdfb:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_gemini.rs:157`
-- 结构：`sync_single_gemini_file` / `rust_string`
-- 原文/表达式：JSON 解析失败
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`99a8d5e326f9fdfb5f63de68f82a64b27d59801c0935e64abd662babff2ffd84`
-
-### 406. `hardcoded:src-tauri/src/services/session_usage_gemini.rs:insert_gemini_session_entry:b277e4275d6cbdc4:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_gemini.rs:363`
-- 结构：`insert_gemini_session_entry` / `rust_string`
-- 原文/表达式：插入 Gemini 会话日志失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`b277e4275d6cbdc4b699af278186f462e0ad2b38a8780d4dd794d6e4ddb2f6de`
-
-### 407. `hardcoded:src-tauri/src/services/session_usage_grokbuild.rs:sync_grokbuild_usage:86dca6f707f24d4a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_grokbuild.rs:118`
-- 结构：`sync_grokbuild_usage` / `rust_string`
-- 原文/表达式：Grok Build 会话文件解析失败 {}: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`86dca6f707f24d4a67eb3a541ebe1c69fe947c90fb4358baa1235e3949005f22`
-
-### 408. `hardcoded:src-tauri/src/services/session_usage_grokbuild.rs:sync_single_grok_file:62d071da4464668a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_grokbuild.rs:196`
-- 结构：`sync_single_grok_file` / `rust_string`
-- 原文/表达式：无法读取文件元数据: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`62d071da4464668a1783c3c49bb438d8510916313c79c3562d36f5ca181e22fa`
-
-### 409. `hardcoded:src-tauri/src/services/session_usage_grokbuild.rs:sync_single_grok_file:02cc55fb29f06e9f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_grokbuild.rs:219`
-- 结构：`sync_single_grok_file` / `rust_string`
-- 原文/表达式：无法读取文件: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`02cc55fb29f06e9f0c17d28ed856acf911fa264a107a4c69686c204a96edab36`
-
-### 410. `hardcoded:src-tauri/src/services/session_usage_grokbuild.rs:insert_grok_session_entry:a5a1e21886b4e665:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_grokbuild.rs:577`
-- 结构：`insert_grok_session_entry` / `rust_string`
-- 原文/表达式：插入 Grok Build 会话日志失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a5a1e21886b4e665f82d67eea33e8032c1f9b13905f38725cdc1bb17a38c71c3`
-
-### 411. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:sqlite_table_exists:5ef1ceec045f45c0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_opencode.rs:78`
-- 结构：`sqlite_table_exists` / `rust_string`
-- 原文/表达式：查询表 {table} 失败: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`5ef1ceec045f45c02d39f213c3725df56b5b083adc716b6f60aeb0ef222112f9`
-
-### 412. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:sync_opencode_usage:4403381475796ab0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_opencode.rs:103`
-- 结构：`sync_opencode_usage` / `rust_string`
-- 原文/表达式：无法读取 opencode.db 元数据: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`4403381475796ab0b16d92ae80ba45ffaf593bcc41465c491cf58ab877c448ed`
-
-### 413. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:sync_opencode_usage:ed11fc6dcc775fe6:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_opencode.rs:129`
-- 结构：`sync_opencode_usage` / `rust_string`
-- 原文/表达式：无法打开 opencode.db: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`ed11fc6dcc775fe60d89cd6a6bcba677d92d5c408758c526f36c967d7508e2c0`
-
-### 414. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:sync_opencode_usage:e043b3557209df7b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_opencode.rs:168`
-- 结构：`sync_opencode_usage` / `rust_string`
-- 原文/表达式：OpenCode 消息插入失败 {request_id}: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`e043b3557209df7b7a3a135779aaf34e507a3f435f3c0edb260f8737c61b4d9c`
-
-### 415. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:sync_opencode_usage:b4f3fda4204ed1fc:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_opencode.rs:178`
-- 结构：`sync_opencode_usage` / `rust_string`
-- 原文/表达式：OpenCode 会话消息查询失败 {session_id}: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`b4f3fda4204ed1fc29d8bb9f8a6ccc770cac75c324279bbe5a5e1984ecf2ba69`
-
-### 416. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:sync_opencode_usage:7c91a5d4143b1cdb:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_opencode.rs:196`
-- 结构：`sync_opencode_usage` / `rust_string`
-- 原文/表达式：OpenCode 会话同步状态更新失败 {session_id}: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`7c91a5d4143b1cdb4dbf5fffe26d2b0fb2f1bf9759f67b9729b8ded8ecf792ad`
-
-### 417. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:query_sessions:737930c048b097bf:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_opencode.rs:243`
-- 结构：`query_sessions` / `rust_string`
-- 原文/表达式：准备会话查询失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`737930c048b097bf9136efde2c656b9607da48f9ac7f237428a776eb34bdd851`
-
-### 418. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:query_sessions:1489a923553ff27f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_opencode.rs:249`
-- 结构：`query_sessions` / `rust_string`
-- 原文/表达式：查询会话失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`1489a923553ff27f1dd7a6ce3a89b8af83fbf9f6779755bf2422ff643b8a1d3b`
-
-### 419. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:query_sessions:819b6466fee6d47a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_opencode.rs:253`
-- 结构：`query_sessions` / `rust_string`
-- 原文/表达式：读取会话行失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`819b6466fee6d47a02c4bc68c70d75cce5316f4c01d2b80e2039a44da882419e`
-
-### 420. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:query_assistant_messages:260eb32e075d569c:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_opencode.rs:281`
-- 结构：`query_assistant_messages` / `rust_string`
-- 原文/表达式：准备消息查询失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`260eb32e075d569cf755f2904e465a6a90c93199f7daf64fdf49e4ccdbc8060a`
-
-### 421. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:query_assistant_messages:244e553fa3ea1746:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_opencode.rs:291`
-- 结构：`query_assistant_messages` / `rust_string`
-- 原文/表达式：查询消息失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`244e553fa3ea174601ada11db7fb4d5ed4e09a4e921f3133539ac3682bfcbe96`
-
-### 422. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:query_assistant_messages:bd5e24a7ccc658f3:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_opencode.rs:297`
-- 结构：`query_assistant_messages` / `rust_string`
-- 原文/表达式：读取消息行失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`bd5e24a7ccc658f32770e1789da75a5872e93e12c3d1db883683386b6d894a92`
-
-### 423. `hardcoded:src-tauri/src/services/session_usage_opencode.rs:insert_opencode_message:8a9d5298706dbc83:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_opencode.rs:550`
-- 结构：`insert_opencode_message` / `rust_string`
-- 原文/表达式：插入 OpenCode 会话日志失败: {e}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`8a9d5298706dbc83eb8761634942bb99811a56797513336525af195bc8a16958`
-
-### 424. `hardcoded:src-tauri/src/services/session_usage_pi.rs:sync_pi_usage:039423aa34d267ed:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:170`
-- 结构：`sync_pi_usage` / `rust_string`
-- 原文/表达式：无法发现 Pi 会话: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`039423aa34d267eda3acb3e620ca5835a443732ea952c6093e66b046d2f9563e`
-
-### 425. `hardcoded:src-tauri/src/services/session_usage_pi.rs:sync_pi_files:f82c4d0d9ed0cb5d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:184`
-- 结构：`sync_pi_files` / `rust_string`
-- 原文/表达式：预取同步游标失败: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`f82c4d0d9ed0cb5d9b7c6c2c48fc06c1bf2c291205a5a5c6234aef23bc417163`
-
-### 426. `hardcoded:src-tauri/src/services/session_usage_pi.rs:sync_pi_files:70c011d2a31a9f78:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:194`
-- 结构：`sync_pi_files` / `rust_string`
-- 原文/表达式：记录 Pi 子会话起算时间失败: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`70c011d2a31a9f7803680fb82ab53e29dd5493c711121b0572fed7c9477dd2e3`
-
-### 427. `hardcoded:src-tauri/src/services/session_usage_pi.rs:child_cutoff:b2bea21163457a3b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:235`
-- 结构：`child_cutoff` / `rust_string`
-- 原文/表达式：写入 Pi 子会话起算时间失败: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`b2bea21163457a3b0b9256186ca06858e8cc54d3952bebfa7ca8589440437360`
-
-### 428. `hardcoded:src-tauri/src/services/session_usage_pi.rs:sync_single_pi_file:a1e4437a5fdc9323:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:246`
-- 结构：`sync_single_pi_file` / `rust_string`
-- 原文/表达式：无法读取 Pi 会话文件元数据: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a1e4437a5fdc9323cb0137eb40e7191e51f5c2cd941ee5b1df521c9851c6c0cd`
-
-### 429. `hardcoded:src-tauri/src/services/session_usage_pi.rs:sync_single_pi_file:51e02cf0f3242db4:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:251`
-- 结构：`sync_single_pi_file` / `rust_string`
-- 原文/表达式：Pi 会话路径不是普通 JSONL 文件
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`51e02cf0f3242db40f4f151f55f4077452784f7054757f209f1672c002dfcd4f`
-
-### 430. `hardcoded:src-tauri/src/services/session_usage_pi.rs:sync_single_pi_file:eab5715efa1d420f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:256`
-- 结构：`sync_single_pi_file` / `rust_string`
-- 原文/表达式：Pi 会话文件超过 {} 字节安全上限
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`eab5715efa1d420f67049719efaf9e60c3e5ad957ac58d81948a81df13171852`
-
-### 431. `hardcoded:src-tauri/src/services/session_usage_pi.rs:sync_single_pi_file:5d8acc24768bce36:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:294`
-- 结构：`sync_single_pi_file` / `rust_string`
-- 原文/表达式：启动 Pi 用量导入事务失败: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`5d8acc24768bce364fde4135ad395c30b3831a9de6082c8d15ac62446bfa71a1`
-
-### 432. `hardcoded:src-tauri/src/services/session_usage_pi.rs:sync_single_pi_file:d4c1296288ab6ab6:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:306`
-- 结构：`sync_single_pi_file` / `rust_string`
-- 原文/表达式：提交 Pi 用量导入事务失败: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`d4c1296288ab6ab6627fa6432bf8ceafa33ace1ec5689559e729e08a00580bcf`
-
-### 433. `hardcoded:src-tauri/src/services/session_usage_pi.rs:update_pi_sync_state_on_conn:6d29d51fa9c79e90:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:355`
-- 结构：`update_pi_sync_state_on_conn` / `rust_string`
-- 原文/表达式：更新 Pi 会话同步状态失败: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`6d29d51fa9c79e90caceeb74cfe53f6c1f048b2df1c4da908ed26d59fd9c158c`
-
-### 434. `hardcoded:src-tauri/src/services/session_usage_pi.rs:pi_file_revision:83e863050b58b0c8:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:368`
-- 结构：`pi_file_revision` / `rust_string`
-- 原文/表达式：无法打开 Pi 会话文件: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`83e863050b58b0c8d931718d0a021f2abe9a75ca8c4da3d480eaef9a4cffa697`
-
-### 435. `hardcoded:src-tauri/src/services/session_usage_pi.rs:pi_file_revision:fc27bfdc33003b82:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:371`
-- 结构：`pi_file_revision` / `rust_string`
-- 原文/表达式：无法读取 Pi 会话文件尾部: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`fc27bfdc33003b82bc61de1c8dd6706956976203edb79059df165394f768e4d2`
-
-### 436. `hardcoded:src-tauri/src/services/session_usage_pi.rs:pi_prefix_tail_matches:83e863050b58b0c8:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:389`
-- 结构：`pi_prefix_tail_matches` / `rust_string`
-- 原文/表达式：无法打开 Pi 会话文件: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`83e863050b58b0c8d931718d0a021f2abe9a75ca8c4da3d480eaef9a4cffa697`
-
-### 437. `hardcoded:src-tauri/src/services/session_usage_pi.rs:pi_prefix_tail_matches:d821db75b5676ed8:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:392`
-- 结构：`pi_prefix_tail_matches` / `rust_string`
-- 原文/表达式：无法校验 Pi 会话追加边界: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`d821db75b5676ed882c64e20b09294cab8a9a925827c2926a7d7d4bc46f7e952`
-
-### 438. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:83e863050b58b0c8:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:414`
-- 结构：`parse_pi_file` / `rust_string`
-- 原文/表达式：无法打开 Pi 会话文件: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`83e863050b58b0c8d931718d0a021f2abe9a75ca8c4da3d480eaef9a4cffa697`
-
-### 439. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:45243e631d563704:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:434`
-- 结构：`parse_pi_file` / `rust_string`
-- 原文/表达式：无法读取 Pi 会话文件: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`45243e631d5637045c71f9e37a4b09c455cb101d6ecf29f51c4ec81b1953faeb`
-
-### 440. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:b3414b8ef5892804:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:436`
-- 结构：`parse_pi_file` / `rust_string`
-- 原文/表达式：Pi 会话文件在读取期间被截断
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`b3414b8ef5892804f7e657bd07aa9bcbcab5d55940ffeab153bc0be974835a7c`
-
-### 441. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:407c426f8ba3a5ef:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:441`
-- 结构：`parse_pi_file` / `rust_string`
-- 原文/表达式：Pi 会话文件读取时超过安全上限
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`407c426f8ba3a5efa5c3fb2484bc4e6769614fba5ae946bc002800fc3cde2644`
-
-### 442. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:1e967e2aa34b3f8e:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:461`
-- 结构：`parse_pi_file` / `rust_string`
-- 原文/表达式：Pi 会话超过 {} 条 entry 安全上限
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`1e967e2aa34b3f8e3c0f89ad49b42d6fe8ae5a81660643202774c8785204f571`
-
-### 443. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:25ad85d4c5d8fdc8:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:479`
-- 结构：`parse_pi_file` / `rust_string`
-- 原文/表达式：Pi 会话的首条有效 JSON 不是 session header
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`25ad85d4c5d8fdc845c86d0594567e2197367aeffd37f009afd9bff5ed734d32`
-
-### 444. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:1d41fbfb63d11315:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:488`
-- 结构：`parse_pi_file` / `rust_string`
-- 原文/表达式：Pi 会话 header 缺少 id
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`1d41fbfb63d113156c75a36f534f5f09b92d10809f6355f7443d9e8036af9771`
-
-### 445. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:dbc0787825ae5f0e:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:494`
-- 结构：`parse_pi_file` / `rust_string`
-- 原文/表达式：无法定位 Pi 会话增量边界: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`dbc0787825ae5f0e8a53d617c494ec997939b809673892d786b3a0ee4f86a99d`
-
-### 446. `hardcoded:src-tauri/src/services/session_usage_pi.rs:parse_pi_file:bb97fb9d4248a46b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:520`
-- 结构：`parse_pi_file` / `rust_string`
-- 原文/表达式：Pi 会话没有有效 header
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`bb97fb9d4248a46b51a61ad24956b245ebc3c069833ca69e708e366bc4f7a2de`
-
-### 447. `hardcoded:src-tauri/src/services/session_usage_pi.rs:insert_pi_record:1af784fa639b9e4a:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:898`
-- 结构：`insert_pi_record` / `rust_string`
-- 原文/表达式：查询 Pi 用量去重账本失败: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`1af784fa639b9e4a387645eae49db05eee25700c33ff843252495a5bbcbce4bb`
-
-### 448. `hardcoded:src-tauri/src/services/session_usage_pi.rs:insert_pi_record:1af784fa639b9e4a:002`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:910`
-- 结构：`insert_pi_record` / `rust_string`
-- 原文/表达式：查询 Pi 用量去重账本失败: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`1af784fa639b9e4a387645eae49db05eee25700c33ff843252495a5bbcbce4bb`
-
-### 449. `hardcoded:src-tauri/src/services/session_usage_pi.rs:insert_pi_record:1c7048e9e0604d2d:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:925`
-- 结构：`insert_pi_record` / `rust_string`
-- 原文/表达式：写入 Pi 用量去重账本失败: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`1c7048e9e0604d2decc08fecc08c00b98ac41b478eb4a3a4aaf2cc9f46fe65c4`
-
-### 450. `hardcoded:src-tauri/src/services/session_usage_pi.rs:insert_pi_record:3859de41dee1ac7b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/session_usage_pi.rs:1001`
-- 结构：`insert_pi_record` / `rust_string`
-- 原文/表达式：插入 Pi 会话用量失败: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`3859de41dee1ac7b43c7a882fe6009eee196b70d85948d76c31c931fe1aa2bd4`
-
-### 451. `hardcoded:src-tauri/src/services/skill.rs:import_from_apps:3af8fcc5127322b8:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/skill.rs:2438`
-- 结构：`import_from_apps` / `rust_string`
-- 原文/表达式：Skill 与托管副本内容不同，拒绝替换链接: {dir_name}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`3af8fcc5127322b819a0e94acfc73bc66defc91f188401f566b07fff9961961c`
-
-### 452. `hardcoded:src-tauri/src/services/skill.rs:try_repo_branches:30860835c1352d77:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/skill.rs:3798`
-- 结构：`try_repo_branches` / `rust_string`
-- 原文/表达式：所有分支下载失败
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`30860835c1352d77aa4306ee886a02d0b5aa97ac9249b0bc8ec97163576f4989`
-
-### 453. `hardcoded:src-tauri/src/services/speedtest.rs:test_endpoints:8b7f52f0dbb6ed9f:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/speedtest.rs:93`
-- 结构：`test_endpoints` / `rust_string`
-- 原文/表达式：请求超时
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`8b7f52f0dbb6ed9fc7ade64c1159a2ab9dec79959006d209de645f22b602914d`
-
-### 454. `hardcoded:src-tauri/src/services/stream_check.rs:probe_reachability:a8f37ce6dddf61a2:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/stream_check.rs:223`
-- 结构：`probe_reachability` / `rust_string`
-- 原文/表达式：base_url 为空
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a8f37ce6dddf61a23c67304f93b77eca7200b7e6bdc413f4260bdd7b17a75116`
-
-### 455. `hardcoded:src-tauri/src/services/subscription.rs:read_codex_keychain_secret:dbd25eadd7d922d3:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/subscription.rs:707`
-- 结构：`read_codex_keychain_secret` / `rust_string`
-- 原文/表达式：运行 security 失败: {error}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`dbd25eadd7d922d3a1d3476adeaf6ab3e7d1698457366ed36a4a2b1d7dee0169`
-
-### 456. `hardcoded:src-tauri/src/services/subscription.rs:read_codex_keychain_secret:aef32b4040c63ba6:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/subscription.rs:713`
-- 结构：`read_codex_keychain_secret` / `rust_string`
-- 原文/表达式：security 退出码 {:?}: {}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`aef32b4040c63ba6695592fd4533146aff44c8e8d16ec3431b7b874d03539590`
-
-### 457. `hardcoded:src-tauri/src/services/webdav.rs:test_connection:a5574109f0208e89:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav.rs:157`
-- 结构：`test_connection` / `rust_string`
-- 原文/表达式：连接
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a5574109f0208e899feb6b620feb3f1f686aded4ec939631420afc1bec51c400`
-
-### 458. `hardcoded:src-tauri/src/services/webdav.rs:ensure_remote_directories:c39f36dbf6e95813:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav.rs:204`
-- 结构：`ensure_remote_directories` / `rust_string`
-- 原文/表达式：MKCOL 请求
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`c39f36dbf6e95813564a2c7eb7ffc0ef3dbac059e06065114b8594e3e17cb195`
-
-### 459. `hardcoded:src-tauri/src/services/webdav.rs:put_bytes:f53b1cc6cdf3a09b:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav.rs:251`
-- 结构：`put_bytes` / `rust_string`
-- 原文/表达式：PUT 请求
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`f53b1cc6cdf3a09ba9e868e5ff8af81d3abd7ee155eedc7297789bb1133d288a`
-
-### 460. `hardcoded:src-tauri/src/services/webdav.rs:get_bytes:9a4f338ad2fc9ba6:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav.rs:274`
-- 结构：`get_bytes` / `rust_string`
-- 原文/表达式：GET 请求
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`9a4f338ad2fc9ba611cdf9441a731a887fbfb50b8dbb343689af9b61d6b2c9bf`
-
-### 461. `hardcoded:src-tauri/src/services/webdav.rs:get_bytes:9a4f338ad2fc9ba6:002`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav.rs:276`
-- 结构：`get_bytes` / `rust_string`
-- 原文/表达式：GET 请求
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`9a4f338ad2fc9ba611cdf9441a731a887fbfb50b8dbb343689af9b61d6b2c9bf`
-
-### 462. `hardcoded:src-tauri/src/services/webdav.rs:get_bytes:0db9af77f115e056:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav.rs:300`
-- 结构：`get_bytes` / `rust_string`
-- 原文/表达式：读取响应
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`0db9af77f115e056ec3125b25189295260f931b2f99f8ae8ea8152f64ea025ae`
-
-### 463. `hardcoded:src-tauri/src/services/webdav.rs:head_etag:d68a4bbea7336121:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/services/webdav.rs:333`
-- 结构：`head_etag` / `rust_string`
-- 原文/表达式：HEAD 请求
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`d68a4bbea73361213bfe1f356f395784a9858afea0224d7bdfb4ba76fd3802b6`
-
-### 464. `hardcoded:src-tauri/src/session_manager/content.rs:validate_sqlite_source:5468662776eb4c05:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/session_manager/content.rs:176`
-- 结构：`validate_sqlite_source` / `rust_string`
-- 原文/表达式：.to_string());<br>    }<br>    Ok(SourceLocation::Sqlite { db, session_id })<br>}<br><br>// ── ContentRef ──────────────────────────────────────────────────────<br><br>/// 分页后的全文（§5.1 `BlockContent`）。`offset` / `limit` / `total_len` 均按字符计。<br>#[derive(Debug, Clone, PartialEq, Eq, Serialize)]<br>#[serde(rename_all =
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`5468662776eb4c059d2c9fc7e57addd1125327ba21247a862de17ca17dccaaf2`
-
-### 465. `hardcoded:src-tauri/src/session_manager/content.rs:resolve_content_ref:490770696681f7aa:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/session_manager/content.rs:274`
-- 结构：`resolve_content_ref` / `rust_string`
-- 原文/表达式：.to_string())?;<br>            if !base.starts_with(root) {<br>                return Err(OUTSIDE.to_string());<br>            }<br>            let file = safe_join(&base, rel_path)?;<br>            let bytes = read_limited(&file, MAX_TEXT_BYTES, TOO_LARGE_TEXT)?;<br>            Ok(String::from_utf8_lossy(&bytes).into_owned())<br>        }<br>    }<br>}<br><br>/// Grok Build 的会话正文文件名：sourcePath 是同目录的 `summary.json`<br>pub(crate) const GROK_CHAT_HISTORY: &str =
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`490770696681f7aa14d097d42c1eb7510676ea5cf84c566fe51fe4ee55ed70ae`
-
-### 466. `hardcoded:src-tauri/src/session_manager/content.rs:read_sqlite_cell:9f5f86595df70ab0:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/session_manager/content.rs:487`
-- 结构：`read_sqlite_cell` / `rust_string`
-- 原文/表达式：.to_string())?;<br>    // 表名、列名来自上面的白名单，可以安全拼接<br>    let sql = format!(
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`9f5f86595df70ab0e8d78403ade118a950f40b3ecc3a177a2cd071d881187bcf`
-
-### 467. `hardcoded:src-tauri/src/session_manager/content.rs:canonical_local_image:9e9f72a029db6cc8:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/session_manager/content.rs:608`
-- 结构：`canonical_local_image` / `rust_string`
-- 原文/表达式：图片路径无效
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`9e9f72a029db6cc8a84f38f1ad39a7a6ac0f0d5dbbac4134d2e4896ef997e815`
-
-### 468. `hardcoded:src-tauri/src/session_manager/content.rs:canonical_local_image:24f7bbdd4627adef:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/session_manager/content.rs:615`
-- 结构：`canonical_local_image` / `rust_string`
-- 原文/表达式：SVG 图片不直接显示
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`24f7bbdd4627adefa6bb57e9bc797c46b187e0fc6f857ad41167d86809c29468`
-
-### 469. `hardcoded:src-tauri/src/session_manager/content.rs:canonical_local_image:a9e99b1d3748eb55:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/session_manager/content.rs:618`
-- 结构：`canonical_local_image` / `rust_string`
-- 原文/表达式：不支持的图片格式
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`a9e99b1d3748eb55b1472d24a564324afb6357fe0a7be59d904e184520fbf75d`
-
-### 470. `hardcoded:src-tauri/src/session_manager/content.rs:canonical_local_image:678f36e6cb146ae4:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/session_manager/content.rs:621`
-- 结构：`canonical_local_image` / `rust_string`
-- 原文/表达式：图片文件不存在
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`678f36e6cb146ae4cf20225b03b2aa9d0170418ba24acdfeb2dd7e5f3a09b3df`
-
-### 471. `hardcoded:src-tauri/src/session_manager/content.rs:read_local_image:1fdf8f149c0404bc:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/session_manager/content.rs:643`
-- 结构：`read_local_image` / `rust_string`
-- 原文/表达式：图片不在会话项目或工具目录内，无法预览
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`1fdf8f149c0404bc01121e79d33a41babd87561b540607d6719f38a8569c2af3`
-
-### 472. `hardcoded:src-tauri/src/session_manager/content.rs:resolve_reveal_path:1f83ecf93757ade3:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/session_manager/content.rs:703`
-- 结构：`resolve_reveal_path` / `rust_string`
-- 原文/表达式：路径无效
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`1f83ecf93757ade32cad7080fc0a56717c7e9fa778ac2bc5761caac01b965d4e`
-
-### 473. `hardcoded:src-tauri/src/session_manager/content.rs:resolve_reveal_path:e62e50f2adda11e3:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/session_manager/content.rs:705`
-- 结构：`resolve_reveal_path` / `rust_string`
-- 原文/表达式：路径不存在
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`e62e50f2adda11e338a7764b38eff14df7a494da53c6df2d549942f6b861b058`
-
-### 474. `hardcoded:src-tauri/src/settings.rs:save_settings_file:d5ec95889a0cfb38:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/settings.rs:968`
-- 结构：`save_settings_file` / `rust_string`
-- 原文/表达式：无法获取用户主目录
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`d5ec95889a0cfb3888af0d51688a480559511bf4dc7ece15e4868b93ad06d0fd`
-
-### 475. `hardcoded:src-tauri/src/settings.rs:write_settings_to_path:eea2a087133af3e9:001`
-
-- 状态：确认遗漏
-- 文件：`src-tauri/src/settings.rs:990`
-- 结构：`write_settings_to_path` / `rust_string`
-- 原文/表达式：设置文件之前没能读取，备份原文件也失败，为免覆盖已取消保存 (The settings file could not be read earlier and backing it up failed; saving was cancelled to avoid overwriting it): {}: {err}
-- 判定原因：该中文错误字符串位于返回错误的路径上，会经 Tauri 直接展示给前端用户，且没有韩语版本。
-- 处理方向：改为稳定错误键并统一按语言渲染，或在 localized 载荷中补充韩语。
-- 严重程度：高
-- 指纹：`eea2a087133af3e9643652e39063b4981d9969f3e4cf6185d3ef609a508fa48c`
-
-### 476. `hardcoded:src/components/DeepLinkImportDialog.tsx:DeepLinkImportDialog:7de02e7f919bd514:001`
+### 1. `hardcoded:src/components/DeepLinkImportDialog.tsx:DeepLinkImportDialog:7de02e7f919bd514:001`
 
 - 状态：确认遗漏
 - 文件：`src/components/DeepLinkImportDialog.tsx:732`
@@ -5258,7 +33,7 @@
 - 严重程度：中
 - 指纹：`7de02e7f919bd51427a2a49637b5c42567018fb93282b59b55b2b22702496bf5`
 
-### 477. `hardcoded:src/components/DeepLinkImportDialog.tsx:DeepLinkImportDialog:4922fc9dd3ca2b64:001`
+### 2. `hardcoded:src/components/DeepLinkImportDialog.tsx:DeepLinkImportDialog:4922fc9dd3ca2b64:001`
 
 - 状态：确认遗漏
 - 文件：`src/components/DeepLinkImportDialog.tsx:750`
@@ -5270,7 +45,7 @@
 - 严重程度：中
 - 指纹：`4922fc9dd3ca2b64dee0e420d7d46927d37f1c7147a0c3aef8b5601ac96eb468`
 
-### 478. `hardcoded:src/components/UsageScriptModal.tsx:UsageScriptModal:23189d55f6973f2c:001`
+### 3. `hardcoded:src/components/UsageScriptModal.tsx:UsageScriptModal:23189d55f6973f2c:001`
 
 - 状态：确认遗漏
 - 文件：`src/components/UsageScriptModal.tsx:1156`
@@ -5282,7 +57,7 @@
 - 严重程度：中
 - 指纹：`23189d55f6973f2ce5325707ab40ed9a145fd5b71f0f009448f0c15fc22b3d73`
 
-### 479. `hardcoded:src/components/UsageScriptModal.tsx:UsageScriptModal:23189d55f6973f2c:002`
+### 4. `hardcoded:src/components/UsageScriptModal.tsx:UsageScriptModal:23189d55f6973f2c:002`
 
 - 状态：确认遗漏
 - 文件：`src/components/UsageScriptModal.tsx:1320`
@@ -5294,7 +69,7 @@
 - 严重程度：中
 - 指纹：`23189d55f6973f2ce5325707ab40ed9a145fd5b71f0f009448f0c15fc22b3d73`
 
-### 480. `hardcoded:src/components/providers/forms/hooks/useCodexTomlValidation.ts:errorMessage:dded5e1d24c96e2a:001`
+### 5. `hardcoded:src/components/providers/forms/hooks/useCodexTomlValidation.ts:errorMessage:dded5e1d24c96e2a:001`
 
 - 状态：确认遗漏
 - 文件：`src/components/providers/forms/hooks/useCodexTomlValidation.ts:30`
@@ -5305,7 +80,7 @@
 - 严重程度：中
 - 指纹：`dded5e1d24c96e2ab01ae6104d644879cd1342121f14ea2f61f45289423e4636`
 
-### 481. `hardcoded:src/components/universal/UniversalProviderFormModal.tsx:UniversalProviderFormModal:6f71800c93bd916e:001`
+### 6. `hardcoded:src/components/universal/UniversalProviderFormModal.tsx:UniversalProviderFormModal:6f71800c93bd916e:001`
 
 - 状态：确认遗漏
 - 文件：`src/components/universal/UniversalProviderFormModal.tsx:600`
@@ -5317,7 +92,7 @@
 - 严重程度：中
 - 指纹：`6f71800c93bd916e601cf078542b5250383633bf18f08a2c6e019db9975abcbb`
 
-### 482. `hardcoded:src/components/usage/providerLabel.ts:SESSION_PROVIDER_APPS:01f4e2433ec4be24:001`
+### 7. `hardcoded:src/components/usage/providerLabel.ts:SESSION_PROVIDER_APPS:01f4e2433ec4be24:001`
 
 - 状态：确认遗漏
 - 文件：`src/components/usage/providerLabel.ts:15`
@@ -5328,7 +103,7 @@
 - 严重程度：低
 - 指纹：`01f4e2433ec4be24aa94ed7466ff73dab3a6273a008a0f9aed4869b5e16e7381`
 
-### 483. `hardcoded:src/components/usage/providerLabel.ts:SESSION_PROVIDER_APPS:8fe6db86f3c11f21:001`
+### 8. `hardcoded:src/components/usage/providerLabel.ts:SESSION_PROVIDER_APPS:8fe6db86f3c11f21:001`
 
 - 状态：确认遗漏
 - 文件：`src/components/usage/providerLabel.ts:16`
@@ -5339,7 +114,7 @@
 - 严重程度：低
 - 指纹：`8fe6db86f3c11f21652978cdaaf7dc6862ff8027669c667d9b53aba230d8385a`
 
-### 484. `hardcoded:src/components/usage/providerLabel.ts:SESSION_PROVIDER_APPS:0f38be253cd29be7:001`
+### 9. `hardcoded:src/components/usage/providerLabel.ts:SESSION_PROVIDER_APPS:0f38be253cd29be7:001`
 
 - 状态：确认遗漏
 - 文件：`src/components/usage/providerLabel.ts:17`
@@ -5350,7 +125,7 @@
 - 严重程度：低
 - 指纹：`0f38be253cd29be755bc5a7ce60ac1f4eac5fb8a9f3f49def9b0b34ff6776911`
 
-### 485. `hardcoded:src/config/codingPlanProviders.ts:CODING_PLAN_PROVIDERS:3db0e7b4fbcf5a89:001`
+### 10. `hardcoded:src/config/codingPlanProviders.ts:CODING_PLAN_PROVIDERS:3db0e7b4fbcf5a89:001`
 
 - 状态：确认遗漏
 - 文件：`src/config/codingPlanProviders.ts:36`
@@ -5361,7 +136,7 @@
 - 严重程度：中
 - 指纹：`3db0e7b4fbcf5a8948b03db16bd40f01af615ee9904524b3272508eba3cde421`
 
-### 486. `hardcoded:src/config/codingPlanProviders.ts:CODING_PLAN_PROVIDERS:b1d2aaa46c82135e:001`
+### 11. `hardcoded:src/config/codingPlanProviders.ts:CODING_PLAN_PROVIDERS:b1d2aaa46c82135e:001`
 
 - 状态：确认遗漏
 - 文件：`src/config/codingPlanProviders.ts:46`
@@ -5372,7 +147,7 @@
 - 严重程度：中
 - 指纹：`b1d2aaa46c82135e0282e4459e7bfe473670d79814971cdf27774cc7b7ab9bab`
 
-### 487. `hardcoded:src/config/codingPlanProviders.ts:CODING_PLAN_PROVIDERS:63c6e0bb0efb7b2f:001`
+### 12. `hardcoded:src/config/codingPlanProviders.ts:CODING_PLAN_PROVIDERS:63c6e0bb0efb7b2f:001`
 
 - 状态：确认遗漏
 - 文件：`src/config/codingPlanProviders.ts:68`
@@ -5383,7 +158,7 @@
 - 严重程度：中
 - 指纹：`63c6e0bb0efb7b2f6f3fda2e0400019812642e4a76f44e02c7e9ab2a74d7d86a`
 
-### 488. `hardcoded:src/config/geminiProviderPresets.ts:geminiProviderPresets:adc217dd32753992:001`
+### 13. `hardcoded:src/config/geminiProviderPresets.ts:geminiProviderPresets:adc217dd32753992:001`
 
 - 状态：确认遗漏
 - 文件：`src/config/geminiProviderPresets.ts:44`
@@ -5394,7 +169,7 @@
 - 严重程度：中
 - 指纹：`adc217dd3275399254b3aba37faa7150ec4e752f85dfe37af80fccbe4685bb7f`
 
-### 489. `hardcoded:src/config/opencodeProviderPresets.ts:opencodeProviderPresets:789e7138516546aa:002`
+### 14. `hardcoded:src/config/opencodeProviderPresets.ts:opencodeProviderPresets:789e7138516546aa:002`
 
 - 状态：确认遗漏
 - 文件：`src/config/opencodeProviderPresets.ts:1619`
@@ -5405,7 +180,7 @@
 - 严重程度：中
 - 指纹：`789e7138516546aa68ed5ea9c8627110855d29b1508d9ad45c62862229330f09`
 
-### 490. `hardcoded:src/config/opencodeProviderPresets.ts:opencodeProviderPresets:4c8a38aad6ae652f:002`
+### 15. `hardcoded:src/config/opencodeProviderPresets.ts:opencodeProviderPresets:4c8a38aad6ae652f:002`
 
 - 状态：确认遗漏
 - 文件：`src/config/opencodeProviderPresets.ts:1654`
@@ -5416,7 +191,7 @@
 - 严重程度：中
 - 指纹：`4c8a38aad6ae652f0539951f8b9983f36ffab8ed99199f7648df6aada9753a9c`
 
-### 491. `hardcoded:src/config/opencodeProviderPresets.ts:opencodeProviderPresets:dfc683f1eeccb537:002`
+### 16. `hardcoded:src/config/opencodeProviderPresets.ts:opencodeProviderPresets:dfc683f1eeccb537:002`
 
 - 状态：确认遗漏
 - 文件：`src/config/opencodeProviderPresets.ts:2873`
@@ -5427,7 +202,7 @@
 - 严重程度：中
 - 指纹：`dfc683f1eeccb5372dd95a3444222d8c6161c261fdfbe9efc0ad0b086f45e3c1`
 
-### 492. `hardcoded:src/config/opencodeProviderPresets.ts:opencodeProviderPresets:97c44cb45918dcfe:002`
+### 17. `hardcoded:src/config/opencodeProviderPresets.ts:opencodeProviderPresets:97c44cb45918dcfe:002`
 
 - 状态：确认遗漏
 - 文件：`src/config/opencodeProviderPresets.ts:2921`
@@ -5438,7 +213,7 @@
 - 严重程度：中
 - 指纹：`97c44cb45918dcfee9ba21647a6c60d52621760b8208176d0d7c6dabfa7fd12b`
 
-### 493. `hardcoded:src/config/opencodeProviderPresets.ts:opencodeProviderPresets:d4c50f95774cffbd:002`
+### 18. `hardcoded:src/config/opencodeProviderPresets.ts:opencodeProviderPresets:d4c50f95774cffbd:002`
 
 - 状态：确认遗漏
 - 文件：`src/config/opencodeProviderPresets.ts:4430`
@@ -5449,7 +224,7 @@
 - 严重程度：中
 - 指纹：`d4c50f95774cffbdd6d3e0c9322cabbe28c48e1300e327260432b52186917a32`
 
-### 494. `hardcoded:src/config/piProviderPresets.ts:piProviderPresetDefinitions:789e7138516546aa:002`
+### 19. `hardcoded:src/config/piProviderPresets.ts:piProviderPresetDefinitions:789e7138516546aa:002`
 
 - 状态：确认遗漏
 - 文件：`src/config/piProviderPresets.ts:938`
@@ -5460,7 +235,7 @@
 - 严重程度：中
 - 指纹：`789e7138516546aa68ed5ea9c8627110855d29b1508d9ad45c62862229330f09`
 
-### 495. `hardcoded:src/config/piProviderPresets.ts:piProviderPresetDefinitions:4c8a38aad6ae652f:002`
+### 20. `hardcoded:src/config/piProviderPresets.ts:piProviderPresetDefinitions:4c8a38aad6ae652f:002`
 
 - 状态：确认遗漏
 - 文件：`src/config/piProviderPresets.ts:964`
@@ -5471,7 +246,7 @@
 - 严重程度：中
 - 指纹：`4c8a38aad6ae652f0539951f8b9983f36ffab8ed99199f7648df6aada9753a9c`
 
-### 496. `hardcoded:src/config/piProviderPresets.ts:piProviderPresetDefinitions:dfc683f1eeccb537:002`
+### 21. `hardcoded:src/config/piProviderPresets.ts:piProviderPresetDefinitions:dfc683f1eeccb537:002`
 
 - 状态：确认遗漏
 - 文件：`src/config/piProviderPresets.ts:1507`
@@ -5482,7 +257,7 @@
 - 严重程度：中
 - 指纹：`dfc683f1eeccb5372dd95a3444222d8c6161c261fdfbe9efc0ad0b086f45e3c1`
 
-### 497. `hardcoded:src/config/piProviderPresets.ts:piProviderPresetDefinitions:97c44cb45918dcfe:002`
+### 22. `hardcoded:src/config/piProviderPresets.ts:piProviderPresetDefinitions:97c44cb45918dcfe:002`
 
 - 状态：确认遗漏
 - 文件：`src/config/piProviderPresets.ts:1534`
@@ -5493,7 +268,7 @@
 - 严重程度：中
 - 指纹：`97c44cb45918dcfee9ba21647a6c60d52621760b8208176d0d7c6dabfa7fd12b`
 
-### 498. `hardcoded:src/config/piProviderPresets.ts:piProviderPresetDefinitions:d4c50f95774cffbd:002`
+### 23. `hardcoded:src/config/piProviderPresets.ts:piProviderPresetDefinitions:d4c50f95774cffbd:002`
 
 - 状态：确认遗漏
 - 文件：`src/config/piProviderPresets.ts:3221`
@@ -5504,7 +279,7 @@
 - 严重程度：中
 - 指纹：`d4c50f95774cffbdd6d3e0c9322cabbe28c48e1300e327260432b52186917a32`
 
-### 499. `hardcoded:src/config/presetFamilies.ts:PRESET_FAMILIES:dfc683f1eeccb537:001`
+### 24. `hardcoded:src/config/presetFamilies.ts:PRESET_FAMILIES:dfc683f1eeccb537:001`
 
 - 状态：确认遗漏
 - 文件：`src/config/presetFamilies.ts:34`
@@ -5515,7 +290,7 @@
 - 严重程度：中
 - 指纹：`dfc683f1eeccb5372dd95a3444222d8c6161c261fdfbe9efc0ad0b086f45e3c1`
 
-### 500. `hardcoded:src/config/universalProviderPresets.ts:universalProviderPresets:664ce053a17de1b3:001`
+### 25. `hardcoded:src/config/universalProviderPresets.ts:universalProviderPresets:664ce053a17de1b3:001`
 
 - 状态：确认遗漏
 - 文件：`src/config/universalProviderPresets.ts:75`
@@ -5527,7 +302,7 @@
 - 严重程度：中
 - 指纹：`664ce053a17de1b3e13623a1bc0aff33eaebdcab7c04f81910e6cd9f90f08940`
 
-### 501. `hardcoded:src/config/universalProviderPresets.ts:universalProviderPresets:c0c340c6669b573e:001`
+### 26. `hardcoded:src/config/universalProviderPresets.ts:universalProviderPresets:c0c340c6669b573e:001`
 
 - 状态：确认遗漏
 - 文件：`src/config/universalProviderPresets.ts:78`
@@ -5539,7 +314,7 @@
 - 严重程度：中
 - 指纹：`c0c340c6669b573e18e6d5299a9dd465ccd59f8fbfac855315a8bce686806315`
 
-### 502. `hardcoded:src/config/universalProviderPresets.ts:universalProviderPresets:f21532a893347f92:001`
+### 27. `hardcoded:src/config/universalProviderPresets.ts:universalProviderPresets:f21532a893347f92:001`
 
 - 状态：确认遗漏
 - 文件：`src/config/universalProviderPresets.ts:88`
@@ -5551,7 +326,7 @@
 - 严重程度：中
 - 指纹：`f21532a893347f92a196d5fbf7be8002b50452cfc9517c225b38077a2e210d19`
 
-### 503. `hardcoded:src/hooks/usePromptActions.ts:toggleEnabled:7dddff38555ef878:001`
+### 28. `hardcoded:src/hooks/usePromptActions.ts:toggleEnabled:7dddff38555ef878:001`
 
 - 状态：确认遗漏
 - 文件：`src/hooks/usePromptActions.ts:199`
@@ -5562,7 +337,7 @@
 - 严重程度：中
 - 指纹：`7dddff38555ef8787e5d36ce807e6e3c0b4c852ca4c6fd7de592f7e643ac2774`
 
-### 504. `hardcoded:src/index.html:<html>:25446063f4c3bc2c:001`
+### 29. `hardcoded:src/index.html:<html>:25446063f4c3bc2c:001`
 
 - 状态：确认遗漏
 - 文件：`src/index.html:6`
@@ -5573,7 +348,7 @@
 - 严重程度：中
 - 指纹：`25446063f4c3bc2c4ce81522b40c699107700afcbbd0d794b4a8ec0e13978833`
 
-### 505. `hardcoded:src/lib/requestOverrides.ts:parseRequestOverrideJson:74a1bddc53f46610:001`
+### 30. `hardcoded:src/lib/requestOverrides.ts:parseRequestOverrideJson:74a1bddc53f46610:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/requestOverrides.ts:91`
@@ -5584,7 +359,7 @@
 - 严重程度：中
 - 指纹：`74a1bddc53f466101dff2904702b8bd0ddaef45642ab91ee157378761979c0ea`
 
-### 506. `hardcoded:src/lib/requestOverrides.ts:parseBodyOverrideJson:813beebde821ec1c:001`
+### 31. `hardcoded:src/lib/requestOverrides.ts:parseBodyOverrideJson:813beebde821ec1c:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/requestOverrides.ts:107`
@@ -5595,7 +370,7 @@
 - 严重程度：中
 - 指纹：`813beebde821ec1cb48962885314f3d031e6a6bd5482e27a4e210a81940131b4`
 
-### 507. `hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:587ae7c1023150ec:001`
+### 32. `hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:587ae7c1023150ec:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/requestOverrides.ts:124`
@@ -5606,7 +381,7 @@
 - 严重程度：中
 - 指纹：`587ae7c1023150ecebc867c1df143765656e9380c6464a02a190f337ce98627c`
 
-### 508. `hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:de3ce1024b239d54:001`
+### 33. `hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:de3ce1024b239d54:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/requestOverrides.ts:127`
@@ -5617,7 +392,7 @@
 - 严重程度：中
 - 指纹：`de3ce1024b239d54108c50efa6da9ba8387d822f3bb2da1daff71d060a2822dc`
 
-### 509. `hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:c77d98caf29bc0fc:001`
+### 34. `hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:c77d98caf29bc0fc:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/requestOverrides.ts:130`
@@ -5628,7 +403,7 @@
 - 严重程度：中
 - 指纹：`c77d98caf29bc0fc37623658e4524653c937a42ca0d2d204d62c51b94bb13c65`
 
-### 510. `hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:a45fdb85bfe0af33:001`
+### 35. `hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:a45fdb85bfe0af33:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/requestOverrides.ts:133`
@@ -5639,7 +414,7 @@
 - 严重程度：中
 - 指纹：`a45fdb85bfe0af339b8c272992fd8858ba95727f4e09e08409d29f8576cdf9c8`
 
-### 511. `hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:a639e11e36f4e1ed:001`
+### 36. `hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:a639e11e36f4e1ed:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/requestOverrides.ts:138`
@@ -5650,7 +425,7 @@
 - 严重程度：中
 - 指纹：`a639e11e36f4e1edef2e3f824bd6feb179f721bbec6e803769cd4775cf4d6774`
 
-### 512. `hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:cdd5bee05a2f14b7:001`
+### 37. `hardcoded:src/lib/requestOverrides.ts:parseHeaderOverrideJson:cdd5bee05a2f14b7:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/requestOverrides.ts:143`
@@ -5661,7 +436,7 @@
 - 严重程度：中
 - 指纹：`cdd5bee05a2f14b731f62ea59c18ef91aa0461065f2a267a23497f4b9294d0f0`
 
-### 513. `hardcoded:src/lib/schemas/provider.ts:parseJsonError:aecab70fa3eb4483:001`
+### 38. `hardcoded:src/lib/schemas/provider.ts:parseJsonError:aecab70fa3eb4483:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/schemas/provider.ts:8`
@@ -5672,7 +447,7 @@
 - 严重程度：高
 - 指纹：`aecab70fa3eb4483d59e7135e6cdb65eb399594a53e65c6aeb2db6bc15e2cbd7`
 
-### 514. `hardcoded:src/lib/schemas/provider.ts:parseJsonError:e61d4ec9a0fef58d:001`
+### 39. `hardcoded:src/lib/schemas/provider.ts:parseJsonError:e61d4ec9a0fef58d:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/schemas/provider.ts:17`
@@ -5683,7 +458,7 @@
 - 严重程度：高
 - 指纹：`e61d4ec9a0fef58db5ff96f63a6a681b09e417d73a3ff70d650a53603efd6076`
 
-### 515. `hardcoded:src/lib/schemas/provider.ts:parseJsonError:d73db14d9074a0c0:001`
+### 40. `hardcoded:src/lib/schemas/provider.ts:parseJsonError:d73db14d9074a0c0:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/schemas/provider.ts:25`
@@ -5694,7 +469,7 @@
 - 严重程度：高
 - 指纹：`d73db14d9074a0c08f89b15b5c974e472b2b555a85a6b94396bb512d6b49dd00`
 
-### 516. `hardcoded:src/lib/schemas/provider.ts:cleanMessage:97077e67b17ede29:001`
+### 41. `hardcoded:src/lib/schemas/provider.ts:cleanMessage:97077e67b17ede29:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/schemas/provider.ts:31`
@@ -5705,7 +480,7 @@
 - 严重程度：高
 - 指纹：`97077e67b17ede29a35860441bc8000c254533a05720b689f192931234c66f58`
 
-### 517. `hardcoded:src/lib/schemas/provider.ts:cleanMessage:e892654a499d52a7:001`
+### 42. `hardcoded:src/lib/schemas/provider.ts:cleanMessage:e892654a499d52a7:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/schemas/provider.ts:32`
@@ -5716,7 +491,7 @@
 - 严重程度：高
 - 指纹：`e892654a499d52a776c3d245b8800e9d15b1b07e6451fd2fa30d453a2b1a7b82`
 
-### 518. `hardcoded:src/lib/schemas/provider.ts:cleanMessage:c8cdcb6926a83554:001`
+### 43. `hardcoded:src/lib/schemas/provider.ts:cleanMessage:c8cdcb6926a83554:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/schemas/provider.ts:33`
@@ -5727,7 +502,7 @@
 - 严重程度：高
 - 指纹：`c8cdcb6926a835545691338032924229cd53759990aae97477a7bf21e131e35b`
 
-### 519. `hardcoded:src/lib/schemas/provider.ts:parseJsonError:871e44e90167d743:001`
+### 44. `hardcoded:src/lib/schemas/provider.ts:parseJsonError:871e44e90167d743:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/schemas/provider.ts:35`
@@ -5738,7 +513,7 @@
 - 严重程度：高
 - 指纹：`871e44e90167d7433d1072b39182b1448f83765d0dcde7e9577a2832e8791818`
 
-### 520. `hardcoded:src/lib/schemas/provider.ts:providerSchema:427abb574107ec59:001`
+### 45. `hardcoded:src/lib/schemas/provider.ts:providerSchema:427abb574107ec59:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/schemas/provider.ts:40`
@@ -5749,7 +524,7 @@
 - 严重程度：高
 - 指纹：`427abb574107ec59a30fde77da8729c8c08073c9fb45ff05b125331a88aa7ec2`
 
-### 521. `hardcoded:src/lib/schemas/provider.ts:providerSchema:e8867867bf2d0227:001`
+### 46. `hardcoded:src/lib/schemas/provider.ts:providerSchema:e8867867bf2d0227:001`
 
 - 状态：确认遗漏
 - 文件：`src/lib/schemas/provider.ts:44`
@@ -5760,7 +535,7 @@
 - 严重程度：高
 - 指纹：`e8867867bf2d0227e95f4188c168499c13dfee7249796dc55f4250831fbce7a3`
 
-### 522. `hardcoded:src/utils/grokBuildConfig.ts:validateGrokBuildConfig:635935c049e3abfa:001`
+### 47. `hardcoded:src/utils/grokBuildConfig.ts:validateGrokBuildConfig:635935c049e3abfa:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/grokBuildConfig.ts:134`
@@ -5771,7 +546,7 @@
 - 严重程度：中
 - 指纹：`635935c049e3abfa7247fbd192cc4eb7265ad18cff7a3165d737ec491e3fab2c`
 
-### 523. `hardcoded:src/utils/grokBuildConfig.ts:validateGrokBuildConfig:968d44e96bbf12f6:001`
+### 48. `hardcoded:src/utils/grokBuildConfig.ts:validateGrokBuildConfig:968d44e96bbf12f6:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/grokBuildConfig.ts:140`
@@ -5782,7 +557,7 @@
 - 严重程度：中
 - 指纹：`968d44e96bbf12f608276a5eced6afc50a8f4fef840e5eb40a52e7ad791610df`
 
-### 524. `hardcoded:src/utils/grokBuildConfig.ts:validateGrokBuildConfig:2a3495bd745faa88:001`
+### 49. `hardcoded:src/utils/grokBuildConfig.ts:validateGrokBuildConfig:2a3495bd745faa88:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/grokBuildConfig.ts:142`
@@ -5793,7 +568,7 @@
 - 严重程度：中
 - 指纹：`2a3495bd745faa8885ff841209ab8af13f6a2e3e22c7cf8884f9a67725e148da`
 
-### 525. `hardcoded:src/utils/grokBuildConfig.ts:validateGrokBuildConfig:d431161f73c1ac64:001`
+### 50. `hardcoded:src/utils/grokBuildConfig.ts:validateGrokBuildConfig:d431161f73c1ac64:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/grokBuildConfig.ts:148`
@@ -5804,7 +579,7 @@
 - 严重程度：中
 - 指纹：`d431161f73c1ac6437b4d0b9a7ffd0c0ea3514cff3ccbae1b61a1958141b009f`
 
-### 526. `hardcoded:src/utils/grokBuildConfig.ts:validateGrokBuildConfig:b7775baf7a5fdce9:001`
+### 51. `hardcoded:src/utils/grokBuildConfig.ts:validateGrokBuildConfig:b7775baf7a5fdce9:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/grokBuildConfig.ts:156`
@@ -5815,7 +590,7 @@
 - 严重程度：中
 - 指纹：`b7775baf7a5fdce95f61dff5e19343fc3cbb8e50fcc71cb4f79597e58856db12`
 
-### 527. `hardcoded:src/utils/providerConfigUtils.ts:validateJsonConfig:148d195e21b05db5:001`
+### 52. `hardcoded:src/utils/providerConfigUtils.ts:validateJsonConfig:148d195e21b05db5:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/providerConfigUtils.ts:15`
@@ -5826,7 +601,7 @@
 - 严重程度：中
 - 指纹：`148d195e21b05db59551b5f85b09fed0c9b3b4c7562654815396d4f98af53328`
 
-### 528. `hardcoded:src/utils/providerConfigUtils.ts:validateJsonConfig:639cb148b070e7fe:001`
+### 53. `hardcoded:src/utils/providerConfigUtils.ts:validateJsonConfig:639cb148b070e7fe:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/providerConfigUtils.ts:23`
@@ -5837,7 +612,7 @@
 - 严重程度：中
 - 指纹：`639cb148b070e7fe5226b48b8369e5de2b69d8b08db5c7f3a39a5932a3532645`
 
-### 529. `hardcoded:src/utils/providerConfigUtils.ts:validateJsonConfig:f97bc449d16f097d:001`
+### 54. `hardcoded:src/utils/providerConfigUtils.ts:validateJsonConfig:f97bc449d16f097d:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/providerConfigUtils.ts:27`
@@ -5848,7 +623,7 @@
 - 严重程度：中
 - 指纹：`f97bc449d16f097d3aea6632be3b35c38783c1ba9dd3aa8fa01cefbfd2b5e89a`
 
-### 530. `hardcoded:src/utils/tomlUtils.ts:tomlToMcpServer:240c7ff86f1aecbb:001`
+### 55. `hardcoded:src/utils/tomlUtils.ts:tomlToMcpServer:240c7ff86f1aecbb:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/tomlUtils.ts:55`
@@ -5859,7 +634,7 @@
 - 严重程度：中
 - 指纹：`240c7ff86f1aecbb227873991becce122d47306bdd8a616c392308747d3657fb`
 
-### 531. `hardcoded:src/utils/tomlUtils.ts:tomlToMcpServer:d98de4c622938e59:001`
+### 56. `hardcoded:src/utils/tomlUtils.ts:tomlToMcpServer:d98de4c622938e59:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/tomlUtils.ts:93`
@@ -5870,7 +645,7 @@
 - 严重程度：中
 - 指纹：`d98de4c622938e596340b98d8fabc8679feda1bb76fd35500647753705bd1270`
 
-### 532. `hardcoded:src/utils/tomlUtils.ts:normalizeServerConfig:b6499972805a260f:001`
+### 57. `hardcoded:src/utils/tomlUtils.ts:normalizeServerConfig:b6499972805a260f:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/tomlUtils.ts:103`
@@ -5881,7 +656,7 @@
 - 严重程度：中
 - 指纹：`b6499972805a260fe3f2d54f127303cd8e7adcc8610923b7b7a54968ea5e8888`
 
-### 533. `hardcoded:src/utils/tomlUtils.ts:normalizeServerConfig:7a31ea38d57de345:001`
+### 58. `hardcoded:src/utils/tomlUtils.ts:normalizeServerConfig:7a31ea38d57de345:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/tomlUtils.ts:113`
@@ -5892,7 +667,7 @@
 - 严重程度：中
 - 指纹：`7a31ea38d57de345c57f8e5647bb7ad9a84fefa98fb31df5c5a9ef8c17d87da8`
 
-### 534. `hardcoded:src/utils/tomlUtils.ts:normalizeServerConfig:628993c2cd0e3bf1:001`
+### 59. `hardcoded:src/utils/tomlUtils.ts:normalizeServerConfig:628993c2cd0e3bf1:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/tomlUtils.ts:151`
@@ -5903,7 +678,7 @@
 - 严重程度：中
 - 指纹：`628993c2cd0e3bf114744cfd3087de772b027995d3d5d1cce9373e6aedf965de`
 
-### 535. `hardcoded:src/utils/tomlUtils.ts:normalizeServerConfig:36486ce84613bdea:001`
+### 60. `hardcoded:src/utils/tomlUtils.ts:normalizeServerConfig:36486ce84613bdea:001`
 
 - 状态：确认遗漏
 - 文件：`src/utils/tomlUtils.ts:180`
@@ -5914,7698 +689,9 @@
 - 严重程度：中
 - 指纹：`36486ce84613bdeadf0b0958503e153090ca44c6811297bac8c23fb14a19372e`
 
-## 待核实明细（1256）
+## 待核实明细（557）
 
-### 1. `hardcoded:src-tauri/src/agy_config.rs:read_live_settings:e3f5daf347d1ba72:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/agy_config.rs:92`
-- 结构：`read_live_settings` / `rust_string`
-- 原文/表达式：Invalid agy settings.json: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e3f5daf347d1ba7238bde5c002ec5d25c80c8bac12331a064eb458ccc93d68b9`
-
-### 2. `hardcoded:src-tauri/src/codex_config.rs:strip_codex_unified_session_bucket:06766f5abc8847b6:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/codex_config.rs:3148`
-- 结构：`strip_codex_unified_session_bucket` / `rust_string`
-- 原文/表达式：Invalid Codex config.toml: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`06766f5abc8847b6c011fc5bbd9891a006ec26ecc44b40b3ce0c650cf9b778d9`
-
-### 3. `hardcoded:src-tauri/src/commands/auth.rs:auth_start_login:307b2a744117c70c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/auth.rs:189`
-- 结构：`auth_start_login` / `rust_string`
-- 原文/表达式：Unsupported login method for this auth provider
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`307b2a744117c70cee26f8a3387c9399d55aef33392e68745c401a09b9fc2d64`
-
-### 4. `hardcoded:src-tauri/src/commands/auth.rs:auth_start_login:382a996d597e9dd0:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/auth.rs:194`
-- 结构：`auth_start_login` / `rust_string`
-- 原文/表达式：Targeted re-authentication is only supported for Codex OAuth
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`382a996d597e9dd00a89b2dccc4c48d1d0ddd02c707fb7aee21f4f2f6e865aa9`
-
-### 5. `hardcoded:src-tauri/src/commands/auth.rs:auth_start_login:382a996d597e9dd0:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/auth.rs:219`
-- 结构：`auth_start_login` / `rust_string`
-- 原文/表达式：Targeted re-authentication is only supported for Codex OAuth
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`382a996d597e9dd00a89b2dccc4c48d1d0ddd02c707fb7aee21f4f2f6e865aa9`
-
-### 6. `hardcoded:src-tauri/src/commands/auth.rs:auth_start_login:382a996d597e9dd0:003`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/auth.rs:231`
-- 结构：`auth_start_login` / `rust_string`
-- 原文/表达式：Targeted re-authentication is only supported for Codex OAuth
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`382a996d597e9dd00a89b2dccc4c48d1d0ddd02c707fb7aee21f4f2f6e865aa9`
-
-### 7. `hardcoded:src-tauri/src/commands/auth.rs:auth_start_login:382a996d597e9dd0:004`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/auth.rs:247`
-- 结构：`auth_start_login` / `rust_string`
-- 原文/表达式：Targeted re-authentication is only supported for Codex OAuth
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`382a996d597e9dd00a89b2dccc4c48d1d0ddd02c707fb7aee21f4f2f6e865aa9`
-
-### 8. `hardcoded:src-tauri/src/commands/codex_oauth.rs:query_codex_oauth_quota_for:4758cb29f2eb62c3:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/codex_oauth.rs:66`
-- 结构：`query_codex_oauth_quota_for` / `rust_string`
-- 原文/表达式：Codex OAuth token unavailable: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`4758cb29f2eb62c35f4a57a21f6fddc5724042b1c369c28da4bc4a8004aa60d0`
-
-### 9. `hardcoded:src-tauri/src/commands/codex_oauth.rs:query_codex_oauth_quota_for:4758cb29f2eb62c3:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/codex_oauth.rs:72`
-- 结构：`query_codex_oauth_quota_for` / `rust_string`
-- 原文/表达式：Codex OAuth token unavailable: {e}
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`4758cb29f2eb62c35f4a57a21f6fddc5724042b1c369c28da4bc4a8004aa60d0`
-
-### 10. `hardcoded:src-tauri/src/commands/global_proxy.rs:test_proxy_url:199081a4db768cee:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/global_proxy.rs:91`
-- 结构：`test_proxy_url` / `rust_string`
-- 原文/表达式：Proxy URL is empty
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`199081a4db768cee9ee5bd3966e7c8a1d41f5db3f3d5a8c41eff30375e96452d`
-
-### 11. `hardcoded:src-tauri/src/commands/global_proxy.rs:test_proxy_url:5534015cb1259a2b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/global_proxy.rs:97`
-- 结构：`test_proxy_url` / `rust_string`
-- 原文/表达式：Invalid proxy URL: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`5534015cb1259a2b3aa63b5804403a9dd7afac269e4195609f7d256b6d9c7327`
-
-### 12. `hardcoded:src-tauri/src/commands/global_proxy.rs:test_proxy_url:bba0f1ab0714e2db:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/global_proxy.rs:104`
-- 结构：`test_proxy_url` / `rust_string`
-- 原文/表达式：Failed to build client: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`bba0f1ab0714e2db6a98a57df8b5eb62fe174779ac01d093a055a45b44f5c2d2`
-
-### 13. `hardcoded:src-tauri/src/commands/hermes.rs:open_hermes_web_ui:3e8c41d9d5a018dc:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/hermes.rs:114`
-- 结构：`open_hermes_web_ui` / `rust_string`
-- 原文/表达式：failed to build probe client: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`3e8c41d9d5a018dc580be81cd3209293f49c9780eebfada4af6947782aa72b56`
-
-### 14. `hardcoded:src-tauri/src/commands/hermes.rs:open_hermes_web_ui:ce29c0773d80668b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/hermes.rs:129`
-- 结构：`open_hermes_web_ui` / `rust_string`
-- 原文/表达式：failed to open Hermes Web UI: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ce29c0773d80668b2b141e484ec8b5f4d1de97d5ed1b8528a7dc6ce4bbc20a92`
-
-### 15. `hardcoded:src-tauri/src/commands/hermes.rs:launch_hermes_dashboard:5a4e38fdd5d786fe:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/hermes.rs:143`
-- 结构：`launch_hermes_dashboard` / `rust_string`
-- 原文/表达式：launch task join error: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`5a4e38fdd5d786fe34f18ef2ed2a3f4959cb3ad1d1660e4f12cff410fa4484eb`
-
-### 16. `hardcoded:src-tauri/src/commands/import_export.rs:create_db_backup:59f59327dfbf98a9:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/import_export.rs:155`
-- 结构：`create_db_backup` / `rust_string`
-- 原文/表达式：Database file not found, backup skipped
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`59f59327dfbf98a934ba0dc69a0929a357dc0f8fdd894b7039126eccccb7969d`
-
-### 17. `hardcoded:src-tauri/src/commands/import_export.rs:create_db_backup:639b40087b309c9b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/import_export.rs:159`
-- 结构：`create_db_backup` / `rust_string`
-- 原文/表达式：Backup failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`639b40087b309c9b9be480eb7df5053a65f4982d9ef5b39d7d0786fe3ae8a4e0`
-
-### 18. `hardcoded:src-tauri/src/commands/misc.rs:prepare_tool_uninstall:ec9f389e99f0ea39:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:321`
-- 结构：`prepare_tool_uninstall` / `rust_string`
-- 原文/表达式：Unsupported tool action target: {tool}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ec9f389e99f0ea39ccf8d58103e6e28fd020a82ffed518695b48f57246d730b0`
-
-### 19. `hardcoded:src-tauri/src/commands/misc.rs:prepare_tool_uninstall:25ab780fcb7adff5:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:330`
-- 结构：`prepare_tool_uninstall` / `rust_string`
-- 原文/表达式：uninstall plan task join error: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`25ab780fcb7adff58493b61cd4f0c46ebd5807cb0fde758409e83f24af54ec84`
-
-### 20. `hardcoded:src-tauri/src/commands/misc.rs:run_tool_lifecycle_action:304c47dbdaceeb19:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:342`
-- 结构：`run_tool_lifecycle_action` / `rust_string`
-- 原文/表达式：No supported tools selected
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`304c47dbdaceeb19e4ec1f69f673acc573ff44792cda15e01ae487c3ddb78bf1`
-
-### 21. `hardcoded:src-tauri/src/commands/misc.rs:run_tool_lifecycle_action:6a4efd6ddc0efe95:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:346`
-- 结构：`run_tool_lifecycle_action` / `rust_string`
-- 原文/表达式：Preview the uninstall plan before confirming.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`6a4efd6ddc0efe957b549b88432fbe69eb8b08e782276d89f6877638671485b0`
-
-### 22. `hardcoded:src-tauri/src/commands/misc.rs:run_tool_lifecycle_action:eb4489cd464962e9:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:348`
-- 结构：`run_tool_lifecycle_action` / `rust_string`
-- 原文/表达式：The uninstall plan does not match the selected tool.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`eb4489cd464962e9ac4796ef684ebdc9c3394c79c43fc34c629c8670c367f4a2`
-
-### 23. `hardcoded:src-tauri/src/commands/misc.rs:resolve_path_default:8c78eed19c14d5ff:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:3152`
-- 结构：`resolve_path_default` / `rust_string`
-- 原文/表达式：Failed to locate {tool}: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`8c78eed19c14d5ffd1cc2360803c8baa2f4a8da35899d14c56abffb2f324a143`
-
-### 24. `hardcoded:src-tauri/src/commands/misc.rs:resolve_path_default:8c78eed19c14d5ff:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:3207`
-- 结构：`resolve_path_default` / `rust_string`
-- 原文/表达式：Failed to locate {tool}: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`8c78eed19c14d5ffd1cc2360803c8baa2f4a8da35899d14c56abffb2f324a143`
-
-### 25. `hardcoded:src-tauri/src/commands/misc.rs:locate_default_tool:76de2867fd15b09d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:4142`
-- 结构：`locate_default_tool` / `rust_string`
-- 原文/表达式：{tool} is not installed
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`76de2867fd15b09d1236a9dd8c54e03da4767c3371e41330ca880a2432ed26cc`
-
-### 26. `hardcoded:src-tauri/src/commands/misc.rs:locate_default_tool:b3ef550b4ffad48f:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:4144`
-- 结构：`locate_default_tool` / `rust_string`
-- 原文/表达式：{tool} is installed but its default installation is ambiguous
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`b3ef550b4ffad48f0578b7613fb35f29dcbde7f4f0757bc5275d161e89225d3c`
-
-### 27. `hardcoded:src-tauri/src/commands/misc.rs:wait_child_output:9862789e7617aa03:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:4244`
-- 结构：`wait_child_output` / `rust_string`
-- 原文/表达式：Failed to wait for command: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`9862789e7617aa03446497b963082102a98880ebf5eb8b4541919ef4700d1dc3`
-
-### 28. `hardcoded:src-tauri/src/commands/misc.rs:wait_child_output:9862789e7617aa03:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:4272`
-- 结构：`wait_child_output` / `rust_string`
-- 原文/表达式：Failed to wait for command: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`9862789e7617aa03446497b963082102a98880ebf5eb8b4541919ef4700d1dc3`
-
-### 29. `hardcoded:src-tauri/src/commands/misc.rs:run_detected_tool_command_with_timeout:3ffc59850064b39b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:4331`
-- 结构：`run_detected_tool_command_with_timeout` / `rust_string`
-- 原文/表达式：Unsupported tool: {tool}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`3ffc59850064b39b3ab486094f9932e43d0887145aa9128f55477ae6d3b78eaa`
-
-### 30. `hardcoded:src-tauri/src/commands/misc.rs:run_detected_tool_command_with_timeout:5571e411ecac6a54:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:4339`
-- 结构：`run_detected_tool_command_with_timeout` / `rust_string`
-- 原文/表达式：Invalid tool command arguments
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`5571e411ecac6a547b4247454c2a94ff9a9ff682440e672ba9ce1a03df234884`
-
-### 31. `hardcoded:src-tauri/src/commands/misc.rs:run_detected_tool_command_with_timeout:cdcd15e10718c155:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:4398`
-- 结构：`run_detected_tool_command_with_timeout` / `rust_string`
-- 原文/表达式：Failed to run {tool}: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`cdcd15e10718c1556853f0b5d0b02aedf4621ff1126689c1e848606871f8096b`
-
-### 32. `hardcoded:src-tauri/src/commands/misc.rs:detected_tool_command:3ffc59850064b39b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:4412`
-- 结构：`detected_tool_command` / `rust_string`
-- 原文/表达式：Unsupported tool: {tool}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`3ffc59850064b39b3ab486094f9932e43d0887145aa9128f55477ae6d3b78eaa`
-
-### 33. `hardcoded:src-tauri/src/commands/misc.rs:detected_tool_command:f6bde6cf5d842b20:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:4419`
-- 结构：`detected_tool_command` / `rust_string`
-- 原文/表达式：{tool} runs in WSL; this action needs it on Windows
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f6bde6cf5d842b20ad226870ed899bc9f5ecd1347696732dcb71144986bef915`
-
-### 34. `hardcoded:src-tauri/src/commands/misc.rs:run_windows_tool_command_capture:96c7336f6c8abc75:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:4469`
-- 结构：`run_windows_tool_command_capture` / `rust_string`
-- 原文/表达式：Failed to run tool: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`96c7336f6c8abc75ea07568374d3bbae39595d1833f5cdf6766d97616f3770e0`
-
-### 35. `hardcoded:src-tauri/src/commands/misc.rs:build_wsl_env_argv:845d36a38d20016e:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:4520`
-- 结构：`build_wsl_env_argv` / `rust_string`
-- 原文/表达式：invalid env for {key}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`845d36a38d20016e80ba913ef164d939033a919cc6ddeb49d1de2ddca4386bfa`
-
-### 36. `hardcoded:src-tauri/src/commands/misc.rs:build_wsl_env_argv:845d36a38d20016e:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:4532`
-- 结构：`build_wsl_env_argv` / `rust_string`
-- 原文/表达式：invalid env for {key}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`845d36a38d20016e80ba913ef164d939033a919cc6ddeb49d1de2ddca4386bfa`
-
-### 37. `hardcoded:src-tauri/src/commands/misc.rs:run_wsl_tool_command:58b556aa61ede740:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:4576`
-- 结构：`run_wsl_tool_command` / `rust_string`
-- 原文/表达式：[WSL:{distro}] invalid distro name
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`58b556aa61ede74064c8dec8c74201d743d1ae059bf071ad9ff5df3ffa21cf5d`
-
-### 38. `hardcoded:src-tauri/src/commands/misc.rs:run_wsl_tool_command:532a40dd0a0b1d6c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:4582`
-- 结构：`run_wsl_tool_command` / `rust_string`
-- 原文/表达式：[WSL:{distro}] {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`532a40dd0a0b1d6c513df73c2869b302a2e68985789d3a879db5b51a1235a3d7`
-
-### 39. `hardcoded:src-tauri/src/commands/misc.rs:run_wsl_tool_command:5b3238fe0e8e1e6d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:4602`
-- 结构：`run_wsl_tool_command` / `rust_string`
-- 原文/表达式：[WSL:{distro}] failed to run {tool}: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`5b3238fe0e8e1e6d97c53bb57544403432dd841be887605d68cdd8089d9cc82e`
-
-### 40. `hardcoded:src-tauri/src/commands/misc.rs:run_wsl_tool_command:1f1496bbb71cdede:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:4604`
-- 结构：`run_wsl_tool_command` / `rust_string`
-- 原文/表达式：Command timed out
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`1f1496bbb71cdede88fcb319a43aa7a3154566fb907ac7665acc3b582b24cda7`
-
-### 41. `hardcoded:src-tauri/src/commands/misc.rs:run_wsl_tool_command:532a40dd0a0b1d6c:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:4605`
-- 结构：`run_wsl_tool_command` / `rust_string`
-- 原文/表达式：[WSL:{distro}] {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`532a40dd0a0b1d6c513df73c2869b302a2e68985789d3a879db5b51a1235a3d7`
-
-### 42. `hardcoded:src-tauri/src/commands/misc.rs:run_wsl_tool_command:e199c64e6fd7926c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:4612`
-- 结构：`run_wsl_tool_command` / `rust_string`
-- 原文/表达式：[WSL:{distro}] {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e199c64e6fd7926c8c237d10bfced1f6718ccf575f6cc7a9b43d7665ee935808`
-
-### 43. `hardcoded:src-tauri/src/commands/misc.rs:run_wsl_tool_command:1f1496bbb71cdede:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:4615`
-- 结构：`run_wsl_tool_command` / `rust_string`
-- 原文/表达式：Command timed out
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`1f1496bbb71cdede88fcb319a43aa7a3154566fb907ac7665acc3b582b24cda7`
-
-### 44. `hardcoded:src-tauri/src/commands/misc.rs:probe_tool_installations:304c47dbdaceeb19:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:4863`
-- 结构：`probe_tool_installations` / `rust_string`
-- 原文/表达式：No supported tools selected
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`304c47dbdaceeb19e4ec1f69f673acc573ff44792cda15e01ae487c3ddb78bf1`
-
-### 45. `hardcoded:src-tauri/src/commands/misc.rs:probe_tool_installations:eac24b2e02b11f2c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:4890`
-- 结构：`probe_tool_installations` / `rust_string`
-- 原文/表达式：probe task join error: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`eac24b2e02b11f2c4478e1db429146592045383e0e7bbd79a65322659451aa41`
-
-### 46. `hardcoded:src-tauri/src/commands/misc.rs:wsl_hermes_dashboard_line:18cf5444a2a7d065:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:4955`
-- 结构：`wsl_hermes_dashboard_line` / `rust_string`
-- 原文/表达式：Invalid WSL distro name: {distro}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`18cf5444a2a7d06507b02fd1830c4a0ea85209d37cda62264a5109589badf86d`
-
-### 47. `hardcoded:src-tauri/src/commands/misc.rs:wsl_hermes_dashboard_line:f0a37c267d849a67:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:4958`
-- 结构：`wsl_hermes_dashboard_line` / `rust_string`
-- 原文/表达式：wsl.exe -d {distro} -- sh -c {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f0a37c267d849a6781a43496d2c7240660b905f4c749a394becd21c44b5ab7da`
-
-### 48. `hardcoded:src-tauri/src/commands/misc.rs:wsl_hermes_dashboard_line:597404656ec00583:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:4959`
-- 结构：`wsl_hermes_dashboard_line` / `rust_string`
-- 原文/表达式：hermes dashboard
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`597404656ec00583c227b90ce8b20280f362c129d0527b10fa9fd34cc62c2398`
-
-### 49. `hardcoded:src-tauri/src/commands/misc.rs:launch_macos_warp:fbe9778a9caf1779:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:5865`
-- 结构：`launch_macos_warp` / `rust_string`
-- 原文/表达式：Failed to create temporary script file: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`fbe9778a9caf1779ccbe96d94309823b304ab1b3c23445b6744dfe680761d8d2`
-
-### 50. `hardcoded:src-tauri/src/commands/misc.rs:launch_macos_warp:239102251dc99214:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/misc.rs:5877`
-- 结构：`launch_macos_warp` / `rust_string`
-- 原文/表达式：Failed to write to temporary script file for Warp: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`239102251dc99214e588dabd968dbcb09c29a7338ba9a4b5adaeaab49677a10d`
-
-### 51. `hardcoded:src-tauri/src/commands/model_fetch.rs:get_agy_models:4720eb251e5570b5:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/model_fetch.rs:37`
-- 结构：`get_agy_models` / `rust_string`
-- 原文/表达式：Antigravity CLI not found; install agy first
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`4720eb251e5570b5c5bf0b8dee5f6f888754f25fc281f5f2ac31ebddb3c9aa13`
-
-### 52. `hardcoded:src-tauri/src/commands/model_fetch.rs:get_agy_models:3abe31ed3a40f580:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/model_fetch.rs:66`
-- 结构：`get_agy_models` / `rust_string`
-- 原文/表达式：Antigravity model discovery timed out
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`3abe31ed3a40f5803ed39412b690f5b6028ebd6598d7553b15748bdee6635080`
-
-### 53. `hardcoded:src-tauri/src/commands/model_fetch.rs:get_agy_models:4720eb251e5570b5:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/model_fetch.rs:67`
-- 结构：`get_agy_models` / `rust_string`
-- 原文/表达式：Antigravity CLI not found; install agy first
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`4720eb251e5570b5c5bf0b8dee5f6f888754f25fc281f5f2ac31ebddb3c9aa13`
-
-### 54. `hardcoded:src-tauri/src/commands/model_fetch.rs:get_agy_models:bf045e11be744d9b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/model_fetch.rs:69`
-- 结构：`get_agy_models` / `rust_string`
-- 原文/表达式：Antigravity could not list models. Check the API key and endpoint, or sign in with agy for official models.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`bf045e11be744d9b25fd15f58a7b3690eb0ac4f10628df6010fecad643df6b8f`
-
-### 55. `hardcoded:src-tauri/src/commands/model_fetch.rs:get_opencode_models:6216f6ce30847d97:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/model_fetch.rs:136`
-- 结构：`get_opencode_models` / `rust_string`
-- 原文/表达式：Failed to load OpenCode models
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`6216f6ce30847d976fb812c099fa5bab1d3a16665ae6bfb2be48194f83d762c6`
-
-### 56. `hardcoded:src-tauri/src/commands/model_fetch.rs:get_opencode_models:5dd9806b2fe6286c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/model_fetch.rs:138`
-- 结构：`get_opencode_models` / `rust_string`
-- 原文/表达式：Failed to load OpenCode models: {detail}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`5dd9806b2fe6286c4864f35ae9360efc9aa77f8cdc215e3c50bf5facdab24bcf`
-
-### 57. `hardcoded:src-tauri/src/commands/model_fetch.rs:get_opencode_models:8588c7082eb9913f:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/model_fetch.rs:147`
-- 结构：`get_opencode_models` / `rust_string`
-- 原文/表达式：OpenCode model discovery task failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`8588c7082eb9913fcbfa3261db6a1b04e1f6d450fafb091187b0528c723ea02e`
-
-### 58. `hardcoded:src-tauri/src/commands/provider.rs:query_provider_usage_inner:e8708c4f9cef34ec:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/provider.rs:616`
-- 结构：`query_provider_usage_inner` / `rust_string`
-- 原文/表达式：Failed to get providers: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e8708c4f9cef34ec123a59f9a77f61b83a1458efe933486fe818932193570338`
-
-### 59. `hardcoded:src-tauri/src/commands/provider.rs:query_provider_usage_inner:97bfcc458405d6a0:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/provider.rs:636`
-- 结构：`query_provider_usage_inner` / `rust_string`
-- 原文/表达式：Failed to fetch Copilot usage: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`97bfcc458405d6a0d7eac418d30ac3a347f8fc6fbb9e4e6e3c923100b34412e7`
-
-### 60. `hardcoded:src-tauri/src/commands/provider.rs:query_provider_usage_inner:97bfcc458405d6a0:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/provider.rs:640`
-- 结构：`query_provider_usage_inner` / `rust_string`
-- 原文/表达式：Failed to fetch Copilot usage: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`97bfcc458405d6a0d7eac418d30ac3a347f8fc6fbb9e4e6e3c923100b34412e7`
-
-### 61. `hardcoded:src-tauri/src/commands/provider.rs:query_provider_usage_inner:f8edbf2693068b6c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/provider.rs:686`
-- 结构：`query_provider_usage_inner` / `rust_string`
-- 原文/表达式：Failed to query coding plan: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f8edbf2693068b6cc9ab6b0f32e06d492422c0ec4b8a86a380826eb029087326`
-
-### 62. `hardcoded:src-tauri/src/commands/provider.rs:query_provider_usage_inner:638128e5205418fb:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/provider.rs:695`
-- 结构：`query_provider_usage_inner` / `rust_string`
-- 原文/表达式：Failed to query balance: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`638128e5205418fb2d255ec6c84054f4cbd0a9fd3ab33ece2795d37b95c5b8d3`
-
-### 63. `hardcoded:src-tauri/src/commands/provider.rs:query_provider_usage_inner:638128e5205418fb:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/provider.rs:775`
-- 结构：`query_provider_usage_inner` / `rust_string`
-- 原文/表达式：Failed to query balance: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`638128e5205418fb2d255ec6c84054f4cbd0a9fd3ab33ece2795d37b95c5b8d3`
-
-### 64. `hardcoded:src-tauri/src/commands/provider.rs:query_provider_usage_inner:a2cce5ca80b5b82c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/provider.rs:799`
-- 结构：`query_provider_usage_inner` / `rust_string`
-- 原文/表达式：Failed to query subscription quota: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`a2cce5ca80b5b82c5ca731cc2e9e90ed35f977302eeada77c533b1924c46bcec`
-
-### 65. `hardcoded:src-tauri/src/commands/session_manager.rs:list_sessions:b234ea9ae565b2d0:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/session_manager.rs:15`
-- 结构：`list_sessions` / `rust_string`
-- 原文/表达式：Failed to scan sessions: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`b234ea9ae565b2d0006fc8e72fdd756b67d08a8eaae7a14789673d9558682e8d`
-
-### 66. `hardcoded:src-tauri/src/commands/session_manager.rs:get_session_messages:348e0836bef17e73:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/session_manager.rs:30`
-- 结构：`get_session_messages` / `rust_string`
-- 原文/表达式：Failed to load session messages: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`348e0836bef17e735f5cee8c6fd96168c2e9476e64957a5a3b3ece0428fa43b0`
-
-### 67. `hardcoded:src-tauri/src/commands/session_manager.rs:stream_session_messages:9f417b5aab4ddeee:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/session_manager.rs:56`
-- 结构：`stream_session_messages` / `rust_string`
-- 原文/表达式：Failed to send session chunk: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`9f417b5aab4ddeee5c5c585d22e2684eaa6e710a8201ac15c587183081b7e0e6`
-
-### 68. `hardcoded:src-tauri/src/commands/session_manager.rs:stream_session_messages:e3d4982e53061ab5:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/session_manager.rs:76`
-- 结构：`stream_session_messages` / `rust_string`
-- 原文/表达式：Failed to stream session messages: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e3d4982e53061ab5017a1c3c4a54c63c19548ce24806e7cbd4ca653dafdf29d1`
-
-### 69. `hardcoded:src-tauri/src/commands/session_manager.rs:get_session_block_content:cd3a58f88a2245ed:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/session_manager.rs:94`
-- 结构：`get_session_block_content` / `rust_string`
-- 原文/表达式：Failed to load block content: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`cd3a58f88a2245edf426d6eac5ecc3f5b8ec7621ed9a5e4dce64efab6ec037e6`
-
-### 70. `hardcoded:src-tauri/src/commands/session_manager.rs:get_session_image:4af2582489353908:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/session_manager.rs:109`
-- 结构：`get_session_image` / `rust_string`
-- 原文/表达式：Failed to load session image: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`4af25824893539087997ba18726b9175c54ec765cbf316d881902cba55e324e0`
-
-### 71. `hardcoded:src-tauri/src/commands/session_manager.rs:reveal_session_path:e645979e7971f703:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/session_manager.rs:122`
-- 结构：`reveal_session_path` / `rust_string`
-- 原文/表达式：Failed to reveal path: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e645979e7971f70345487abdbffa7a767397635fc7551f49e0ebc41e15da2ec1`
-
-### 72. `hardcoded:src-tauri/src/commands/sync_support.rs:run_post_import_sync:abf122c7e0e01b85:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/sync_support.rs:12`
-- 结构：`run_post_import_sync` / `rust_string`
-- 原文/表达式：live configuration: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`abf122c7e0e01b85944f0e98026ad0345423d44aee99a2dd49c2da709e0431f1`
-
-### 73. `hardcoded:src-tauri/src/commands/sync_support.rs:run_post_import_sync:f6a10b93b07214ad:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/sync_support.rs:15`
-- 结构：`run_post_import_sync` / `rust_string`
-- 原文/表达式：prompts: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f6a10b93b07214ad5aacd694de6e27f9f427fee8de29e67abbe12694829e74fe`
-
-### 74. `hardcoded:src-tauri/src/commands/sync_support.rs:run_post_import_sync:ecfcd1166a23ada9:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/sync_support.rs:18`
-- 结构：`run_post_import_sync` / `rust_string`
-- 原文/表达式：model pricing: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ecfcd1166a23ada97fa186229bb36022bcc7d3474c8c0ba796289da8e854afa0`
-
-### 75. `hardcoded:src-tauri/src/commands/sync_support.rs:run_post_import_sync:f2fb29935ba8f3e9:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/sync_support.rs:21`
-- 结构：`run_post_import_sync` / `rust_string`
-- 原文/表达式：settings cache: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f2fb29935ba8f3e9525c40817d6bff6479b3236c738a73205088c0c8515581ee`
-
-### 76. `hardcoded:src-tauri/src/commands/sync_support.rs:run_post_import_sync:f7ca44e800b45019:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/sync_support.rs:28`
-- 结构：`run_post_import_sync` / `rust_string`
-- 原文/表达式：runtime log level: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f7ca44e800b450193bfb6760b640104bf624b5bc98d477ba6e4dadbcc523f4db`
-
-### 77. `hardcoded:src-tauri/src/commands/tool_node_requirement.rs:ensure_update_node:506aeb0b1ab7af6e:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/tool_node_requirement.rs:59`
-- 结构：`ensure_update_node` / `rust_string`
-- 原文/表达式：{name} {latest} requires Node {}, but this installation runs on Node {}. Upgrade Node first, then update {name}.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`506aeb0b1ab7af6ec67f105d52eb1464c668f03a3eddd22af16002098c3192ee`
-
-### 78. `hardcoded:src-tauri/src/commands/tool_uninstall.rs:candidates:4cb3d078cb231d6b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/tool_uninstall.rs:35`
-- 结构：`candidates` / `rust_string`
-- 原文/表达式：Cannot identify the installation of {} to uninstall. Check installations and try again.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`4cb3d078cb231d6be09f3df559fe40d99751fbbe8c9a5bfe5308ce284087bf02`
-
-### 79. `hardcoded:src-tauri/src/commands/tool_uninstall.rs:plan_and_removals:7c8d604db640d75b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/tool_uninstall.rs:115`
-- 结构：`plan_and_removals` / `rust_string`
-- 原文/表达式：Cannot automatically uninstall {} at {}. Use the original installer or package manager to uninstall it.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`7c8d604db640d75b11a97694a1bd86f742a7c05df4b11cc3ca237de3c13e27f1`
-
-### 80. `hardcoded:src-tauri/src/commands/tool_uninstall.rs:uninstall:7c3a207bfbc9d96d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/tool_uninstall.rs:158`
-- 结构：`uninstall` / `rust_string`
-- 原文/表达式：Cannot start WSL uninstall: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`7c3a207bfbc9d96ddfa1642116a45d2233cc11863a354bb658689be11a6f987d`
-
-### 81. `hardcoded:src-tauri/src/commands/tool_uninstall.rs:validate_confirmed_plan:67096683116449ea:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/tool_uninstall.rs:194`
-- 结构：`validate_confirmed_plan` / `rust_string`
-- 原文/表达式：Installation changed since the uninstall preview. Check installations and confirm again.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`67096683116449ea5abd2441e1ef3aba25222869987babc1e766a104c86002de`
-
-### 82. `hardcoded:src-tauri/src/commands/tool_uninstall.rs:verify_removed:18c4935c943dde47:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/tool_uninstall.rs:203`
-- 结构：`verify_removed` / `rust_string`
-- 原文/表达式：Cannot verify removal of {path}: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`18c4935c943dde4758e4a5e11caf1278d718783a4ac7dbeb9b91d8ab1cac48b3`
-
-### 83. `hardcoded:src-tauri/src/commands/tool_uninstall.rs:verify_removed:258ae861490ec333:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/tool_uninstall.rs:205`
-- 结构：`verify_removed` / `rust_string`
-- 原文/表达式：{} is still installed at {}. Use the original installer or package manager to uninstall it.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`258ae861490ec3334454911cfd7bf6dbde9bfd47de012720bb42fe746caf8607`
-
-### 84. `hardcoded:src-tauri/src/commands/tool_uninstall.rs:brew_uninstall_command:ac38b37ee630d57e:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/tool_uninstall.rs:227`
-- 结构：`brew_uninstall_command` / `rust_string`
-- 原文/表达式：Cannot automatically uninstall {}: Homebrew package {token} is not a verified owner. Use the original installer or package manager.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ac38b37ee630d57ed20e9ff86f9837f7deb6dd3afa845881226ab817bc92f122`
-
-### 85. `hardcoded:src-tauri/src/commands/tool_uninstall.rs:brew_uninstall_command:16c4258b85a551b9:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/tool_uninstall.rs:231`
-- 结构：`brew_uninstall_command` / `rust_string`
-- 原文/表达式：Cannot find the Homebrew executable at {brew}. Use the original package manager to uninstall this application.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`16c4258b85a551b99b377c5471d553ab78c69592cc8079b84775836cfddd888c`
-
-### 86. `hardcoded:src-tauri/src/commands/tool_uninstall.rs:brew_uninstall_command:85b0dcc607481ae3:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/tool_uninstall.rs:234`
-- 结构：`brew_uninstall_command` / `rust_string`
-- 原文/表达式：{} uninstall {flag} {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`85b0dcc607481ae35b6cb9e25033baf77f9677ca1bf8336a390856cf84b4a825`
-
-### 87. `hardcoded:src-tauri/src/commands/tool_uninstall.rs:remove_native_files:c5402c39495b337e:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/tool_uninstall.rs:547`
-- 结构：`remove_native_files` / `rust_string`
-- 原文/表达式：Installation changed during uninstall. Check installations and try again.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`c5402c39495b337e7a01f19409d10fe67151f7d57ef03ea58585a01cd76c49e8`
-
-### 88. `hardcoded:src-tauri/src/commands/tool_uninstall.rs:remove_native_files:fed27b76e470ce09:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/tool_uninstall.rs:554`
-- 结构：`remove_native_files` / `rust_string`
-- 原文/表达式：Cannot remove {}: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`fed27b76e470ce0970b2e54c8031ac033b1e5d84edec327b0f159b6e30b8b4e5`
-
-### 89. `hardcoded:src-tauri/src/commands/tool_uninstall.rs:remove_native_files:c63c30576fa6041e:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/tool_uninstall.rs:557`
-- 结构：`remove_native_files` / `rust_string`
-- 原文/表达式：Refusing to remove directory {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`c63c30576fa6041ed2bf87619c25e64498e02d652badd67cfb14ce7b443fc07b`
-
-### 90. `hardcoded:src-tauri/src/commands/tool_uninstall.rs:wsl_plan_and_process:a65f7b975acf68e0:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/tool_uninstall.rs:585`
-- 结构：`wsl_plan_and_process` / `rust_string`
-- 原文/表达式：Cannot inspect WSL installation: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`a65f7b975acf68e0994ee474fd264b31130234ff9bffc8bfc43faca1ec91b9a0`
-
-### 91. `hardcoded:src-tauri/src/commands/tool_uninstall.rs:from_pref:f3d7ff200e8c97f5:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/tool_uninstall.rs:672`
-- 结构：`from_pref` / `rust_string`
-- 原文/表达式：Invalid WSL shell: {shell}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f3d7ff200e8c97f5366b961e8362187731cbfa7556ee392608bc3ef2f3e218a7`
-
-### 92. `hardcoded:src-tauri/src/commands/tool_uninstall.rs:from_pref:4dec468987785b6b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/tool_uninstall.rs:683`
-- 结构：`from_pref` / `rust_string`
-- 原文/表达式：Invalid WSL shell flag: {flag}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`4dec468987785b6b216a1cc5c2d821263609d0925ec6b5af233abfebe2dc0e0f`
-
-### 93. `hardcoded:src-tauri/src/commands/tool_uninstall.rs:parse_wsl_installation:7cb14987dfcfd555:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/tool_uninstall.rs:747`
-- 结构：`parse_wsl_installation` / `rust_string`
-- 原文/表达式：Cannot identify the WSL installation paths. Use the original installer to uninstall it.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`7cb14987dfcfd555d07ea11a45c8219930735da0da52aa439732ad9c8a16f1a6`
-
-### 94. `hardcoded:src-tauri/src/commands/tool_uninstall.rs:wsl_uninstall_command:1b991533a832def7:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/tool_uninstall.rs:757`
-- 结构：`wsl_uninstall_command` / `rust_string`
-- 原文/表达式：Use Homebrew to uninstall this WSL application.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`1b991533a832def76e13877d9d93adccfa86fe54d1a0b217927c08108e058154`
-
-### 95. `hardcoded:src-tauri/src/commands/tool_uninstall.rs:wsl_uninstall_command:4cf329039cebd216:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/tool_uninstall.rs:760`
-- 结构：`wsl_uninstall_command` / `rust_string`
-- 原文/表达式：{} uninstall --yes
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`4cf329039cebd216194e1c6021f345a25a6ab8f23d599fc43d8e8088152de597`
-
-### 96. `hardcoded:src-tauri/src/commands/workspace.rs:validate_filename:869906046ae06056:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/workspace.rs:25`
-- 结构：`validate_filename` / `rust_string`
-- 原文/表达式：Invalid workspace filename: {filename}. Allowed: {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`869906046ae060564afef9e13054e1de04312da7fddf7b9fd653f91299f8f3b1`
-
-### 97. `hardcoded:src-tauri/src/commands/workspace.rs:validate_daily_memory_filename:aff645fb68e71325:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/workspace.rs:40`
-- 结构：`validate_daily_memory_filename` / `rust_string`
-- 原文/表达式：Invalid daily memory filename: {filename}. Expected: YYYY-MM-DD.md
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`aff645fb68e71325fe30378f6fff82c65d2f95835cccaa72d500269cc93bfab8`
-
-### 98. `hardcoded:src-tauri/src/commands/workspace.rs:list_daily_memory_files:e0bb3ad48f63ca0e:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/workspace.rs:70`
-- 结构：`list_daily_memory_files` / `rust_string`
-- 原文/表达式：Failed to read memory directory: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e0bb3ad48f63ca0e795daa84e4ec542fe28b5284f4783914a038991e3d4c58d3`
-
-### 99. `hardcoded:src-tauri/src/commands/workspace.rs:read_daily_memory_file:4f9725f8f1b7dd36:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/workspace.rs:133`
-- 结构：`read_daily_memory_file` / `rust_string`
-- 原文/表达式：Failed to read daily memory file {filename}: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`4f9725f8f1b7dd36c5d261dd4f55af64dcef6e122381cb1db29b1e0c8982aea4`
-
-### 100. `hardcoded:src-tauri/src/commands/workspace.rs:write_daily_memory_file:bfa37d8f0371aad9:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/workspace.rs:144`
-- 结构：`write_daily_memory_file` / `rust_string`
-- 原文/表达式：Failed to create memory directory: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`bfa37d8f0371aad902a9ab5ce3a9c498468d2f5fcbc6313d72b2b3ce351b73ec`
-
-### 101. `hardcoded:src-tauri/src/commands/workspace.rs:write_daily_memory_file:cd7a6e15d8219869:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/workspace.rs:149`
-- 结构：`write_daily_memory_file` / `rust_string`
-- 原文/表达式：Failed to write daily memory file {filename}: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`cd7a6e15d8219869f6d2f4b6b1e1a0e10225baaf8f3c25247c699137631af14d`
-
-### 102. `hardcoded:src-tauri/src/commands/workspace.rs:search_daily_memory_files:e0bb3ad48f63ca0e:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/workspace.rs:207`
-- 结构：`search_daily_memory_files` / `rust_string`
-- 原文/表达式：Failed to read memory directory: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e0bb3ad48f63ca0e795daa84e4ec542fe28b5284f4783914a038991e3d4c58d3`
-
-### 103. `hardcoded:src-tauri/src/commands/workspace.rs:delete_daily_memory_file:1a062bbbfcad88a9:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/workspace.rs:299`
-- 结构：`delete_daily_memory_file` / `rust_string`
-- 原文/表达式：Failed to delete daily memory file {filename}: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`1a062bbbfcad88a9dfc58df2ab454ec6f61d4d4187c8314a090284d8380da7f9`
-
-### 104. `hardcoded:src-tauri/src/commands/workspace.rs:read_workspace_file:cda8e5e0dacbb356:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/workspace.rs:321`
-- 结构：`read_workspace_file` / `rust_string`
-- 原文/表达式：Failed to read workspace file {filename}: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`cda8e5e0dacbb3564fd7b49f8ee93c5aa1a0bc063a43d6a18287cac58ab6639f`
-
-### 105. `hardcoded:src-tauri/src/commands/workspace.rs:write_workspace_file:12516c3528262562:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/workspace.rs:334`
-- 结构：`write_workspace_file` / `rust_string`
-- 原文/表达式：Failed to create workspace directory: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`12516c3528262562c4b8f3f8a3e519fd1b722473093d7312f01b69e7da15b14b`
-
-### 106. `hardcoded:src-tauri/src/commands/workspace.rs:write_workspace_file:38369254e44c9eba:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/workspace.rs:339`
-- 结构：`write_workspace_file` / `rust_string`
-- 原文/表达式：Failed to write workspace file {filename}: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`38369254e44c9eba2bac5ea8aaa994868e754777d47d12dd42e0fc9a5eb30db3`
-
-### 107. `hardcoded:src-tauri/src/commands/workspace.rs:open_workspace_directory:a31d0f94a511046a:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/workspace.rs:353`
-- 结构：`open_workspace_directory` / `rust_string`
-- 原文/表达式：Failed to create directory: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`a31d0f94a511046ad91e7a447fe35e7c4fff11e5ceefb14f2d8bfa3c9ec37bb8`
-
-### 108. `hardcoded:src-tauri/src/commands/workspace.rs:open_workspace_directory:f7cdddb6fa51858f:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/workspace.rs:359`
-- 结构：`open_workspace_directory` / `rust_string`
-- 原文/表达式：Failed to open directory: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f7cdddb6fa51858fa5a1d1ccdf67bbf78bc4f26b9b8badb7769186bb49d3e21b`
-
-### 109. `hardcoded:src-tauri/src/commands/xai_oauth.rs:query_xai_oauth_quota_for:612aca9f68ee42c6:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/xai_oauth.rs:55`
-- 结构：`query_xai_oauth_quota_for` / `rust_string`
-- 原文/表达式：xAI OAuth token unavailable: {e}
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`612aca9f68ee42c6e5983924f61b7277324d45da89ea6c847e75897977369cfb`
-
-### 110. `hardcoded:src-tauri/src/commands/xai_oauth.rs:get_xai_oauth_models:1472da318d855ee1:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/xai_oauth.rs:108`
-- 结构：`get_xai_oauth_models` / `rust_string`
-- 原文/表达式：xAI OAuth token unavailable: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`1472da318d855ee1af908bf8fceaf13d3f9ea053a0a63bf88b4a7188670d9e6c`
-
-### 111. `hardcoded:src-tauri/src/commands/xai_oauth.rs:get_xai_oauth_models:f690e396a3486b1e:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/xai_oauth.rs:116`
-- 结构：`get_xai_oauth_models` / `rust_string`
-- 原文/表达式：xAI models request failed: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f690e396a3486b1ed9b9092c9ae70c43eaa60f8ce6f318362e18e872f72de64e`
-
-### 112. `hardcoded:src-tauri/src/commands/xai_oauth.rs:get_xai_oauth_models:b75faebd1b948dff:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/xai_oauth.rs:119`
-- 结构：`get_xai_oauth_models` / `rust_string`
-- 原文/表达式：xAI models request failed: HTTP {status}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`b75faebd1b948dffb5ce8d79d46fce170842ad1ddc9879bb944db40354a64188`
-
-### 113. `hardcoded:src-tauri/src/commands/xai_oauth.rs:get_xai_oauth_models:efb29f531bdcacb1:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/commands/xai_oauth.rs:124`
-- 结构：`get_xai_oauth_models` / `rust_string`
-- 原文/表达式：xAI models response was not valid JSON
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`efb29f531bdcacb1023845bb15b61453ab8fcabb5b3071fea8422e9de0bf991a`
-
-### 114. `hardcoded:src-tauri/src/config.rs:stage_write:179a01a3b0edbf69:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/config.rs:553`
-- 结构：`stage_write` / `rust_string`
-- 原文/表达式：temporary filename loop must run
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`179a01a3b0edbf699545eaa70db495f387c4bc22c4a3da8786e01ea230f3fe80`
-
-### 115. `hardcoded:src-tauri/src/database/backup.rs:restore_from_backup_with_hook:b8e1121cdd6f6d1a:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/backup.rs:1023`
-- 结构：`restore_from_backup_with_hook` / `rust_string`
-- 原文/表达式：Invalid backup filename
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`b8e1121cdd6f6d1a6a595f98d10b815be79e811c7ce74a82801fbc899fab573b`
-
-### 116. `hardcoded:src-tauri/src/database/backup.rs:restore_from_backup_with_hook:445bde0a03cfadd0:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/backup.rs:1033`
-- 结构：`restore_from_backup_with_hook` / `rust_string`
-- 原文/表达式：Backup file not found: {filename}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`445bde0a03cfadd0cf78ea8c73d8e5fdd079aadc906b96b0138bd2b81e94b23c`
-
-### 117. `hardcoded:src-tauri/src/database/backup.rs:rename_backup:b8e1121cdd6f6d1a:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/backup.rs:1101`
-- 结构：`rename_backup` / `rust_string`
-- 原文/表达式：Invalid backup filename
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`b8e1121cdd6f6d1a6a595f98d10b815be79e811c7ce74a82801fbc899fab573b`
-
-### 118. `hardcoded:src-tauri/src/database/backup.rs:rename_backup:2e44a1c6297679d5:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/backup.rs:1109`
-- 结构：`rename_backup` / `rust_string`
-- 原文/表达式：New name cannot be empty
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2e44a1c6297679d56acb655e7902d320207276d5b9730c6342ef72ffc1ba98f0`
-
-### 119. `hardcoded:src-tauri/src/database/backup.rs:rename_backup:bf6a6bfea2b6162c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/backup.rs:1117`
-- 结构：`rename_backup` / `rust_string`
-- 原文/表达式：Name too long (max 100 characters)
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`bf6a6bfea2b6162c356bb917d3135430573f22201e5817f939468d0f09ef6123`
-
-### 120. `hardcoded:src-tauri/src/database/backup.rs:rename_backup:fa4d4aaf7a6e343d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/backup.rs:1128`
-- 结构：`rename_backup` / `rust_string`
-- 原文/表达式：Invalid characters in new name
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`fa4d4aaf7a6e343df9211ca2a51208767df943a0896c0e80a5d0b45e3f5d8920`
-
-### 121. `hardcoded:src-tauri/src/database/backup.rs:rename_backup:8d0bebf1711410b1:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/backup.rs:1141`
-- 结构：`rename_backup` / `rust_string`
-- 原文/表达式：Backup file not found: {old_filename}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`8d0bebf1711410b1cf795cb322c18accfb6fb680613ffe4d8c974b44347d659f`
-
-### 122. `hardcoded:src-tauri/src/database/backup.rs:rename_backup:7fb1c024c293210c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/backup.rs:1147`
-- 结构：`rename_backup` / `rust_string`
-- 原文/表达式：A backup named '{new_filename}' already exists
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`7fb1c024c293210c6c694d648575368bc1adaa0ee23f5ec8b07ff0e5bf7bc8e6`
-
-### 123. `hardcoded:src-tauri/src/database/backup.rs:delete_backup:b8e1121cdd6f6d1a:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/backup.rs:1165`
-- 结构：`delete_backup` / `rust_string`
-- 原文/表达式：Invalid backup filename
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`b8e1121cdd6f6d1a6a595f98d10b815be79e811c7ce74a82801fbc899fab573b`
-
-### 124. `hardcoded:src-tauri/src/database/backup.rs:delete_backup:445bde0a03cfadd0:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/backup.rs:1173`
-- 结构：`delete_backup` / `rust_string`
-- 原文/表达式：Backup file not found: {filename}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`445bde0a03cfadd0cf78ea8c73d8e5fdd079aadc906b96b0138bd2b81e94b23c`
-
-### 125. `hardcoded:src-tauri/src/database/dao/mcp.rs:save_mcp_server:b96c917cd8e1b121:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/dao/mcp.rs:141`
-- 结构：`save_mcp_server` / `rust_string`
-- 原文/表达式：Failed to serialize server config: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`b96c917cd8e1b1211c43380b96987aaa0e1216d2aad53b6ce68432b7d25b10e4`
-
-### 126. `hardcoded:src-tauri/src/database/dao/mcp.rs:save_mcp_server:e572e435318f8b89:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/dao/mcp.rs:147`
-- 结构：`save_mcp_server` / `rust_string`
-- 原文/表达式：Failed to serialize tags: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e572e435318f8b89284b5293aeba46aeacfca68562fd925014703f0315c8b8cc`
-
-### 127. `hardcoded:src-tauri/src/database/dao/providers.rs:save_provider:2fdcfb74488942cc:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/dao/providers.rs:327`
-- 结构：`save_provider` / `rust_string`
-- 原文/表达式：Failed to serialize settings_config: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2fdcfb74488942cc873d5097adc11075bd1aee84b56a2e965a42df06c4f7e90c`
-
-### 128. `hardcoded:src-tauri/src/database/dao/providers.rs:save_provider:bbff6b1c7fd26d78:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/dao/providers.rs:337`
-- 结构：`save_provider` / `rust_string`
-- 原文/表达式：Failed to serialize meta: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`bbff6b1c7fd26d78633439ef46101dfaa736f018d51f2275523edc1aaa9233fb`
-
-### 129. `hardcoded:src-tauri/src/database/dao/providers.rs:save_provider:2fdcfb74488942cc:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/dao/providers.rs:357`
-- 结构：`save_provider` / `rust_string`
-- 原文/表达式：Failed to serialize settings_config: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2fdcfb74488942cc873d5097adc11075bd1aee84b56a2e965a42df06c4f7e90c`
-
-### 130. `hardcoded:src-tauri/src/database/dao/providers.rs:save_provider:bbff6b1c7fd26d78:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/dao/providers.rs:366`
-- 结构：`save_provider` / `rust_string`
-- 原文/表达式：Failed to serialize meta: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`bbff6b1c7fd26d78633439ef46101dfaa736f018d51f2275523edc1aaa9233fb`
-
-### 131. `hardcoded:src-tauri/src/database/dao/providers.rs:replace_provider_id:daa8618bfdf8b8da:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/dao/providers.rs:415`
-- 结构：`replace_provider_id` / `rust_string`
-- 原文/表达式：Provider '{original_id}' does not exist in app '{app_type}'
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`daa8618bfdf8b8da607471f8a1fee05d1cf9676fdd0f4678402b6f44bdd51b2a`
-
-### 132. `hardcoded:src-tauri/src/database/dao/providers.rs:replace_provider_id:d69c721fd2fa2f23:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/dao/providers.rs:430`
-- 结构：`replace_provider_id` / `rust_string`
-- 原文/表达式：Provider '{}' already exists in app '{app_type}'
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d69c721fd2fa2f23c6e0260c3f97091f072522d40fb33567a88ec0fa452f220e`
-
-### 133. `hardcoded:src-tauri/src/database/dao/providers.rs:replace_provider_id:2fdcfb74488942cc:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/dao/providers.rs:448`
-- 结构：`replace_provider_id` / `rust_string`
-- 原文/表达式：Failed to serialize settings_config: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2fdcfb74488942cc873d5097adc11075bd1aee84b56a2e965a42df06c4f7e90c`
-
-### 134. `hardcoded:src-tauri/src/database/dao/providers.rs:replace_provider_id:bbff6b1c7fd26d78:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/dao/providers.rs:458`
-- 结构：`replace_provider_id` / `rust_string`
-- 原文/表达式：Failed to serialize meta: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`bbff6b1c7fd26d78633439ef46101dfaa736f018d51f2275523edc1aaa9233fb`
-
-### 135. `hardcoded:src-tauri/src/database/dao/providers.rs:update_provider_settings_config:2fdcfb74488942cc:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/dao/providers.rs:529`
-- 结构：`update_provider_settings_config` / `rust_string`
-- 原文/表达式：Failed to serialize settings_config: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2fdcfb74488942cc873d5097adc11075bd1aee84b56a2e965a42df06c4f7e90c`
-
-### 136. `hardcoded:src-tauri/src/database/dao/providers.rs:set_omo_provider_current:bf20498a5b3d63cd:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/dao/providers.rs:605`
-- 结构：`set_omo_provider_current` / `rust_string`
-- 原文/表达式：Failed to set {category} provider current: provider '{provider_id}' not found in app '{app_type}'
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`bf20498a5b3d63cd0f97afc28aaf157cccd66a6b59a3f0dbf701db54b219242a`
-
-### 137. `hardcoded:src-tauri/src/database/dao/providers.rs:get_current_omo_provider:436591be87cafeab:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/dao/providers.rs:682`
-- 结构：`get_current_omo_provider` / `rust_string`
-- 原文/表达式：Failed to parse {category} provider settings_config (provider_id={id}): {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`436591be87cafeab094daea6cbfa0435c8f71a46a26c11b9bf0f9a7be40ef7e5`
-
-### 138. `hardcoded:src-tauri/src/database/dao/providers.rs:get_current_omo_provider:41362785bb335d47:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/dao/providers.rs:690`
-- 结构：`get_current_omo_provider` / `rust_string`
-- 原文/表达式：Failed to parse {category} provider meta (provider_id={id}): {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`41362785bb335d4725f1a4a8635928306b33ef1ac368b496095e517acaa06f6c`
-
-### 139. `hardcoded:src-tauri/src/database/dao/providers.rs:init_default_official_providers:541f8ea18e41baf3:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/dao/providers.rs:829`
-- 结构：`init_default_official_providers` / `rust_string`
-- 原文/表达式：Seed JSON parse failed for {}: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`541f8ea18e41baf38a4ba329784e223ac7df355d6dd161d7b941791aa2307384`
-
-### 140. `hardcoded:src-tauri/src/database/dao/providers.rs:ensure_official_seed_by_id:541f8ea18e41baf3:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/dao/providers.rs:892`
-- 结构：`ensure_official_seed_by_id` / `rust_string`
-- 原文/表达式：Seed JSON parse failed for {}: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`541f8ea18e41baf38a4ba329784e223ac7df355d6dd161d7b941791aa2307384`
-
-### 141. `hardcoded:src-tauri/src/database/dao/proxy.rs:set_proxy_flags_sync:61f46335c574700d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/dao/proxy.rs:836`
-- 结构：`set_proxy_flags_sync` / `rust_string`
-- 原文/表达式：Mutex lock failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`61f46335c574700d17232b4adf79630f21b0648840d4e05630fd3ed570104603`
-
-### 142. `hardcoded:src-tauri/src/database/dao/usage_rollup.rs:compute_local_midnight_cutoff:023c8d8705ee3945:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/dao/usage_rollup.rs:48`
-- 结构：`compute_local_midnight_cutoff` / `rust_string`
-- 原文/表达式：rollup cutoff fell into DST gap
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`023c8d8705ee39459450ca449962ce73be34a524a5c284804df84e1f75e9fa52`
-
-### 143. `hardcoded:src-tauri/src/database/dao/usage_rollup.rs:rollup_and_prune:6edc63aa04efe6c1:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/dao/usage_rollup.rs:109`
-- 结构：`rollup_and_prune` / `rust_string`
-- 原文/表达式：ROLLBACK TO rollup_prune;
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`6edc63aa04efe6c11025ee2ce0a82c5a51aefb4c61d7125148c32b03b333b500`
-
-### 144. `hardcoded:src-tauri/src/database/dao/usage_rollup.rs:rollup_and_prune:651a67d7acddb9cd:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/dao/usage_rollup.rs:110`
-- 结构：`rollup_and_prune` / `rust_string`
-- 原文/表达式：RELEASE rollup_prune;
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`651a67d7acddb9cdcf9863444d6bbf40a9f39aa9931b476fb4f41d05b5d54fc5`
-
-### 145. `hardcoded:src-tauri/src/database/dao/usage_rollup.rs:do_rollup_and_prune:3c22a901c89c84fe:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/dao/usage_rollup.rs:171`
-- 结构：`do_rollup_and_prune` / `rust_string`
-- 原文/表达式：Rollup aggregation failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`3c22a901c89c84fe40a4fcc10ec8b85f29c2220a9b198686ebe1fe343083f7a7`
-
-### 146. `hardcoded:src-tauri/src/database/dao/usage_rollup.rs:do_rollup_and_prune:c150a13f0b3d388e:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/dao/usage_rollup.rs:180`
-- 结构：`do_rollup_and_prune` / `rust_string`
-- 原文/表达式：Pruning old logs failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`c150a13f0b3d388e147960f454883cafbc1d28dc4e8070ccbec57595025c05a5`
-
-### 147. `hardcoded:src-tauri/src/database/migration.rs:migrate_from_json:f52f18de490338c0:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/migration.rs:21`
-- 结构：`migrate_from_json` / `rust_string`
-- 原文/表达式：Commit migration failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f52f18de490338c0ae5ed31e5db17c153eb9c1fdfe5b14d34053cd4ccb0e48a5`
-
-### 148. `hardcoded:src-tauri/src/database/migration.rs:migrate_providers:4951af225b386753:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/migration.rs:104`
-- 结构：`migrate_providers` / `rust_string`
-- 原文/表达式：Migrate provider failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`4951af225b386753ce510bfd890513b81b45f67d7b9d25d3e4bd12cbc771caf2`
-
-### 149. `hardcoded:src-tauri/src/database/migration.rs:migrate_providers:9c4f8295d1de2172:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/migration.rs:113`
-- 结构：`migrate_providers` / `rust_string`
-- 原文/表达式：Migrate endpoint failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`9c4f8295d1de21729569ffd4cc200c7e913faa81a90986ba6b8dfaf3a3355713`
-
-### 150. `hardcoded:src-tauri/src/database/migration.rs:migrate_prompts:370ea1437ff89fa4:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/migration.rs:178`
-- 结构：`migrate_prompts` / `rust_string`
-- 原文/表达式：Migrate prompt failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`370ea1437ff89fa4d3c613d81a2017fb15ec06e66e4b7695786a77edc9006166`
-
-### 151. `hardcoded:src-tauri/src/database/migration.rs:migrate_common_config:6998d70780187108:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/migration.rs:226`
-- 结构：`migrate_common_config` / `rust_string`
-- 原文/表达式：Migrate settings failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`6998d70780187108ada5909ae3af4bceb2b4e55de30f50cd606164ab0bd1d59e`
-
-### 152. `hardcoded:src-tauri/src/database/migration.rs:migrate_common_config:6998d70780187108:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/migration.rs:233`
-- 结构：`migrate_common_config` / `rust_string`
-- 原文/表达式：Migrate settings failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`6998d70780187108ada5909ae3af4bceb2b4e55de30f50cd606164ab0bd1d59e`
-
-### 153. `hardcoded:src-tauri/src/database/migration.rs:migrate_common_config:6998d70780187108:003`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/migration.rs:240`
-- 结构：`migrate_common_config` / `rust_string`
-- 原文/表达式：Migrate settings failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`6998d70780187108ada5909ae3af4bceb2b4e55de30f50cd606164ab0bd1d59e`
-
-### 154. `hardcoded:src-tauri/src/database/mod.rs:to_json_string:aecab433306fa936:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/mod.rs:59`
-- 结构：`to_json_string` / `rust_string`
-- 原文/表达式：JSON serialization failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`aecab433306fa93675c9280c560da603b2744f8cbe13159f3e4e05597cf445ed`
-
-### 155. `hardcoded:src-tauri/src/database/mod.rs:to_json_string:8f8e5f7a0d25fed3:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/mod.rs:67`
-- 结构：`to_json_string` / `rust_string`
-- 原文/表达式：Mutex lock failed: {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`8f8e5f7a0d25fed31d5b91f723dd6f5852d52ac5246f6ac5f08d95c281d63215`
-
-### 156. `hardcoded:src-tauri/src/database/schema.rs:apply_schema_migrations_on_conn:9f14bc7d13f428f3:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/schema.rs:656`
-- 结构：`apply_schema_migrations_on_conn` / `rust_string`
-- 原文/表达式：ROLLBACK TO schema_migration;
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`9f14bc7d13f428f3f6f86637c07de23f1430a5bbb724e7fbc111dd7d2f03ebae`
-
-### 157. `hardcoded:src-tauri/src/database/schema.rs:apply_schema_migrations_on_conn:de606ae7874fb7dc:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/database/schema.rs:657`
-- 结构：`apply_schema_migrations_on_conn` / `rust_string`
-- 原文/表达式：RELEASE schema_migration;
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`de606ae7874fb7dccd6da309c2ddaf6a2f5aa3f6d44813be021673b2006f61f0`
-
-### 158. `hardcoded:src-tauri/src/deeplink/codex_link.rs:config_text:2fda261d047bb533:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/codex_link.rs:59`
-- 结构：`config_text` / `rust_string`
-- 原文/表达式：Invalid Codex config: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2fda261d047bb533da0c4af925c6bcc23e6f06d6bbb92d47cd017df63f56ca9d`
-
-### 159. `hardcoded:src-tauri/src/deeplink/codex_link.rs:config_text:2fda261d047bb533:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/codex_link.rs:62`
-- 结构：`config_text` / `rust_string`
-- 原文/表达式：Invalid Codex config: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2fda261d047bb533da0c4af925c6bcc23e6f06d6bbb92d47cd017df63f56ca9d`
-
-### 160. `hardcoded:src-tauri/src/deeplink/grok_link.rs:parse:f7e6e54db9e3804b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/grok_link.rs:69`
-- 结构：`parse` / `rust_string`
-- 原文/表达式：Invalid Grok Build config.toml: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f7e6e54db9e3804be6898723487b247dd8941e652f8073b58383df27c3c4154f`
-
-### 161. `hardcoded:src-tauri/src/deeplink/grok_link.rs:parse:4f1a87b35ec2e5b6:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/grok_link.rs:76`
-- 结构：`parse` / `rust_string`
-- 原文/表达式：The Grok Build config uses '{key}', which makes Grok run a credential provider or <br>                 read credentials from this computer; it cannot be imported from a link. Add the <br>                 provider manually instead.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`4f1a87b35ec2e5b6aeb2190f9a265ed53877b7b9ba5fb364de1e29a3c3c74ad9`
-
-### 162. `hardcoded:src-tauri/src/deeplink/grok_link.rs:selected_profile:a32aa05e7c0c6f5a:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/grok_link.rs:185`
-- 结构：`selected_profile` / `rust_string`
-- 原文/表达式：The Grok Build config has no [model."<name>"] table to import
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`a32aa05e7c0c6f5a4d58d725c32da88bdcc94d17389831d9d228c1610b4a971b`
-
-### 163. `hardcoded:src-tauri/src/deeplink/grok_link.rs:selected_profile:77775735fe8060d1:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/grok_link.rs:188`
-- 结构：`selected_profile` / `rust_string`
-- 原文/表达式：The Grok Build config has several [model.*] tables; set [models] default to the one <br>             to import
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`77775735fe8060d12d7b6b1a1563a5783ac04e5fc602745321dd432639e66ee6`
-
-### 164. `hardcoded:src-tauri/src/deeplink/mcp.rs:import_mcp_from_deeplink:b69a998f93a0857d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/mcp.rs:47`
-- 结构：`import_mcp_from_deeplink` / `rust_string`
-- 原文/表达式：Expected mcp resource, got '{}'
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`b69a998f93a0857d8182eeffe12dae35173c1ff6a1b08c74ab7a8ce5e7167c6a`
-
-### 165. `hardcoded:src-tauri/src/deeplink/mcp.rs:import_mcp_from_deeplink:18d7986ef2f350b4:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/mcp.rs:71`
-- 结构：`import_mcp_from_deeplink` / `rust_string`
-- 原文/表达式：Invalid UTF-8 in config: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`18d7986ef2f350b4f91b4c49e5947df778906fcfec42ef48ed9d5be3f3424b1e`
-
-### 166. `hardcoded:src-tauri/src/deeplink/mcp.rs:import_mcp_from_deeplink:f58c8375493519f2:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/mcp.rs:75`
-- 结构：`import_mcp_from_deeplink` / `rust_string`
-- 原文/表达式：Invalid JSON in MCP config: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f58c8375493519f25ef6ef29d9496f0753b40c257444e2c995286e4bf71fafb5`
-
-### 167. `hardcoded:src-tauri/src/deeplink/mcp.rs:import_mcp_from_deeplink:0952cb14336ca9f7:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/mcp.rs:87`
-- 结构：`import_mcp_from_deeplink` / `rust_string`
-- 原文/表达式：No MCP servers found in config
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`0952cb14336ca9f7fcb6d6d3dbf7061b2d03d88887afc6e1dc3bd0fa0fc15551`
-
-### 168. `hardcoded:src-tauri/src/deeplink/mcp.rs:parse_mcp_apps:07b9ada43ab62b80:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/mcp.rs:189`
-- 结构：`parse_mcp_apps` / `rust_string`
-- 原文/表达式：Invalid app in 'apps': {other}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`07b9ada43ab62b806a3e706bcd8a91df788e326ad7b603f34ab33a21790f5f71`
-
-### 169. `hardcoded:src-tauri/src/deeplink/mcp.rs:parse_mcp_apps:1b6e1f82fbb67a28:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/mcp.rs:197`
-- 结构：`parse_mcp_apps` / `rust_string`
-- 原文/表达式：At least one app must be specified in 'apps'
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`1b6e1f82fbb67a284d8da6cf641c6be6a5d6f2dccda40da161656bdeeaf2cfaa`
-
-### 170. `hardcoded:src-tauri/src/deeplink/parser.rs:parse_deeplink_url:c8098173c70c7097:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/parser.rs:18`
-- 结构：`parse_deeplink_url` / `rust_string`
-- 原文/表达式：Invalid deep link URL: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`c8098173c70c70979daa11fd7dd958b0cc151e5dd8d0f6b997be6a52181575dd`
-
-### 171. `hardcoded:src-tauri/src/deeplink/parser.rs:parse_deeplink_url:12b90a58e41c38d9:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/parser.rs:24`
-- 结构：`parse_deeplink_url` / `rust_string`
-- 原文/表达式：Invalid scheme: expected 'ccswitch', got '{scheme}'
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`12b90a58e41c38d959275155e33e2f4a021b09c546f41413a3b1a015f93f0d7f`
-
-### 172. `hardcoded:src-tauri/src/deeplink/parser.rs:parse_deeplink_url:dce0c58390debde4:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/parser.rs:37`
-- 结构：`parse_deeplink_url` / `rust_string`
-- 原文/表达式：Unsupported protocol version: {version}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`dce0c58390debde4143a9fe9cb068bff536495b84ff6d2f062679ccf7b4a8f31`
-
-### 173. `hardcoded:src-tauri/src/deeplink/parser.rs:parse_deeplink_url:b54a3f0dcd207c26:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/parser.rs:45`
-- 结构：`parse_deeplink_url` / `rust_string`
-- 原文/表达式：Invalid path: expected '/import', got '{path}'
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`b54a3f0dcd207c26738a79a512492b4901c764653698d7e800db30cb97300c17`
-
-### 174. `hardcoded:src-tauri/src/deeplink/parser.rs:parse_deeplink_url:ffa5ccf8a8b5e1d2:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/parser.rs:65`
-- 结构：`parse_deeplink_url` / `rust_string`
-- 原文/表达式：Unsupported resource type: {resource}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ffa5ccf8a8b5e1d2764c048e27a5dd64ab69f5187cf7b07852ee10fcda60b7c3`
-
-### 175. `hardcoded:src-tauri/src/deeplink/parser.rs:parse_provider_deeplink:6cd023c567495f40:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/parser.rs:99`
-- 结构：`parse_provider_deeplink` / `rust_string`
-- 原文/表达式：Oh My Pi providers must be added from the Oh My Pi provider page
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`6cd023c567495f4090b7724ebaa65ad2eea4affbe22ac485bdc0b53b366f0b9b`
-
-### 176. `hardcoded:src-tauri/src/deeplink/parser.rs:parse_provider_deeplink:4341dc991eef3674:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/parser.rs:115`
-- 结构：`parse_provider_deeplink` / `rust_string`
-- 原文/表达式：Invalid provider app type: '{app}'
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`4341dc991eef3674dfc7f17cdcb61d7003757ca770e5de6cfbf6b3f5f9dcc341`
-
-### 177. `hardcoded:src-tauri/src/deeplink/parser.rs:parse_provider_deeplink:7c455c53501fe04b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/parser.rs:150`
-- 结构：`parse_provider_deeplink` / `rust_string`
-- 原文/表达式：Pi providers need a model; add 'model' to the link
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`7c455c53501fe04bc47342eb7833b7b30b534b64805c9458f050489207f90574`
-
-### 178. `hardcoded:src-tauri/src/deeplink/parser.rs:parse_provider_deeplink:556747811571f24a:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/parser.rs:179`
-- 结构：`parse_provider_deeplink` / `rust_string`
-- 原文/表达式：'configUrl' is not supported yet; pass the config inline with 'config' (Base64)
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`556747811571f24a6c6b9b568764fcea0a080067ced013b9ffcaebfe8eef1ad9`
-
-### 179. `hardcoded:src-tauri/src/deeplink/parser.rs:parse_prompt_deeplink:95b820f63f48e227:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/parser.rs:271`
-- 结构：`parse_prompt_deeplink` / `rust_string`
-- 原文/表达式：Invalid app type: must be 'claude', 'codex', 'gemini', 'agy', 'grokbuild', 'opencode', 'openclaw', 'hermes', 'pi', or 'mcode', got '{app}'
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`95b820f63f48e22795f3bb4a578f821774aacd337bee18158d168d9ed9caf88c`
-
-### 180. `hardcoded:src-tauri/src/deeplink/parser.rs:parse_mcp_deeplink:3f10f6be1a6304a1:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/parser.rs:359`
-- 结构：`parse_mcp_deeplink` / `rust_string`
-- 原文/表达式：Invalid app in 'apps': must be 'claude', 'codex', 'gemini', 'agy', 'grokbuild', 'opencode', 'hermes', 'pi', 'kimi', 'mcode', or 'omp', got '{trimmed}'
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`3f10f6be1a6304a16870161a62d8379e2050cea6a8e693feec31d9edb1653736`
-
-### 181. `hardcoded:src-tauri/src/deeplink/parser.rs:parse_skill_deeplink:f91cf81a79a7dd80:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/parser.rs:421`
-- 结构：`parse_skill_deeplink` / `rust_string`
-- 原文/表达式：Invalid repo format: expected 'owner/name', got '{repo}'
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f91cf81a79a7dd80ce2f730989d7bcd2a4b089aa4a25f9bcafe2e0cbaac39229`
-
-### 182. `hardcoded:src-tauri/src/deeplink/prompt.rs:import_prompt_from_deeplink:cdbb074feb9893fc:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/prompt.rs:22`
-- 结构：`import_prompt_from_deeplink` / `rust_string`
-- 原文/表达式：Expected prompt resource, got '{}'
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`cdbb074feb9893fc41893b5742edda155b6eb41c177168ecaf2ac6a448509a7c`
-
-### 183. `hardcoded:src-tauri/src/deeplink/prompt.rs:import_prompt_from_deeplink:72663ce2d0bba4a0:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/prompt.rs:39`
-- 结构：`import_prompt_from_deeplink` / `rust_string`
-- 原文/表达式：Invalid app type: {app_str}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`72663ce2d0bba4a0fe847c4d91d9cab36fd5880a4c44ddb946920553c1fb5c85`
-
-### 184. `hardcoded:src-tauri/src/deeplink/prompt.rs:import_prompt_from_deeplink:38b2a1982fa9813b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/prompt.rs:49`
-- 结构：`import_prompt_from_deeplink` / `rust_string`
-- 原文/表达式：Invalid UTF-8 in content: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`38b2a1982fa9813b1824731c30b9d83fbe478783462c272984686a4f72827946`
-
-### 185. `hardcoded:src-tauri/src/deeplink/provider.rs:import_provider_from_deeplink:9c8aaab1533f8937:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/provider.rs:32`
-- 结构：`import_provider_from_deeplink` / `rust_string`
-- 原文/表达式：Expected provider resource, got '{}'
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`9c8aaab1533f89370f16d2c174fe33b063f6543f6ddd5719a5b268629a897d42`
-
-### 186. `hardcoded:src-tauri/src/deeplink/provider.rs:import_provider_from_deeplink:dae58561a0a1db7c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/provider.rs:52`
-- 结构：`import_provider_from_deeplink` / `rust_string`
-- 原文/表达式：API key cannot be empty
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`dae58561a0a1db7c0a054f19ee3e4a5346f49b55a305842da45d8d6fe6d301cd`
-
-### 187. `hardcoded:src-tauri/src/deeplink/provider.rs:import_provider_from_deeplink:ec76310cef366f50:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/provider.rs:87`
-- 结构：`import_provider_from_deeplink` / `rust_string`
-- 原文/表达式：Homepage cannot be empty
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ec76310cef366f50b02cf608d5a60bd011fbe77840f7fc5ca4d63c576c092424`
-
-### 188. `hardcoded:src-tauri/src/deeplink/provider.rs:import_provider_from_deeplink:72663ce2d0bba4a0:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/provider.rs:98`
-- 结构：`import_provider_from_deeplink` / `rust_string`
-- 原文/表达式：Invalid app type: {app_str}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`72663ce2d0bba4a0fe847c4d91d9cab36fd5880a4c44ddb946920553c1fb5c85`
-
-### 189. `hardcoded:src-tauri/src/deeplink/provider.rs:check_api_format:7e21d88497f2a07f:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/provider.rs:241`
-- 结构：`check_api_format` / `rust_string`
-- 原文/表达式：Invalid app type: {app}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`7e21d88497f2a07fd9e84aac328264103c62d76cb1da826dd56b018a55ecf9f6`
-
-### 190. `hardcoded:src-tauri/src/deeplink/provider.rs:check_api_format:090063c500da1d4b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/provider.rs:245`
-- 结构：`check_api_format` / `rust_string`
-- 原文/表达式：apiFormat '{}' is not supported for app '{app}'
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`090063c500da1d4bcb60867a8003f0f1e66119e303bca4d378d6976138711474`
-
-### 191. `hardcoded:src-tauri/src/deeplink/provider.rs:build_provider_from_request:b18b64f8e8516007:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/provider.rs:345`
-- 结构：`build_provider_from_request` / `rust_string`
-- 原文/表达式：.into(),<br>            ));<br>        }<br>        AppType::Kimi => {<br>            return Err(AppError::InvalidInput(
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`b18b64f8e8516007452b731111e6efa893295ca3a94b765188977eb06c7083ca`
-
-### 192. `hardcoded:src-tauri/src/deeplink/provider.rs:build_provider_from_request:cb953fc48dc9261d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/provider.rs:350`
-- 结构：`build_provider_from_request` / `rust_string`
-- 原文/表达式：.into(),<br>            ))<br>        }<br>        AppType::Mcode => {<br>            return Err(AppError::InvalidInput(
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`cb953fc48dc9261d10c7d58df297584f3a47981c26959c0e6bdb844339e69ed5`
-
-### 193. `hardcoded:src-tauri/src/deeplink/provider.rs:build_provider_from_request:52fa2f5675659888:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/provider.rs:355`
-- 结构：`build_provider_from_request` / `rust_string`
-- 原文/表达式：.into(),<br>            ))<br>        }<br>        AppType::Agy => {<br>            let mut settings = build_gemini_settings(request);<br>            settings[
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`52fa2f5675659888f247a7b41fe2595c5c642daa830a875b142d665d842dc5dd`
-
-### 194. `hardcoded:src-tauri/src/deeplink/provider.rs:decode_link_config:18d7986ef2f350b4:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/provider.rs:955`
-- 结构：`decode_link_config` / `rust_string`
-- 原文/表达式：Invalid UTF-8 in config: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`18d7986ef2f350b4f91b4c49e5947df778906fcfec42ef48ed9d5be3f3424b1e`
-
-### 195. `hardcoded:src-tauri/src/deeplink/provider.rs:decode_link_config:a9cd017743185c41:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/provider.rs:958`
-- 结构：`decode_link_config` / `rust_string`
-- 原文/表达式：Remote config URL is not yet supported. Use inline config instead.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`a9cd017743185c413bbe2698eb45f5bad969a55d9c9b2a9a1d6da6475b431ee5`
-
-### 196. `hardcoded:src-tauri/src/deeplink/provider.rs:decode_link_config:a95d984d995cc709:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/provider.rs:967`
-- 结构：`decode_link_config` / `rust_string`
-- 原文/表达式：Invalid JSON config: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`a95d984d995cc709a3918bf0fd689bcae101834fddee0fcd402d35bbfb70a669`
-
-### 197. `hardcoded:src-tauri/src/deeplink/provider.rs:decode_link_config:424f7cf99dbc5169:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/provider.rs:970`
-- 结构：`decode_link_config` / `rust_string`
-- 原文/表达式：Invalid TOML config: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`424f7cf99dbc51696c426d3d3a8bc8b821563227d57a97b86b57a2a8c6828156`
-
-### 198. `hardcoded:src-tauri/src/deeplink/provider.rs:decode_link_config:c40aec1d36d478aa:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/provider.rs:972`
-- 结构：`decode_link_config` / `rust_string`
-- 原文/表达式：Failed to convert TOML to JSON: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`c40aec1d36d478aa58c9763758eacdb0e24246295a8f8f6f164be13f0ef591b5`
-
-### 199. `hardcoded:src-tauri/src/deeplink/provider.rs:decode_link_config:7b5d5eb71d52b87c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/provider.rs:976`
-- 结构：`decode_link_config` / `rust_string`
-- 原文/表达式：Unsupported config format: {format}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`7b5d5eb71d52b87c4deaecb753ff785c6b31f3e3bb55ba3978af17a05780136c`
-
-### 200. `hardcoded:src-tauri/src/deeplink/provider.rs:parse_and_merge_config:b7b69264a63f2184:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/provider.rs:1021`
-- 结构：`parse_and_merge_config` / `rust_string`
-- 原文/表达式：Invalid app type: {:?}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`b7b69264a63f2184a8770658f5fdc27668caf96e9f7f13ac02a6c217308b923a`
-
-### 201. `hardcoded:src-tauri/src/deeplink/provider.rs:merge_codex_config:80d56506249ea8ae:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/provider.rs:1120`
-- 结构：`merge_codex_config` / `rust_string`
-- 原文/表达式：This link supplies its API key indirectly through `env_key`, which cannot be <br>             imported from an untrusted link. Add the provider manually and enter the key <br>             yourself.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`80d56506249ea8ae550775aaa20825e3411cabdc0154a1577ee4e3b313dc53e8`
-
-### 202. `hardcoded:src-tauri/src/deeplink/provider.rs:merge_agy_config:afd1977426d125a8:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/provider.rs:1166`
-- 结构：`merge_agy_config` / `rust_string`
-- 原文/表达式：Antigravity config/env must be an object
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`afd1977426d125a8031134a2c0d252a5fb65bc00355348c496a8bbdaac7072f5`
-
-### 203. `hardcoded:src-tauri/src/deeplink/provider.rs:grokbuild_config_text:265e8c6578317671:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/provider.rs:1228`
-- 结构：`grokbuild_config_text` / `rust_string`
-- 原文/表达式：Invalid Grok Build config: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`265e8c65783176715e66ac6ac943f8208064739c384fba047b32f169a6708991`
-
-### 204. `hardcoded:src-tauri/src/deeplink/provider.rs:grokbuild_config_text:265e8c6578317671:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/provider.rs:1230`
-- 结构：`grokbuild_config_text` / `rust_string`
-- 原文/表达式：Invalid Grok Build config: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`265e8c65783176715e66ac6ac943f8208064739c384fba047b32f169a6708991`
-
-### 205. `hardcoded:src-tauri/src/deeplink/provider.rs:merge_grokbuild_config:319d2b265c4b89b5:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/provider.rs:1267`
-- 结构：`merge_grokbuild_config` / `rust_string`
-- 原文/表达式：This link supplies its API key indirectly through `env_key`, which cannot be <br>                 imported from an untrusted link. Add the provider manually and enter the key <br>                 yourself.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`319d2b265c4b89b58eeca79953b1890cdd584e8fce8551527a94617b4da05e98`
-
-### 206. `hardcoded:src-tauri/src/deeplink/skill.rs:import_skill_from_deeplink:591552799f996dc2:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/skill.rs:18`
-- 结构：`import_skill_from_deeplink` / `rust_string`
-- 原文/表达式：Expected skill resource, got '{}'
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`591552799f996dc2ff101cfcc7bc97703c5aba9e8eaec3e3925c5c7a4c97408b`
-
-### 207. `hardcoded:src-tauri/src/deeplink/skill.rs:import_skill_from_deeplink:ad237bf90fd0e0bd:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/skill.rs:31`
-- 结构：`import_skill_from_deeplink` / `rust_string`
-- 原文/表达式：Invalid repo format: expected 'owner/name', got '{repo_str}'
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ad237bf90fd0e0bde27831e816bf0443557d40f3e93c699caedf0a46b84cab5e`
-
-### 208. `hardcoded:src-tauri/src/deeplink/skill.rs:import_skill_from_deeplink:56411dff86985be7:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/skill.rs:45`
-- 结构：`import_skill_from_deeplink` / `rust_string`
-- 原文/表达式：Invalid skill repository reference: '{owner}/{name}' branch '{branch}'
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`56411dff86985be738eafb652a3837da70ecd490fb22d91e6374993e4cabd46b`
-
-### 209. `hardcoded:src-tauri/src/deeplink/utils.rs:validate_url:21893c63a1b3d5f4:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/utils.rs:12`
-- 结构：`validate_url` / `rust_string`
-- 原文/表达式：Invalid URL for '{field_name}': {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`21893c63a1b3d5f471b9e7a6822de33e51f201377cc5c915988f442560fc556e`
-
-### 210. `hardcoded:src-tauri/src/deeplink/utils.rs:validate_url:d9904da2c4d23129:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/deeplink/utils.rs:17`
-- 结构：`validate_url` / `rust_string`
-- 原文/表达式：Invalid URL scheme for '{field_name}': must be http or https, got '{scheme}'
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d9904da2c4d23129bff28fcb862deb088cf115af0b21df5616a39d50e77046e4`
-
-### 211. `hardcoded:src-tauri/src/dsh_config.rs:entries:e15d406321e9d41c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/dsh_config.rs:34`
-- 结构：`entries` / `rust_string`
-- 原文/表达式：Invalid DeepSeek Harness profile YAML
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e15d406321e9d41cbe0059c943008c6247610d88898c5ab2dc1f82d3a13851dd`
-
-### 212. `hardcoded:src-tauri/src/dsh_config.rs:entries:96d0b0b5efa7a5b9:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/dsh_config.rs:39`
-- 结构：`entries` / `rust_string`
-- 原文/表达式：DeepSeek Harness profile must be a YAML sequence
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`96d0b0b5efa7a5b9b24206a4bc394aa0862385fc4fb71bd98946d78da5e6ca5f`
-
-### 213. `hardcoded:src-tauri/src/dsh_config.rs:replace_entry:391b8838af84c4e5:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/dsh_config.rs:56`
-- 结构：`replace_entry` / `rust_string`
-- 原文/表达式：Duplicate DeepSeek Harness plugin id '{id}'
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`391b8838af84c4e5653abd4170c69484211f97a6957ca36788338d6d99c4456f`
-
-### 214. `hardcoded:src-tauri/src/dsh_config.rs:replace_patch:68b1b5ff849ea689:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/dsh_config.rs:104`
-- 结构：`replace_patch` / `rust_string`
-- 原文/表达式：Use block-style YAML for the DeepSeek Harness profile
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`68b1b5ff849ea6891e1b33d84a1f0b937eb51773b038eee798532ddb97750b18`
-
-### 215. `hardcoded:src-tauri/src/dsh_config.rs:replace_patch:375584831510f6c4:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/dsh_config.rs:117`
-- 结构：`replace_patch` / `rust_string`
-- 原文/表达式：This DeepSeek Harness profile entry uses YAML tags (such as !!js), anchors or aliases; edit it in cordis.patch.yml directly
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`375584831510f6c481899b76e57187a8f7c51e5fa4fc80872244ec6a3eab4d4a`
-
-### 216. `hardcoded:src-tauri/src/dsh_config.rs:acquire:3b8eb308343a2570:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/dsh_config.rs:157`
-- 结构：`acquire` / `rust_string`
-- 原文/表达式：DeepSeek Harness is saving its configuration; retry shortly
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`3b8eb308343a25707d09b824ebd66258508351ecaf79a8017e5b75610a002015`
-
-### 217. `hardcoded:src-tauri/src/dsh_config.rs:edit_path_and_commit:d5946ced81cda683:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/dsh_config.rs:204`
-- 结构：`edit_path_and_commit` / `rust_string`
-- 原文/表达式：{error}; restoring DeepSeek Harness configuration failed: {rollback}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d5946ced81cda6839d03875da643ec78fd8c1bff939f1d88919671ea286381a8`
-
-### 218. `hardcoded:src-tauri/src/dsh_config.rs:provider_entry:6f8b397d737929b9:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/dsh_config.rs:218`
-- 结构：`provider_entry` / `rust_string`
-- 原文/表达式：Duplicate llm-pi-ai overrides
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`6f8b397d737929b91283557799cb2eef51b5a3a345ce731c3db8919b127f5193`
-
-### 219. `hardcoded:src-tauri/src/dsh_config.rs:provider_entry:700158bb0e2381ff:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/dsh_config.rs:228`
-- 结构：`provider_entry` / `rust_string`
-- 原文/表达式：Invalid DeepSeek Harness llm-pi-ai configuration
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`700158bb0e2381ffbfb2263aea19aa98fe293276503c9cff66ee69188fd2f4ce`
-
-### 220. `hardcoded:src-tauri/src/dsh_config.rs:provider_entry:a3f0bf3904df2552:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/dsh_config.rs:236`
-- 结构：`provider_entry` / `rust_string`
-- 原文/表达式：Invalid DeepSeek Harness providers mapping
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`a3f0bf3904df2552f88a585b487a9f42598c0ae632bb880af72bc56edfcd5145`
-
-### 221. `hardcoded:src-tauri/src/dsh_config.rs:credential_document:eb001f848e73384c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/dsh_config.rs:248`
-- 结构：`credential_document` / `rust_string`
-- 原文/表达式：Invalid DeepSeek Harness credentials YAML
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`eb001f848e73384c5cfdd5616a208c34cf7e61f5607bcef2e9ef9bdee12d7525`
-
-### 222. `hardcoded:src-tauri/src/dsh_config.rs:credential_document:e590efc4ae5b62c3:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/dsh_config.rs:252`
-- 结构：`credential_document` / `rust_string`
-- 原文/表达式：Unsupported DeepSeek Harness credential document; migrate it in DeepSeek Harness first
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e590efc4ae5b62c39d67c54d9e9318c84e38f72f3d5ea2e556f461ebb7a78ae7`
-
-### 223. `hardcoded:src-tauri/src/dsh_config.rs:get_providers_from:9ade68ca44e9bf61:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/dsh_config.rs:274`
-- 结构：`get_providers_from` / `rust_string`
-- 原文/表达式：Provider '{id}' contains dynamic YAML; edit it in DeepSeek Harness
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`9ade68ca44e9bf61d672db2328ca01a54f3516bef47375d8f0adaa08bc08ee95`
-
-### 224. `hardcoded:src-tauri/src/dsh_config.rs:get_providers_from:e43ca5e7e0ee669e:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/dsh_config.rs:279`
-- 结构：`get_providers_from` / `rust_string`
-- 原文/表达式：Invalid DeepSeek Harness provider '{id}'
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e43ca5e7e0ee669ed4f8f4557aef719bb680a26c6956827c66b2023276e0ac7e`
-
-### 225. `hardcoded:src-tauri/src/dsh_config.rs:validate_provider:723082ac695ca211:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/dsh_config.rs:334`
-- 结构：`validate_provider` / `rust_string`
-- 原文/表达式：DeepSeek Harness provider ids must be lowercase hyphenated identifiers; deepseek-official is reserved
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`723082ac695ca2119aa256302be3951d2ddcac2f7c3592ff5b29f9796f312752`
-
-### 226. `hardcoded:src-tauri/src/dsh_config.rs:validate_provider:0a70cd22cc868042:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/dsh_config.rs:351`
-- 结构：`validate_provider` / `rust_string`
-- 原文/表达式：Enter a valid DeepSeek Harness endpoint URL
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`0a70cd22cc8680421cc0841deff65f9666ba65c7d83877f8899270a544022c21`
-
-### 227. `hardcoded:src-tauri/src/dsh_config.rs:validate_provider:5f57595b7c6f2a5d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/dsh_config.rs:364`
-- 结构：`validate_provider` / `rust_string`
-- 原文/表达式：Enter an API key or retain a native credential reference
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`5f57595b7c6f2a5da8a37c77fa752d4cb94dd38fff90c1d8340e8e2323abd259`
-
-### 228. `hardcoded:src-tauri/src/dsh_config.rs:validate_provider:46530fa2e0bec295:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/dsh_config.rs:372`
-- 结构：`validate_provider` / `rust_string`
-- 原文/表达式：Add at least one DeepSeek Harness model
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`46530fa2e0bec295a40bceaa0587a927ac679f27cdc677beff6a3fe8ee1f9219`
-
-### 229. `hardcoded:src-tauri/src/dsh_config.rs:validate_provider:735b197ce6c605fd:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/dsh_config.rs:378`
-- 结构：`validate_provider` / `rust_string`
-- 原文/表达式：Invalid DeepSeek Harness model
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`735b197ce6c605fd393f1457c267dad46dc07bfe8a9f8518e78b1b64184e2608`
-
-### 230. `hardcoded:src-tauri/src/dsh_config.rs:validate_provider:7e4fee37aefe5dd2:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/dsh_config.rs:387`
-- 结构：`validate_provider` / `rust_string`
-- 原文/表达式：Model capacities must be positive integers
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`7e4fee37aefe5dd26d12f57b492a1c65f0c2e9e8afd74e4cd9c0fc165e4f3171`
-
-### 231. `hardcoded:src-tauri/src/dsh_config.rs:update_provider:eff11aef3616265e:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/dsh_config.rs:408`
-- 结构：`update_provider` / `rust_string`
-- 原文/表达式：DeepSeek Harness provider '{id}' already exists
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`eff11aef3616265e08e47df914703e46f18ac5b8ab862d60696cb6c97ec5afbc`
-
-### 232. `hardcoded:src-tauri/src/dsh_config.rs:sync_mcp_file_and_commit:533997019183fe03:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/dsh_config.rs:605`
-- 结构：`sync_mcp_file_and_commit` / `rust_string`
-- 原文/表达式：DeepSeek Harness supports stdio and Streamable HTTP MCP; use an HTTP endpoint instead of SSE
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`533997019183fe031217951c72840e7ec3fd8d98e9291e205ab94353796945e8`
-
-### 233. `hardcoded:src-tauri/src/dsh_config.rs:sync_mcp_file_and_commit:4a5db5bf3344476f:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/dsh_config.rs:614`
-- 结构：`sync_mcp_file_and_commit` / `rust_string`
-- 原文/表达式：DeepSeek Harness MCP names must contain 1–32 letters, digits, '-' or '_'
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`4a5db5bf3344476f7cc79a088d9d7b7370d7e7175b807f7fd8a928402d4f5e66`
-
-### 234. `hardcoded:src-tauri/src/dsh_config.rs:sync_mcp_file_and_commit:192ae4d4788dddf1:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/dsh_config.rs:630`
-- 结构：`sync_mcp_file_and_commit` / `rust_string`
-- 原文/表达式：Duplicate DeepSeek Harness MCP server '{id}'
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`192ae4d4788dddf1691c0670f18fbc5d8247dc09887b2264010d91a12c98bc6f`
-
-### 235. `hardcoded:src-tauri/src/dsh_config.rs:sync_mcp_file_and_commit:9ca54b9a57c15a87:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/dsh_config.rs:650`
-- 结构：`sync_mcp_file_and_commit` / `rust_string`
-- 原文/表达式：Assign an id to this native MCP entry before editing it in CC Switch
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`9ca54b9a57c15a87227e96c80ba2d4b0aa908ac7abf0a7e4caf95efcf822639e`
-
-### 236. `hardcoded:src-tauri/src/dsh_config.rs:sync_mcp_file_and_commit:237d8e983c59309f:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/dsh_config.rs:658`
-- 结构：`sync_mcp_file_and_commit` / `rust_string`
-- 原文/表达式：DeepSeek Harness plugin id '{plugin_id}' is already in use
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`237d8e983c59309f1217e62be385b0db9148ed1c7cdc9e77dbc2cc2ac58c5598`
-
-### 237. `hardcoded:src-tauri/src/grok_config.rs:strip_grok_mcp_servers_from_settings:c3452994e42a0380:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/grok_config.rs:257`
-- 结构：`strip_grok_mcp_servers_from_settings` / `rust_string`
-- 原文/表达式：Invalid Grok Build config.toml: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`c3452994e42a0380a462a81dab6d73e6bd1771f79254a9dcc9406353685d4efb`
-
-### 238. `hardcoded:src-tauri/src/hermes_config.rs:ensure_provider_writable:ef7335103fb42d0e:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/hermes_config.rs:737`
-- 结构：`ensure_provider_writable` / `rust_string`
-- 原文/表达式：Provider '{name}' is managed by Hermes' 'providers:' dict — {verb} via Hermes Web UI
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ef7335103fb42d0ec0c171271103cfdd731ee198c1d72fdf772aae1461f18c8c`
-
-### 239. `hardcoded:src-tauri/src/hermes_config.rs:get_model_config:354bce1481f6ddbb:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/hermes_config.rs:924`
-- 结构：`get_model_config` / `rust_string`
-- 原文/表达式：Failed to parse Hermes model config: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`354bce1481f6ddbbd1968026e2cba3dc930f8ef7f1590f5ca4b935bc70326a9c`
-
-### 240. `hardcoded:src-tauri/src/hermes_config.rs:yaml_to_json:8442042fbe6d7016:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/hermes_config.rs:1095`
-- 结构：`yaml_to_json` / `rust_string`
-- 原文/表达式：Failed to serialize YAML value: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`8442042fbe6d701672ad9a5498b12d4a4e2bbc125eb04ea35819f10420fcf200`
-
-### 241. `hardcoded:src-tauri/src/hermes_config.rs:yaml_to_json:84274fd02b99ea56:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/hermes_config.rs:1097`
-- 结构：`yaml_to_json` / `rust_string`
-- 原文/表达式：Failed to convert YAML to JSON: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`84274fd02b99ea56ada994159792fc39866256e9634708a7eef8294fbd14bb74`
-
-### 242. `hardcoded:src-tauri/src/hermes_config.rs:json_to_yaml:f582c9e843b1b2be:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/hermes_config.rs:1103`
-- 结构：`json_to_yaml` / `rust_string`
-- 原文/表达式：Failed to serialize JSON value: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f582c9e843b1b2be89cbc19ae6cb5a3540d4dcfc202ae426fa6d40583183657b`
-
-### 243. `hardcoded:src-tauri/src/hermes_config.rs:json_to_yaml:951e41c161129a25:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/hermes_config.rs:1105`
-- 结构：`json_to_yaml` / `rust_string`
-- 原文/表达式：Failed to convert JSON to YAML: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`951e41c161129a25707c931ed583e539eed395fbdc35c7f1adff7cc68db6ff94`
-
-### 244. `hardcoded:src-tauri/src/jsonc_document.rs:parse:5e7f927428e73389:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/jsonc_document.rs:23`
-- 结构：`parse` / `rust_string`
-- 原文/表达式：Failed to parse JSONC config: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`5e7f927428e73389ae07004bd14cda124d073218a63c538ce84d697aa72b6702`
-
-### 245. `hardcoded:src-tauri/src/jsonc_document.rs:parse:ed14fc884905a466:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/jsonc_document.rs:26`
-- 结构：`parse` / `rust_string`
-- 原文/表达式：JSONC config root must be a JSON object
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ed14fc884905a466575fc90d0f893d45b72efa20bc11216dc908c3e05a90244d`
-
-### 246. `hardcoded:src-tauri/src/jsonc_document.rs:root_key_count:ed14fc884905a466:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/jsonc_document.rs:52`
-- 结构：`root_key_count` / `rust_string`
-- 原文/表达式：JSONC config root must be a JSON object
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ed14fc884905a466575fc90d0f893d45b72efa20bc11216dc908c3e05a90244d`
-
-### 247. `hardcoded:src-tauri/src/jsonc_document.rs:apply:ed14fc884905a466:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/jsonc_document.rs:67`
-- 结构：`apply` / `rust_string`
-- 原文/表达式：JSONC config root must be a JSON object
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ed14fc884905a466575fc90d0f893d45b72efa20bc11216dc908c3e05a90244d`
-
-### 248. `hardcoded:src-tauri/src/jsonc_document.rs:validated_source:414187655dbfeefb:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/jsonc_document.rs:90`
-- 结构：`validated_source` / `rust_string`
-- 原文/表达式：Refusing to write invalid JSONC config after round-trip serialization: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`414187655dbfeefbfcb4ca42da7dc0abf9e4774bbd79ed94398e852f7d6a198d`
-
-### 249. `hardcoded:src-tauri/src/jsonc_document.rs:validated_source:414187655dbfeefb:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/jsonc_document.rs:95`
-- 结构：`validated_source` / `rust_string`
-- 原文/表达式：Refusing to write invalid JSONC config after round-trip serialization: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`414187655dbfeefbfcb4ca42da7dc0abf9e4774bbd79ed94398e852f7d6a198d`
-
-### 250. `hardcoded:src-tauri/src/jsonc_document.rs:validated_source:f543034b1b8b8fb2:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/jsonc_document.rs:100`
-- 结构：`validated_source` / `rust_string`
-- 原文/表达式：Refusing to write JSONC config: serialized output does not match the intended state
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f543034b1b8b8fb20540105b5d5dca9f0274de03700ebfad6d76a9b1bce1fa7c`
-
-### 251. `hardcoded:src-tauri/src/jsonc_document.rs:parse_round_trip:fe8805229a61f138:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/jsonc_document.rs:122`
-- 结构：`parse_round_trip` / `rust_string`
-- 原文/表达式：Failed to tokenize JSONC config: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`fe8805229a61f138e73659053c6515e6a97f70bc2f2018c6cce6318e9ed4438e`
-
-### 252. `hardcoded:src-tauri/src/jsonc_document.rs:parse_round_trip:789049e7d3e998a6:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/jsonc_document.rs:144`
-- 结构：`parse_round_trip` / `rust_string`
-- 原文/表达式：Failed to parse round-trip JSONC config: {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`789049e7d3e998a6347282f5c2a3fabfdc89ecd5f6cd35d347cca7c25fb7a7b3`
-
-### 253. `hardcoded:src-tauri/src/jsonc_document.rs:json5_key_name:2cec06cea8204ef7:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/jsonc_document.rs:154`
-- 结构：`json5_key_name` / `rust_string`
-- 原文/表达式：Failed to decode JSONC key: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2cec06cea8204ef7c15fc49d8459757ba530d15de0bffcc74fe2f36923adefc5`
-
-### 254. `hardcoded:src-tauri/src/jsonc_document.rs:merge_rt_value:dd7f42047d48fa90:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/jsonc_document.rs:482`
-- 结构：`merge_rt_value` / `rust_string`
-- 原文/表达式：Cannot edit duplicate JSONC key: {key}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`dd7f42047d48fa90be7b38b494cec6a9bdd7a246f79c1806692d9d8f9a380605`
-
-### 255. `hardcoded:src-tauri/src/jsonc_document.rs:value_to_rt_value:1407fe781559da0e:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/jsonc_document.rs:555`
-- 结构：`value_to_rt_value` / `rust_string`
-- 原文/表达式：Failed to serialize JSONC value: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`1407fe781559da0e6a378a790093a6f428c1ada346c7637183e7ad9d8452e5e0`
-
-### 256. `hardcoded:src-tauri/src/kimi_config.rs:read:1694c11df853f66d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/kimi_config.rs:107`
-- 结构：`read` / `rust_string`
-- 原文/表达式：Invalid Kimi Code TOML configuration
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`1694c11df853f66d6873946ec265e73c77022966aefb025d60af2ca8b3a0db34`
-
-### 257. `hardcoded:src-tauri/src/kimi_config.rs:read:7342dac8d525f944:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/kimi_config.rs:114`
-- 结构：`read` / `rust_string`
-- 原文/表达式：Kimi Code providers and models must be objects
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`7342dac8d525f944ecc65a703dfd7601941e0952286fb4fb597328aea4a8f548`
-
-### 258. `hardcoded:src-tauri/src/kimi_config.rs:validate_provider:ba288d486ed84276:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/kimi_config.rs:151`
-- 结构：`validate_provider` / `rust_string`
-- 原文/表达式：Enter a Kimi Code provider key
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ba288d486ed842765ee555b73cc3bb6e90b5fba673030c6ddd04334fc568fc4b`
-
-### 259. `hardcoded:src-tauri/src/kimi_config.rs:validate_provider:2eff029150e2c0a7:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/kimi_config.rs:171`
-- 结构：`validate_provider` / `rust_string`
-- 原文/表达式：Enter a valid Kimi Code endpoint URL
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2eff029150e2c0a7efc13412b466729cedeba79392491e1ca03db0d4dd4e8ee8`
-
-### 260. `hardcoded:src-tauri/src/kimi_config.rs:validate_provider:9b61e8ea0abdb960:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/kimi_config.rs:207`
-- 结构：`validate_provider` / `rust_string`
-- 原文/表达式：Enter an API key or keep the existing Kimi OAuth reference
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`9b61e8ea0abdb96014e367296cd9b2f53d60bdf25827ad1b7f502f7e4a31f383`
-
-### 261. `hardcoded:src-tauri/src/kimi_config.rs:validate_provider:74a434fe8c8a7395:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/kimi_config.rs:218`
-- 结构：`validate_provider` / `rust_string`
-- 原文/表达式：api_key_env cannot be combined with api_key or OAuth
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`74a434fe8c8a73951377ad05d6268ac4cb6190a6d128e2d3ea8941c32ca8244f`
-
-### 262. `hardcoded:src-tauri/src/kimi_config.rs:validate_provider:727ccbcc1e5f5270:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/kimi_config.rs:240`
-- 结构：`validate_provider` / `rust_string`
-- 原文/表达式：Kimi Code models need a key, model ID, positive context size and matching provider
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`727ccbcc1e5f527059654b4efc14365cc3dcc9d61748904dbee2488b168b0b43`
-
-### 263. `hardcoded:src-tauri/src/kimi_config.rs:validate_provider:5a28c28debe0a174:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/kimi_config.rs:250`
-- 结构：`validate_provider` / `rust_string`
-- 原文/表达式：Invalid Kimi Code model capabilities
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`5a28c28debe0a1741bc6985324880d565d9a317e646c5afb6475562d92c99584`
-
-### 264. `hardcoded:src-tauri/src/kimi_config.rs:write:1694c11df853f66d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/kimi_config.rs:264`
-- 结构：`write` / `rust_string`
-- 原文/表达式：Invalid Kimi Code TOML configuration
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`1694c11df853f66d6873946ec265e73c77022966aefb025d60af2ca8b3a0db34`
-
-### 265. `hardcoded:src-tauri/src/kimi_config.rs:apply_provider_unchecked:6ac260be8a3910d6:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/kimi_config.rs:360`
-- 结构：`apply_provider_unchecked` / `rust_string`
-- 原文/表达式：Kimi Code provider key '{id}' already exists
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`6ac260be8a3910d65c073052afc683028e82f928c8fb5d2ec776c69cc8b21804`
-
-### 266. `hardcoded:src-tauri/src/kimi_config.rs:apply_provider_unchecked:3f060d73d0d0bb34:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/kimi_config.rs:412`
-- 结构：`apply_provider_unchecked` / `rust_string`
-- 原文/表达式：Kimi Code model key '{key}' belongs to another provider
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`3f060d73d0d0bb3465bb9061724bf6dcfc38ec9bc6e0ca7b8279719383d28794`
-
-### 267. `hardcoded:src-tauri/src/kimi_config.rs:use_oauth_account:e4ae72ab1b5151b9:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/kimi_config.rs:614`
-- 结构：`use_oauth_account` / `rust_string`
-- 原文/表达式：Sign in to Kimi Code to add official models first
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e4ae72ab1b5151b925108a62fa9eb32c3b96b3dd03c2a3c3fbad7ddca8ea50f6`
-
-### 268. `hardcoded:src-tauri/src/kimi_config.rs:save_oauth_login:df85e531f2dc37c5:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/kimi_config.rs:694`
-- 结构：`save_oauth_login` / `rust_string`
-- 原文/表达式：Invalid Kimi Code {section} table
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`df85e531f2dc37c5f6d786b668d7d15e5b07e589e2bc25436b73aa0aac8feb6b`
-
-### 269. `hardcoded:src-tauri/src/kimi_config.rs:save_oauth_login:3f060d73d0d0bb34:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/kimi_config.rs:703`
-- 结构：`save_oauth_login` / `rust_string`
-- 原文/表达式：Kimi Code model key '{key}' belongs to another provider
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`3f060d73d0d0bb3465bb9061724bf6dcfc38ec9bc6e0ca7b8279719383d28794`
-
-### 270. `hardcoded:src-tauri/src/mcode_config.rs:write_and_commit:704c39763f3eef3c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcode_config.rs:50`
-- 结构：`write_and_commit` / `rust_string`
-- 原文/表达式：Config update failed ({error}); restoring {} also failed: {rollback_error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`704c39763f3eef3c146d0431ef7fe193ddd0d7f533292d040e055a8370eda030`
-
-### 271. `hardcoded:src-tauri/src/mcode_config.rs:read:a535bb501624cf13:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcode_config.rs:69`
-- 结构：`read` / `rust_string`
-- 原文/表达式：Cannot read MCode configuration: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`a535bb501624cf13362c0b30ea34c756078cfaad2efc696a1585d4df214676f1`
-
-### 272. `hardcoded:src-tauri/src/mcode_config.rs:read:cd8fd6a157ef04a0:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcode_config.rs:74`
-- 结构：`read` / `rust_string`
-- 原文/表达式：Invalid MCode YAML configuration
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`cd8fd6a157ef04a0be9d6ad3b9257a8b43d274e4753b7cdad5b8b0c9cc9028e0`
-
-### 273. `hardcoded:src-tauri/src/mcode_config.rs:read:c914067e3d02fc71:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcode_config.rs:80`
-- 结构：`read` / `rust_string`
-- 原文/表达式：MCode configuration must be a mapping
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`c914067e3d02fc719f802395dfc7b0fcbcfd4bbe4942be3ecee0dd43107c1442`
-
-### 274. `hardcoded:src-tauri/src/mcode_config.rs:get_providers:3dce323909c075fd:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcode_config.rs:93`
-- 结构：`get_providers` / `rust_string`
-- 原文/表达式：Invalid MCode custom_provider configuration
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`3dce323909c075fdfc9505e80143c11299f2c6f168d23b84a018119b2ae77a97`
-
-### 275. `hardcoded:src-tauri/src/mcode_config.rs:validate_provider:d1bf56fd33ec3210:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcode_config.rs:122`
-- 结构：`validate_provider` / `rust_string`
-- 原文/表达式：MCode provider key must contain letters, digits, '-' or '_'
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d1bf56fd33ec3210a5b447c7a4bc183465301b869190e91c7a60ba0d0060db43`
-
-### 276. `hardcoded:src-tauri/src/mcode_config.rs:validate_provider:ef163aefd4dbf36b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcode_config.rs:143`
-- 结构：`validate_provider` / `rust_string`
-- 原文/表达式：Enter a valid MCode endpoint URL
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ef163aefd4dbf36bf0d7be3b65b9073bfffe02d68895c3f4659337a1da7aa52d`
-
-### 277. `hardcoded:src-tauri/src/mcode_config.rs:validate_provider:8f4f3375a28da1d1:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcode_config.rs:151`
-- 结构：`validate_provider` / `rust_string`
-- 原文/表达式：Enter an API key
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`8f4f3375a28da1d14574b586a350a68f0c46dec39a04b4902ac95a4080fb7940`
-
-### 278. `hardcoded:src-tauri/src/mcode_config.rs:validate_provider:4fadcc415e2059c7:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcode_config.rs:159`
-- 结构：`validate_provider` / `rust_string`
-- 原文/表达式：Add at least one MCode model
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`4fadcc415e2059c7e5a86243f382773a5eaa71db091e69486320dba864945292`
-
-### 279. `hardcoded:src-tauri/src/mcode_config.rs:write_entry:5751201935ec022a:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcode_config.rs:185`
-- 结构：`write_entry` / `rust_string`
-- 原文/表达式：Cannot create MCode directory: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`5751201935ec022ae2a141bde6f337752dc5dc646fdac5cdd59faeaac8a96abf`
-
-### 280. `hardcoded:src-tauri/src/mcode_config.rs:write_entry:83486abbebffc4eb:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcode_config.rs:203`
-- 结构：`write_entry` / `rust_string`
-- 原文/表达式：MCode configuration is busy; retry after MCode finishes saving
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`83486abbebffc4ebf4761c0000b2d45fe82a2a41c928931545f3b745fc59a168`
-
-### 281. `hardcoded:src-tauri/src/mcode_config.rs:write_entry:a75fab4689e6a28b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcode_config.rs:233`
-- 结构：`write_entry` / `rust_string`
-- 原文/表达式：Validated mapping
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`a75fab4689e6a28bec89c18ed2fce35c0b027f5b74828c23e46c7fc8e8b3b268`
-
-### 282. `hardcoded:src-tauri/src/mcode_config.rs:write_entry:953df3d6c62f3462:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcode_config.rs:245`
-- 结构：`write_entry` / `rust_string`
-- 原文/表达式：MCode provider key '{id}' already exists
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`953df3d6c62f34625ef9a81f343d224367fdb1c746c2c47b4230d5709dfe03d9`
-
-### 283. `hardcoded:src-tauri/src/mcode_config.rs:write_entry:ed39463c4cce2e74:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcode_config.rs:255`
-- 结构：`write_entry` / `rust_string`
-- 原文/表达式：MCode owns this account provider
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ed39463c4cce2e749476c912e3e7b033a1ab8b47068908a80c303c91b311371c`
-
-### 284. `hardcoded:src-tauri/src/mcode_config.rs:write_entry:bcc30d2fa2e96f5d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcode_config.rs:262`
-- 结构：`write_entry` / `rust_string`
-- 原文/表达式：Invalid MCode provider
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`bcc30d2fa2e96f5dd2cb1a0673bd12d67521816ea81ecd474de89cb6a2b77f18`
-
-### 285. `hardcoded:src-tauri/src/mcode_config.rs:write_entry:e0f1382dd934d6f4:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcode_config.rs:268`
-- 结构：`write_entry` / `rust_string`
-- 原文/表达式：Cannot serialize MCode configuration
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e0f1382dd934d6f42922e3f0f7862df35147bc6cded8509c7cc15b00d5bc050f`
-
-### 286. `hardcoded:src-tauri/src/mcp/agy.rs:read:50ac6df1dfb15103:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcp/agy.rs:22`
-- 结构：`read` / `rust_string`
-- 原文/表达式：Invalid Antigravity MCP JSON
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`50ac6df1dfb151039d7bd0763856135ce1274652aa1edb08e8bb62d54306cbf4`
-
-### 287. `hardcoded:src-tauri/src/mcp/agy.rs:read:3973cd57f81954e6:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcp/agy.rs:25`
-- 结构：`read` / `rust_string`
-- 原文/表达式：Invalid Antigravity mcpServers object
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`3973cd57f81954e65704d2db69957bcb4296f4fa438a3d66e88334ff02c1fa9c`
-
-### 288. `hardcoded:src-tauri/src/mcp/hermes.rs:convert_to_hermes_format:e83d0df42671aa7c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcp/hermes.rs:98`
-- 结构：`convert_to_hermes_format` / `rust_string`
-- 原文/表达式：Unknown MCP type: {typ}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e83d0df42671aa7c947e211c9014d8287445f0f01db090c5afd26308e8e90e01`
-
-### 289. `hardcoded:src-tauri/src/mcp/hermes.rs:convert_from_hermes_format:3ed6197f17cdbb94:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcp/hermes.rs:155`
-- 结构：`convert_from_hermes_format` / `rust_string`
-- 原文/表达式：Hermes MCP server '{id}' has neither 'command' nor 'url' field
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`3ed6197f17cdbb94cf068a3260e311154e62b2838440e0ee0ae370f90989dc8c`
-
-### 290. `hardcoded:src-tauri/src/mcp/kimi.rs:read:f07f50a7220d09bb:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcp/kimi.rs:26`
-- 结构：`read` / `rust_string`
-- 原文/表达式：Invalid Kimi Code MCP JSON
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f07f50a7220d09bb69b642e1e457c687821c52bf57863827b7f7d2b308b8c98c`
-
-### 291. `hardcoded:src-tauri/src/mcp/kimi.rs:read:c5b49d2a5bf3193e:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcp/kimi.rs:29`
-- 结构：`read` / `rust_string`
-- 原文/表达式：Invalid Kimi Code mcpServers object
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`c5b49d2a5bf3193e4a4407000f812330ed8d620351e8243392cebd7633a7d590`
-
-### 292. `hardcoded:src-tauri/src/mcp/kimi.rs:import:3710945f416d80b7:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcp/kimi.rs:133`
-- 结构：`import` / `rust_string`
-- 原文/表达式：Imported {count} Kimi Code MCP servers; skipped {}. Native configurations were preserved.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`3710945f416d80b71ae087a0e3c6b4f794c565dc90dd145931e0625de1aa923e`
-
-### 293. `hardcoded:src-tauri/src/mcp/mcode.rs:read:89563774dda6e1f5:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcp/mcode.rs:18`
-- 结构：`read` / `rust_string`
-- 原文/表达式：Invalid MCode MCP JSON
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`89563774dda6e1f5d6f408d6c71df45b2bd5be1a218622229ec19929df5dd446`
-
-### 294. `hardcoded:src-tauri/src/mcp/mcode.rs:read:91d77875e9b30cea:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcp/mcode.rs:20`
-- 结构：`read` / `rust_string`
-- 原文/表达式：Invalid MCode mcpServers object
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`91d77875e9b30cea26ed4add1d9691dc35df75613ecdf5b7acb0ecb82217784b`
-
-### 295. `hardcoded:src-tauri/src/mcp/mcode.rs:import:c7660cadcc6df335:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcp/mcode.rs:118`
-- 结构：`import` / `rust_string`
-- 原文/表达式：Imported {count} MiniMax Code MCP servers; skipped {}. Native configurations were preserved.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`c7660cadcc6df335dea4c2c70aff6b0b364b24fd528fc0b185fcf42c948b1303`
-
-### 296. `hardcoded:src-tauri/src/mcp/omp.rs:sync_locked:21c6e8710a731755:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcp/omp.rs:101`
-- 结构：`sync_locked` / `rust_string`
-- 原文/表达式：Oh My Pi MCP '{id}' conflicts with an independently configured server; native configuration preserved
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`21c6e8710a73175536ae49a93c5c0f55b574e4a51e8419ee221dd7df3e404a26`
-
-### 297. `hardcoded:src-tauri/src/mcp/omp.rs:sync_locked:5374a00bd8bc81b2:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcp/omp.rs:138`
-- 结构：`sync_locked` / `rust_string`
-- 原文/表达式：Oh My Pi MCP '{id}' changed outside CC Switch; native configuration preserved
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`5374a00bd8bc81b21e68e38755e3b21e7153c16eb96b92028624c65c675ef58b`
-
-### 298. `hardcoded:src-tauri/src/mcp/omp.rs:read_document:bfd604cf75cb4009:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcp/omp.rs:160`
-- 结构：`read_document` / `rust_string`
-- 原文/表达式：Oh My Pi MCP 'mcpServers' must be an object
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`bfd604cf75cb4009d9a19e9e0add1f5a259e44527a59ca32d6f55bd78e3d54ce`
-
-### 299. `hardcoded:src-tauri/src/mcp/omp.rs:import:78bf35d6342d56a1:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcp/omp.rs:248`
-- 结构：`import` / `rust_string`
-- 原文/表达式：Imported {count} Oh My Pi MCP servers; skipped {}. Native configurations were preserved.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`78bf35d6342d56a1f9da62a4b21a02167f2cb167e54f9b67c7a076072926c3b5`
-
-### 300. `hardcoded:src-tauri/src/mcp/opencode.rs:convert_to_opencode_format:e83d0df42671aa7c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcp/opencode.rs:100`
-- 结构：`convert_to_opencode_format` / `rust_string`
-- 原文/表达式：Unknown MCP type: {typ}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e83d0df42671aa7c947e211c9014d8287445f0f01db090c5afd26308e8e90e01`
-
-### 301. `hardcoded:src-tauri/src/mcp/opencode.rs:convert_from_opencode_format:98d9020709bd8c14:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mcp/opencode.rs:172`
-- 结构：`convert_from_opencode_format` / `rust_string`
-- 原文/表达式：Unknown OpenCode MCP type: {typ}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`98d9020709bd8c14b86a6143c625b47c2beb6e4ed2f304256dd2330ef819cfeb`
-
-### 302. `hardcoded:src-tauri/src/mode/controller.rs:exit_all:7817472218664eda:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mode/controller.rs:983`
-- 结构：`exit_all` / `rust_string`
-- 原文/表达式：{}: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`7817472218664eda0221e88f2d982c46df08025c197e15e651269d067b2d11fb`
-
-### 303. `hardcoded:src-tauri/src/mode/operation.rs:hit:fb1bae4316404e0d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/mode/operation.rs:576`
-- 结构：`hit` / `rust_string`
-- 原文/表达式：injected crash at {point}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`fb1bae4316404e0dc6c436d2e51089a68045f92e3c28f2a849f9ad0077d3dde0`
-
-### 304. `hardcoded:src-tauri/src/omp_config.rs:normalize_profile:350b2c737cd02044:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/omp_config.rs:78`
-- 结构：`normalize_profile` / `rust_string`
-- 原文/表达式：Invalid Oh My Pi profile: {name}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`350b2c737cd0204497f3e610be62fd68c4e7d03676d8bdb1763fc32b6f4127f7`
-
-### 305. `hardcoded:src-tauri/src/omp_config.rs:native_agent_dir:db4a71724d6c1c97:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/omp_config.rs:110`
-- 结构：`native_agent_dir` / `rust_string`
-- 原文/表达式：Cannot resolve Oh My Pi agent directory: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`db4a71724d6c1c97694a8b00112426187e8b8969a869ffb52f1b3044f18ace95`
-
-### 306. `hardcoded:src-tauri/src/opencode_config.rs:set_provider_with_format:80a94f4873580686:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/opencode_config.rs:535`
-- 结构：`set_provider_with_format` / `rust_string`
-- 原文/表达式：OpenCode provider '{id}' has a native V2 declaration. Reload providers before editing it.
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`80a94f48735806868e09e00b749ae79ca0db50e5e208d43310ce81e571b02c78`
-
-### 307. `hardcoded:src-tauri/src/opencode_config.rs:set_default_model:eef5d75f1f78908c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/opencode_config.rs:604`
-- 结构：`set_default_model` / `rust_string`
-- 原文/表达式：OpenCode model must be "<provider>/<model>": {model}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`eef5d75f1f78908c79dc240c0f58890e9258b0c92501b7c63f53b9c4a95fe14a`
-
-### 308. `hardcoded:src-tauri/src/pi_config/mod.rs:resolve_pi_agent_dir:29f0d1689903efda:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/pi_config/mod.rs:68`
-- 结构：`resolve_pi_agent_dir` / `rust_string`
-- 原文/表达式：{source} must resolve to an absolute directory: {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`29f0d1689903efda1a0da51a78840d4f6c54fa2ac47eb7fe6eed422243826c36`
-
-### 309. `hardcoded:src-tauri/src/pi_config/mod.rs:insert_pi_provider:da8b69f31905b3f6:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/pi_config/mod.rs:132`
-- 结构：`insert_pi_provider` / `rust_string`
-- 原文/表达式：Pi provider key '{provider_key}' already exists in models.json
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`da8b69f31905b3f69aafacef2d469bad2659eac119ffae24e55eaec4674a84aa`
-
-### 310. `hardcoded:src-tauri/src/pi_config/mod.rs:replace_pi_provider:4d6f482105915a23:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/pi_config/mod.rs:160`
-- 结构：`replace_pi_provider` / `rust_string`
-- 原文/表达式：Pi provider '{provider_key}' changed outside CC Switch
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`4d6f482105915a23e64d01dc74c8d70618a85726d74423789a714532a29a1d08`
-
-### 311. `hardcoded:src-tauri/src/pi_config/mod.rs:remove_pi_provider_inner:4d6f482105915a23:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/pi_config/mod.rs:214`
-- 结构：`remove_pi_provider_inner` / `rust_string`
-- 原文/表达式：Pi provider '{provider_key}' changed outside CC Switch
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`4d6f482105915a23e64d01dc74c8d70618a85726d74423789a714532a29a1d08`
-
-### 312. `hardcoded:src-tauri/src/pi_config/mod.rs:restore_pi_provider_if_missing:669ed5d0e91440a7:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/pi_config/mod.rs:233`
-- 结构：`restore_pi_provider_if_missing` / `rust_string`
-- 原文/表达式：cannot restore Pi provider '{provider_key}' because another value now owns the key
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`669ed5d0e91440a7fe97c683bc626a51c4a0d276d7528252e7b795b56f30d86e`
-
-### 313. `hardcoded:src-tauri/src/pi_config/mod.rs:validate_provider_node:88f7e2381e543300:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/pi_config/mod.rs:251`
-- 结构：`validate_provider_node` / `rust_string`
-- 原文/表达式：Pi provider key cannot be empty
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`88f7e2381e543300ae37298b7028d5970ed06b609611fcd3907ea663dcd8605c`
-
-### 314. `hardcoded:src-tauri/src/pi_config/mod.rs:providers:e49a654bc6009bcf:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/pi_config/mod.rs:430`
-- 结构：`providers` / `rust_string`
-- 原文/表达式：Pi models 'providers' must be an object: {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e49a654bc6009bcf38c5ca46a87f6e4eeca97e00ae116826b1c6c93de9913e69`
-
-### 315. `hardcoded:src-tauri/src/pi_config/mod.rs:ensure_models_revision:5e65ca9a00bc02d6:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/pi_config/mod.rs:487`
-- 结构：`ensure_models_revision` / `rust_string`
-- 原文/表达式：Pi models.json changed outside CC Switch: {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`5e65ca9a00bc02d69dd46aca8704f9f4b42dc62aef2e2fe7f42cbb54d5a20174`
-
-### 316. `hardcoded:src-tauri/src/pi_config/mod.rs:optional_string:3ebba16e6f95a564:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/pi_config/mod.rs:529`
-- 结构：`optional_string` / `rust_string`
-- 原文/表达式：Pi settings '{key}' must be a string: {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`3ebba16e6f95a564443b60ce36cc701910fd049f0e701773ea0cba5241c74c56`
-
-### 317. `hardcoded:src-tauri/src/prompt_files.rs:validate_prompt_content:a25653173c4ffef9:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/prompt_files.rs:14`
-- 结构：`validate_prompt_content` / `rust_string`
-- 原文/表达式：MCode global instructions must not exceed 32 KiB
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`a25653173c4ffef91e04b1aa840586c3eb9e54b577fa10f14be1ec6a863249fb`
-
-### 318. `hardcoded:src-tauri/src/proxy/forwarder.rs:forward:cfb1974930abf8ca:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/forwarder.rs:2667`
-- 结构：`forward` / `rust_string`
-- 原文/表达式：Failed to serialize request body: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`cfb1974930abf8caa6d6f548ce630a0752d32edaa87ed900ea681ef3e850df14`
-
-### 319. `hardcoded:src-tauri/src/proxy/forwarder.rs:forward:a0989cddc0e05bb4:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/forwarder.rs:2787`
-- 结构：`forward` / `rust_string`
-- 原文/表达式：Invalid upstream URL ({target_for_log}): {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`a0989cddc0e05bb4c58521d34304225df2d3de87f7007d98b88bda5918880858`
-
-### 320. `hardcoded:src-tauri/src/proxy/forwarder.rs:validate_codex_anthropic_success_response:1a9f69f5787dd337:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/forwarder.rs:2930`
-- 结构：`validate_codex_anthropic_success_response` / `rust_string`
-- 原文/表达式：Anthropic upstream returned a 2xx error envelope: {message}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`1a9f69f5787dd3370823deab10992cc06d1beded368272623e3f1b6523608d4a`
-
-### 321. `hardcoded:src-tauri/src/proxy/forwarder.rs:validate_responses_success_response:2dd376780adfda67:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/forwarder.rs:2957`
-- 结构：`validate_responses_success_response` / `rust_string`
-- 原文/表达式：Responses upstream returned a 2xx failure: {message}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2dd376780adfda673a9a3b3a3e8cecb679170fea0eb2899f4acdf73925b9588b`
-
-### 322. `hardcoded:src-tauri/src/proxy/forwarder.rs:validate_responses_stream_start:31b963f95a65d41f:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/forwarder.rs:2985`
-- 结构：`validate_responses_stream_start` / `rust_string`
-- 原文/表达式：Responses stream produced no semantic output within {}s
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`31b963f95a65d41f0ab2b5b0dd5835581e9c3eedc22f2c219e3aefaba45aefa6`
-
-### 323. `hardcoded:src-tauri/src/proxy/forwarder.rs:validate_responses_stream_start:10982734c5441828:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/forwarder.rs:3005`
-- 结构：`validate_responses_stream_start` / `rust_string`
-- 原文/表达式：Responses stream ended before producing output or a terminal event
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`10982734c5441828aaa6160dc578eca0a6ea10dfb3aa4ad2a381a6ace8759c72`
-
-### 324. `hardcoded:src-tauri/src/proxy/forwarder.rs:validate_responses_stream_start:23175269cc14008c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/forwarder.rs:3011`
-- 结构：`validate_responses_stream_start` / `rust_string`
-- 原文/表达式：Failed while validating Responses stream start: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`23175269cc14008cd8fdabbbc6ab3c23e38929acc12c87ab564ea648a350d8ce`
-
-### 325. `hardcoded:src-tauri/src/proxy/forwarder.rs:inspect_responses_json_document:2dd376780adfda67:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/forwarder.rs:3745`
-- 结构：`inspect_responses_json_document` / `rust_string`
-- 原文/表达式：Responses upstream returned a 2xx failure: {message}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2dd376780adfda673a9a3b3a3e8cecb679170fea0eb2899f4acdf73925b9588b`
-
-### 326. `hardcoded:src-tauri/src/proxy/forwarder.rs:inspect_responses_start_event:32f324f8d99ded35:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/forwarder.rs:3796`
-- 结构：`inspect_responses_start_event` / `rust_string`
-- 原文/表达式：Responses upstream {error_type}: {message}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`32f324f8d99ded354277846a5b75b50144ba935468db669f46862cbfdf88ced3`
-
-### 327. `hardcoded:src-tauri/src/proxy/forwarder.rs:inspect_responses_start_event:32f324f8d99ded35:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/forwarder.rs:3814`
-- 结构：`inspect_responses_start_event` / `rust_string`
-- 原文/表达式：Responses upstream {error_type}: {message}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`32f324f8d99ded354277846a5b75b50144ba935468db669f46862cbfdf88ced3`
-
-### 328. `hardcoded:src-tauri/src/proxy/forwarder.rs:apply_codex_copilot_model:b438d57a7b88ba3f:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/forwarder.rs:3888`
-- 结构：`apply_codex_copilot_model` / `rust_string`
-- 原文/表达式：GitHub Copilot model {model} is unavailable for {requested} in this provider's catalogue
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`b438d57a7b88ba3fe7dd8c67b06a5309b9a6d419856d7be4061e48018495671c`
-
-### 329. `hardcoded:src-tauri/src/proxy/forwarder.rs:apply_codex_copilot_model:daebaa2adf31f6ea:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/forwarder.rs:3893`
-- 结构：`apply_codex_copilot_model` / `rust_string`
-- 原文/表达式：GitHub Copilot model {} does not advertise {requested}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`daebaa2adf31f6ea75f40a151fa2d974eaec5a0d3576677a98b7ed43cb472573`
-
-### 330. `hardcoded:src-tauri/src/proxy/forwarder.rs:rewrite_codex_standalone_full_url:2e2a41a66b003359:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/forwarder.rs:4130`
-- 结构：`rewrite_codex_standalone_full_url` / `rust_string`
-- 原文/表达式：{} requires a valid full URL
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2e2a41a66b003359835ab785ac1e210a889e00ce09ae907222df5072d033879b`
-
-### 331. `hardcoded:src-tauri/src/proxy/forwarder.rs:reject_proxy_placeholder_for_managed_account_upstream:dd8339774fe8dbc2:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/forwarder.rs:4204`
-- 结构：`reject_proxy_placeholder_for_managed_account_upstream` / `rust_string`
-- 原文/表达式：Managed account proxy auth was not resolved; PROXY_MANAGED must not be sent upstream
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`dd8339774fe8dbc2e124ba9a8a7ec165ba235d73bfe8d0bb096b1f4b18791ccb`
-
-### 332. `hardcoded:src-tauri/src/proxy/handlers.rs:handle_codex_anthropic_to_responses_transform:3264f341a92f8819:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/handlers.rs:2023`
-- 结构：`handle_codex_anthropic_to_responses_transform` / `rust_string`
-- 原文/表达式：Failed to parse upstream anthropic response
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`3264f341a92f8819edb0f275bb7e4150efcfcc48cfe65397c12b4044a1f06052`
-
-### 333. `hardcoded:src-tauri/src/proxy/handlers.rs:handle_gemini:5cc1fdfc14c55231:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/handlers.rs:2545`
-- 结构：`handle_gemini` / `rust_string`
-- 原文/表达式：Failed to read request body: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`5cc1fdfc14c55231799343313a499c165cd866acadf97a82a4d53497a15fd8b0`
-
-### 334. `hardcoded:src-tauri/src/proxy/handlers.rs:handle_gemini:4ebb401a33fc96a7:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/handlers.rs:2553`
-- 结构：`handle_gemini` / `rust_string`
-- 原文/表达式：Failed to parse request body: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`4ebb401a33fc96a79247635e700dc54756df1f31569556b20bf6b40b4434730e`
-
-### 335. `hardcoded:src-tauri/src/proxy/handlers.rs:chat_sse_to_response_value:43dbdcce74901df9:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/handlers.rs:2943`
-- 结构：`chat_sse_to_response_value` / `rust_string`
-- 原文/表达式：Failed to parse upstream SSE chunk: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`43dbdcce74901df92cb16c8d26b7bdb93b556cb114dd165f4a704813ad025546`
-
-### 336. `hardcoded:src-tauri/src/proxy/handlers.rs:chat_sse_to_response_value:dd388209b1eb71a8:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/handlers.rs:3091`
-- 结构：`chat_sse_to_response_value` / `rust_string`
-- 原文/表达式：No chat completion choices in upstream SSE
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`dd388209b1eb71a8bcd2df4f97cc633db9614b2d278d8c28d04740314a894bfa`
-
-### 337. `hardcoded:src-tauri/src/proxy/handlers.rs:chat_sse_to_response_value:e48551c3c5fe1923:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/handlers.rs:3099`
-- 结构：`chat_sse_to_response_value` / `rust_string`
-- 原文/表达式：Upstream SSE stream appears truncated (no finish_reason or [DONE] marker)
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e48551c3c5fe19236990fe5db021dbf187e5cdf306bc7d64854687306356a92f`
-
-### 338. `hardcoded:src-tauri/src/proxy/http_client.rs:build_client:d0ae8cffbfd53b73:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/http_client.rs:305`
-- 结构：`build_client` / `rust_string`
-- 原文/表达式：Invalid proxy URL '{}': {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d0ae8cffbfd53b7371582d90a1ecdb611954e3d205b49978ffc9a92bb573bc6f`
-
-### 339. `hardcoded:src-tauri/src/proxy/http_client.rs:build_client:3daf48867793fda9:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/http_client.rs:310`
-- 结构：`build_client` / `rust_string`
-- 原文/表达式：Invalid proxy scheme '{}' in URL '{}'. Supported: http, https, socks5, socks5h
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`3daf48867793fda9a8e7f73c49697232ed1842650e53940df6667ce6af6c1176`
-
-### 340. `hardcoded:src-tauri/src/proxy/http_client.rs:build_client:d0ae8cffbfd53b73:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/http_client.rs:317`
-- 结构：`build_client` / `rust_string`
-- 原文/表达式：Invalid proxy URL '{}': {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d0ae8cffbfd53b7371582d90a1ecdb611954e3d205b49978ffc9a92bb573bc6f`
-
-### 341. `hardcoded:src-tauri/src/proxy/http_client.rs:build_client:5bff5cdbe1a2814f:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/http_client.rs:335`
-- 结构：`build_client` / `rust_string`
-- 原文/表达式：Failed to build HTTP client: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`5bff5cdbe1a2814f4560ca37ccd78fe7f0411f1d647bf9eb49613b908e6ce04b`
-
-### 342. `hardcoded:src-tauri/src/proxy/hyper_client.rs:bytes_with_limit:c35595e97b79c57b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/hyper_client.rs:184`
-- 结构：`bytes_with_limit` / `rust_string`
-- 原文/表达式：Failed to read response body: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`c35595e97b79c57b3405da3854d70e1a9f7eff6e15596b9571d173956a52d66b`
-
-### 343. `hardcoded:src-tauri/src/proxy/hyper_client.rs:connect_via_proxy:5534015cb1259a2b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/hyper_client.rs:482`
-- 结构：`connect_via_proxy` / `rust_string`
-- 原文/表达式：Invalid proxy URL: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`5534015cb1259a2b3aa63b5804403a9dd7afac269e4195609f7d256b6d9c7327`
-
-### 344. `hardcoded:src-tauri/src/proxy/hyper_client.rs:connect_via_proxy:e31911ca60acd0f5:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/hyper_client.rs:486`
-- 结构：`connect_via_proxy` / `rust_string`
-- 原文/表达式：Proxy URL has no host
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`e31911ca60acd0f54e38e2cdac916325ce7e762e80c858143a333bfcf3f072ba`
-
-### 345. `hardcoded:src-tauri/src/proxy/hyper_client.rs:connect_via_proxy:5ea26efb76bdb229:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/hyper_client.rs:504`
-- 结构：`connect_via_proxy` / `rust_string`
-- 原文/表达式：Proxy TCP connect failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`5ea26efb76bdb229e488f2cd6eb2d3dd996c54c53a12f950f53f307a5a52496f`
-
-### 346. `hardcoded:src-tauri/src/proxy/hyper_client.rs:connect_via_proxy:dd6779f96b17f666:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/hyper_client.rs:510`
-- 结构：`connect_via_proxy` / `rust_string`
-- 原文/表达式：Invalid proxy server name: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`dd6779f96b17f666e8b455b29c19572af4dcb505370f579f51a181091fa741e0`
-
-### 347. `hardcoded:src-tauri/src/proxy/hyper_client.rs:connect_via_proxy:d03a6acba75bafad:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/hyper_client.rs:514`
-- 结构：`connect_via_proxy` / `rust_string`
-- 原文/表达式：Proxy TLS handshake failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d03a6acba75bafad0a01b84ed328743570cf27808924f2a8a1310b8a5e4071bf`
-
-### 348. `hardcoded:src-tauri/src/proxy/hyper_client.rs:connect_via_proxy:c808803116b7a5a9:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/hyper_client.rs:533`
-- 结构：`connect_via_proxy` / `rust_string`
-- 原文/表达式：CONNECT write failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`c808803116b7a5a99ecc19aaa6e47e9fb9dc67d46b060aa8042cdde14a225ab8`
-
-### 349. `hardcoded:src-tauri/src/proxy/hyper_client.rs:connect_via_proxy:d3e7f25afa088a4f:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/hyper_client.rs:537`
-- 结构：`connect_via_proxy` / `rust_string`
-- 原文/表达式：CONNECT flush failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d3e7f25afa088a4f64bc3852e41ad3280dac4559260f3877163b9a9a30fa8da4`
-
-### 350. `hardcoded:src-tauri/src/proxy/hyper_client.rs:connect_via_proxy:6a54f76f8273a88e:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/hyper_client.rs:545`
-- 结构：`connect_via_proxy` / `rust_string`
-- 原文/表达式：CONNECT read failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`6a54f76f8273a88e36375ab319f1ace281ce3bc01167745ac66adf0f8c06b5ae`
-
-### 351. `hardcoded:src-tauri/src/proxy/hyper_client.rs:connect_via_proxy:431c180edc78ddeb:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/hyper_client.rs:551`
-- 结构：`connect_via_proxy` / `rust_string`
-- 原文/表达式：Proxy authentication required (407): {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`431c180edc78ddeb8b0fc929cdf1ee1399a584489e974f13170d71e818eab557`
-
-### 352. `hardcoded:src-tauri/src/proxy/hyper_client.rs:connect_via_proxy:c915af42abb38940:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/hyper_client.rs:556`
-- 结构：`connect_via_proxy` / `rust_string`
-- 原文/表达式：Proxy CONNECT rejected: {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`c915af42abb389403b6b695afd8b80c3f4b8943aef7869b18812159d5d3d0008`
-
-### 353. `hardcoded:src-tauri/src/proxy/hyper_client.rs:connect_via_proxy:f1ea2c7f518c8df2:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/hyper_client.rs:567`
-- 结构：`connect_via_proxy` / `rust_string`
-- 原文/表达式：CONNECT header read: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f1ea2c7f518c8df2db0fa0035037375bd47433305581ac1dc2538638ebc4fc8d`
-
-### 354. `hardcoded:src-tauri/src/proxy/hyper_client.rs:do_hyper_response:fa8e165150356955:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/hyper_client.rs:704`
-- 结构：`do_hyper_response` / `rust_string`
-- 原文/表达式：Handshake failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`fa8e165150356955d02929729ab3cbd8c87b707e33c6352d0b98cf2c361ac011`
-
-### 355. `hardcoded:src-tauri/src/proxy/hyper_client.rs:do_hyper_response:c69d8e088ae7e8f7:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/hyper_client.rs:724`
-- 结构：`do_hyper_response` / `rust_string`
-- 原文/表达式：Response parse failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`c69d8e088ae7e8f730018c2d4555bd7f128ca3c9e8299f71f6d79e06c5a46c23`
-
-### 356. `hardcoded:src-tauri/src/proxy/providers/codex_oauth_auth/browser.rs:parse_callback:b93842dae70f96ce:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/codex_oauth_auth/browser.rs:95`
-- 结构：`parse_callback` / `rust_string`
-- 原文/表达式：Browser authorization was denied. Please try again.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`b93842dae70f96ce6d650193c7a5e81ac091a59680ac2ea45c954beb35735d1c`
-
-### 357. `hardcoded:src-tauri/src/proxy/providers/codex_oauth_auth/browser.rs:bind_callback_listener:992af8d29c6ed5bc:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/codex_oauth_auth/browser.rs:149`
-- 结构：`bind_callback_listener` / `rust_string`
-- 原文/表达式：Cannot open the browser login callback on localhost:{port}. Finish any other Codex login and retry, or choose device-code login.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`992af8d29c6ed5bcad608ba7828ba43cb149f3b63f185c791f64e143d25b142e`
-
-### 358. `hardcoded:src-tauri/src/proxy/providers/streaming_codex_anthropic.rs:create_responses_sse_stream_from_anthropic_with_context:e443eb86f2f662de:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/streaming_codex_anthropic.rs:765`
-- 结构：`create_responses_sse_stream_from_anthropic_with_context` / `rust_string`
-- 原文/表达式：Stream error: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e443eb86f2f662defc86cd0247c2a837a8a72973f1eb734f67f8fdfe971d647f`
-
-### 359. `hardcoded:src-tauri/src/proxy/providers/streaming_codex_chat.rs:create_responses_sse_stream_from_chat_with_context:e443eb86f2f662de:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/streaming_codex_chat.rs:833`
-- 结构：`create_responses_sse_stream_from_chat_with_context` / `rust_string`
-- 原文/表达式：Stream error: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e443eb86f2f662defc86cd0247c2a837a8a72973f1eb734f67f8fdfe971d647f`
-
-### 360. `hardcoded:src-tauri/src/proxy/providers/streaming_responses.rs:create_anthropic_sse_stream_from_responses_raw:6927b1f2f1930f6f:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/streaming_responses.rs:2486`
-- 结构：`create_anthropic_sse_stream_from_responses_raw` / `rust_string`
-- 原文/表达式：Invalid JSON response from Responses upstream: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`6927b1f2f1930f6ffb1a31fa678f8f6cd9643a580ea331978df6c4f70855e939`
-
-### 361. `hardcoded:src-tauri/src/proxy/providers/transform_codex_anthropic.rs:responses_request_to_anthropic:6c67f0daa5a0970b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/transform_codex_anthropic.rs:286`
-- 结构：`responses_request_to_anthropic` / `rust_string`
-- 原文/表达式：cannot convert Codex request: empty messages
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`6c67f0daa5a0970be7d4ae7b3a05dec591c22528b3de6042ff9f5356854a67d5`
-
-### 362. `hardcoded:src-tauri/src/proxy/providers/transform_codex_anthropic.rs:responses_request_to_anthropic:6c67f0daa5a0970b:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/transform_codex_anthropic.rs:293`
-- 结构：`responses_request_to_anthropic` / `rust_string`
-- 原文/表达式：cannot convert Codex request: empty messages
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`6c67f0daa5a0970be7d4ae7b3a05dec591c22528b3de6042ff9f5356854a67d5`
-
-### 363. `hardcoded:src-tauri/src/proxy/providers/transform_codex_anthropic.rs:responses_request_to_anthropic:657a7b01d3eee00c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/transform_codex_anthropic.rs:327`
-- 结构：`responses_request_to_anthropic` / `rust_string`
-- 原文/表达式：Anthropic model requires thinking, but the tool history has no signed thinking block to replay
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`657a7b01d3eee00cc7f924851e40d1bc94f92ea256c896699169228541362de7`
-
-### 364. `hardcoded:src-tauri/src/proxy/providers/transform_codex_anthropic.rs:responses_request_to_anthropic:4d92425fa73afe44:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/transform_codex_anthropic.rs:414`
-- 结构：`responses_request_to_anthropic` / `rust_string`
-- 原文/表达式：Anthropic model requires adaptive thinking and cannot honor a forced tool_choice
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`4d92425fa73afe447a2c915693cd485e5e95cb285333fda1b151a7b1fde1d273`
-
-### 365. `hardcoded:src-tauri/src/proxy/providers/transform_codex_anthropic.rs:convert_input_to_messages:fcabf2695587c913:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/transform_codex_anthropic.rs:553`
-- 结构：`convert_input_to_messages` / `rust_string`
-- 原文/表达式：Invalid function_call arguments for '{name}': {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`fcabf2695587c91346800bb13817613701e3a10dacb3f8cf28dae7ede775e7ba`
-
-### 366. `hardcoded:src-tauri/src/proxy/providers/transform_codex_anthropic.rs:convert_input_to_messages:353e2c776ec46973:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/transform_codex_anthropic.rs:559`
-- 结构：`convert_input_to_messages` / `rust_string`
-- 原文/表达式：Function call arguments for '{name}' must be a JSON object
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`353e2c776ec469738b725c6645b1efebf01dc46a46602062c8baec4ed4c71cab`
-
-### 367. `hardcoded:src-tauri/src/proxy/providers/transform_codex_anthropic.rs:anthropic_response_to_responses_with_context:dd9186afc7bf5732:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/transform_codex_anthropic.rs:1304`
-- 结构：`anthropic_response_to_responses_with_context` / `rust_string`
-- 原文/表达式：Anthropic upstream {error_type}: {message}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`dd9186afc7bf5732ee494b95767a52bd51aecc7d7162a991f71b3a09cc36270e`
-
-### 368. `hardcoded:src-tauri/src/proxy/providers/transform_codex_anthropic.rs:anthropic_sse_to_message_value:dc1190b94f992dbe:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/transform_codex_anthropic.rs:1555`
-- 结构：`anthropic_sse_to_message_value` / `rust_string`
-- 原文/表达式：anthropic SSE error event: {msg}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`dc1190b94f992dbef73ce1fcc5fedf5e058d083e83125e7416813a9fd586d154`
-
-### 369. `hardcoded:src-tauri/src/proxy/providers/transform_codex_anthropic.rs:anthropic_sse_to_message_value:bc60838248e2a8d1:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/transform_codex_anthropic.rs:1596`
-- 结构：`anthropic_sse_to_message_value` / `rust_string`
-- 原文/表达式：anthropic SSE aggregation: stream ended before message_stop
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`bc60838248e2a8d12f4f58717daa46adf257cdf7bc61929f5c5212f460291236`
-
-### 370. `hardcoded:src-tauri/src/proxy/providers/transform_codex_chat.rs:chat_completion_to_response_with_context:2b899fa5da3d456e:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/transform_codex_chat.rs:1976`
-- 结构：`chat_completion_to_response_with_context` / `rust_string`
-- 原文/表达式：Upstream returned {} tool call(s) without a function name, <br>             leaving no usable tool call in this turn
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2b899fa5da3d456eb9546ba587fcb137254af6ace5f7ffe487aecf35f9639040`
-
-### 371. `hardcoded:src-tauri/src/proxy/providers/transform_codex_responses_namespace.rs:flatten_request_namespaces:7ae6019bc8022234:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/transform_codex_responses_namespace.rs:143`
-- 结构：`flatten_request_namespaces` / `rust_string`
-- 原文/表达式：namespace tool {namespace:?}/{name:?} flattens to {flat:?} which <br>                     collides with a top-level tool of the same name; rename one of them
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`7ae6019bc80222348c9994391a737ba039dd3b8dfe919d0449da048533ed2028`
-
-### 372. `hardcoded:src-tauri/src/proxy/providers/transform_codex_responses_namespace.rs:flatten_request_namespaces:f84d12c8372cfc76:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/transform_codex_responses_namespace.rs:154`
-- 结构：`flatten_request_namespaces` / `rust_string`
-- 原文/表达式：namespace tools {:?}/{:?} and {namespace:?}/{name:?} both flatten to <br>                         {flat:?}; rename one of them
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f84d12c8372cfc768c3617fda0386a30c320ef55934ea02c292328280b9e5d5d`
-
-### 373. `hardcoded:src-tauri/src/proxy/providers/transform_gemini.rs:collect_system_texts:02512efcddb97531:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/transform_gemini.rs:334`
-- 结构：`collect_system_texts` / `rust_string`
-- 原文/表达式：Anthropic system must be a string or an array
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`02512efcddb975315f2184421aea170f4897b4b9b943d9a83460548779519f4d`
-
-### 374. `hardcoded:src-tauri/src/proxy/providers/transform_gemini.rs:convert_message_content_to_parts:d7e26900dc2d565b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/transform_gemini.rs:590`
-- 结构：`convert_message_content_to_parts` / `rust_string`
-- 原文/表达式：Anthropic message content must be a string or array
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d7e26900dc2d565b84f44ced8707e5736d3f1640aaacade5520b50bcfccfc3e2`
-
-### 375. `hardcoded:src-tauri/src/proxy/providers/transform_gemini.rs:convert_message_content_to_parts:a6f5f5d16fa32c4c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/transform_gemini.rs:620`
-- 结构：`convert_message_content_to_parts` / `rust_string`
-- 原文/表达式：Gemini Native only supports base64 image sources, got `{source_type}`
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`a6f5f5d16fa32c4c01b401d5df640cad3ae1ce0a5b3c5b77c6e1f0ef71e2d82f`
-
-### 376. `hardcoded:src-tauri/src/proxy/providers/transform_gemini.rs:convert_message_content_to_parts:93771919aba77182:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/transform_gemini.rs:643`
-- 结构：`convert_message_content_to_parts` / `rust_string`
-- 原文/表达式：Gemini Native only supports base64 document sources, got `{source_type}`
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`93771919aba77182004469f8027fae8b0fa5f3059affb1f20e724112948f28c2`
-
-### 377. `hardcoded:src-tauri/src/proxy/providers/transform_gemini.rs:convert_message_content_to_parts:6678f44d40a42717:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/transform_gemini.rs:657`
-- 结构：`convert_message_content_to_parts` / `rust_string`
-- 原文/表达式：tool_use blocks are only valid in assistant messages
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`6678f44d40a42717945e7b3522c04def2b16988c16b46ad988e811ceb60893cc`
-
-### 378. `hardcoded:src-tauri/src/proxy/providers/transform_gemini.rs:map_tool_choice:0fda9329446931c4:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/transform_gemini.rs:1161`
-- 结构：`map_tool_choice` / `rust_string`
-- 原文/表达式：Unsupported Gemini tool_choice string: {other}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`0fda9329446931c4871e851e0d68ac1571c87269ad98912dead2e827e9f397d0`
-
-### 379. `hardcoded:src-tauri/src/proxy/providers/transform_gemini.rs:map_tool_choice:61ac9f1b09e27294:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/transform_gemini.rs:1186`
-- 结构：`map_tool_choice` / `rust_string`
-- 原文/表达式：Unsupported Gemini tool_choice type: {other}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`61ac9f1b09e2729495db0c971a983f800206d63306740bdd7a79dbb1cb4d6db6`
-
-### 380. `hardcoded:src-tauri/src/proxy/providers/transform_responses.rs:validate_anthropic_web_search_direct_mode:782ed8ce8b841226:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/transform_responses.rs:318`
-- 结构：`validate_anthropic_web_search_direct_mode` / `rust_string`
-- 原文/表达式：Anthropic WebSearch version '{tool_type}' is not supported by the Responses bridge
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`782ed8ce8b841226cf1563bccc250dc2d5caf4c01989d8b87f45ef6a24bca560`
-
-### 381. `hardcoded:src-tauri/src/proxy/providers/transform_responses.rs:validate_anthropic_web_search_direct_mode:1afc93b57da9a384:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/transform_responses.rs:325`
-- 结构：`validate_anthropic_web_search_direct_mode` / `rust_string`
-- 原文/表达式：Anthropic WebSearch response_inclusion cannot be represented by the Responses bridge
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`1afc93b57da9a384d47e5d515f4e4ef18848be68fc0146a5d81b3f60c32f6cca`
-
-### 382. `hardcoded:src-tauri/src/proxy/providers/transform_responses.rs:validate_anthropic_web_search_direct_mode:13b6d4e1d17e60a5:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/transform_responses.rs:333`
-- 结构：`validate_anthropic_web_search_direct_mode` / `rust_string`
-- 原文/表达式：Anthropic WebSearch version '{tool_type}' defaults to code execution; set allowed_callers to ["direct"] for the Responses bridge
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`13b6d4e1d17e60a59e08bf602689361d8b9b5dc8cf9dc4b3e16d21fa1b5c9a79`
-
-### 383. `hardcoded:src-tauri/src/proxy/providers/transform_responses.rs:validate_anthropic_web_search_direct_mode:8fff77c119c2b05b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/transform_responses.rs:341`
-- 结构：`validate_anthropic_web_search_direct_mode` / `rust_string`
-- 原文/表达式：Anthropic WebSearch allowed_callers must be exactly ["direct"] for the Responses bridge
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`8fff77c119c2b05b0819745fd771bdabe8661ad2c57d6041dacf98fc0e9de063`
-
-### 384. `hardcoded:src-tauri/src/proxy/providers/transform_responses.rs:anthropic_web_search_to_responses:af666a3374c6a71a:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/proxy/providers/transform_responses.rs:387`
-- 结构：`anthropic_web_search_to_responses` / `rust_string`
-- 原文/表达式：Anthropic WebSearch blocked_domains cannot be represented by the Responses API
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`af666a3374c6a71aee4956a8a0dd2d63d87f042616622d27214a9e78f450733c`
-
-### 385. `hardcoded:src-tauri/src/services/agy_account/oauth.rs:wait_for_code:7d04f7431bbfa41a:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/agy_account/oauth.rs:133`
-- 结构：`wait_for_code` / `rust_string`
-- 原文/表达式：404 Not Found
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`7d04f7431bbfa41a04bcc7e6b98b9de0d919756c4c671c5785c99fff45f16402`
-
-### 386. `hardcoded:src-tauri/src/services/agy_account/oauth.rs:wait_for_code:19b843cc92cb12aa:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/agy_account/oauth.rs:149`
-- 结构：`wait_for_code` / `rust_string`
-- 原文/表达式：400 Bad Request
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`19b843cc92cb12aa314bb3c3913b2feeb852e85969bf06cb9d096931bfda34ba`
-
-### 387. `hardcoded:src-tauri/src/services/agy_account/oauth.rs:wait_for_code:6a7aae031da90306:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/agy_account/oauth.rs:150`
-- 结构：`wait_for_code` / `rust_string`
-- 原文/表达式：missing code
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`6a7aae031da90306df9d8e31ff90032389d4798b9cb82df9ce6f6115b18ffbda`
-
-### 388. `hardcoded:src-tauri/src/services/agy_account/oauth.rs:wait_for_code:f9bafc82ba5f8fb0:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/agy_account/oauth.rs:152`
-- 结构：`wait_for_code` / `rust_string`
-- 原文/表达式：200 OK
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f9bafc82ba5f8fb02b25020d66f396860604f496ca919480147fa525cb505d88`
-
-### 389. `hardcoded:src-tauri/src/services/agy_account/oauth.rs:post_token:69ad521eedca58d7:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/agy_account/oauth.rs:271`
-- 结构：`post_token` / `rust_string`
-- 原文/表达式：HTTP {status} {code}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`69ad521eedca58d7f328bbb141e861ea305eb36cf34ac649fdd92e02131e8546`
-
-### 390. `hardcoded:src-tauri/src/services/balance.rs:query_deepseek:2d1725ea2ce4272d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/balance.rs:88`
-- 结构：`query_deepseek` / `rust_string`
-- 原文/表达式：Network error: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2d1725ea2ce4272d80a77e34b14bd242ed11ffc40c0c5f94743faf39d01e8bd0`
-
-### 391. `hardcoded:src-tauri/src/services/balance.rs:query_deepseek:d16513a0ee86ea0c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/balance.rs:104`
-- 结构：`query_deepseek` / `rust_string`
-- 原文/表达式：Failed to read response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d16513a0ee86ea0c9dc1571d181bfaed97fd5a0bed24fecccaf744e58348b70e`
-
-### 392. `hardcoded:src-tauri/src/services/balance.rs:query_deepseek:46b08e6f32486b1b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/balance.rs:108`
-- 结构：`query_deepseek` / `rust_string`
-- 原文/表达式：Failed to parse response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`46b08e6f32486b1bf396c00d9ab6c29b4dc453f566ad21c78afb5b30955bdfc6`
-
-### 393. `hardcoded:src-tauri/src/services/balance.rs:query_stepfun:2d1725ea2ce4272d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/balance.rs:170`
-- 结构：`query_stepfun` / `rust_string`
-- 原文/表达式：Network error: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2d1725ea2ce4272d80a77e34b14bd242ed11ffc40c0c5f94743faf39d01e8bd0`
-
-### 394. `hardcoded:src-tauri/src/services/balance.rs:query_stepfun:d16513a0ee86ea0c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/balance.rs:186`
-- 结构：`query_stepfun` / `rust_string`
-- 原文/表达式：Failed to read response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d16513a0ee86ea0c9dc1571d181bfaed97fd5a0bed24fecccaf744e58348b70e`
-
-### 395. `hardcoded:src-tauri/src/services/balance.rs:query_stepfun:46b08e6f32486b1b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/balance.rs:190`
-- 结构：`query_stepfun` / `rust_string`
-- 原文/表达式：Failed to parse response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`46b08e6f32486b1bf396c00d9ab6c29b4dc453f566ad21c78afb5b30955bdfc6`
-
-### 396. `hardcoded:src-tauri/src/services/balance.rs:query_siliconflow:2d1725ea2ce4272d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/balance.rs:235`
-- 结构：`query_siliconflow` / `rust_string`
-- 原文/表达式：Network error: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2d1725ea2ce4272d80a77e34b14bd242ed11ffc40c0c5f94743faf39d01e8bd0`
-
-### 397. `hardcoded:src-tauri/src/services/balance.rs:query_siliconflow:d16513a0ee86ea0c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/balance.rs:251`
-- 结构：`query_siliconflow` / `rust_string`
-- 原文/表达式：Failed to read response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d16513a0ee86ea0c9dc1571d181bfaed97fd5a0bed24fecccaf744e58348b70e`
-
-### 398. `hardcoded:src-tauri/src/services/balance.rs:query_siliconflow:46b08e6f32486b1b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/balance.rs:255`
-- 结构：`query_siliconflow` / `rust_string`
-- 原文/表达式：Failed to parse response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`46b08e6f32486b1bf396c00d9ab6c29b4dc453f566ad21c78afb5b30955bdfc6`
-
-### 399. `hardcoded:src-tauri/src/services/balance.rs:query_openrouter:2d1725ea2ce4272d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/balance.rs:306`
-- 结构：`query_openrouter` / `rust_string`
-- 原文/表达式：Network error: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2d1725ea2ce4272d80a77e34b14bd242ed11ffc40c0c5f94743faf39d01e8bd0`
-
-### 400. `hardcoded:src-tauri/src/services/balance.rs:query_openrouter:d16513a0ee86ea0c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/balance.rs:322`
-- 结构：`query_openrouter` / `rust_string`
-- 原文/表达式：Failed to read response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d16513a0ee86ea0c9dc1571d181bfaed97fd5a0bed24fecccaf744e58348b70e`
-
-### 401. `hardcoded:src-tauri/src/services/balance.rs:query_openrouter:46b08e6f32486b1b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/balance.rs:326`
-- 结构：`query_openrouter` / `rust_string`
-- 原文/表达式：Failed to parse response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`46b08e6f32486b1bf396c00d9ab6c29b4dc453f566ad21c78afb5b30955bdfc6`
-
-### 402. `hardcoded:src-tauri/src/services/balance.rs:query_novita:2d1725ea2ce4272d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/balance.rs:382`
-- 结构：`query_novita` / `rust_string`
-- 原文/表达式：Network error: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2d1725ea2ce4272d80a77e34b14bd242ed11ffc40c0c5f94743faf39d01e8bd0`
-
-### 403. `hardcoded:src-tauri/src/services/balance.rs:query_novita:d16513a0ee86ea0c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/balance.rs:398`
-- 结构：`query_novita` / `rust_string`
-- 原文/表达式：Failed to read response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d16513a0ee86ea0c9dc1571d181bfaed97fd5a0bed24fecccaf744e58348b70e`
-
-### 404. `hardcoded:src-tauri/src/services/balance.rs:query_novita:46b08e6f32486b1b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/balance.rs:402`
-- 结构：`query_novita` / `rust_string`
-- 原文/表达式：Failed to parse response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`46b08e6f32486b1bf396c00d9ab6c29b4dc453f566ad21c78afb5b30955bdfc6`
-
-### 405. `hardcoded:src-tauri/src/services/balance.rs:query_zhipu_balance:2d1725ea2ce4272d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/balance.rs:471`
-- 结构：`query_zhipu_balance` / `rust_string`
-- 原文/表达式：Network error: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2d1725ea2ce4272d80a77e34b14bd242ed11ffc40c0c5f94743faf39d01e8bd0`
-
-### 406. `hardcoded:src-tauri/src/services/balance.rs:query_zhipu_balance:d16513a0ee86ea0c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/balance.rs:487`
-- 结构：`query_zhipu_balance` / `rust_string`
-- 原文/表达式：Failed to read response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d16513a0ee86ea0c9dc1571d181bfaed97fd5a0bed24fecccaf744e58348b70e`
-
-### 407. `hardcoded:src-tauri/src/services/balance.rs:query_zhipu_balance:46b08e6f32486b1b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/balance.rs:491`
-- 结构：`query_zhipu_balance` / `rust_string`
-- 原文/表达式：Failed to parse response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`46b08e6f32486b1bf396c00d9ab6c29b4dc453f566ad21c78afb5b30955bdfc6`
-
-### 408. `hardcoded:src-tauri/src/services/codex_oauth_models.rs:fetch_models_with_token:8ba56ee900f8fedd:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/codex_oauth_models.rs:25`
-- 结构：`fetch_models_with_token` / `rust_string`
-- 原文/表达式：Request failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`8ba56ee900f8fedd77facce7439de257496d75d034297d310c2732190a1b0b1c`
-
-### 409. `hardcoded:src-tauri/src/services/codex_oauth_models.rs:fetch_models_with_token:e0cc39ebc3b63339:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/codex_oauth_models.rs:30`
-- 结构：`fetch_models_with_token` / `rust_string`
-- 原文/表达式：HTTP {status}: {body}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e0cc39ebc3b63339264e718296a8732567a2b5ce3422ab827ea6f985c3b3334e`
-
-### 410. `hardcoded:src-tauri/src/services/codex_oauth_models.rs:fetch_models_with_token:46b08e6f32486b1b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/codex_oauth_models.rs:36`
-- 结构：`fetch_models_with_token` / `rust_string`
-- 原文/表达式：Failed to parse response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`46b08e6f32486b1bf396c00d9ab6c29b4dc453f566ad21c78afb5b30955bdfc6`
-
-### 411. `hardcoded:src-tauri/src/services/coding_plan.rs:query_minimax:2d1725ea2ce4272d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/coding_plan.rs:561`
-- 结构：`query_minimax` / `rust_string`
-- 原文/表达式：Network error: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2d1725ea2ce4272d80a77e34b14bd242ed11ffc40c0c5f94743faf39d01e8bd0`
-
-### 412. `hardcoded:src-tauri/src/services/coding_plan.rs:query_minimax:d16513a0ee86ea0c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/coding_plan.rs:589`
-- 结构：`query_minimax` / `rust_string`
-- 原文/表达式：Failed to read response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d16513a0ee86ea0c9dc1571d181bfaed97fd5a0bed24fecccaf744e58348b70e`
-
-### 413. `hardcoded:src-tauri/src/services/coding_plan.rs:query_minimax:46b08e6f32486b1b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/coding_plan.rs:593`
-- 结构：`query_minimax` / `rust_string`
-- 原文/表达式：Failed to parse response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`46b08e6f32486b1bf396c00d9ab6c29b4dc453f566ad21c78afb5b30955bdfc6`
-
-### 414. `hardcoded:src-tauri/src/services/coding_plan.rs:query_zenmux:2d1725ea2ce4272d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/coding_plan.rs:643`
-- 结构：`query_zenmux` / `rust_string`
-- 原文/表达式：Network error: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2d1725ea2ce4272d80a77e34b14bd242ed11ffc40c0c5f94743faf39d01e8bd0`
-
-### 415. `hardcoded:src-tauri/src/services/coding_plan.rs:query_zenmux:d16513a0ee86ea0c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/coding_plan.rs:671`
-- 结构：`query_zenmux` / `rust_string`
-- 原文/表达式：Failed to read response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d16513a0ee86ea0c9dc1571d181bfaed97fd5a0bed24fecccaf744e58348b70e`
-
-### 416. `hardcoded:src-tauri/src/services/coding_plan.rs:query_zenmux:46b08e6f32486b1b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/coding_plan.rs:675`
-- 结构：`query_zenmux` / `rust_string`
-- 原文/表达式：Failed to parse response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`46b08e6f32486b1bf396c00d9ab6c29b4dc453f566ad21c78afb5b30955bdfc6`
-
-### 417. `hardcoded:src-tauri/src/services/coding_plan.rs:query_opencode_go:2d1725ea2ce4272d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/coding_plan.rs:904`
-- 结构：`query_opencode_go` / `rust_string`
-- 原文/表达式：Network error: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2d1725ea2ce4272d80a77e34b14bd242ed11ffc40c0c5f94743faf39d01e8bd0`
-
-### 418. `hardcoded:src-tauri/src/services/coding_plan.rs:query_opencode_go:d16513a0ee86ea0c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/coding_plan.rs:936`
-- 结构：`query_opencode_go` / `rust_string`
-- 原文/表达式：Failed to read response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d16513a0ee86ea0c9dc1571d181bfaed97fd5a0bed24fecccaf744e58348b70e`
-
-### 419. `hardcoded:src-tauri/src/services/coding_plan.rs:query_opencode_go:46b08e6f32486b1b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/coding_plan.rs:940`
-- 结构：`query_opencode_go` / `rust_string`
-- 原文/表达式：Failed to parse response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`46b08e6f32486b1bf396c00d9ab6c29b4dc453f566ad21c78afb5b30955bdfc6`
-
-### 420. `hardcoded:src-tauri/src/services/coding_plan.rs:command_code_url:e7f717e2002b1cb3:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/coding_plan.rs:978`
-- 结构：`command_code_url` / `rust_string`
-- 原文/表达式：Invalid Command Code endpoint: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e7f717e2002b1cb3570381e44c7053179885cd21cb95f439c69ce7c95450c8dd`
-
-### 421. `hardcoded:src-tauri/src/services/coding_plan.rs:fetch_command_code_json:2d1725ea2ce4272d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/coding_plan.rs:1004`
-- 结构：`fetch_command_code_json` / `rust_string`
-- 原文/表达式：Network error: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2d1725ea2ce4272d80a77e34b14bd242ed11ffc40c0c5f94743faf39d01e8bd0`
-
-### 422. `hardcoded:src-tauri/src/services/coding_plan.rs:fetch_command_code_json:d16513a0ee86ea0c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/coding_plan.rs:1014`
-- 结构：`fetch_command_code_json` / `rust_string`
-- 原文/表达式：Failed to read response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d16513a0ee86ea0c9dc1571d181bfaed97fd5a0bed24fecccaf744e58348b70e`
-
-### 423. `hardcoded:src-tauri/src/services/coding_plan.rs:fetch_command_code_json:3f89e006e666f275:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/coding_plan.rs:1018`
-- 结构：`fetch_command_code_json` / `rust_string`
-- 原文/表达式：API error (HTTP {status}): {body}
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`3f89e006e666f275b67c1f602b6dfa1ea7259c08e43106d2022b4f91a97f332c`
-
-### 424. `hardcoded:src-tauri/src/services/coding_plan.rs:fetch_command_code_json:46b08e6f32486b1b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/coding_plan.rs:1025`
-- 结构：`fetch_command_code_json` / `rust_string`
-- 原文/表达式：Failed to parse response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`46b08e6f32486b1bf396c00d9ab6c29b4dc453f566ad21c78afb5b30955bdfc6`
-
-### 425. `hardcoded:src-tauri/src/services/coding_plan.rs:volcengine_openapi_call:2d1725ea2ce4272d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/coding_plan.rs:1479`
-- 结构：`volcengine_openapi_call` / `rust_string`
-- 原文/表达式：Network error: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2d1725ea2ce4272d80a77e34b14bd242ed11ffc40c0c5f94743faf39d01e8bd0`
-
-### 426. `hardcoded:src-tauri/src/services/coding_plan.rs:volcengine_openapi_call:d16513a0ee86ea0c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/coding_plan.rs:1510`
-- 结构：`volcengine_openapi_call` / `rust_string`
-- 原文/表达式：Failed to read response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d16513a0ee86ea0c9dc1571d181bfaed97fd5a0bed24fecccaf744e58348b70e`
-
-### 427. `hardcoded:src-tauri/src/services/coding_plan.rs:volcengine_openapi_call:46b08e6f32486b1b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/coding_plan.rs:1514`
-- 结构：`volcengine_openapi_call` / `rust_string`
-- 原文/表达式：Failed to parse response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`46b08e6f32486b1bf396c00d9ab6c29b4dc453f566ad21c78afb5b30955bdfc6`
-
-### 428. `hardcoded:src-tauri/src/services/env_manager.rs:delete_single_env:c94db2e3a3cb0396:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/env_manager.rs:89`
-- 结构：`delete_single_env` / `rust_string`
-- 原文/表达式：SYSTEM\CurrentControlSet\Control\Session Manager\Environment
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`c94db2e3a3cb03962ce7806977099e501e10d976abdfe6d027b9d1222e03519d`
-
-### 429. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:c94db2e3a3cb0396:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/env_manager.rs:183`
-- 结构：`restore_single_env` / `rust_string`
-- 原文/表达式：SYSTEM\CurrentControlSet\Control\Session Manager\Environment
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`c94db2e3a3cb03962ce7806977099e501e10d976abdfe6d027b9d1222e03519d`
-
-### 430. `hardcoded:src-tauri/src/services/env_manager.rs:restore_single_env:3e53fcb6403a0877:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/env_manager.rs:216`
-- 结构：`restore_single_env` / `rust_string`
-- 原文/表达式：export {}={}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`3e53fcb6403a0877a335ba2a850a618fd6b89f41f00065a7df479373bde97caf`
-
-### 431. `hardcoded:src-tauri/src/services/kimi_oauth/account.rs:fetch_identity:3c2b0c4142ea04c1:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/account.rs:158`
-- 结构：`fetch_identity` / `rust_string`
-- 原文/表达式：Kimi account lookup failed
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`3c2b0c4142ea04c18acb557ae01147e4dd79953a7e431960d2af480a4c58950b`
-
-### 432. `hardcoded:src-tauri/src/services/kimi_oauth/account.rs:fetch_identity:ccf9d8a10e50dbcd:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/account.rs:161`
-- 结构：`fetch_identity` / `rust_string`
-- 原文/表达式：Kimi account lookup failed (HTTP {status})
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ccf9d8a10e50dbcd647cc5a79febc085f1ebc71d825206902ae2cd19ef32aaf8`
-
-### 433. `hardcoded:src-tauri/src/services/kimi_oauth/account.rs:read_credential:74ca315e19d1bbae:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/account.rs:183`
-- 结构：`read_credential` / `rust_string`
-- 原文/表达式：Cannot read Kimi Code credentials: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`74ca315e19d1bbae6f820039c3c486df9d33a02c01b693b0130b7048e29c350c`
-
-### 434. `hardcoded:src-tauri/src/services/kimi_oauth/account.rs:read_credential:558453c7f0af9e31:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/account.rs:186`
-- 结构：`read_credential` / `rust_string`
-- 原文/表达式：Invalid Kimi Code credentials; sign in again
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`558453c7f0af9e3155023c506adb983d4327ded73270166dc1a3ffece80562e5`
-
-### 435. `hardcoded:src-tauri/src/services/kimi_oauth/account.rs:access_token:dad0c932d88dce3d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/account.rs:301`
-- 结构：`access_token` / `rust_string`
-- 原文/表达式：Kimi token refresh failed
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`dad0c932d88dce3d9855e2d04f8fc36d98968bc24e592ff702737505f0483ce7`
-
-### 436. `hardcoded:src-tauri/src/services/kimi_oauth/account.rs:access_token:3d0189e588c0ed1d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/account.rs:322`
-- 结构：`access_token` / `rust_string`
-- 原文/表达式：Kimi token refresh failed (HTTP {status})
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`3d0189e588c0ed1d45efb4af341e350a630bb6ccdd0f5b564bc2efea3c7422bc`
-
-### 437. `hardcoded:src-tauri/src/services/kimi_oauth/account.rs:ensure_signed_in:7fb9b38af257aabf:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/account.rs:455`
-- 结构：`ensure_signed_in` / `rust_string`
-- 原文/表达式：not signed in
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`7fb9b38af257aabf3474806fe6c9dcf539cf8e21bcc76edefde9703bfd86da90`
-
-### 438. `hardcoded:src-tauri/src/services/kimi_oauth/account.rs:remove_separate_credential_blocking:ac2b3c3d5535c03b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/account.rs:474`
-- 结构：`remove_separate_credential_blocking` / `rust_string`
-- 原文/表达式：Cannot remove Kimi Code credentials: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ac2b3c3d5535c03b9522e80c67be445c93883a2619e66469611959684392bfb3`
-
-### 439. `hardcoded:src-tauri/src/services/kimi_oauth/lock.rs:prepare:8513668a5b5dc229:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/lock.rs:56`
-- 结构：`prepare` / `rust_string`
-- 原文/表达式：Cannot prepare Kimi OAuth lock: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`8513668a5b5dc22950edc526f4bc2fcbbb015aced3fbff7bf7bd9a076d2bdb4e`
-
-### 440. `hardcoded:src-tauri/src/services/kimi_oauth/lock.rs:prepare:8513668a5b5dc229:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/lock.rs:63`
-- 结构：`prepare` / `rust_string`
-- 原文/表达式：Cannot prepare Kimi OAuth lock: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`8513668a5b5dc22950edc526f4bc2fcbbb015aced3fbff7bf7bd9a076d2bdb4e`
-
-### 441. `hardcoded:src-tauri/src/services/kimi_oauth/lock.rs:try_acquire:55c4a6f7fe166dce:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/lock.rs:100`
-- 结构：`try_acquire` / `rust_string`
-- 原文/表达式：Cannot acquire Kimi OAuth lock: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`55c4a6f7fe166dcea6d34b99fd3addf941dabfa15a8012a4bc56ea8b705a593b`
-
-### 442. `hardcoded:src-tauri/src/services/kimi_oauth/lock.rs:try_acquire:55c4a6f7fe166dce:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/lock.rs:105`
-- 结构：`try_acquire` / `rust_string`
-- 原文/表达式：Cannot acquire Kimi OAuth lock: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`55c4a6f7fe166dcea6d34b99fd3addf941dabfa15a8012a4bc56ea8b705a593b`
-
-### 443. `hardcoded:src-tauri/src/services/kimi_oauth/mod.rs:new_account:5fa31e7af9f2ccfb:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/mod.rs:257`
-- 结构：`new_account` / `rust_string`
-- 原文/表达式：Cannot check Kimi Code credentials: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`5fa31e7af9f2ccfbf5206af2ec5b144d375950a4a745bc46bc1e12d416b21566`
-
-### 444. `hardcoded:src-tauri/src/services/kimi_oauth/mod.rs:device_id:15339cdc41aa90bc:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/mod.rs:467`
-- 结构：`device_id` / `rust_string`
-- 原文/表达式：Cannot read Kimi device identity: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`15339cdc41aa90bc5dbf3bd1fc6034d69e2f12a43efbeee2e7793fade9e03ceb`
-
-### 445. `hardcoded:src-tauri/src/services/kimi_oauth/mod.rs:response_json:80c7c1d8b09fba28:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/mod.rs:524`
-- 结构：`response_json` / `rust_string`
-- 原文/表达式：Unexpected Kimi response (HTTP {status})
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`80c7c1d8b09fba2821b937bbe24904991bf815969627bbfe8b8ea2f7148d5f33`
-
-### 446. `hardcoded:src-tauri/src/services/kimi_oauth/mod.rs:start_login:32564cc3074e690a:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/mod.rs:702`
-- 结构：`start_login` / `rust_string`
-- 原文/表达式：Kimi authorization request failed
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`32564cc3074e690a7185e23e45b8c848357c18d61dfc5caa664f2b0ee4dc0180`
-
-### 447. `hardcoded:src-tauri/src/services/kimi_oauth/mod.rs:start_login:7bd202fc54c0e2f9:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/mod.rs:709`
-- 结构：`start_login` / `rust_string`
-- 原文/表达式：Kimi device authorization failed (HTTP {status})
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`7bd202fc54c0e2f9970b4a2100c39295e3f03186bee33786f19b347a2ca9eec7`
-
-### 448. `hardcoded:src-tauri/src/services/kimi_oauth/mod.rs:start_login:ab2d5f58ee96bdd6:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/mod.rs:718`
-- 结构：`start_login` / `rust_string`
-- 原文/表达式：Invalid Kimi verification URL
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ab2d5f58ee96bdd64629101cc141d3cbf5b70a612f707d2bc7dc5a86064b4ffe`
-
-### 449. `hardcoded:src-tauri/src/services/kimi_oauth/mod.rs:start_login:ab2d5f58ee96bdd6:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/mod.rs:720`
-- 结构：`start_login` / `rust_string`
-- 原文/表达式：Invalid Kimi verification URL
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ab2d5f58ee96bdd64629101cc141d3cbf5b70a612f707d2bc7dc5a86064b4ffe`
-
-### 450. `hardcoded:src-tauri/src/services/kimi_oauth/mod.rs:start_login:2e67a791240ff736:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/mod.rs:728`
-- 结构：`start_login` / `rust_string`
-- 原文/表达式：Missing Kimi account OAuth reference
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2e67a791240ff736af238cdea5ef3e1a90992f7bdb3d8be11b6d76bfdc3c5ddc`
-
-### 451. `hardcoded:src-tauri/src/services/kimi_oauth/mod.rs:advance:acb743b7f580e303:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/mod.rs:822`
-- 结构：`advance` / `rust_string`
-- 原文/表达式：Kimi token request failed
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`acb743b7f580e303280071280f128471b1f7d66979a9cef51e0a70c9ef570ce7`
-
-### 452. `hardcoded:src-tauri/src/services/kimi_oauth/mod.rs:advance:86542c52bc1802df:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/mod.rs:836`
-- 结构：`advance` / `rust_string`
-- 原文/表达式：Kimi token request failed (HTTP {status})
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`86542c52bc1802dffe2d53bae575f4f9f65c7205f97c4c86f689157d7ee8b426`
-
-### 453. `hardcoded:src-tauri/src/services/kimi_oauth/mod.rs:advance:ca7bb212e606de0d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/mod.rs:861`
-- 结构：`advance` / `rust_string`
-- 原文/表达式：Kimi model discovery failed
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ca7bb212e606de0dcde9c8f76f0bfdb287ff70fd464c15c8b0026b63556a0230`
-
-### 454. `hardcoded:src-tauri/src/services/kimi_oauth/mod.rs:advance:8a8d9da23450eaa7:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/mod.rs:864`
-- 结构：`advance` / `rust_string`
-- 原文/表达式：Kimi model discovery failed (HTTP {status})
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`8a8d9da23450eaa7e48b5f440d66f2c65072f42b69fc38128f82a2492ae15226`
-
-### 455. `hardcoded:src-tauri/src/services/kimi_oauth/mod.rs:use_account:bd63e6a3b39efbd4:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/mod.rs:959`
-- 结构：`use_account` / `rust_string`
-- 原文/表达式：Sign in to Kimi Code first
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`bd63e6a3b39efbd4d9b6c9a7dfd09ee7f8f263dab2c8b8b2de299f91f558e880`
-
-### 456. `hardcoded:src-tauri/src/services/kimi_oauth/mod.rs:models_at:fc35fb7292157ee4:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/mod.rs:979`
-- 结构：`models_at` / `rust_string`
-- 原文/表达式：Use this account once in Kimi Code, then try again
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`fc35fb7292157ee4fbe068aa12ffa7333bf5ad926db7a42cfc474c74a99cb731`
-
-### 457. `hardcoded:src-tauri/src/services/kimi_oauth/mod.rs:models_at:6b175c30eccc4811:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/mod.rs:982`
-- 结构：`models_at` / `rust_string`
-- 原文/表达式：Sign in to this Kimi account again in the Authorization Center
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`6b175c30eccc48112b509283325553f797814f480551568a060f726351fb023f`
-
-### 458. `hardcoded:src-tauri/src/services/kimi_oauth/mod.rs:models_at:ca7bb212e606de0d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/mod.rs:992`
-- 结构：`models_at` / `rust_string`
-- 原文/表达式：Kimi model discovery failed
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ca7bb212e606de0dcde9c8f76f0bfdb287ff70fd464c15c8b0026b63556a0230`
-
-### 459. `hardcoded:src-tauri/src/services/kimi_oauth/mod.rs:models_at:8a8d9da23450eaa7:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/kimi_oauth/mod.rs:995`
-- 结构：`models_at` / `rust_string`
-- 原文/表达式：Kimi model discovery failed (HTTP {status})
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`8a8d9da23450eaa7e48b5f440d66f2c65072f42b69fc38128f82a2492ae15226`
-
-### 460. `hardcoded:src-tauri/src/services/model_fetch.rs:fetch_models:8ba56ee900f8fedd:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/model_fetch.rs:131`
-- 结构：`fetch_models` / `rust_string`
-- 原文/表达式：Request failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`8ba56ee900f8fedd77facce7439de257496d75d034297d310c2732190a1b0b1c`
-
-### 461. `hardcoded:src-tauri/src/services/model_fetch.rs:fetch_models:46b08e6f32486b1b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/model_fetch.rs:141`
-- 结构：`fetch_models` / `rust_string`
-- 原文/表达式：Failed to parse response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`46b08e6f32486b1bf396c00d9ab6c29b4dc453f566ad21c78afb5b30955bdfc6`
-
-### 462. `hardcoded:src-tauri/src/services/model_fetch.rs:fetch_models:e0cc39ebc3b63339:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/model_fetch.rs:174`
-- 结构：`fetch_models` / `rust_string`
-- 原文/表达式：HTTP {status}: {body}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e0cc39ebc3b63339264e718296a8732567a2b5ce3422ab827ea6f985c3b3334e`
-
-### 463. `hardcoded:src-tauri/src/services/model_fetch.rs:fetch_models:d52bfd584f99dc77:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/model_fetch.rs:178`
-- 结构：`fetch_models` / `rust_string`
-- 原文/表达式：All candidates failed: {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d52bfd584f99dc7768ed51e346cc1a6b048e4164e4a6c1c4777a6946c8d2816e`
-
-### 464. `hardcoded:src-tauri/src/services/model_fetch.rs:fetch_models:e922a8c389c355c3:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/model_fetch.rs:179`
-- 结构：`fetch_models` / `rust_string`
-- 原文/表达式：no candidates
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e922a8c389c355c340abfb41c5556b8a54cda4f0d799ba0ae5bd41779cac4f13`
-
-### 465. `hardcoded:src-tauri/src/services/model_fetch.rs:build_model_fetch_headers:6201c94b0d649ee2:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/model_fetch.rs:195`
-- 结构：`build_model_fetch_headers` / `rust_string`
-- 原文/表达式：API Key or request headers are required to fetch models
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`6201c94b0d649ee24aedc7db8c4e67d25bc94db9752ed8915b010fb1053ffca5`
-
-### 466. `hardcoded:src-tauri/src/services/model_fetch.rs:build_model_fetch_headers:bf0cc1674a108de4:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/model_fetch.rs:199`
-- 结构：`build_model_fetch_headers` / `rust_string`
-- 原文/表达式：Too many model-fetch request headers (maximum {MAX_REQUEST_HEADERS})
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`bf0cc1674a108de46054437845eb6e68a87b9dc943ffde83748d01695010d62d`
-
-### 467. `hardcoded:src-tauri/src/services/model_fetch.rs:build_model_fetch_headers:ee1ebf1b8cc9ae6c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/model_fetch.rs:209`
-- 结构：`build_model_fetch_headers` / `rust_string`
-- 原文/表达式：Invalid API Key header value: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ee1ebf1b8cc9ae6c45befab70edf9afb9b792b520fc70eac0b867ab56185f7e8`
-
-### 468. `hardcoded:src-tauri/src/services/model_fetch.rs:build_model_fetch_headers:ee1ebf1b8cc9ae6c:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/model_fetch.rs:214`
-- 结构：`build_model_fetch_headers` / `rust_string`
-- 原文/表达式：Invalid API Key header value: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ee1ebf1b8cc9ae6c45befab70edf9afb9b792b520fc70eac0b867ab56185f7e8`
-
-### 469. `hardcoded:src-tauri/src/services/model_fetch.rs:build_model_fetch_headers:4c1921d519adeb3b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/model_fetch.rs:218`
-- 结构：`build_model_fetch_headers` / `rust_string`
-- 原文/表达式：Bearer {api_key}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`4c1921d519adeb3b4c63bb96d80aafa016177c1988891c01840388862d93b6e6`
-
-### 470. `hardcoded:src-tauri/src/services/model_fetch.rs:build_model_fetch_headers:ee1ebf1b8cc9ae6c:003`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/model_fetch.rs:219`
-- 结构：`build_model_fetch_headers` / `rust_string`
-- 原文/表达式：Invalid API Key header value: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ee1ebf1b8cc9ae6c45befab70edf9afb9b792b520fc70eac0b867ab56185f7e8`
-
-### 471. `hardcoded:src-tauri/src/services/model_fetch.rs:build_model_fetch_headers:64df49411e45bf33:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/model_fetch.rs:233`
-- 结构：`build_model_fetch_headers` / `rust_string`
-- 原文/表达式：Invalid model-fetch header name: {raw_name}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`64df49411e45bf331a87f74a09b1d32faa502a5edacb3d579d8b1b40a76c48d5`
-
-### 472. `hardcoded:src-tauri/src/services/model_fetch.rs:build_model_fetch_headers:a2c64b57f05efa6b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/model_fetch.rs:236`
-- 结构：`build_model_fetch_headers` / `rust_string`
-- 原文/表达式：Model-fetch header value is too large: {name}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`a2c64b57f05efa6b86467fb4f3615db5afb7e53306d6b622bebc24df7e6fd618`
-
-### 473. `hardcoded:src-tauri/src/services/model_fetch.rs:build_model_fetch_headers:ff3bd6f97ce328d6:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/model_fetch.rs:239`
-- 结构：`build_model_fetch_headers` / `rust_string`
-- 原文/表达式：Invalid model-fetch header name {name}: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ff3bd6f97ce328d65f0c1d58c86aa6cd5a0e152bc4cd68759d91d03b8c000042`
-
-### 474. `hardcoded:src-tauri/src/services/model_fetch.rs:build_model_fetch_headers:a21420dc7ab78882:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/model_fetch.rs:241`
-- 结构：`build_model_fetch_headers` / `rust_string`
-- 原文/表达式：Invalid model-fetch header value for {name}: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`a21420dc7ab78882c820fcffe70d4838175c11bd833cae537295dd8bf2fd3a4f`
-
-### 475. `hardcoded:src-tauri/src/services/model_fetch.rs:build_models_url_candidates:4ae93998c9ac0804:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/model_fetch.rs:273`
-- 结构：`build_models_url_candidates` / `rust_string`
-- 原文/表达式：Base URL is empty
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`4ae93998c9ac08045e4664cbd0b0b4a82cdc56d8b16a5f501cbc5c8d23163d9d`
-
-### 476. `hardcoded:src-tauri/src/services/model_fetch.rs:build_models_url_candidates:2a0dc402523d108e:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/model_fetch.rs:288`
-- 结构：`build_models_url_candidates` / `rust_string`
-- 原文/表达式：Cannot derive models endpoint from full URL
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2a0dc402523d108e610a518a29a18d721e2775297ce7fec4f2970be382cc3165`
-
-### 477. `hardcoded:src-tauri/src/services/omo.rs:load:6b9a9e8d64aaf9f5:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/omo.rs:55`
-- 结构：`load` / `rust_string`
-- 原文/表达式：OMO config contains duplicate [opencode] sections
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`6b9a9e8d64aaf9f5942c8a8d75342647b672306b92109e1a09d9ba362dbed8fc`
-
-### 478. `hardcoded:src-tauri/src/services/omo.rs:set_opencode_section:708358472989e05e:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/omo.rs:73`
-- 结构：`set_opencode_section` / `rust_string`
-- 原文/表达式：OMO [opencode] section must be an object: {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`708358472989e05e406d2f19526caad4fc5491eb2c510573ac1c8d71b23bd79e`
-
-### 479. `hardcoded:src-tauri/src/services/omo.rs:save:3207156e8cf25b81:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/omo.rs:98`
-- 结构：`save` / `rust_string`
-- 原文/表达式：OMO config changed on disk. Please reload and try again.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`3207156e8cf25b81ab27d8ac46b8dddb3f058f961681fa6e7d1f1743d116aff8`
-
-### 480. `hardcoded:src-tauri/src/services/omo.rs:read_jsonc_object:d5d0dbdbdfd667e8:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/omo.rs:254`
-- 结构：`read_jsonc_object` / `rust_string`
-- 原文/表达式：Failed to parse OMO config: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d5d0dbdbdfd667e8001cf379692bbfed8f732c1a3f95b5f39b11d6d8dcab3e84`
-
-### 481. `hardcoded:src-tauri/src/services/omo.rs:read_jsonc_object:cfce2db6a3c940ef:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/omo.rs:258`
-- 结构：`read_jsonc_object` / `rust_string`
-- 原文/表达式：Expected JSON object
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`cfce2db6a3c940ef4abacf3532fe68ab112e55694359410f52977f226390f165`
-
-### 482. `hardcoded:src-tauri/src/services/omo.rs:read_config_object:708358472989e05e:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/omo.rs:268`
-- 结构：`read_config_object` / `rust_string`
-- 原文/表达式：OMO [opencode] section must be an object: {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`708358472989e05e406d2f19526caad4fc5491eb2c510573ac1c8d71b23bd79e`
-
-### 483. `hardcoded:src-tauri/src/services/omo.rs:restore_config_file_if_unchanged:847df839fbe4892b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/omo.rs:356`
-- 结构：`restore_config_file_if_unchanged` / `rust_string`
-- 原文/表达式：Config changed after CC Switch wrote it; refusing to roll back {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`847df839fbe4892b881676d45c2b0e5841d82747032c1bbe9a9136a575cd231a`
-
-### 484. `hardcoded:src-tauri/src/services/pi_prompt_files.rs:list:342337ad1a00fc83:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/pi_prompt_files.rs:177`
-- 结构：`list` / `rust_string`
-- 原文/表达式：Pi prompt template must be UTF-8 ({}): {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`342337ad1a00fc83f4611d39641c97d07c0c6f69f1889e3b8ab600cc42735cc1`
-
-### 485. `hardcoded:src-tauri/src/services/pi_prompt_files.rs:upsert:030ef1455dca6fe0:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/pi_prompt_files.rs:216`
-- 结构：`upsert` / `rust_string`
-- 原文/表达式：Pi prompt template save failed ({write_error}); rename rollback also failed: {rollback_error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`030ef1455dca6fe0ba29cb7585b5adee003b25c74a7b53b1839b4de6c316a222`
-
-### 486. `hardcoded:src-tauri/src/services/pi_prompt_files.rs:upsert:192d98375a841e58:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/pi_prompt_files.rs:222`
-- 结构：`upsert` / `rust_string`
-- 原文/表达式：Pi prompt template
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`192d98375a841e5824d03675938acae9fb76f914d1fc7dda585323275c28dcf3`
-
-### 487. `hardcoded:src-tauri/src/services/pi_prompt_files.rs:validate_template_slug:78196bdfb5e07f39:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/pi_prompt_files.rs:391`
-- 结构：`validate_template_slug` / `rust_string`
-- 原文/表达式：.to_string(),<br>        ))<br>    }<br>}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`78196bdfb5e07f39a6e5e0d002f1db69b2ebb6249ef3c4e28df0619a64771ca3`
-
-### 488. `hardcoded:src-tauri/src/services/profile.rs:create:28a52ae1c92f5928:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/profile.rs:263`
-- 结构：`create` / `rust_string`
-- 原文/表达式：Profile name is empty
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`28a52ae1c92f5928aecfd1d16bf1f1583da3f4078b1dfd08d67a6204d700ea91`
-
-### 489. `hardcoded:src-tauri/src/services/profile.rs:update:28a52ae1c92f5928:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/profile.rs:298`
-- 结构：`update` / `rust_string`
-- 原文/表达式：Profile name is empty
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`28a52ae1c92f5928aecfd1d16bf1f1583da3f4078b1dfd08d67a6204d700ea91`
-
-### 490. `hardcoded:src-tauri/src/services/profile.rs:apply:0173171ef1e1a204:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/profile.rs:355`
-- 结构：`apply` / `rust_string`
-- 原文/表达式：autosave profile '{current_id}' before switch failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`0173171ef1e1a204fab5ebc06ac672e9b72c648823b2e8b400d1bf7776e8f72b`
-
-### 491. `hardcoded:src-tauri/src/services/profile.rs:apply:22442a3695025c02:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/profile.rs:370`
-- 结构：`apply` / `rust_string`
-- 原文/表达式：no {} configuration captured in this project yet; marked as current without changes (it will be saved automatically when you switch away)
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`22442a3695025c02db21c3fb0565f67b4434384fd40796f7eb1c7c8c806a7c1f`
-
-### 492. `hardcoded:src-tauri/src/services/profile.rs:apply:a49cf7a3490ebe2d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/profile.rs:395`
-- 结构：`apply` / `rust_string`
-- 原文/表达式：[{app_str}] switch provider '{target_pid}' failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`a49cf7a3490ebe2d109997000959177633f6123ddada6d81c0dff700eefbbc1b`
-
-### 493. `hardcoded:src-tauri/src/services/profile.rs:apply:fccb16ec15f5965c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/profile.rs:416`
-- 结构：`apply` / `rust_string`
-- 原文/表达式：[{app_str}] toggle MCP '{id}' -> {enabled} failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`fccb16ec15f5965c64367be091af966afa5a6aac11b445c6c2e6011315550631`
-
-### 494. `hardcoded:src-tauri/src/services/profile.rs:apply:6297c38c67b9a53f:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/profile.rs:438`
-- 结构：`apply` / `rust_string`
-- 原文/表达式：[{app_str}] toggle skill '{id}' -> {enabled} failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`6297c38c67b9a53f88f192ea13ec29f221773ffdadbbd69cb4e3977cc1f19ef0`
-
-### 495. `hardcoded:src-tauri/src/services/profile.rs:apply:81c044c95371e626:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/profile.rs:463`
-- 结构：`apply` / `rust_string`
-- 原文/表达式：[{app_str}] enable prompt '{target_prompt}' failed: {e}
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`81c044c95371e626e48e675bdc15073518f854a4fab9d499e2357461348c40e7`
-
-### 496. `hardcoded:src-tauri/src/services/profile.rs:disable_active_prompts:52ac27f9b6444bb7:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/profile.rs:487`
-- 结构：`disable_active_prompts` / `rust_string`
-- 原文/表达式：[{app_str}] read prompts failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`52ac27f9b6444bb7f849e02e6c5ca485b149128fdaaf9e60029501dbbd6b7977`
-
-### 497. `hardcoded:src-tauri/src/services/profile.rs:disable_active_prompts:6bb34670f24c45e5:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/profile.rs:497`
-- 结构：`disable_active_prompts` / `rust_string`
-- 原文/表达式：[{app_str}] disable prompt '{id}' failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`6bb34670f24c45e5c0ca8b362bf09148f4cbc1dba2b3b5a364b6c8653d20a4ad`
-
-### 498. `hardcoded:src-tauri/src/services/prompt.rs:get_unix_timestamp:a3df36a7bf2dd83b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/prompt.rs:17`
-- 结构：`get_unix_timestamp` / `rust_string`
-- 原文/表达式：Failed to get system time: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`a3df36a7bf2dd83b817c18dd0cf98b35466d3f79f8bb838aadd9035467687b7c`
-
-### 499. `hardcoded:src-tauri/src/services/prompt.rs:upsert_pi_prompt:b13727cdfb42edba:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/prompt.rs:527`
-- 结构：`upsert_pi_prompt` / `rust_string`
-- 原文/表达式：Pi prompt id does not match the requested id
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`b13727cdfb42edba01b309286dcb9c319898add3de9b78efa21ba1dbb4f47c80`
-
-### 500. `hardcoded:src-tauri/src/services/prompt.rs:upsert_pi_prompt:6dbaabab9c7a09ba:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/prompt.rs:543`
-- 结构：`upsert_pi_prompt` / `rust_string`
-- 原文/表达式：Pi AGENTS.md changed outside CC Switch; reload before editing it
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`6dbaabab9c7a09ba90eaf2d139381d707eb48663b3f034fa2c0349a4112d4aac`
-
-### 501. `hardcoded:src-tauri/src/services/prompt.rs:persist_pi_prompt_with_native_update:b543e781b2bb644c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/prompt.rs:573`
-- 结构：`persist_pi_prompt_with_native_update` / `rust_string`
-- 原文/表达式：Pi prompt update failed ({native_error}); database rollback also failed: {rollback_error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`b543e781b2bb644c2b3e78a3e2bcc48c100126dfbfd4f0f5fa298463b7e20ce6`
-
-### 502. `hardcoded:src-tauri/src/services/provider/agy_direct.rs:live_settings:ecb3b1610f9595f9:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/agy_direct.rs:45`
-- 结构：`live_settings` / `rust_string`
-- 原文/表达式：Antigravity credentials, endpoint and model must be strings
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ecb3b1610f9595f9ba705211eefb693964c315003f3d6bd66c92de1b2b12eabf`
-
-### 503. `hardcoded:src-tauri/src/services/provider/agy_direct.rs:live_settings:4bead8f630dd2370:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/agy_direct.rs:53`
-- 结构：`live_settings` / `rust_string`
-- 原文/表达式：Antigravity credentials, endpoint and model must be single-line values
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`4bead8f630dd2370a011c2ecd695f577665b17b2cc2e6362becf0ffbe94d9ab6`
-
-### 504. `hardcoded:src-tauri/src/services/provider/live.rs:remove_common_config_from_settings:2b3ece67e42fbae1:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/live.rs:349`
-- 结构：`remove_common_config_from_settings` / `rust_string`
-- 原文/表达式：Invalid Claude common config: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2b3ece67e42fbae1b37e4ba04100b01f34f3b5172a95a2489a0ff7a9e4933399`
-
-### 505. `hardcoded:src-tauri/src/services/provider/live.rs:remove_common_config_from_settings:324cbae54876632f:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/live.rs:362`
-- 结构：`remove_common_config_from_settings` / `rust_string`
-- 原文/表达式：Invalid Codex config.toml while removing common config: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`324cbae54876632f0f8fad2af3cf5baa78e9b68e87008729ff6ed97483e25481`
-
-### 506. `hardcoded:src-tauri/src/services/provider/live.rs:remove_common_config_from_settings:c799c2e3b933e53a:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/live.rs:367`
-- 结构：`remove_common_config_from_settings` / `rust_string`
-- 原文/表达式：Invalid Codex common config snippet: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`c799c2e3b933e53a15a34d3c85234fea679f0c640f7748460443fc0eb0e35aaa`
-
-### 507. `hardcoded:src-tauri/src/services/provider/live.rs:remove_common_config_from_settings:b55c48d580aaabe7:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/live.rs:378`
-- 结构：`remove_common_config_from_settings` / `rust_string`
-- 原文/表达式：Invalid Gemini common config: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`b55c48d580aaabe71797b42e66cac3ccc35f5c23b1e783a480d25babc21959d0`
-
-### 508. `hardcoded:src-tauri/src/services/provider/live.rs:write_live_snapshot:087845ef4724620c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/live.rs:657`
-- 结构：`write_live_snapshot` / `rust_string`
-- 原文/表达式：OpenCode provider '{}' has invalid config structure for live config (must contain 'npm' or 'options')
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`087845ef4724620c134bd110a7527e4b8b6dd55d1cd8a0e5a5a850679c9326dc`
-
-### 509. `hardcoded:src-tauri/src/services/provider/live.rs:write_live_snapshot:29f6beeb06355eb1:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/live.rs:699`
-- 结构：`write_live_snapshot` / `rust_string`
-- 原文/表达式：OpenClaw provider '{}' has invalid config structure for live config (must contain 'baseUrl', 'api', or 'models')
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`29f6beeb06355eb143ddd479b2cddefd2d02b6ed48f533ce3732f4108b5c65a7`
-
-### 510. `hardcoded:src-tauri/src/services/provider/live.rs:write_live_snapshot:20fd2a7cbae13650:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/live.rs:721`
-- 结构：`write_live_snapshot` / `rust_string`
-- 原文/表达式：Pi providers use the Pi provider service
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`20fd2a7cbae1365082bde270a8f70a0beb602825f0fb77618227c9aa77206ab6`
-
-### 511. `hardcoded:src-tauri/src/services/provider/live.rs:write_live_snapshot:5b190d79f3e48709:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/live.rs:726`
-- 结构：`write_live_snapshot` / `rust_string`
-- 原文/表达式：Antigravity configuration requires the provider switch flow
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`5b190d79f3e4870946dd31ec4615367121b0ae9e7799a4a5d49f759ae56ad6e9`
-
-### 512. `hardcoded:src-tauri/src/services/provider/live.rs:write_live_snapshot:52373a2b6e68e58d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/live.rs:731`
-- 结构：`write_live_snapshot` / `rust_string`
-- 原文/表达式：Oh My Pi providers use the Oh My Pi provider service
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`52373a2b6e68e58da50e93dcad580adc6e8ef00f1ef060e324b4574f52760f5a`
-
-### 513. `hardcoded:src-tauri/src/services/provider/live.rs:sync_current_to_live:7845f543908e8e18:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/live.rs:889`
-- 结构：`sync_current_to_live` / `rust_string`
-- 原文/表达式：mcp: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`7845f543908e8e185bddab64ca1036a5ff2cfe1f141445db28dc2c1b2d7dd199`
-
-### 514. `hardcoded:src-tauri/src/services/provider/live.rs:read_live_settings:60a104355a369e83:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/live.rs:1026`
-- 结构：`read_live_settings` / `rust_string`
-- 原文/表达式：Pi providers are read from Pi's native models file
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`60a104355a369e8331be271835bda26a126ecdce7b857affd84b6b54aaeb1539`
-
-### 515. `hardcoded:src-tauri/src/services/provider/live.rs:read_live_settings:0794cca62faeef4c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/live.rs:1030`
-- 结构：`read_live_settings` / `rust_string`
-- 原文/表达式：Oh My Pi providers are read from Oh My Pi's native models file
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`0794cca62faeef4ca48972d2e57939536f28e4d47bf3e6ab8a4bfba55a0b6d02`
-
-### 516. `hardcoded:src-tauri/src/services/provider/mod.rs:add:2b728bc4673886e9:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/mod.rs:5640`
-- 结构：`add` / `rust_string`
-- 原文/表达式：Manage Kimi official accounts in the Authorization Center
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2b728bc4673886e99f70cb427f3114897fbe647160d2e62f176bab2788d4194c`
-
-### 517. `hardcoded:src-tauri/src/services/provider/mod.rs:add:f8f843c9a26f1fcb:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/mod.rs:5680`
-- 结构：`add` / `rust_string`
-- 原文/表达式：{} provider key '{}' already exists
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f8f843c9a26f1fcb5f23f2434f612a98606bb52198a3cd6aa82847e58f5d6e74`
-
-### 518. `hardcoded:src-tauri/src/services/provider/mod.rs:update:d140c06dc1f61280:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/mod.rs:6222`
-- 结构：`update` / `rust_string`
-- 原文/表达式：Kimi official account keys cannot be changed
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d140c06dc1f61280b0150240e62f279fad51ee781f58d761976f83f3755852d8`
-
-### 519. `hardcoded:src-tauri/src/services/provider/mod.rs:update:2b728bc4673886e9:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/mod.rs:6228`
-- 结构：`update` / `rust_string`
-- 原文/表达式：Manage Kimi official accounts in the Authorization Center
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2b728bc4673886e99f70cb427f3114897fbe647160d2e62f176bab2788d4194c`
-
-### 520. `hardcoded:src-tauri/src/services/provider/mod.rs:update:f0054055a679d642:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/mod.rs:6264`
-- 结构：`update` / `rust_string`
-- 原文/表达式：Only additive-mode providers support changing provider key
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f0054055a679d6427518f082d73dc7a45a091c2c7547e2eb677677ce9985e5c4`
-
-### 521. `hardcoded:src-tauri/src/services/provider/mod.rs:update:d3e32c3e3306de66:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/mod.rs:6270`
-- 结构：`update` / `rust_string`
-- 原文/表达式：Original provider '{}' does not exist in app '{}'
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d3e32c3e3306de6655a0ab14db435f583a101bdc631ea0c2acef0da8f1d63a97`
-
-### 522. `hardcoded:src-tauri/src/services/provider/mod.rs:update:66c1843541e37fad:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/mod.rs:6287`
-- 结构：`update` / `rust_string`
-- 原文/表达式：Provider key cannot be changed for OMO/OMO Slim providers
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`66c1843541e37fade89aecbff84b06bb4510cc891a41f22a6e6d0f8899ebac83`
-
-### 523. `hardcoded:src-tauri/src/services/provider/mod.rs:update:394073949497b6fc:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/mod.rs:6298`
-- 结构：`update` / `rust_string`
-- 原文/表达式：Provider key cannot be changed after the provider has been added to the app config
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`394073949497b6fc4f28e6d1f1b65ca5ad3210834c02a65ac4aa6832dbf0583f`
-
-### 524. `hardcoded:src-tauri/src/services/provider/mod.rs:update:2aafdeffa3473d30:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/mod.rs:6315`
-- 结构：`update` / `rust_string`
-- 原文/表达式：Provider '{}' already exists in app '{}'
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2aafdeffa3473d30881359458581399d45b721a7f03a6ff34377cab09b9642e3`
-
-### 525. `hardcoded:src-tauri/src/services/provider/mod.rs:add_to_live_config:2a716363fead65c4:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/mod.rs:6637`
-- 结构：`add_to_live_config` / `rust_string`
-- 原文/表达式：{} adds providers through switch
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2a716363fead65c4f6749bd929f6c74445169ac7cfa63ca484de406b1b6f6502`
-
-### 526. `hardcoded:src-tauri/src/services/provider/mod.rs:remove_from_live_config:5eefb6de267c8fca:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/mod.rs:6730`
-- 结构：`remove_from_live_config` / `rust_string`
-- 原文/表达式：App {} does not support remove from live config
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`5eefb6de267c8fcacb5ce6eb7ccc4b6645b91079837b5dc2913ff6759bc72a97`
-
-### 527. `hardcoded:src-tauri/src/services/provider/mod.rs:ensure_kimi_provider_editable:2b728bc4673886e9:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/mod.rs:6768`
-- 结构：`ensure_kimi_provider_editable` / `rust_string`
-- 原文/表达式：Manage Kimi official accounts in the Authorization Center
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2b728bc4673886e99f70cb427f3114897fbe647160d2e62f176bab2788d4194c`
-
-### 528. `hardcoded:src-tauri/src/services/provider/mod.rs:switch_normal:519b4304461b073d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/mod.rs:7031`
-- 结构：`switch_normal` / `rust_string`
-- 原文/表达式：Failed to persist live_config_managed for '{}' after writing live config; live changes were rolled back: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`519b4304461b073d103905208a9b65dc9e2e853887f710b2f1366f3b30e3a58e`
-
-### 529. `hardcoded:src-tauri/src/services/provider/mod.rs:switch_normal:115fe28d4747afd2:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/mod.rs:7037`
-- 结构：`switch_normal` / `rust_string`
-- 原文/表达式：Failed to persist live_config_managed for '{}' after writing live config: {e}; additionally failed to roll back live config: {rollback_err}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`115fe28d4747afd296dd97dc2484872dc6c36c59bf9881a187222562de62f3aa`
-
-### 530. `hardcoded:src-tauri/src/services/provider/mod.rs:extract_common_config_snippet:c0fdb4bd6d8330da:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/mod.rs:7271`
-- 结构：`extract_common_config_snippet` / `rust_string`
-- 原文/表达式：No current provider
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`c0fdb4bd6d8330daf83960d91bedf4417a709758defff1c98049e4d2b38c6700`
-
-### 531. `hardcoded:src-tauri/src/services/provider/mod.rs:extract_claude_common_config:10321c58989aed74:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/mod.rs:7443`
-- 结构：`extract_claude_common_config` / `rust_string`
-- 原文/表达式：Serialization failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`10321c58989aed7496a6375b323bfa974be117efd3d39bb86477e4fc766c5172`
-
-### 532. `hardcoded:src-tauri/src/services/provider/mod.rs:extract_codex_common_config:82303902b20dff1a:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/mod.rs:7460`
-- 结构：`extract_codex_common_config` / `rust_string`
-- 原文/表达式：TOML parse error: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`82303902b20dff1a52a0c2935202d20281ac47bdfda60540093557cda2ccb73a`
-
-### 533. `hardcoded:src-tauri/src/services/provider/mod.rs:extract_gemini_common_config:10321c58989aed74:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/mod.rs:7571`
-- 结构：`extract_gemini_common_config` / `rust_string`
-- 原文/表达式：Serialization failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`10321c58989aed7496a6375b323bfa974be117efd3d39bb86477e4fc766c5172`
-
-### 534. `hardcoded:src-tauri/src/services/provider/mod.rs:scrub_leaked_gemini_common_config:10321c58989aed74:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/mod.rs:7648`
-- 结构：`scrub_leaked_gemini_common_config` / `rust_string`
-- 原文/表达式：Serialization failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`10321c58989aed7496a6375b323bfa974be117efd3d39bb86477e4fc766c5172`
-
-### 535. `hardcoded:src-tauri/src/services/provider/mod.rs:scrub_leaked_gemini_common_config:10321c58989aed74:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/mod.rs:7702`
-- 结构：`scrub_leaked_gemini_common_config` / `rust_string`
-- 原文/表达式：Serialization failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`10321c58989aed7496a6375b323bfa974be117efd3d39bb86477e4fc766c5172`
-
-### 536. `hardcoded:src-tauri/src/services/provider/mod.rs:scrub_leaked_gemini_common_config:10321c58989aed74:003`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/mod.rs:7735`
-- 结构：`scrub_leaked_gemini_common_config` / `rust_string`
-- 原文/表达式：Serialization failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`10321c58989aed7496a6375b323bfa974be117efd3d39bb86477e4fc766c5172`
-
-### 537. `hardcoded:src-tauri/src/services/provider/mod.rs:scrub_leaked_gemini_common_config:10321c58989aed74:004`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/mod.rs:7778`
-- 结构：`scrub_leaked_gemini_common_config` / `rust_string`
-- 原文/表达式：Serialization failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`10321c58989aed7496a6375b323bfa974be117efd3d39bb86477e4fc766c5172`
-
-### 538. `hardcoded:src-tauri/src/services/provider/mod.rs:extract_opencode_common_config:10321c58989aed74:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/mod.rs:7811`
-- 结构：`extract_opencode_common_config` / `rust_string`
-- 原文/表达式：Serialization failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`10321c58989aed7496a6375b323bfa974be117efd3d39bb86477e4fc766c5172`
-
-### 539. `hardcoded:src-tauri/src/services/provider/mod.rs:extract_openclaw_common_config:10321c58989aed74:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/mod.rs:7832`
-- 结构：`extract_openclaw_common_config` / `rust_string`
-- 原文/表达式：Serialization failed: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`10321c58989aed7496a6375b323bfa974be117efd3d39bb86477e4fc766c5172`
-
-### 540. `hardcoded:src-tauri/src/services/provider/mod.rs:validate_provider_settings:3a83151074f7f908:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/mod.rs:7983`
-- 结构：`validate_provider_settings` / `rust_string`
-- 原文/表达式：Provider {} auth configuration must be a JSON object
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`3a83151074f7f90875753f18570fb87b00e0c322cc31f468f9c2893be9d93e34`
-
-### 541. `hardcoded:src-tauri/src/services/provider/pi.rs:add:be2ef365b87c5376:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/pi.rs:51`
-- 结构：`add` / `rust_string`
-- 原文/表达式：Pi provider '{}' already exists
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`be2ef365b87c5376179a1409e40b19c73e1d9c7f1c9c6d716efac7451a79070c`
-
-### 542. `hardcoded:src-tauri/src/services/provider/pi.rs:add:e6c648cce37b2dd9:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/pi.rs:58`
-- 结构：`add` / `rust_string`
-- 原文/表达式：Pi provider key '{}' already exists in models.json
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e6c648cce37b2dd927cde9ae25723ab96c9513d5cd3148c9f9ecfa59dbeaddef`
-
-### 543. `hardcoded:src-tauri/src/services/provider/pi.rs:add:d10701f4be9b2514:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/pi.rs:76`
-- 结构：`add` / `rust_string`
-- 原文/表达式：failed to save Pi provider: {error}; native rollback failed: {rollback}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d10701f4be9b25149bab1f8bd5c7b8e35e07d009de92fe7cffbdda4285e2edd4`
-
-### 544. `hardcoded:src-tauri/src/services/provider/pi.rs:update_usage_script:061d0b9539c8cfb3:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/pi.rs:94`
-- 结构：`update_usage_script` / `rust_string`
-- 原文/表达式：Usage metadata updates only support Pi and Omp
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`061d0b9539c8cfb355c88e0d52f9bad768fa61370bb8c2573d9094427b4a0a7f`
-
-### 545. `hardcoded:src-tauri/src/services/provider/pi.rs:update:ac5b3f771c7fc702:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/pi.rs:128`
-- 结构：`update` / `rust_string`
-- 原文/表达式：Pi provider keys cannot be renamed
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ac5b3f771c7fc702a14e3ca99d682505094258c13d071028b00890681858f2e3`
-
-### 546. `hardcoded:src-tauri/src/services/provider/pi.rs:update:d10701f4be9b2514:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/pi.rs:150`
-- 结构：`update` / `rust_string`
-- 原文/表达式：failed to save Pi provider: {error}; native rollback failed: {rollback}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d10701f4be9b25149bab1f8bd5c7b8e35e07d009de92fe7cffbdda4285e2edd4`
-
-### 547. `hardcoded:src-tauri/src/services/provider/pi.rs:delete:99471fbc2c0e2f4a:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/pi.rs:175`
-- 结构：`delete` / `rust_string`
-- 原文/表达式：failed to delete Pi provider: {error}; native rollback failed: {rollback}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`99471fbc2c0e2f4adc7beb1f41f32e5775f5ea27a48fb651e07a3816e77a60ee`
-
-### 548. `hardcoded:src-tauri/src/services/provider/pi.rs:remove:b76310e91a4f38b4:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/pi.rs:200`
-- 结构：`remove` / `rust_string`
-- 原文/表达式：failed to preserve Pi provider before removal: {error}; native rollback failed: {rollback}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`b76310e91a4f38b4018512d6e2940319cd14c44bcfe57b6eed129bd13b5b9e27`
-
-### 549. `hardcoded:src-tauri/src/services/provider/usage.rs:validate_usage_script:a24088e134a99b00:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/provider/usage.rs:239`
-- 结构：`validate_usage_script` / `rust_string`
-- 原文/表达式：Auto query interval cannot exceed 1440 minutes (24 hours), current: {interval}
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`a24088e134a99b00986a259780c1754acb35e90691ab6f2886cb3752ec107f92`
-
-### 550. `hardcoded:src-tauri/src/services/s3.rs:test_connection:490df559917168ea:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/s3.rs:366`
-- 结构：`test_connection` / `rust_string`
-- 原文/表达式：HEAD bucket
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`490df559917168eaca85677b01d9d5ce659a47a78ed001a8bc0d5a77d6ecd6d3`
-
-### 551. `hardcoded:src-tauri/src/services/s3.rs:put_object:666d6ebc3df6d0eb:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/s3.rs:405`
-- 结构：`put_object` / `rust_string`
-- 原文/表达式：PUT request
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`666d6ebc3df6d0ebeae0125505d47654e69d688a85be4ce9fe02dd47501c8666`
-
-### 552. `hardcoded:src-tauri/src/services/s3.rs:get_object:b97de642c0000c70:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/s3.rs:448`
-- 结构：`get_object` / `rust_string`
-- 原文/表达式：GET request
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`b97de642c0000c70db1d0590507d0d47f20084a522e992fe4e5d7c02ff2c3ae0`
-
-### 553. `hardcoded:src-tauri/src/services/s3.rs:get_object:b97de642c0000c70:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/s3.rs:449`
-- 结构：`get_object` / `rust_string`
-- 原文/表达式：GET request
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`b97de642c0000c70db1d0590507d0d47f20084a522e992fe4e5d7c02ff2c3ae0`
-
-### 554. `hardcoded:src-tauri/src/services/s3.rs:head_object:a5ea16640d615b27:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/s3.rs:519`
-- 结构：`head_object` / `rust_string`
-- 原文/表达式：HEAD request
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`a5ea16640d615b27c40511f1bd25ba01ea14711e75b3d4e4af123b41d5a41628`
-
-### 555. `hardcoded:src-tauri/src/services/session_usage_agy.rs:sync_agy_usage:470adc2aff269478:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/session_usage_agy.rs:33`
-- 结构：`sync_agy_usage` / `rust_string`
-- 原文/表达式：Antigravity {}: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`470adc2aff2694787632461157d2b512b5fda7beada7dd980beea533a3afdf6e`
-
-### 556. `hardcoded:src-tauri/src/services/session_usage_agy/native_models.rs:models_for_transcript:fa578e4134afdfaf:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/session_usage_agy/native_models.rs:71`
-- 结构：`models_for_transcript` / `rust_string`
-- 原文/表达式：Conversation database is outside the Antigravity root
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`fa578e4134afdfafb60fbd60ea455e9dc29d94d3a2d12d40df0c3936a7a55a29`
-
-### 557. `hardcoded:src-tauri/src/services/session_usage_kimi.rs:sync_sessions:0dd4c01edd3390f8:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/session_usage_kimi.rs:71`
-- 结构：`sync_sessions` / `rust_string`
-- 原文/表达式：Kimi Code session {}: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`0dd4c01edd3390f8ec57773d3486e1e4ab67e43d70d392d26852aa5998ad94df`
-
-### 558. `hardcoded:src-tauri/src/services/session_usage_pi.rs:sync_pi_files:7817472218664eda:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/session_usage_pi.rs:203`
-- 结构：`sync_pi_files` / `rust_string`
-- 原文/表达式：{}: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`7817472218664eda0221e88f2d982c46df08025c197e15e651269d067b2d11fb`
-
-### 559. `hardcoded:src-tauri/src/services/skill.rs:import_from_apps:36e6f3098fb86f85:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/skill.rs:2460`
-- 结构：`import_from_apps` / `rust_string`
-- 原文/表达式：{dir_name}: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`36e6f3098fb86f85e68b798419966d3a0f3ee6eacbb4e73d4935e04edf74ace4`
-
-### 560. `hardcoded:src-tauri/src/services/skill.rs:backup_path_for_id:d9088f60867ccd68:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/skill.rs:4209`
-- 结构：`backup_path_for_id` / `rust_string`
-- 原文/表达式：Invalid backup id: {backup_id}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d9088f60867ccd6880a2637c7fa2a1010863ad2c9e07ff4232ffe883b837945a`
-
-### 561. `hardcoded:src-tauri/src/services/stream_check.rs:resolve_base_url:b9e068c611331a93:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/stream_check.rs:166`
-- 结构：`resolve_base_url` / `rust_string`
-- 原文/表达式：Official providers do not expose a reachability-check target
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`b9e068c611331a937985be2478db04ffa2347cbb11f56e153040780307b66bbb`
-
-### 562. `hardcoded:src-tauri/src/services/stream_check.rs:resolve_base_url:fbfc57f2fab66d15:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/stream_check.rs:183`
-- 结构：`resolve_base_url` / `rust_string`
-- 原文/表达式：Failed to extract base_url: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`fbfc57f2fab66d1596ce6bf1620015883f6aa40b9583e8d0e27ac291ed5ef384`
-
-### 563. `hardcoded:src-tauri/src/services/stream_check.rs:resolve_base_url:b9e068c611331a93:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/stream_check.rs:189`
-- 结构：`resolve_base_url` / `rust_string`
-- 原文/表达式：Official providers do not expose a reachability-check target
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`b9e068c611331a937985be2478db04ffa2347cbb11f56e153040780307b66bbb`
-
-### 564. `hardcoded:src-tauri/src/services/stream_check.rs:resolve_base_url:fbfc57f2fab66d15:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/stream_check.rs:206`
-- 结构：`resolve_base_url` / `rust_string`
-- 原文/表达式：Failed to extract base_url: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`fbfc57f2fab66d1596ce6bf1620015883f6aa40b9583e8d0e27ac291ed5ef384`
-
-### 565. `hardcoded:src-tauri/src/services/subscription.rs:read_claude_credentials_from_file:c2d35647f33d5337:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/subscription.rs:243`
-- 结构：`read_claude_credentials_from_file` / `rust_string`
-- 原文/表达式：Failed to read credentials file: {e}
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`c2d35647f33d5337eb0d91602df8bbb8bf4113d208f7f074facc6bdabf13a98d`
-
-### 566. `hardcoded:src-tauri/src/services/subscription.rs:parse_claude_credentials_json:0f6c423dcb3bfbfc:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/subscription.rs:261`
-- 结构：`parse_claude_credentials_json` / `rust_string`
-- 原文/表达式：Failed to parse credentials JSON: {e}
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`0f6c423dcb3bfbfca45a8f38eb65c4b3a98a9ee3b04fc3bb75edd470108a26e3`
-
-### 567. `hardcoded:src-tauri/src/services/subscription.rs:parse_claude_credentials_json:a02f6c49123f40bf:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/subscription.rs:288`
-- 结构：`parse_claude_credentials_json` / `rust_string`
-- 原文/表达式：Failed to parse OAuth entry: {e}
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`a02f6c49123f40bf882ad23c35124440577aff004e70fde41bd1f406937e338b`
-
-### 568. `hardcoded:src-tauri/src/services/subscription.rs:query_claude_quota:2d1725ea2ce4272d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/subscription.rs:459`
-- 结构：`query_claude_quota` / `rust_string`
-- 原文/表达式：Network error: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2d1725ea2ce4272d80a77e34b14bd242ed11ffc40c0c5f94743faf39d01e8bd0`
-
-### 569. `hardcoded:src-tauri/src/services/subscription.rs:query_claude_quota:66cc7acd63b8eaf6:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/subscription.rs:485`
-- 结构：`query_claude_quota` / `rust_string`
-- 原文/表达式：Failed to read API response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`66cc7acd63b8eaf69c9000b85a4d9db782cc002036c23ccdbcac7f43549f0a9c`
-
-### 570. `hardcoded:src-tauri/src/services/subscription.rs:query_claude_quota:513bfb81f19e8db5:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/subscription.rs:493`
-- 结构：`query_claude_quota` / `rust_string`
-- 原文/表达式：Failed to parse API response: {e}
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`513bfb81f19e8db56cd5e249441c3c4ff7e518799d78a740251e82fc60fb015b`
-
-### 571. `hardcoded:src-tauri/src/services/subscription.rs:query_codex_usage:2d1725ea2ce4272d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/subscription.rs:1040`
-- 结构：`query_codex_usage` / `rust_string`
-- 原文/表达式：Network error: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2d1725ea2ce4272d80a77e34b14bd242ed11ffc40c0c5f94743faf39d01e8bd0`
-
-### 572. `hardcoded:src-tauri/src/services/subscription.rs:query_codex_usage:66cc7acd63b8eaf6:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/subscription.rs:1064`
-- 结构：`query_codex_usage` / `rust_string`
-- 原文/表达式：Failed to read API response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`66cc7acd63b8eaf69c9000b85a4d9db782cc002036c23ccdbcac7f43549f0a9c`
-
-### 573. `hardcoded:src-tauri/src/services/subscription.rs:query_codex_usage:513bfb81f19e8db5:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/subscription.rs:1072`
-- 结构：`query_codex_usage` / `rust_string`
-- 原文/表达式：Failed to parse API response: {e}
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`513bfb81f19e8db56cd5e249441c3c4ff7e518799d78a740251e82fc60fb015b`
-
-### 574. `hardcoded:src-tauri/src/services/subscription.rs:query_gemini_quota:9309bcae1ccf77ec:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/subscription.rs:1431`
-- 结构：`query_gemini_quota` / `rust_string`
-- 原文/表达式：Network error (loadCodeAssist): {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`9309bcae1ccf77ec634cb1d826b3fd72fe0b46ceeaeeb60917cb99aa3f4d3b0e`
-
-### 575. `hardcoded:src-tauri/src/services/subscription.rs:query_gemini_quota:868b7213eef9698c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/subscription.rs:1455`
-- 结构：`query_gemini_quota` / `rust_string`
-- 原文/表达式：Failed to read loadCodeAssist response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`868b7213eef9698caaf30f4bdc1e9b1ab17e2a9929711b951d8137b19da44f53`
-
-### 576. `hardcoded:src-tauri/src/services/subscription.rs:query_gemini_quota:9078d524b3c9218e:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/subscription.rs:1463`
-- 结构：`query_gemini_quota` / `rust_string`
-- 原文/表达式：Failed to parse loadCodeAssist response: {e}
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`9078d524b3c9218e036c44f08ac1d2b9a774678b1a6ba97f14ea963fea4950c8`
-
-### 577. `hardcoded:src-tauri/src/services/subscription.rs:query_gemini_quota:60d8c7ff32d5ef4e:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/subscription.rs:1490`
-- 结构：`query_gemini_quota` / `rust_string`
-- 原文/表达式：Network error (retrieveUserQuota): {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`60d8c7ff32d5ef4e451a8da8c5c6eb2ba990d3ee62fcab1b2e8a65a7d132cab6`
-
-### 578. `hardcoded:src-tauri/src/services/subscription.rs:query_gemini_quota:c53e6455d4e6307a:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/subscription.rs:1514`
-- 结构：`query_gemini_quota` / `rust_string`
-- 原文/表达式：Failed to read quota response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`c53e6455d4e6307a4f1e21758770315fd379e9bf4568d4d838da8c0306048202`
-
-### 579. `hardcoded:src-tauri/src/services/subscription.rs:query_gemini_quota:ab0c78a957ff3564:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/subscription.rs:1522`
-- 结构：`query_gemini_quota` / `rust_string`
-- 原文/表达式：Failed to parse quota response: {e}
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`ab0c78a957ff3564ec1f741662a409adee1ea567c4e6edfc7d248825cdd582a9`
-
-### 580. `hardcoded:src-tauri/src/services/subscription_grok.rs:read_grok_credentials:783adf2219d6b3b5:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/subscription_grok.rs:53`
-- 结构：`read_grok_credentials` / `rust_string`
-- 原文/表达式：Failed to read Grok auth file: {e}
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`783adf2219d6b3b5014659b00a893eca3436d10e97b364d362a0588942a2b725`
-
-### 581. `hardcoded:src-tauri/src/services/subscription_grok.rs:parse_grok_auth_json:5a138eebb09a051a:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/subscription_grok.rs:69`
-- 结构：`parse_grok_auth_json` / `rust_string`
-- 原文/表达式：Failed to parse Grok auth JSON: {e}
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`5a138eebb09a051a717eebcbbf94699a30f71a980848e4c515b97f773306b05a`
-
-### 582. `hardcoded:src-tauri/src/services/subscription_grok.rs:parse_billing_payload:e1ed4b9482b45c31:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/subscription_grok.rs:400`
-- 结构：`parse_billing_payload` / `rust_string`
-- 原文/表达式：Grok billing response contained no protobuf payload
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e1ed4b9482b45c31dc39dc0e40fc1a76ab87151ad9927ee308033a39e188a603`
-
-### 583. `hardcoded:src-tauri/src/services/subscription_grok.rs:parse_billing_payload:7b7c50fedf55751a:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/subscription_grok.rs:442`
-- 结构：`parse_billing_payload` / `rust_string`
-- 原文/表达式：Could not locate usage percent in Grok billing response
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`7b7c50fedf55751a62ce47243c16822f51799b17ac8acfbe1fbb6c413438413a`
-
-### 584. `hardcoded:src-tauri/src/services/subscription_grok.rs:grpc_status_failure:53fa293df8131ac7:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/subscription_grok.rs:510`
-- 结构：`grpc_status_failure` / `rust_string`
-- 原文/表达式：Transient gRPC failure (grpc-status {status}): {message}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`53fa293df8131ac74010a0c8dfb5881fb0a451a641f3c06c61a3a01a4460ed38`
-
-### 585. `hardcoded:src-tauri/src/services/sync_protocol.rs:validate_manifest_compat:6844272058fa659f:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/sync_protocol.rs:264`
-- 结构：`validate_manifest_compat` / `rust_string`
-- 原文/表达式：Remote manifest format is incompatible: {}
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`6844272058fa659fdb10e05ae331558576abbc02a534421c5b5cf2a8a50a10a4`
-
-### 586. `hardcoded:src-tauri/src/services/sync_protocol.rs:validate_artifact_size_limit:7ed999b19258b9da:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/sync_protocol.rs:326`
-- 结构：`validate_artifact_size_limit` / `rust_string`
-- 原文/表达式：Artifact {artifact_name} exceeds download limit ({} MB)
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`7ed999b19258b9da8db39519182fbd3ff7922553b74154fcbad7196fe28cdb40`
-
-### 587. `hardcoded:src-tauri/src/services/webdav.rs:ensure_remote_directories:1d7ad4a5b6f4824a:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/webdav.rs:205`
-- 结构：`ensure_remote_directories` / `rust_string`
-- 原文/表达式：MKCOL request
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`1d7ad4a5b6f4824a3b2c8a559a2aab015698075977d89f4aecd04852a75a6875`
-
-### 588. `hardcoded:src-tauri/src/services/webdav.rs:put_bytes:666d6ebc3df6d0eb:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/webdav.rs:251`
-- 结构：`put_bytes` / `rust_string`
-- 原文/表达式：PUT request
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`666d6ebc3df6d0ebeae0125505d47654e69d688a85be4ce9fe02dd47501c8666`
-
-### 589. `hardcoded:src-tauri/src/services/webdav.rs:get_bytes:b97de642c0000c70:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/webdav.rs:274`
-- 结构：`get_bytes` / `rust_string`
-- 原文/表达式：GET request
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`b97de642c0000c70db1d0590507d0d47f20084a522e992fe4e5d7c02ff2c3ae0`
-
-### 590. `hardcoded:src-tauri/src/services/webdav.rs:get_bytes:b97de642c0000c70:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/webdav.rs:276`
-- 结构：`get_bytes` / `rust_string`
-- 原文/表达式：GET request
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`b97de642c0000c70db1d0590507d0d47f20084a522e992fe4e5d7c02ff2c3ae0`
-
-### 591. `hardcoded:src-tauri/src/services/webdav.rs:get_bytes:66126582af69c03f:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/webdav.rs:301`
-- 结构：`get_bytes` / `rust_string`
-- 原文/表达式：response read
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`66126582af69c03f94b3b99dec1595f2dd1aaaf0e44c88eddb2cc9bc12e14e0c`
-
-### 592. `hardcoded:src-tauri/src/services/webdav.rs:head_etag:a5ea16640d615b27:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/webdav.rs:333`
-- 结构：`head_etag` / `rust_string`
-- 原文/表达式：HEAD request
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`a5ea16640d615b27c40511f1bd25ba01ea14711e75b3d4e4af123b41d5a41628`
-
-### 593. `hardcoded:src-tauri/src/services/webdav_sync/archive.rs:replace_skills_dir:5c48b6d66e2a4efc:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/services/webdav_sync/archive.rs:186`
-- 结构：`replace_skills_dir` / `rust_string`
-- 原文/表达式：Skills source is not a directory
-- 判定原因：该英文错误字符串不在日志宏中，但是否直接展示取决于后端调用方；当前无法仅凭局部代码排除用户可见性。
-- 处理方向：追踪命令返回值及前端 toast/error boundary 展示链路，确认后使用结构化错误键。
-- 严重程度：中
-- 指纹：`5c48b6d66e2a4efcdaf5f28bd156c9893829a2c3b534f9ccdf2070eceed7245f`
-
-### 594. `hardcoded:src-tauri/src/session_manager/content.rs:resolve_content_ref:1e878c12ed6a7132:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/content.rs:258`
-- 结构：`resolve_content_ref` / `rust_string`
-- 原文/表达式：&& pointer.ends_with(
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`1e878c12ed6a71329d928b0dfb6be660e15dbea19cd45cf48bc56c339fa5610d`
-
-### 595. `hardcoded:src-tauri/src/session_manager/content.rs:resolve_content_ref:e34e0c158a532edf:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/content.rs:273`
-- 结构：`resolve_content_ref` / `rust_string`
-- 原文/表达式：)<br>                .map_err(\|_\|
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e34e0c158a532edf0464508473cd576dc9a10652456063ffbe27e54c9139033f`
-
-### 596. `hardcoded:src-tauri/src/session_manager/content.rs:jsonl_path:d55b0b098ba34702:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/content.rs:294`
-- 结构：`jsonl_path` / `rust_string`
-- 原文/表达式：{<br>        return Ok(path.clone());<br>    }<br>    if path.file_name().and_then(\|name\| name.to_str()) != Some(
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d55b0b098ba3470239fe0271f9d93f74d55ebc4bf1465364c32b0f921a6c5b69`
-
-### 597. `hardcoded:src-tauri/src/session_manager/content.rs:read_plain_window:b0ed01bda68819c9:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/content.rs:368`
-- 结构：`read_plain_window` / `rust_string`
-- 原文/表达式：.to_string())?;<br>    let file_len = file<br>        .metadata()<br>        .map_err(\|_\|
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`b0ed01bda68819c9e485a5e0bb3deff9c01cd3d0c7f60ef9e65e2e9cd13b2280`
-
-### 598. `hardcoded:src-tauri/src/session_manager/content.rs:read_sqlite_cell:37413cc8e279395e:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/content.rs:467`
-- 结构：`read_sqlite_cell` / `rust_string`
-- 原文/表达式：.to_string());<br>    }<br>    #[cfg(windows)]<br>    if provider_id ==
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`37413cc8e279395e1c0455fd044c64e3fa72f60f4c9ff968ca3c16a4f0d55f02`
-
-### 599. `hardcoded:src-tauri/src/session_manager/content.rs:read_sqlite_cell:c4a0649610aabe3f:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/content.rs:470`
-- 结构：`read_sqlite_cell` / `rust_string`
-- 原文/表达式：&& crate::session_manager::hermes_wsl::is_wsl(db) {<br>        let value = crate::session_manager::hermes_wsl::read(<br>            db,<br>            serde_json::json!({
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`c4a0649610aabe3f9a49e1489159239c0f4e0ac70caea32ec941dcf70974bd85`
-
-### 600. `hardcoded:src-tauri/src/session_manager/content.rs:safe_join:6403b35c97d7744d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/content.rs:519`
-- 结构：`safe_join` / `rust_string`
-- 原文/表达式：.to_string())?;<br>    let joined = base<br>        .join(rel)<br>        .canonicalize()<br>        .map_err(\|_\|
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`6403b35c97d7744d32a7f70a12572895345cdb443c6df2387d41b8b11760fd00`
-
-### 601. `hardcoded:src-tauri/src/session_manager/content.rs:read_limited:2f034c2abe2855b6:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/content.rs:532`
-- 结构：`read_limited` / `rust_string`
-- 原文/表达式：.to_string())?;<br>    let meta = file.metadata().map_err(\|_\|
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`2f034c2abe2855b6029680b77cb56dab667dabbc7ca4951876123c05c0d2a779`
-
-### 602. `hardcoded:src-tauri/src/session_manager/content.rs:read_limited:f56a620a506bcfec:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/content.rs:533`
-- 结构：`read_limited` / `rust_string`
-- 原文/表达式：.to_string())?;<br>    if !meta.is_file() {<br>        return Err(
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f56a620a506bcfecbf31cc067cc2b6ba0841c95f4dffcf6a10af61e9f83e8f47`
-
-### 603. `hardcoded:src-tauri/src/session_manager/content.rs:read_limited:4e7caa97a6e4c3fc:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/content.rs:535`
-- 结构：`read_limited` / `rust_string`
-- 原文/表达式：.to_string());<br>    }<br>    if meta.len() > max {<br>        return Err(too_large.to_string());<br>    }<br>    let mut bytes = Vec::with_capacity(meta.len() as usize);<br>    file.take(max + 1)<br>        .read_to_end(&mut bytes)<br>        .map_err(\|_\|
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`4e7caa97a6e4c3fcbcb7770253ce00682951b8318660b2151fcae7dc7090a462`
-
-### 604. `hardcoded:src-tauri/src/session_manager/hermes_wsl.rs:read:d971be47e8c4dc4b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/hermes_wsl.rs:51`
-- 结构：`read` / `rust_string`
-- 原文/表达式：Hermes WSL frame exceeds its limit or is incomplete
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d971be47e8c4dc4bc2d5e2fae874034237db51da15db51162976013579a91c32`
-
-### 605. `hardcoded:src-tauri/src/session_manager/hermes_wsl.rs:read:07b994e4fa810efc:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/hermes_wsl.rs:112`
-- 结构：`read` / `rust_string`
-- 原文/表达式：Failed to start Hermes WSL reader: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`07b994e4fa810efccbfb5232ffffabd9d049824a7f2064106428c213131a38a2`
-
-### 606. `hardcoded:src-tauri/src/session_manager/hermes_wsl.rs:read:8c466661be739ac1:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/hermes_wsl.rs:131`
-- 结构：`read` / `rust_string`
-- 原文/表达式：Failed to wait for Hermes WSL reader: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`8c466661be739ac1cf28e3fef2cb9c25f212940227d3089fd392d10040634757`
-
-### 607. `hardcoded:src-tauri/src/session_manager/hermes_wsl.rs:read:58c487d162da910e:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/hermes_wsl.rs:132`
-- 结构：`read` / `rust_string`
-- 原文/表达式：Hermes WSL reader timed out
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`58c487d162da910e3e7f77e14d9ea5100b51ab6cf302c6633ced1cec0e58a7c4`
-
-### 608. `hardcoded:src-tauri/src/session_manager/hermes_wsl.rs:read:57a0b5b61a361123:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/hermes_wsl.rs:139`
-- 结构：`read` / `rust_string`
-- 原文/表达式：Hermes WSL reader thread failed
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`57a0b5b61a361123fc6b312440aee1dab8fe4777c6e9b93cb84984a1a55f720a`
-
-### 609. `hardcoded:src-tauri/src/session_manager/hermes_wsl.rs:read:1a8dbf6d3f371776:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/hermes_wsl.rs:140`
-- 结构：`read` / `rust_string`
-- 原文/表达式：Invalid Hermes WSL response: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`1a8dbf6d3f3717762c30a3131ba1a33b3beb8e2f2a9247738b2a5293254aa7c8`
-
-### 610. `hardcoded:src-tauri/src/session_manager/hermes_wsl.rs:read:57a0b5b61a361123:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/hermes_wsl.rs:143`
-- 结构：`read` / `rust_string`
-- 原文/表达式：Hermes WSL reader thread failed
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`57a0b5b61a361123fc6b312440aee1dab8fe4777c6e9b93cb84984a1a55f720a`
-
-### 611. `hardcoded:src-tauri/src/session_manager/hermes_wsl.rs:read:615083f777e4147d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/hermes_wsl.rs:147`
-- 结构：`read` / `rust_string`
-- 原文/表达式：Hermes WSL read failed (python3 is required): {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`615083f777e4147d3a914b2c2560b2074ae0287f05c6417e7613825724b26e30`
-
-### 612. `hardcoded:src-tauri/src/session_manager/mod.rs:load_messages:e8a6fbded1682387:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/mod.rs:134`
-- 结构：`load_messages` / `rust_string`
-- 原文/表达式：Unsupported provider: {provider_id}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e8a6fbded1682387795f47323c695847dc6dae1b3d411f1bbe47a37061d7afc7`
-
-### 613. `hardcoded:src-tauri/src/session_manager/mod.rs:load_transcript:6b4a1887e4f8efeb:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/mod.rs:151`
-- 结构：`load_transcript` / `rust_string`
-- 原文/表达式：Failed to read session source: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`6b4a1887e4f8efeb1daaea70517c559dbccabb2f63cc178dd15ba994530fd5e6`
-
-### 614. `hardcoded:src-tauri/src/session_manager/mod.rs:delete_session_with_roots:e8a6fbded1682387:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/mod.rs:245`
-- 结构：`delete_session_with_roots` / `rust_string`
-- 原文/表达式：Unsupported provider: {provider_id}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e8a6fbded1682387795f47323c695847dc6dae1b3d411f1bbe47a37061d7afc7`
-
-### 615. `hardcoded:src-tauri/src/session_manager/mod.rs:provider_roots:e8a6fbded1682387:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/mod.rs:263`
-- 结构：`provider_roots` / `rust_string`
-- 原文/表达式：Unsupported provider: {provider_id}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e8a6fbded1682387795f47323c695847dc6dae1b3d411f1bbe47a37061d7afc7`
-
-### 616. `hardcoded:src-tauri/src/session_manager/mod.rs:canonicalize_existing_path:933cff02532951fb:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/mod.rs:271`
-- 结构：`canonicalize_existing_path` / `rust_string`
-- 原文/表达式：{label} not found: {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`933cff02532951fbc060470013fdae65b030daeec1d40f90ed32b696c120ed3e`
-
-### 617. `hardcoded:src-tauri/src/session_manager/mod.rs:canonicalize_existing_path:fa48304cac6834bf:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/mod.rs:275`
-- 结构：`canonicalize_existing_path` / `rust_string`
-- 原文/表达式：Failed to resolve {label} {}: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`fa48304cac6834bf2edee01df3e2b06cfc79a823a2cf56a1fa6dc14aca1eae08`
-
-### 618. `hardcoded:src-tauri/src/session_manager/providers/agy.rs:records:6a342db60bedbbe8:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/agy.rs:48`
-- 结构：`records` / `rust_string`
-- 原文/表达式：Cannot read Antigravity transcript: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`6a342db60bedbbe8de9e479e17a8a039dc5eadbdc0879f9ce0b6202b13f1b3d2`
-
-### 619. `hardcoded:src-tauri/src/session_manager/providers/agy.rs:records:6a342db60bedbbe8:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/agy.rs:52`
-- 结构：`records` / `rust_string`
-- 原文/表达式：Cannot read Antigravity transcript: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`6a342db60bedbbe8de9e479e17a8a039dc5eadbdc0879f9ce0b6202b13f1b3d2`
-
-### 620. `hardcoded:src-tauri/src/session_manager/providers/claude.rs:delete_session:9da30c4ba9ab3e1b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/claude.rs:56`
-- 结构：`delete_session` / `rust_string`
-- 原文/表达式：Claude session ID mismatch: expected {session_id}, found {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`9da30c4ba9ab3e1babb6cb83c51de5e9d5e3f5787e052b63e49a774c3eb036b6`
-
-### 621. `hardcoded:src-tauri/src/session_manager/providers/claude.rs:delete_session:1dcaa0aae515defd:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/claude.rs:65`
-- 结构：`delete_session` / `rust_string`
-- 原文/表达式：Failed to delete Claude session sidecar {}: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`1dcaa0aae515defd8021dedea998442e08f5f911d01637a414f7ea440d7443a6`
-
-### 622. `hardcoded:src-tauri/src/session_manager/providers/claude.rs:delete_session:ac69254f3fc51c17:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/claude.rs:73`
-- 结构：`delete_session` / `rust_string`
-- 原文/表达式：Failed to delete Claude session file {}: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ac69254f3fc51c17ccc18473dbfcb20c4e2ae51b7c8b1a0c55a95f5b88ff899d`
-
-### 623. `hardcoded:src-tauri/src/session_manager/providers/claude.rs:load_messages:026dc59670506fa8:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/claude.rs:333`
-- 结构：`load_messages` / `rust_string`
-- 原文/表达式：Failed to open session file: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`026dc59670506fa8028a674060ac036346dc149e045a867d6303df640066a17c`
-
-### 624. `hardcoded:src-tauri/src/session_manager/providers/claude.rs:expecting:1d89b9798a91297d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/claude.rs:1605`
-- 结构：`expecting` / `rust_string`
-- 原文/表达式：any value
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`1d89b9798a91297da9b081d5d2ce82ac7a088739300ba8ddaf1d4676ab57b115`
-
-### 625. `hardcoded:src-tauri/src/session_manager/providers/claude.rs:expecting:1d89b9798a91297d:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/claude.rs:1630`
-- 结构：`expecting` / `rust_string`
-- 原文/表达式：any value
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`1d89b9798a91297da9b081d5d2ce82ac7a088739300ba8ddaf1d4676ab57b115`
-
-### 626. `hardcoded:src-tauri/src/session_manager/providers/codex.rs:load_messages:026dc59670506fa8:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/codex.rs:250`
-- 结构：`load_messages` / `rust_string`
-- 原文/表达式：Failed to open session file: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`026dc59670506fa8028a674060ac036346dc149e045a867d6303df640066a17c`
-
-### 627. `hardcoded:src-tauri/src/session_manager/providers/codex.rs:load_messages:9823d0b05be99be3:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/codex.rs:255`
-- 结构：`load_messages` / `rust_string`
-- 原文/表达式：Failed to read session file: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`9823d0b05be99be38706df7c735bceab40b40099c87a927b7560da07a77e8654`
-
-### 628. `hardcoded:src-tauri/src/session_manager/providers/codex.rs:delete_session:915bcdc2df4a55d3:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/codex.rs:1877`
-- 结构：`delete_session` / `rust_string`
-- 原文/表达式：Codex session ID mismatch: expected {session_id}, found {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`915bcdc2df4a55d38ed864c623fe7341c5516bd4493cd4425ed245b9298259ad`
-
-### 629. `hardcoded:src-tauri/src/session_manager/providers/codex.rs:delete_session:dd154d6b99747e4c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/codex.rs:1884`
-- 结构：`delete_session` / `rust_string`
-- 原文/表达式：Failed to delete Codex session file {}: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`dd154d6b99747e4ca1b6480dd889bc0a2537db51ecbe92446c22c9318ac7f51f`
-
-### 630. `hardcoded:src-tauri/src/session_manager/providers/codex.rs:delete_session:dd154d6b99747e4c:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/codex.rs:1895`
-- 结构：`delete_session` / `rust_string`
-- 原文/表达式：Failed to delete Codex session file {}: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`dd154d6b99747e4ca1b6480dd889bc0a2537db51ecbe92446c22c9318ac7f51f`
-
-### 631. `hardcoded:src-tauri/src/session_manager/providers/codex_items.rs:expecting:c0dc86efda0060d4:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/codex_items.rs:60`
-- 结构：`expecting` / `rust_string`
-- 原文/表达式：a string
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`c0dc86efda0060d4084098a90ec92b3d4aa89d7f7e0fba5424561d21451e1758`
-
-### 632. `hardcoded:src-tauri/src/session_manager/providers/codex_items.rs:expecting:534f39fb6898f49a:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/codex_items.rs:115`
-- 结构：`expecting` / `rust_string`
-- 原文/表达式：a string or an array of content items
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`534f39fb6898f49a382bd1d0a0d2654e734672c5d0db55ff13db90e91ce5f49f`
-
-### 633. `hardcoded:src-tauri/src/session_manager/providers/dsh.rs:read_session:33af3ff742c6cd40:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/dsh.rs:34`
-- 结构：`read_session` / `rust_string`
-- 原文/表达式：DeepSeek Harness session is too large
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`33af3ff742c6cd4050aed3e2fc374ea45800de2e14227ad6333bfa5e073d989c`
-
-### 634. `hardcoded:src-tauri/src/session_manager/providers/dsh.rs:read_session:682e4a850ced8c2b:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/dsh.rs:47`
-- 结构：`read_session` / `rust_string`
-- 原文/表达式：Invalid DeepSeek Harness zstd session
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`682e4a850ced8c2b4dd842fa1c4f91b6dbecd028f11680bebb19b954f9aba76a`
-
-### 635. `hardcoded:src-tauri/src/session_manager/providers/dsh.rs:read_session:33af3ff742c6cd40:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/dsh.rs:56`
-- 结构：`read_session` / `rust_string`
-- 原文/表达式：DeepSeek Harness session is too large
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`33af3ff742c6cd4050aed3e2fc374ea45800de2e14227ad6333bfa5e073d989c`
-
-### 636. `hardcoded:src-tauri/src/session_manager/providers/dsh.rs:parse_messages:e5960cc96d68566c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/dsh.rs:154`
-- 结构：`parse_messages` / `rust_string`
-- 原文/表达式：Invalid DeepSeek Harness session JSONL
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e5960cc96d68566c532365a4d64e0dfacb67d5365bf58df5e415b7842015eace`
-
-### 637. `hardcoded:src-tauri/src/session_manager/providers/gemini.rs:read_session_document:fc5fa25c27c010e2:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/gemini.rs:177`
-- 结构：`read_session_document` / `rust_string`
-- 原文/表达式：Failed to read session: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`fc5fa25c27c010e262521c3169820583b1112eece7e21e611201be235832b722`
-
-### 638. `hardcoded:src-tauri/src/session_manager/providers/gemini.rs:read_session_document:b293cead744bd2ff:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/gemini.rs:178`
-- 结构：`read_session_document` / `rust_string`
-- 原文/表达式：Failed to parse session JSON
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`b293cead744bd2ff4800803eb08104c7f32f1b0040248a6eca03a8be58667489`
-
-### 639. `hardcoded:src-tauri/src/session_manager/providers/gemini.rs:delete_session:35f30f1db8ae8008:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/gemini.rs:486`
-- 结构：`delete_session` / `rust_string`
-- 原文/表达式：Gemini session ID mismatch: expected {session_id}, found {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`35f30f1db8ae8008a7a54521567f8027ac805ec424e87e65fee97773474d2e35`
-
-### 640. `hardcoded:src-tauri/src/session_manager/providers/gemini.rs:delete_session:f5c80991fa325c11:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/gemini.rs:497`
-- 结构：`delete_session` / `rust_string`
-- 原文/表达式：Failed to delete legacy Gemini session file {}: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f5c80991fa325c11d79b0648ff976e414aeb21591c6087f1eda3015cc4a4b275`
-
-### 641. `hardcoded:src-tauri/src/session_manager/providers/gemini.rs:delete_session:ab315f48e9fe2118:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/gemini.rs:506`
-- 结构：`delete_session` / `rust_string`
-- 原文/表达式：Failed to delete Gemini session file {}: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ab315f48e9fe21181b5ff42b1a776d31324ec7e59cc45e68ecb5aa8efb228ba6`
-
-### 642. `hardcoded:src-tauri/src/session_manager/providers/grokbuild.rs:load_messages:708206572fec7293:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/grokbuild.rs:67`
-- 结构：`load_messages` / `rust_string`
-- 原文/表达式：Failed to open Grok Build chat history: {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`708206572fec729350a4d695d81fd12970c4dc473e2dfa720d0f219eaf1bce71`
-
-### 643. `hardcoded:src-tauri/src/session_manager/providers/grokbuild.rs:delete_session:10484992c5a413da:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/grokbuild.rs:127`
-- 结构：`delete_session` / `rust_string`
-- 原文/表达式：Grok Build session source is outside the session root: {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`10484992c5a413da703d86071f9091077b0c830d440a6f6ea1fa8bf54d1a724f`
-
-### 644. `hardcoded:src-tauri/src/session_manager/providers/grokbuild.rs:delete_session:1d88a16176915e12:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/grokbuild.rs:133`
-- 结构：`delete_session` / `rust_string`
-- 原文/表达式：Unexpected Grok Build session source: {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`1d88a16176915e1217e29d7a719e93220791a6c52c6312d52fcd05ac5c6949df`
-
-### 645. `hardcoded:src-tauri/src/session_manager/providers/grokbuild.rs:delete_session:8e08a6d936d2c60c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/grokbuild.rs:140`
-- 结构：`delete_session` / `rust_string`
-- 原文/表达式：Grok Build session ID mismatch: expected {session_id}, found {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`8e08a6d936d2c60c0c94d4523ff3c1425d514cf476d8efbda36fbc525ee83189`
-
-### 646. `hardcoded:src-tauri/src/session_manager/providers/grokbuild.rs:delete_session:9e2d660de99cb201:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/grokbuild.rs:149`
-- 结构：`delete_session` / `rust_string`
-- 原文/表达式：Refusing to delete Grok Build session directory outside its root: {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`9e2d660de99cb20110b75cbf72b8d617512101786c70bc5b0f4281d1a32a025b`
-
-### 647. `hardcoded:src-tauri/src/session_manager/providers/grokbuild.rs:delete_session:3a3049e6c7676268:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/grokbuild.rs:155`
-- 结构：`delete_session` / `rust_string`
-- 原文/表达式：Grok Build session directory does not match session ID: {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`3a3049e6c7676268ae021751b5c1e9a552d0bb881dc5fc8c24db767900e9ed25`
-
-### 648. `hardcoded:src-tauri/src/session_manager/providers/grokbuild.rs:delete_session:d9e8e288edbd4f2e:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/grokbuild.rs:161`
-- 结构：`delete_session` / `rust_string`
-- 原文/表达式：Failed to delete Grok Build session directory {}: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d9e8e288edbd4f2ef86c9731ee291ba65fd9b0e5c5e987574896b9ce357d0c95`
-
-### 649. `hardcoded:src-tauri/src/session_manager/providers/grokbuild.rs:read_summary:5107b5b9c218c6ba:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/grokbuild.rs:184`
-- 结构：`read_summary` / `rust_string`
-- 原文/表达式：Failed to read Grok Build session summary: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`5107b5b9c218c6babaa7f9fb3c47a9d5ca4dad0d76d6dc732fbc330bc7b2a11e`
-
-### 650. `hardcoded:src-tauri/src/session_manager/providers/grokbuild.rs:read_summary:e0161ee0b76c5eea:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/grokbuild.rs:186`
-- 结构：`read_summary` / `rust_string`
-- 原文/表达式：Failed to parse Grok Build session summary: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e0161ee0b76c5eea58e26bef68e5c038b106f1da23012faaef9a78c2adfa792c`
-
-### 651. `hardcoded:src-tauri/src/session_manager/providers/hermes.rs:load_messages_from_conn:7f90bd2459a44576:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/hermes.rs:473`
-- 结构：`load_messages_from_conn` / `rust_string`
-- 原文/表达式：Failed to prepare messages query: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`7f90bd2459a44576eef803a5c5fd4090ba34f933b288c2cbaec94cabcb9e183f`
-
-### 652. `hardcoded:src-tauri/src/session_manager/providers/hermes.rs:load_messages_from_conn:230978dda0a6bb6d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/hermes.rs:490`
-- 结构：`load_messages_from_conn` / `rust_string`
-- 原文/表达式：Failed to query messages: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`230978dda0a6bb6d03a23d3660aa84784c16b20c8de2ad049622cdac0aec61c9`
-
-### 653. `hardcoded:src-tauri/src/session_manager/providers/hermes.rs:delete_session_sqlite:11b3754c9cf0b69f:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/hermes.rs:593`
-- 结构：`delete_session_sqlite` / `rust_string`
-- 原文/表达式：Failed to canonicalize Hermes database path: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`11b3754c9cf0b69fed03cac9f8a031117d3996152a11c48564a162b76866be91`
-
-### 654. `hardcoded:src-tauri/src/session_manager/providers/hermes.rs:delete_session_sqlite:ae0b0501dfc1cfd8:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/hermes.rs:596`
-- 结构：`delete_session_sqlite` / `rust_string`
-- 原文/表达式：Failed to canonicalize expected Hermes database path: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ae0b0501dfc1cfd8274a89dd2549ac098704a6aeb56ead4829aba62d6cf237fa`
-
-### 655. `hardcoded:src-tauri/src/session_manager/providers/hermes.rs:delete_session_sqlite:d7bd168471059701:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/hermes.rs:600`
-- 结构：`delete_session_sqlite` / `rust_string`
-- 原文/表达式：Hermes SQLite session ID mismatch: expected {session_id}, found {ref_session_id}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d7bd168471059701bb244d69b4a7b17021c2b934b00201c7cbd353046e898745`
-
-### 656. `hardcoded:src-tauri/src/session_manager/providers/hermes.rs:delete_session_sqlite:245c1f165b26eac2:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/hermes.rs:604`
-- 结构：`delete_session_sqlite` / `rust_string`
-- 原文/表达式：SQLite path does not match expected Hermes database
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`245c1f165b26eac25faabe0b7588133009c75de1f96a68babf75de9cd8884495`
-
-### 657. `hardcoded:src-tauri/src/session_manager/providers/hermes.rs:delete_session_sqlite:b1ad5f9a4afa1e29:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/hermes.rs:608`
-- 结构：`delete_session_sqlite` / `rust_string`
-- 原文/表达式：Failed to open Hermes database: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`b1ad5f9a4afa1e29c841a09c3242533410706ec0db847764b35bd67222bc886d`
-
-### 658. `hardcoded:src-tauri/src/session_manager/providers/hermes.rs:delete_session_sqlite:3acaf16bfd0d870d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/hermes.rs:612`
-- 结构：`delete_session_sqlite` / `rust_string`
-- 原文/表达式：Failed to begin transaction: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`3acaf16bfd0d870d402409b656fff2f1db8a812750f7ecab69e3bdc59f74f0da`
-
-### 659. `hardcoded:src-tauri/src/session_manager/providers/hermes.rs:delete_session_sqlite:f93d7c46113d4ed9:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/hermes.rs:619`
-- 结构：`delete_session_sqlite` / `rust_string`
-- 原文/表达式：Failed to delete Hermes session: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f93d7c46113d4ed9129ab1e6e12064ed4c84212e60ffc6a4e271a81a669843af`
-
-### 660. `hardcoded:src-tauri/src/session_manager/providers/hermes.rs:delete_session_sqlite:602d69144fa0f01f:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/hermes.rs:622`
-- 结构：`delete_session_sqlite` / `rust_string`
-- 原文/表达式：Failed to commit session deletion: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`602d69144fa0f01f42ec15d7084ab4445dd65fe7e7cdf0ae52e88872d2026973`
-
-### 661. `hardcoded:src-tauri/src/session_manager/providers/hermes.rs:delete_session:81c54d31acb98f22:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/hermes.rs:874`
-- 结构：`delete_session` / `rust_string`
-- 原文/表达式：Failed to delete Hermes session file {}: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`81c54d31acb98f225c86aca8709a3b5eb7c6cf077b284e82886aec0169ca9c25`
-
-### 662. `hardcoded:src-tauri/src/session_manager/providers/kimi.rs:active_records:5958cf417ecf8540:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/kimi.rs:165`
-- 结构：`active_records` / `rust_string`
-- 原文/表达式：Kimi branch chain contains a cycle
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`5958cf417ecf8540b1418e228e2e71091c069a2c8cfb8a957cfc4b789ce24aec`
-
-### 663. `hardcoded:src-tauri/src/session_manager/providers/kimi.rs:active_records:f1506151dd8cb12e:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/kimi.rs:167`
-- 结构：`active_records` / `rust_string`
-- 原文/表达式：Unknown Kimi branch
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f1506151dd8cb12e5ce4f4f884b3b9932a101b8b34d2a7c1da43d45dd07553e4`
-
-### 664. `hardcoded:src-tauri/src/session_manager/providers/omp.rs:delete_session:f828265446521078:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/omp.rs:99`
-- 结构：`delete_session` / `rust_string`
-- 原文/表达式：Failed to resolve Oh My Pi session: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f828265446521078adcff53905d929c94b8efdd96d8442af745ce0275fec449d`
-
-### 665. `hardcoded:src-tauri/src/session_manager/providers/omp.rs:delete_session:d43b0b5c0e3c14d0:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/omp.rs:110`
-- 结构：`delete_session` / `rust_string`
-- 原文/表达式：Oh My Pi session deleted but artifact cleanup failed: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d43b0b5c0e3c14d0917eddbeb6b12208fa5f8986a429515f40dda4ac3284752c`
-
-### 666. `hardcoded:src-tauri/src/session_manager/providers/omp.rs:delete_session:ac21869cad543a01:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/omp.rs:114`
-- 结构：`delete_session` / `rust_string`
-- 原文/表达式：Failed to inspect Oh My Pi artifacts: {error}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ac21869cad543a019dd8825830cf67b879986e28a219d73b04f36845c9413cb7`
-
-### 667. `hardcoded:src-tauri/src/session_manager/providers/openclaw.rs:delete_session:99eafed72d6b0821:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/openclaw.rs:98`
-- 结构：`delete_session` / `rust_string`
-- 原文/表达式：OpenClaw session ID mismatch: expected {session_id}, found {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`99eafed72d6b0821a93ea02a9dff1f617b999fd4c750fc25f2ed51da00ffd4e7`
-
-### 668. `hardcoded:src-tauri/src/session_manager/providers/openclaw.rs:delete_session:a4c203c81ef6523c:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/openclaw.rs:111`
-- 结构：`delete_session` / `rust_string`
-- 原文/表达式：Failed to delete OpenClaw session file {}: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`a4c203c81ef6523ca08f2f49b110ad4badaa12f130efac4b06416c5fcae5a1c0`
-
-### 669. `hardcoded:src-tauri/src/session_manager/providers/openclaw.rs:prune_sessions_index:08c09662a5bef2c5:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/openclaw.rs:276`
-- 结构：`prune_sessions_index` / `rust_string`
-- 原文/表达式：Failed to read OpenClaw sessions index {}: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`08c09662a5bef2c5f8a5efcc286986b77a549216ab5642be1bb62a8f96bbd659`
-
-### 670. `hardcoded:src-tauri/src/session_manager/providers/openclaw.rs:prune_sessions_index:dd3717cede44735f:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/openclaw.rs:283`
-- 结构：`prune_sessions_index` / `rust_string`
-- 原文/表达式：Failed to parse OpenClaw sessions index {}: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`dd3717cede44735f4e7b6b6494614c53ee02c3b9762e9aa35b217627b7ab5c46`
-
-### 671. `hardcoded:src-tauri/src/session_manager/providers/openclaw.rs:prune_sessions_index:f917a3182b4d876d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/openclaw.rs:297`
-- 结构：`prune_sessions_index` / `rust_string`
-- 原文/表达式：Failed to update OpenClaw sessions index {}: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f917a3182b4d876d7865d7ee3d63f5480ebfd3af9a095491afc335e0f5aefb74`
-
-### 672. `hardcoded:src-tauri/src/session_manager/providers/pi.rs:session_files_from_resolution:5156a6c2687ede0d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/providers/pi.rs:142`
-- 结构：`session_files_from_resolution` / `rust_string`
-- 原文/表达式：Pi sessionDir '{configured_path}' requires a project cwd and cannot be globally enumerated
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`5156a6c2687ede0dd3c36c59f905d8502a3c400291df72eb4d14e56fc651e33a`
-
-### 673. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_terminal:e832dcb98c65be92:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:10`
-- 结构：`launch_terminal` / `rust_string`
-- 原文/表达式：Resume command is empty
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`e832dcb98c65be92b79afd810858f86f4f983d946e0e9d9be7a0ba47dc69fd15`
-
-### 674. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_terminal:f09bff6b51d3a602:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:14`
-- 结构：`launch_terminal` / `rust_string`
-- 原文/表达式：Terminal resume is only supported on macOS
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f09bff6b51d3a602e2406e5cf4584b2fbe9e498381f73f7dca581784cdadf7bb`
-
-### 675. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_terminal:7e7c304bae2ae4c4:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:30`
-- 结构：`launch_terminal` / `rust_string`
-- 原文/表达式：Unsupported terminal target: {target}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`7e7c304bae2ae4c47ac06b78b29c1ef22b98587f8016859f1b1635721fa0c807`
-
-### 676. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_macos_terminal:03037b4dbc6e36a7:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:48`
-- 结构：`launch_macos_terminal` / `rust_string`
-- 原文/表达式：Failed to launch Terminal: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`03037b4dbc6e36a74070e26d3dc918a26ea1112e8146bc1c02b372c101a3fe81`
-
-### 677. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_macos_terminal:a48cb276b99b18de:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:53`
-- 结构：`launch_macos_terminal` / `rust_string`
-- 原文/表达式：Terminal command execution failed
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`a48cb276b99b18de6ea972b92f53550cfb70479021e4aba7a065a6ee13025109`
-
-### 678. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_otty:f6e4eefa01cd5330:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:96`
-- 结构：`launch_otty` / `rust_string`
-- 原文/表达式：Failed to launch Otty CLI: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f6e4eefa01cd5330e6186a82ba88def52826e82472ff44d6b7b98d9d98cb6202`
-
-### 679. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_otty:f6e4eefa01cd5330:002`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:104`
-- 结构：`launch_otty` / `rust_string`
-- 原文/表达式：Failed to launch Otty CLI: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f6e4eefa01cd5330e6186a82ba88def52826e82472ff44d6b7b98d9d98cb6202`
-
-### 680. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_otty:4bd98b81d1d529fb:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:110`
-- 结构：`launch_otty` / `rust_string`
-- 原文/表达式：Failed to launch Otty: {}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`4bd98b81d1d529fbd858b6e4366eb1e7115405f349266f02b0a4ca4526c4e2f2`
-
-### 681. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_iterm:5a611b21e5a6755f:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:174`
-- 结构：`launch_iterm` / `rust_string`
-- 原文/表达式：Failed to launch iTerm: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`5a611b21e5a6755f1bb4f00bce47011ad8844715310ba01aab9f9f60c4f02b29`
-
-### 682. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_iterm:3b845abb511aebca:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:179`
-- 结构：`launch_iterm` / `rust_string`
-- 原文/表达式：iTerm command execution failed
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`3b845abb511aebca261ca0584400ecfa4034e0575054402e5129823acec43b31`
-
-### 683. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_ghostty:0394bf98437f2453:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:208`
-- 结构：`launch_ghostty` / `rust_string`
-- 原文/表达式：Failed to launch Ghostty: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`0394bf98437f245388ea86f55f3d05c40846c8ecba3cd4d588b8b164a670431d`
-
-### 684. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_ghostty:3488992937ede53f:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:213`
-- 结构：`launch_ghostty` / `rust_string`
-- 原文/表达式：Failed to launch Ghostty. Make sure it is installed.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`3488992937ede53f08da990af76991036d1dd5b1511c2e6bb068e79216dfeecf`
-
-### 685. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_kitty:f9de3fd8def01b7d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:233`
-- 结构：`launch_kitty` / `rust_string`
-- 原文/表达式：Failed to launch Kitty: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`f9de3fd8def01b7df33f03d5f48bb588afa2b0106fbd9edf1f963d846e1db1d6`
-
-### 686. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_kitty:82d49043df71995d:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:238`
-- 结构：`launch_kitty` / `rust_string`
-- 原文/表达式：Failed to launch Kitty. Make sure it is installed.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`82d49043df71995d1bb09c5c61ba95f843aa58d9a06ecc06a001bb0f5109590a`
-
-### 687. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_wezterm:1ab995e60d915981:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:250`
-- 结构：`launch_wezterm` / `rust_string`
-- 原文/表达式：Failed to launch WezTerm: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`1ab995e60d915981182a9d475df50d9631c619a28467d92d99f6f36e63a565c5`
-
-### 688. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_wezterm:d2220e34bb311310:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:255`
-- 结构：`launch_wezterm` / `rust_string`
-- 原文/表达式：Failed to launch WezTerm.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`d2220e34bb311310b451e4db0f75198f5b6c5cf3371dc7ab29ed068e173a1cf6`
-
-### 689. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_kaku:00c478f8d6a13ef0:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:266`
-- 结构：`launch_kaku` / `rust_string`
-- 原文/表达式：Failed to launch Kaku: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`00c478f8d6a13ef0e33c7d968343499aad7b6913efbb912ce7913de730506fa8`
-
-### 690. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_kaku:3a3e9d2fba97f066:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:271`
-- 结构：`launch_kaku` / `rust_string`
-- 原文/表达式：Failed to launch Kaku.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`3a3e9d2fba97f066c7f97483e6aa4240ba10db8bcca493dd15753600d299594d`
-
-### 691. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_warp:4d465e26da7e92a2:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:318`
-- 结构：`launch_warp` / `rust_string`
-- 原文/表达式：Failed to create temporary script file for launching Warp: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`4d465e26da7e92a256fbad87e00f8e779ffb4b38c3910274cd84bf029501a471`
-
-### 692. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_warp:239102251dc99214:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:329`
-- 结构：`launch_warp` / `rust_string`
-- 原文/表达式：Failed to write to temporary script file for Warp: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`239102251dc99214e588dabd968dbcb09c29a7338ba9a4b5adaeaab49677a10d`
-
-### 693. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_warp:32103bfecc34d88e:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:340`
-- 结构：`launch_warp` / `rust_string`
-- 原文/表达式：Failed to launch Warp: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`32103bfecc34d88ef65fde5b8d4b350a953bcd5985d7df17c0946bcef8c8f497`
-
-### 694. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_warp:ee136904ade38a84:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:345`
-- 结构：`launch_warp` / `rust_string`
-- 原文/表达式：Failed to launch Warp.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`ee136904ade38a845396ed38f196a6c321add7cc39cb81385e7563723d83184e`
-
-### 695. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_alacritty:1571f83fe459c1b8:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:369`
-- 结构：`launch_alacritty` / `rust_string`
-- 原文/表达式：Failed to launch Alacritty: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`1571f83fe459c1b8eab9f710ee439728c81d2919a63dc7799cba0fa212f081a0`
-
-### 696. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_alacritty:853dd0577ff7cdea:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:374`
-- 结构：`launch_alacritty` / `rust_string`
-- 原文/表达式：Failed to launch Alacritty.
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`853dd0577ff7cdea6f1f0e5e461a44f12033628501bb7b18425f69a1d539d0b7`
-
-### 697. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_custom:990747259f834eaf:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:386`
-- 结构：`launch_custom` / `rust_string`
-- 原文/表达式：Custom terminal command template is empty
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`990747259f834eafa0f1d309525e63133457ceed7590a8ea80c3530e83914cca`
-
-### 698. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_custom:17c1692504d0ad38:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:411`
-- 结构：`launch_custom` / `rust_string`
-- 原文/表达式：Failed to execute custom terminal launcher: {e}
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`17c1692504d0ad38783f6131aedb46181c3daa397f44b0847d6fb0f3a306c0f9`
-
-### 699. `hardcoded:src-tauri/src/session_manager/terminal/mod.rs:launch_custom:07d688115cf430b8:001`
-
-- 状态：待核实
-- 文件：`src-tauri/src/session_manager/terminal/mod.rs:416`
-- 结构：`launch_custom` / `rust_string`
-- 原文/表达式：Custom terminal execution returned error code
-- 判定原因：该英文错误字符串位于后端返回路径，是否直接展示取决于调用方；目前没有韩语资源。
-- 处理方向：追踪命令调用与前端展示链路，确认后改为结构化错误键。
-- 严重程度：中
-- 指纹：`07d688115cf430b8edaffe739790ec3a67aba3c792a695f100dde8ab40c4e371`
-
-### 700. `dynamic-i18n:src/App.tsx:handleEnablePiProvider:779cd86c8074aae3:001`
+### 1. `dynamic-i18n:src/App.tsx:handleEnablePiProvider:779cd86c8074aae3:001`
 
 - 状态：待核实
 - 文件：`src/App.tsx:362`
@@ -13616,7 +702,7 @@
 - 严重程度：中
 - 指纹：`779cd86c8074aae3ab74e44d7f9a4112386e799d3c4d3602bd8f5d133a9b3797`
 
-### 701. `dynamic-i18n:src/App.tsx:handleEnablePiProvider:4d25811d6f7f74f8:001`
+### 2. `dynamic-i18n:src/App.tsx:handleEnablePiProvider:4d25811d6f7f74f8:001`
 
 - 状态：待核实
 - 文件：`src/App.tsx:370`
@@ -13627,7 +713,7 @@
 - 严重程度：中
 - 指纹：`4d25811d6f7f74f874704e452d4fc963c30ca9736c0fa17effb5e174eddec755`
 
-### 702. `dynamic-i18n:src/App.tsx:handleConfirmAction:9f662d6a31a429e7:001`
+### 3. `dynamic-i18n:src/App.tsx:handleConfirmAction:9f662d6a31a429e7:001`
 
 - 状态：待核实
 - 文件：`src/App.tsx:1049`
@@ -13638,7 +724,7 @@
 - 严重程度：中
 - 指纹：`9f662d6a31a429e7abb4e270235f4a3145d221a103f551f9133578be4d227cea`
 
-### 703. `dynamic-i18n:src/App.tsx:handleDuplicateProvider:fe3b12eac8542ca4:001`
+### 4. `dynamic-i18n:src/App.tsx:handleDuplicateProvider:fe3b12eac8542ca4:001`
 
 - 状态：待核实
 - 文件：`src/App.tsx:1103`
@@ -13651,7 +737,7 @@
 - 严重程度：中
 - 指纹：`fe3b12eac8542ca4453864a00732b5936729c25137498b39d884736efaa8313e`
 
-### 704. `hardcoded:src/App.tsx:duplicatedProvider:efdc2dc862a451d8:001`
+### 5. `hardcoded:src/App.tsx:duplicatedProvider:efdc2dc862a451d8:001`
 
 - 状态：待核实
 - 文件：`src/App.tsx:1120`
@@ -13662,7 +748,7 @@
 - 严重程度：低
 - 指纹：`efdc2dc862a451d8d0191b12d29172b2e68bd1e019e3e245497774d15e58971e`
 
-### 705. `hardcoded:src/App.tsx:handleDuplicateProvider:b6d02c61ff9c358e:001`
+### 6. `hardcoded:src/App.tsx:handleDuplicateProvider:b6d02c61ff9c358e:001`
 
 - 状态：待核实
 - 文件：`src/App.tsx:1173`
@@ -13673,7 +759,7 @@
 - 严重程度：低
 - 指纹：`b6d02c61ff9c358e11ab0b11fcbf983c2b65d33e89d407606060bd0be650b418`
 
-### 706. `hardcoded:src/App.tsx:handleDuplicateProvider:fa141baa557cdc46:001`
+### 7. `hardcoded:src/App.tsx:handleDuplicateProvider:fa141baa557cdc46:001`
 
 - 状态：待核实
 - 文件：`src/App.tsx:1200`
@@ -13684,7 +770,7 @@
 - 严重程度：低
 - 指纹：`fa141baa557cdc463bcb34459fe1ab3f5830e53e408b85b9257b131f7fdaeb1d`
 
-### 707. `hardcoded:src/components/DatabaseUpgrade.tsx:DatabaseUpgrade:96019d7f543d5d45:001`
+### 8. `hardcoded:src/components/DatabaseUpgrade.tsx:DatabaseUpgrade:96019d7f543d5d45:001`
 
 - 状态：待核实
 - 文件：`src/components/DatabaseUpgrade.tsx:235`
@@ -13695,7 +781,7 @@
 - 严重程度：低
 - 指纹：`96019d7f543d5d4552d9c21f3e7072b5fa79eb82a8e0e88566d578678dcda9cd`
 
-### 708. `hardcoded:src/components/DeepLinkImportDialog.tsx:maskedApiKey:1f0f80da914365a2:001`
+### 9. `hardcoded:src/components/DeepLinkImportDialog.tsx:maskedApiKey:1f0f80da914365a2:001`
 
 - 状态：待核实
 - 文件：`src/components/DeepLinkImportDialog.tsx:386`
@@ -13706,7 +792,7 @@
 - 严重程度：低
 - 指纹：`1f0f80da914365a220efd3e94eaf0ea65bdd28426fd1cb63e78c441332c25488`
 
-### 709. `dynamic-i18n:src/components/DeepLinkImportDialog.tsx:DeepLinkImportDialog:dfdad65bcce899e6:001`
+### 10. `dynamic-i18n:src/components/DeepLinkImportDialog.tsx:DeepLinkImportDialog:dfdad65bcce899e6:001`
 
 - 状态：待核实
 - 文件：`src/components/DeepLinkImportDialog.tsx:575`
@@ -13717,7 +803,7 @@
 - 严重程度：中
 - 指纹：`dfdad65bcce899e6341ac9fb04a16b9a165a38c0c0a5341e9df1076f6d4bac0f`
 
-### 710. `hardcoded:src/components/DeepLinkImportDialog.tsx:DeepLinkImportDialog:4689fe1c9f813640:001`
+### 11. `hardcoded:src/components/DeepLinkImportDialog.tsx:DeepLinkImportDialog:4689fe1c9f813640:001`
 
 - 状态：待核实
 - 文件：`src/components/DeepLinkImportDialog.tsx:905`
@@ -13728,7 +814,7 @@
 - 严重程度：低
 - 指纹：`4689fe1c9f8136400d0496d8ae0148a9839c61a8c3ef8d17e3299e38d4a46943`
 
-### 711. `hardcoded:src/components/DeepLinkImportDialog.tsx:DeepLinkImportDialog:dd1cb78915b1fd59:001`
+### 12. `hardcoded:src/components/DeepLinkImportDialog.tsx:DeepLinkImportDialog:dd1cb78915b1fd59:001`
 
 - 状态：待核实
 - 文件：`src/components/DeepLinkImportDialog.tsx:936`
@@ -13739,7 +825,7 @@
 - 严重程度：低
 - 指纹：`dd1cb78915b1fd5934a0a4c6d131e722deed437c4c594b9ec5aefa02d924fdd5`
 
-### 712. `dynamic-i18n:src/components/IconPicker.tsx:handleFileChange:16fefef2206f4fc1:001`
+### 13. `dynamic-i18n:src/components/IconPicker.tsx:handleFileChange:16fefef2206f4fc1:001`
 
 - 状态：待核实
 - 文件：`src/components/IconPicker.tsx:116`
@@ -13750,7 +836,7 @@
 - 严重程度：中
 - 指纹：`16fefef2206f4fc17164e7f45bdfee2456257b2d9e91e15a66dc0b147119a614`
 
-### 713. `hardcoded:src/components/JsonEditor.tsx:baseTheme:b526669093ff1ced:001`
+### 14. `hardcoded:src/components/JsonEditor.tsx:baseTheme:b526669093ff1ced:001`
 
 - 状态：待核实
 - 文件：`src/components/JsonEditor.tsx:156`
@@ -13761,7 +847,7 @@
 - 严重程度：低
 - 指纹：`b526669093ff1cedb320b8b8fa8ac9f3aef7add6d0aff313f8d3bfdb448a6c3f`
 
-### 714. `hardcoded:src/components/JsonEditor.tsx:baseTheme:b526669093ff1ced:002`
+### 15. `hardcoded:src/components/JsonEditor.tsx:baseTheme:b526669093ff1ced:002`
 
 - 状态：待核实
 - 文件：`src/components/JsonEditor.tsx:169`
@@ -13772,7 +858,7 @@
 - 严重程度：低
 - 指纹：`b526669093ff1cedb320b8b8fa8ac9f3aef7add6d0aff313f8d3bfdb448a6c3f`
 
-### 715. `hardcoded:src/components/JsonEditor.tsx:baseTheme:00079d61aabef6cd:001`
+### 16. `hardcoded:src/components/JsonEditor.tsx:baseTheme:00079d61aabef6cd:001`
 
 - 状态：待核实
 - 文件：`src/components/JsonEditor.tsx:172`
@@ -13783,7 +869,7 @@
 - 严重程度：低
 - 指纹：`00079d61aabef6cd94e2d65cfc72d77cdf15e8a73238038391eb96790ad56fa4`
 
-### 716. `hardcoded:src/components/JsonEditor.tsx:baseTheme:f2ce477a87688125:001`
+### 17. `hardcoded:src/components/JsonEditor.tsx:baseTheme:f2ce477a87688125:001`
 
 - 状态：待核实
 - 文件：`src/components/JsonEditor.tsx:173`
@@ -13794,7 +880,7 @@
 - 严重程度：低
 - 指纹：`f2ce477a87688125ce091bdfe93639564f19c6b34c54f66e3fad5664b706c84d`
 
-### 717. `hardcoded:src/components/JsonEditor.tsx:baseTheme:133c9f619bb5ead3:001`
+### 18. `hardcoded:src/components/JsonEditor.tsx:baseTheme:133c9f619bb5ead3:001`
 
 - 状态：待核实
 - 文件：`src/components/JsonEditor.tsx:176`
@@ -13805,7 +891,7 @@
 - 严重程度：低
 - 指纹：`133c9f619bb5ead3accccc6dbc85f1c8884f6df2c4268dc114a1abc59b1f352d`
 
-### 718. `hardcoded:src/components/JsonEditor.tsx:baseTheme:c4b4a4d89aa6ed5e:001`
+### 19. `hardcoded:src/components/JsonEditor.tsx:baseTheme:c4b4a4d89aa6ed5e:001`
 
 - 状态：待核实
 - 文件：`src/components/JsonEditor.tsx:179`
@@ -13816,7 +902,7 @@
 - 严重程度：低
 - 指纹：`c4b4a4d89aa6ed5ebc17ea88aa52cdd6228ca467fac99e5bd86627b016822b26`
 
-### 719. `hardcoded:src/components/JsonEditor.tsx:baseTheme:c4b4a4d89aa6ed5e:002`
+### 20. `hardcoded:src/components/JsonEditor.tsx:baseTheme:c4b4a4d89aa6ed5e:002`
 
 - 状态：待核实
 - 文件：`src/components/JsonEditor.tsx:182`
@@ -13827,7 +913,7 @@
 - 严重程度：低
 - 指纹：`c4b4a4d89aa6ed5ebc17ea88aa52cdd6228ca467fac99e5bd86627b016822b26`
 
-### 720. `hardcoded:src/components/JsonEditor.tsx:sizingTheme:e32cda8c0d120e75:001`
+### 21. `hardcoded:src/components/JsonEditor.tsx:sizingTheme:e32cda8c0d120e75:001`
 
 - 状态：待核实
 - 文件：`src/components/JsonEditor.tsx:194`
@@ -13838,7 +924,7 @@
 - 严重程度：低
 - 指纹：`e32cda8c0d120e755364c4ebd8c51be48a4a623329d216cdbfb5febe7ad81664`
 
-### 721. `hardcoded:src/components/JsonEditor.tsx:JsonEditor:b526669093ff1ced:001`
+### 22. `hardcoded:src/components/JsonEditor.tsx:JsonEditor:b526669093ff1ced:001`
 
 - 状态：待核实
 - 文件：`src/components/JsonEditor.tsx:226`
@@ -13849,7 +935,7 @@
 - 严重程度：低
 - 指纹：`b526669093ff1cedb320b8b8fa8ac9f3aef7add6d0aff313f8d3bfdb448a6c3f`
 
-### 722. `hardcoded:src/components/JsonEditor.tsx:JsonEditor:b526669093ff1ced:002`
+### 23. `hardcoded:src/components/JsonEditor.tsx:JsonEditor:b526669093ff1ced:002`
 
 - 状态：待核实
 - 文件：`src/components/JsonEditor.tsx:239`
@@ -13860,7 +946,7 @@
 - 严重程度：低
 - 指纹：`b526669093ff1cedb320b8b8fa8ac9f3aef7add6d0aff313f8d3bfdb448a6c3f`
 
-### 723. `hardcoded:src/components/JsonEditor.tsx:JsonEditor:00079d61aabef6cd:001`
+### 24. `hardcoded:src/components/JsonEditor.tsx:JsonEditor:00079d61aabef6cd:001`
 
 - 状态：待核实
 - 文件：`src/components/JsonEditor.tsx:242`
@@ -13871,7 +957,7 @@
 - 严重程度：低
 - 指纹：`00079d61aabef6cd94e2d65cfc72d77cdf15e8a73238038391eb96790ad56fa4`
 
-### 724. `hardcoded:src/components/JsonEditor.tsx:JsonEditor:f2ce477a87688125:001`
+### 25. `hardcoded:src/components/JsonEditor.tsx:JsonEditor:f2ce477a87688125:001`
 
 - 状态：待核实
 - 文件：`src/components/JsonEditor.tsx:243`
@@ -13882,7 +968,7 @@
 - 严重程度：低
 - 指纹：`f2ce477a87688125ce091bdfe93639564f19c6b34c54f66e3fad5664b706c84d`
 
-### 725. `hardcoded:src/components/JsonEditor.tsx:JsonEditor:133c9f619bb5ead3:001`
+### 26. `hardcoded:src/components/JsonEditor.tsx:JsonEditor:133c9f619bb5ead3:001`
 
 - 状态：待核实
 - 文件：`src/components/JsonEditor.tsx:246`
@@ -13893,7 +979,7 @@
 - 严重程度：低
 - 指纹：`133c9f619bb5ead3accccc6dbc85f1c8884f6df2c4268dc114a1abc59b1f352d`
 
-### 726. `hardcoded:src/components/JsonEditor.tsx:JsonEditor:c4b4a4d89aa6ed5e:001`
+### 27. `hardcoded:src/components/JsonEditor.tsx:JsonEditor:c4b4a4d89aa6ed5e:001`
 
 - 状态：待核实
 - 文件：`src/components/JsonEditor.tsx:249`
@@ -13904,7 +990,7 @@
 - 严重程度：低
 - 指纹：`c4b4a4d89aa6ed5ebc17ea88aa52cdd6228ca467fac99e5bd86627b016822b26`
 
-### 727. `hardcoded:src/components/JsonEditor.tsx:JsonEditor:c4b4a4d89aa6ed5e:002`
+### 28. `hardcoded:src/components/JsonEditor.tsx:JsonEditor:c4b4a4d89aa6ed5e:002`
 
 - 状态：待核实
 - 文件：`src/components/JsonEditor.tsx:252`
@@ -13915,7 +1001,7 @@
 - 严重程度：低
 - 指纹：`c4b4a4d89aa6ed5ebc17ea88aa52cdd6228ca467fac99e5bd86627b016822b26`
 
-### 728. `hardcoded:src/components/MarkdownEditor.tsx:baseTheme:e32cda8c0d120e75:001`
+### 29. `hardcoded:src/components/MarkdownEditor.tsx:baseTheme:e32cda8c0d120e75:001`
 
 - 状态：待核实
 - 文件：`src/components/MarkdownEditor.tsx:45`
@@ -13926,7 +1012,7 @@
 - 严重程度：低
 - 指纹：`e32cda8c0d120e755364c4ebd8c51be48a4a623329d216cdbfb5febe7ad81664`
 
-### 729. `hardcoded:src/components/MarkdownEditor.tsx:baseTheme:c05176e6e7136a09:001`
+### 30. `hardcoded:src/components/MarkdownEditor.tsx:baseTheme:c05176e6e7136a09:001`
 
 - 状态：待核实
 - 文件：`src/components/MarkdownEditor.tsx:48`
@@ -13937,7 +1023,7 @@
 - 严重程度：低
 - 指纹：`c05176e6e7136a092820bc0e067cdbd97345f8b58adb9a733047a3712244c08c`
 
-### 730. `hardcoded:src/components/MarkdownEditor.tsx:baseTheme:cbabaa1ff400c8a9:001`
+### 31. `hardcoded:src/components/MarkdownEditor.tsx:baseTheme:cbabaa1ff400c8a9:001`
 
 - 状态：待核实
 - 文件：`src/components/MarkdownEditor.tsx:51`
@@ -13948,7 +1034,7 @@
 - 严重程度：低
 - 指纹：`cbabaa1ff400c8a95e9e26245a8248e3e4a056ee7376f2123a6cb9d0cd1674a6`
 
-### 731. `hardcoded:src/components/ProviderIcon.tsx:fallbackFontSize:0295b0c36d914862:001`
+### 32. `hardcoded:src/components/ProviderIcon.tsx:fallbackFontSize:0295b0c36d914862:001`
 
 - 状态：待核实
 - 文件：`src/components/ProviderIcon.tsx:121`
@@ -13959,7 +1045,7 @@
 - 严重程度：低
 - 指纹：`0295b0c36d91486239274f3ce34d8a756ced28b7bbd728d6ac60b506da3fcd0d`
 
-### 732. `dynamic-i18n:src/components/SubscriptionQuotaFooter.tsx:tierLabel:594c5d7f4330650b:001`
+### 33. `dynamic-i18n:src/components/SubscriptionQuotaFooter.tsx:tierLabel:594c5d7f4330650b:001`
 
 - 状态：待核实
 - 文件：`src/components/SubscriptionQuotaFooter.tsx:129`
@@ -13970,7 +1056,7 @@
 - 严重程度：中
 - 指纹：`594c5d7f4330650b8869a1eff51f6e2fe4a277881c240a0a19e4b91e46dac546`
 
-### 733. `dynamic-i18n:src/components/SubscriptionQuotaFooter.tsx:tierShortLabel:cc8832922601ce1f:001`
+### 34. `dynamic-i18n:src/components/SubscriptionQuotaFooter.tsx:tierShortLabel:cc8832922601ce1f:001`
 
 - 状态：待核实
 - 文件：`src/components/SubscriptionQuotaFooter.tsx:135`
@@ -13981,7 +1067,7 @@
 - 严重程度：中
 - 指纹：`cc8832922601ce1f1074be0045da3942eed6b0d23f9618bb02fdf597641e861b`
 
-### 734. `dynamic-i18n:src/components/SubscriptionQuotaFooter.tsx:label:ad936fcbed631fa6:001`
+### 35. `dynamic-i18n:src/components/SubscriptionQuotaFooter.tsx:label:ad936fcbed631fa6:001`
 
 - 状态：待核实
 - 文件：`src/components/SubscriptionQuotaFooter.tsx:152`
@@ -13992,7 +1078,7 @@
 - 严重程度：中
 - 指纹：`ad936fcbed631fa67e05c3ea03953905221c9d46af0616b70badf105a966fb11`
 
-### 735. `hardcoded:src/components/UsageFooter.tsx:key:9362b5b84393faf0:001`
+### 36. `hardcoded:src/components/UsageFooter.tsx:key:9362b5b84393faf0:001`
 
 - 状态：待核实
 - 文件：`src/components/UsageFooter.tsx:64`
@@ -14003,7 +1089,7 @@
 - 严重程度：低
 - 指纹：`9362b5b84393faf07321373fd9ad946ae174ef83bc648088c02d41bf49698fe8`
 
-### 736. `hardcoded:src/components/UsageFooter.tsx:amount:272d40f9ddbe07f5:001`
+### 37. `hardcoded:src/components/UsageFooter.tsx:amount:272d40f9ddbe07f5:001`
 
 - 状态：待核实
 - 文件：`src/components/UsageFooter.tsx:66`
@@ -14014,7 +1100,7 @@
 - 严重程度：低
 - 指纹：`272d40f9ddbe07f503c96770f5bd6f53d274e0c90a9afea654f787400db3dc01`
 
-### 737. `hardcoded:src/components/UsageFooter.tsx:amount:1c0605d00a26c685:001`
+### 38. `hardcoded:src/components/UsageFooter.tsx:amount:1c0605d00a26c685:001`
 
 - 状态：待核实
 - 文件：`src/components/UsageFooter.tsx:66`
@@ -14025,7 +1111,7 @@
 - 严重程度：低
 - 指纹：`1c0605d00a26c685620ce3f86006981b212a7a23bef2211d7de973c55ab2e1a3`
 
-### 738. `hardcoded:src/components/UsageFooter.tsx:detail:632b5e14fd752866:001`
+### 39. `hardcoded:src/components/UsageFooter.tsx:detail:632b5e14fd752866:001`
 
 - 状态：待核实
 - 文件：`src/components/UsageFooter.tsx:69`
@@ -14036,7 +1122,7 @@
 - 严重程度：低
 - 指纹：`632b5e14fd7528662e60320a23b31fc8250c1715da919fb697a7ff9a3ada6a49`
 
-### 739. `hardcoded:src/components/UsageFooter.tsx:detail:9836ac80e6765d0a:001`
+### 40. `hardcoded:src/components/UsageFooter.tsx:detail:9836ac80e6765d0a:001`
 
 - 状态：待核实
 - 文件：`src/components/UsageFooter.tsx:70`
@@ -14047,7 +1133,7 @@
 - 严重程度：低
 - 指纹：`9836ac80e6765d0ac80426b2b3aa31802e0e0143849f0071aa3c590a2f1b2b96`
 
-### 740. `hardcoded:src/components/UsageFooter.tsx:planLine:9836ac80e6765d0a:001`
+### 41. `hardcoded:src/components/UsageFooter.tsx:planLine:9836ac80e6765d0a:001`
 
 - 状态：待核实
 - 文件：`src/components/UsageFooter.tsx:93`
@@ -14058,7 +1144,7 @@
 - 严重程度：低
 - 指纹：`9836ac80e6765d0ac80426b2b3aa31802e0e0143849f0071aa3c590a2f1b2b96`
 
-### 741. `dynamic-i18n:src/components/UsageScriptModal.tsx:UsageScriptModal:f52cef484535047b:001`
+### 42. `dynamic-i18n:src/components/UsageScriptModal.tsx:UsageScriptModal:f52cef484535047b:001`
 
 - 状态：待核实
 - 文件：`src/components/UsageScriptModal.tsx:988`
@@ -14069,7 +1155,7 @@
 - 严重程度：中
 - 指纹：`f52cef484535047b84076cc20d0d6ab8a036bf7c19ac95a1e96bd959dce84ce0`
 
-### 742. `dynamic-i18n:src/components/WhatsNewDialog.tsx:WhatsNewDialog:3f85b3caaa1db65c:001`
+### 43. `dynamic-i18n:src/components/WhatsNewDialog.tsx:WhatsNewDialog:3f85b3caaa1db65c:001`
 
 - 状态：待核实
 - 文件：`src/components/WhatsNewDialog.tsx:123`
@@ -14080,7 +1166,7 @@
 - 严重程度：中
 - 指纹：`3f85b3caaa1db65c266a4b88be6939885791f7c36060642eee5f98ac55453a1d`
 
-### 743. `hardcoded:src/components/apps/AppsPage.tsx:APP_ROW_GRID:7f012046c274f80a:001`
+### 44. `hardcoded:src/components/apps/AppsPage.tsx:APP_ROW_GRID:7f012046c274f80a:001`
 
 - 状态：待核实
 - 文件：`src/components/apps/AppsPage.tsx:157`
@@ -14091,7 +1177,7 @@
 - 严重程度：低
 - 指纹：`7f012046c274f80a8894ec7bc2a343a5afae4223b8d358c07a2b7c9df9ad4e11`
 
-### 744. `hardcoded:src/components/apps/AppsPage.tsx:formatCheckedAt:eac4e940aeeff445:001`
+### 45. `hardcoded:src/components/apps/AppsPage.tsx:formatCheckedAt:eac4e940aeeff445:001`
 
 - 状态：待核实
 - 文件：`src/components/apps/AppsPage.tsx:168`
@@ -14102,7 +1188,7 @@
 - 严重程度：低
 - 指纹：`eac4e940aeeff4450e7e3cc40432e540f556df39c0f33a06424d98e95dcb4cda`
 
-### 745. `dynamic-i18n:src/components/apps/AppsPage.tsx:sections:88b10ec29471d286:001`
+### 46. `dynamic-i18n:src/components/apps/AppsPage.tsx:sections:88b10ec29471d286:001`
 
 - 状态：待核实
 - 文件：`src/components/apps/AppsPage.tsx:217`
@@ -14115,7 +1201,7 @@
 - 严重程度：中
 - 指纹：`88b10ec29471d286f568d96fe5a96005b2e44592ebd16daef0c067f09d0b56d8`
 
-### 746. `hardcoded:src/components/apps/AppsPage.tsx:envBadge:2dd110cb1990361d:001`
+### 47. `hardcoded:src/components/apps/AppsPage.tsx:envBadge:2dd110cb1990361d:001`
 
 - 状态：待核实
 - 文件：`src/components/apps/AppsPage.tsx:749`
@@ -14126,7 +1212,7 @@
 - 严重程度：低
 - 指纹：`2dd110cb1990361d6b2dd2db2dc6891012b42fbf449f5c15b2d234ac077c8276`
 
-### 747. `dynamic-i18n:src/components/apps/AppsPage.tsx:envBadge:cfc322af6c201189:001`
+### 48. `dynamic-i18n:src/components/apps/AppsPage.tsx:envBadge:cfc322af6c201189:001`
 
 - 状态：待核实
 - 文件：`src/components/apps/AppsPage.tsx:749`
@@ -14137,7 +1223,7 @@
 - 严重程度：中
 - 指纹：`cfc322af6c20118946129fe571601732b788bf744b7587675baf8f51ca169d3f`
 
-### 748. `hardcoded:src/components/apps/AppsPage.tsx:envBadge:fe929c298d19df00:001`
+### 49. `hardcoded:src/components/apps/AppsPage.tsx:envBadge:fe929c298d19df00:001`
 
 - 状态：待核实
 - 文件：`src/components/apps/AppsPage.tsx:749`
@@ -14148,7 +1234,7 @@
 - 严重程度：低
 - 指纹：`fe929c298d19df002764ac0fcc4bd95d3f96f569c9af11777411f4f0aa026742`
 
-### 749. `dynamic-i18n:src/components/apps/AppsPage.tsx:installHint:a7313ac9d3fdc954:001`
+### 50. `dynamic-i18n:src/components/apps/AppsPage.tsx:installHint:a7313ac9d3fdc954:001`
 
 - 状态：待核实
 - 文件：`src/components/apps/AppsPage.tsx:801`
@@ -14159,7 +1245,7 @@
 - 严重程度：中
 - 指纹：`a7313ac9d3fdc95467738f3e8d22bfc93d7f9b14c75fe5c47b7ec556ceb63883`
 
-### 750. `hardcoded:src/components/apps/ManualUninstallDialog.tsx:environmentLabelForTool:94385bfc2ba7421b:001`
+### 51. `hardcoded:src/components/apps/ManualUninstallDialog.tsx:environmentLabelForTool:94385bfc2ba7421b:001`
 
 - 状态：待核实
 - 文件：`src/components/apps/ManualUninstallDialog.tsx:72`
@@ -14170,7 +1256,7 @@
 - 严重程度：低
 - 指纹：`94385bfc2ba7421bead570d98aebcb55e2188e7639d00d856d22ea77de2ea5bc`
 
-### 751. `hardcoded:src/components/apps/ManualUninstallDialog.tsx:ManualUninstallDialog:9a2afcf76256a500:001`
+### 52. `hardcoded:src/components/apps/ManualUninstallDialog.tsx:ManualUninstallDialog:9a2afcf76256a500:001`
 
 - 状态：待核实
 - 文件：`src/components/apps/ManualUninstallDialog.tsx:172`
@@ -14181,7 +1267,7 @@
 - 严重程度：低
 - 指纹：`9a2afcf76256a50095dbe8262463ad8980a29cdc6ab0c9df756bc3630d8faaa3`
 
-### 752. `hardcoded:src/components/apps/useToolManagement.ts:posixScriptInstallCommand:ac5e91f05ec20efe:001`
+### 53. `hardcoded:src/components/apps/useToolManagement.ts:posixScriptInstallCommand:ac5e91f05ec20efe:001`
 
 - 状态：待核实
 - 文件：`src/components/apps/useToolManagement.ts:106`
@@ -14192,7 +1278,7 @@
 - 严重程度：低
 - 指纹：`ac5e91f05ec20efe85d89714c0f3bde6634f98e55548db73093ad63e593eb56b`
 
-### 753. `hardcoded:src/components/apps/useToolManagement.ts:HERMES_WINDOWS_INSTALL_SCRIPT:036ec285e5e368b4:001`
+### 54. `hardcoded:src/components/apps/useToolManagement.ts:HERMES_WINDOWS_INSTALL_SCRIPT:036ec285e5e368b4:001`
 
 - 状态：待核实
 - 文件：`src/components/apps/useToolManagement.ts:109`
@@ -14203,7 +1289,7 @@
 - 严重程度：低
 - 指纹：`036ec285e5e368b43375dc25386c36e1e02fce37adcb5996a6a3e2aae72811d8`
 
-### 754. `hardcoded:src/components/apps/useToolManagement.ts:HERMES_WINDOWS_INSTALL_COMMAND:1a14b43a642f417d:001`
+### 55. `hardcoded:src/components/apps/useToolManagement.ts:HERMES_WINDOWS_INSTALL_COMMAND:1a14b43a642f417d:001`
 
 - 状态：待核实
 - 文件：`src/components/apps/useToolManagement.ts:120`
@@ -14216,7 +1302,7 @@
 - 严重程度：低
 - 指纹：`1a14b43a642f417d35f3640a1bc3af535d050fc27591cd198a2733ff15dc5ab1`
 
-### 755. `hardcoded:src/components/apps/useToolManagement.ts:MCODE_WINDOWS_INSTALL_COMMAND:d75acf25340b91af:001`
+### 56. `hardcoded:src/components/apps/useToolManagement.ts:MCODE_WINDOWS_INSTALL_COMMAND:d75acf25340b91af:001`
 
 - 状态：待核实
 - 文件：`src/components/apps/useToolManagement.ts:124`
@@ -14229,7 +1315,7 @@
 - 严重程度：低
 - 指纹：`d75acf25340b91af1db58e92246105b39dcf35cd2c848d5f68744cfa0a1c998f`
 
-### 756. `hardcoded:src/components/apps/useToolManagement.ts:MCODE_WINDOWS_INSTALL_COMMAND:02fdf84a68f89170:001`
+### 57. `hardcoded:src/components/apps/useToolManagement.ts:MCODE_WINDOWS_INSTALL_COMMAND:02fdf84a68f89170:001`
 
 - 状态：待核实
 - 文件：`src/components/apps/useToolManagement.ts:125`
@@ -14240,7 +1326,7 @@
 - 严重程度：低
 - 指纹：`02fdf84a68f891706db8cc9700fb0986d94f992bd81f9e6ba6a2aa1f3524ba06`
 
-### 757. `hardcoded:src/components/apps/useToolManagement.ts:KIMI_WINDOWS_INSTALL_COMMAND:f56dac5c58fa85df:001`
+### 58. `hardcoded:src/components/apps/useToolManagement.ts:KIMI_WINDOWS_INSTALL_COMMAND:f56dac5c58fa85df:001`
 
 - 状态：待核实
 - 文件：`src/components/apps/useToolManagement.ts:128`
@@ -14253,7 +1339,7 @@
 - 严重程度：低
 - 指纹：`f56dac5c58fa85df3810c6e0718b9bd96c670bac0d019a4067458515beaa64b1`
 
-### 758. `hardcoded:src/components/apps/useToolManagement.ts:KIMI_WINDOWS_INSTALL_COMMAND:e30ca1e94fd4ceef:001`
+### 59. `hardcoded:src/components/apps/useToolManagement.ts:KIMI_WINDOWS_INSTALL_COMMAND:e30ca1e94fd4ceef:001`
 
 - 状态：待核实
 - 文件：`src/components/apps/useToolManagement.ts:129`
@@ -14264,7 +1350,7 @@
 - 严重程度：低
 - 指纹：`e30ca1e94fd4ceefef017b7ff570e74b58041131444f048c814889ad08dacdfc`
 
-### 759. `hardcoded:src/components/apps/useToolManagement.ts:AGY_WINDOWS_INSTALL_COMMAND:2fbd97be8e0b20e9:001`
+### 60. `hardcoded:src/components/apps/useToolManagement.ts:AGY_WINDOWS_INSTALL_COMMAND:2fbd97be8e0b20e9:001`
 
 - 状态：待核实
 - 文件：`src/components/apps/useToolManagement.ts:132`
@@ -14277,7 +1363,7 @@
 - 严重程度：低
 - 指纹：`2fbd97be8e0b20e97f59eb115764832526ac4f3b1f1ae48725e65bcb8400fa6d`
 
-### 760. `hardcoded:src/components/apps/useToolManagement.ts:AGY_WINDOWS_INSTALL_COMMAND:58690d86ff0bfe2b:001`
+### 61. `hardcoded:src/components/apps/useToolManagement.ts:AGY_WINDOWS_INSTALL_COMMAND:58690d86ff0bfe2b:001`
 
 - 状态：待核实
 - 文件：`src/components/apps/useToolManagement.ts:133`
@@ -14288,7 +1374,7 @@
 - 严重程度：低
 - 指纹：`58690d86ff0bfe2b02f17453244484c47b9f9572c22ad4b99cc5709f49327ca9`
 
-### 761. `hardcoded:src/components/apps/useToolManagement.ts:MCODE_NPM_INSTALL_COMMAND:6f64ecd0cbd433ff:001`
+### 62. `hardcoded:src/components/apps/useToolManagement.ts:MCODE_NPM_INSTALL_COMMAND:6f64ecd0cbd433ff:001`
 
 - 状态：待核实
 - 文件：`src/components/apps/useToolManagement.ts:144`
@@ -14299,7 +1385,7 @@
 - 严重程度：低
 - 指纹：`6f64ecd0cbd433ff3688016a95ef72911eb1c8dab4091b7bf7d03ae7398bb040`
 
-### 762. `hardcoded:src/components/apps/useToolManagement.ts:failureDescription:e82e31794a97d93d:001`
+### 63. `hardcoded:src/components/apps/useToolManagement.ts:failureDescription:e82e31794a97d93d:001`
 
 - 状态：待核实
 - 文件：`src/components/apps/useToolManagement.ts:840`
@@ -14310,7 +1396,7 @@
 - 严重程度：低
 - 指纹：`e82e31794a97d93d0ee868b95dc025b2ae2253fb0672682651200e5516bd23dd`
 
-### 763. `dynamic-i18n:src/components/apps/useToolManagement.ts:executeRun:fa889cec796591ae:001`
+### 64. `dynamic-i18n:src/components/apps/useToolManagement.ts:executeRun:fa889cec796591ae:001`
 
 - 状态：待核实
 - 文件：`src/components/apps/useToolManagement.ts:866`
@@ -14323,7 +1409,7 @@
 - 严重程度：中
 - 指纹：`fa889cec796591ae640bbcb93cd3e84c8957360cf229a01204a9f6db6f6cce7e`
 
-### 764. `hardcoded:src/components/common/AppToggleGroup.tsx:AppToggleGroup:9082376c2ee7a698:001`
+### 65. `hardcoded:src/components/common/AppToggleGroup.tsx:AppToggleGroup:9082376c2ee7a698:001`
 
 - 状态：待核实
 - 文件：`src/components/common/AppToggleGroup.tsx:27`
@@ -14334,7 +1420,7 @@
 - 严重程度：低
 - 指纹：`9082376c2ee7a698eb414ed4c59f91d2af4863761c909f4023e5bd149f86d814`
 
-### 765. `hardcoded:src/components/deeplink/McpConfirmation.tsx:McpConfirmation:35da9ae11afebfb5:001`
+### 66. `hardcoded:src/components/deeplink/McpConfirmation.tsx:McpConfirmation:35da9ae11afebfb5:001`
 
 - 状态：待核实
 - 文件：`src/components/deeplink/McpConfirmation.tsx:142`
@@ -14345,7 +1431,7 @@
 - 严重程度：低
 - 指纹：`35da9ae11afebfb5323b8f89fd223456af591e09fdced2e0c311353a1b51c09a`
 
-### 766. `dynamic-i18n:src/components/deeplink/McpConfirmation.tsx:McpConfirmation:d7f7b8d4887c79a0:001`
+### 67. `dynamic-i18n:src/components/deeplink/McpConfirmation.tsx:McpConfirmation:d7f7b8d4887c79a0:001`
 
 - 状态：待核实
 - 文件：`src/components/deeplink/McpConfirmation.tsx:161`
@@ -14356,7 +1442,7 @@
 - 严重程度：中
 - 指纹：`d7f7b8d4887c79a0de17ef5158c37ad4cf32609e660350c71f01326dd264af1d`
 
-### 767. `hardcoded:src/components/hermes/HermesMemoryPanel.tsx:memoryFilePath:481b09631c288ecf:001`
+### 68. `hardcoded:src/components/hermes/HermesMemoryPanel.tsx:memoryFilePath:481b09631c288ecf:001`
 
 - 状态：待核实
 - 文件：`src/components/hermes/HermesMemoryPanel.tsx:59`
@@ -14367,7 +1453,7 @@
 - 严重程度：低
 - 指纹：`481b09631c288ecf74a977eea2a130038896a82074717902feeee44356365a06`
 
-### 768. `dynamic-i18n:src/components/hermes/HermesMemoryPanel.tsx:name:75356b9afb016217:001`
+### 69. `dynamic-i18n:src/components/hermes/HermesMemoryPanel.tsx:name:75356b9afb016217:001`
 
 - 状态：待核实
 - 文件：`src/components/hermes/HermesMemoryPanel.tsx:119`
@@ -14378,7 +1464,7 @@
 - 严重程度：中
 - 指纹：`75356b9afb01621774bc813d1d21c3f8a9da401b6627205fa24ff6106a671d06`
 
-### 769. `dynamic-i18n:src/components/hermes/HermesMemoryPanel.tsx:handleToggle:7663f326f8433d18:001`
+### 70. `dynamic-i18n:src/components/hermes/HermesMemoryPanel.tsx:handleToggle:7663f326f8433d18:001`
 
 - 状态：待核实
 - 文件：`src/components/hermes/HermesMemoryPanel.tsx:146`
@@ -14389,7 +1475,7 @@
 - 严重程度：中
 - 指纹：`7663f326f8433d188375fc655defeac94f6915774b979d2dd3a14cbee2063eb1`
 
-### 770. `dynamic-i18n:src/components/hermes/HermesMemoryPanel.tsx:MemoryTabPane:8fb010723006dfa3:001`
+### 71. `dynamic-i18n:src/components/hermes/HermesMemoryPanel.tsx:MemoryTabPane:8fb010723006dfa3:001`
 
 - 状态：待核实
 - 文件：`src/components/hermes/HermesMemoryPanel.tsx:175`
@@ -14400,7 +1486,7 @@
 - 严重程度：中
 - 指纹：`8fb010723006dfa36c05d41cacd6c24d2b8cd98441b1c4cc824670f19b9bf700`
 
-### 771. `dynamic-i18n:src/components/hermes/HermesMemoryPanel.tsx:MemoryTabPane:51f6c463686ee31f:001`
+### 72. `dynamic-i18n:src/components/hermes/HermesMemoryPanel.tsx:MemoryTabPane:51f6c463686ee31f:001`
 
 - 状态：待核实
 - 文件：`src/components/hermes/HermesMemoryPanel.tsx:208`
@@ -14411,7 +1497,7 @@
 - 严重程度：中
 - 指纹：`51f6c463686ee31f6081657b2c9e2ed0f07612d1b172800f059acf7475979176`
 
-### 772. `dynamic-i18n:src/components/hermes/HermesMemoryPanel.tsx:HermesMemoryPanel:43ecfa8432d123f8:001`
+### 73. `dynamic-i18n:src/components/hermes/HermesMemoryPanel.tsx:HermesMemoryPanel:43ecfa8432d123f8:001`
 
 - 状态：待核实
 - 文件：`src/components/hermes/HermesMemoryPanel.tsx:300`
@@ -14422,7 +1508,7 @@
 - 严重程度：中
 - 指纹：`43ecfa8432d123f8c6578042a3deaf5b4ce608d8c09b5f4e9b40bb7217247d31`
 
-### 773. `dynamic-i18n:src/components/mcp/McpFormModal.tsx:fieldErrorText:c2af3397f931d9d7:001`
+### 74. `dynamic-i18n:src/components/mcp/McpFormModal.tsx:fieldErrorText:c2af3397f931d9d7:001`
 
 - 状态：待核实
 - 文件：`src/components/mcp/McpFormModal.tsx:206`
@@ -14433,7 +1519,7 @@
 - 严重程度：中
 - 指纹：`c2af3397f931d9d7d775675a0d91f651bfe460fa4b610fc2f28d156b68e06c23`
 
-### 774. `dynamic-i18n:src/components/mcp/McpFormModal.tsx:formatLabel:365b5da25b0130b9:001`
+### 75. `dynamic-i18n:src/components/mcp/McpFormModal.tsx:formatLabel:365b5da25b0130b9:001`
 
 - 状态：待核实
 - 文件：`src/components/mcp/McpFormModal.tsx:210`
@@ -14444,7 +1530,7 @@
 - 严重程度：中
 - 指纹：`365b5da25b0130b97d4166f1b4ed9112b3781abb292013a91f5eb9c31b80b853`
 
-### 775. `dynamic-i18n:src/components/mcp/McpFormModal.tsx:McpFormModal:110e6c2fccad7e63:001`
+### 76. `dynamic-i18n:src/components/mcp/McpFormModal.tsx:McpFormModal:110e6c2fccad7e63:001`
 
 - 状态：待核实
 - 文件：`src/components/mcp/McpFormModal.tsx:659`
@@ -14455,7 +1541,7 @@
 - 严重程度：中
 - 指纹：`110e6c2fccad7e63497c8d59fc75f0c8538d7d985c7020f437e6854c17fb8048`
 
-### 776. `dynamic-i18n:src/components/mcp/McpFormModal.tsx:McpFormModal:b38b4246acafdcdc:001`
+### 77. `dynamic-i18n:src/components/mcp/McpFormModal.tsx:McpFormModal:b38b4246acafdcdc:001`
 
 - 状态：待核实
 - 文件：`src/components/mcp/McpFormModal.tsx:668`
@@ -14466,7 +1552,7 @@
 - 严重程度：中
 - 指纹：`b38b4246acafdcdcbc1a744cfaa372d515996efc14f9eed16a8aeeb457324b42`
 
-### 777. `hardcoded:src/components/mcp/McpFormModal.tsx:McpFormModal:c28bf4f117f283bc:001`
+### 78. `hardcoded:src/components/mcp/McpFormModal.tsx:McpFormModal:c28bf4f117f283bc:001`
 
 - 状态：待核实
 - 文件：`src/components/mcp/McpFormModal.tsx:1177`
@@ -14477,7 +1563,7 @@
 - 严重程度：低
 - 指纹：`c28bf4f117f283bc46f5f3191dcfb6b042496e5792e0e94ef05c2ccb8bf3d300`
 
-### 778. `dynamic-i18n:src/components/mcp/UnifiedMcpPanel.tsx:UnifiedMcpPanel:947324ed6a00ba24:001`
+### 79. `dynamic-i18n:src/components/mcp/UnifiedMcpPanel.tsx:UnifiedMcpPanel:947324ed6a00ba24:001`
 
 - 状态：待核实
 - 文件：`src/components/mcp/UnifiedMcpPanel.tsx:940`
@@ -14488,7 +1574,7 @@
 - 严重程度：中
 - 指纹：`947324ed6a00ba241dcc93e16c9b7022385f2e299608f805663901480e1d6454`
 
-### 779. `dynamic-i18n:src/components/mcp/UnifiedMcpPanel.tsx:UnifiedMcpPanel:d9d6a85445fe9b7e:001`
+### 80. `dynamic-i18n:src/components/mcp/UnifiedMcpPanel.tsx:UnifiedMcpPanel:d9d6a85445fe9b7e:001`
 
 - 状态：待核实
 - 文件：`src/components/mcp/UnifiedMcpPanel.tsx:1143`
@@ -14499,7 +1585,7 @@
 - 严重程度：中
 - 指纹：`d9d6a85445fe9b7e4c33f649bfe9bc029ac989a37e98f491405a5fb4c42718c1`
 
-### 780. `hardcoded:src/components/mcp/formBits.tsx:FIELD_CLASS:21e107b21a425660:001`
+### 81. `hardcoded:src/components/mcp/formBits.tsx:FIELD_CLASS:21e107b21a425660:001`
 
 - 状态：待核实
 - 文件：`src/components/mcp/formBits.tsx:124`
@@ -14510,7 +1596,7 @@
 - 严重程度：低
 - 指纹：`21e107b21a42566023fb33d9df9d107493980ae700928a8119d3e05fae24d070`
 
-### 781. `hardcoded:src/components/mcp/mcpDraft.ts:recognizePaste:7a24c8c64468bead:001`
+### 82. `hardcoded:src/components/mcp/mcpDraft.ts:recognizePaste:7a24c8c64468bead:001`
 
 - 状态：待核实
 - 文件：`src/components/mcp/mcpDraft.ts:290`
@@ -14521,7 +1607,7 @@
 - 严重程度：低
 - 指纹：`7a24c8c64468beadb562f97001f3f5d728260d1f954ef1e10c2125003c2f1e40`
 
-### 782. `hardcoded:src/components/openclaw/OpenClawHealthBanner.tsx:OpenClawHealthBanner:7fadb5dcf32dcf48:001`
+### 83. `hardcoded:src/components/openclaw/OpenClawHealthBanner.tsx:OpenClawHealthBanner:7fadb5dcf32dcf48:001`
 
 - 状态：待核实
 - 文件：`src/components/openclaw/OpenClawHealthBanner.tsx:77`
@@ -14532,7 +1618,7 @@
 - 严重程度：低
 - 指纹：`7fadb5dcf32dcf483481863270a04d0cef2d4406127b52027b6b6c2187dcd845`
 
-### 783. `hardcoded:src/components/openclaw/OpenClawHealthBanner.tsx:OpenClawHealthBanner:2f1ba34341eb3cec:001`
+### 84. `hardcoded:src/components/openclaw/OpenClawHealthBanner.tsx:OpenClawHealthBanner:2f1ba34341eb3cec:001`
 
 - 状态：待核实
 - 文件：`src/components/openclaw/OpenClawHealthBanner.tsx:79`
@@ -14543,7 +1629,7 @@
 - 严重程度：低
 - 指纹：`2f1ba34341eb3cec418d42a62736c134b8f8042070758fbe13721a506f691aa3`
 
-### 784. `hardcoded:src/components/openclaw/ToolsPanel.tsx:ToolsPanel:5dc3c4b05218ca74:001`
+### 85. `hardcoded:src/components/openclaw/ToolsPanel.tsx:ToolsPanel:5dc3c4b05218ca74:001`
 
 - 状态：待核实
 - 文件：`src/components/openclaw/ToolsPanel.tsx:170`
@@ -14559,7 +1645,7 @@
 - 严重程度：低
 - 指纹：`5dc3c4b05218ca749896a46cdaa181c20e11672eda331aa5d610b0cf20e793fe`
 
-### 785. `hardcoded:src/components/openclaw/hooks/useOpenClawModelOptions.ts:label:4e413c3de11f55c5:001`
+### 86. `hardcoded:src/components/openclaw/hooks/useOpenClawModelOptions.ts:label:4e413c3de11f55c5:001`
 
 - 状态：待核实
 - 文件：`src/components/openclaw/hooks/useOpenClawModelOptions.ts:48`
@@ -14570,7 +1656,7 @@
 - 严重程度：低
 - 指纹：`4e413c3de11f55c5f9254cbbedce7807bd67b6e5b69414f07b28675a4d901c0a`
 
-### 786. `dynamic-i18n:src/components/profiles/ProfileSwitcher.tsx:ProfileSwitcher:bf07f0e194763ea6:001`
+### 87. `dynamic-i18n:src/components/profiles/ProfileSwitcher.tsx:ProfileSwitcher:bf07f0e194763ea6:001`
 
 - 状态：待核实
 - 文件：`src/components/profiles/ProfileSwitcher.tsx:116`
@@ -14581,7 +1667,7 @@
 - 严重程度：中
 - 指纹：`bf07f0e194763ea621ddc1be1a0fa505b153e66da09a849dc06007c5051c8f33`
 
-### 787. `dynamic-i18n:src/components/profiles/ProfileSwitcher.tsx:ProfileSwitcher:bf07f0e194763ea6:002`
+### 88. `dynamic-i18n:src/components/profiles/ProfileSwitcher.tsx:ProfileSwitcher:bf07f0e194763ea6:002`
 
 - 状态：待核实
 - 文件：`src/components/profiles/ProfileSwitcher.tsx:134`
@@ -14592,7 +1678,7 @@
 - 严重程度：中
 - 指纹：`bf07f0e194763ea621ddc1be1a0fa505b153e66da09a849dc06007c5051c8f33`
 
-### 788. `dynamic-i18n:src/components/profiles/ProfileSwitcher.tsx:ProfileSwitcher:1ea05b4ee91472f2:001`
+### 89. `dynamic-i18n:src/components/profiles/ProfileSwitcher.tsx:ProfileSwitcher:1ea05b4ee91472f2:001`
 
 - 状态：待核实
 - 文件：`src/components/profiles/ProfileSwitcher.tsx:223`
@@ -14603,7 +1689,7 @@
 - 严重程度：中
 - 指纹：`1ea05b4ee91472f2dff58eae1a3185cc82d499fe00c348b089dcb152ba5846d9`
 
-### 789. `dynamic-i18n:src/components/prompts/PiNativePromptResources.tsx:PiInstructionFileEditor:d1d3865d992378c2:001`
+### 90. `dynamic-i18n:src/components/prompts/PiNativePromptResources.tsx:PiInstructionFileEditor:d1d3865d992378c2:001`
 
 - 状态：待核实
 - 文件：`src/components/prompts/PiNativePromptResources.tsx:211`
@@ -14614,7 +1700,7 @@
 - 严重程度：中
 - 指纹：`d1d3865d992378c2b2bccf4e7c7e5a7a63e0e9b4c9a15f1f6a3dfb1556b659ad`
 
-### 790. `dynamic-i18n:src/components/prompts/PiNativePromptResources.tsx:PiInstructionFileEditor:a8bc05c127159b54:001`
+### 91. `dynamic-i18n:src/components/prompts/PiNativePromptResources.tsx:PiInstructionFileEditor:a8bc05c127159b54:001`
 
 - 状态：待核实
 - 文件：`src/components/prompts/PiNativePromptResources.tsx:215`
@@ -14625,7 +1711,7 @@
 - 严重程度：中
 - 指纹：`a8bc05c127159b54db39e473aad743e323f90addf0132138f3359fdbb38ed938`
 
-### 791. `hardcoded:src/components/prompts/PiNativePromptResources.tsx:PiInstructionFileEditor:03779880d080c39a:001`
+### 92. `hardcoded:src/components/prompts/PiNativePromptResources.tsx:PiInstructionFileEditor:03779880d080c39a:001`
 
 - 状态：待核实
 - 文件：`src/components/prompts/PiNativePromptResources.tsx:288`
@@ -14636,7 +1722,7 @@
 - 严重程度：低
 - 指纹：`03779880d080c39a9e085a5ff016ce29b183ac94dd764c0470b59caaa7def789`
 
-### 792. `dynamic-i18n:src/components/prompts/PiNativePromptResources.tsx:remove:2694dcf2980c7a5b:001`
+### 93. `dynamic-i18n:src/components/prompts/PiNativePromptResources.tsx:remove:2694dcf2980c7a5b:001`
 
 - 状态：待核实
 - 文件：`src/components/prompts/PiNativePromptResources.tsx:364`
@@ -14649,7 +1735,7 @@
 - 严重程度：中
 - 指纹：`2694dcf2980c7a5b68bf9278cc0cc3aa0c18f8df9a8db46941aab0a51f5aaf21`
 
-### 793. `hardcoded:src/components/prompts/PiNativePromptResources.tsx:remove:defaf7b75a2b6ad8:001`
+### 94. `hardcoded:src/components/prompts/PiNativePromptResources.tsx:remove:defaf7b75a2b6ad8:001`
 
 - 状态：待核实
 - 文件：`src/components/prompts/PiNativePromptResources.tsx:369`
@@ -14662,7 +1748,7 @@
 - 严重程度：低
 - 指纹：`defaf7b75a2b6ad8315f6fa1c72571097e4ff7d16ff250ee6b2723a4d03114b3`
 
-### 794. `dynamic-i18n:src/components/prompts/PiNativePromptResources.tsx:remove:ccfd4aa37ca34de2:001`
+### 95. `dynamic-i18n:src/components/prompts/PiNativePromptResources.tsx:remove:ccfd4aa37ca34de2:001`
 
 - 状态：待核实
 - 文件：`src/components/prompts/PiNativePromptResources.tsx:369`
@@ -14673,7 +1759,7 @@
 - 严重程度：中
 - 指纹：`ccfd4aa37ca34de27182837641d46f3d97b72638cf56508f3b2c0893d2a3f1c7`
 
-### 795. `dynamic-i18n:src/components/prompts/PiNativePromptResources.tsx:PiSystemPromptFiles:d1d85835cac8c3b6:001`
+### 96. `dynamic-i18n:src/components/prompts/PiNativePromptResources.tsx:PiSystemPromptFiles:d1d85835cac8c3b6:001`
 
 - 状态：待核实
 - 文件：`src/components/prompts/PiNativePromptResources.tsx:426`
@@ -14684,7 +1770,7 @@
 - 严重程度：中
 - 指纹：`d1d85835cac8c3b67f8f2f2788b521e0f56e6f85bb64f0c5165d5a1e0aeb709c`
 
-### 796. `dynamic-i18n:src/components/prompts/PiNativePromptResources.tsx:PiSystemPromptFiles:a8bc05c127159b54:001`
+### 97. `dynamic-i18n:src/components/prompts/PiNativePromptResources.tsx:PiSystemPromptFiles:a8bc05c127159b54:001`
 
 - 状态：待核实
 - 文件：`src/components/prompts/PiNativePromptResources.tsx:438`
@@ -14695,7 +1781,7 @@
 - 严重程度：中
 - 指纹：`a8bc05c127159b54db39e473aad743e323f90addf0132138f3359fdbb38ed938`
 
-### 797. `hardcoded:src/components/prompts/PiNativePromptResources.tsx:PiSystemPromptFiles:ff2089b4b04347e4:001`
+### 98. `hardcoded:src/components/prompts/PiNativePromptResources.tsx:PiSystemPromptFiles:ff2089b4b04347e4:001`
 
 - 状态：待核实
 - 文件：`src/components/prompts/PiNativePromptResources.tsx:478`
@@ -14707,7 +1793,7 @@
 - 严重程度：低
 - 指纹：`ff2089b4b04347e4968255048f278615f309a5cc7366a5a3d26578223877f005`
 
-### 798. `dynamic-i18n:src/components/prompts/PiNativePromptResources.tsx:PiSystemPromptFiles:c2b9bd028b119153:001`
+### 99. `dynamic-i18n:src/components/prompts/PiNativePromptResources.tsx:PiSystemPromptFiles:c2b9bd028b119153:001`
 
 - 状态：待核实
 - 文件：`src/components/prompts/PiNativePromptResources.tsx:478`
@@ -14718,7 +1804,7 @@
 - 严重程度：中
 - 指纹：`c2b9bd028b119153842868de21081c0165efb2f1275c7679450a3e836ce7acc2`
 
-### 799. `dynamic-i18n:src/components/prompts/PiNativePromptResources.tsx:PiSystemPromptFiles:c2b9bd028b119153:002`
+### 100. `dynamic-i18n:src/components/prompts/PiNativePromptResources.tsx:PiSystemPromptFiles:c2b9bd028b119153:002`
 
 - 状态：待核实
 - 文件：`src/components/prompts/PiNativePromptResources.tsx:483`
@@ -14729,7 +1815,7 @@
 - 严重程度：中
 - 指纹：`c2b9bd028b119153842868de21081c0165efb2f1275c7679450a3e836ce7acc2`
 
-### 800. `hardcoded:src/components/prompts/PiNativePromptResources.tsx:remove:de1dcddffe745623:001`
+### 101. `hardcoded:src/components/prompts/PiNativePromptResources.tsx:remove:de1dcddffe745623:001`
 
 - 状态：待核实
 - 文件：`src/components/prompts/PiNativePromptResources.tsx:789`
@@ -14742,7 +1828,7 @@
 - 严重程度：低
 - 指纹：`de1dcddffe745623b54ea279f04edcfb1f42f8a588707db7d63f78f10f20e6a3`
 
-### 801. `hardcoded:src/components/prompts/PiPromptPanel.tsx:target:8243b190caa97da7:001`
+### 102. `hardcoded:src/components/prompts/PiPromptPanel.tsx:target:8243b190caa97da7:001`
 
 - 状态：待核实
 - 文件：`src/components/prompts/PiPromptPanel.tsx:351`
@@ -14759,7 +1845,7 @@
 - 严重程度：低
 - 指纹：`8243b190caa97da70640da0df9147fcffd4f0ba9da8123177cbe1a4471cb7789`
 
-### 802. `dynamic-i18n:src/components/prompts/PromptFormPanel.tsx:nameError:faa60122c7dfa55e:001`
+### 103. `dynamic-i18n:src/components/prompts/PromptFormPanel.tsx:nameError:faa60122c7dfa55e:001`
 
 - 状态：待核实
 - 文件：`src/components/prompts/PromptFormPanel.tsx:88`
@@ -14770,7 +1856,7 @@
 - 严重程度：中
 - 指纹：`faa60122c7dfa55e3d3a53f6e70596a0f33d1536751571c46698a866921d592a`
 
-### 803. `hardcoded:src/components/prompts/PromptFormPanel.tsx:countText:131f9b3b16d16646:001`
+### 104. `hardcoded:src/components/prompts/PromptFormPanel.tsx:countText:131f9b3b16d16646:001`
 
 - 状态：待核实
 - 文件：`src/components/prompts/PromptFormPanel.tsx:147`
@@ -14781,7 +1867,7 @@
 - 严重程度：低
 - 指纹：`131f9b3b16d166467163ec4836c30508d8c2d59359602dab074a506aa3502433`
 
-### 804. `dynamic-i18n:src/components/prompts/PromptFormPanel.tsx:PromptFormPanel:f3ffc31bc1e64a97:001`
+### 105. `dynamic-i18n:src/components/prompts/PromptFormPanel.tsx:PromptFormPanel:f3ffc31bc1e64a97:001`
 
 - 状态：待核实
 - 文件：`src/components/prompts/PromptFormPanel.tsx:195`
@@ -14794,7 +1880,7 @@
 - 严重程度：中
 - 指纹：`f3ffc31bc1e64a97df4252231320a3fcbf6176b203f6aaa490901d73d22c516b`
 
-### 805. `hardcoded:src/components/prompts/PromptFormPanel.tsx:PromptFormPanel:9adc6b50c82cf115:001`
+### 106. `hardcoded:src/components/prompts/PromptFormPanel.tsx:PromptFormPanel:9adc6b50c82cf115:001`
 
 - 状态：待核实
 - 文件：`src/components/prompts/PromptFormPanel.tsx:254`
@@ -14805,7 +1891,7 @@
 - 严重程度：低
 - 指纹：`9adc6b50c82cf11518e3cba43b1ea6b7f91d3e890ea06179a68ba2bf3c28a59d`
 
-### 806. `hardcoded:src/components/prompts/PromptListItem.tsx:PromptListItem:a11ba0309dc3fa24:001`
+### 107. `hardcoded:src/components/prompts/PromptListItem.tsx:PromptListItem:a11ba0309dc3fa24:001`
 
 - 状态：待核实
 - 文件：`src/components/prompts/PromptListItem.tsx:58`
@@ -14816,7 +1902,7 @@
 - 严重程度：低
 - 指纹：`a11ba0309dc3fa2425c0f9dccb29cee7e47ac0d68ad38cec3dd3a5019542579e`
 
-### 807. `dynamic-i18n:src/components/prompts/PromptListItem.tsx:PromptListItem:d12e0500610428ba:001`
+### 108. `dynamic-i18n:src/components/prompts/PromptListItem.tsx:PromptListItem:d12e0500610428ba:001`
 
 - 状态：待核实
 - 文件：`src/components/prompts/PromptListItem.tsx:94`
@@ -14827,7 +1913,7 @@
 - 严重程度：中
 - 指纹：`d12e0500610428ba236c01a7b5b70cb4bb9387f9d55be2e6f8336a0a27c8d701`
 
-### 808. `dynamic-i18n:src/components/prompts/PromptListItem.tsx:PromptListItem:cccf9c2fec5053e8:001`
+### 109. `dynamic-i18n:src/components/prompts/PromptListItem.tsx:PromptListItem:cccf9c2fec5053e8:001`
 
 - 状态：待核实
 - 文件：`src/components/prompts/PromptListItem.tsx:100`
@@ -14838,7 +1924,7 @@
 - 严重程度：中
 - 指纹：`cccf9c2fec5053e836d0753b9ded96c4bc796bd449169bb2b71f8b2a7d7563ee`
 
-### 809. `hardcoded:src/components/prompts/PromptPageFrame.tsx:promptMenuContentClass:6045ed9dbb9a76c7:001`
+### 110. `hardcoded:src/components/prompts/PromptPageFrame.tsx:promptMenuContentClass:6045ed9dbb9a76c7:001`
 
 - 状态：待核实
 - 文件：`src/components/prompts/PromptPageFrame.tsx:34`
@@ -14849,7 +1935,7 @@
 - 严重程度：低
 - 指纹：`6045ed9dbb9a76c73303325c4cffa76a15d02dd5cc33d37f548fef92459fb158`
 
-### 810. `hardcoded:src/components/prompts/PromptPageFrame.tsx:promptMenuItemClass:b39964dd157e3c40:001`
+### 111. `hardcoded:src/components/prompts/PromptPageFrame.tsx:promptMenuItemClass:b39964dd157e3c40:001`
 
 - 状态：待核实
 - 文件：`src/components/prompts/PromptPageFrame.tsx:36`
@@ -14860,7 +1946,7 @@
 - 严重程度：低
 - 指纹：`b39964dd157e3c40c85ff9a6803081e9b42ae40a28d4610d323472ba49147343`
 
-### 811. `hardcoded:src/components/prompts/PromptPageFrame.tsx:PromptPageFrame:fa4a6d2b1ac5667e:001`
+### 112. `hardcoded:src/components/prompts/PromptPageFrame.tsx:PromptPageFrame:fa4a6d2b1ac5667e:001`
 
 - 状态：待核实
 - 文件：`src/components/prompts/PromptPageFrame.tsx:165`
@@ -14872,7 +1958,7 @@
 - 严重程度：低
 - 指纹：`fa4a6d2b1ac5667ee399963afba8acced883677b202026eae41975f8bca1572b`
 
-### 812. `hardcoded:src/components/prompts/PromptPanel.tsx:StandardPromptPanel:8ebbda4fd11a88ea:001`
+### 113. `hardcoded:src/components/prompts/PromptPanel.tsx:StandardPromptPanel:8ebbda4fd11a88ea:001`
 
 - 状态：待核实
 - 文件：`src/components/prompts/PromptPanel.tsx:512`
@@ -14883,7 +1969,7 @@
 - 严重程度：低
 - 指纹：`8ebbda4fd11a88ea0b160bda8d91d99489dc82453f892247254fabb559e56a6f`
 
-### 813. `hardcoded:src/components/prompts/promptUtils.tsx:formatSize:229dd2efa20cfa06:001`
+### 114. `hardcoded:src/components/prompts/promptUtils.tsx:formatSize:229dd2efa20cfa06:001`
 
 - 状态：待核实
 - 文件：`src/components/prompts/promptUtils.tsx:37`
@@ -14894,7 +1980,7 @@
 - 严重程度：低
 - 指纹：`229dd2efa20cfa06a18005595e089bef78a3ffc5bd33bb73dac85cca195d46c6`
 
-### 814. `hardcoded:src/components/prompts/promptUtils.tsx:formatSize:3774273e5fbf94ef:001`
+### 115. `hardcoded:src/components/prompts/promptUtils.tsx:formatSize:3774273e5fbf94ef:001`
 
 - 状态：待核实
 - 文件：`src/components/prompts/promptUtils.tsx:37`
@@ -14905,7 +1991,7 @@
 - 严重程度：低
 - 指纹：`3774273e5fbf94ef8195350bfd3982824f82e6586e1751e20151e275c30f64df`
 
-### 815. `dynamic-i18n:src/components/prompts/usePromptPageCommon.ts:toggleEffectText:2225c982a3afe1fa:001`
+### 116. `dynamic-i18n:src/components/prompts/usePromptPageCommon.ts:toggleEffectText:2225c982a3afe1fa:001`
 
 - 状态：待核实
 - 文件：`src/components/prompts/usePromptPageCommon.ts:64`
@@ -14916,7 +2002,7 @@
 - 严重程度：中
 - 指纹：`2225c982a3afe1fa729c3e536e1e1a979ce749d11b999cd756c04e76010b864e`
 
-### 816. `dynamic-i18n:src/components/providers/CodexStaleClientsNotice.tsx:CodexStaleClientsNotice:d73fd9997e52d916:001`
+### 117. `dynamic-i18n:src/components/providers/CodexStaleClientsNotice.tsx:CodexStaleClientsNotice:d73fd9997e52d916:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/CodexStaleClientsNotice.tsx:41`
@@ -14931,7 +2017,7 @@
 - 严重程度：中
 - 指纹：`d73fd9997e52d9166bc866e5fd9b0b3c1d44ac8984866401a169617dc52a58ba`
 
-### 817. `dynamic-i18n:src/components/providers/KimiAccountLogin.tsx:rows:0efcbaf86f008873:001`
+### 118. `dynamic-i18n:src/components/providers/KimiAccountLogin.tsx:rows:0efcbaf86f008873:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/KimiAccountLogin.tsx:57`
@@ -14942,7 +2028,7 @@
 - 严重程度：中
 - 指纹：`0efcbaf86f008873c4d489f263f1364693f9365f17d54a5affa885bc16d319ce`
 
-### 818. `dynamic-i18n:src/components/providers/KimiAccountLogin.tsx:KimiAccountLogin:60eddd19f0eccda0:001`
+### 119. `dynamic-i18n:src/components/providers/KimiAccountLogin.tsx:KimiAccountLogin:60eddd19f0eccda0:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/KimiAccountLogin.tsx:181`
@@ -14955,7 +2041,7 @@
 - 严重程度：中
 - 指纹：`60eddd19f0eccda058adeaa2c3e9a655c911ebeead5456d6d804ab83c09df438`
 
-### 819. `hardcoded:src/components/providers/OpenTerminalDialog.tsx:handleChoose:cfb52b235594b7cc:001`
+### 120. `hardcoded:src/components/providers/OpenTerminalDialog.tsx:handleChoose:cfb52b235594b7cc:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/OpenTerminalDialog.tsx:169`
@@ -14966,7 +2052,7 @@
 - 严重程度：低
 - 指纹：`cfb52b235594b7cc62a3ea8a1b7f717237bcff8afdab648eeb7fa027e4b5535b`
 
-### 820. `dynamic-i18n:src/components/providers/OpenTerminalDialog.tsx:OpenTerminalDialog:2b72580d648a686e:001`
+### 121. `dynamic-i18n:src/components/providers/OpenTerminalDialog.tsx:OpenTerminalDialog:2b72580d648a686e:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/OpenTerminalDialog.tsx:229`
@@ -14979,7 +2065,7 @@
 - 严重程度：中
 - 指纹：`2b72580d648a686e9dc1aec6062a1426f4846e75d1b70575e8367e15cdc80191`
 
-### 821. `hardcoded:src/components/providers/ProviderCard.tsx:providerNameIncludesAccountLogin:b5a2f7477415d9ec:001`
+### 122. `hardcoded:src/components/providers/ProviderCard.tsx:providerNameIncludesAccountLogin:b5a2f7477415d9ec:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/ProviderCard.tsx:226`
@@ -14990,7 +2076,7 @@
 - 严重程度：低
 - 指纹：`b5a2f7477415d9ec8937a7b46546ae5534e04f4aea40319c4b9da530e597ad42`
 
-### 822. `dynamic-i18n:src/components/providers/ProviderCardActions.tsx:ProviderCardActions:7ac214e2da017a6c:001`
+### 123. `dynamic-i18n:src/components/providers/ProviderCardActions.tsx:ProviderCardActions:7ac214e2da017a6c:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/ProviderCardActions.tsx:158`
@@ -15003,7 +2089,7 @@
 - 严重程度：中
 - 指纹：`7ac214e2da017a6c1b84811e286de7467d81e7caad956ec541a998c3b9feae32`
 
-### 823. `dynamic-i18n:src/components/providers/ProviderEmptyState.tsx:ProviderEmptyState:4fd05547609ab33c:001`
+### 124. `dynamic-i18n:src/components/providers/ProviderEmptyState.tsx:ProviderEmptyState:4fd05547609ab33c:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/ProviderEmptyState.tsx:48`
@@ -15014,7 +2100,7 @@
 - 严重程度：中
 - 指纹：`4fd05547609ab33c012446250b5baabb5d65423449887ded7798685c2db0ac23`
 
-### 824. `dynamic-i18n:src/components/providers/ProviderEmptyState.tsx:ProviderEmptyState:bc32d0931c886d14:001`
+### 125. `dynamic-i18n:src/components/providers/ProviderEmptyState.tsx:ProviderEmptyState:bc32d0931c886d14:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/ProviderEmptyState.tsx:53`
@@ -15025,7 +2111,7 @@
 - 严重程度：中
 - 指纹：`bc32d0931c886d1458a2a0bd5842a0a6ad3d9111fcc8f94afb58fce2c34b9cc2`
 
-### 825. `dynamic-i18n:src/components/providers/ProviderList.tsx:piStateErrorNotice:a72c91773a926bd1:001`
+### 126. `dynamic-i18n:src/components/providers/ProviderList.tsx:piStateErrorNotice:a72c91773a926bd1:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/ProviderList.tsx:430`
@@ -15036,7 +2122,7 @@
 - 严重程度：中
 - 指纹：`a72c91773a926bd1ce4dfba5624c1fde35704374ba5763f5af939dafeae59e89`
 
-### 826. `dynamic-i18n:src/components/providers/ProviderList.tsx:piStateErrorNotice:cae9391778824b2d:001`
+### 127. `dynamic-i18n:src/components/providers/ProviderList.tsx:piStateErrorNotice:cae9391778824b2d:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/ProviderList.tsx:434`
@@ -15047,7 +2133,7 @@
 - 严重程度：中
 - 指纹：`cae9391778824b2dd2e838af86052a9d7821c0f2c504040533cfc169215b346f`
 
-### 827. `hardcoded:src/components/providers/ProviderList.tsx:piStateErrorNotice:b9eb9816a06c901b:001`
+### 128. `hardcoded:src/components/providers/ProviderList.tsx:piStateErrorNotice:b9eb9816a06c901b:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/ProviderList.tsx:435`
@@ -15058,7 +2144,7 @@
 - 严重程度：低
 - 指纹：`b9eb9816a06c901b830bf7ae5b9855b3c20c076abe1e93fc63f82e3fbe6cb7a6`
 
-### 828. `hardcoded:src/components/providers/ProviderList.tsx:searchField:5fc70c276fa95a5b:001`
+### 129. `hardcoded:src/components/providers/ProviderList.tsx:searchField:5fc70c276fa95a5b:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/ProviderList.tsx:529`
@@ -15075,7 +2161,7 @@
 - 严重程度：低
 - 指纹：`5fc70c276fa95a5b6fbaac8e55772555f23438ea42980e169789efd2d3d119f5`
 
-### 829. `hardcoded:src/components/providers/forms/BasicFormFields.tsx:REQUIRED_LABEL:1e3b3fdaf911a12c:001`
+### 130. `hardcoded:src/components/providers/forms/BasicFormFields.tsx:REQUIRED_LABEL:1e3b3fdaf911a12c:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/BasicFormFields.tsx:31`
@@ -15086,7 +2172,7 @@
 - 严重程度：低
 - 指纹：`1e3b3fdaf911a12ce83852cad918332e87be0084ca631fbb239d5c9befac6f5e`
 
-### 830. `dynamic-i18n:src/components/providers/forms/ClaudeDesktopProviderForm.tsx:applyDesktopPreset:e0d3c7fcb27f761e:001`
+### 131. `dynamic-i18n:src/components/providers/forms/ClaudeDesktopProviderForm.tsx:applyDesktopPreset:e0d3c7fcb27f761e:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/ClaudeDesktopProviderForm.tsx:433`
@@ -15097,7 +2183,7 @@
 - 严重程度：中
 - 指纹：`e0d3c7fcb27f761eebb20fc8cf99a5791d148a2af8c0b379684a6db1387b2e6c`
 
-### 831. `hardcoded:src/components/providers/forms/ClaudeOfficialSection.tsx:itemClass:f10d787bf085794b:001`
+### 132. `hardcoded:src/components/providers/forms/ClaudeOfficialSection.tsx:itemClass:f10d787bf085794b:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/ClaudeOfficialSection.tsx:382`
@@ -15108,7 +2194,7 @@
 - 严重程度：低
 - 指纹：`f10d787bf085794b93a5ceb068b63314f485a4ef8851bc3ae1bd729541affe98`
 
-### 832. `dynamic-i18n:src/components/providers/forms/CodexConfigSections.tsx:CodexAuthSection:b3aada018c964656:001`
+### 133. `dynamic-i18n:src/components/providers/forms/CodexConfigSections.tsx:CodexAuthSection:b3aada018c964656:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/CodexConfigSections.tsx:88`
@@ -15121,7 +2207,7 @@
 - 严重程度：中
 - 指纹：`b3aada018c9646567d82bd28483431f01c8c1f84ba059e56e31f30ceae8f9526`
 
-### 833. `dynamic-i18n:src/components/providers/forms/CodexConfigSections.tsx:CodexConfigSection:75b82bc2e41ebdef:001`
+### 134. `dynamic-i18n:src/components/providers/forms/CodexConfigSections.tsx:CodexConfigSection:75b82bc2e41ebdef:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/CodexConfigSections.tsx:332`
@@ -15134,7 +2220,7 @@
 - 严重程度：中
 - 指纹：`75b82bc2e41ebdefa9c594cf29c7ed0b183d2c95564d04b358fb9f2fc717219d`
 
-### 834. `hardcoded:src/components/providers/forms/CodexFormFields.tsx:formatReasoningLevelsLabel:5fe8ad79d4e63311:001`
+### 135. `hardcoded:src/components/providers/forms/CodexFormFields.tsx:formatReasoningLevelsLabel:5fe8ad79d4e63311:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/CodexFormFields.tsx:446`
@@ -15145,7 +2231,7 @@
 - 严重程度：低
 - 指纹：`5fe8ad79d4e6331157ae48f1f2ff5c7c21505d280a58988f29d4da6e429a2ccc`
 
-### 835. `hardcoded:src/components/providers/forms/CodexFormFields.tsx:handleFetchModels:594950879d16b576:001`
+### 136. `hardcoded:src/components/providers/forms/CodexFormFields.tsx:handleFetchModels:594950879d16b576:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/CodexFormFields.tsx:965`
@@ -15156,7 +2242,7 @@
 - 严重程度：低
 - 指纹：`594950879d16b5769bd90068d33dd2839529b5bdb9812b29ffacebc1bc1731df`
 
-### 836. `hardcoded:src/components/providers/forms/CodexFormFields.tsx:handleFetchModels:1fea753f650f5909:001`
+### 137. `hardcoded:src/components/providers/forms/CodexFormFields.tsx:handleFetchModels:1fea753f650f5909:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/CodexFormFields.tsx:984`
@@ -15167,7 +2253,7 @@
 - 严重程度：低
 - 指纹：`1fea753f650f5909614af26b681e7264fed9d1e00c6867ea1d8144b080a1ed28`
 
-### 837. `hardcoded:src/components/providers/forms/CodexFormFields.tsx:handleFetchModels:7880561a9305b3d1:001`
+### 138. `hardcoded:src/components/providers/forms/CodexFormFields.tsx:handleFetchModels:7880561a9305b3d1:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/CodexFormFields.tsx:1009`
@@ -15178,7 +2264,7 @@
 - 严重程度：低
 - 指纹：`7880561a9305b3d106d672a4efa91e76dff338c1c2d13949005955b46d976278`
 
-### 838. `dynamic-i18n:src/components/providers/forms/CommonConfigEditor.tsx:CommonConfigEditor:e626f805fbbd0918:001`
+### 139. `dynamic-i18n:src/components/providers/forms/CommonConfigEditor.tsx:CommonConfigEditor:e626f805fbbd0918:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/CommonConfigEditor.tsx:226`
@@ -15189,7 +2275,7 @@
 - 严重程度：中
 - 指纹：`e626f805fbbd09186fcb572b913402ca4b8698bdec50eec0cd3c29ef2a6c32ef`
 
-### 839. `dynamic-i18n:src/components/providers/forms/CommonConfigEditor.tsx:CommonConfigEditor:e626f805fbbd0918:002`
+### 140. `dynamic-i18n:src/components/providers/forms/CommonConfigEditor.tsx:CommonConfigEditor:e626f805fbbd0918:002`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/CommonConfigEditor.tsx:228`
@@ -15200,7 +2286,7 @@
 - 严重程度：中
 - 指纹：`e626f805fbbd09186fcb572b913402ca4b8698bdec50eec0cd3c29ef2a6c32ef`
 
-### 840. `dynamic-i18n:src/components/providers/forms/CommonConfigEditor.tsx:CommonConfigEditor:6441eb22cfc8b522:001`
+### 141. `dynamic-i18n:src/components/providers/forms/CommonConfigEditor.tsx:CommonConfigEditor:6441eb22cfc8b522:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/CommonConfigEditor.tsx:229`
@@ -15211,7 +2297,7 @@
 - 严重程度：中
 - 指纹：`6441eb22cfc8b522bfba7d8d0ed5fc65dfa2d164e6f833b9aa2f50ef602eb05a`
 
-### 841. `hardcoded:src/components/providers/forms/CommonConfigEditor.tsx:CommonConfigEditor:bb3af58fc0f7e590:001`
+### 142. `hardcoded:src/components/providers/forms/CommonConfigEditor.tsx:CommonConfigEditor:bb3af58fc0f7e590:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/CommonConfigEditor.tsx:238`
@@ -15228,7 +2314,7 @@
 - 严重程度：低
 - 指纹：`bb3af58fc0f7e590765f6a5bf7e9f8ec16ea646048fcfb7ff26c5c8641ffb7c6`
 
-### 842. `hardcoded:src/components/providers/forms/CustomUserAgentField.tsx:CustomUserAgentField:6c8d142fc3b6f03f:001`
+### 143. `hardcoded:src/components/providers/forms/CustomUserAgentField.tsx:CustomUserAgentField:6c8d142fc3b6f03f:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/CustomUserAgentField.tsx:56`
@@ -15240,7 +2326,7 @@
 - 严重程度：低
 - 指纹：`6c8d142fc3b6f03ffc7157ec103b305a99681f9f19665ea024e9b0750608139f`
 
-### 843. `hardcoded:src/components/providers/forms/EndpointSpeedTest.tsx:randomId:968d33291c0ad246:001`
+### 144. `hardcoded:src/components/providers/forms/EndpointSpeedTest.tsx:randomId:968d33291c0ad246:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/EndpointSpeedTest.tsx:58`
@@ -15251,7 +2337,7 @@
 - 严重程度：低
 - 指纹：`968d33291c0ad2461561d0c781bd0a031035e333f33c80e266058934ae25f8cd`
 
-### 844. `hardcoded:src/components/providers/forms/EndpointSpeedTest.tsx:message:5f1c5ef1539c39b7:001`
+### 145. `hardcoded:src/components/providers/forms/EndpointSpeedTest.tsx:message:5f1c5ef1539c39b7:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/EndpointSpeedTest.tsx:384`
@@ -15262,7 +2348,7 @@
 - 严重程度：低
 - 指纹：`5f1c5ef1539c39b70137bef1bfed9f12cd4694849de8588f4ef48357c8fe680a`
 
-### 845. `hardcoded:src/components/providers/forms/FetchedModelPicker.tsx:formatContextWindow:d993c0321b9e0507:001`
+### 146. `hardcoded:src/components/providers/forms/FetchedModelPicker.tsx:formatContextWindow:d993c0321b9e0507:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/FetchedModelPicker.tsx:48`
@@ -15273,7 +2359,7 @@
 - 严重程度：低
 - 指纹：`d993c0321b9e0507d14faf3dbd6689aac8cd4069ebb8a9cc1c3a9913d4c8c3bc`
 
-### 846. `hardcoded:src/components/providers/forms/FetchedModelPicker.tsx:formatContextWindow:28ad0093b916cd9a:001`
+### 147. `hardcoded:src/components/providers/forms/FetchedModelPicker.tsx:formatContextWindow:28ad0093b916cd9a:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/FetchedModelPicker.tsx:50`
@@ -15284,7 +2370,7 @@
 - 严重程度：低
 - 指纹：`28ad0093b916cd9a1f37c7aae67682aa2015f63d2c208451d645faba894f3976`
 
-### 847. `hardcoded:src/components/providers/forms/GeminiConfigSections.tsx:GeminiConfigSection:ba7a280e5a49adcb:001`
+### 148. `hardcoded:src/components/providers/forms/GeminiConfigSections.tsx:GeminiConfigSection:ba7a280e5a49adcb:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/GeminiConfigSections.tsx:139`
@@ -15299,7 +2385,7 @@
 - 严重程度：低
 - 指纹：`ba7a280e5a49adcb445eacb965e760a2465d7774681bfc322198fced5e5bc129`
 
-### 848. `hardcoded:src/components/providers/forms/GeminiFormFields.tsx:GeminiFormFields:2f864ce7fd5a5836:001`
+### 149. `hardcoded:src/components/providers/forms/GeminiFormFields.tsx:GeminiFormFields:2f864ce7fd5a5836:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/GeminiFormFields.tsx:216`
@@ -15311,7 +2397,7 @@
 - 严重程度：低
 - 指纹：`2f864ce7fd5a58362b08b4b32505753239d1e06282ba2a20441cd6ec287e79e8`
 
-### 849. `dynamic-i18n:src/components/providers/forms/GrokBuildProviderForm.tsx:presetName:e0d3c7fcb27f761e:001`
+### 150. `dynamic-i18n:src/components/providers/forms/GrokBuildProviderForm.tsx:presetName:e0d3c7fcb27f761e:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/GrokBuildProviderForm.tsx:280`
@@ -15322,7 +2408,7 @@
 - 严重程度：中
 - 指纹：`e0d3c7fcb27f761eebb20fc8cf99a5791d148a2af8c0b379684a6db1387b2e6c`
 
-### 850. `dynamic-i18n:src/components/providers/forms/HermesFormFields.tsx:baseUrlErrorMessage:5eb171ca5f27c5ee:001`
+### 151. `dynamic-i18n:src/components/providers/forms/HermesFormFields.tsx:baseUrlErrorMessage:5eb171ca5f27c5ee:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/HermesFormFields.tsx:113`
@@ -15333,7 +2419,7 @@
 - 严重程度：中
 - 指纹：`5eb171ca5f27c5eefd4e8e2757583c5a23cbb1c00f52b6199b1c9b5d91e475ef`
 
-### 851. `dynamic-i18n:src/components/providers/forms/HermesFormFields.tsx:HermesFormFields:ebd78379247b5bd6:001`
+### 152. `dynamic-i18n:src/components/providers/forms/HermesFormFields.tsx:HermesFormFields:ebd78379247b5bd6:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/HermesFormFields.tsx:239`
@@ -15344,7 +2430,7 @@
 - 严重程度：中
 - 指纹：`ebd78379247b5bd6b2d34410f886a2e98d012497dd589d92dcc1ae28e9ef5f47`
 
-### 852. `hardcoded:src/components/providers/forms/InactiveFieldsPanel.tsx:InactiveFieldsPanel:3beb400f41b46efa:001`
+### 153. `hardcoded:src/components/providers/forms/InactiveFieldsPanel.tsx:InactiveFieldsPanel:3beb400f41b46efa:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/InactiveFieldsPanel.tsx:49`
@@ -15355,7 +2441,7 @@
 - 严重程度：低
 - 指纹：`3beb400f41b46efa93d541b244b2404292075b8f534e40c2d1e38927479fbf1f`
 
-### 853. `dynamic-i18n:src/components/providers/forms/KimiProviderForm.tsx:presetSelector:e0d3c7fcb27f761e:001`
+### 154. `dynamic-i18n:src/components/providers/forms/KimiProviderForm.tsx:presetSelector:e0d3c7fcb27f761e:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/KimiProviderForm.tsx:417`
@@ -15366,7 +2452,7 @@
 - 严重程度：中
 - 指纹：`e0d3c7fcb27f761eebb20fc8cf99a5791d148a2af8c0b379684a6db1387b2e6c`
 
-### 854. `hardcoded:src/components/providers/forms/KimiProviderForm.tsx:rename:c42aa22d48bd32f1:001`
+### 155. `hardcoded:src/components/providers/forms/KimiProviderForm.tsx:rename:c42aa22d48bd32f1:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/KimiProviderForm.tsx:528`
@@ -15377,7 +2463,7 @@
 - 严重程度：低
 - 指纹：`c42aa22d48bd32f19b5ee9923dccdd99e0f5dcc841b6cf08b7dcd3402b82bd69`
 
-### 855. `dynamic-i18n:src/components/providers/forms/KimiProviderForm.tsx:KimiProviderForm:450a277c2780a76f:001`
+### 156. `dynamic-i18n:src/components/providers/forms/KimiProviderForm.tsx:KimiProviderForm:450a277c2780a76f:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/KimiProviderForm.tsx:766`
@@ -15388,7 +2474,7 @@
 - 严重程度：中
 - 指纹：`450a277c2780a76f8de37a14ed429c00fd2d7306f903bbdd718ab732baf89402`
 
-### 856. `dynamic-i18n:src/components/providers/forms/KimiProviderForm.tsx:KimiProviderForm:450a277c2780a76f:002`
+### 157. `dynamic-i18n:src/components/providers/forms/KimiProviderForm.tsx:KimiProviderForm:450a277c2780a76f:002`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/KimiProviderForm.tsx:770`
@@ -15399,7 +2485,7 @@
 - 严重程度：中
 - 指纹：`450a277c2780a76f8de37a14ed429c00fd2d7306f903bbdd718ab732baf89402`
 
-### 857. `dynamic-i18n:src/components/providers/forms/KimiProviderForm.tsx:KimiProviderForm:c76f11a5e2460403:001`
+### 158. `dynamic-i18n:src/components/providers/forms/KimiProviderForm.tsx:KimiProviderForm:c76f11a5e2460403:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/KimiProviderForm.tsx:772`
@@ -15410,7 +2496,7 @@
 - 严重程度：中
 - 指纹：`c76f11a5e24604034bcd0d3ff1a6d6fb8e3802b27e31cd08ef6989f5a8bdfeeb`
 
-### 858. `hardcoded:src/components/providers/forms/LocalProxyRequestOverridesField.tsx:LocalProxyRequestOverridesField:e1e515e7180d7033:001`
+### 159. `hardcoded:src/components/providers/forms/LocalProxyRequestOverridesField.tsx:LocalProxyRequestOverridesField:e1e515e7180d7033:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/LocalProxyRequestOverridesField.tsx:50`
@@ -15424,7 +2510,7 @@
 - 严重程度：低
 - 指纹：`e1e515e7180d70334bec74154e391c3b95dc3aeb889ec645b98a9e0afbc221a0`
 
-### 859. `hardcoded:src/components/providers/forms/LocalProxyRequestOverridesField.tsx:LocalProxyRequestOverridesField:cffd62f1796bb566:001`
+### 160. `hardcoded:src/components/providers/forms/LocalProxyRequestOverridesField.tsx:LocalProxyRequestOverridesField:cffd62f1796bb566:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/LocalProxyRequestOverridesField.tsx:73`
@@ -15438,7 +2524,7 @@
 - 严重程度：低
 - 指纹：`cffd62f1796bb566d5ad30fc5fbb75465b006ef7a6a9a42b8fd4e138f46c8369`
 
-### 860. `hardcoded:src/components/providers/forms/OmoFormFields.tsx:ADVANCED_PLACEHOLDER:b31ef31350210726:001`
+### 161. `hardcoded:src/components/providers/forms/OmoFormFields.tsx:ADVANCED_PLACEHOLDER:b31ef31350210726:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/OmoFormFields.tsx:53`
@@ -15455,7 +2541,7 @@
 - 严重程度：低
 - 指纹：`b31ef31350210726dd2d8933a21f58a5cb58ebd2490b61d5b5f7cf3ddcce5cb3`
 
-### 861. `hardcoded:src/components/providers/forms/OmoFormFields.tsx:placeholderText:98f19b1023bf1c62:001`
+### 162. `hardcoded:src/components/providers/forms/OmoFormFields.tsx:placeholderText:98f19b1023bf1c62:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/OmoFormFields.tsx:152`
@@ -15466,7 +2552,7 @@
 - 严重程度：低
 - 指纹：`98f19b1023bf1c62b7efb98afbeb74c692ba7cbf6390f13f505e89810f24f94e`
 
-### 862. `hardcoded:src/components/providers/forms/OmoFormFields.tsx:formatExample:817be6d029ab4b0d:001`
+### 163. `hardcoded:src/components/providers/forms/OmoFormFields.tsx:formatExample:817be6d029ab4b0d:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/OmoFormFields.tsx:744`
@@ -15477,7 +2563,7 @@
 - 严重程度：低
 - 指纹：`817be6d029ab4b0d6fe73cb0491be70697a69e9444e2b1b1e7f3c1ebc35c7d38`
 
-### 863. `dynamic-i18n:src/components/providers/forms/OmoFormFields.tsx:renderBuiltinModelRow:f19573ea4c8f34d1:001`
+### 164. `dynamic-i18n:src/components/providers/forms/OmoFormFields.tsx:renderBuiltinModelRow:f19573ea4c8f34d1:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/OmoFormFields.tsx:921`
@@ -15488,7 +2574,7 @@
 - 严重程度：中
 - 指纹：`f19573ea4c8f34d16ed290a159139f8c4f9d8a6b2d57ba15b5a4226f48405124`
 
-### 864. `dynamic-i18n:src/components/providers/forms/OmoFormFields.tsx:renderBuiltinModelRow:2b3d6a81dfe0d684:001`
+### 165. `dynamic-i18n:src/components/providers/forms/OmoFormFields.tsx:renderBuiltinModelRow:2b3d6a81dfe0d684:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/OmoFormFields.tsx:925`
@@ -15499,7 +2585,7 @@
 - 严重程度：中
 - 指纹：`2b3d6a81dfe0d68451cced7796ce01f17ea2304cfb282b8757154b5060f88179`
 
-### 865. `hardcoded:src/components/providers/forms/OmoFormFields.tsx:OmoFormFields:5e20285fe5ad1cfa:001`
+### 166. `hardcoded:src/components/providers/forms/OmoFormFields.tsx:OmoFormFields:5e20285fe5ad1cfa:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/OmoFormFields.tsx:1257`
@@ -15510,7 +2596,7 @@
 - 严重程度：低
 - 指纹：`5e20285fe5ad1cfa2eba554a9000dbe93a77c749f462ba24c066427d157f1c0a`
 
-### 866. `hardcoded:src/components/providers/forms/OmoFormFields.tsx:OmoFormFields:91d0a331812bbb1c:001`
+### 167. `hardcoded:src/components/providers/forms/OmoFormFields.tsx:OmoFormFields:91d0a331812bbb1c:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/OmoFormFields.tsx:1281`
@@ -15521,7 +2607,7 @@
 - 严重程度：低
 - 指纹：`91d0a331812bbb1c12b109fddf1922f9cebc6d1202c1e51183c752eba8fb1b34`
 
-### 867. `hardcoded:src/components/providers/forms/OmoFormFields.tsx:OmoFormFields:c746ca58ccfa9445:001`
+### 168. `hardcoded:src/components/providers/forms/OmoFormFields.tsx:OmoFormFields:c746ca58ccfa9445:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/OmoFormFields.tsx:1324`
@@ -15533,7 +2619,7 @@
 - 严重程度：低
 - 指纹：`c746ca58ccfa944537e641c9bc09b1df5b612728499b00176a8ed4d4e0c37e43`
 
-### 868. `dynamic-i18n:src/components/providers/forms/PiProviderForm.tsx:PiProviderForm:144d278fd002fc14:001`
+### 169. `dynamic-i18n:src/components/providers/forms/PiProviderForm.tsx:PiProviderForm:144d278fd002fc14:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/PiProviderForm.tsx:1997`
@@ -15544,7 +2630,7 @@
 - 严重程度：中
 - 指纹：`144d278fd002fc148183933e93c9e19ec345a4fcb70ba385572841333ee0f982`
 
-### 869. `dynamic-i18n:src/components/providers/forms/PiProviderForm.tsx:PiProviderForm:144d278fd002fc14:002`
+### 170. `dynamic-i18n:src/components/providers/forms/PiProviderForm.tsx:PiProviderForm:144d278fd002fc14:002`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/PiProviderForm.tsx:2005`
@@ -15555,7 +2641,7 @@
 - 严重程度：中
 - 指纹：`144d278fd002fc148183933e93c9e19ec345a4fcb70ba385572841333ee0f982`
 
-### 870. `dynamic-i18n:src/components/providers/forms/PiProviderForm.tsx:PiProviderForm:144d278fd002fc14:003`
+### 171. `dynamic-i18n:src/components/providers/forms/PiProviderForm.tsx:PiProviderForm:144d278fd002fc14:003`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/PiProviderForm.tsx:2048`
@@ -15566,7 +2652,7 @@
 - 严重程度：中
 - 指纹：`144d278fd002fc148183933e93c9e19ec345a4fcb70ba385572841333ee0f982`
 
-### 871. `dynamic-i18n:src/components/providers/forms/PiProviderForm.tsx:PiProviderForm:144d278fd002fc14:004`
+### 172. `dynamic-i18n:src/components/providers/forms/PiProviderForm.tsx:PiProviderForm:144d278fd002fc14:004`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/PiProviderForm.tsx:2124`
@@ -15577,7 +2663,7 @@
 - 严重程度：中
 - 指纹：`144d278fd002fc148183933e93c9e19ec345a4fcb70ba385572841333ee0f982`
 
-### 872. `dynamic-i18n:src/components/providers/forms/PiProviderForm.tsx:PiProviderForm:132a666b0f252c49:001`
+### 173. `dynamic-i18n:src/components/providers/forms/PiProviderForm.tsx:PiProviderForm:132a666b0f252c49:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/PiProviderForm.tsx:2213`
@@ -15588,7 +2674,7 @@
 - 严重程度：中
 - 指纹：`132a666b0f252c49eb4a518979481806f7535319d4b1a4cae4bbd0deb0f020f2`
 
-### 873. `dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:handleSubmit:b107d3ee7afe31c4:001`
+### 174. `dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:handleSubmit:b107d3ee7afe31c4:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/ProviderForm.tsx:1366`
@@ -15601,7 +2687,7 @@
 - 严重程度：中
 - 指纹：`b107d3ee7afe31c4b51579ab7b942989ba2965c7bb37cbbfdc0073bda4d45245`
 
-### 874. `hardcoded:src/components/providers/forms/ProviderForm.tsx:performSubmit:458eb3e0d13f515e:001`
+### 175. `hardcoded:src/components/providers/forms/ProviderForm.tsx:performSubmit:458eb3e0d13f515e:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/ProviderForm.tsx:1808`
@@ -15612,7 +2698,7 @@
 - 严重程度：低
 - 指纹：`458eb3e0d13f515e55c38f81d413a257efdb51200f91d4e8baa72c1a431f350e`
 
-### 875. `dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:presetName:70b8f41adf91a088:001`
+### 176. `dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:presetName:70b8f41adf91a088:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/ProviderForm.tsx:1850`
@@ -15623,7 +2709,7 @@
 - 严重程度：中
 - 指纹：`70b8f41adf91a088b81d19e95c1b202946fb7b5f85d9dde92ed37cafbf0718b0`
 
-### 876. `hardcoded:src/components/providers/forms/ProviderForm.tsx:performSubmit:ad1ffbaec168e765:001`
+### 177. `hardcoded:src/components/providers/forms/ProviderForm.tsx:performSubmit:ad1ffbaec168e765:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/ProviderForm.tsx:1854`
@@ -15634,7 +2720,7 @@
 - 严重程度：低
 - 指纹：`ad1ffbaec168e765637692922ba9c73bfef1023ace633f044f32cee293d7929c`
 
-### 877. `dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:handlePresetChange:e0d3c7fcb27f761e:001`
+### 178. `dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:handlePresetChange:e0d3c7fcb27f761e:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/ProviderForm.tsx:2245`
@@ -15645,7 +2731,7 @@
 - 严重程度：中
 - 指纹：`e0d3c7fcb27f761eebb20fc8cf99a5791d148a2af8c0b379684a6db1387b2e6c`
 
-### 878. `dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:handlePresetChange:e0d3c7fcb27f761e:002`
+### 179. `dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:handlePresetChange:e0d3c7fcb27f761e:002`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/ProviderForm.tsx:2271`
@@ -15656,7 +2742,7 @@
 - 严重程度：中
 - 指纹：`e0d3c7fcb27f761eebb20fc8cf99a5791d148a2af8c0b379684a6db1387b2e6c`
 
-### 879. `dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:handlePresetChange:e0d3c7fcb27f761e:003`
+### 180. `dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:handlePresetChange:e0d3c7fcb27f761e:003`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/ProviderForm.tsx:2300`
@@ -15667,7 +2753,7 @@
 - 严重程度：中
 - 指纹：`e0d3c7fcb27f761eebb20fc8cf99a5791d148a2af8c0b379684a6db1387b2e6c`
 
-### 880. `dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:handlePresetChange:e0d3c7fcb27f761e:004`
+### 181. `dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:handlePresetChange:e0d3c7fcb27f761e:004`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/ProviderForm.tsx:2327`
@@ -15678,7 +2764,7 @@
 - 严重程度：中
 - 指纹：`e0d3c7fcb27f761eebb20fc8cf99a5791d148a2af8c0b379684a6db1387b2e6c`
 
-### 881. `dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:handlePresetChange:e0d3c7fcb27f761e:005`
+### 182. `dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:handlePresetChange:e0d3c7fcb27f761e:005`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/ProviderForm.tsx:2344`
@@ -15689,7 +2775,7 @@
 - 严重程度：中
 - 指纹：`e0d3c7fcb27f761eebb20fc8cf99a5791d148a2af8c0b379684a6db1387b2e6c`
 
-### 882. `dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:handlePresetChange:e0d3c7fcb27f761e:006`
+### 183. `dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:handlePresetChange:e0d3c7fcb27f761e:006`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/ProviderForm.tsx:2380`
@@ -15700,7 +2786,7 @@
 - 严重程度：中
 - 指纹：`e0d3c7fcb27f761eebb20fc8cf99a5791d148a2af8c0b379684a6db1387b2e6c`
 
-### 883. `dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:ProviderFormFull:2929691ef61b6b98:001`
+### 184. `dynamic-i18n:src/components/providers/forms/ProviderForm.tsx:ProviderFormFull:2929691ef61b6b98:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/ProviderForm.tsx:2593`
@@ -15713,7 +2799,7 @@
 - 严重程度：中
 - 指纹：`2929691ef61b6b98ba7850f932d6ab6ed43068e48450fa0d7e0b9ef50912f295`
 
-### 884. `hardcoded:src/components/providers/forms/ProviderForm.tsx:ProviderFormFull:c279117c636298ec:001`
+### 185. `hardcoded:src/components/providers/forms/ProviderForm.tsx:ProviderFormFull:c279117c636298ec:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/ProviderForm.tsx:3006`
@@ -15732,7 +2818,7 @@
 - 严重程度：低
 - 指纹：`c279117c636298ec9d0a9b4ee551430f8b40a5f2e827497e7aa546703e65b6ef`
 
-### 885. `hardcoded:src/components/providers/forms/ProviderForm.tsx:ProviderFormFull:4161eb0049bf4373:001`
+### 186. `hardcoded:src/components/providers/forms/ProviderForm.tsx:ProviderFormFull:4161eb0049bf4373:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/ProviderForm.tsx:3039`
@@ -15748,7 +2834,7 @@
 - 严重程度：低
 - 指纹：`4161eb0049bf43738b75b3168099103d4850d43d4104b4e4ecc95c879fecde59`
 
-### 886. `hardcoded:src/components/providers/forms/ProviderForm.tsx:ProviderFormFull:1ae0ca0cfa110297:001`
+### 187. `hardcoded:src/components/providers/forms/ProviderForm.tsx:ProviderFormFull:1ae0ca0cfa110297:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/ProviderForm.tsx:3044`
@@ -15765,7 +2851,7 @@
 - 严重程度：低
 - 指纹：`1ae0ca0cfa1102971706182688606a46b22d1432ea9712ec893740f22eaa37c9`
 
-### 887. `hardcoded:src/components/providers/forms/ProviderForm.tsx:ProviderFormFull:df0d72913440193d:001`
+### 188. `hardcoded:src/components/providers/forms/ProviderForm.tsx:ProviderFormFull:df0d72913440193d:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/ProviderForm.tsx:3101`
@@ -15776,7 +2862,7 @@
 - 严重程度：低
 - 指纹：`df0d72913440193d37dbb8d2b3e9e80054927eff0f1cadb452ae3d96dc51d345`
 
-### 888. `dynamic-i18n:src/components/providers/forms/ProviderPresetSelector.tsx:PresetPicker:2ecf60adfaf48d3d:001`
+### 189. `dynamic-i18n:src/components/providers/forms/ProviderPresetSelector.tsx:PresetPicker:2ecf60adfaf48d3d:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/ProviderPresetSelector.tsx:697`
@@ -15787,7 +2873,7 @@
 - 严重程度：中
 - 指纹：`2ecf60adfaf48d3d178598391a5edcfb21b0b69b7e6065cf8e11a0889b2e42c8`
 
-### 889. `dynamic-i18n:src/components/providers/forms/ProviderPresetSelector.tsx:PresetPicker:4449886f332aee87:001`
+### 190. `dynamic-i18n:src/components/providers/forms/ProviderPresetSelector.tsx:PresetPicker:4449886f332aee87:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/ProviderPresetSelector.tsx:724`
@@ -15798,7 +2884,7 @@
 - 严重程度：中
 - 指纹：`4449886f332aee87414a8ce0440ca4bc27fab6e67a88ccd42680c8db56b7c721`
 
-### 890. `dynamic-i18n:src/components/providers/forms/ProviderPresetSelector.tsx:PresetPicker:d66617847d5d3184:001`
+### 191. `dynamic-i18n:src/components/providers/forms/ProviderPresetSelector.tsx:PresetPicker:d66617847d5d3184:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/ProviderPresetSelector.tsx:788`
@@ -15809,7 +2895,7 @@
 - 严重程度：中
 - 指纹：`d66617847d5d31849ee9eda8fb528297c5c5dfb871a7ceabcc81f0f1bd37ce06`
 
-### 891. `dynamic-i18n:src/components/providers/forms/ProviderPresetSelector.tsx:presetRowDetail:1ef66cb0a07d81d7:001`
+### 192. `dynamic-i18n:src/components/providers/forms/ProviderPresetSelector.tsx:presetRowDetail:1ef66cb0a07d81d7:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/ProviderPresetSelector.tsx:830`
@@ -15820,7 +2906,7 @@
 - 严重程度：中
 - 指纹：`1ef66cb0a07d81d78c015661ad1c310dc8cab09720e08dd47e36ce6c29953f61`
 
-### 892. `hardcoded:src/components/providers/forms/helpers/opencodeFormUtils.ts:OPENCODE_EXTRA_OPTION_DRAFT_PREFIX:01b63fbbc50ec269:001`
+### 193. `hardcoded:src/components/providers/forms/helpers/opencodeFormUtils.ts:OPENCODE_EXTRA_OPTION_DRAFT_PREFIX:01b63fbbc50ec269:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/helpers/opencodeFormUtils.ts:57`
@@ -15831,7 +2917,7 @@
 - 严重程度：低
 - 指纹：`01b63fbbc50ec26936b3b7fb0f84b5bfce5929320959b1ae6ade126b3c975da1`
 
-### 893. `hardcoded:src/components/providers/forms/helpers/requestHeaders.ts:REQUEST_HEADER_DRAFT_PREFIX:4cfac90d8fd36cb7:001`
+### 194. `hardcoded:src/components/providers/forms/helpers/requestHeaders.ts:REQUEST_HEADER_DRAFT_PREFIX:4cfac90d8fd36cb7:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/helpers/requestHeaders.ts:1`
@@ -15842,7 +2928,7 @@
 - 严重程度：低
 - 指纹：`4cfac90d8fd36cb7daa7285167fc65ae32bf38c8cf9a55dbe2d3f1ec290cc1c4`
 
-### 894. `dynamic-i18n:src/components/providers/forms/hooks/useKimiOAuth.ts:poll:54e9f1fe2ffcfff0:001`
+### 195. `dynamic-i18n:src/components/providers/forms/hooks/useKimiOAuth.ts:poll:54e9f1fe2ffcfff0:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/hooks/useKimiOAuth.ts:97`
@@ -15853,7 +2939,7 @@
 - 严重程度：中
 - 指纹：`54e9f1fe2ffcfff049ba8449c17135b0df6090267d74cc0de907ad199e1ffe7e`
 
-### 895. `hardcoded:src/components/providers/forms/hooks/useOmoModelSource.ts:label:0a04523657c2a840:001`
+### 196. `hardcoded:src/components/providers/forms/hooks/useOmoModelSource.ts:label:0a04523657c2a840:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/hooks/useOmoModelSource.ts:187`
@@ -15864,7 +2950,7 @@
 - 严重程度：低
 - 指纹：`0a04523657c2a840246e549ebdabb9985676efc194e3471a0da2e8e80f8cbcfe`
 
-### 896. `hardcoded:src/components/providers/forms/hooks/useOmoModelSource.ts:omoModelBuild:6dab1f267cdba5c1:001`
+### 197. `hardcoded:src/components/providers/forms/hooks/useOmoModelSource.ts:omoModelBuild:6dab1f267cdba5c1:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/hooks/useOmoModelSource.ts:242`
@@ -15875,7 +2961,7 @@
 - 严重程度：低
 - 指纹：`6dab1f267cdba5c1dedb6142ba28b795b66f4ae8bfca79b7264b6195602dfe1a`
 
-### 897. `hardcoded:src/components/providers/forms/hooks/useOmoModelSource.ts:signature:24977a93dd4bf0cd:001`
+### 198. `hardcoded:src/components/providers/forms/hooks/useOmoModelSource.ts:signature:24977a93dd4bf0cd:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/hooks/useOmoModelSource.ts:270`
@@ -15889,7 +2975,7 @@
 - 严重程度：低
 - 指纹：`24977a93dd4bf0cd6b8fccc709f3f88bcf2330f16b5f5a6df25ea9631e000ab7`
 
-### 898. `hardcoded:src/components/providers/forms/hooks/useOmoModelSource.ts:signature:791e63429b402f3a:001`
+### 199. `hardcoded:src/components/providers/forms/hooks/useOmoModelSource.ts:signature:791e63429b402f3a:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/hooks/useOmoModelSource.ts:270`
@@ -15900,7 +2986,7 @@
 - 严重程度：低
 - 指纹：`791e63429b402f3a6f63aa1bd4d37e48e839b2cdd7dc8a619ef99afba2d5a57c`
 
-### 899. `hardcoded:src/components/providers/forms/hooks/useOpenclawFormState.ts:OPENCLAW_DEFAULT_USER_AGENT:b7592e83088dd0ef:001`
+### 200. `hardcoded:src/components/providers/forms/hooks/useOpenclawFormState.ts:OPENCLAW_DEFAULT_USER_AGENT:b7592e83088dd0ef:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/hooks/useOpenclawFormState.ts:18`
@@ -15911,7 +2997,7 @@
 - 严重程度：低
 - 指纹：`b7592e83088dd0ef68ba9f3553a9f670b04f658da05ee5953a0bc593977d9fb9`
 
-### 900. `dynamic-i18n:src/components/providers/forms/presetGroups.ts:presetDisplayName:e0d3c7fcb27f761e:001`
+### 201. `dynamic-i18n:src/components/providers/forms/presetGroups.ts:presetDisplayName:e0d3c7fcb27f761e:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/presetGroups.ts:87`
@@ -15922,7 +3008,7 @@
 - 严重程度：中
 - 指纹：`e0d3c7fcb27f761eebb20fc8cf99a5791d148a2af8c0b379684a6db1387b2e6c`
 
-### 901. `dynamic-i18n:src/components/providers/forms/presetGroups.ts:familyDisplayName:68cf4bfef554bafb:001`
+### 202. `dynamic-i18n:src/components/providers/forms/presetGroups.ts:familyDisplayName:68cf4bfef554bafb:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/presetGroups.ts:209`
@@ -15933,7 +3019,7 @@
 - 严重程度：中
 - 指纹：`68cf4bfef554bafbbd4e399d25b37bd8e3bb6897a13d8ac9002f1a43095def2a`
 
-### 902. `dynamic-i18n:src/components/providers/forms/presetGroups.ts:presetPlanLabel:0e82ff606c3fadd8:001`
+### 203. `dynamic-i18n:src/components/providers/forms/presetGroups.ts:presetPlanLabel:0e82ff606c3fadd8:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/presetGroups.ts:219`
@@ -15944,7 +3030,7 @@
 - 严重程度：中
 - 指纹：`0e82ff606c3fadd8ea8cb6573f83fc7fc69e4f4d6bf6f49f625112a4e0dc6fd3`
 
-### 903. `dynamic-i18n:src/components/providers/forms/presetGroups.ts:presetRegionLabel:ad2da87a36c33418:001`
+### 204. `dynamic-i18n:src/components/providers/forms/presetGroups.ts:presetRegionLabel:ad2da87a36c33418:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/presetGroups.ts:226`
@@ -15955,7 +3041,7 @@
 - 严重程度：中
 - 指纹：`ad2da87a36c334182cc13e04e16921b7c57d3a7ef14cc3ca7bf8141dfb6c050f`
 
-### 904. `hardcoded:src/components/providers/forms/presetGroups.ts:PINYIN_BOUNDARIES:19c5ea98c97ffa7a:001`
+### 205. `hardcoded:src/components/providers/forms/presetGroups.ts:PINYIN_BOUNDARIES:19c5ea98c97ffa7a:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/presetGroups.ts:388`
@@ -15966,7 +3052,7 @@
 - 严重程度：中
 - 指纹：`19c5ea98c97ffa7aa52ab4045f709a1c5eb96f58a0fe93be20feb03ace0dde78`
 
-### 905. `dynamic-i18n:src/components/providers/forms/shared/ApiKeySection.tsx:promotion:8c26f1886f0b1401:001`
+### 206. `dynamic-i18n:src/components/providers/forms/shared/ApiKeySection.tsx:promotion:8c26f1886f0b1401:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/forms/shared/ApiKeySection.tsx:60`
@@ -15977,7 +3063,7 @@
 - 严重程度：中
 - 指纹：`8c26f1886f0b14011ff0e721dfc8edb5f48c997d1bc53b50eb2204d9dc05337d`
 
-### 906. `hardcoded:src/components/providers/mode/ModeDialog.tsx:MODE_LABEL:b9670c85a4ab939e:001`
+### 207. `hardcoded:src/components/providers/mode/ModeDialog.tsx:MODE_LABEL:b9670c85a4ab939e:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/mode/ModeDialog.tsx:45`
@@ -15988,7 +3074,7 @@
 - 严重程度：中
 - 指纹：`b9670c85a4ab939eebef4821f4f6dad33dd7bc541eea594653d1fdd2ba1ee733`
 
-### 907. `hardcoded:src/components/providers/mode/ModeDialog.tsx:MODE_LABEL:a4768faecb385ed9:001`
+### 208. `hardcoded:src/components/providers/mode/ModeDialog.tsx:MODE_LABEL:a4768faecb385ed9:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/mode/ModeDialog.tsx:46`
@@ -15999,7 +3085,7 @@
 - 严重程度：中
 - 指纹：`a4768faecb385ed91181804fde350f669981fba1f4ff0f9c2ede2d61d318e9a2`
 
-### 908. `hardcoded:src/components/providers/mode/ModeDialog.tsx:subject:76dbd40504a70a44:001`
+### 209. `hardcoded:src/components/providers/mode/ModeDialog.tsx:subject:76dbd40504a70a44:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/mode/ModeDialog.tsx:53`
@@ -16010,7 +3096,7 @@
 - 严重程度：中
 - 指纹：`76dbd40504a70a440cc886dcb42836d185db121e831f66c306f9c1661313852b`
 
-### 909. `dynamic-i18n:src/components/providers/mode/ModeDialog.tsx:EnterBody:fcdbad57bad3a97a:001`
+### 210. `dynamic-i18n:src/components/providers/mode/ModeDialog.tsx:EnterBody:fcdbad57bad3a97a:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/mode/ModeDialog.tsx:226`
@@ -16023,7 +3109,7 @@
 - 严重程度：中
 - 指纹：`fcdbad57bad3a97ac6e8007e336743ca8e1a7d6efa7637892d6a308e499ebcc9`
 
-### 910. `dynamic-i18n:src/components/providers/mode/ModeDialog.tsx:targetName:9a6e6056bc68a344:001`
+### 211. `dynamic-i18n:src/components/providers/mode/ModeDialog.tsx:targetName:9a6e6056bc68a344:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/mode/ModeDialog.tsx:249`
@@ -16034,7 +3120,7 @@
 - 严重程度：中
 - 指纹：`9a6e6056bc68a34442b51307c97d01a3e76078bb220dcf7407babd52712f33fc`
 
-### 911. `dynamic-i18n:src/components/providers/mode/ModeDialog.tsx:title:63b0f1c3e4f1b584:001`
+### 212. `dynamic-i18n:src/components/providers/mode/ModeDialog.tsx:title:63b0f1c3e4f1b584:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/mode/ModeDialog.tsx:253`
@@ -16045,7 +3131,7 @@
 - 严重程度：中
 - 指纹：`63b0f1c3e4f1b5844cf9ab36a0201e715c7fde17d52bc65f3eba1670110d2047`
 
-### 912. `dynamic-i18n:src/components/providers/mode/ModeDialog.tsx:ExitBody:63b0f1c3e4f1b584:001`
+### 213. `dynamic-i18n:src/components/providers/mode/ModeDialog.tsx:ExitBody:63b0f1c3e4f1b584:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/mode/ModeDialog.tsx:427`
@@ -16056,7 +3142,7 @@
 - 严重程度：中
 - 指纹：`63b0f1c3e4f1b5844cf9ab36a0201e715c7fde17d52bc65f3eba1670110d2047`
 
-### 913. `dynamic-i18n:src/components/providers/mode/ModeTabs.tsx:ModeTabs:8594999185d253ca:001`
+### 214. `dynamic-i18n:src/components/providers/mode/ModeTabs.tsx:ModeTabs:8594999185d253ca:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/mode/ModeTabs.tsx:117`
@@ -16067,7 +3153,7 @@
 - 严重程度：中
 - 指纹：`8594999185d253cac67012cdf03429a7ec6a6ed8cb4300166ad5416582da216c`
 
-### 914. `dynamic-i18n:src/components/providers/mode/ModeTabs.tsx:ModeTabs:37635fc3d0ebe24c:001`
+### 215. `dynamic-i18n:src/components/providers/mode/ModeTabs.tsx:ModeTabs:37635fc3d0ebe24c:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/mode/ModeTabs.tsx:135`
@@ -16078,7 +3164,7 @@
 - 严重程度：中
 - 指纹：`37635fc3d0ebe24c450c409de557a403a6c39ba395160f060bc6ccec166eb53e`
 
-### 915. `dynamic-i18n:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:63b0f1c3e4f1b584:001`
+### 216. `dynamic-i18n:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:63b0f1c3e4f1b584:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/mode/SwitchModePanel.tsx:384`
@@ -16089,7 +3175,7 @@
 - 严重程度：中
 - 指纹：`63b0f1c3e4f1b5844cf9ab36a0201e715c7fde17d52bc65f3eba1670110d2047`
 
-### 916. `dynamic-i18n:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:3ccf2e312468eabd:001`
+### 217. `dynamic-i18n:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:3ccf2e312468eabd:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/mode/SwitchModePanel.tsx:429`
@@ -16100,7 +3186,7 @@
 - 严重程度：中
 - 指纹：`3ccf2e312468eabdf00e60d92ec7776db283fd6d7e87cfc7b634be1f206a230f`
 
-### 917. `dynamic-i18n:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:b01ceb686ee7b005:001`
+### 218. `dynamic-i18n:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:b01ceb686ee7b005:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/mode/SwitchModePanel.tsx:467`
@@ -16111,7 +3197,7 @@
 - 严重程度：中
 - 指纹：`b01ceb686ee7b00588f9215bbf65e9ac8c98db79940c176eae397729fbabcfda`
 
-### 918. `dynamic-i18n:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:814432bf883e93e6:001`
+### 219. `dynamic-i18n:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:814432bf883e93e6:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/mode/SwitchModePanel.tsx:484`
@@ -16122,7 +3208,7 @@
 - 严重程度：中
 - 指纹：`814432bf883e93e6bcf7f75f4854fd3f7eacbd30847844d2868e8d7483ae4975`
 
-### 919. `dynamic-i18n:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:5183420e5cea98fb:001`
+### 220. `dynamic-i18n:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:5183420e5cea98fb:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/mode/SwitchModePanel.tsx:517`
@@ -16133,7 +3219,7 @@
 - 严重程度：中
 - 指纹：`5183420e5cea98fb0fba783012ad5279a99efc3025b661f1e77f4545e14792a3`
 
-### 920. `dynamic-i18n:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:63b0f1c3e4f1b584:002`
+### 221. `dynamic-i18n:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:63b0f1c3e4f1b584:002`
 
 - 状态：待核实
 - 文件：`src/components/providers/mode/SwitchModePanel.tsx:519`
@@ -16144,7 +3230,7 @@
 - 严重程度：中
 - 指纹：`63b0f1c3e4f1b5844cf9ab36a0201e715c7fde17d52bc65f3eba1670110d2047`
 
-### 921. `hardcoded:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:5067328e35b0d0f2:001`
+### 222. `hardcoded:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:5067328e35b0d0f2:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/mode/SwitchModePanel.tsx:545`
@@ -16155,7 +3241,7 @@
 - 严重程度：低
 - 指纹：`5067328e35b0d0f2c4e6b6bb68443ffd527482490b048bf281b2e5a11a64138d`
 
-### 922. `hardcoded:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:5067328e35b0d0f2:002`
+### 223. `hardcoded:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:5067328e35b0d0f2:002`
 
 - 状态：待核实
 - 文件：`src/components/providers/mode/SwitchModePanel.tsx:548`
@@ -16167,7 +3253,7 @@
 - 严重程度：低
 - 指纹：`5067328e35b0d0f2c4e6b6bb68443ffd527482490b048bf281b2e5a11a64138d`
 
-### 923. `dynamic-i18n:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:63b0f1c3e4f1b584:003`
+### 224. `dynamic-i18n:src/components/providers/mode/SwitchModePanel.tsx:SwitchModePanel:63b0f1c3e4f1b584:003`
 
 - 状态：待核实
 - 文件：`src/components/providers/mode/SwitchModePanel.tsx:570`
@@ -16178,7 +3264,7 @@
 - 严重程度：中
 - 指纹：`63b0f1c3e4f1b5844cf9ab36a0201e715c7fde17d52bc65f3eba1670110d2047`
 
-### 924. `hardcoded:src/components/providers/presentation.ts:queueItems:493b07f1bebf4d7b:001`
+### 225. `hardcoded:src/components/providers/presentation.ts:queueItems:493b07f1bebf4d7b:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/presentation.ts:380`
@@ -16189,7 +3275,7 @@
 - 严重程度：低
 - 指纹：`493b07f1bebf4d7b6b3b2d1adcf67ed840954509207f65386d7e06540bb7b9ec`
 
-### 925. `dynamic-i18n:src/components/providers/presentation.ts:buildSwitchSectionsByView:952b41156d70dc1d:001`
+### 226. `dynamic-i18n:src/components/providers/presentation.ts:buildSwitchSectionsByView:952b41156d70dc1d:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/presentation.ts:616`
@@ -16202,7 +3288,7 @@
 - 严重程度：中
 - 指纹：`952b41156d70dc1d49a2d578ee40bb60dd986a77bde5c2714e92e76f7095b93f`
 
-### 926. `dynamic-i18n:src/components/providers/presentation.ts:piBlocked:770eceac0b7cd3f8:001`
+### 227. `dynamic-i18n:src/components/providers/presentation.ts:piBlocked:770eceac0b7cd3f8:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/presentation.ts:717`
@@ -16213,7 +3299,7 @@
 - 严重程度：中
 - 指纹：`770eceac0b7cd3f834ccbb1e0089fc40822d920a9092c85a9fdb59d52b54946a`
 
-### 927. `dynamic-i18n:src/components/providers/presentation.ts:buildAdditiveSections:2eb4a51baae54d37:001`
+### 228. `dynamic-i18n:src/components/providers/presentation.ts:buildAdditiveSections:2eb4a51baae54d37:001`
 
 - 状态：待核实
 - 文件：`src/components/providers/presentation.ts:957`
@@ -16224,7 +3310,7 @@
 - 严重程度：中
 - 指纹：`2eb4a51baae54d37ab7eb80531cacac553f173e0b41fa7516dd5b8ce6e6e5ef3`
 
-### 928. `hardcoded:src/components/proxy/AutoFailoverConfigPanel.tsx:checkRange:4fd9cb179be0fe0c:001`
+### 229. `hardcoded:src/components/proxy/AutoFailoverConfigPanel.tsx:checkRange:4fd9cb179be0fe0c:001`
 
 - 状态：待核实
 - 文件：`src/components/proxy/AutoFailoverConfigPanel.tsx:101`
@@ -16235,7 +3321,7 @@
 - 严重程度：低
 - 指纹：`4fd9cb179be0fe0c51901353edf5b44b314d89730b5a9d74f025ebeb14b29958`
 
-### 929. `hardcoded:src/components/quota/QuotaLines.tsx:className:24ea28558154b40e:001`
+### 230. `hardcoded:src/components/quota/QuotaLines.tsx:className:24ea28558154b40e:001`
 
 - 状态：待核实
 - 文件：`src/components/quota/QuotaLines.tsx:273`
@@ -16246,7 +3332,7 @@
 - 严重程度：低
 - 指纹：`24ea28558154b40eebecc0d993d465049e3c81f1b518f3aeb2f52e828ab9e14f`
 
-### 930. `hardcoded:src/components/quota/QuotaLines.tsx:SplitQuotaColumn:52887338717ba4d5:001`
+### 231. `hardcoded:src/components/quota/QuotaLines.tsx:SplitQuotaColumn:52887338717ba4d5:001`
 
 - 状态：待核实
 - 文件：`src/components/quota/QuotaLines.tsx:577`
@@ -16258,7 +3344,7 @@
 - 严重程度：低
 - 指纹：`52887338717ba4d5d47d3d324031970bf8bc73ae19b9881c42d0e4a3ec60b403`
 
-### 931. `hardcoded:src/components/quota/QuotaLines.tsx:BAR_ROW_CLASS:62556b1602c85b7c:001`
+### 232. `hardcoded:src/components/quota/QuotaLines.tsx:BAR_ROW_CLASS:62556b1602c85b7c:001`
 
 - 状态：待核实
 - 文件：`src/components/quota/QuotaLines.tsx:619`
@@ -16269,7 +3355,7 @@
 - 严重程度：低
 - 指纹：`62556b1602c85b7c14259056da7edb6a57b6fa4a279e457e4fb773deab9c6beb`
 
-### 932. `hardcoded:src/components/quota/QuotaLines.tsx:cells:3e2975c92c22ea2e:001`
+### 233. `hardcoded:src/components/quota/QuotaLines.tsx:cells:3e2975c92c22ea2e:001`
 
 - 状态：待核实
 - 文件：`src/components/quota/QuotaLines.tsx:690`
@@ -16281,7 +3367,7 @@
 - 严重程度：低
 - 指纹：`3e2975c92c22ea2e7e479100032dc18677413423b103e4b5f25a984eed0c0e59`
 
-### 933. `hardcoded:src/components/quota/quotaRules.ts:labelParams:13794833d43f5449:001`
+### 234. `hardcoded:src/components/quota/quotaRules.ts:labelParams:13794833d43f5449:001`
 
 - 状态：待核实
 - 文件：`src/components/quota/quotaRules.ts:76`
@@ -16292,7 +3378,7 @@
 - 严重程度：低
 - 指纹：`13794833d43f54494869cb0831c0586f61dca7983eee4ead645f4bcccf8dcc14`
 
-### 934. `hardcoded:src/components/quota/quotaRules.ts:countdownStr:5d56a877614b75c9:001`
+### 235. `hardcoded:src/components/quota/quotaRules.ts:countdownStr:5d56a877614b75c9:001`
 
 - 状态：待核实
 - 文件：`src/components/quota/quotaRules.ts:90`
@@ -16303,7 +3389,7 @@
 - 严重程度：低
 - 指纹：`5d56a877614b75c912cd22348b87c8207d44fa9df7127affa6b4ddcb7b44c844`
 
-### 935. `dynamic-i18n:src/components/quota/quotaRules.ts:tierLine:02df858ef720e28a:001`
+### 236. `dynamic-i18n:src/components/quota/quotaRules.ts:tierLine:02df858ef720e28a:001`
 
 - 状态：待核实
 - 文件：`src/components/quota/quotaRules.ts:138`
@@ -16314,7 +3400,7 @@
 - 严重程度：中
 - 指纹：`02df858ef720e28a4a4700bfa3a586d2aa0d1d78d213ecaba83e2595ca282025`
 
-### 936. `dynamic-i18n:src/components/quota/quotaRules.ts:tierLine:b5286d080dc232bd:001`
+### 237. `dynamic-i18n:src/components/quota/quotaRules.ts:tierLine:b5286d080dc232bd:001`
 
 - 状态：待核实
 - 文件：`src/components/quota/quotaRules.ts:145`
@@ -16325,7 +3411,7 @@
 - 严重程度：中
 - 指纹：`b5286d080dc232bde98cb700bc4010de3f717b23353e15e6964b735a20805ed0`
 
-### 937. `hardcoded:src/components/quota/quotaRules.ts:lineHint:8c3eea1cee4a76b7:001`
+### 238. `hardcoded:src/components/quota/quotaRules.ts:lineHint:8c3eea1cee4a76b7:001`
 
 - 状态：待核实
 - 文件：`src/components/quota/quotaRules.ts:176`
@@ -16336,7 +3422,7 @@
 - 严重程度：低
 - 指纹：`8c3eea1cee4a76b742724e7dab4523cdb87de62c299ef93cd1b05e137bdc329a`
 
-### 938. `hardcoded:src/components/quota/quotaRules.ts:value:fb1c80078c42c46d:001`
+### 239. `hardcoded:src/components/quota/quotaRules.ts:value:fb1c80078c42c46d:001`
 
 - 状态：待核实
 - 文件：`src/components/quota/quotaRules.ts:378`
@@ -16347,7 +3433,7 @@
 - 严重程度：低
 - 指纹：`fb1c80078c42c46d0f53a0c6d674bbf3d1278c380c7e450a2756e55ad96480ce`
 
-### 939. `hardcoded:src/components/quota/quotaRules.ts:value:6b28d9e03de17ad9:001`
+### 240. `hardcoded:src/components/quota/quotaRules.ts:value:6b28d9e03de17ad9:001`
 
 - 状态：待核实
 - 文件：`src/components/quota/quotaRules.ts:378`
@@ -16358,7 +3444,7 @@
 - 严重程度：低
 - 指纹：`6b28d9e03de17ad993e8ca84831770404d1317d2f8e1df0a8467f4159e12f33f`
 
-### 940. `hardcoded:src/components/sessions/SessionDialogs.tsx:dialogClass:17517a6152ad7bb8:001`
+### 241. `hardcoded:src/components/sessions/SessionDialogs.tsx:dialogClass:17517a6152ad7bb8:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/SessionDialogs.tsx:20`
@@ -16369,7 +3455,7 @@
 - 严重程度：低
 - 指纹：`17517a6152ad7bb830594ba040da4d3b12056db7e3e691f0e642c13c5597c27b`
 
-### 941. `dynamic-i18n:src/components/sessions/SessionItem.tsx:deleteReason:26c0854586264f75:001`
+### 242. `dynamic-i18n:src/components/sessions/SessionItem.tsx:deleteReason:26c0854586264f75:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/SessionItem.tsx:108`
@@ -16386,7 +3472,7 @@
 - 严重程度：中
 - 指纹：`26c0854586264f752701894181ddf6d23aecb1ec93d6ea585477f07fc2fbe360`
 
-### 942. `hardcoded:src/components/sessions/SessionManagerPage.tsx:linkButton:2ef5d2d99339f66b:001`
+### 243. `hardcoded:src/components/sessions/SessionManagerPage.tsx:linkButton:2ef5d2d99339f66b:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/SessionManagerPage.tsx:126`
@@ -16397,7 +3483,7 @@
 - 严重程度：低
 - 指纹：`2ef5d2d99339f66b4236ce13022af1cec63c57491e97f5374e0eb201ba7914fd`
 
-### 943. `dynamic-i18n:src/components/sessions/SessionManagerPage.tsx:label:2c70e12b7a0646f9:001`
+### 244. `dynamic-i18n:src/components/sessions/SessionManagerPage.tsx:label:2c70e12b7a0646f9:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/SessionManagerPage.tsx:312`
@@ -16408,7 +3494,7 @@
 - 严重程度：中
 - 指纹：`2c70e12b7a0646f92279f427c7b38e7334d8e5389cff167a1dc30e73f826b683`
 
-### 944. `hardcoded:src/components/sessions/SessionManagerPage.tsx:deletedKeys:c0d5b9aa0908fba5:001`
+### 245. `hardcoded:src/components/sessions/SessionManagerPage.tsx:deletedKeys:c0d5b9aa0908fba5:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/SessionManagerPage.tsx:508`
@@ -16419,7 +3505,7 @@
 - 严重程度：低
 - 指纹：`c0d5b9aa0908fba5415d5238be84c4ab5deaa596da710839b1a6f2a984736759`
 
-### 945. `hardcoded:src/components/sessions/SessionManagerPage.tsx:renderProjectHeader:028a891c0bb5fc32:001`
+### 246. `hardcoded:src/components/sessions/SessionManagerPage.tsx:renderProjectHeader:028a891c0bb5fc32:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/SessionManagerPage.tsx:794`
@@ -16430,7 +3516,7 @@
 - 严重程度：低
 - 指纹：`028a891c0bb5fc321681ae1f2675b5e971c1550eb01b5094895276b7b99f4523`
 
-### 946. `hardcoded:src/components/sessions/reader/PathChip.tsx:PathChip:63da264f49765c77:001`
+### 247. `hardcoded:src/components/sessions/reader/PathChip.tsx:PathChip:63da264f49765c77:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/PathChip.tsx:136`
@@ -16442,7 +3528,7 @@
 - 严重程度：低
 - 指纹：`63da264f49765c771f1ea3df6827e4a50d410ef8198212d25a099dab8636e60a`
 
-### 947. `hardcoded:src/components/sessions/reader/SessionCodeBlock.tsx:SESSION_INLINE_CODE_CLASS:0d586a1523c16900:001`
+### 248. `hardcoded:src/components/sessions/reader/SessionCodeBlock.tsx:SESSION_INLINE_CODE_CLASS:0d586a1523c16900:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionCodeBlock.tsx:15`
@@ -16453,7 +3539,7 @@
 - 严重程度：低
 - 指纹：`0d586a1523c169006a8d3690cc9ffe5ee87b84b2b00bb31b04de3455cf2c1867`
 
-### 948. `hardcoded:src/components/sessions/reader/SessionDiff.tsx:parseDiff:d7075d60cad8f0fd:001`
+### 249. `hardcoded:src/components/sessions/reader/SessionDiff.tsx:parseDiff:d7075d60cad8f0fd:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionDiff.tsx:54`
@@ -16464,7 +3550,7 @@
 - 严重程度：低
 - 指纹：`d7075d60cad8f0fd34f43cd2ea6972636ab3ad4b630ac82be7d60402dc049c0a`
 
-### 949. `hardcoded:src/components/sessions/reader/SessionDiff.tsx:parseDiff:7b317d3955797c76:001`
+### 250. `hardcoded:src/components/sessions/reader/SessionDiff.tsx:parseDiff:7b317d3955797c76:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionDiff.tsx:55`
@@ -16475,7 +3561,7 @@
 - 严重程度：低
 - 指纹：`7b317d3955797c769e55497ebfb2a0d5198436a71dff16226b6e37158e4261e5`
 
-### 950. `hardcoded:src/components/sessions/reader/SessionDiff.tsx:parseDiff:5a23bd12069f42da:001`
+### 251. `hardcoded:src/components/sessions/reader/SessionDiff.tsx:parseDiff:5a23bd12069f42da:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionDiff.tsx:56`
@@ -16486,7 +3572,7 @@
 - 严重程度：低
 - 指纹：`5a23bd12069f42dae648450c687263d063156363660de82e31880b8e5175cc1b`
 
-### 951. `hardcoded:src/components/sessions/reader/SessionDiff.tsx:parseDiff:a3728fd3516d3283:001`
+### 252. `hardcoded:src/components/sessions/reader/SessionDiff.tsx:parseDiff:a3728fd3516d3283:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionDiff.tsx:72`
@@ -16497,7 +3583,7 @@
 - 严重程度：低
 - 指纹：`a3728fd3516d328368de0af27153bb8baea07b8f2302ae317f43966a64af431f`
 
-### 952. `hardcoded:src/components/sessions/reader/SessionDiff.tsx:parseDiff:a3728fd3516d3283:002`
+### 253. `hardcoded:src/components/sessions/reader/SessionDiff.tsx:parseDiff:a3728fd3516d3283:002`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionDiff.tsx:73`
@@ -16508,7 +3594,7 @@
 - 严重程度：低
 - 指纹：`a3728fd3516d328368de0af27153bb8baea07b8f2302ae317f43966a64af431f`
 
-### 953. `hardcoded:src/components/sessions/reader/SessionDiff.tsx:buildInputDiff:3d641177afb7cdf5:001`
+### 254. `hardcoded:src/components/sessions/reader/SessionDiff.tsx:buildInputDiff:3d641177afb7cdf5:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionDiff.tsx:169`
@@ -16522,7 +3608,7 @@
 - 严重程度：低
 - 指纹：`3d641177afb7cdf52ed79811d65ad61b2f159c92085bb65ae23842580ae04e09`
 
-### 954. `hardcoded:src/components/sessions/reader/SessionEventRow.tsx:injectedLabel:2682db8890edcb16:001`
+### 255. `hardcoded:src/components/sessions/reader/SessionEventRow.tsx:injectedLabel:2682db8890edcb16:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionEventRow.tsx:239`
@@ -16533,7 +3619,7 @@
 - 严重程度：低
 - 指纹：`2682db8890edcb1692c6197c33a8bdb17171e11e6b07a585f6b85ff014e4fb2d`
 
-### 955. `hardcoded:src/components/sessions/reader/SessionEventRow.tsx:chars:d74d869e0c8c910a:001`
+### 256. `hardcoded:src/components/sessions/reader/SessionEventRow.tsx:chars:d74d869e0c8c910a:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionEventRow.tsx:256`
@@ -16544,7 +3630,7 @@
 - 严重程度：低
 - 指纹：`d74d869e0c8c910ac01a107b85c7621c6720ab7c1d44d4d91ee6d6ead39d7f7f`
 
-### 956. `hardcoded:src/components/sessions/reader/SessionFinalReply.tsx:rawSnippets:80e61a55831fdfdc:001`
+### 257. `hardcoded:src/components/sessions/reader/SessionFinalReply.tsx:rawSnippets:80e61a55831fdfdc:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionFinalReply.tsx:38`
@@ -16555,7 +3641,7 @@
 - 严重程度：低
 - 指纹：`80e61a55831fdfdc4e7bc8902f2617f04789cd555e44a85714fa782b9dc4651b`
 
-### 957. `hardcoded:src/components/sessions/reader/SessionImage.tsx:SessionImage:32b4440270b89f31:001`
+### 258. `hardcoded:src/components/sessions/reader/SessionImage.tsx:SessionImage:32b4440270b89f31:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionImage.tsx:82`
@@ -16567,7 +3653,7 @@
 - 严重程度：低
 - 指纹：`32b4440270b89f31bf06bf22bfc5938b051c87eb4b2fca2a796a818d2c5d3eda`
 
-### 958. `hardcoded:src/components/sessions/reader/SessionMarkdown.tsx:LINK_CLASS:5fbbf33bcd89737e:001`
+### 259. `hardcoded:src/components/sessions/reader/SessionMarkdown.tsx:LINK_CLASS:5fbbf33bcd89737e:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionMarkdown.tsx:609`
@@ -16578,7 +3664,7 @@
 - 严重程度：低
 - 指纹：`5fbbf33bcd89737ea17316c48c613b6e5fb5a481f488cf463eafa15821e933c1`
 
-### 959. `hardcoded:src/components/sessions/reader/SessionMarkdown.tsx:RemoteImage:d85e2f66ade87760:001`
+### 260. `hardcoded:src/components/sessions/reader/SessionMarkdown.tsx:RemoteImage:d85e2f66ade87760:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionMarkdown.tsx:724`
@@ -16590,7 +3676,7 @@
 - 严重程度：低
 - 指纹：`d85e2f66ade877607561b4e3cc03eab53d71e5343575610f7a220c6a72049a1e`
 
-### 960. `hardcoded:src/components/sessions/reader/SessionOutline.tsx:SessionOutline:d13d464b5a783f24:001`
+### 261. `hardcoded:src/components/sessions/reader/SessionOutline.tsx:SessionOutline:d13d464b5a783f24:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionOutline.tsx:136`
@@ -16601,7 +3687,7 @@
 - 严重程度：低
 - 指纹：`d13d464b5a783f242c36910f4f4f380a3a4d2e371e322c85440ccc0646f13c87`
 
-### 961. `hardcoded:src/components/sessions/reader/SessionOutline.tsx:SessionOutline:81a7128bd23417af:001`
+### 262. `hardcoded:src/components/sessions/reader/SessionOutline.tsx:SessionOutline:81a7128bd23417af:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionOutline.tsx:144`
@@ -16612,7 +3698,7 @@
 - 严重程度：低
 - 指纹：`81a7128bd23417af05e4a92bfc7c7075f0cc879903a072ea897b2e523ac4a5cc`
 
-### 962. `hardcoded:src/components/sessions/reader/SessionQuestion.tsx:formatCharCount:e160bcaaf07b06d9:001`
+### 263. `hardcoded:src/components/sessions/reader/SessionQuestion.tsx:formatCharCount:e160bcaaf07b06d9:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionQuestion.tsx:22`
@@ -16623,7 +3709,7 @@
 - 严重程度：低
 - 指纹：`e160bcaaf07b06d96896ba8dd2b0fe33c4af5e58792c01db5da849287eb90e93`
 
-### 963. `hardcoded:src/components/sessions/reader/SessionQuestion.tsx:rowIconButton:c6cde6d21bf248af:001`
+### 264. `hardcoded:src/components/sessions/reader/SessionQuestion.tsx:rowIconButton:c6cde6d21bf248af:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionQuestion.tsx:25`
@@ -16634,7 +3720,7 @@
 - 严重程度：低
 - 指纹：`c6cde6d21bf248af2c48d07ff9814fd2d721cd7ec9a75fb06f12d6e482c99c48`
 
-### 964. `hardcoded:src/components/sessions/reader/SessionQuestion.tsx:SessionQuestion:81a7128bd23417af:001`
+### 265. `hardcoded:src/components/sessions/reader/SessionQuestion.tsx:SessionQuestion:81a7128bd23417af:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionQuestion.tsx:130`
@@ -16645,7 +3731,7 @@
 - 严重程度：低
 - 指纹：`81a7128bd23417af05e4a92bfc7c7075f0cc879903a072ea897b2e523ac4a5cc`
 
-### 965. `hardcoded:src/components/sessions/reader/SessionReader.tsx:isEditableTarget:3938f91a7b8377f4:001`
+### 266. `hardcoded:src/components/sessions/reader/SessionReader.tsx:isEditableTarget:3938f91a7b8377f4:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionReader.tsx:126`
@@ -16656,7 +3742,7 @@
 - 严重程度：低
 - 指纹：`3938f91a7b8377f49f51c19740837fc9d1ec4d89a3bac57800f09f99f895d743`
 
-### 966. `hardcoded:src/components/sessions/reader/SessionReader.tsx:name:7f62c24d65f4c0f3:001`
+### 267. `hardcoded:src/components/sessions/reader/SessionReader.tsx:name:7f62c24d65f4c0f3:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionReader.tsx:426`
@@ -16667,7 +3753,7 @@
 - 严重程度：低
 - 指纹：`7f62c24d65f4c0f35c21dd601842b09abecbfe555db752bba9bce657eb9b8675`
 
-### 967. `dynamic-i18n:src/components/sessions/reader/SessionReaderHeader.tsx:moreMenu:d9527cde90f33c89:001`
+### 268. `dynamic-i18n:src/components/sessions/reader/SessionReaderHeader.tsx:moreMenu:d9527cde90f33c89:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionReaderHeader.tsx:356`
@@ -16682,7 +3768,7 @@
 - 严重程度：中
 - 指纹：`d9527cde90f33c89aeeb4eb07036bd5ecbb43b2f6c1101f44481b72606a54dc0`
 
-### 968. `hardcoded:src/components/sessions/reader/SessionReaderHeader.tsx:formatRange:f7ed4c2237a8b6f8:001`
+### 269. `hardcoded:src/components/sessions/reader/SessionReaderHeader.tsx:formatRange:f7ed4c2237a8b6f8:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionReaderHeader.tsx:466`
@@ -16695,7 +3781,7 @@
 - 严重程度：低
 - 指纹：`f7ed4c2237a8b6f8ac65df0fdade3231cdcba28c6e3440b5a4b0a1b493a366f0`
 
-### 969. `hardcoded:src/components/sessions/reader/SessionReaderHeader.tsx:SessionReaderToolbar:766c56b193420bcb:001`
+### 270. `hardcoded:src/components/sessions/reader/SessionReaderHeader.tsx:SessionReaderToolbar:766c56b193420bcb:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionReaderHeader.tsx:805`
@@ -16706,7 +3792,7 @@
 - 严重程度：低
 - 指纹：`766c56b193420bcb4ca734eaeb2657c26293185bb76155f602a2681548dbef44`
 
-### 970. `hardcoded:src/components/sessions/reader/SessionStep.tsx:ToolRow:949766eca21a6499:001`
+### 271. `hardcoded:src/components/sessions/reader/SessionStep.tsx:ToolRow:949766eca21a6499:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionStep.tsx:117`
@@ -16718,7 +3804,7 @@
 - 严重程度：低
 - 指纹：`949766eca21a64999fa739fa4ee6e3e7cb956576c47013c8b222461950dbf53c`
 
-### 971. `hardcoded:src/components/sessions/reader/SessionStepDetails.tsx:linkButton:4cc0319d831cc5cb:001`
+### 272. `hardcoded:src/components/sessions/reader/SessionStepDetails.tsx:linkButton:4cc0319d831cc5cb:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionStepDetails.tsx:19`
@@ -16729,7 +3815,7 @@
 - 严重程度：低
 - 指纹：`4cc0319d831cc5cb2d675d4fae8333ca798280b0a0b1893f913516889752d4a5`
 
-### 972. `hardcoded:src/components/sessions/reader/SessionStepDetails.tsx:VARIANT_CLASS:bce3832d27b7ee18:001`
+### 273. `hardcoded:src/components/sessions/reader/SessionStepDetails.tsx:VARIANT_CLASS:bce3832d27b7ee18:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionStepDetails.tsx:61`
@@ -16740,7 +3826,7 @@
 - 严重程度：低
 - 指纹：`bce3832d27b7ee18d1189f075c18859776663d7549dcadd07c01c947d7ffd34e`
 
-### 973. `hardcoded:src/components/sessions/reader/SessionStepDetails.tsx:VARIANT_CLASS:bce3832d27b7ee18:002`
+### 274. `hardcoded:src/components/sessions/reader/SessionStepDetails.tsx:VARIANT_CLASS:bce3832d27b7ee18:002`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionStepDetails.tsx:63`
@@ -16751,7 +3837,7 @@
 - 严重程度：低
 - 指纹：`bce3832d27b7ee18d1189f075c18859776663d7549dcadd07c01c947d7ffd34e`
 
-### 974. `hardcoded:src/components/sessions/reader/SessionThinkingRow.tsx:formatChars:baeb68554b32111c:001`
+### 275. `hardcoded:src/components/sessions/reader/SessionThinkingRow.tsx:formatChars:baeb68554b32111c:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionThinkingRow.tsx:13`
@@ -16762,7 +3848,7 @@
 - 严重程度：低
 - 指纹：`baeb68554b32111c0dbfb18126a7eb551edc3d404f557e9190fbc6cff33020ee`
 
-### 975. `hardcoded:src/components/sessions/reader/SessionThinkingRow.tsx:SessionThinkingRow:b18dd8845d6b72e6:001`
+### 276. `hardcoded:src/components/sessions/reader/SessionThinkingRow.tsx:SessionThinkingRow:b18dd8845d6b72e6:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionThinkingRow.tsx:86`
@@ -16773,7 +3859,7 @@
 - 严重程度：低
 - 指纹：`b18dd8845d6b72e661aec4f88a25eb65c2f96f154466e1fe2df77b75b75bb9e6`
 
-### 976. `hardcoded:src/components/sessions/reader/SessionTimeline.tsx:SessionTimeline:87ffa331925ba44e:001`
+### 277. `hardcoded:src/components/sessions/reader/SessionTimeline.tsx:SessionTimeline:87ffa331925ba44e:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/SessionTimeline.tsx:86`
@@ -16785,7 +3871,7 @@
 - 严重程度：低
 - 指纹：`87ffa331925ba44e90aa7fb321d7e2ac275df9da099e9e740c903e210eac7d91`
 
-### 977. `dynamic-i18n:src/components/sessions/reader/exportMarkdown.ts:metaText:05aec9f0cd39e139:001`
+### 278. `dynamic-i18n:src/components/sessions/reader/exportMarkdown.ts:metaText:05aec9f0cd39e139:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/exportMarkdown.ts:34`
@@ -16796,7 +3882,7 @@
 - 严重程度：中
 - 指纹：`05aec9f0cd39e139e2c75e1ead486816b6f6841d8684ba2eee6364e52bab6605`
 
-### 978. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:metaText:506268935453b63a:001`
+### 279. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:metaText:506268935453b63a:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/exportMarkdown.ts:38`
@@ -16807,7 +3893,7 @@
 - 严重程度：低
 - 指纹：`506268935453b63ad4c7bd2bce168bcccb0316f38e2cd8a2fcfb69a7d93df9cb`
 
-### 979. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:metaText:830be889a30feaa5:001`
+### 280. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:metaText:830be889a30feaa5:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/exportMarkdown.ts:44`
@@ -16818,7 +3904,7 @@
 - 严重程度：低
 - 指纹：`830be889a30feaa58dd3ebdc89711ad8ef4aff8e37819a9b0bb59e8680f526bf`
 
-### 980. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:stepLines:20beab94303b2b7f:001`
+### 281. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:stepLines:20beab94303b2b7f:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/exportMarkdown.ts:66`
@@ -16829,7 +3915,7 @@
 - 严重程度：低
 - 指纹：`20beab94303b2b7fd18bc0d6367d27a0f55d4440477ec4a630a22d02077ae228`
 
-### 981. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:stepLines:20beab94303b2b7f:002`
+### 282. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:stepLines:20beab94303b2b7f:002`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/exportMarkdown.ts:72`
@@ -16840,7 +3926,7 @@
 - 严重程度：低
 - 指纹：`20beab94303b2b7fd18bc0d6367d27a0f55d4440477ec4a630a22d02077ae228`
 
-### 982. `dynamic-i18n:src/components/sessions/reader/exportMarkdown.ts:label:741390bbafe0c1e5:001`
+### 283. `dynamic-i18n:src/components/sessions/reader/exportMarkdown.ts:label:741390bbafe0c1e5:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/exportMarkdown.ts:80`
@@ -16851,7 +3937,7 @@
 - 严重程度：中
 - 指纹：`741390bbafe0c1e585378ac0ca539a88bc64feaaf4716b3d5cfd23aa308d3d3e`
 
-### 983. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:stepLines:ccd9bd522b294259:001`
+### 284. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:stepLines:ccd9bd522b294259:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/exportMarkdown.ts:84`
@@ -16862,7 +3948,7 @@
 - 严重程度：低
 - 指纹：`ccd9bd522b29425966ccaf099c650839827b64446cc95c8781156705731f995c`
 
-### 984. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:stepLines:e2430612ba818134:001`
+### 285. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:stepLines:e2430612ba818134:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/exportMarkdown.ts:84`
@@ -16873,7 +3959,7 @@
 - 严重程度：低
 - 指纹：`e2430612ba818134201b5cbb87424e6f60c056025a162cc745c712e260d06285`
 
-### 985. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:stepLines:6305c7889147ff31:001`
+### 286. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:stepLines:6305c7889147ff31:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/exportMarkdown.ts:84`
@@ -16884,7 +3970,7 @@
 - 严重程度：低
 - 指纹：`6305c7889147ff317f0802887094e13b0470d2518fbb522fb8c9cc4674501462`
 
-### 986. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:stepLines:b66f800f368ea1fc:001`
+### 287. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:stepLines:b66f800f368ea1fc:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/exportMarkdown.ts:88`
@@ -16895,7 +3981,7 @@
 - 严重程度：低
 - 指纹：`b66f800f368ea1fc703c898c6f58884966794d7ccee134b792c6ad8aa4185b66`
 
-### 987. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:stepLines:6305c7889147ff31:002`
+### 288. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:stepLines:6305c7889147ff31:002`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/exportMarkdown.ts:88`
@@ -16906,7 +3992,7 @@
 - 严重程度：低
 - 指纹：`6305c7889147ff317f0802887094e13b0470d2518fbb522fb8c9cc4674501462`
 
-### 988. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:stepLines:efcdad63f485d596:001`
+### 289. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:stepLines:efcdad63f485d596:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/exportMarkdown.ts:90`
@@ -16917,7 +4003,7 @@
 - 严重程度：低
 - 指纹：`efcdad63f485d5969c8906989617067fa34f7f238390eea1d14b1269d5a569f6`
 
-### 989. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:stepLines:d3986389ae441035:001`
+### 290. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:stepLines:d3986389ae441035:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/exportMarkdown.ts:93`
@@ -16928,7 +4014,7 @@
 - 严重程度：低
 - 指纹：`d3986389ae441035877ddd5568c5aac0c7736bdce2286f7edf67af53b356c50f`
 
-### 990. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:stepLines:b3f00d540f9f88e1:001`
+### 291. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:stepLines:b3f00d540f9f88e1:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/exportMarkdown.ts:93`
@@ -16939,7 +4025,7 @@
 - 严重程度：低
 - 指纹：`b3f00d540f9f88e15514d04312958fba78b5e9c43251edf99f130231c9e09eea`
 
-### 991. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:eventLine:8fa44918571a9f48:001`
+### 292. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:eventLine:8fa44918571a9f48:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/exportMarkdown.ts:101`
@@ -16950,7 +4036,7 @@
 - 严重程度：低
 - 指纹：`8fa44918571a9f48853aa9ecf137fc7d2a99839e4a4c60aa399cab12b66aae50`
 
-### 992. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:eventLine:5f2edd44fa27510d:001`
+### 293. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:eventLine:5f2edd44fa27510d:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/exportMarkdown.ts:101`
@@ -16961,7 +4047,7 @@
 - 严重程度：低
 - 指纹：`5f2edd44fa27510d0fe90324b8f1800e459887d08a58585645425d428c756a21`
 
-### 993. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:eventLine:e1ec4df27732ef95:001`
+### 294. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:eventLine:e1ec4df27732ef95:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/exportMarkdown.ts:101`
@@ -16972,7 +4058,7 @@
 - 严重程度：低
 - 指纹：`e1ec4df27732ef95b252b76374b2eed069bad10537eba691e06aee951ee89f71`
 
-### 994. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:heading:fb66f34c33928674:001`
+### 295. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:heading:fb66f34c33928674:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/exportMarkdown.ts:105`
@@ -16983,7 +4069,7 @@
 - 严重程度：低
 - 指纹：`fb66f34c33928674eb5d852269e81ed2042f6e1aa99cfc1b0302302b20d361db`
 
-### 995. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:heading:779821f2e7d76f6b:001`
+### 296. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:heading:779821f2e7d76f6b:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/exportMarkdown.ts:105`
@@ -16994,7 +4080,7 @@
 - 严重程度：低
 - 指纹：`779821f2e7d76f6bb88180e5593c490ce1e9a0eb981591a27ba6d01dd7bdf003`
 
-### 996. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:images:ae77544f2398add4:001`
+### 297. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:images:ae77544f2398add4:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/exportMarkdown.ts:117`
@@ -17005,7 +4091,7 @@
 - 严重程度：低
 - 指纹：`ae77544f2398add4a6b424bd8c377c3441c5a056038ad4b6ace7256c739444af`
 
-### 997. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:turnToMarkdown:67ed7c54a78811f2:001`
+### 298. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:turnToMarkdown:67ed7c54a78811f2:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/exportMarkdown.ts:133`
@@ -17016,7 +4102,7 @@
 - 严重程度：低
 - 指纹：`67ed7c54a78811f24ddf76fa3cc603873991366d42d9dc989a3a921b592c2414`
 
-### 998. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:transcriptToMarkdown:fdc12f1cc997e8be:001`
+### 299. `hardcoded:src/components/sessions/reader/exportMarkdown.ts:transcriptToMarkdown:fdc12f1cc997e8be:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/exportMarkdown.ts:149`
@@ -17027,7 +4113,7 @@
 - 严重程度：低
 - 指纹：`fdc12f1cc997e8be6f6890a02cc355f5d0bcec3756c13b901a593dcab3e734e9`
 
-### 999. `dynamic-i18n:src/components/sessions/reader/i18n.ts:useReaderT:a18b869b2e81c0c5:001`
+### 300. `dynamic-i18n:src/components/sessions/reader/i18n.ts:useReaderT:a18b869b2e81c0c5:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/i18n.ts:140`
@@ -17038,7 +4124,7 @@
 - 严重程度：中
 - 指纹：`a18b869b2e81c0c529552a3c4fa5c92ed08b98a4e146aed778d71d27517f83ac`
 
-### 1000. `hardcoded:src/components/sessions/reader/toolSummary.ts:formatTokens:7dbe023cf61c59b6:001`
+### 301. `hardcoded:src/components/sessions/reader/toolSummary.ts:formatTokens:7dbe023cf61c59b6:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/toolSummary.ts:119`
@@ -17049,7 +4135,7 @@
 - 严重程度：低
 - 指纹：`7dbe023cf61c59b66137318c583778b568aa47469934e3b174c586b7668a4abe`
 
-### 1001. `hardcoded:src/components/sessions/reader/toolSummary.ts:formatTokens:7a48cf6e342704df:001`
+### 302. `hardcoded:src/components/sessions/reader/toolSummary.ts:formatTokens:7a48cf6e342704df:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/toolSummary.ts:120`
@@ -17060,7 +4146,7 @@
 - 严重程度：低
 - 指纹：`7a48cf6e342704df1458ec358ecb843ae75d705ec3ed72317ebe6a14a3af2ed2`
 
-### 1002. `dynamic-i18n:src/components/sessions/reader/toolSummary.ts:translate:982d9e3eb996f559:001`
+### 303. `dynamic-i18n:src/components/sessions/reader/toolSummary.ts:translate:982d9e3eb996f559:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/toolSummary.ts:199`
@@ -17071,7 +4157,7 @@
 - 严重程度：中
 - 指纹：`982d9e3eb996f559e633f4d194def3761d909f5a3b647d1a851fead67c32c9d1`
 
-### 1003. `dynamic-i18n:src/components/sessions/reader/toolSummary.ts:verbFor:6806f86a17f0ae04:001`
+### 304. `dynamic-i18n:src/components/sessions/reader/toolSummary.ts:verbFor:6806f86a17f0ae04:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/toolSummary.ts:209`
@@ -17082,7 +4168,7 @@
 - 严重程度：中
 - 指纹：`6806f86a17f0ae04d4ad43168fcdd0651c0fe99108b992f5ac398fd6bf235331`
 
-### 1004. `hardcoded:src/components/sessions/reader/toolSummary.ts:codexDiffTitle:f938069fea1084c8:001`
+### 305. `hardcoded:src/components/sessions/reader/toolSummary.ts:codexDiffTitle:f938069fea1084c8:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/toolSummary.ts:221`
@@ -17093,7 +4179,7 @@
 - 严重程度：低
 - 指纹：`f938069fea1084c8f5d1ec4910f94037e4695985228b8488a0d86a9bf27258f9`
 
-### 1005. `dynamic-i18n:src/components/sessions/reader/toolSummary.ts:verb:5c4db77b4c3c9984:001`
+### 306. `dynamic-i18n:src/components/sessions/reader/toolSummary.ts:verb:5c4db77b4c3c9984:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/toolSummary.ts:238`
@@ -17104,7 +4190,7 @@
 - 严重程度：中
 - 指纹：`5c4db77b4c3c9984f81b88ec4d1935af79d93dbff11ff45ed52e6b1bad5367cd`
 
-### 1006. `hardcoded:src/components/sessions/reader/toolSummary.ts:formatStepTitle:ee224bf2b6d49e47:001`
+### 307. `hardcoded:src/components/sessions/reader/toolSummary.ts:formatStepTitle:ee224bf2b6d49e47:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/toolSummary.ts:256`
@@ -17115,7 +4201,7 @@
 - 严重程度：低
 - 指纹：`ee224bf2b6d49e473d68c78edb37cb26a3a8ebcdf19b188cb29cd1e208d0bd9a`
 
-### 1007. `hardcoded:src/components/sessions/reader/toolSummary.ts:formatStepTitle:66b7272067fcf5d1:001`
+### 308. `hardcoded:src/components/sessions/reader/toolSummary.ts:formatStepTitle:66b7272067fcf5d1:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/toolSummary.ts:273`
@@ -17126,7 +4212,7 @@
 - 严重程度：低
 - 指纹：`66b7272067fcf5d1eed3ceeb3d7107329370bf32c6622db7ce5807d2622b1a5a`
 
-### 1008. `hardcoded:src/components/sessions/reader/toolSummary.ts:verb:aedfb50ca5b5bf02:001`
+### 309. `hardcoded:src/components/sessions/reader/toolSummary.ts:verb:aedfb50ca5b5bf02:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/toolSummary.ts:300`
@@ -17137,7 +4223,7 @@
 - 严重程度：低
 - 指纹：`aedfb50ca5b5bf02d1c06c8f7a672067708be703acaba210272e016f8d4dd967`
 
-### 1009. `hardcoded:src/components/sessions/reader/turns.ts:LEGACY_CALL_PREFIX:fb916ece96f3bc33:001`
+### 310. `hardcoded:src/components/sessions/reader/turns.ts:LEGACY_CALL_PREFIX:fb916ece96f3bc33:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/turns.ts:154`
@@ -17148,7 +4234,7 @@
 - 严重程度：低
 - 指纹：`fb916ece96f3bc33d28795d2ddc4b3049c391f0a3e1c8b2b98164c83757fd223`
 
-### 1010. `hardcoded:src/components/sessions/reader/turns.ts:previewText:4943d47188735c57:001`
+### 311. `hardcoded:src/components/sessions/reader/turns.ts:previewText:4943d47188735c57:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/reader/turns.ts:554`
@@ -17159,7 +4245,7 @@
 - 严重程度：低
 - 指纹：`4943d47188735c572d5d75cab4a7f6490ae9f6af9b5f3ef4ba20389f1ca37f99`
 
-### 1011. `hardcoded:src/components/sessions/utils.ts:getSessionKey:1a02f51450160eb2:001`
+### 312. `hardcoded:src/components/sessions/utils.ts:getSessionKey:1a02f51450160eb2:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/utils.ts:70`
@@ -17170,7 +4256,7 @@
 - 严重程度：低
 - 指纹：`1a02f51450160eb2b2c9a8a9be151240c9938233a9a72035d42a441022f749ad`
 
-### 1012. `hardcoded:src/components/sessions/utils.ts:buildCdResumeCommand:8e6824ca5b8aa702:001`
+### 313. `hardcoded:src/components/sessions/utils.ts:buildCdResumeCommand:8e6824ca5b8aa702:001`
 
 - 状态：待核实
 - 文件：`src/components/sessions/utils.ts:268`
@@ -17181,7 +4267,7 @@
 - 严重程度：低
 - 指纹：`8e6824ca5b8aa702ccfa73564f28f4193d25b2f320eaf38afeece2c821bd2356`
 
-### 1013. `hardcoded:src/components/settings/AboutSection.tsx:AboutSection:6ee73cfe9374c014:001`
+### 314. `hardcoded:src/components/settings/AboutSection.tsx:AboutSection:6ee73cfe9374c014:001`
 
 - 状态：待核实
 - 文件：`src/components/settings/AboutSection.tsx:212`
@@ -17192,7 +4278,7 @@
 - 严重程度：低
 - 指纹：`6ee73cfe9374c014e7031d27aedf42379f8a5a99044b23a4cad64c2d659cc038`
 
-### 1014. `hardcoded:src/components/settings/BackupListSection.tsx:getDisplayName:152c42ca70ccdbd0:001`
+### 315. `hardcoded:src/components/settings/BackupListSection.tsx:getDisplayName:152c42ca70ccdbd0:001`
 
 - 状态：待核实
 - 文件：`src/components/settings/BackupListSection.tsx:57`
@@ -17203,7 +4289,7 @@
 - 严重程度：低
 - 指纹：`152c42ca70ccdbd0de3d08390b8a7b054dc4115619bcdbb6704381cd1adb6829`
 
-### 1015. `hardcoded:src/components/settings/BackupListSection.tsx:handleRestore:1f110bdd2e68492a:001`
+### 316. `hardcoded:src/components/settings/BackupListSection.tsx:handleRestore:1f110bdd2e68492a:001`
 
 - 状态：待核实
 - 文件：`src/components/settings/BackupListSection.tsx:103`
@@ -17214,7 +4300,7 @@
 - 严重程度：低
 - 指纹：`1f110bdd2e68492a6ce51342c9550549e1dcddf8b5ee6db3b5e13da42b1e1a20`
 
-### 1016. `hardcoded:src/components/settings/BackupStorageSection.tsx:formatBytes:229dd2efa20cfa06:001`
+### 317. `hardcoded:src/components/settings/BackupStorageSection.tsx:formatBytes:229dd2efa20cfa06:001`
 
 - 状态：待核实
 - 文件：`src/components/settings/BackupStorageSection.tsx:25`
@@ -17225,7 +4311,7 @@
 - 严重程度：低
 - 指纹：`229dd2efa20cfa06a18005595e089bef78a3ffc5bd33bb73dac85cca195d46c6`
 
-### 1017. `hardcoded:src/components/settings/BackupStorageSection.tsx:formatBytes:3774273e5fbf94ef:001`
+### 318. `hardcoded:src/components/settings/BackupStorageSection.tsx:formatBytes:3774273e5fbf94ef:001`
 
 - 状态：待核实
 - 文件：`src/components/settings/BackupStorageSection.tsx:26`
@@ -17236,7 +4322,7 @@
 - 严重程度：低
 - 指纹：`3774273e5fbf94ef8195350bfd3982824f82e6586e1751e20151e275c30f64df`
 
-### 1018. `hardcoded:src/components/settings/BackupStorageSection.tsx:formatBytes:388be0693bbcaae7:001`
+### 319. `hardcoded:src/components/settings/BackupStorageSection.tsx:formatBytes:388be0693bbcaae7:001`
 
 - 状态：待核实
 - 文件：`src/components/settings/BackupStorageSection.tsx:28`
@@ -17247,7 +4333,7 @@
 - 严重程度：低
 - 指纹：`388be0693bbcaae784829d908026071c6cf9dd99feb7674ab79943d892cab407`
 
-### 1019. `hardcoded:src/components/settings/BackupStorageSection.tsx:formatBytes:c0014229fe1b97ec:001`
+### 320. `hardcoded:src/components/settings/BackupStorageSection.tsx:formatBytes:c0014229fe1b97ec:001`
 
 - 状态：待核实
 - 文件：`src/components/settings/BackupStorageSection.tsx:29`
@@ -17258,7 +4344,7 @@
 - 严重程度：低
 - 指纹：`c0014229fe1b97ec6a2575c3f224d2a9273a6ae5168711a00f29b925e072aab2`
 
-### 1020. `dynamic-i18n:src/components/settings/BackupStorageSection.tsx:itemText:1db9123095e31b5b:001`
+### 321. `dynamic-i18n:src/components/settings/BackupStorageSection.tsx:itemText:1db9123095e31b5b:001`
 
 - 状态：待核实
 - 文件：`src/components/settings/BackupStorageSection.tsx:42`
@@ -17269,7 +4355,7 @@
 - 严重程度：中
 - 指纹：`1db9123095e31b5b30ec9699f3437bc8d9c7d606a90aec7540d6385f5dbc7a4b`
 
-### 1021. `dynamic-i18n:src/components/settings/LogConfigPanel.tsx:LogConfigPanel:691fd4ccfbfb6e21:001`
+### 322. `dynamic-i18n:src/components/settings/LogConfigPanel.tsx:LogConfigPanel:691fd4ccfbfb6e21:001`
 
 - 状态：待核实
 - 文件：`src/components/settings/LogConfigPanel.tsx:77`
@@ -17280,7 +4366,7 @@
 - 严重程度：中
 - 指纹：`691fd4ccfbfb6e213cc678ea12ea362afcd31bfe554a65c2abf797e955ae447f`
 
-### 1022. `dynamic-i18n:src/components/settings/LogConfigPanel.tsx:LogConfigPanel:e46dabee057f30b0:001`
+### 323. `dynamic-i18n:src/components/settings/LogConfigPanel.tsx:LogConfigPanel:e46dabee057f30b0:001`
 
 - 状态：待核实
 - 文件：`src/components/settings/LogConfigPanel.tsx:96`
@@ -17291,7 +4377,7 @@
 - 严重程度：中
 - 指纹：`e46dabee057f30b06ec7ba0d6a7aebd30d52cc0534c78db0434225c4a053bacd`
 
-### 1023. `hardcoded:src/components/settings/SettingsPage.tsx:flashTarget:b3f59f2522edde1b:001`
+### 324. `hardcoded:src/components/settings/SettingsPage.tsx:flashTarget:b3f59f2522edde1b:001`
 
 - 状态：待核实
 - 文件：`src/components/settings/SettingsPage.tsx:225`
@@ -17302,7 +4388,7 @@
 - 严重程度：低
 - 指纹：`b3f59f2522edde1b146b72a5ab676fbfb3e49ea2d52911bf3f81c6ada2aeb645`
 
-### 1024. `dynamic-i18n:src/components/settings/SettingsPage.tsx:SettingsPage:73080ad588a22bcf:001`
+### 325. `dynamic-i18n:src/components/settings/SettingsPage.tsx:SettingsPage:73080ad588a22bcf:001`
 
 - 状态：待核实
 - 文件：`src/components/settings/SettingsPage.tsx:533`
@@ -17313,7 +4399,7 @@
 - 严重程度：中
 - 指纹：`73080ad588a22bcf793b9900af2a25a37aa84db57382a48713b1575b878c240e`
 
-### 1025. `dynamic-i18n:src/components/settings/TerminalSettings.tsx:TerminalSelect:79a386948d425aae:001`
+### 326. `dynamic-i18n:src/components/settings/TerminalSettings.tsx:TerminalSelect:79a386948d425aae:001`
 
 - 状态：待核实
 - 文件：`src/components/settings/TerminalSettings.tsx:103`
@@ -17324,7 +4410,7 @@
 - 严重程度：中
 - 指纹：`79a386948d425aae95f190e7a841c98ef62a40bb6210ae7f2a13d858cdb4ca6b`
 
-### 1026. `hardcoded:src/components/settings/WebdavSyncSection.tsx:currentRemotePath:d7bedb8a00ac4d6d:001`
+### 327. `hardcoded:src/components/settings/WebdavSyncSection.tsx:currentRemotePath:d7bedb8a00ac4d6d:001`
 
 - 状态：待核实
 - 文件：`src/components/settings/WebdavSyncSection.tsx:944`
@@ -17335,7 +4421,7 @@
 - 严重程度：低
 - 指纹：`d7bedb8a00ac4d6d7387f81c2fabd997250bc59bee685fc11455378933b77889`
 
-### 1027. `hardcoded:src/components/settings/WebdavSyncSection.tsx:currentS3RemotePath:efa86346bc63f22d:001`
+### 328. `hardcoded:src/components/settings/WebdavSyncSection.tsx:currentS3RemotePath:efa86346bc63f22d:001`
 
 - 状态：待核实
 - 文件：`src/components/settings/WebdavSyncSection.tsx:945`
@@ -17346,7 +4432,7 @@
 - 严重程度：低
 - 指纹：`efa86346bc63f22d7e182a9f5c5f670a348a5294e3c2025f84e34296b7ee63ae`
 
-### 1028. `dynamic-i18n:src/components/settings/WebdavSyncSection.tsx:WebdavSyncSection:99f59962822de2ac:001`
+### 329. `dynamic-i18n:src/components/settings/WebdavSyncSection.tsx:WebdavSyncSection:99f59962822de2ac:001`
 
 - 状态：待核实
 - 文件：`src/components/settings/WebdavSyncSection.tsx:1012`
@@ -17357,7 +4443,7 @@
 - 严重程度：中
 - 指纹：`99f59962822de2acae82fbe7ea169c844f62fda0939a56cc23ef9c0a456f1a99`
 
-### 1029. `dynamic-i18n:src/components/settings/WebdavSyncSection.tsx:WebdavSyncSection:8387eb890b0f99fb:001`
+### 330. `dynamic-i18n:src/components/settings/WebdavSyncSection.tsx:WebdavSyncSection:8387eb890b0f99fb:001`
 
 - 状态：待核实
 - 文件：`src/components/settings/WebdavSyncSection.tsx:1068`
@@ -17368,7 +4454,7 @@
 - 严重程度：中
 - 指纹：`8387eb890b0f99fb9294383e5c3eba6d37367f934184fd146afb75aa4ccefab7`
 
-### 1030. `dynamic-i18n:src/components/settings/WebdavSyncSection.tsx:WebdavSyncSection:99f59962822de2ac:002`
+### 331. `dynamic-i18n:src/components/settings/WebdavSyncSection.tsx:WebdavSyncSection:99f59962822de2ac:002`
 
 - 状态：待核实
 - 文件：`src/components/settings/WebdavSyncSection.tsx:1240`
@@ -17379,7 +4465,7 @@
 - 严重程度：中
 - 指纹：`99f59962822de2acae82fbe7ea169c844f62fda0939a56cc23ef9c0a456f1a99`
 
-### 1031. `dynamic-i18n:src/components/settings/WebdavSyncSection.tsx:WebdavSyncSection:5dd4180e2514c9a4:001`
+### 332. `dynamic-i18n:src/components/settings/WebdavSyncSection.tsx:WebdavSyncSection:5dd4180e2514c9a4:001`
 
 - 状态：待核实
 - 文件：`src/components/settings/WebdavSyncSection.tsx:1251`
@@ -17390,7 +4476,7 @@
 - 严重程度：中
 - 指纹：`5dd4180e2514c9a49b23541f88caab22c8fc51afb084a05fd1a4e5980b699046`
 
-### 1032. `hardcoded:src/components/settings/auth/AccountQuota.tsx:ROW_CLASS:62556b1602c85b7c:001`
+### 333. `hardcoded:src/components/settings/auth/AccountQuota.tsx:ROW_CLASS:62556b1602c85b7c:001`
 
 - 状态：待核实
 - 文件：`src/components/settings/auth/AccountQuota.tsx:184`
@@ -17401,7 +4487,7 @@
 - 严重程度：低
 - 指纹：`62556b1602c85b7c14259056da7edb6a57b6fa4a279e457e4fb773deab9c6beb`
 
-### 1033. `hardcoded:src/components/settings/auth/AccountQuota.tsx:QuotaRowCells:f106c106761965c2:001`
+### 334. `hardcoded:src/components/settings/auth/AccountQuota.tsx:QuotaRowCells:f106c106761965c2:001`
 
 - 状态：待核实
 - 文件：`src/components/settings/auth/AccountQuota.tsx:216`
@@ -17413,7 +4499,7 @@
 - 严重程度：低
 - 指纹：`f106c106761965c27cb598738bd02dcfb86c14e2eb757b1301383ce3e4de6af9`
 
-### 1034. `hardcoded:src/components/settings/auth/ManagedAccountsGroup.tsx:PILL:af87269d0dd50712:001`
+### 335. `hardcoded:src/components/settings/auth/ManagedAccountsGroup.tsx:PILL:af87269d0dd50712:001`
 
 - 状态：待核实
 - 文件：`src/components/settings/auth/ManagedAccountsGroup.tsx:109`
@@ -17424,7 +4510,7 @@
 - 严重程度：低
 - 指纹：`af87269d0dd50712773a273d6521825b51be48b52230457a47fd8e3d50e82041`
 
-### 1035. `dynamic-i18n:src/components/settings/sections/AppConfigSection.tsx:directoryRow:1743f9d9e477bf5f:001`
+### 336. `dynamic-i18n:src/components/settings/sections/AppConfigSection.tsx:directoryRow:1743f9d9e477bf5f:001`
 
 - 状态：待核实
 - 文件：`src/components/settings/sections/AppConfigSection.tsx:114`
@@ -17435,7 +4521,7 @@
 - 严重程度：中
 - 指纹：`1743f9d9e477bf5fb1cf8a57c847a3f8240b314cb301099ff34aa70c583b0237`
 
-### 1036. `dynamic-i18n:src/components/settings/sections/GeneralSection.tsx:GeneralSection:4b8d2a85ad692265:001`
+### 337. `dynamic-i18n:src/components/settings/sections/GeneralSection.tsx:GeneralSection:4b8d2a85ad692265:001`
 
 - 状态：待核实
 - 文件：`src/components/settings/sections/GeneralSection.tsx:70`
@@ -17446,7 +4532,7 @@
 - 严重程度：中
 - 指纹：`4b8d2a85ad692265da8e642979b40961d600061dda06d269772225e67eff2e4c`
 
-### 1037. `hardcoded:src/components/settings/sections/RoutingSection.tsx:RoutingSection:29e265bbbc49a036:001`
+### 338. `hardcoded:src/components/settings/sections/RoutingSection.tsx:RoutingSection:29e265bbbc49a036:001`
 
 - 状态：待核实
 - 文件：`src/components/settings/sections/RoutingSection.tsx:234`
@@ -17457,7 +4543,7 @@
 - 严重程度：低
 - 指纹：`29e265bbbc49a036019d9fff257a3f9c3aa085c4303082a8a0d856db2dc1dd11`
 
-### 1038. `dynamic-i18n:src/components/settings/sections/RoutingSection.tsx:RoutingSection:8594999185d253ca:001`
+### 339. `dynamic-i18n:src/components/settings/sections/RoutingSection.tsx:RoutingSection:8594999185d253ca:001`
 
 - 状态：待核实
 - 文件：`src/components/settings/sections/RoutingSection.tsx:402`
@@ -17468,7 +4554,7 @@
 - 严重程度：中
 - 指纹：`8594999185d253cac67012cdf03429a7ec6a6ed8cb4300166ad5416582da216c`
 
-### 1039. `hardcoded:src/components/shell/Sidebar.tsx:tip:8cc90a1e7ba29384:001`
+### 340. `hardcoded:src/components/shell/Sidebar.tsx:tip:8cc90a1e7ba29384:001`
 
 - 状态：待核实
 - 文件：`src/components/shell/Sidebar.tsx:433`
@@ -17479,7 +4565,7 @@
 - 严重程度：低
 - 指纹：`8cc90a1e7ba29384e9d637f838f10bb47f8b7d5eec3f49163e027d0e918ed6f8`
 
-### 1040. `hardcoded:src/components/shell/Sidebar.tsx:tip:8c483261e408f811:001`
+### 341. `hardcoded:src/components/shell/Sidebar.tsx:tip:8c483261e408f811:001`
 
 - 状态：待核实
 - 文件：`src/components/shell/Sidebar.tsx:435`
@@ -17490,7 +4576,7 @@
 - 严重程度：低
 - 指纹：`8c483261e408f811946bbdc0b5bec75b49ac20e4cdd560a29747f4dc99f1aca4`
 
-### 1041. `dynamic-i18n:src/components/shell/Sidebar.tsx:SettingsDirectory:73080ad588a22bcf:001`
+### 342. `dynamic-i18n:src/components/shell/Sidebar.tsx:SettingsDirectory:73080ad588a22bcf:001`
 
 - 状态：待核实
 - 文件：`src/components/shell/Sidebar.tsx:754`
@@ -17501,7 +4587,7 @@
 - 严重程度：中
 - 指纹：`73080ad588a22bcf793b9900af2a25a37aa84db57382a48713b1575b878c240e`
 
-### 1042. `hardcoded:src/components/skills/SkillsPage.tsx:POPOVER_CLASS:b35351a6c3186104:001`
+### 343. `hardcoded:src/components/skills/SkillsPage.tsx:POPOVER_CLASS:b35351a6c3186104:001`
 
 - 状态：待核实
 - 文件：`src/components/skills/SkillsPage.tsx:62`
@@ -17512,7 +4598,7 @@
 - 严重程度：低
 - 指纹：`b35351a6c3186104ee70b126b0732146d13d881badaa4982720be5c78fa1e932`
 
-### 1043. `hardcoded:src/components/skills/SkillsPage.tsx:installedKey:ba2a4878993628e8:001`
+### 344. `hardcoded:src/components/skills/SkillsPage.tsx:installedKey:ba2a4878993628e8:001`
 
 - 状态：待核实
 - 文件：`src/components/skills/SkillsPage.tsx:140`
@@ -17523,7 +4609,7 @@
 - 严重程度：低
 - 指纹：`ba2a4878993628e807782ef3b80058c44ef619e74df4cb72d79e64d8590f979b`
 
-### 1044. `hardcoded:src/components/skills/SkillsPage.tsx:SkillsPage:75cc974621739e45:001`
+### 345. `hardcoded:src/components/skills/SkillsPage.tsx:SkillsPage:75cc974621739e45:001`
 
 - 状态：待核实
 - 文件：`src/components/skills/SkillsPage.tsx:730`
@@ -17534,7 +4620,7 @@
 - 严重程度：低
 - 指纹：`75cc974621739e45e1cda480df9857ef31bda47d688c4c5c9dc407e7fecfdd8d`
 
-### 1045. `hardcoded:src/components/skills/SkillsStorageSheet.tsx:RADIO_LABEL_CLASS:28d833901922662e:001`
+### 346. `hardcoded:src/components/skills/SkillsStorageSheet.tsx:RADIO_LABEL_CLASS:28d833901922662e:001`
 
 - 状态：待核实
 - 文件：`src/components/skills/SkillsStorageSheet.tsx:56`
@@ -17545,7 +4631,7 @@
 - 严重程度：低
 - 指纹：`28d833901922662ef0be9cba0276aeca413416dd1f6d76b81e3f9bb142c18e6d`
 
-### 1046. `hardcoded:src/components/skills/SkillsStorageSheet.tsx:details:6085e88121d3f034:001`
+### 347. `hardcoded:src/components/skills/SkillsStorageSheet.tsx:details:6085e88121d3f034:001`
 
 - 状态：待核实
 - 文件：`src/components/skills/SkillsStorageSheet.tsx:158`
@@ -17556,7 +4642,7 @@
 - 严重程度：低
 - 指纹：`6085e88121d3f03488fa26c1c35912826d8495e15504d92ebbd3dd711044827e`
 
-### 1047. `hardcoded:src/components/skills/SkillsStorageSheet.tsx:details:156af28af687edc8:001`
+### 348. `hardcoded:src/components/skills/SkillsStorageSheet.tsx:details:156af28af687edc8:001`
 
 - 状态：待核实
 - 文件：`src/components/skills/SkillsStorageSheet.tsx:161`
@@ -17570,7 +4656,7 @@
 - 严重程度：低
 - 指纹：`156af28af687edc84bbf4fceb758634628a88eb41391860f313cf08fa9341dd7`
 
-### 1048. `dynamic-i18n:src/components/skills/SkillsStorageSheet.tsx:SkillsStorageSheet:0c9f9f16eb7882e5:001`
+### 349. `dynamic-i18n:src/components/skills/SkillsStorageSheet.tsx:SkillsStorageSheet:0c9f9f16eb7882e5:001`
 
 - 状态：待核实
 - 文件：`src/components/skills/SkillsStorageSheet.tsx:306`
@@ -17581,7 +4667,7 @@
 - 严重程度：中
 - 指纹：`0c9f9f16eb7882e54ef00841c2a810356cde523b3b567ad568f426ada1cf34f4`
 
-### 1049. `dynamic-i18n:src/components/skills/SkillsStorageSheet.tsx:SkillsStorageSheet:36befa74dfbcc58f:001`
+### 350. `dynamic-i18n:src/components/skills/SkillsStorageSheet.tsx:SkillsStorageSheet:36befa74dfbcc58f:001`
 
 - 状态：待核实
 - 文件：`src/components/skills/SkillsStorageSheet.tsx:309`
@@ -17592,7 +4678,7 @@
 - 严重程度：中
 - 指纹：`36befa74dfbcc58f25411157c9597ba984e7e2d0a0815ac516fadfe3689ab2b7`
 
-### 1050. `hardcoded:src/components/skills/UnifiedSkillsPanel.tsx:filteredSkills:0c4237f14c86fc54:001`
+### 351. `hardcoded:src/components/skills/UnifiedSkillsPanel.tsx:filteredSkills:0c4237f14c86fc54:001`
 
 - 状态：待核实
 - 文件：`src/components/skills/UnifiedSkillsPanel.tsx:316`
@@ -17603,7 +4689,7 @@
 - 严重程度：低
 - 指纹：`0c4237f14c86fc5448cfb2c04917831dd61fb0365d1b1c5542aa631626fba02c`
 
-### 1051. `dynamic-i18n:src/components/skills/UnifiedSkillsPanel.tsx:text:dc4eb9bbc03ce6c2:001`
+### 352. `dynamic-i18n:src/components/skills/UnifiedSkillsPanel.tsx:text:dc4eb9bbc03ce6c2:001`
 
 - 状态：待核实
 - 文件：`src/components/skills/UnifiedSkillsPanel.tsx:458`
@@ -17614,7 +4700,7 @@
 - 严重程度：中
 - 指纹：`dc4eb9bbc03ce6c2f1f6d09396558b5864c5f98fedaa2cb3471f608770e9cb02`
 
-### 1052. `hardcoded:src/components/skills/UnifiedSkillsPanel.tsx:uninstallIds:762c11e5b60e3e2c:001`
+### 353. `hardcoded:src/components/skills/UnifiedSkillsPanel.tsx:uninstallIds:762c11e5b60e3e2c:001`
 
 - 状态：待核实
 - 文件：`src/components/skills/UnifiedSkillsPanel.tsx:555`
@@ -17625,7 +4711,7 @@
 - 严重程度：低
 - 指纹：`762c11e5b60e3e2cc397567cbc4e9e5ab9ccc8e1c84b4a945e30746bc733ca78`
 
-### 1053. `hardcoded:src/components/skills/UnifiedSkillsPanel.tsx:updateIds:2278c54c92be3a89:001`
+### 354. `hardcoded:src/components/skills/UnifiedSkillsPanel.tsx:updateIds:2278c54c92be3a89:001`
 
 - 状态：待核实
 - 文件：`src/components/skills/UnifiedSkillsPanel.tsx:600`
@@ -17636,7 +4722,7 @@
 - 严重程度：低
 - 指纹：`2278c54c92be3a8963fafe3e8ac87c5aba31e884b46b5ca5f4cbb812540acd21`
 
-### 1054. `hardcoded:src/components/skills/UnifiedSkillsPanel.tsx:statusLabel:0c4237f14c86fc54:001`
+### 355. `hardcoded:src/components/skills/UnifiedSkillsPanel.tsx:statusLabel:0c4237f14c86fc54:001`
 
 - 状态：待核实
 - 文件：`src/components/skills/UnifiedSkillsPanel.tsx:1061`
@@ -17647,7 +4733,7 @@
 - 严重程度：低
 - 指纹：`0c4237f14c86fc5448cfb2c04917831dd61fb0365d1b1c5542aa631626fba02c`
 
-### 1055. `dynamic-i18n:src/components/skills/UnifiedSkillsPanel.tsx:InstalledRow:947324ed6a00ba24:001`
+### 356. `dynamic-i18n:src/components/skills/UnifiedSkillsPanel.tsx:InstalledRow:947324ed6a00ba24:001`
 
 - 状态：待核实
 - 文件：`src/components/skills/UnifiedSkillsPanel.tsx:1929`
@@ -17658,7 +4744,7 @@
 - 严重程度：中
 - 指纹：`947324ed6a00ba241dcc93e16c9b7022385f2e299608f805663901480e1d6454`
 
-### 1056. `hardcoded:src/components/ui/alert.tsx:alertVariants:32238c0c8f8360c5:001`
+### 357. `hardcoded:src/components/ui/alert.tsx:alertVariants:32238c0c8f8360c5:001`
 
 - 状态：待核实
 - 文件：`src/components/ui/alert.tsx:7`
@@ -17669,7 +4755,7 @@
 - 严重程度：低
 - 指纹：`32238c0c8f8360c5a6d711b155575f9c7f67ccd054fd197791f8d202fa4d53af`
 
-### 1057. `hardcoded:src/components/ui/alert.tsx:alertVariants:9bda9129fb7e467a:001`
+### 358. `hardcoded:src/components/ui/alert.tsx:alertVariants:9bda9129fb7e467a:001`
 
 - 状态：待核实
 - 文件：`src/components/ui/alert.tsx:13`
@@ -17680,7 +4766,7 @@
 - 严重程度：低
 - 指纹：`9bda9129fb7e467aa77eab57eff76a038de399c1829e4902f60fc84d23319f39`
 
-### 1058. `hardcoded:src/components/ui/button.tsx:buttonVariants:bfdc6974e9db8551:001`
+### 359. `hardcoded:src/components/ui/button.tsx:buttonVariants:bfdc6974e9db8551:001`
 
 - 状态：待核实
 - 文件：`src/components/ui/button.tsx:44`
@@ -17691,7 +4777,7 @@
 - 严重程度：低
 - 指纹：`bfdc6974e9db8551cbe3df0c82b9f017ac6c3b39c5a48df08a947712917c85b5`
 
-### 1059. `hardcoded:src/components/ui/button.tsx:buttonVariants:24f220a92a07a1e8:001`
+### 360. `hardcoded:src/components/ui/button.tsx:buttonVariants:24f220a92a07a1e8:001`
 
 - 状态：待核实
 - 文件：`src/components/ui/button.tsx:45`
@@ -17702,7 +4788,7 @@
 - 严重程度：低
 - 指纹：`24f220a92a07a1e8609f77c6052640e298841ea3258d712008c79de3fe5ff24f`
 
-### 1060. `hardcoded:src/components/ui/button.tsx:buttonVariants:6fcba1d07e3bfd28:001`
+### 361. `hardcoded:src/components/ui/button.tsx:buttonVariants:6fcba1d07e3bfd28:001`
 
 - 状态：待核实
 - 文件：`src/components/ui/button.tsx:46`
@@ -17713,7 +4799,7 @@
 - 严重程度：低
 - 指纹：`6fcba1d07e3bfd28ad83f84361f01aaf97802099fc5aab31ad945e385970ccb8`
 
-### 1061. `hardcoded:src/components/ui/button.tsx:buttonVariants:8844441cae94b24d:001`
+### 362. `hardcoded:src/components/ui/button.tsx:buttonVariants:8844441cae94b24d:001`
 
 - 状态：待核实
 - 文件：`src/components/ui/button.tsx:47`
@@ -17724,7 +4810,7 @@
 - 严重程度：低
 - 指纹：`8844441cae94b24d929aac454fe5f00be1d5dffea1628f4e0ad9b4e51c0aec35`
 
-### 1062. `hardcoded:src/components/ui/button.tsx:buttonVariants:0ac0083c15956191:001`
+### 363. `hardcoded:src/components/ui/button.tsx:buttonVariants:0ac0083c15956191:001`
 
 - 状态：待核实
 - 文件：`src/components/ui/button.tsx:51`
@@ -17735,7 +4821,7 @@
 - 严重程度：低
 - 指纹：`0ac0083c15956191afa8ae2d180c04c1c9dd24512276bde7f5ba372a964eb30d`
 
-### 1063. `hardcoded:src/components/ui/button.tsx:buttonVariants:238154aab83f59c5:001`
+### 364. `hardcoded:src/components/ui/button.tsx:buttonVariants:238154aab83f59c5:001`
 
 - 状态：待核实
 - 文件：`src/components/ui/button.tsx:53`
@@ -17746,7 +4832,7 @@
 - 严重程度：低
 - 指纹：`238154aab83f59c595c2e34c10efe35085f16957d27e7542fd8dead49d035cf7`
 
-### 1064. `hardcoded:src/components/ui/button.tsx:buttonVariants:cd79be55fb86e3dd:001`
+### 365. `hardcoded:src/components/ui/button.tsx:buttonVariants:cd79be55fb86e3dd:001`
 
 - 状态：待核实
 - 文件：`src/components/ui/button.tsx:55`
@@ -17757,7 +4843,7 @@
 - 严重程度：低
 - 指纹：`cd79be55fb86e3dd34b69a2fc7f17d73d61003c0e14580b0801b0c0cb2d08c16`
 
-### 1065. `hardcoded:src/components/ui/form.tsx:useFormField:b188163e7d8c7b51:001`
+### 366. `hardcoded:src/components/ui/form.tsx:useFormField:b188163e7d8c7b51:001`
 
 - 状态：待核实
 - 文件：`src/components/ui/form.tsx:48`
@@ -17768,7 +4854,7 @@
 - 严重程度：低
 - 指纹：`b188163e7d8c7b51f1c63d617b916933551d1413a50321827289a1e9d2cb4a1c`
 
-### 1066. `hardcoded:src/components/ui/form.tsx:FormControl:21c2e2787be6da34:001`
+### 367. `hardcoded:src/components/ui/form.tsx:FormControl:21c2e2787be6da34:001`
 
 - 状态：待核实
 - 文件：`src/components/ui/form.tsx:108`
@@ -17779,7 +4865,7 @@
 - 严重程度：低
 - 指纹：`21c2e2787be6da34f7c8a1083d72bed51655a0728b1974abf209a3cc40cd8f9c`
 
-### 1067. `hardcoded:src/components/ui/input.tsx:fieldClass:d46d0a8729156a34:001`
+### 368. `hardcoded:src/components/ui/input.tsx:fieldClass:d46d0a8729156a34:001`
 
 - 状态：待核实
 - 文件：`src/components/ui/input.tsx:9`
@@ -17790,7 +4876,7 @@
 - 严重程度：低
 - 指纹：`d46d0a8729156a3481c59a7f9d17748b0dbbb2aff7079e73b902be27e2af9c3a`
 
-### 1068. `hardcoded:src/components/ui/sliding-indicator.tsx:MOTION:dbb755b646cec532:001`
+### 369. `hardcoded:src/components/ui/sliding-indicator.tsx:MOTION:dbb755b646cec532:001`
 
 - 状态：待核实
 - 文件：`src/components/ui/sliding-indicator.tsx:67`
@@ -17801,7 +4887,7 @@
 - 严重程度：低
 - 指纹：`dbb755b646cec532cb01eae3acb4be1063c9588fc6de1e0aaada664ecdaabe6b`
 
-### 1069. `hardcoded:src/components/ui/sliding-indicator.tsx:THUMB_MOTION:5cb6665c68c37fc8:001`
+### 370. `hardcoded:src/components/ui/sliding-indicator.tsx:THUMB_MOTION:5cb6665c68c37fc8:001`
 
 - 状态：待核实
 - 文件：`src/components/ui/sliding-indicator.tsx:71`
@@ -17812,7 +4898,7 @@
 - 严重程度：低
 - 指纹：`5cb6665c68c37fc8c1cf59a5e3396870c239ccdf935dc50c98e04393836260ad`
 
-### 1070. `hardcoded:src/components/universal/UniversalProviderFormModal.tsx:codexBaseUrl:eeb319d869b51907:001`
+### 371. `hardcoded:src/components/universal/UniversalProviderFormModal.tsx:codexBaseUrl:eeb319d869b51907:001`
 
 - 状态：待核实
 - 文件：`src/components/universal/UniversalProviderFormModal.tsx:156`
@@ -17823,7 +4909,7 @@
 - 严重程度：低
 - 指纹：`eeb319d869b51907d0010394d8ac3aea68c176679902692f6071dbfffd00b79b`
 
-### 1071. `hardcoded:src/components/universal/UniversalProviderFormModal.tsx:configToml:fb9c4d37398e05bc:001`
+### 372. `hardcoded:src/components/universal/UniversalProviderFormModal.tsx:configToml:fb9c4d37398e05bc:001`
 
 - 状态：待核实
 - 文件：`src/components/universal/UniversalProviderFormModal.tsx:157`
@@ -17843,7 +4929,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`fb9c4d37398e05bce58a239fec1e6a8b9c221bca26d9fa336b7c49c58416a6aa`
 
-### 1072. `hardcoded:src/components/universal/UniversalProviderFormModal.tsx:UniversalProviderFormModal:6946d3ffe03d648c:001`
+### 373. `hardcoded:src/components/universal/UniversalProviderFormModal.tsx:UniversalProviderFormModal:6946d3ffe03d648c:001`
 
 - 状态：待核实
 - 文件：`src/components/universal/UniversalProviderFormModal.tsx:432`
@@ -17855,7 +4941,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`6946d3ffe03d648cf11d876d5bac1994f673af8cb2beb50a4ca4f53b0f82f704`
 
-### 1073. `hardcoded:src/components/universal/UniversalProviderPanel.tsx:duplicated:efdc2dc862a451d8:001`
+### 374. `hardcoded:src/components/universal/UniversalProviderPanel.tsx:duplicated:efdc2dc862a451d8:001`
 
 - 状态：待核实
 - 文件：`src/components/universal/UniversalProviderPanel.tsx:175`
@@ -17866,7 +4952,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`efdc2dc862a451d8d0191b12d29172b2e68bd1e019e3e245497774d15e58971e`
 
-### 1074. `hardcoded:src/components/usage/ChecklistMenu.tsx:ChecklistMenu:51382d6aeb80329e:001`
+### 375. `hardcoded:src/components/usage/ChecklistMenu.tsx:ChecklistMenu:51382d6aeb80329e:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/ChecklistMenu.tsx:68`
@@ -17878,7 +4964,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`51382d6aeb80329e12cbc6ce3aa85df5cd0a06d57250653acbd86149e9ad0827`
 
-### 1075. `hardcoded:src/components/usage/ModelStatsTable.tsx:ModelStatsTable:8a7d061463007731:001`
+### 376. `hardcoded:src/components/usage/ModelStatsTable.tsx:ModelStatsTable:8a7d061463007731:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/ModelStatsTable.tsx:110`
@@ -17890,7 +4976,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`8a7d061463007731205af44903fb96babe7a925f1ca5b745817608921c16a81a`
 
-### 1076. `hardcoded:src/components/usage/ModelsDevAutoSyncPanel.tsx:AutoSyncDialog:2be9d28f282c8f61:001`
+### 377. `hardcoded:src/components/usage/ModelsDevAutoSyncPanel.tsx:AutoSyncDialog:2be9d28f282c8f61:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/ModelsDevAutoSyncPanel.tsx:259`
@@ -17902,7 +4988,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`2be9d28f282c8f6167e379fe876564b728e26d760159eb0698d7c005d588aeb1`
 
-### 1077. `hardcoded:src/components/usage/ModelsDevAutoSyncPanel.tsx:ModelsDevAutoSyncPanel:61cb4d60101029a3:001`
+### 378. `hardcoded:src/components/usage/ModelsDevAutoSyncPanel.tsx:ModelsDevAutoSyncPanel:61cb4d60101029a3:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/ModelsDevAutoSyncPanel.tsx:610`
@@ -17913,7 +4999,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`61cb4d60101029a38c3ae0adaf25dc7e80f3cbaf2bf65fb2c0698aed069a2c69`
 
-### 1078. `hardcoded:src/components/usage/ModelsDevPickerDialog.tsx:ModelsDevPickerDialog:720d1cbcde680fdf:001`
+### 379. `hardcoded:src/components/usage/ModelsDevPickerDialog.tsx:ModelsDevPickerDialog:720d1cbcde680fdf:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/ModelsDevPickerDialog.tsx:191`
@@ -17927,7 +5013,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`720d1cbcde680fdfde4b27326b48b67fd2d1c85f41eb603126a0ba626cddfdb0`
 
-### 1079. `hardcoded:src/components/usage/PricingConfigPanel.tsx:formatUnitPrice:5bb5e46c6a0e6279:001`
+### 380. `hardcoded:src/components/usage/PricingConfigPanel.tsx:formatUnitPrice:5bb5e46c6a0e6279:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/PricingConfigPanel.tsx:69`
@@ -17938,7 +5024,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`5bb5e46c6a0e6279f8ad1b3d36957581284501a117f8497ca81235c84448b322`
 
-### 1080. `hardcoded:src/components/usage/PricingConfigPanel.tsx:BillingDefaultsDialog:1005be4f8336d7e2:001`
+### 381. `hardcoded:src/components/usage/PricingConfigPanel.tsx:BillingDefaultsDialog:1005be4f8336d7e2:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/PricingConfigPanel.tsx:200`
@@ -17950,7 +5036,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`1005be4f8336d7e26b7417c04703375bcf35fbd57be49c31537bf5e4dc4cc2b2`
 
-### 1081. `hardcoded:src/components/usage/PricingConfigPanel.tsx:summary:43d0b108901a059b:001`
+### 382. `hardcoded:src/components/usage/PricingConfigPanel.tsx:summary:43d0b108901a059b:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/PricingConfigPanel.tsx:260`
@@ -17965,7 +5051,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`43d0b108901a059bce9908c5b08a3d27f0204793333d1384cbd73fad17846000`
 
-### 1082. `hardcoded:src/components/usage/PricingConfigPanel.tsx:PricingConfigPanel:c60333b79b79c4de:001`
+### 383. `hardcoded:src/components/usage/PricingConfigPanel.tsx:PricingConfigPanel:c60333b79b79c4de:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/PricingConfigPanel.tsx:378`
@@ -17977,7 +5063,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`c60333b79b79c4ded3ba331a1134c444a0f728fd9fc1c5cae2ac197b9a2e5e62`
 
-### 1083. `hardcoded:src/components/usage/PricingEditModal.tsx:PricingEditModal:4a0c01b3edb39b34:001`
+### 384. `hardcoded:src/components/usage/PricingEditModal.tsx:PricingEditModal:4a0c01b3edb39b34:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/PricingEditModal.tsx:96`
@@ -17989,7 +5075,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`4a0c01b3edb39b344cdaefcebf59eae05c148c7835159b60ba46665416d1904f`
 
-### 1084. `hardcoded:src/components/usage/RequestDetailPanel.tsx:tokens:395f808a0ae35649:001`
+### 385. `hardcoded:src/components/usage/RequestDetailPanel.tsx:tokens:395f808a0ae35649:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/RequestDetailPanel.tsx:164`
@@ -18000,7 +5086,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`395f808a0ae356498cc6b61ac8e288e980f176e0f9e6a37a275b13da2d3ec147`
 
-### 1085. `hardcoded:src/components/usage/RequestDetailPanel.tsx:useDetailSections:fd9f9af498da40a5:001`
+### 386. `hardcoded:src/components/usage/RequestDetailPanel.tsx:useDetailSections:fd9f9af498da40a5:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/RequestDetailPanel.tsx:217`
@@ -18011,7 +5097,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`fd9f9af498da40a590e5ebedf21b5edcbf811b02d7e2c368925859b4fc1fbc00`
 
-### 1086. `hardcoded:src/components/usage/RequestDetailPanel.tsx:useDetailSections:91f6f29954d1fd4d:001`
+### 387. `hardcoded:src/components/usage/RequestDetailPanel.tsx:useDetailSections:91f6f29954d1fd4d:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/RequestDetailPanel.tsx:257`
@@ -18022,7 +5108,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`91f6f29954d1fd4d940c973610605d2f17284f9462e3ebf1a540864c5cb4abb7`
 
-### 1087. `hardcoded:src/components/usage/RequestDetailPanel.tsx:useDetailSections:83701575d787c29f:001`
+### 388. `hardcoded:src/components/usage/RequestDetailPanel.tsx:useDetailSections:83701575d787c29f:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/RequestDetailPanel.tsx:258`
@@ -18033,7 +5119,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`83701575d787c29f04e235dbdfc18c231d8d07750495b88087373dd4aa966b0d`
 
-### 1088. `hardcoded:src/components/usage/RequestDetailPanel.tsx:useDetailSections:40c2b1dbf3ff18e6:001`
+### 389. `hardcoded:src/components/usage/RequestDetailPanel.tsx:useDetailSections:40c2b1dbf3ff18e6:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/RequestDetailPanel.tsx:266`
@@ -18044,7 +5130,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`40c2b1dbf3ff18e6e9384d5ae9cafe817280274e9d2715586e54105d1dee9b6b`
 
-### 1089. `hardcoded:src/components/usage/RequestDetailPanel.tsx:useDetailSections:40c2b1dbf3ff18e6:002`
+### 390. `hardcoded:src/components/usage/RequestDetailPanel.tsx:useDetailSections:40c2b1dbf3ff18e6:002`
 
 - 状态：待核实
 - 文件：`src/components/usage/RequestDetailPanel.tsx:303`
@@ -18055,7 +5141,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`40c2b1dbf3ff18e6e9384d5ae9cafe817280274e9d2715586e54105d1dee9b6b`
 
-### 1090. `hardcoded:src/components/usage/RequestDetailPanel.tsx:useDetailSections:91f6f29954d1fd4d:002`
+### 391. `hardcoded:src/components/usage/RequestDetailPanel.tsx:useDetailSections:91f6f29954d1fd4d:002`
 
 - 状态：待核实
 - 文件：`src/components/usage/RequestDetailPanel.tsx:310`
@@ -18066,7 +5152,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`91f6f29954d1fd4d940c973610605d2f17284f9462e3ebf1a540864c5cb4abb7`
 
-### 1091. `hardcoded:src/components/usage/RequestDetailPanel.tsx:useDetailSections:83701575d787c29f:002`
+### 392. `hardcoded:src/components/usage/RequestDetailPanel.tsx:useDetailSections:83701575d787c29f:002`
 
 - 状态：待核实
 - 文件：`src/components/usage/RequestDetailPanel.tsx:311`
@@ -18077,7 +5163,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`83701575d787c29f04e235dbdfc18c231d8d07750495b88087373dd4aa966b0d`
 
-### 1092. `dynamic-i18n:src/components/usage/RequestLogColumnsMenu.tsx:RequestLogColumnsMenu:4c6b716150f3dad4:001`
+### 393. `dynamic-i18n:src/components/usage/RequestLogColumnsMenu.tsx:RequestLogColumnsMenu:4c6b716150f3dad4:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/RequestLogColumnsMenu.tsx:59`
@@ -18088,7 +5174,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`4c6b716150f3dad49920b06ba95bb0f52bc634dcdf0f07106200b1cdae9a6d38`
 
-### 1093. `hardcoded:src/components/usage/RequestLogTable.tsx:formatLogTime:2e11b75fd2a6490c:001`
+### 394. `hardcoded:src/components/usage/RequestLogTable.tsx:formatLogTime:2e11b75fd2a6490c:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/RequestLogTable.tsx:88`
@@ -18099,7 +5185,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`2e11b75fd2a6490c8d5a2bb5b898301fc0e435e0922f4f0774b2e5d93d06a43e`
 
-### 1094. `hardcoded:src/components/usage/RequestLogTable.tsx:formatLogFullTime:48307ba69a16a608:001`
+### 395. `hardcoded:src/components/usage/RequestLogTable.tsx:formatLogFullTime:48307ba69a16a608:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/RequestLogTable.tsx:94`
@@ -18114,7 +5200,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`48307ba69a16a6087bb8c1f301250d144a50866abc903c3266a819dc39f6a5db`
 
-### 1095. `hardcoded:src/components/usage/RequestLogTable.tsx:formatHitPercent:e6c2bb7838daaccd:001`
+### 396. `hardcoded:src/components/usage/RequestLogTable.tsx:formatHitPercent:e6c2bb7838daaccd:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/RequestLogTable.tsx:155`
@@ -18125,7 +5211,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`e6c2bb7838daaccddfd737c495df07098d0e60bbe87b2679383e17b4c17e50ea`
 
-### 1096. `hardcoded:src/components/usage/RequestLogTable.tsx:keep:e62d9358bc6d42e1:001`
+### 397. `hardcoded:src/components/usage/RequestLogTable.tsx:keep:e62d9358bc6d42e1:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/RequestLogTable.tsx:283`
@@ -18136,7 +5222,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`e62d9358bc6d42e165048a5d110e1634b47b6d4a44a19ba6cfc2d1b7acede24f`
 
-### 1097. `hardcoded:src/components/usage/RequestLogTable.tsx:RequestLogTable:e4276c3a92725002:001`
+### 398. `hardcoded:src/components/usage/RequestLogTable.tsx:RequestLogTable:e4276c3a92725002:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/RequestLogTable.tsx:286`
@@ -18147,7 +5233,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`e4276c3a92725002339b80b6b4f57accfee1b1f6f55ce6dbaca0dc24d229053d`
 
-### 1098. `hardcoded:src/components/usage/RequestLogTable.tsx:RequestLogTable:f395ad305248a9de:001`
+### 399. `hardcoded:src/components/usage/RequestLogTable.tsx:RequestLogTable:f395ad305248a9de:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/RequestLogTable.tsx:287`
@@ -18158,7 +5244,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`f395ad305248a9de831d8225bf862bbb3f4cfdd5c66d95b195668f891b8949e6`
 
-### 1099. `hardcoded:src/components/usage/RequestLogTable.tsx:RequestLogTable:34a29e3c8b32e81a:001`
+### 400. `hardcoded:src/components/usage/RequestLogTable.tsx:RequestLogTable:34a29e3c8b32e81a:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/RequestLogTable.tsx:309`
@@ -18169,7 +5255,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`34a29e3c8b32e81af7cd50a996fd679369a605c8c071343315eb826fe8063349`
 
-### 1100. `hardcoded:src/components/usage/RequestLogTable.tsx:RequestLogTable:7e5b5efabcadf337:001`
+### 401. `hardcoded:src/components/usage/RequestLogTable.tsx:RequestLogTable:7e5b5efabcadf337:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/RequestLogTable.tsx:312`
@@ -18180,7 +5266,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`7e5b5efabcadf33752740db0db30c35155426df370322b475716b13b44d015b5`
 
-### 1101. `dynamic-i18n:src/components/usage/RequestLogTable.tsx:label:4c6b716150f3dad4:001`
+### 402. `dynamic-i18n:src/components/usage/RequestLogTable.tsx:label:4c6b716150f3dad4:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/RequestLogTable.tsx:354`
@@ -18191,7 +5277,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`4c6b716150f3dad49920b06ba95bb0f52bc634dcdf0f07106200b1cdae9a6d38`
 
-### 1102. `hardcoded:src/components/usage/RequestLogTable.tsx:modelTitle:4c0642344d4e2dfb:001`
+### 403. `hardcoded:src/components/usage/RequestLogTable.tsx:modelTitle:4c0642344d4e2dfb:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/RequestLogTable.tsx:409`
@@ -18202,7 +5288,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`4c0642344d4e2dfb327344f4a906def9c78fb32f53eba907efb3575c560c45dd`
 
-### 1103. `hardcoded:src/components/usage/RequestLogTable.tsx:cells:56de1109b9681a57:001`
+### 404. `hardcoded:src/components/usage/RequestLogTable.tsx:cells:56de1109b9681a57:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/RequestLogTable.tsx:482`
@@ -18214,7 +5300,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`56de1109b9681a57ddd5a8e95a3727a4f0c56948bdff2acb04459bb1193ec97a`
 
-### 1104. `hardcoded:src/components/usage/RequestLogTable.tsx:cells:c977ca4b41b28224:001`
+### 405. `hardcoded:src/components/usage/RequestLogTable.tsx:cells:c977ca4b41b28224:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/RequestLogTable.tsx:549`
@@ -18226,7 +5312,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`c977ca4b41b28224bf957e50e6308cce91c076f46ee1c6d4f5d5be5ac95bb353`
 
-### 1105. `hardcoded:src/components/usage/RequestLogTable.tsx:cells:1937e128a2aa541e:001`
+### 406. `hardcoded:src/components/usage/RequestLogTable.tsx:cells:1937e128a2aa541e:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/RequestLogTable.tsx:595`
@@ -18238,7 +5324,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`1937e128a2aa541e6bfa501910e61b90d8599a32bc611996b69e484d86b8b0e5`
 
-### 1106. `hardcoded:src/components/usage/RequestLogTable.tsx:cells:08cc71e15555e2f6:001`
+### 407. `hardcoded:src/components/usage/RequestLogTable.tsx:cells:08cc71e15555e2f6:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/RequestLogTable.tsx:598`
@@ -18249,7 +5335,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`08cc71e15555e2f6ba6ba49bbc7cd42f2441cc4b3a63e4d62a85f8b9bcad2dee`
 
-### 1107. `hardcoded:src/components/usage/UsageDashboard.tsx:menuContentClass:4b584ccc0509b919:001`
+### 408. `hardcoded:src/components/usage/UsageDashboard.tsx:menuContentClass:4b584ccc0509b919:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageDashboard.tsx:137`
@@ -18260,7 +5346,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`4b584ccc0509b919d7a5c65964ddb3e5bbc53a687aedcf4ac1b23a644b4897eb`
 
-### 1108. `hardcoded:src/components/usage/UsageDashboard.tsx:menuItemClass:e3394c35b6be4a65:001`
+### 409. `hardcoded:src/components/usage/UsageDashboard.tsx:menuItemClass:e3394c35b6be4a65:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageDashboard.tsx:138`
@@ -18271,7 +5357,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`e3394c35b6be4a65916a4a3ede99356c9360ca7cc8a213e44bcbe77b142de07c`
 
-### 1109. `hardcoded:src/components/usage/UsageDashboard.tsx:rangeLabel:0716d895d8892441:001`
+### 410. `hardcoded:src/components/usage/UsageDashboard.tsx:rangeLabel:0716d895d8892441:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageDashboard.tsx:445`
@@ -18282,7 +5368,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`0716d895d88924413a6332e4e9400539c5f606a2f485b9e12624a505d5e1e643`
 
-### 1110. `hardcoded:src/components/usage/UsageDashboard.tsx:rangeLabel:499627258b1a34d9:001`
+### 411. `hardcoded:src/components/usage/UsageDashboard.tsx:rangeLabel:499627258b1a34d9:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageDashboard.tsx:450`
@@ -18293,7 +5379,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`499627258b1a34d92018f3f3b9f8d677949e2582b8da3646f4e8c9080d74d6fd`
 
-### 1111. `hardcoded:src/components/usage/UsageDashboard.tsx:scopeLabel:72d723c09b75c783:001`
+### 412. `hardcoded:src/components/usage/UsageDashboard.tsx:scopeLabel:72d723c09b75c783:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageDashboard.tsx:492`
@@ -18304,7 +5390,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`72d723c09b75c7833b783854c258879661bff00453cc5e46fea5a92b1fb95076`
 
-### 1112. `hardcoded:src/components/usage/UsageDashboard.tsx:scopeTitle:5cb9663d32896aed:001`
+### 413. `hardcoded:src/components/usage/UsageDashboard.tsx:scopeTitle:5cb9663d32896aed:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageDashboard.tsx:493`
@@ -18319,7 +5405,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`5cb9663d32896aede94931e0ba14836c041c77bbda7c6477178c04071a10dc8b`
 
-### 1113. `hardcoded:src/components/usage/UsageDashboard.tsx:chipClass:542d0fcb22648b8b:001`
+### 414. `hardcoded:src/components/usage/UsageDashboard.tsx:chipClass:542d0fcb22648b8b:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageDashboard.tsx:577`
@@ -18330,7 +5416,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`542d0fcb22648b8bd335b620056aa12f02984044266492ee6ad13b5dea2c2649`
 
-### 1114. `hardcoded:src/components/usage/UsageDashboard.tsx:statusLabel:8e1e5c98d5ad132f:001`
+### 415. `hardcoded:src/components/usage/UsageDashboard.tsx:statusLabel:8e1e5c98d5ad132f:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageDashboard.tsx:750`
@@ -18341,7 +5427,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`8e1e5c98d5ad132fff7b7ea0bd4dcd6cb19a697998a5117ac5cc680c41e7afe6`
 
-### 1115. `hardcoded:src/components/usage/UsageDashboard.tsx:tabTrailing:5bc0be3bb557a00a:001`
+### 416. `hardcoded:src/components/usage/UsageDashboard.tsx:tabTrailing:5bc0be3bb557a00a:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageDashboard.tsx:769`
@@ -18353,7 +5439,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`5bc0be3bb557a00a740a7a562c6a1ee06a7165bed7f853987ad6f03b5e5623f2`
 
-### 1116. `hardcoded:src/components/usage/UsageDashboard.tsx:tabTrailing:54a4ec11e9fff92b:001`
+### 417. `hardcoded:src/components/usage/UsageDashboard.tsx:tabTrailing:54a4ec11e9fff92b:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageDashboard.tsx:774`
@@ -18364,7 +5450,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`54a4ec11e9fff92b08ca310a1bbb412f593fed224e07172d8e2a8c2d9f40fedc`
 
-### 1117. `hardcoded:src/components/usage/UsageDateRangePicker.tsx:fmtDate:fdd7d36ce6361378:001`
+### 418. `hardcoded:src/components/usage/UsageDateRangePicker.tsx:fmtDate:fdd7d36ce6361378:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageDateRangePicker.tsx:57`
@@ -18375,7 +5461,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`fdd7d36ce6361378ce9533c0b63fe26d5e5150e33f240d1ed3deb733f9dd4061`
 
-### 1118. `hardcoded:src/components/usage/UsageDateRangePicker.tsx:fmtTime:9ec707dbf089d1d9:001`
+### 419. `hardcoded:src/components/usage/UsageDateRangePicker.tsx:fmtTime:9ec707dbf089d1d9:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageDateRangePicker.tsx:62`
@@ -18386,7 +5472,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`9ec707dbf089d1d9841d6631bd7113f1f78e3935e3d9d044530753ed2085a9c2`
 
-### 1119. `hardcoded:src/components/usage/UsageDateRangePicker.tsx:UsageDateRangePicker:6033976d541c7f64:001`
+### 420. `hardcoded:src/components/usage/UsageDateRangePicker.tsx:UsageDateRangePicker:6033976d541c7f64:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageDateRangePicker.tsx:337`
@@ -18398,7 +5484,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`6033976d541c7f64408a3d7d4d026e197b3f67f5faaffcc5f7d5ea8c952f2fda`
 
-### 1120. `dynamic-i18n:src/components/usage/UsageDisplaySection.tsx:todayLabel:9c965868dda12772:001`
+### 421. `dynamic-i18n:src/components/usage/UsageDisplaySection.tsx:todayLabel:9c965868dda12772:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageDisplaySection.tsx:93`
@@ -18409,7 +5495,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`9c965868dda12772b73d7958875846e84e79a30b5a00c878d6a75c0f72e2639a`
 
-### 1121. `hardcoded:src/components/usage/UsageDisplaySection.tsx:optionLabel:c3dfb4461375f848:001`
+### 422. `hardcoded:src/components/usage/UsageDisplaySection.tsx:optionLabel:c3dfb4461375f848:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageDisplaySection.tsx:132`
@@ -18420,7 +5506,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`c3dfb4461375f84869831c84b0f56441bb454554ca512e062ed19c0985590611`
 
-### 1122. `dynamic-i18n:src/components/usage/UsageDisplaySection.tsx:UsageDisplaySection:74fefa25328abc5c:001`
+### 423. `dynamic-i18n:src/components/usage/UsageDisplaySection.tsx:UsageDisplaySection:74fefa25328abc5c:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageDisplaySection.tsx:196`
@@ -18431,7 +5517,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`74fefa25328abc5cd636335aba766326037e74a4da2150435f5b885939fd630c`
 
-### 1123. `hardcoded:src/components/usage/UsageHeatmap.tsx:dayKey:05714fc0c04ea9bc:001`
+### 424. `hardcoded:src/components/usage/UsageHeatmap.tsx:dayKey:05714fc0c04ea9bc:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageHeatmap.tsx:67`
@@ -18442,7 +5528,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`05714fc0c04ea9bcfd0f81fab211969a947c1e84c0dc7bb43ec014113ea9d3bd`
 
-### 1124. `hardcoded:src/components/usage/UsageHeatmap.tsx:UsageHeatmap:23e345142b3ca51f:001`
+### 425. `hardcoded:src/components/usage/UsageHeatmap.tsx:UsageHeatmap:23e345142b3ca51f:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageHeatmap.tsx:347`
@@ -18453,7 +5539,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`23e345142b3ca51f6259f8daa8d812be6212b19ebd2c4889dd86eb178917c419`
 
-### 1125. `hardcoded:src/components/usage/UsageHeatmap.tsx:UsageHeatmap:d2f6cd8d02b2368e:001`
+### 426. `hardcoded:src/components/usage/UsageHeatmap.tsx:UsageHeatmap:d2f6cd8d02b2368e:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageHeatmap.tsx:360`
@@ -18464,7 +5550,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`d2f6cd8d02b2368e0673e5d3e85509aea3c5a81605dfc024960f4b6cc2594958`
 
-### 1126. `hardcoded:src/components/usage/UsageHeatmap.tsx:UsageHeatmap:56fbde541cda9392:001`
+### 427. `hardcoded:src/components/usage/UsageHeatmap.tsx:UsageHeatmap:56fbde541cda9392:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageHeatmap.tsx:418`
@@ -18481,7 +5567,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`56fbde541cda939239c820886cefa0c3772a0534548413e45dd12c806aa8bb4f`
 
-### 1127. `hardcoded:src/components/usage/UsageHero.tsx:MetricCell:ec3537f0ae32e2cd:001`
+### 428. `hardcoded:src/components/usage/UsageHero.tsx:MetricCell:ec3537f0ae32e2cd:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageHero.tsx:114`
@@ -18493,7 +5579,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`ec3537f0ae32e2cd271994955ea19538cdb473336444fe2b78d882dcd14450e2`
 
-### 1128. `hardcoded:src/components/usage/UsageSettingsSheet.tsx:UsageSettingsSheet:af87a121cdc72f85:001`
+### 429. `hardcoded:src/components/usage/UsageSettingsSheet.tsx:UsageSettingsSheet:af87a121cdc72f85:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageSettingsSheet.tsx:204`
@@ -18504,7 +5590,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`af87a121cdc72f85e0044fb14192a4c657fbaf1dea1844a7abb6e282141f7c9e`
 
-### 1129. `hardcoded:src/components/usage/UsageTrendChart.tsx:cjkThousandUnits:8cb898c3a50a87f7:001`
+### 430. `hardcoded:src/components/usage/UsageTrendChart.tsx:cjkThousandUnits:8cb898c3a50a87f7:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageTrendChart.tsx:202`
@@ -18515,7 +5601,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`8cb898c3a50a87f736756b5070e4b7acf56391d69d2ef3277af6e601a50e3737`
 
-### 1130. `hardcoded:src/components/usage/UsageTrendChart.tsx:cjkThousandUnits:8ab9459f89997207:001`
+### 431. `hardcoded:src/components/usage/UsageTrendChart.tsx:cjkThousandUnits:8ab9459f89997207:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageTrendChart.tsx:203`
@@ -18526,7 +5612,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`8ab9459f89997207a295a31c41adc85f6f606f7a2fcd9423f1c11d1f08ef14cb`
 
-### 1131. `hardcoded:src/components/usage/UsageTrendChart.tsx:cjkThousandUnits:4e8ee85b3668ef16:001`
+### 432. `hardcoded:src/components/usage/UsageTrendChart.tsx:cjkThousandUnits:4e8ee85b3668ef16:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageTrendChart.tsx:208`
@@ -18537,7 +5623,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`4e8ee85b3668ef1656bfa750123479be1f4940c12bea113ea3d24ce2e4af2272`
 
-### 1132. `hardcoded:src/components/usage/UsageTrendChart.tsx:cjkThousandUnits:1a7f74b68f2f3fa1:001`
+### 433. `hardcoded:src/components/usage/UsageTrendChart.tsx:cjkThousandUnits:1a7f74b68f2f3fa1:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageTrendChart.tsx:209`
@@ -18548,7 +5634,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`1a7f74b68f2f3fa12d8a5bfcdef98e9d9f4be7d9e712ed496669f1fd9e83c0fc`
 
-### 1133. `hardcoded:src/components/usage/UsageTrendChart.tsx:cjkThousandUnits:8cb898c3a50a87f7:002`
+### 434. `hardcoded:src/components/usage/UsageTrendChart.tsx:cjkThousandUnits:8cb898c3a50a87f7:002`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageTrendChart.tsx:214`
@@ -18559,7 +5645,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`8cb898c3a50a87f736756b5070e4b7acf56391d69d2ef3277af6e601a50e3737`
 
-### 1134. `hardcoded:src/components/usage/UsageTrendChart.tsx:cjkThousandUnits:1a7f74b68f2f3fa1:002`
+### 435. `hardcoded:src/components/usage/UsageTrendChart.tsx:cjkThousandUnits:1a7f74b68f2f3fa1:002`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageTrendChart.tsx:215`
@@ -18570,7 +5656,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`1a7f74b68f2f3fa12d8a5bfcdef98e9d9f4be7d9e712ed496669f1fd9e83c0fc`
 
-### 1135. `hardcoded:src/components/usage/UsageTrendChart.tsx:formatYTick:9b4c832c895ad013:001`
+### 436. `hardcoded:src/components/usage/UsageTrendChart.tsx:formatYTick:9b4c832c895ad013:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/UsageTrendChart.tsx:342`
@@ -18581,7 +5667,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`9b4c832c895ad01389aecf13a5bfcf9a249a260ae24a06238b40653850f67d82`
 
-### 1136. `hardcoded:src/components/usage/format.ts:formatHitRatePercent:a56b80ab4481f505:001`
+### 437. `hardcoded:src/components/usage/format.ts:formatHitRatePercent:a56b80ab4481f505:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/format.ts:93`
@@ -18592,7 +5678,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`a56b80ab4481f5056079d84ed14b5a7848afee0a1260e6d70b3ff679a89f1630`
 
-### 1137. `hardcoded:src/components/usage/format.ts:formatFirstTokenSeconds:f0b85f0f527f92a4:001`
+### 438. `hardcoded:src/components/usage/format.ts:formatFirstTokenSeconds:f0b85f0f527f92a4:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/format.ts:342`
@@ -18603,7 +5689,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`f0b85f0f527f92a451706703e8bc3a01a80df1e11b00e514eae79d8e0c950139`
 
-### 1138. `hardcoded:src/components/usage/format.ts:formatTokensCompact:d7c29eea2a59877c:001`
+### 439. `hardcoded:src/components/usage/format.ts:formatTokensCompact:d7c29eea2a59877c:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/format.ts:380`
@@ -18614,7 +5700,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`d7c29eea2a59877cc80f9ea801040876351e37fafcd83ea35e31450e3cb50939`
 
-### 1139. `hardcoded:src/components/usage/format.ts:formatTokensShort:8e76c146d0b98bd4:001`
+### 440. `hardcoded:src/components/usage/format.ts:formatTokensShort:8e76c146d0b98bd4:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/format.ts:464`
@@ -18625,7 +5711,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`8e76c146d0b98bd4d9f25361fed0ce80568cf2a0770aaa3f8006ca684b5185d5`
 
-### 1140. `hardcoded:src/components/usage/format.ts:formatTokensShort:ca5d2c30904e904b:001`
+### 441. `hardcoded:src/components/usage/format.ts:formatTokensShort:ca5d2c30904e904b:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/format.ts:465`
@@ -18636,7 +5722,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`ca5d2c30904e904b73b7b0d0c48816937e1d5746b18ec7dfbbbb6fc7dee6503b`
 
-### 1141. `hardcoded:src/components/usage/format.ts:formatTokensShort:4acbf115cc24262b:001`
+### 442. `hardcoded:src/components/usage/format.ts:formatTokensShort:4acbf115cc24262b:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/format.ts:474`
@@ -18647,7 +5733,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`4acbf115cc24262b8bc2c7f219b9e114101a2de4c6fcd4963cb69b84b516b278`
 
-### 1142. `hardcoded:src/components/usage/format.ts:formatTokensShort:fc92e239e95de9c7:001`
+### 443. `hardcoded:src/components/usage/format.ts:formatTokensShort:fc92e239e95de9c7:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/format.ts:475`
@@ -18658,7 +5744,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`fc92e239e95de9c73c6693549bf624862b3af1b952325090ec4fac31e70be7e0`
 
-### 1143. `hardcoded:src/components/usage/format.ts:formatTokensShort:0fc5ea62db4a7e4b:001`
+### 444. `hardcoded:src/components/usage/format.ts:formatTokensShort:0fc5ea62db4a7e4b:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/format.ts:479`
@@ -18669,7 +5755,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`0fc5ea62db4a7e4b781d537004cf4e8953e7ebd02a70d17232cf582504cef475`
 
-### 1144. `hardcoded:src/components/usage/format.ts:formatTokensShort:adb86911aab86ed5:001`
+### 445. `hardcoded:src/components/usage/format.ts:formatTokensShort:adb86911aab86ed5:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/format.ts:480`
@@ -18680,7 +5766,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`adb86911aab86ed524a952611adac622cdef3072e07af93a9359eedccb359689`
 
-### 1145. `hardcoded:src/components/usage/format.ts:formatTokensShort:83b780cbce7a6b71:001`
+### 446. `hardcoded:src/components/usage/format.ts:formatTokensShort:83b780cbce7a6b71:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/format.ts:483`
@@ -18691,7 +5777,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`83b780cbce7a6b710750e5f9b08765f2e113cfe9f7cc51a1158d4ba3c44adcfc`
 
-### 1146. `hardcoded:src/components/usage/format.ts:formatTokensShort:6d2024a86c35bb0d:001`
+### 447. `hardcoded:src/components/usage/format.ts:formatTokensShort:6d2024a86c35bb0d:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/format.ts:484`
@@ -18702,7 +5788,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`6d2024a86c35bb0d337b63d535aa45a27f5bf98db2c5c2e6c28845c705032116`
 
-### 1147. `hardcoded:src/components/usage/format.ts:formatTokensShort:943d3fd712684a3e:001`
+### 448. `hardcoded:src/components/usage/format.ts:formatTokensShort:943d3fd712684a3e:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/format.ts:485`
@@ -18713,7 +5799,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`943d3fd712684a3e5afb7c462b749bf88b335ef48d6a86f874608d15245dc427`
 
-### 1148. `hardcoded:src/components/usage/usageTable.ts:usageTable:82fd35680446c652:001`
+### 449. `hardcoded:src/components/usage/usageTable.ts:usageTable:82fd35680446c652:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/usageTable.ts:17`
@@ -18724,7 +5810,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`82fd35680446c652a41e7156bde56cefca7054557357517591adfb291185b8fe`
 
-### 1149. `hardcoded:src/components/usage/usageTable.ts:usageTable:7b50091269eb5e92:001`
+### 450. `hardcoded:src/components/usage/usageTable.ts:usageTable:7b50091269eb5e92:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/usageTable.ts:20`
@@ -18735,7 +5821,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`7b50091269eb5e92ce9bcbc1f77081315d190346c0a8f9cdf0fca1ed57080749`
 
-### 1150. `hardcoded:src/components/usage/usageTable.ts:usageTable:bbd2127178da5347:001`
+### 451. `hardcoded:src/components/usage/usageTable.ts:usageTable:bbd2127178da5347:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/usageTable.ts:22`
@@ -18746,7 +5832,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`bbd2127178da5347e0803054c8374f347558b941dfb0932266645f341092cfae`
 
-### 1151. `hardcoded:src/components/usage/usageTable.ts:usageTable:727c40ceae5a552b:001`
+### 452. `hardcoded:src/components/usage/usageTable.ts:usageTable:727c40ceae5a552b:001`
 
 - 状态：待核实
 - 文件：`src/components/usage/usageTable.ts:32`
@@ -18757,7 +5843,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`727c40ceae5a552b56c697a17a5a92fbac1f7a97d7f85818a50fdc16c2b5d8e4`
 
-### 1152. `hardcoded:src/components/workspace/DailyMemoryPanel.tsx:formatFileSize:229dd2efa20cfa06:001`
+### 453. `hardcoded:src/components/workspace/DailyMemoryPanel.tsx:formatFileSize:229dd2efa20cfa06:001`
 
 - 状态：待核实
 - 文件：`src/components/workspace/DailyMemoryPanel.tsx:38`
@@ -18768,7 +5854,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`229dd2efa20cfa06a18005595e089bef78a3ffc5bd33bb73dac85cca195d46c6`
 
-### 1153. `hardcoded:src/components/workspace/DailyMemoryPanel.tsx:formatFileSize:3774273e5fbf94ef:001`
+### 454. `hardcoded:src/components/workspace/DailyMemoryPanel.tsx:formatFileSize:3774273e5fbf94ef:001`
 
 - 状态：待核实
 - 文件：`src/components/workspace/DailyMemoryPanel.tsx:39`
@@ -18779,7 +5865,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`3774273e5fbf94ef8195350bfd3982824f82e6586e1751e20151e275c30f64df`
 
-### 1154. `hardcoded:src/components/workspace/DailyMemoryPanel.tsx:formatFileSize:388be0693bbcaae7:001`
+### 455. `hardcoded:src/components/workspace/DailyMemoryPanel.tsx:formatFileSize:388be0693bbcaae7:001`
 
 - 状态：待核实
 - 文件：`src/components/workspace/DailyMemoryPanel.tsx:40`
@@ -18790,7 +5876,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`388be0693bbcaae784829d908026071c6cf9dd99feb7674ab79943d892cab407`
 
-### 1155. `hardcoded:src/components/workspace/DailyMemoryPanel.tsx:DailyMemoryPanel:a62f9585aac4983d:001`
+### 456. `hardcoded:src/components/workspace/DailyMemoryPanel.tsx:DailyMemoryPanel:a62f9585aac4983d:001`
 
 - 状态：待核实
 - 文件：`src/components/workspace/DailyMemoryPanel.tsx:331`
@@ -18802,7 +5888,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`a62f9585aac4983d7a49633de145969a7f92fe17b1b501de64e1a84f0e8fa075`
 
-### 1156. `hardcoded:src/components/workspace/DailyMemoryPanel.tsx:DailyMemoryPanel:3a7a1f5342930d80:001`
+### 457. `hardcoded:src/components/workspace/DailyMemoryPanel.tsx:DailyMemoryPanel:3a7a1f5342930d80:001`
 
 - 状态：待核实
 - 文件：`src/components/workspace/DailyMemoryPanel.tsx:332`
@@ -18813,7 +5899,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`3a7a1f5342930d8032b686c8e4efdf236973e0713e5d4c9452b396b41cb61e5e`
 
-### 1157. `hardcoded:src/components/workspace/WorkspaceFileEditor.tsx:WorkspaceFileEditor:4e3cefaa77f57680:001`
+### 458. `hardcoded:src/components/workspace/WorkspaceFileEditor.tsx:WorkspaceFileEditor:4e3cefaa77f57680:001`
 
 - 状态：待核实
 - 文件：`src/components/workspace/WorkspaceFileEditor.tsx:92`
@@ -18825,7 +5911,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`4e3cefaa77f57680818b0a333b1f1de750be8300312e3ca0ae2d591afb1d4f5c`
 
-### 1158. `hardcoded:src/components/workspace/WorkspaceFileEditor.tsx:WorkspaceFileEditor:3a7a1f5342930d80:001`
+### 459. `hardcoded:src/components/workspace/WorkspaceFileEditor.tsx:WorkspaceFileEditor:3a7a1f5342930d80:001`
 
 - 状态：待核实
 - 文件：`src/components/workspace/WorkspaceFileEditor.tsx:93`
@@ -18836,7 +5922,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`3a7a1f5342930d8032b686c8e4efdf236973e0713e5d4c9452b396b41cb61e5e`
 
-### 1159. `dynamic-i18n:src/components/workspace/WorkspaceFilesPanel.tsx:WorkspaceFilesPanel:347a6a525595a8b6:001`
+### 460. `dynamic-i18n:src/components/workspace/WorkspaceFilesPanel.tsx:WorkspaceFilesPanel:347a6a525595a8b6:001`
 
 - 状态：待核实
 - 文件：`src/components/workspace/WorkspaceFilesPanel.tsx:123`
@@ -18847,7 +5933,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`347a6a525595a8b6f3f5f07623bb8c87dd641019052c4c36c8d856c7dc75560f`
 
-### 1160. `dynamic-i18n:src/config/mcpPresets.ts:getMcpPresetWithDescription:0c1d1c92eda0e772:001`
+### 461. `dynamic-i18n:src/config/mcpPresets.ts:getMcpPresetWithDescription:0c1d1c92eda0e772:001`
 
 - 状态：待核实
 - 文件：`src/config/mcpPresets.ts:102`
@@ -18858,7 +5944,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`0c1d1c92eda0e772769c808027e639ef98b15ace47087dabe50c20f4036b633e`
 
-### 1161. `hardcoded:src/hooks/useImportExport.ts:stamp:f2dcb0ff05d4bf4f:001`
+### 462. `hardcoded:src/hooks/useImportExport.ts:stamp:f2dcb0ff05d4bf4f:001`
 
 - 状态：待核实
 - 文件：`src/hooks/useImportExport.ts:146`
@@ -18869,7 +5955,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`f2dcb0ff05d4bf4ff55658e4a4408dbf8a578527420ab0e807c16154a91260f8`
 
-### 1162. `hardcoded:src/hooks/useImportExport.ts:exportConfig:f13be88aac6f5c9e:001`
+### 463. `hardcoded:src/hooks/useImportExport.ts:exportConfig:f13be88aac6f5c9e:001`
 
 - 状态：待核实
 - 文件：`src/hooks/useImportExport.ts:171`
@@ -18880,7 +5966,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`f13be88aac6f5c9e477a9411113ec7f1b55bb7d6fba9ff1ef1820b4694a66b3a`
 
-### 1163. `dynamic-i18n:src/hooks/useModeActions.ts:enter:883829e896b1bc8a:001`
+### 464. `dynamic-i18n:src/hooks/useModeActions.ts:enter:883829e896b1bc8a:001`
 
 - 状态：待核实
 - 文件：`src/hooks/useModeActions.ts:62`
@@ -18895,7 +5981,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`883829e896b1bc8aef277f4a21d15d6836060d521592f467337d15a69965bd90`
 
-### 1164. `hardcoded:src/hooks/useMoneyFormat.ts:useMoneyFormat:59a5fc6fd4cd053a:001`
+### 465. `hardcoded:src/hooks/useMoneyFormat.ts:useMoneyFormat:59a5fc6fd4cd053a:001`
 
 - 状态：待核实
 - 文件：`src/hooks/useMoneyFormat.ts:38`
@@ -18906,7 +5992,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`59a5fc6fd4cd053ad8359ed8da1b2799b65d66a5ae4c473f3cf4d200f7d68f4f`
 
-### 1165. `dynamic-i18n:src/hooks/usePromptActions.ts:toggleEnabled:0a592ddbd2de0f49:001`
+### 466. `dynamic-i18n:src/hooks/usePromptActions.ts:toggleEnabled:0a592ddbd2de0f49:001`
 
 - 状态：待核实
 - 文件：`src/hooks/usePromptActions.ts:210`
@@ -18919,7 +6005,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`0a592ddbd2de0f4975252f9cdbe2dbe113aabd4c0d6efee015027c3922676cc9`
 
-### 1166. `hardcoded:src/hooks/useProviderActions.ts:defaultMessage:c5dcde6ac770eac5:001`
+### 467. `hardcoded:src/hooks/useProviderActions.ts:defaultMessage:c5dcde6ac770eac5:001`
 
 - 状态：待核实
 - 文件：`src/hooks/useProviderActions.ts:254`
@@ -18930,7 +6016,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`c5dcde6ac770eac5cc5df65d657a8034dee4bc81fb7c1ffdd8bd4f8c26f0a09d`
 
-### 1167. `hardcoded:src/hooks/useProviderActions.ts:switchProvider:116dbbe928c6714b:001`
+### 468. `hardcoded:src/hooks/useProviderActions.ts:switchProvider:116dbbe928c6714b:001`
 
 - 状态：待核实
 - 文件：`src/hooks/useProviderActions.ts:257`
@@ -18941,7 +6027,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`116dbbe928c6714b42133a86d5af4dab8604be9184e71313bbe4ea79fd98bdc6`
 
-### 1168. `hardcoded:src/hooks/useProviderActions.ts:switchProvider:126efddcad591bbf:001`
+### 469. `hardcoded:src/hooks/useProviderActions.ts:switchProvider:126efddcad591bbf:001`
 
 - 状态：待核实
 - 文件：`src/hooks/useProviderActions.ts:260`
@@ -18952,7 +6038,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`126efddcad591bbffaecbd9241d65a7b95423333103a0493fb3d5252fae769fc`
 
-### 1169. `hardcoded:src/hooks/useProviderActions.ts:switchProvider:33e50759e61e9304:001`
+### 470. `hardcoded:src/hooks/useProviderActions.ts:switchProvider:33e50759e61e9304:001`
 
 - 状态：待核实
 - 文件：`src/hooks/useProviderActions.ts:263`
@@ -18963,7 +6049,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`33e50759e61e93049bf3838a3af6511d0d8899937d417cff91c637bbb0e21059`
 
-### 1170. `hardcoded:src/hooks/useProviderActions.ts:switchProvider:85c07603d29beae6:001`
+### 471. `hardcoded:src/hooks/useProviderActions.ts:switchProvider:85c07603d29beae6:001`
 
 - 状态：待核实
 - 文件：`src/hooks/useProviderActions.ts:267`
@@ -18974,7 +6060,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`85c07603d29beae604f31f3ce4310bcb50fc86fc3fb22bd5a686fe1f90e0ba3d`
 
-### 1171. `hardcoded:src/hooks/useProviderActions.ts:switchProvider:cf2a766696e724f9:001`
+### 472. `hardcoded:src/hooks/useProviderActions.ts:switchProvider:cf2a766696e724f9:001`
 
 - 状态：待核实
 - 文件：`src/hooks/useProviderActions.ts:274`
@@ -18985,7 +6071,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`cf2a766696e724f946d8c1303c6e2a06a35688db2ae5a8d1eeb7739f3850f0f1`
 
-### 1172. `dynamic-i18n:src/hooks/useProviderActions.ts:message:957b5b6d4c6b0d30:001`
+### 473. `dynamic-i18n:src/hooks/useProviderActions.ts:message:957b5b6d4c6b0d30:001`
 
 - 状态：待核实
 - 文件：`src/hooks/useProviderActions.ts:278`
@@ -18996,7 +6082,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`957b5b6d4c6b0d309df52a69490ab3731b3e639d324d8b29bf10dc914b793946`
 
-### 1173. `hardcoded:src/hooks/useSidebarCollapsed.ts:TOGGLE_EASING:7e5b5efabcadf337:001`
+### 474. `hardcoded:src/hooks/useSidebarCollapsed.ts:TOGGLE_EASING:7e5b5efabcadf337:001`
 
 - 状态：待核实
 - 文件：`src/hooks/useSidebarCollapsed.ts:21`
@@ -19007,7 +6093,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`7e5b5efabcadf33752740db0db30c35155426df370322b475716b13b44d015b5`
 
-### 1174. `hardcoded:src/hooks/useSidebarCollapsed.ts:animateToggle:5e55e877e79ae833:001`
+### 475. `hardcoded:src/hooks/useSidebarCollapsed.ts:animateToggle:5e55e877e79ae833:001`
 
 - 状态：待核实
 - 文件：`src/hooks/useSidebarCollapsed.ts:69`
@@ -19018,7 +6104,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`5e55e877e79ae833609e3666a0de0fbc82478623eceb1aa56a8853ecbb7811a5`
 
-### 1175. `hardcoded:src/hooks/useSidebarCollapsed.ts:animateToggle:1f988455b2ef4d24:001`
+### 476. `hardcoded:src/hooks/useSidebarCollapsed.ts:animateToggle:1f988455b2ef4d24:001`
 
 - 状态：待核实
 - 文件：`src/hooks/useSidebarCollapsed.ts:69`
@@ -19029,7 +6115,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`1f988455b2ef4d24dae3219df974c105cda2e94177054ccca515a1bfc8824d7d`
 
-### 1176. `hardcoded:src/hooks/useSidebarCollapsed.ts:animation:b4bf486120a6db3d:001`
+### 477. `hardcoded:src/hooks/useSidebarCollapsed.ts:animation:b4bf486120a6db3d:001`
 
 - 状态：待核实
 - 文件：`src/hooks/useSidebarCollapsed.ts:79`
@@ -19040,7 +6126,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`b4bf486120a6db3d708699857a3c78fd64eee65bb03fb73358c9012d2af71e28`
 
-### 1177. `hardcoded:src/lib/api/model-fetch.ts:showFetchModelsError:ce8bfd4f9ef161e2:001`
+### 478. `hardcoded:src/lib/api/model-fetch.ts:showFetchModelsError:ce8bfd4f9ef161e2:001`
 
 - 状态：待核实
 - 文件：`src/lib/api/model-fetch.ts:140`
@@ -19051,7 +6137,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`ce8bfd4f9ef161e262ceb59684fe403fdd0249879f7c0a69f33032bf45f74237`
 
-### 1178. `hardcoded:src/lib/api/model-fetch.ts:showFetchModelsError:4db7fea974ed743a:001`
+### 479. `hardcoded:src/lib/api/model-fetch.ts:showFetchModelsError:4db7fea974ed743a:001`
 
 - 状态：待核实
 - 文件：`src/lib/api/model-fetch.ts:152`
@@ -19062,7 +6148,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`4db7fea974ed743affebe73b108266d38f2d7db1a1abd1a3f7d0a6b17e230c11`
 
-### 1179. `hardcoded:src/lib/api/settings.ts:syncCurrentProvidersLive:55d960fe732358ec:001`
+### 480. `hardcoded:src/lib/api/settings.ts:syncCurrentProvidersLive:55d960fe732358ec:001`
 
 - 状态：待核实
 - 文件：`src/lib/api/settings.ts:239`
@@ -19073,7 +6159,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`55d960fe732358ecca0ccaf9a6d24dbf84c91be44a233645e5a5971b680709ee`
 
-### 1180. `hardcoded:src/lib/api/settings.ts:openExternal:69e1efdb433faf0f:001`
+### 481. `hardcoded:src/lib/api/settings.ts:openExternal:69e1efdb433faf0f:001`
 
 - 状态：待核实
 - 文件：`src/lib/api/settings.ts:248`
@@ -19084,7 +6170,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`69e1efdb433faf0fa6423096c721cdeea8e30610464632dae292a329094086fe`
 
-### 1181. `dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:c948ad90dbb56786:001`
+### 482. `dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:c948ad90dbb56786:001`
 
 - 状态：待核实
 - 文件：`src/lib/claudePlan.ts:17`
@@ -19095,7 +6181,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`c948ad90dbb5678610291538a968108d48de158c5a0ba0bfaf4fb81008c9cd5d`
 
-### 1182. `dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:e6d34e9dad987f63:001`
+### 483. `dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:e6d34e9dad987f63:001`
 
 - 状态：待核实
 - 文件：`src/lib/claudePlan.ts:20`
@@ -19106,7 +6192,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`e6d34e9dad987f632f3f18e36e88b55211d1613b8fa4845a48fffe4d566c56b8`
 
-### 1183. `dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:526dea196aee52d7:001`
+### 484. `dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:526dea196aee52d7:001`
 
 - 状态：待核实
 - 文件：`src/lib/claudePlan.ts:23`
@@ -19117,7 +6203,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`526dea196aee52d7886ac3e4c476eb29cc3bb3a25181468cf00307c80191f65c`
 
-### 1184. `dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:0643f8d5c2a7a4d6:001`
+### 485. `dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:0643f8d5c2a7a4d6:001`
 
 - 状态：待核实
 - 文件：`src/lib/claudePlan.ts:25`
@@ -19128,7 +6214,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`0643f8d5c2a7a4d6214d2d38a0b43faa32e0f8f264ca47dead55542c58d107ad`
 
-### 1185. `dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:73cc9395a6dcb325:001`
+### 486. `dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:73cc9395a6dcb325:001`
 
 - 状态：待核实
 - 文件：`src/lib/claudePlan.ts:29`
@@ -19139,7 +6225,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`73cc9395a6dcb325d82f735d1a042fff223dcd0e026575f29309f5f69f8f9fa6`
 
-### 1186. `dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:8047060929970a87:001`
+### 487. `dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:8047060929970a87:001`
 
 - 状态：待核实
 - 文件：`src/lib/claudePlan.ts:30`
@@ -19150,7 +6236,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`8047060929970a871fcf63d1f23b79fa556b232ba7cb693a0b36dd5c81f00dbc`
 
-### 1187. `dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:906c5699182dee61:001`
+### 488. `dynamic-i18n:src/lib/claudePlan.ts:claudePlanLabel:906c5699182dee61:001`
 
 - 状态：待核实
 - 文件：`src/lib/claudePlan.ts:32`
@@ -19161,7 +6247,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`906c5699182dee610ce1f9488363070fe1520ee83a2604834b454a9a83774070`
 
-### 1188. `dynamic-i18n:src/lib/errors/skillErrorParser.ts:formatSkillError:70769166fc12d162:001`
+### 489. `dynamic-i18n:src/lib/errors/skillErrorParser.ts:formatSkillError:70769166fc12d162:001`
 
 - 状态：待核实
 - 文件：`src/lib/errors/skillErrorParser.ts:88`
@@ -19172,7 +6258,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`70769166fc12d1627fb5ece5b0a1c29e89411cde5da0673db299484321d4dd27`
 
-### 1189. `dynamic-i18n:src/lib/errors/skillErrorParser.ts:description:f55554c3a3e38660:001`
+### 490. `dynamic-i18n:src/lib/errors/skillErrorParser.ts:description:f55554c3a3e38660:001`
 
 - 状态：待核实
 - 文件：`src/lib/errors/skillErrorParser.ts:99`
@@ -19183,7 +6269,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`f55554c3a3e386604c41ab7912c05ed79a2c10029c66f618bbe46841de3de024`
 
-### 1190. `dynamic-i18n:src/lib/errors/skillErrorParser.ts:suggestionText:74e698c28bf062c8:001`
+### 491. `dynamic-i18n:src/lib/errors/skillErrorParser.ts:suggestionText:74e698c28bf062c8:001`
 
 - 状态：待核实
 - 文件：`src/lib/errors/skillErrorParser.ts:104`
@@ -19194,7 +6280,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`74e698c28bf062c806a22962230d15a0ee29463a2cc768d0cf94524888d5a38f`
 
-### 1191. `dynamic-i18n:src/lib/errors/skillErrorParser.ts:formatSkillError:70769166fc12d162:002`
+### 492. `dynamic-i18n:src/lib/errors/skillErrorParser.ts:formatSkillError:70769166fc12d162:002`
 
 - 状态：待核实
 - 文件：`src/lib/errors/skillErrorParser.ts:109`
@@ -19205,7 +6291,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`70769166fc12d1627fb5ece5b0a1c29e89411cde5da0673db299484321d4dd27`
 
-### 1192. `dynamic-i18n:src/lib/errors/skillErrorParser.ts:skillErrorReason:cc40d5267afefbf0:001`
+### 493. `dynamic-i18n:src/lib/errors/skillErrorParser.ts:skillErrorReason:cc40d5267afefbf0:001`
 
 - 状态：待核实
 - 文件：`src/lib/errors/skillErrorParser.ts:126`
@@ -19216,7 +6302,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`cc40d5267afefbf037b85e766c90145120db9f19a3bbdb13a9e69779732037a0`
 
-### 1193. `dynamic-i18n:src/lib/errors/skillErrorParser.ts:skillErrorReason:37f93e4d82bbafa0:001`
+### 494. `dynamic-i18n:src/lib/errors/skillErrorParser.ts:skillErrorReason:37f93e4d82bbafa0:001`
 
 - 状态：待核实
 - 文件：`src/lib/errors/skillErrorParser.ts:128`
@@ -19227,7 +6313,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`37f93e4d82bbafa004c28b0304a43a96a0e1d1f97a588c17fcfa0c7fe241da41`
 
-### 1194. `hardcoded:src/lib/frontendLogger.ts:truncateForProcessing:cbfda67ba8d01c49:001`
+### 495. `hardcoded:src/lib/frontendLogger.ts:truncateForProcessing:cbfda67ba8d01c49:001`
 
 - 状态：待核实
 - 文件：`src/lib/frontendLogger.ts:36`
@@ -19238,7 +6324,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`cbfda67ba8d01c499bb2cb5edc43e9452cbff6fdeb27bacf0bd13a98aba339d3`
 
-### 1195. `hardcoded:src/lib/frontendLogger.ts:normalizeForSerialization:aec169c0ab82b403:001`
+### 496. `hardcoded:src/lib/frontendLogger.ts:normalizeForSerialization:aec169c0ab82b403:001`
 
 - 状态：待核实
 - 文件：`src/lib/frontendLogger.ts:113`
@@ -19249,7 +6335,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`aec169c0ab82b4036db425e3384a7eb47721ba289734da8a93dc6caaabd8d536`
 
-### 1196. `hardcoded:src/lib/frontendLogger.ts:normalizeForSerialization:240a7349df5725a8:001`
+### 497. `hardcoded:src/lib/frontendLogger.ts:normalizeForSerialization:240a7349df5725a8:001`
 
 - 状态：待核实
 - 文件：`src/lib/frontendLogger.ts:139`
@@ -19260,7 +6346,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`240a7349df5725a84188e9201644fa952aff3530b44a4e0a5578412dca4f6bd5`
 
-### 1197. `hardcoded:src/lib/frontendLogger.ts:normalizeForSerialization:b61c5f4904ca310d:001`
+### 498. `hardcoded:src/lib/frontendLogger.ts:normalizeForSerialization:b61c5f4904ca310d:001`
 
 - 状态：待核实
 - 文件：`src/lib/frontendLogger.ts:148`
@@ -19271,7 +6357,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`b61c5f4904ca310d8bc805b769dc1e88e78c7a87e98958063993827a7b85b9b3`
 
-### 1198. `hardcoded:src/lib/frontendLogger.ts:normalizeForSerialization:ca525422b0710ea8:001`
+### 499. `hardcoded:src/lib/frontendLogger.ts:normalizeForSerialization:ca525422b0710ea8:001`
 
 - 状态：待核实
 - 文件：`src/lib/frontendLogger.ts:164`
@@ -19282,7 +6368,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`ca525422b0710ea8979f2f3d7811f511237ee9ab39d89631b3aac5f96a5ced0b`
 
-### 1199. `hardcoded:src/lib/frontendLogger.ts:normalizeForSerialization:a6a59f2d7f4301b2:001`
+### 500. `hardcoded:src/lib/frontendLogger.ts:normalizeForSerialization:a6a59f2d7f4301b2:001`
 
 - 状态：待核实
 - 文件：`src/lib/frontendLogger.ts:194`
@@ -19293,7 +6379,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`a6a59f2d7f4301b2bce74bc9dad8cd3ffba28f5cf30d7d40e087f87f0ae427b8`
 
-### 1200. `hardcoded:src/lib/frontendLogger.ts:normalizeForSerialization:320f0288df6f9b9d:001`
+### 501. `hardcoded:src/lib/frontendLogger.ts:normalizeForSerialization:320f0288df6f9b9d:001`
 
 - 状态：待核实
 - 文件：`src/lib/frontendLogger.ts:199`
@@ -19304,7 +6390,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`320f0288df6f9b9d36d3c9330043efe075e0f9781f26446293a7fd2f0d0e5007`
 
-### 1201. `hardcoded:src/lib/frontendLogger.ts:redactStructuredString:07a7a381e326ec8c:001`
+### 502. `hardcoded:src/lib/frontendLogger.ts:redactStructuredString:07a7a381e326ec8c:001`
 
 - 状态：待核实
 - 文件：`src/lib/frontendLogger.ts:231`
@@ -19315,7 +6401,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`07a7a381e326ec8c19eff2427d09cd352aa475da722401fdcc059a8599381937`
 
-### 1202. `hardcoded:src/lib/frontendLogger.ts:redactStructuredString:95fdfbbeae5c2a3e:001`
+### 503. `hardcoded:src/lib/frontendLogger.ts:redactStructuredString:95fdfbbeae5c2a3e:001`
 
 - 状态：待核实
 - 文件：`src/lib/frontendLogger.ts:243`
@@ -19326,7 +6412,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`95fdfbbeae5c2a3ec622de333fd7579a31949f24c601beafcc79360f8f7abc49`
 
-### 1203. `hardcoded:src/lib/frontendLogger.ts:head:bc0589bd3d32ff23:001`
+### 504. `hardcoded:src/lib/frontendLogger.ts:head:bc0589bd3d32ff23:001`
 
 - 状态：待核实
 - 文件：`src/lib/frontendLogger.ts:252`
@@ -19337,7 +6423,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`bc0589bd3d32ff2338e79997252187f434eec2fdb7cdbbab8f7618ea7e08626e`
 
-### 1204. `hardcoded:src/lib/frontendLogger.ts:describeError:0dcceff676974cdc:001`
+### 505. `hardcoded:src/lib/frontendLogger.ts:describeError:0dcceff676974cdc:001`
 
 - 状态：待核实
 - 文件：`src/lib/frontendLogger.ts:278`
@@ -19348,7 +6434,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`0dcceff676974cdc68ff6a12ccd011c64acd14bc104aef6995943cccc539cf12`
 
-### 1205. `hardcoded:src/lib/frontendLogger.ts:describeError:8a25aa7e91c34786:001`
+### 506. `hardcoded:src/lib/frontendLogger.ts:describeError:8a25aa7e91c34786:001`
 
 - 状态：待核实
 - 文件：`src/lib/frontendLogger.ts:294`
@@ -19359,7 +6445,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`8a25aa7e91c347868a92b6c8c6fc6eae8f700b9e238e5a6602afd940154483df`
 
-### 1206. `hardcoded:src/lib/frontendLogger.ts:raw:30f72c0662eb6970:001`
+### 507. `hardcoded:src/lib/frontendLogger.ts:raw:30f72c0662eb6970:001`
 
 - 状态：待核实
 - 文件：`src/lib/frontendLogger.ts:307`
@@ -19370,7 +6456,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`30f72c0662eb69702357eaad6b65e1554111d1c00dc30f2b43c796c553606f49`
 
-### 1207. `hardcoded:src/lib/frontendLogger.ts:message:20b547b100be9460:001`
+### 508. `hardcoded:src/lib/frontendLogger.ts:message:20b547b100be9460:001`
 
 - 状态：待核实
 - 文件：`src/lib/frontendLogger.ts:320`
@@ -19381,7 +6467,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`20b547b100be94600edfa97432c17fc083c6b7c5e04c619e650b85e3cb7a6300`
 
-### 1208. `hardcoded:src/lib/localCache.ts:PREFIX:b59e5db84eabdb1f:001`
+### 509. `hardcoded:src/lib/localCache.ts:PREFIX:b59e5db84eabdb1f:001`
 
 - 状态：待核实
 - 文件：`src/lib/localCache.ts:5`
@@ -19392,7 +6478,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`b59e5db84eabdb1fc4eeb0293d00aec2f7173016f96332aa3035af77e8e4b92f`
 
-### 1209. `hardcoded:src/lib/modelMetadata.ts:findByVendor:d70070750f69df8e:001`
+### 510. `hardcoded:src/lib/modelMetadata.ts:findByVendor:d70070750f69df8e:001`
 
 - 状态：待核实
 - 文件：`src/lib/modelMetadata.ts:322`
@@ -19403,7 +6489,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`d70070750f69df8e493099fcfabc10bb37f271fc0ddb5080893d9ed296d4342b`
 
-### 1210. `hardcoded:src/lib/modelsDev.ts:fetchModelsDev:9e4495a2c8af0702:001`
+### 511. `hardcoded:src/lib/modelsDev.ts:fetchModelsDev:9e4495a2c8af0702:001`
 
 - 状态：待核实
 - 文件：`src/lib/modelsDev.ts:68`
@@ -19414,7 +6500,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`9e4495a2c8af0702e919e43187af73e35bcc45fe973b0698149f13bd8f8959f8`
 
-### 1211. `hardcoded:src/lib/modelsDevPricing.ts:searchableName:fe216a14478430f2:001`
+### 512. `hardcoded:src/lib/modelsDevPricing.ts:searchableName:fe216a14478430f2:001`
 
 - 状态：待核实
 - 文件：`src/lib/modelsDevPricing.ts:51`
@@ -19425,7 +6511,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`fe216a14478430f220eeaae632b8024ec7013a0c578506e92c41fe5de130bfab`
 
-### 1212. `hardcoded:src/lib/piPromptTemplate.ts:truncateSummary:db463380373038b7:001`
+### 513. `hardcoded:src/lib/piPromptTemplate.ts:truncateSummary:db463380373038b7:001`
 
 - 状态：待核实
 - 文件：`src/lib/piPromptTemplate.ts:92`
@@ -19436,7 +6522,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`db463380373038b742c7e038aed6bdb9f411005723079438ee96baead242968e`
 
-### 1213. `hardcoded:src/lib/piPromptTemplate.ts:descriptionLine:ac32575ae8489a16:001`
+### 514. `hardcoded:src/lib/piPromptTemplate.ts:descriptionLine:ac32575ae8489a16:001`
 
 - 状态：待核实
 - 文件：`src/lib/piPromptTemplate.ts:131`
@@ -19447,7 +6533,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`ac32575ae8489a162b7d449a83b84fbca77e7879583c741616e0d22655a52936`
 
-### 1214. `hardcoded:src/lib/query/mutations.ts:useAddProviderMutation:5a99841bd8136920:001`
+### 515. `hardcoded:src/lib/query/mutations.ts:useAddProviderMutation:5a99841bd8136920:001`
 
 - 状态：待核实
 - 文件：`src/lib/query/mutations.ts:52`
@@ -19458,7 +6544,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`5a99841bd8136920932a647a4a455fb02bfbdc17c7b02c1b637bebadac4e0af9`
 
-### 1215. `hardcoded:src/lib/query/mutations.ts:useAddProviderMutation:da200209ed0ab32d:001`
+### 516. `hardcoded:src/lib/query/mutations.ts:useAddProviderMutation:da200209ed0ab32d:001`
 
 - 状态：待核实
 - 文件：`src/lib/query/mutations.ts:62`
@@ -19469,7 +6555,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`da200209ed0ab32dc6c33a10977335ca0e18ad0578e9aee789b3d5dd14e7196c`
 
-### 1216. `hardcoded:src/lib/query/mutations.ts:useAddProviderMutation:e23d98e6f193147b:001`
+### 517. `hardcoded:src/lib/query/mutations.ts:useAddProviderMutation:e23d98e6f193147b:001`
 
 - 状态：待核实
 - 文件：`src/lib/query/mutations.ts:86`
@@ -19480,7 +6566,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`e23d98e6f193147b60c44089cc7b95589f8a706786239c35a94955fd286c0094`
 
-### 1217. `dynamic-i18n:src/lib/query/proxy.ts:useSetProxyStackMember:2e6460788eddf87d:001`
+### 518. `dynamic-i18n:src/lib/query/proxy.ts:useSetProxyStackMember:2e6460788eddf87d:001`
 
 - 状态：待核实
 - 文件：`src/lib/query/proxy.ts:122`
@@ -19494,7 +6580,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`2e6460788eddf87d8e986c08763e3355caabd19c042657a388010e0c4ab5592a`
 
-### 1218. `dynamic-i18n:src/lib/query/proxy.ts:useSetProxyStackMember:7f3542671de62631:001`
+### 519. `dynamic-i18n:src/lib/query/proxy.ts:useSetProxyStackMember:7f3542671de62631:001`
 
 - 状态：待核实
 - 文件：`src/lib/query/proxy.ts:138`
@@ -19505,7 +6591,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`7f3542671de626310d5e5b3ed78dc2b8058c2dc915fbbb03ea3861bf9bcbccbc`
 
-### 1219. `dynamic-i18n:src/lib/query/proxy.ts:useAdoptCodexStackCatalog:7f3542671de62631:001`
+### 520. `dynamic-i18n:src/lib/query/proxy.ts:useAdoptCodexStackCatalog:7f3542671de62631:001`
 
 - 状态：待核实
 - 文件：`src/lib/query/proxy.ts:174`
@@ -19516,7 +6602,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`7f3542671de626310d5e5b3ed78dc2b8058c2dc915fbbb03ea3861bf9bcbccbc`
 
-### 1220. `hardcoded:src/lib/query/queries.ts:isTransientUsageError:126fbf59cf043830:001`
+### 521. `hardcoded:src/lib/query/queries.ts:isTransientUsageError:126fbf59cf043830:001`
 
 - 状态：待核实
 - 文件：`src/lib/query/queries.ts:152`
@@ -19527,7 +6613,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`126fbf59cf04383070ae09bb214f0949a07ab285c4d0f40585c5a5e67251f358`
 
-### 1221. `hardcoded:src/lib/query/queries.ts:isTransientUsageError:1fd8511c4d2c6733:001`
+### 522. `hardcoded:src/lib/query/queries.ts:isTransientUsageError:1fd8511c4d2c6733:001`
 
 - 状态：待核实
 - 文件：`src/lib/query/queries.ts:154`
@@ -19538,7 +6624,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`1fd8511c4d2c6733b8563200fea46ce0ea1bc3be082f62eb91de4052fec534a3`
 
-### 1222. `hardcoded:src/tray-panel/TrayPanel.tsx:QuotaBlock:cc992c496c079a15:001`
+### 523. `hardcoded:src/tray-panel/TrayPanel.tsx:QuotaBlock:cc992c496c079a15:001`
 
 - 状态：待核实
 - 文件：`src/tray-panel/TrayPanel.tsx:212`
@@ -19549,7 +6635,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`cc992c496c079a15ea8d0d0a6bbd1c04c3ff985c191aafe6dcccc3ee2fc13b45`
 
-### 1223. `hardcoded:src/tray-panel/TrayPanel.tsx:AppRow:e1c87a72a9ca77b9:001`
+### 524. `hardcoded:src/tray-panel/TrayPanel.tsx:AppRow:e1c87a72a9ca77b9:001`
 
 - 状态：待核实
 - 文件：`src/tray-panel/TrayPanel.tsx:304`
@@ -19560,7 +6646,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`e1c87a72a9ca77b98e633427834b2afe63b956f3179229dc554bbb8436cb1514`
 
-### 1224. `hardcoded:src/tray-panel/TrayPanel.tsx:media:f2d5c41a3679336a:001`
+### 525. `hardcoded:src/tray-panel/TrayPanel.tsx:media:f2d5c41a3679336a:001`
 
 - 状态：待核实
 - 文件：`src/tray-panel/TrayPanel.tsx:567`
@@ -19571,7 +6657,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`f2d5c41a3679336a2c990b296f40c737c5f5f00923e4e1da9477b0633b2a6930`
 
-### 1225. `hardcoded:src/tray-panel/TrayPanel.tsx:relayout:8bbf300e92d150fa:001`
+### 526. `hardcoded:src/tray-panel/TrayPanel.tsx:relayout:8bbf300e92d150fa:001`
 
 - 状态：待核实
 - 文件：`src/tray-panel/TrayPanel.tsx:707`
@@ -19582,7 +6668,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`8bbf300e92d150fa713c78adffbfb6ad16df8e3b1f16d30511fd2af6333390ff`
 
-### 1226. `hardcoded:src/tray-panel/TrayPanel.tsx:relayout:90b2d1e9dbec423a:001`
+### 527. `hardcoded:src/tray-panel/TrayPanel.tsx:relayout:90b2d1e9dbec423a:001`
 
 - 状态：待核实
 - 文件：`src/tray-panel/TrayPanel.tsx:713`
@@ -19593,7 +6679,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`90b2d1e9dbec423af9e275fbf8080ed72db293434229de0fc6a72b33b7023962`
 
-### 1227. `hardcoded:src/tray-panel/TrayPanel.tsx:cornerStyle:a5a5e6a44a98b4e4:001`
+### 528. `hardcoded:src/tray-panel/TrayPanel.tsx:cornerStyle:a5a5e6a44a98b4e4:001`
 
 - 状态：待核实
 - 文件：`src/tray-panel/TrayPanel.tsx:945`
@@ -19604,7 +6690,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`a5a5e6a44a98b4e4a8eb00ecccb441bb2abb4d8aa7d3bbd3a3343cf552385bbb`
 
-### 1228. `hardcoded:src/tray-panel/TrayPanel.tsx:cornerStyle:e63ea7d292a5c50c:001`
+### 529. `hardcoded:src/tray-panel/TrayPanel.tsx:cornerStyle:e63ea7d292a5c50c:001`
 
 - 状态：待核实
 - 文件：`src/tray-panel/TrayPanel.tsx:946`
@@ -19615,7 +6701,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`e63ea7d292a5c50c029a54a7a889fcc7f93819e9d042a9cd102666c5655fef9b`
 
-### 1229. `hardcoded:src/tray-panel/UsageTab.tsx:bucketize:fcc75ca0e6b68396:001`
+### 530. `hardcoded:src/tray-panel/UsageTab.tsx:bucketize:fcc75ca0e6b68396:001`
 
 - 状态：待核实
 - 文件：`src/tray-panel/UsageTab.tsx:111`
@@ -19626,7 +6712,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`fcc75ca0e6b68396e3b9e89e4fe39e4947df72a80c883be1ca3ae5e52fc19925`
 
-### 1230. `hardcoded:src/tray-panel/UsageTab.tsx:UsageTab:ff9484a2eb27a630:001`
+### 531. `hardcoded:src/tray-panel/UsageTab.tsx:UsageTab:ff9484a2eb27a630:001`
 
 - 状态：待核实
 - 文件：`src/tray-panel/UsageTab.tsx:301`
@@ -19637,7 +6723,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`ff9484a2eb27a630e990957d8c3738d748b78d8c57d71d29eacd43603ee625c6`
 
-### 1231. `hardcoded:src/tray-panel/UsageTab.tsx:UsageTab:e616355cec9d85e9:001`
+### 532. `hardcoded:src/tray-panel/UsageTab.tsx:UsageTab:e616355cec9d85e9:001`
 
 - 状态：待核实
 - 文件：`src/tray-panel/UsageTab.tsx:306`
@@ -19648,7 +6734,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`e616355cec9d85e9ce9c2aa232b8cfc118c04f5d40dcce23169ec5bee2ae2e1e`
 
-### 1232. `hardcoded:src/tray-panel/UsageTab.tsx:UsageTab:60f562bafec64a0d:001`
+### 533. `hardcoded:src/tray-panel/UsageTab.tsx:UsageTab:60f562bafec64a0d:001`
 
 - 状态：待核实
 - 文件：`src/tray-panel/UsageTab.tsx:358`
@@ -19659,7 +6745,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`60f562bafec64a0d4a4a9947e9aec7e174c71421804438923597cca982bae7b6`
 
-### 1233. `hardcoded:src/types/omo.ts:OMO_DISABLEABLE_AGENTS:94f4223d1647de6a:001`
+### 534. `hardcoded:src/types/omo.ts:OMO_DISABLEABLE_AGENTS:94f4223d1647de6a:001`
 
 - 状态：待核实
 - 文件：`src/types/omo.ts:186`
@@ -19670,7 +6756,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`94f4223d1647de6a95f079c7b14a8decac0026a10317e83dbca148790c5b0542`
 
-### 1234. `hardcoded:src/types/omo.ts:OMO_DISABLEABLE_AGENTS:61b1b3dd8e42e1cd:001`
+### 535. `hardcoded:src/types/omo.ts:OMO_DISABLEABLE_AGENTS:61b1b3dd8e42e1cd:001`
 
 - 状态：待核实
 - 文件：`src/types/omo.ts:187`
@@ -19681,7 +6767,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`61b1b3dd8e42e1cde68a81bfea6af70640098421dd8fde8f669605251a2f8afe`
 
-### 1235. `hardcoded:src/types/omo.ts:OMO_SISYPHUS_AGENT_PLACEHOLDER:dae3717f08e64178:001`
+### 536. `hardcoded:src/types/omo.ts:OMO_SISYPHUS_AGENT_PLACEHOLDER:dae3717f08e64178:001`
 
 - 状态：待核实
 - 文件：`src/types/omo.ts:252`
@@ -19697,7 +6783,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`dae3717f08e64178d53c3d7bc262e30308f58223894e70fd93cea35bfa4b4344`
 
-### 1236. `hardcoded:src/types/omo.ts:OMO_LSP_PLACEHOLDER:c7371b895550fe89:001`
+### 537. `hardcoded:src/types/omo.ts:OMO_LSP_PLACEHOLDER:c7371b895550fe89:001`
 
 - 状态：待核实
 - 文件：`src/types/omo.ts:259`
@@ -19717,7 +6803,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`c7371b895550fe89aaa203f1e36cb9c9ef0b80dd65373008b190ac7e860075b1`
 
-### 1237. `hardcoded:src/types/omo.ts:OMO_EXPERIMENTAL_PLACEHOLDER:713f419812a3d0af:001`
+### 538. `hardcoded:src/types/omo.ts:OMO_EXPERIMENTAL_PLACEHOLDER:713f419812a3d0af:001`
 
 - 状态：待核实
 - 文件：`src/types/omo.ts:270`
@@ -19732,7 +6818,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`713f419812a3d0afdb705a7c8c0fd9e0273fe48d80286d45b490c05b74629ac1`
 
-### 1238. `hardcoded:src/types/omo.ts:OMO_BACKGROUND_TASK_PLACEHOLDER:c07e959e3120b626:001`
+### 539. `hardcoded:src/types/omo.ts:OMO_BACKGROUND_TASK_PLACEHOLDER:c07e959e3120b626:001`
 
 - 状态：待核实
 - 文件：`src/types/omo.ts:276`
@@ -19754,7 +6840,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`c07e959e3120b62620e4e3c50954e75dc37977e98a5854c6283bc34329fd4037`
 
-### 1239. `hardcoded:src/types/omo.ts:OMO_BROWSER_AUTOMATION_PLACEHOLDER:be8a375e66943bf9:001`
+### 540. `hardcoded:src/types/omo.ts:OMO_BROWSER_AUTOMATION_PLACEHOLDER:be8a375e66943bf9:001`
 
 - 状态：待核实
 - 文件：`src/types/omo.ts:289`
@@ -19767,7 +6853,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`be8a375e66943bf97a2e5406a0cb60ed2f80753a88f619507e1fb50a3fd7aba7`
 
-### 1240. `hardcoded:src/types/omo.ts:OMO_CLAUDE_CODE_PLACEHOLDER:71c2e1fe2c3d7aa1:001`
+### 541. `hardcoded:src/types/omo.ts:OMO_CLAUDE_CODE_PLACEHOLDER:71c2e1fe2c3d7aa1:001`
 
 - 状态：待核实
 - 文件：`src/types/omo.ts:293`
@@ -19785,7 +6871,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`71c2e1fe2c3d7aa1b96d812203d54d98c9c5bb536b1d959cdfcf0e2c4b9cc1eb`
 
-### 1241. `hardcoded:src/utils/customIcon.ts:PNG_HEADER_PREFIX:14463a37223c3105:001`
+### 542. `hardcoded:src/utils/customIcon.ts:PNG_HEADER_PREFIX:14463a37223c3105:001`
 
 - 状态：待核实
 - 文件：`src/utils/customIcon.ts:57`
@@ -19798,7 +6884,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`14463a37223c31053d306ff9a17d58d7c3fc742e0b2d4e82b235af44f742256f`
 
-### 1242. `hardcoded:src/utils/customIcon.ts:readAsDataUrl:60d9e332f1d677e8:001`
+### 543. `hardcoded:src/utils/customIcon.ts:readAsDataUrl:60d9e332f1d677e8:001`
 
 - 状态：待核实
 - 文件：`src/utils/customIcon.ts:132`
@@ -19809,7 +6895,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`60d9e332f1d677e856b4c3ac482377dcd668b255f66be4bf2119f9f1725e0443`
 
-### 1243. `hardcoded:src/utils/deepLinkConfigPreview.ts:sanitizeTomlForPreview:6e915f849a4a51a6:001`
+### 544. `hardcoded:src/utils/deepLinkConfigPreview.ts:sanitizeTomlForPreview:6e915f849a4a51a6:001`
 
 - 状态：待核实
 - 文件：`src/utils/deepLinkConfigPreview.ts:41`
@@ -19820,7 +6906,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`6e915f849a4a51a6a9e91f5572064330ce8e9fa3c31c8d7ddb8ef8def9b46e53`
 
-### 1244. `hardcoded:src/utils/deeplinkRisk.ts:maskSensitiveValue:a62c2e494eb6da49:001`
+### 545. `hardcoded:src/utils/deeplinkRisk.ts:maskSensitiveValue:a62c2e494eb6da49:001`
 
 - 状态：待核实
 - 文件：`src/utils/deeplinkRisk.ts:34`
@@ -19831,7 +6917,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`a62c2e494eb6da4980815e65beb0045581a502c55c589806d4c093fb2d50df23`
 
-### 1245. `dynamic-i18n:src/utils/errorUtils.ts:translatePiProviderMutationError:87913d866ba16384:001`
+### 546. `dynamic-i18n:src/utils/errorUtils.ts:translatePiProviderMutationError:87913d866ba16384:001`
 
 - 状态：待核实
 - 文件：`src/utils/errorUtils.ts:47`
@@ -19842,7 +6928,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`87913d866ba16384ba8999764817a4113c4ca7d29f98076db7cc1b4cc2aad7c5`
 
-### 1246. `dynamic-i18n:src/utils/errorUtils.ts:translateMcpBackendError:87913d866ba16384:001`
+### 547. `dynamic-i18n:src/utils/errorUtils.ts:translateMcpBackendError:87913d866ba16384:001`
 
 - 状态：待核实
 - 文件：`src/utils/errorUtils.ts:95`
@@ -19853,7 +6939,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`87913d866ba16384ba8999764817a4113c4ca7d29f98076db7cc1b4cc2aad7c5`
 
-### 1247. `hardcoded:src/utils/usageDisplay.ts:formatValue:b628b45c26dd70c9:001`
+### 548. `hardcoded:src/utils/usageDisplay.ts:formatValue:b628b45c26dd70c9:001`
 
 - 状态：待核实
 - 文件：`src/utils/usageDisplay.ts:20`
@@ -19864,7 +6950,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`b628b45c26dd70c9ef0d45f7ed72737ea728ec56e7a84fdbd07375f5eab5674d`
 
-### 1248. `hardcoded:src/utils/usageDisplay.ts:formatUsed:982a7b3b5da93ed4:001`
+### 549. `hardcoded:src/utils/usageDisplay.ts:formatUsed:982a7b3b5da93ed4:001`
 
 - 状态：待核实
 - 文件：`src/utils/usageDisplay.ts:39`
@@ -19875,7 +6961,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`982a7b3b5da93ed41e73e298e4d3580b0095bc6d935e87941a97c346638c37c4`
 
-### 1249. `hardcoded:src/utils/usageDisplay.ts:formatUsed:0330f89ad7c5df76:001`
+### 550. `hardcoded:src/utils/usageDisplay.ts:formatUsed:0330f89ad7c5df76:001`
 
 - 状态：待核实
 - 文件：`src/utils/usageDisplay.ts:42`
@@ -19886,7 +6972,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`0330f89ad7c5df76078a8d510d30a37f0e2598ffa230d847dd2db1613e811d80`
 
-### 1250. `hardcoded:src/utils/usageDisplay.ts:formatUsed:e7ca37fa7de7d20a:001`
+### 551. `hardcoded:src/utils/usageDisplay.ts:formatUsed:e7ca37fa7de7d20a:001`
 
 - 状态：待核实
 - 文件：`src/utils/usageDisplay.ts:45`
@@ -19897,7 +6983,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`e7ca37fa7de7d20a3a126cbd6631911a8997a17c5b63c7827b424fbdb84ac97d`
 
-### 1251. `hardcoded:src/utils/usageDisplay.ts:planPrefix:4896130fd53d476b:001`
+### 552. `hardcoded:src/utils/usageDisplay.ts:planPrefix:4896130fd53d476b:001`
 
 - 状态：待核实
 - 文件：`src/utils/usageDisplay.ts:52`
@@ -19908,7 +6994,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`4896130fd53d476b55d3252d57c1aa6bfb6d9ea007992093640940e28aecde6e`
 
-### 1252. `hardcoded:src/utils/usageDisplay.ts:formatUsageDataSummary:27f679f4313c4c95:001`
+### 553. `hardcoded:src/utils/usageDisplay.ts:formatUsageDataSummary:27f679f4313c4c95:001`
 
 - 状态：待核实
 - 文件：`src/utils/usageDisplay.ts:55`
@@ -19919,7 +7005,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`27f679f4313c4c9502078c41db8dc9cb114823750ce0c0082c803dd289457d58`
 
-### 1253. `hardcoded:src/utils/usageDisplay.ts:parts:4104163cefe6bd2b:001`
+### 554. `hardcoded:src/utils/usageDisplay.ts:parts:4104163cefe6bd2b:001`
 
 - 状态：待核实
 - 文件：`src/utils/usageDisplay.ts:61`
@@ -19930,7 +7016,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`4104163cefe6bd2bf675d1c1e9b65e41edf7204b0d627d37d525acc72509eca0`
 
-### 1254. `hardcoded:src/utils/usageDisplay.ts:formatUsageDataSummary:d9c1ae1c8ba031a5:001`
+### 555. `hardcoded:src/utils/usageDisplay.ts:formatUsageDataSummary:d9c1ae1c8ba031a5:001`
 
 - 状态：待核实
 - 文件：`src/utils/usageDisplay.ts:66`
@@ -19941,7 +7027,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：低
 - 指纹：`d9c1ae1c8ba031a5f254023b660b4cfef793b10e270a85012e0a5299cdd10e19`
 
-### 1255. `hardcoded:src/utils/uuid.ts:generateUUID:9a9f4bf4aeae48b2:001`
+### 556. `hardcoded:src/utils/uuid.ts:generateUUID:9a9f4bf4aeae48b2:001`
 
 - 状态：待核实
 - 文件：`src/utils/uuid.ts:21`
@@ -19952,7 +7038,7 @@ requires_openai_auth = true`”可能作为提示或错误展示，但静态上�
 - 严重程度：中
 - 指纹：`9a9f4bf4aeae48b2882f4021cac56f9f4350e04fd8c61c89f42fa458a08f0dda`
 
-### 1256. `hardcoded:src/utils/uuid.ts:generateUUID:5dc10448349e3c3f:001`
+### 557. `hardcoded:src/utils/uuid.ts:generateUUID:5dc10448349e3c3f:001`
 
 - 状态：待核实
 - 文件：`src/utils/uuid.ts:36`
