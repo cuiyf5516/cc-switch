@@ -8,41 +8,43 @@ OUT = ROOT / ".i18n-audit"
 HUMAN = OUT / "reviews" / "human-review"
 HUMAN.mkdir(parents=True, exist_ok=True)
 
-COLUMNS = [
-    "issue_id", "issue_type", "priority", "source_file", "location_or_key",
-    "original_text", "current_korean", "ai_status", "ai_reason", "ai_suggestion",
-    "review_decision", "final_text", "fix_scope", "reviewer_note",
+TRANSLATION_COLUMNS = [
+    "问题ID", "状态", "文件", "资源键", "中文原文", "当前韩文",
+    "问题说明", "建议韩文", "人工决定", "最终韩文", "备注",
+]
+MISSING_COLUMNS = [
+    "问题ID", "状态", "严重程度", "文件", "位置", "功能上下文", "原文或表达式",
+    "问题说明", "建议处理方式", "建议韩文", "人工决定", "最终韩文/修复要求",
+    "修复范围", "备注",
 ]
 PLAN_COLUMNS = [
-    "issue_id", "issue_type", "priority", "source_file", "location_or_key",
-    "approved_text", "fix_scope", "reviewer_note",
+    "问题ID", "问题类型", "优先级", "文件", "位置或键",
+    "批准韩文或修复要求", "修复范围", "审核备注",
 ]
 
 translations = json.loads((OUT / "manifest/resources.json").read_text(encoding="utf-8"))["records"]
 hardcoded = json.loads((OUT / "manifest/hardcoded_candidates.json").read_text(encoding="utf-8"))["candidates"]
 
-rows = []
+translation_rows = []
 for record in translations:
     if record["review_status"] not in {"必改", "建议改", "待核实"}:
         continue
     review = record.get("review", {})
-    rows.append({
-        "issue_id": record["id"],
-        "issue_type": "translation",
-        "priority": record["review_status"],
-        "source_file": "src/i18n/locales/ko.json" if record["source_kind"] == "json-locale" else record["source_file"],
-        "location_or_key": record["key"] if record["source_kind"] == "json-locale" else f"{record['namespace']}.{record['key']}",
-        "original_text": record["values"].get("zh") or "",
-        "current_korean": record["values"].get("ko") or "",
-        "ai_status": record["review_status"],
-        "ai_reason": review.get("reason") or "",
-        "ai_suggestion": review.get("suggestion") or "",
-        "review_decision": "",
-        "final_text": "",
-        "fix_scope": "translation-only",
-        "reviewer_note": "",
+    translation_rows.append({
+        "问题ID": record["id"],
+        "状态": record["review_status"],
+        "文件": "src/i18n/locales/ko.json" if record["source_kind"] == "json-locale" else record["source_file"],
+        "资源键": record["key"] if record["source_kind"] == "json-locale" else f"{record['namespace']}.{record['key']}",
+        "中文原文": record["values"].get("zh") or "",
+        "当前韩文": record["values"].get("ko") or "",
+        "问题说明": review.get("reason") or "",
+        "建议韩文": review.get("suggestion") or "",
+        "人工决定": "",
+        "最终韩文": "",
+        "备注": "",
     })
 
+missing_rows = []
 for candidate in hardcoded:
     if candidate["status"] not in {"确认遗漏", "待核实"}:
         continue
@@ -56,40 +58,47 @@ for candidate in hardcoded:
         fix_scope = "backend-error"
     else:
         fix_scope = "frontend-i18n"
-    suggestion = review.get("suggested_action") or ""
-    if review.get("suggested_ko"):
-        suggestion = f"{suggestion} 推荐韩文：{review['suggested_ko']}".strip()
-    rows.append({
-        "issue_id": candidate["id"],
-        "issue_type": "missing_i18n",
-        "priority": review.get("severity") or candidate["status"],
-        "source_file": source_file,
-        "location_or_key": f"{candidate['function']}@{candidate['line']}",
-        "original_text": candidate["expression"],
-        "current_korean": "",
-        "ai_status": candidate["status"],
-        "ai_reason": review.get("reason") or "",
-        "ai_suggestion": suggestion,
-        "review_decision": "",
-        "final_text": "",
-        "fix_scope": fix_scope,
-        "reviewer_note": "",
+    function = candidate.get("function") or "<module>"
+    attribute = candidate.get("ui_attribute")
+    context = function + (f" / {attribute}" if attribute else "")
+    missing_rows.append({
+        "问题ID": candidate["id"],
+        "状态": candidate["status"],
+        "严重程度": review.get("severity") or "",
+        "文件": source_file,
+        "位置": f"第 {candidate['line']} 行，第 {candidate['column']} 列",
+        "功能上下文": context,
+        "原文或表达式": candidate["expression"],
+        "问题说明": review.get("reason") or "",
+        "建议处理方式": review.get("suggested_action") or "",
+        "建议韩文": review.get("suggested_ko") or "",
+        "人工决定": "",
+        "最终韩文/修复要求": "",
+        "修复范围": fix_scope,
+        "备注": "",
     })
 
-rows.sort(key=lambda row: (row["issue_type"], row["source_file"], row["location_or_key"], row["issue_id"]))
+translation_rows.sort(key=lambda row: (row["状态"], row["资源键"], row["问题ID"]))
+missing_rows.sort(key=lambda row: (row["文件"], row["位置"], row["问题ID"]))
 
-review_path = HUMAN / "review_decisions.csv"
-with review_path.open("w", encoding="utf-8-sig", newline="") as handle:
-    writer = csv.DictWriter(handle, fieldnames=COLUMNS)
+translation_path = HUMAN / "translation_review_decisions.csv"
+with translation_path.open("w", encoding="utf-8-sig", newline="") as handle:
+    writer = csv.DictWriter(handle, fieldnames=TRANSLATION_COLUMNS)
     writer.writeheader()
-    writer.writerows(rows)
+    writer.writerows(translation_rows)
+
+missing_path = HUMAN / "missing_i18n_review_decisions.csv"
+with missing_path.open("w", encoding="utf-8-sig", newline="") as handle:
+    writer = csv.DictWriter(handle, fieldnames=MISSING_COLUMNS)
+    writer.writeheader()
+    writer.writerows(missing_rows)
 
 plan_path = HUMAN / "repair_plan.csv"
 with plan_path.open("w", encoding="utf-8-sig", newline="") as handle:
     csv.DictWriter(handle, fieldnames=PLAN_COLUMNS).writeheader()
 
-print(f"review_rows={len(rows)}")
-print(f"translation_issues={sum(row['issue_type'] == 'translation' for row in rows)}")
-print(f"missing_i18n_issues={sum(row['issue_type'] == 'missing_i18n' for row in rows)}")
-print(review_path.relative_to(ROOT))
+print(f"translation_rows={len(translation_rows)}")
+print(f"missing_i18n_rows={len(missing_rows)}")
+print(translation_path.relative_to(ROOT))
+print(missing_path.relative_to(ROOT))
 print(plan_path.relative_to(ROOT))

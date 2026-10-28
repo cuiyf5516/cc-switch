@@ -34,7 +34,8 @@ All generated state is under `.i18n-audit/`. `verify.py` exits non-zero while re
 
 ## Human review and repair handoff
 
-- Human decisions: `.i18n-audit/reviews/human-review/review_decisions.csv`
+- Translation decisions: `.i18n-audit/reviews/human-review/translation_review_decisions.csv`
+- Internationalization-gap decisions: `.i18n-audit/reviews/human-review/missing_i18n_review_decisions.csv`
 - Approved repair plan: `.i18n-audit/reviews/human-review/repair_plan.csv`
 - Review instructions: `.i18n-audit/reviews/human-review/README.md`
 
@@ -45,3 +46,4 @@ python .i18n-audit/scripts/build_repair_plan.py
 ```
 
 Only rows marked `采纳`, `修改后采纳`, or `确认修复` are exported to the repair plan.
+
